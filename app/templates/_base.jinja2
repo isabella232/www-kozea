@@ -15,16 +15,16 @@
     <link href="{{ static('stylesheets/main.css') }}" rel="stylesheet">
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#main-menu">
     <section class="content">
       <header>
         <h1>Kozea</h1>
       </header>
       <nav id="main-menu">
-        <ul>
-          <li><a href="#">Web</a></li>
-          <li><a href="#">Libre</a></li>
-          <li><a href="#">Community</a></li>
+        <ul class="nav">
+          <li><a href="#web">Web</a></li>
+          <li><a href="#libre">Libre</a></li>
+          <li><a href="#community">Community</a></li>
         </ul>
       </nav>
       <section id="banner">
@@ -46,24 +46,21 @@
       </section>
       <section id="libre" class="fullpage-item">
         <h2>Libre</h2>
-        <p>{{ lipsum(3) }}</p>
+        <p>{{ lipsum(10) }}</p>
       </section>
       <section id="community" class="fullpage-item">
         <h2>Community</h2>
-        <p>{{ lipsum(3) }}</p>
+        <p>{{ lipsum(10) }}</p>
       </section>
     </section>
   </body>
 
   <footer>
-    
   </footer>
 
-    <link rel="stylesheet" href="{{ static('stylesheets/onepage-scroll.css') }}" />
     <link rel="stylesheet" href="{{ static('stylesheets/jquery-ui.css') }}" />
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{{ static('javascripts/jquery-ui.min.js') }}"></script>
-    <script src="{{ static('javascripts/onepage-scroll/jquery.onepage-scroll.min.js') }}"></script>
     <script src="{{ static('javascripts/bootstrap.min.js') }}"></script>
     <script src="{{ static('javascripts/main.js') }}"></script>
   </body>
