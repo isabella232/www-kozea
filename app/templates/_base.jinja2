@@ -1,0 +1,70 @@
+{%- from "_utils.jinja2" import static -%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{{ static('images/favicon.png') }}">
+    {%- include "_ie.jinja2" -%}
+
+    <title>Kozea</title>
+    <link href="{{ static('stylesheets/bootstrap/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ static('stylesheets/main.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+    <section class="content">
+      <header>
+        <h1>Kozea</h1>
+      </header>
+      <nav id="main-menu">
+        <ul>
+          <li><a href="#">Web</a></li>
+          <li><a href="#">Libre</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </nav>
+      <section id="banner">
+        <h2>Your projects, our expertise</h2>
+        <small>{{ lipsum(1) }}</small>
+      </section>
+      <section id="web" class="fullpage-item">
+        <h2>Web</h2>
+        <article>
+          <h3>Software development</h3>
+          <p>{{ lipsum(2) }}</p>
+        </article>
+        <article>
+          <p>{{ lipsum(3) }}</p>
+        </article>
+        <article>
+          <p>{{ lipsum(2) }}</p>
+        </article>
+      </section>
+      <section id="libre" class="fullpage-item">
+        <h2>Libre</h2>
+        <p>{{ lipsum(3) }}</p>
+      </section>
+      <section id="community" class="fullpage-item">
+        <h2>Community</h2>
+        <p>{{ lipsum(3) }}</p>
+      </section>
+    </section>
+  </body>
+
+  <footer>
+    
+  </footer>
+
+    <link rel="stylesheet" href="{{ static('stylesheets/onepage-scroll.css') }}" />
+    <link rel="stylesheet" href="{{ static('stylesheets/jquery-ui.css') }}" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="{{ static('javascripts/jquery-ui.min.js') }}"></script>
+    <script src="{{ static('javascripts/onepage-scroll/jquery.onepage-scroll.min.js') }}"></script>
+    <script src="{{ static('javascripts/bootstrap.min.js') }}"></script>
+    <script src="{{ static('javascripts/main.js') }}"></script>
+  </body>
+</html>
