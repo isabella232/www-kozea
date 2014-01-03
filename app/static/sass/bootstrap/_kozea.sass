@@ -1,0 +1,70 @@
+body
+
+
+  header
+    +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
+
+    h1
+      background: url(images/logo-kozea.png) no-repeat top center
+      color: transparent
+      font-size: 0
+      height: 280px
+      margin: 0
+
+
+  nav
+    &#main-menu
+      text-align: right
+
+      ul
+        display: inline-block
+
+        &:after
+          +border-left-radius(10px)
+          +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
+          background: $gray-lighten
+          display: block
+          height: 8px
+          width: 100%
+          content: ''
+
+        li
+          display: inline-block
+          font-size: 1em
+          width: 140px
+          text-align: center
+
+          &:after, &:before 
+            +border-left-radius(100%)
+            +border-right-radius(100%)
+            +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
+            content: ''
+            display: block
+
+          &:after
+            background: $gray-lighten
+            height: 30px
+            width: 30px
+            margin: 0 auto -18px
+
+          &:before
+            background: #cccccc
+            height: 12px
+            width: 12px
+            position: absolute
+            top: 94%
+            left: 45%
+
+          &:hover, &:hover, &.active
+            &:before 
+              background: orange
+
+
+          a
+            text-transform: uppercase
+            color: #9b9b9b
+            font-weight: bold
+
+
+            &:hover, &:focus
+              background: none
