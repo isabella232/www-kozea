@@ -6,9 +6,8 @@ $ ->
         }, 1500
         return false
     $(document).on('scroll', ->
-        console.log $(document).scrollTop()
-        console.log $('#banner').offset().top
-        if $(document).scrollTop() < $("#banner").offset().top
+        title = $("#header-title")
+        if $(document).scrollTop() < title.offset().top + title.height()
             $("#main-menu").removeClass('fixed')
         else
             $("#main-menu").addClass('fixed')
