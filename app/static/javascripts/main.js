@@ -9,9 +9,9 @@ $(function() {
     return false;
   });
   $(document).on('scroll', function() {
-    console.log($(document).scrollTop());
-    console.log($('#banner').offset().top);
-    if ($(document).scrollTop() < $("#banner").offset().top) {
+    var title;
+    title = $("#header-title");
+    if ($(document).scrollTop() < title.offset().top + title.height()) {
       return $("#main-menu").removeClass('fixed');
     } else {
       return $("#main-menu").addClass('fixed');
