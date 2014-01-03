@@ -1,4 +1,10 @@
++font-face("Ancillary", "fonts/Ancillary-Regular", "Ancillary", 400, normal)
++font-face("Ancillary", "fonts/Ancillary-Bold", "Ancillary", 700, normal)
++font-face("Ancillary", "fonts/Ancillary-Italic", "Ancillary", 400, italic)
++font-face("Ancillary", "fonts/Ancillary-BoldItalic", "Ancillary", 700, italic)
+
 body
+  border-top: 12px solid $gray-lighten
 
 
   header
@@ -14,27 +20,28 @@ body
 
   nav
     &#main-menu
+      margin-bottom: 50px
       text-align: right
 
       ul
         display: inline-block
 
         &:after
+          background: $gray-lighten
           +border-left-radius(10px)
           +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
-          background: $gray-lighten
+          content: ''
           display: block
           height: 8px
           width: 100%
-          content: ''
 
         li
           display: inline-block
           font-size: 1em
-          width: 140px
           text-align: center
+          width: 140px
 
-          &:after, &:before 
+          &:after, &:before
             +border-left-radius(100%)
             +border-right-radius(100%)
             +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
@@ -44,27 +51,126 @@ body
           &:after
             background: $gray-lighten
             height: 30px
-            width: 30px
             margin: 0 auto -18px
+            width: 30px
 
           &:before
             background: #cccccc
             height: 12px
-            width: 12px
+            left: 45%
             position: absolute
             top: 94%
-            left: 45%
+            width: 12px
 
-          &:hover, &:hover, &.active
-            &:before 
+          &.active
+            &:before
               background: orange
-
 
           a
             text-transform: uppercase
             color: #9b9b9b
             font-weight: bold
 
-
             &:hover, &:focus
               background: none
+
+
+  section
+    +box-shadow(0 -10px 10px -10px rgba(0, 0, 0, 0.8) inset)
+    padding: 50px 10%
+
+    h2
+      font-family: "Ancillary"
+      font-size: 1.8em
+      font-weight: bold
+
+    &:before
+      content: ''
+      +border-right-radius(100%)
+      +border-left-radius(100%)
+      display: block
+      height: 50px
+      margin: -75px auto 0
+      top: -25px
+      width: 50px
+
+    &#banner
+      background: #393b48
+      text-align: center
+
+      h2
+        border-bottom: 1px solid darken(#393b48, 5%)
+        +box-shadow(0 1px 0 lighten(#393b48, 5%))
+        color: darken(#393b48, 15%)
+        display: inline-block
+        font-size: 3em
+        font-weight: bold
+        margin-bottom: 1em
+        padding-bottom: 1em
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1)
+
+      small
+        color: #848691
+        display: block
+
+      &:before
+        background: #f1f1f1
+
+    &#web
+      padding-left: 6%
+      padding-right: 6%
+
+      &:before
+        background: #393b48
+
+      h2
+        background: #608485
+        +border-right-radius(15px)
+        display: inline-block
+        margin: 1em 0 1em -7%
+        padding: 0.2em 1.3em 0.2em 12%
+        text-transform: uppercase
+        z-index: 5
+        position: relative
+        color: darken(#608485, 10%)
+
+        &:after
+          position: absolute
+          content: ''
+          background: #608485
+          height: 3em
+          width: 3em
+          display: block
+          +border-left-radius(100%)
+          +border-right-radius(100%)
+          margin-top: -2em
+          margin-left: -0.5em
+          z-index: -1
+
+
+      article
+        padding: 0 4% 20px
+        width: 29%
+        display: table-cell
+        text-align: center
+
+        p
+          text-align: justify
+
+        h3
+          color: #608485
+          text-align: center
+
+          &:before
+            +border-left-radius(100%)
+            +border-right-radius(100%)
+            background: #dedede
+            content: ''
+            width: 122px
+            height: 122px
+            display: block
+            margin: 0 auto 10px
+
+
+    &#libre
+      background: orange

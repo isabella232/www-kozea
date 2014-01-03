@@ -8,42 +8,43 @@ body {
   background-color: #f1f1f1;
   color: #5a5a5a;
   padding: 0;
+  font-family: "Ancillary", sans-serif;
 }
-/* line 10, ../sass/main.sass */
+/* line 11, ../sass/main.sass */
 body > main {
   min-height: 100%;
   height: auto;
   margin: 0 auto -60px;
   padding: 0 0 60px;
 }
-/* line 16, ../sass/main.sass */
+/* line 17, ../sass/main.sass */
 body > footer {
   height: 60px;
   background-color: whitesmoke;
 }
-/* line 20, ../sass/main.sass */
+/* line 21, ../sass/main.sass */
 body > footer p {
   margin: 20px 0;
 }
 
-/* line 24, ../sass/main.sass */
+/* line 25, ../sass/main.sass */
 .carousel {
   height: 500px;
   margin-bottom: 60px;
 }
 
-/* line 28, ../sass/main.sass */
+/* line 29, ../sass/main.sass */
 .carousel-caption {
   z-index: 10;
 }
 
-/* line 31, ../sass/main.sass */
+/* line 32, ../sass/main.sass */
 .carousel .item {
   height: 500px;
   background-color: #777777;
 }
 
-/* line 35, ../sass/main.sass */
+/* line 36, ../sass/main.sass */
 .carousel-inner > .item > img {
   position: absolute;
   top: 0;
@@ -52,32 +53,32 @@ body > footer p {
   height: 500px;
 }
 
-/* line 42, ../sass/main.sass */
+/* line 43, ../sass/main.sass */
 .marketing {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 45, ../sass/main.sass */
+/* line 46, ../sass/main.sass */
 .marketing .col-lg-4 {
   text-align: center;
   margin-bottom: 20px;
 }
-/* line 48, ../sass/main.sass */
+/* line 49, ../sass/main.sass */
 .marketing h2 {
   font-weight: normal;
 }
-/* line 50, ../sass/main.sass */
+/* line 51, ../sass/main.sass */
 .marketing .col-lg-4 p {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-/* line 54, ../sass/main.sass */
+/* line 55, ../sass/main.sass */
 .featurette-divider {
   margin: 80px 0;
 }
 
-/* line 57, ../sass/main.sass */
+/* line 58, ../sass/main.sass */
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
@@ -85,42 +86,42 @@ body > footer p {
 }
 
 @media (min-width: 768px) {
-  /* line 63, ../sass/main.sass */
+  /* line 64, ../sass/main.sass */
   .marketing {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* line 66, ../sass/main.sass */
+  /* line 67, ../sass/main.sass */
   .navbar-wrapper {
     margin-top: 20px;
   }
-  /* line 68, ../sass/main.sass */
+  /* line 69, ../sass/main.sass */
   .navbar-wrapper .container {
     padding-left: 15px;
     padding-right: 15px;
   }
-  /* line 71, ../sass/main.sass */
+  /* line 72, ../sass/main.sass */
   .navbar-wrapper .navbar {
     padding-left: 0;
     padding-right: 0;
     border-radius: 4px;
   }
 
-  /* line 75, ../sass/main.sass */
+  /* line 76, ../sass/main.sass */
   .carousel-caption p {
     margin-bottom: 20px;
     font-size: 21px;
     line-height: 1.4;
   }
 
-  /* line 79, ../sass/main.sass */
+  /* line 80, ../sass/main.sass */
   .featurette-heading {
     font-size: 50px;
   }
 }
 @media (min-width: 992px) {
-  /* line 83, ../sass/main.sass */
+  /* line 84, ../sass/main.sass */
   .featurette-heading {
     margin-top: 120px;
   }

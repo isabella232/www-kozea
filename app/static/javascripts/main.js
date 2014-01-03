@@ -8,4 +8,12 @@ $(function() {
     }, 1500);
     return false;
   });
+  $("#main-menu").on('activate.bs.scrollspy', function(e) {
+    console.log($(e.target).children('a').attr('href'));
+    if ($(e.target).children('a').attr('href') !== "#web") {
+      $(this).addClass('fixed');
+    } else {
+      $(this).removeClass('fixed');
+    }
+  });
 });
