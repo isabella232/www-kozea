@@ -146,38 +146,40 @@ body section#banner {
   background: #393b48;
   text-align: center;
 }
-/* line 101, ../../sass/bootstrap/_kozea.sass */
-body section#banner h2 {
+/* line 102, ../../sass/bootstrap/_kozea.sass */
+body section#banner h2 span.slogan {
   border-bottom: 1px solid #2e2f3a;
   -webkit-box-shadow: 0 1px 0 #444756;
   box-shadow: 0 1px 0 #444756;
   color: #17181d;
   display: inline-block;
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
   padding-bottom: 1em;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
 }
-/* line 112, ../../sass/bootstrap/_kozea.sass */
+/* line 115, ../../sass/bootstrap/_kozea.sass */
 body section#banner small {
   color: #848691;
   display: block;
 }
-/* line 116, ../../sass/bootstrap/_kozea.sass */
+/* line 119, ../../sass/bootstrap/_kozea.sass */
 body section#banner:before {
   background: #f1f1f1;
 }
-/* line 119, ../../sass/bootstrap/_kozea.sass */
+/* line 122, ../../sass/bootstrap/_kozea.sass */
 body section#web {
   padding-left: 6%;
   padding-right: 6%;
 }
-/* line 123, ../../sass/bootstrap/_kozea.sass */
+/* line 126, ../../sass/bootstrap/_kozea.sass */
 body section#web:before {
   background: #393b48;
 }
-/* line 126, ../../sass/bootstrap/_kozea.sass */
+/* line 129, ../../sass/bootstrap/_kozea.sass */
 body section#web h2 {
   background: #608485;
   border-bottom-right-radius: 15px;
@@ -190,7 +192,7 @@ body section#web h2 {
   position: relative;
   color: #4b6767;
 }
-/* line 137, ../../sass/bootstrap/_kozea.sass */
+/* line 140, ../../sass/bootstrap/_kozea.sass */
 body section#web h2:after {
   position: absolute;
   content: "";
@@ -206,23 +208,23 @@ body section#web h2:after {
   margin-left: -0.5em;
   z-index: -1;
 }
-/* line 151, ../../sass/bootstrap/_kozea.sass */
+/* line 154, ../../sass/bootstrap/_kozea.sass */
 body section#web article {
   padding: 0 4% 20px;
   width: 29%;
   display: table-cell;
   text-align: center;
 }
-/* line 157, ../../sass/bootstrap/_kozea.sass */
+/* line 160, ../../sass/bootstrap/_kozea.sass */
 body section#web article p {
   text-align: justify;
 }
-/* line 160, ../../sass/bootstrap/_kozea.sass */
+/* line 163, ../../sass/bootstrap/_kozea.sass */
 body section#web article h3 {
   color: #608485;
   text-align: center;
 }
-/* line 164, ../../sass/bootstrap/_kozea.sass */
+/* line 167, ../../sass/bootstrap/_kozea.sass */
 body section#web article h3:before {
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
@@ -235,7 +237,7 @@ body section#web article h3:before {
   display: block;
   margin: 0 auto 10px;
 }
-/* line 175, ../../sass/bootstrap/_kozea.sass */
+/* line 178, ../../sass/bootstrap/_kozea.sass */
 body section#libre {
   background: orange;
 }

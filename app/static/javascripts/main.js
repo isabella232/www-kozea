@@ -8,12 +8,13 @@ $(function() {
     }, 1500);
     return false;
   });
-  $("#main-menu").on('activate.bs.scrollspy', function(e) {
-    console.log($(e.target).children('a').attr('href'));
-    if ($(e.target).children('a').attr('href') !== "#web") {
-      $(this).addClass('fixed');
+  $(document).on('scroll', function() {
+    console.log($(document).scrollTop());
+    console.log($('#banner').offset().top);
+    if ($(document).scrollTop() < $("#banner").offset().top) {
+      return $("#main-menu").removeClass('fixed');
     } else {
-      $(this).removeClass('fixed');
+      return $("#main-menu").addClass('fixed');
     }
   });
 });
