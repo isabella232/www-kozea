@@ -8,8 +8,8 @@ $ ->
     $(document).on('scroll', ->
         title = $("#header-title")
         if $(document).scrollTop() < title.offset().top + title.height()
-            $("#main-menu").removeClass('fixed')
+            $("#main-header").removeClass('fixed')
         else
-            $("#main-menu").addClass('fixed')
+            $("#main-header").addClass('fixed')
     )
     return
