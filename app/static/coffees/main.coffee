@@ -9,6 +9,7 @@ $ ->
         position = $("#switch")
         if $(document).scrollTop() < position.offset().top + position.height()
             $("#main-menu").removeClass('fixed')
+            $(".nav").children('li').removeClass('active')
         else
             $("#main-menu").addClass('fixed')
     )
