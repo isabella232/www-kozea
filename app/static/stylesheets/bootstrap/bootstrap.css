@@ -225,6 +225,7 @@ body section#web, body section#libre {
 body section#web h2, body section#libre h2 {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.5);
   display: inline-block;
   margin: 1em 0 1em -7%;
   padding: 0.2em 1.3em 0.2em 12%;
@@ -232,7 +233,7 @@ body section#web h2, body section#libre h2 {
   z-index: 5;
   position: relative;
 }
-/* line 172, ../../sass/bootstrap/_kozea.sass */
+/* line 173, ../../sass/bootstrap/_kozea.sass */
 body section#web h2:after, body section#libre h2:after {
   position: absolute;
   content: "";
@@ -247,36 +248,36 @@ body section#web h2:after, body section#libre h2:after {
   margin-left: -0.5em;
   z-index: -1;
 }
-/* line 186, ../../sass/bootstrap/_kozea.sass */
+/* line 187, ../../sass/bootstrap/_kozea.sass */
 body section#web:before {
   background: #393b48;
 }
-/* line 189, ../../sass/bootstrap/_kozea.sass */
+/* line 190, ../../sass/bootstrap/_kozea.sass */
 body section#web h2 {
   background: #608485;
   color: #4b6767;
 }
-/* line 193, ../../sass/bootstrap/_kozea.sass */
+/* line 194, ../../sass/bootstrap/_kozea.sass */
 body section#web h2:after {
   background: #608485;
 }
-/* line 197, ../../sass/bootstrap/_kozea.sass */
+/* line 198, ../../sass/bootstrap/_kozea.sass */
 body section#web article {
   padding: 0 4% 20px;
   width: 29%;
   display: table-cell;
   text-align: center;
 }
-/* line 203, ../../sass/bootstrap/_kozea.sass */
+/* line 204, ../../sass/bootstrap/_kozea.sass */
 body section#web article p {
   text-align: justify;
 }
-/* line 206, ../../sass/bootstrap/_kozea.sass */
+/* line 207, ../../sass/bootstrap/_kozea.sass */
 body section#web article h3 {
   color: #608485;
   text-align: center;
 }
-/* line 210, ../../sass/bootstrap/_kozea.sass */
+/* line 211, ../../sass/bootstrap/_kozea.sass */
 body section#web article h3:before {
   border-bottom-left-radius: 100%;
   border-top-left-radius: 100%;
@@ -289,17 +290,17 @@ body section#web article h3:before {
   display: block;
   margin: 0 auto 10px;
 }
-/* line 221, ../../sass/bootstrap/_kozea.sass */
+/* line 222, ../../sass/bootstrap/_kozea.sass */
 body section#libre {
   background: orange;
   color: white;
 }
-/* line 225, ../../sass/bootstrap/_kozea.sass */
+/* line 226, ../../sass/bootstrap/_kozea.sass */
 body section#libre h2 {
   background: #e9e9e9;
   color: #d0d0d0;
 }
-/* line 229, ../../sass/bootstrap/_kozea.sass */
+/* line 230, ../../sass/bootstrap/_kozea.sass */
 body section#libre h2:after {
   background: #e9e9e9;
 }
