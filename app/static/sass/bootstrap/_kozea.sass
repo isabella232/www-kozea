@@ -12,29 +12,27 @@ body
 
     hr
       height: 0
+      margin: 0
+      border: none
 
     &.fixed
-      background: #f1f1f1
-      +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
-      z-index: 50
-
       h1
-        position: fixed
         background: none
-        top: 10px
-        left: 10px
-        height: 60px
+        position: fixed
+        z-index: 50
 
         a
           background: url(images/logo-kozea-small.png) no-repeat top left
           background-size: 60px
           height: 60px
           width: 60px
-          display: block
 
       nav#main-menu
+        background: #f1f1f1
+        +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
         position: fixed
-        margin-bottom: 26px
+        right: 0
+        width: 100%
 
     h1
       background: url(images/logo-kozea.png) no-repeat top center
@@ -44,11 +42,11 @@ body
       a
         color: transparent
         font-size: 0
+        display: block
 
 
     nav
       &#main-menu
-        margin-bottom: 50px
         text-align: right
 
         ul
@@ -157,7 +155,7 @@ body
       &:before
         background: #f1f1f1
 
-    &#web, &#libre
+    &#web, &#libre, &#community
       padding-left: 6%
       padding-right: 6%
 
@@ -230,3 +228,24 @@ body
 
         &:after
           background: $gray-lighten
+
+    &#community
+
+
+  footer
+    background-color: #393b48
+    border-top: 5px solid #608485
+    font-family: Verdana, sans-serif
+    color: #fff
+
+
+    ul
+      padding: 0.2em 0
+      text-align: center
+
+      li
+        color: #fff
+        display: inline-block
+
+        a
+          color: #fff
