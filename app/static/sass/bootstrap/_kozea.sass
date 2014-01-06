@@ -6,20 +6,18 @@
 body
   border-top: 12px solid $gray-lighten
 
-
   nav
     &#main-menu
       height: 80px
       text-align: right
       position: absolute
-      top: 0
+      top: 300px
       right: 0
 
       > a
         display: none
 
       &.fixed
-        background: #f1f1f1
         +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
         position: fixed
         right: 0
@@ -39,7 +37,9 @@ body
           margin: 10px 0 0 10px
 
       ul
-        display: inline-block
+        background: #f1f1f1
+        width: 100%
+        height: 80px
 
         &:after
           background: $gray-lighten
@@ -98,6 +98,7 @@ body
 
   header
     +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
+    padding-bottom: 120px
 
     hr
       height: 0
@@ -116,10 +117,13 @@ body
     +box-shadow(0 -10px 10px -10px rgba(0, 0, 0, 0.5) inset)
     padding: 50px 10%
 
+
     h2
       font-family: "Ancillary"
       font-size: 1.8em
       font-weight: bold
+      
+
 
     &:before
       content: ''
