@@ -10,69 +10,100 @@ body
   header
     +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
 
+    &.fixed
+      background: #f1f1f1
+      +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
+      position: fixed
+      width: 100%
+      top: 0
+      z-index: 50
+
+      h1
+        background: none
+        position: absolute
+        top: 10px
+        left: 10px
+        height: 60px
+
+        a
+          background: url(images/logo-kozea-small.png) no-repeat top left
+          background-size: 60px
+          height: 60px
+          width: 60px
+          display: block
+
+      nav#main-menu
+        margin-bottom: 26px
+
     h1
       background: url(images/logo-kozea.png) no-repeat top center
-      color: transparent
-      font-size: 0
       height: 280px
       margin: 0
 
+      a
+        color: transparent
+        font-size: 0
 
-  nav
-    &#main-menu
-      margin-bottom: 50px
-      text-align: right
 
-      ul
-        display: inline-block
+    nav
+      &#main-menu
+        margin-bottom: 50px
+        text-align: right
 
-        &:after
-          background: $gray-lighten
-          +border-left-radius(10px)
-          +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
-          content: ''
-          display: block
-          height: 8px
-          width: 100%
-
-        li
+        ul
           display: inline-block
-          font-size: 1em
-          text-align: center
-          width: 140px
-
-          &:after, &:before
-            +border-left-radius(100%)
-            +border-right-radius(100%)
-            +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
-            content: ''
-            display: block
 
           &:after
             background: $gray-lighten
-            height: 30px
-            margin: 0 auto -18px
-            width: 30px
+            +border-left-radius(10px)
+            +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
+            content: ''
+            display: block
+            height: 8px
+            width: 100%
 
-          &:before
-            background: #cccccc
-            height: 12px
-            left: 45%
-            position: absolute
-            top: 94%
-            width: 12px
+          li
+            display: inline-block
+            font-size: 1em
+            text-align: center
+            width: 140px
 
-          &.active
-            &:before
-              background: orange
+            a
+              text-transform: uppercase
+              color: #9b9b9b
+              font-weight: bold
 
-          a
-            text-transform: uppercase
-            color: #9b9b9b
-            font-weight: bold
+              &:hover, &:focus
+                background: none
 
-            &:hover, &:focus
-              background: none
+              &:after, &:before
+                +border-left-radius(100%)
+                +border-right-radius(100%)
+                +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
+                content: ''
+                display: block
+
+              &:after
+                background: $gray-lighten
+                height: 30px
+                margin: 0 auto -28px
+                width: 30px
+
+              &:before
+                background: #cccccc
+                height: 12px
+                left: 45%
+                margin-bottom: -9px
+                position: absolute
+                top: 94%
+                width: 12px
+
+            &.active
+              a
+                color: orange
+
+                &:before
+                  background: orange
 
 
   section
@@ -95,25 +126,28 @@ body
       width: 50px
 
     &#banner
-      background: #393b48Your projects,
-
+      background: #393b48 url(images/bg-logo.png) no-repeat bottom right
       text-align: center
 
       h2
-        font-size: 3.5em
+        background: url(images/kozea.png) no-repeat top left
+        font-size: 0
+        height: 70px
+        color: transparent
+        margin-left: -11%
 
-        span.slogan
-          border-bottom: 1px solid darken(#393b48, 5%)
-          +box-shadow(0 1px 0 lighten(#393b48, 5%))
-          color: darken(#393b48, 15%)
-          display: inline-block
-          font-weight: bold
-          font-size: 1em
-          margin-bottom: 0.5em
-          padding-left: 1em
-          padding-right: 1em
-          padding-bottom: 1em
-          text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1)
+      .slogan
+        border-bottom: 1px solid darken(#393b48, 5%)
+        +box-shadow(0 1px 0 lighten(#393b48, 5%))
+        color: darken(#393b48, 15%)
+        display: block
+        font-weight: bold
+        font-size: 3.5em
+        margin-bottom: 0.5em
+        padding-left: 1em
+        padding-right: 1em
+        padding-bottom: 0.5em
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1)
 
       small
         color: #848691
@@ -122,28 +156,23 @@ body
       &:before
         background: #f1f1f1
 
-    &#web
+    &#web, &#libre
       padding-left: 6%
       padding-right: 6%
 
-      &:before
-        background: #393b48
-
       h2
-        background: #608485
         +border-right-radius(15px)
+        text-shadow: -1px -1px rgba(0, 0, 0, 0.5)
         display: inline-block
         margin: 1em 0 1em -7%
         padding: 0.2em 1.3em 0.2em 12%
         text-transform: uppercase
         z-index: 5
         position: relative
-        color: darken(#608485, 10%)
 
         &:after
           position: absolute
           content: ''
-          background: #608485
           height: 3em
           width: 3em
           display: block
@@ -152,6 +181,18 @@ body
           margin-top: -2em
           margin-left: -0.5em
           z-index: -1
+
+
+    &#web
+      &:before
+        background: #393b48
+
+      h2
+        background: #608485
+        color: darken(#608485, 10%)
+
+        &:after
+          background: #608485
 
 
       article
@@ -180,3 +221,11 @@ body
 
     &#libre
       background: orange
+      color: #fff
+
+      h2
+        background: $gray-lighten
+        color: darken($gray-lighten, 10%)
+
+        &:after
+          background: $gray-lighten

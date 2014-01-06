@@ -12,9 +12,9 @@ $(function() {
     var title;
     title = $("#header-title");
     if ($(document).scrollTop() < title.offset().top + title.height()) {
-      return $("#main-menu").removeClass('fixed');
+      return $("#main-header").removeClass('fixed');
     } else {
-      return $("#main-menu").addClass('fixed');
+      return $("#main-header").addClass('fixed');
     }
   });
 });
