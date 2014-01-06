@@ -6,8 +6,8 @@ $ ->
         }, 1500
         return false
     $(document).on('scroll', ->
-        title = $("#header-title")
-        if $(document).scrollTop() < title.offset().top + title.height()
+        position = $("#switch")
+        if $(document).scrollTop() < position.offset().top + position.height()
             $("#main-header").removeClass('fixed')
         else
             $("#main-header").addClass('fixed')
