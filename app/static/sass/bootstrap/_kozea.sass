@@ -7,6 +7,75 @@ body
   border-top: 12px solid $gray-lighten
 
 
+  nav
+    &#main-menu
+      height: 80px
+      text-align: right
+
+      &.fixed 
+        background: #f1f1f1
+        +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
+        position: fixed
+        right: 0
+        width: 100%
+        top: 0
+
+      ul
+        display: inline-block
+
+        &:after
+          background: $gray-lighten
+          +border-left-radius(10px)
+          +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
+          content: ''
+          display: block
+          height: 8px
+          width: 100%
+
+        li
+          display: inline-block
+          font-size: 1em
+          text-align: center
+          width: 140px
+
+          a
+            text-transform: uppercase
+            color: #9b9b9b
+            font-weight: bold
+
+            &:hover, &:focus
+              background: none
+
+            &:after, &:before
+              +border-left-radius(100%)
+              +border-right-radius(100%)
+              +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
+              content: ''
+              display: block
+
+            &:after
+              background: $gray-lighten
+              height: 30px
+              margin: 0 auto -28px
+              width: 30px
+
+            &:before
+              background: #cccccc
+              height: 12px
+              left: 45%
+              margin-bottom: -9px
+              position: absolute
+              top: 94%
+              width: 12px
+
+          &.active
+            a
+              color: orange
+
+              &:before
+                background: orange
+
+
   header
     +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
 
@@ -15,95 +84,13 @@ body
       margin: 0
       border: none
 
-    &.fixed
-      h1
-        background: none
-        position: fixed
-        z-index: 50
-
-        a
-          background: url(images/logo-kozea-small.png) no-repeat top left
-          background-size: 60px
-          height: 60px
-          width: 60px
-
-      nav#main-menu
-        background: #f1f1f1
-        +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
-        position: fixed
-        right: 0
-        width: 100%
 
     h1
       background: url(images/logo-kozea.png) no-repeat top center
       height: 280px
       margin: 0
-
-      a
-        color: transparent
-        font-size: 0
-        display: block
-
-
-    nav
-      &#main-menu
-        text-align: right
-
-        ul
-          display: inline-block
-
-          &:after
-            background: $gray-lighten
-            +border-left-radius(10px)
-            +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
-            content: ''
-            display: block
-            height: 8px
-            width: 100%
-
-          li
-            display: inline-block
-            font-size: 1em
-            text-align: center
-            width: 140px
-
-            a
-              text-transform: uppercase
-              color: #9b9b9b
-              font-weight: bold
-
-              &:hover, &:focus
-                background: none
-
-              &:after, &:before
-                +border-left-radius(100%)
-                +border-right-radius(100%)
-                +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
-                content: ''
-                display: block
-
-              &:after
-                background: $gray-lighten
-                height: 30px
-                margin: 0 auto -28px
-                width: 30px
-
-              &:before
-                background: #cccccc
-                height: 12px
-                left: 45%
-                margin-bottom: -9px
-                position: absolute
-                top: 94%
-                width: 12px
-
-            &.active
-              a
-                color: orange
-
-                &:before
-                  background: orange
-
+      color: transparent
+      font-size: 0
 
   section
     +box-shadow(0 -10px 10px -10px rgba(0, 0, 0, 0.8) inset)
@@ -229,7 +216,6 @@ body
         &:after
           background: $gray-lighten
 
-    &#community
 
 
   footer
