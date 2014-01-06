@@ -10,17 +10,17 @@ body
   header
     +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
 
+    hr
+      height: 0
+
     &.fixed
       background: #f1f1f1
       +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
-      position: fixed
-      width: 100%
-      top: 0
       z-index: 50
 
       h1
+        position: fixed
         background: none
-        position: absolute
         top: 10px
         left: 10px
         height: 60px
@@ -33,6 +33,7 @@ body
           display: block
 
       nav#main-menu
+        position: fixed
         margin-bottom: 26px
 
     h1
