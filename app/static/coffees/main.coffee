@@ -8,8 +8,9 @@ $ ->
     $(document).on('scroll', ->
         position = $("#switch")
         if $(document).scrollTop() < position.offset().top + position.height()
-            $("#main-header").removeClass('fixed')
+            $("#main-menu").removeClass('fixed')
+            $(".nav").children('li').removeClass('active')
         else
-            $("#main-header").addClass('fixed')
+            $("#main-menu").addClass('fixed')
     )
     return
