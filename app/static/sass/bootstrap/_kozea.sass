@@ -4,20 +4,22 @@
 +font-face("Ancillary", "fonts/Ancillary-BoldItalic", "Ancillary", 700, italic)
 
 body
-  border-top: 12px solid $gray-lighten
+  border-top: 12px solid #f1f1f1
 
+  /* -
+  /* - Navigation -
+  /* - */
   nav
     &#main-menu
       height: 80px
       text-align: right
       position: absolute
-      top: 300px
+      top: 150px
       right: 0
 
-      > a
-        display: none
-
+      /* - position fixed - */
       &.fixed
+        background: #f1f1f1
         +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
         position: fixed
         right: 0
@@ -25,21 +27,31 @@ body
         top: 0
         z-index: 50
 
-        > a
-          height: 60px
-          width: 60px
-          display: block
-          float: left
-          background: url(images/logo-kozea-small.png) no-repeat top left
-          background-size: 60px
-          font-size: 0
-          color: transparent
-          margin: 10px 0 0 10px
+        ul li#main-header
+          a
+            height: 60px
+            width: 60px
+            display: block
+            background: url(images/logo-kozea-small.png) no-repeat top left
+            background-size: 60px
+            font-size: 0
+            color: transparent
+            position: fixed
+            top: 10px
+            left: 10px
 
       ul
-        background: #f1f1f1
-        width: 100%
+        display: inline-block
         height: 80px
+
+        li#main-header
+          width: 0
+
+          a
+            display: none
+
+            &:after, &:before
+              display: none
 
         &:after
           background: $gray-lighten
@@ -96,34 +108,50 @@ body
                 background: orange
 
 
+  /* - 
+  /* - HEADER -
+  /* - */
   header
-    +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.3) inset)
-    padding-bottom: 120px
+    background: #393b48
+    +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5) inset)
+
+    &:before
+      background: #f1f1f1
+      content: ''
+      +border-right-radius(100%)
+      +border-left-radius(100%)
+      display: block
+      height: 60px
+      left: 50%
+      margin-left: -30px
+      position: absolute
+      top: -20px
+      width: 60px
 
     hr
       height: 0
       margin: 0
       border: none
 
-
     h1
-      background: url(images/logo-kozea.png) no-repeat top center
-      height: 280px
+      background: url(images/kozea.png) no-repeat 10px 10px
+      height: 100px
       margin: 0
       color: transparent
       font-size: 0
 
+
+  /* - 
+  /* - SECTION -
+  /* - */
   section
     +box-shadow(0 -10px 10px -10px rgba(0, 0, 0, 0.5) inset)
     padding: 50px 10%
-
 
     h2
       font-family: "Ancillary"
       font-size: 1.8em
       font-weight: bold
-      
-
 
     &:before
       content: ''
@@ -134,88 +162,143 @@ body
       margin: -80px auto 0
       width: 60px
 
+    /* - Banner top - */
     &#banner
       background: #393b48 url(images/bg-logo.png) no-repeat bottom right
       text-align: center
+      padding: 50px 10%
 
       h2
-        background: url(images/kozea.png) no-repeat top left
         font-size: 0
-        height: 70px
         color: transparent
-        margin-left: -11%
 
       .slogan
         border-bottom: 1px solid darken(#393b48, 5%)
         +box-shadow(0 1px 0 lighten(#393b48, 5%))
-        color: darken(#393b48, 15%)
+        color: #f1f1f1
         display: block
         font-weight: bold
-        font-size: 3.5em
+        font-size: 60px
         margin-bottom: 0.5em
+        margin-top: 100px
         padding-left: 1em
         padding-right: 1em
         padding-bottom: 0.5em
-        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1)
 
-      small
+      p
         color: #848691
         display: block
+        font-size: 1.1em
+        text-align: justify
 
-      &:before
-        background: #f1f1f1
-
-    &#web, &#libre, &#community, &#contact
-      padding-left: 6%
-      padding-right: 6%
+    &#web, &#libre, &#team, &#contact, &#reference
+      padding-left: 0
+      padding-right: 0
 
       h2
-        +border-right-radius(8px)
-        display: inline-block
         font-size: 2em
-        margin: 1em 0 2em -7%
-        padding: 0.2em 1.3em 0.2em 12%
         position: relative
-        text-shadow: -1px -1px rgba(0, 0, 0, 0.5)
+        +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
         text-transform: uppercase
-        z-index: 5
+        z-index: 15
+        margin-bottom: 100px
+        position: relative
+        width: 250px
+        text-align: center
+
+        &:before, &:after
+          content: ''
+          display: block
+          left: 50%
+          position: absolute
+
+
+        &:before 
+          bottom: -15px
+          height: 15px
+          margin-left: -50%
+          top: 65px
+          background: #dedede
+          +border-right-radius(10px)
+          +box-shadow(1px 1px 1px rgba(0, 0, 0, 0.5) inset)
+          width: 100%
+          z-index: 3
 
         &:after
           +border-left-radius(100%)
           +border-right-radius(100%)
-          content: ''
-          display: block
           height: 3em
-          margin-left: -0.5em
-          margin-top: -2em
-          position: absolute
+          margin-left: -1.5em
           width: 3em
-          z-index: -1
+          z-index: 3
+
+    &#contact
+      article
+        width: 20%
+        padding: 0 4% 20px
+
+    /* - Web - */
+    &#web
+      article
+        border-right: 1px solid darken(#f1f1f1, 5%)
+        +box-shadow(1px 0 0 lighten(#f1f1f1, 5%))
+        padding: 0 2% 40px
+        width: 23%
+
+        h3
+          height: 200px
+          margin-bottom: 20px
+
+        &:hover, &:focus
+          p
+            color: orange
+
+          a.more
+            &:after
+              background: orange
+
+        &:last-of-type
+          border: none
+          +box-shadow(none)
+
+        a.more
+          bottom: 5px
+          color: transparent
+          font-size: 0
+          position: absolute
+          right: 5px
+
+          &:before
+            color: #fff
+            content: '+'
+            font-size: 16px
+            font-weight: bold
+
+          &:after
+            background: darken(#dedede, 10%)
+            +border-right-radius(100%)
+            +border-left-radius(100%)
+            content: ''
+            display: block
+            height: 30px
+            margin-top: -25px
+            width: 30px
+
 
     &#web, &#contact
       h2
-        background: #608485
         color: darken(#608485, 10%)
 
         &:after
-          background: #608485
+          background: #dedede
 
 
-    &#web
-      &:before
-        background: #393b48
-
+    &#web, &#contact
       article
-        padding: 0 4% 20px
-        width: 29%
         display: table-cell
         text-align: center
 
-        p
-          text-align: justify
-
         h3
-          color: #608485
           position: relative
           text-align: center
           padding-top: 150px
@@ -225,12 +308,10 @@ body
             +border-right-radius(100%)
             content: ''
             display: block
-            position: absolute
             left: 50%
-
+            position: absolute
 
           &:after
-            background: orange
             height: 100px
             margin-left: -50px
             top: 11px
@@ -245,53 +326,265 @@ body
             top: 0
             width: 122px
 
+    /* ---------------
+    /* - SECTION WEB -
+    /* ---------------
+    &#web, &#contact
+      &:before
+        background: #393b48
 
+      article
+        position: relative
+
+        &:hover, &:focus
+          h3
+            &:after
+              background: orange
+
+        p
+          text-align: justify
+
+        h3
+          color: #608485
+
+          &:after
+            background: #608485
+
+        &:after
+          height: 70px
+          left: 50%
+          margin-left: -35px
+          position: absolute
+          top: 45px
+          width: 70px
+
+        &#website:after
+          content: url(images/website.png)
+
+        &#webdesign:after
+          content: url(images/web-design.png)
+
+        &#elearning:after
+          content: url(images/elearning.png)
+
+        &#questionnary:after
+          content: url(images/idea.png)
 
 
     &#libre
-      background: #f28e00
-      color: #fff
+      ul li a
+        display: block
+        height: 120px
+        width: 250px
 
-      &:before 
-        background: #f1f1f1
+        span
+          display: none
 
+        &:hover, &:focus
+          span
+            display: block
+            height: 120px
+            overflow: hidden
+
+    &#libre
       h2
-        background: $gray-lighten
         color: darken($gray-lighten, 10%)
 
         &:after
           background: $gray-lighten
 
 
-    &#community
-      &:before 
-        background: #f28e00
-
-      h2
-        background: #393b48
-
-    &#contact
+    /* -----------------
+    /* - SECTION LIBRE -
+    /* -----------------
+    &#libre
       background: #608485
       color: #fff
 
       &:before
         background: #f1f1f1
 
+      ul
+        margin: 0
+        padding: 0
+        font-size: 0
+        text-align: justify
+
+        li
+          font-size: 14px
+          display: inline-block
+          width: 29%
+          margin: 10px 2%
+
+
+    /* ---------------------
+    /* - SECTION TEAM -
+    /* ---------------------
+    &#team
+      background: #608485
+
+      p 
+        color: #fff
+
+      &:before
+        background: #f1f1f1
+
+
+
+    /* -------------------
+    /* - SECTION CONTACT -
+    /* -------------------
+    &#contact
+      background: #f1f1f1
+      color: #5a5a5a
+
+      &:before
+        background: #608485
+
+      article
+        position: relative
+
+        &:after
+          height: 70px
+          width: 70px
+          display: block
+          position: absolute
+          top: 40px
+          left: 50%
+          margin-left: -35px
+
+        &.address:after
+          content: url(images/postal.png)
+
+        &.email:after
+          content: url(images/mail.png)
+
+        &.phone:after
+          content: url(images/phone.png)
+
+
+        dl, blockquote
+          border-right: 1px solid darken(#f1f1f1, 5%)
+          +box-shadow(1px 0 0 lighten(#f1f1f1, 5%))
+          height: 200px
+
+        &:last-child
+          dl, blockquote
+            border: none
+            +box-shadow(none)
+
+        h3
+          color: #608485
+          +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
+
+          &:after
+            background: orange
+
+          &:before
+            background: #dedede
+            +box-shadow(none)
+
+        p, dl, blockquote
+          text-align: left
+
+        a
+          color: #608485
+
+        dl, blockquote
+          font-size: 1.1em
+
+        dl
+          dt
+            margin-bottom: 0.5em
+            margin-left: 1em
+
+
+    /* ---------------------
+    /* - SECTION TEAM -
+    /* ---------------------
+    &#reference
+      &:before
+        background: #608485
+
+      h2
+        color: orange
+
+        &:after
+          background: #dedede
+
+      p 
+        padding: 0 6%
+
+      ul
+        font-size: 0
+        padding: 0 6%
+        text-align: justify
+
+        li
+          background-color: #fff
+          background-repeat: no-repeat
+          background-position: center center
+          border: 5px solid darken(#f1f1f1, 5%)
+          +border-right-radius(10px 0)
+          +box-shadow(1px 1px 0 #fff, 2px 2px 2px rgba(0, 0, 0, 0.2) inset)
+          color: transparent
+          display: inline-block
+          height: 110px
+          margin: 10px 2%
+          padding: 5px
+          width: 310px
+
+          &.odialis
+            background-image: url(images/odialis.jpg)
+
+          &.tpa
+            background-image: url(images/logotpa.png)
+
+          &.safety-network
+            background-image: url(images/safety-network.png)
+
+          &.mylan
+            background-image: url(images/mylan.png)
+            background-size: 200px
+
+          &.bailly-creat
+            background-image: url(images/bailly_creat.png)
+
+          &.sanofi
+            background-image: url(images/sanofi-pasteur.png)
+
+          &.aepk
+            background-image: url(images/aepk.png)
+
+
 
   footer
     background: #393b48
-    border-top: 5px solid #608485
     font-family: Verdana, sans-serif
-    color: #fff
-
+    color: darken(#393b48, 10%)
 
     ul
-      padding: 0.2em 0
+      padding: 1em 0
       text-align: center
 
       li
-        color: #fff
+        color: darken(#393b48, 10%)
         display: inline-block
+        font-weight: bold
+        +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
+
+        &:after
+          content: '|'
+          display: inline-block
+          padding-left: 0.5em
+          padding-right: 0.1em
+
+
+        &:last-child:after
+          content: ''
 
         a
-          color: #fff
+          color: darken(#393b48, 10%)
+
+          &:hover, &:focus
+            color: orange
