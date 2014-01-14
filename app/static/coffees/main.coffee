@@ -16,12 +16,7 @@ $ ->
     )
 
     $(window).bind 'load resize', ->
-        if (matchMedia('all and (max-width: 970px)').matches)
-            if ($('#navigation-menu').length == 0)
-                $('#main-menu').wrap("<div id='navigation-menu'/>")
-                $('#navigation-menu').on 'click', ->
-                    $(@).toggleClass('active')
-                    $(@).children().slideToggle()
-        else
-            $('#main-menu').unwrap()
+        $('#navigation-dropdown').on 'click', ->
+            $(@).toggleClass('active')
+            $('#main-menu').slideToggle()
         return
