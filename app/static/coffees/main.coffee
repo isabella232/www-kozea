@@ -15,8 +15,7 @@ $ ->
             $("#main-menu").addClass('fixed')
     )
 
-    $(window).bind 'load resize', ->
-        $('#navigation-dropdown').on 'click', ->
-            $(@).toggleClass('active')
-            $('#main-menu').slideToggle()
-        return
+    $('#navigation-dropdown').on 'click', ->
+        $(@).toggleClass('active')
+        $('#main-menu').slideToggle()
+    return
