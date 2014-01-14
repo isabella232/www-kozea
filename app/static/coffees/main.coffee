@@ -15,10 +15,13 @@ $ ->
             $("#main-menu").addClass('fixed')
     )
 
-    if (matchMedia('all and (max-width: 678px)').matches)
-        $('#main-menu').wrap("<div id='XL-burger-menu'/>")
-        $('#XL-burger-menu').children().hide()
-        $('#XL-burger-menu').on 'click', ->
-            $(@).toggleClass('active')
-            $(@).children().slideToggle()
+    $(window).bind 'load resize', ->
+        width = $(window).width()
+        if (matchMedia('all and (max-width: 678px)').matches)
+            $('#main-menu').wrap("<div id='navigation-menu'/>")
+            $('#navigation-menu').on 'click', ->
+                $(@).toggleClass('active')
+                $(@).children().slideToggle()
+        else
+            $('#main-menu').unwrap("<div id='navigation-menu'/>")
         return
