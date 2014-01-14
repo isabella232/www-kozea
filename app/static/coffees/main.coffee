@@ -17,11 +17,11 @@ $ ->
 
     $(window).bind 'load resize', ->
         if (matchMedia('all and (max-width: 970px)').matches)
-            $('#main-menu').unwrap()
-            $('#main-menu').wrap("<div id='navigation-menu'/>")
-            $('#navigation-menu').on 'click', ->
-                $(@).toggleClass('active')
-                $(@).children().slideToggle()
+            if ($('#navigation-menu').length == 0)
+                $('#main-menu').wrap("<div id='navigation-menu'/>")
+                $('#navigation-menu').on 'click', ->
+                    $(@).toggleClass('active')
+                    $(@).children().slideToggle()
         else
             $('#main-menu').unwrap()
         return
