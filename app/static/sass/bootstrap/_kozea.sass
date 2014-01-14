@@ -661,15 +661,26 @@ body
     button#navigation-dropdown
       background: linear-gradient(#393b48, darken(#393b48, 8%))
       border: 1px solid darken(#393b48, 8%)
+      +box-shadow(0 1px 1px rgba(255, 255, 255, 0.7) inset)
       width: 30px
       height: 30px
       display: block
       position: absolute
       +border-left-radius(5px)
       +border-right-radius(5px)
-      border: none
       top: 5px
       right: 20px
+
+      &:hover, &:focus
+        background: linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
+        border-color: #393b48
+
+      &:before
+        content: url(images/icon-lenu.png)
+        display: block
+        padding-top: 4px
+        margin-left: -1px
+
 
     /* -
     /* - Navigation -
