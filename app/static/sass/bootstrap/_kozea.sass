@@ -6,6 +6,9 @@
 body
   border-top: 12px solid #f1f1f1
 
+  button
+    display: none
+
   /* -
   /* - Navigation -
   /* - */
@@ -17,6 +20,50 @@ body
       top: 150px
       right: 0
 
+      ul li
+        & + li a:after
+          content: url(images/icon-web.png)
+
+        & + li + li a:after
+          content: url(images/icon-libre.png)
+
+        & + li + li + li a:after
+          content: url(images/icon-phone.png)
+
+        & + li + li + li + li a:after
+          content: url(images/icon-team.png)
+
+        & + li + li + li + li +li  a:after
+          content: url(images/icon-reference.png)
+
+
+        a
+          color: $gray-lighten
+
+          &:after, &:before
+            +border-left-radius(100%)
+            +border-right-radius(100%)
+            content: ''
+            display: block
+            left: 50%
+            position: absolute
+            top: 30px
+
+          &:after
+            background: none
+            height: 60px
+            margin-left: -25px
+            top: 35px
+            width: 60px
+
+          &:before
+            background: $gray-lighten
+            +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
+            height: 70px
+            margin-left: -30px
+            width: 70px
+
+
       /* - position fixed - */
       &.fixed
         background: #f1f1f1
@@ -27,18 +74,47 @@ body
         width: 100%
         z-index: 50
 
-        ul li#main-header
+        ul li
           a
-            background: url(images/logo-kozea-small.png) no-repeat top left
-            background-size: 60px
-            color: transparent
-            display: block
-            font-size: 0
-            height: 60px
-            left: 10px
-            position: fixed
-            top: 10px
-            width: 60px
+            &:first-child
+              &:before
+                content: ''
+
+            &:hover, &:focus
+              color: orange
+
+              &:before
+                background: orange
+
+            &:after
+              background: $gray-lighten
+              bottom: -20px
+              height: 30px
+              margin-left: -15px
+              width: 30px
+              content: ''
+
+            &:before
+              background: #cccccc
+              bottom: -12px
+              height: 12px
+              margin-left: -6px
+              width: 12px
+              top: 38px
+              z-index: 5
+
+          &#main-header
+            a
+              background: url(images/logo-kozea-small.png) no-repeat top left
+              background-size: 60px
+              color: transparent
+              display: block
+              font-size: 0
+              height: 60px
+              left: 10px
+              position: fixed
+              top: 10px
+              width: 60px
 
       ul
         display: inline-block
@@ -60,6 +136,7 @@ body
           content: ''
           display: block
           height: 8px
+          margin-top: 22px
           width: 100%
 
         li
@@ -75,30 +152,6 @@ body
 
             &:hover, &:focus
               background: none
-
-            &:after, &:before
-              +border-left-radius(100%)
-              +border-right-radius(100%)
-              +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
-              content: ''
-              display: block
-              left: 50%
-              position: absolute
-
-            &:after
-              background: $gray-lighten
-              bottom: -20px
-              height: 30px
-              margin-left: -15px
-              width: 30px
-
-            &:before
-              background: #cccccc
-              bottom: -12px
-              height: 12px
-              margin-left: -6px
-              width: 12px
-              z-index: 5
 
           &.active
             a
@@ -180,7 +233,7 @@ body
         font-size: 60px
         font-weight: bold
         margin-bottom: 0.5em
-        margin-top: 100px
+        margin-top: 140px
         padding: 0 1em 0.5em
 
       p
@@ -240,6 +293,9 @@ body
 
     /* - Web - */
     &#web
+      h2
+        background: url(images/icon-web.png) no-repeat bottom center
+
       p
         padding: 3px 4%
 
@@ -598,15 +654,45 @@ body
 
 @media(max-width: 970px)
   body
+    border: none
+    padding-top: 40px !important
+    background: #f1f1f1
 
-  /* -
-  /* - Navigation -
-  /* - */
+    button#navigation-dropdown
+      background: linear-gradient(#393b48, darken(#393b48, 8%))
+      border: 1px solid darken(#393b48, 8%)
+      width: 30px
+      height: 30px
+      display: block
+      position: absolute
+      +border-left-radius(5px)
+      +border-right-radius(5px)
+      border: none
+      top: 5px
+      right: 20px
+
+    /* -
+    /* - Navigation -
+    /* - */
     nav
+      background: #f1f1f1
+      width: 100%
+
       &#main-menu
-        &.fixed
-          ul li
+        display: none
+        height: auto
+        top: 40px
+        text-align: left
+
+        ul
+          height: auto
+
+          &:after 
+            display: none
+
+          li
             display: block
+            text-align: left
             width: 100%
 
             a
