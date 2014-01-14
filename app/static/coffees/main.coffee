@@ -1,4 +1,3 @@
-console.log 'main js file loaded'
 $ ->
     position = $("#switch")
     if $(document).scrollTop() > position.offset().top + position.height()
@@ -15,4 +14,11 @@ $ ->
         else
             $("#main-menu").addClass('fixed')
     )
-    return
+
+    if (matchMedia('all and (max-width: 678px)').matches)
+        $('#main-menu').wrap("<div id='XL-burger-menu'/>")
+        $('#XL-burger-menu').children().hide()
+        $('#XL-burger-menu').on 'click', ->
+            $(@).toggleClass('active')
+            $(@).children().slideToggle()
+        return
