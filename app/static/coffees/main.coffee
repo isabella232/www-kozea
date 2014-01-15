@@ -32,8 +32,9 @@ $ ->
     $('#navigation-dropdown').on 'click', ->
         if ($('#main-header-link').is(':visible'))
             $('#main-header-link').hide()
-        else
-            $('#main-header-link').show()
         $(@).toggleClass('active')
+        if ($('#main-header-link').is(':hidden'))
+            $('#main-header-link').delay(2000).show()
         $('.nav.menu').slideToggle()
-    return
+        return
+
