@@ -30,11 +30,13 @@ $ ->
             return
 
     $('#navigation-dropdown').on 'click', ->
-        if ($('#main-header-link').is(':visible'))
-            $('#main-header-link').hide()
+        $('#main-header-link').hide()
         $(@).toggleClass('active')
-        if ($('#main-header-link').is(':hidden'))
-            $('#main-header-link').delay(2000).show()
-        $('.nav.menu').slideToggle()
+        if ($('.nav.menu').is(':visible'))
+            $('#main-header-link').hide()
+            $('.nav.menu').slideUp()
+        else
+            $('.nav.menu').slideDown()
+            $('#main-header-link').fadeIn(1000)
         return
 
