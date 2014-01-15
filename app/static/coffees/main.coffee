@@ -15,6 +15,20 @@ $ ->
             $("#main-menu").addClass('fixed')
     )
 
+    lock = false
+    $(window).bind 'load, resize', ->
+        if (!matchMedia('all and (max-width: 970px)').matches)
+            if ($('#main-menu').is(':hidden'))
+                $('#main-menu').show()
+            lock = false
+            return
+        else
+            if ($('#main-menu').is(':visible'))
+                if (!lock)
+                    $('#main-menu').hide()
+                    lock = true
+                    return
+
     $('#navigation-dropdown').on 'click', ->
         $(@).toggleClass('active')
         $('#main-menu').slideToggle()
