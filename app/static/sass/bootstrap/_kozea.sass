@@ -493,14 +493,25 @@ body
             background-image: url(images/radicale.png)
             background-size: 60px
 
+          &.weasyprint
+            background-image: url(images/weasyprint.png)
+            background-size: 200px
+
           &.cairo
             background-image: url(images/cairosvg.png)
             background-size: 110px
-          
+
           &.pyphen
             background-image: url(images/pyphen.png)
             background-size: 120px
-            
+
+          &.pygal
+            background-image: url(images/pygal.png)
+
+          &.umlaut
+            background-image: url(images/umlaut.png)
+            background-size: 200px
+
 
 
           &:hover, &:focus
@@ -776,7 +787,8 @@ body
         top: 0
 
         &.fixed
-          min-height: 42px
+          border-top: 5px solid #608485
+          min-height: 80px
           position: fixed
           text-align: right
 
@@ -801,8 +813,6 @@ body
             display: block
             text-align: left
             width: 100%
-
-            
 
             &:hover, &:focus
               background-color: rgba(255, 255, 255, 0.6)
@@ -886,6 +896,7 @@ body
           min-height: 180px
           padding-left: 180px
           width: auto
+          height: auto
 
           &:last-of-type
             border-bottom: none
