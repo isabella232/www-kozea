@@ -661,15 +661,26 @@ body
     button#navigation-dropdown
       background: linear-gradient(#393b48, darken(#393b48, 8%))
       border: 1px solid darken(#393b48, 8%)
+      +box-shadow(0 1px 1px rgba(255, 255, 255, 0.7) inset)
       width: 30px
       height: 30px
       display: block
       position: absolute
       +border-left-radius(5px)
       +border-right-radius(5px)
-      border: none
       top: 5px
       right: 20px
+
+      &:hover, &:focus
+        background: linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
+        border-color: #393b48
+
+      &:before
+        content: url(images/icon-lenu.png)
+        display: block
+        padding-top: 4px
+        margin-left: -1px
+
 
     /* -
     /* - Navigation -
@@ -684,20 +695,91 @@ body
         top: 40px
         text-align: left
 
+        &.fixed
+          background: #f1f1f1
+          +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
+          height: 80px
+          position: fixed
+          right: 0
+          top: 0
+          text-align: right
+          width: 100%
+          z-index: 50
+
+          ul
+            width: auto
+
+            &:after
+              background: $gray-lighten
+              +border-left-radius(10px)
+              +box-shadow(0 1px 1px #fff, 1px 1px 2px rgba(0, 0, 0, 0.1) inset)
+              content: ''
+              display: block
+              height: 8px
+              margin-top: 7px
+              width: 100%
+
+            li
+              border: none
+              +box-shadow(none)
+              display: inline-block
+              font-size: 1em
+              text-align: center
+              width: 140px
+
+              &:hover, &:focus
+                background: none
+
+              a
+                &:before, &:after
+                  display: block
+
+                &:after
+                  background: $gray-lighten
+                  bottom: -20px
+                  height: 30px
+                  margin-left: -15px
+                  width: 30px
+                  content: ''
+
+                &:before
+                  background: #cccccc
+                  bottom: -12px
+                  height: 12px
+                  margin-left: -6px
+                  width: 12px
+                  top: 43px
+                  z-index: 5
+
         ul
           height: auto
+          width: 100%
 
-          &:after 
+          &:after
             display: none
 
           li
+            border-bottom: 1px solid darken(#f1f1f1, 5%)
+            +box-shadow(0 1px 0 #fff)
             display: block
             text-align: left
             width: 100%
 
+            &:hover, &:focus
+              background: rgba(255, 255, 255, 0.6)
+
+              a
+                color: orange
+
             a
               &:before, &:after
                 display: none
+    section
+      &#banner
+        padding: 50px 5%
+
+        span.slogan
+          margin-top: 40px
 
 @media(max-width: 760px)
   body
