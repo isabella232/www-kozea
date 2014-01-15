@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ static('stylesheets/jquery-ui.css') }}"/>
     <link href="{{ static('stylesheets/bootstrap/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ static('stylesheets/main.css') }}" rel="stylesheet">
+    <link href="{{ static('stylesheets/ferroSlider/jquery.ferro.ferroSlider.css') }}" rel="stylesheet">
 
     <title>Kozea</title>
   </head>
@@ -43,34 +44,55 @@
         <p>Kozea regroupe un ensemble d'experts (informatique et graphique) qui développe des solutions Web adaptées. Kozea se distingue par son travail en Open source. L'utilisation de logiciels libres est au cœur de notre métier.</p>
       </section>
 
-      <section id="web" class="fullpage-item">
+      <section id="web" class="fullpage-item horizontal-slider">
         <h2>Web</h2>
         <p>Toutes nos compétences reposent sur la mutualisation des données. Nos outils web ont les mêmes fonctionnalités pour une gestion simplifiée et de qualité.</p>
         <article id="website">
           <h3>Sites Internet</h3>
           <p>Notre expertise :</p>
           <p>Proposez des sites Internet à moindre coût avec un maximum de fonctionnalités ...</p>
-          <a href="" class="more">En savoir plus</a>
+          <a href="" class="more" data-slide='website-slide'>En savoir plus</a>
         </article>
         <article id="elearning">
           <h3>E-learning</h3>
           <p>Notre expertise :</p>
           <p>Proposez librement des formations accessibles pour tous et par tous ...</p></p>
-          <a href="" class="more">En savoir plus</a>
+          <a href="" class="more" data-slide='elearning-slide'>En savoir plus</a>
         </article>
         <article id="questionnary">
           <h3>Questionnaires et Statistiques</h3>
           <p>Notre expertise :</p>
           <p>Proposer une plateforme de création ou d'administration de questionnaires et gérer les analyses statistiques des données collectées ...</p>
-          <a href="" class="more">En savoir plus</a>
+          <a href="" class="more" data-slide='stat-slide'>En savoir plus</a>
         </article>
         <article id="webdesign">
           <h3>Création graphique</h3>
           <p>Notre projets :</p>
           <p>vous apportez un outil qualitatif, adapté à vos besoins et à votre charte graphique.</p>
           <p>Notre équipe graphique est à votre disposition pour vous accompagner de la conception à la réalisation de vos projets ...</p>
-          <a href="" class="more">En savoir plus</a>
+          <a href="" class="more" data-slide='art-slide'>En savoir plus</a>
         </article>
+      </section>
+
+
+      <section class='horizontal-slider' id='website-slide'>
+        <a href="#" class="backToFirstSlide">Retour</a>
+        content1
+      </section>
+
+      <section class='horizontal-slider' id='elearning-slide'>
+        <a href="#" class="backToFirstSlide">Retour</a>
+        content2
+      </section>
+
+      <section class='horizontal-slider' id='stat-slide'>
+        <a href="#" class="backToFirstSlide">Retour</a>
+        content3
+      </section>
+
+      <section class='horizontal-slider' id='art-slide'>
+        <a href="#" class="backToFirstSlide">Retour</a>
+        content4
       </section>
 
       <section id="libre" class="fullpage-item">
@@ -164,6 +186,8 @@
     <script src="{{ static('javascripts/bootstrap.min.js') }}"></script>
     <script src="{{ static('javascripts/matchMedia/matchMedia.js') }}"></script>
     <script src="{{ static('javascripts/main.js') }}"></script>
+    <script src="{{ static('javascripts/ferroSlider/jquery.ferro.ferroSlider-2.3.3-custom.min.js') }}"></script>
+    <script src="{{ static('javascripts/ferroSlider/jquery.transit.min.js') }}"></script>
 
   </body>
 </html>

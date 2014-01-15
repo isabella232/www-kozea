@@ -40,3 +40,17 @@ $ ->
             $('#main-header-link').fadeIn(1000)
         return
 
+    $('#web .more').click (e) ->
+        e.preventDefault()
+        $.fn.ferroSlider.slideTo($(@).data('slide'))
+        return
+    $('.backToFirstSlide').click (e) ->
+        e.preventDefault()
+        $.fn.ferroSlider.slideTo('web')
+        return
+    $('.horizontal-slider').ferroSlider {
+        disableSwipe: true,
+        preventArrowNavigation: true
+    }
+    return
+
