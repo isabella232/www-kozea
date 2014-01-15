@@ -18,18 +18,18 @@ $ ->
     lock = false
     $(window).bind 'load, resize', ->
         if (!matchMedia('all and (max-width: 970px)').matches)
-            if ($('#main-menu').is(':hidden'))
-                $('#main-menu').show()
+            if ($('.nav.menu').is(':hidden'))
+                $('.nav.menu').show()
             lock = false
             return
         else
-            if ($('#main-menu').is(':visible'))
+            if ($('.nav.menu').is(':visible'))
                 if (!lock)
-                    $('#main-menu').hide()
+                    $('.nav.menu').hide()
                     lock = true
                     return
 
     $('#navigation-dropdown').on 'click', ->
         $(@).toggleClass('active')
-        $('#main-menu').slideToggle()
+        $('.nav.menu').slideToggle()
     return
