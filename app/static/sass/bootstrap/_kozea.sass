@@ -106,7 +106,7 @@ body
               top: 43px
               z-index: 5
 
-          li#main-header
+          li#main-header-link
             a
               background: url(images/logo-kozea-small.png) no-repeat top left
               background-size: 60px
@@ -123,7 +123,7 @@ body
         display: inline-block
         height: 80px
 
-        li#main-header
+        li#main-header-link
           width: 0
 
           a
@@ -289,11 +289,6 @@ body
           width: 3em
           z-index: 3
 
-    &#contact
-      article
-        width: 20%
-        padding: 0 4% 20px
-
     /* - Web - */
     &#web
       h2
@@ -358,14 +353,23 @@ body
 
 
     &#web, &#contact
+      text-align: center
+
       article
-        display: table-cell
+        display: inline-block
+        font-size: 0
         text-align: center
+        vertical-align: top
+
+        p, dl, blockquote
+          font-size: 14px
 
         h3
           position: relative
           text-align: center
           padding-top: 150px
+          font-size: 18px
+
 
           &:before, &:after
             +border-left-radius(100%)
@@ -508,6 +512,8 @@ body
 
       article
         position: relative
+        padding: 0 4% 20px
+        width: 32%
 
         &:after
           height: 70px
@@ -554,9 +560,6 @@ body
 
         a
           color: #608485
-
-        dl, blockquote
-          font-size: 1.1em
 
         dl
           dt
@@ -674,6 +677,14 @@ body
       top: 5px
       right: 20px
 
+      &:after 
+        content: 'Menu'
+        color: back
+        font-weight: bold
+        right: 50px
+        top: 10px
+        height: 40px
+
       &:hover, &:focus
         background: linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
         border-color: #393b48
@@ -751,9 +762,6 @@ body
         display: block
         height: 80px
 
-    button#navigation-dropdown
-
-
     /* -
     /* - SECTION -
     /* - */
@@ -761,9 +769,8 @@ body
       &#web
         p
           padding: 3px 4%
+          text-align: justify
 
-
-      &#web
         article
           border-bottom: 1px solid darken(#f1f1f1, 5%)
           border-right: none
