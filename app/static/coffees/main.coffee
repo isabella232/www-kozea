@@ -16,20 +16,24 @@ $ ->
     )
 
     lock = false
-    $(window).bind 'load, resize', ->
-        if (!matchMedia('all and (max-width: 970px)').matches)
-            if ($('.nav.menu').is(':hidden'))
-                $('.nav.menu').show()
-            lock = false
-            return
-        else
+    $(window).bind 'load resize', ->
+        if (matchMedia('all and (max-width: 970px)').matches)
             if ($('.nav.menu').is(':visible'))
                 if (!lock)
                     $('.nav.menu').hide()
                     lock = true
                     return
+        else
+            if ($('.nav.menu').is(':hidden'))
+                $('.nav.menu').show()
+            lock = false
+            return
 
     $('#navigation-dropdown').on 'click', ->
+        if ($('#main-header-link').is(':visible'))
+            $('#main-header-link').hide()
+        else
+            $('#main-header-link').show()
         $(@).toggleClass('active')
         $('.nav.menu').slideToggle()
     return
