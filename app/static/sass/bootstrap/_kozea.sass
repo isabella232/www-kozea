@@ -122,7 +122,7 @@ body
               height: 60px
               left: 10px
               position: fixed
-              top: 10px
+              top: 15px
               width: 60px
 
       ul
@@ -202,6 +202,15 @@ body
       height: 100px
       margin: 0
 
+  /* -
+  /* - SECTION -
+  /* - */
+  #outerSliderWrapper
+    background: none !important
+    position: relative !important
+
+    #outerSlider
+      background-color: transparent !important
 
   /* -
   /* - SECTION -
@@ -300,6 +309,8 @@ body
 
     /* - Web - */
     &#web
+      +box-shadow(none)
+
       article
         height: 555px
         padding: 0 2% 40px
@@ -738,26 +749,27 @@ body
 
 @media(max-width: 970px)
   body
-    border: none
-    padding-top: 40px !important
     background: #f1f1f1
+    border: none
+    padding-top: 80px !important
 
     button#navigation-dropdown
       background: linear-gradient(#393b48, darken(#393b48, 8%))
       border: 1px solid darken(#393b48, 8%)
       +box-shadow(0 1px 1px rgba(255, 255, 255, 0.7) inset)
-      width: 30px
-      height: 30px
+      width: 35px
+      height: 35px
       display: block
       position: absolute
       +border-left-radius(5px)
       +border-right-radius(5px)
-      top: 5px
+      top: 15px
       right: 20px
 
       &:after
         color: #393b48
         content: 'Menu'
+        font-size: 1.1em
         height: 40px
         position: absolute
         right: 50px
@@ -782,7 +794,6 @@ body
       width: 100%
 
       &#main-menu
-        height: auto
         text-align: left
         top: 0
 
@@ -797,7 +808,6 @@ body
 
             li a
               color: #608485
-
 
         ul
           height: auto
