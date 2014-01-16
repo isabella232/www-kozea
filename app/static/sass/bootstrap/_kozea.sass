@@ -212,6 +212,121 @@ body
     #outerSlider
       background-color: transparent !important
 
+      #innerSlider1, #innerSlider2, #innerSlider3, #innerSlider4
+        section.horizontal-slider
+          +box-shadow(none)
+          height: 100%
+          position: relative
+
+          article 
+            padding: 0 0 20px
+            +box-shadow(0 5px 5px -5px rgba(0, 0, 0, 0.1))
+
+          p
+            font-size: 1.1em
+            text-align: justify
+
+            &:first-of-type
+              margin-top: 40px
+
+          h3
+            border-bottom: 1px solid darken(#f1f1f1, 5%)
+            +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
+            color: orange
+            font-size: 1.8em
+            margin-bottom: -20px
+            margin-top: 40px
+            +text-shadow(1px 1px 0 #fff)
+
+          h4
+            color: #393b48
+            text-decoration: underline
+            margin-top: 25px
+            
+
+          h2
+            color: #608485
+            display: table-cell
+            font-size: 2.7em
+            font-weight: normal
+            height: 100px
+            margin-bottom: 20px
+            padding-left: 150px
+            position: relative
+            vertical-align: middle
+
+            &:after, &:before
+              display: block
+              position: absolute
+
+            &:after
+              background-color: #608485
+              border: 8px solid darken(#f1f1f1, 5%)
+              +border-left-radius(100%)
+              +border-right-radius(100%)
+              +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
+              content: ''
+              height: 110px
+              left: 0
+              top: 0
+              width: 110px
+
+            &:before
+              height: 100px
+              left: 20px
+              top: 20px
+              width: 100px
+              z-index: 10
+
+            &.website-title:before
+              content: url(images/website.png)
+
+            &.elearning-title:before
+              content: url(images/elearning.png)
+
+            &.questionnary-title:before
+              content: url(images/questionnary.png)
+
+            &.design-title:before
+              content: url(images/web-design.png)
+
+
+
+        a.backToFirstSlide
+          font-size: 0
+          color: transparent
+          width: 40px
+
+          &:before
+            border: 5px solid darken(#f1f1f1, 5%)
+            +box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 1px 1px 0 rgba(255, 255, 255, 0.8))
+            content: '<'
+            float: left
+            font-size: 22px
+            font-weight: bold
+            color: white
+            height: 50px
+            width: 50px
+            line-height: 40px
+            text-align: center
+            +border-left-radius(100%)
+            +border-right-radius(100%)
+            display: block
+            background: orange
+            position: absolute
+            top: 50%
+            margin-top: -20px
+            left: 2%
+
+          &:hover, &:focus
+            &:before
+              background: #f1f1f1
+              color: orange
+
+      #web article
+        margin-top: 40px
+
+
   /* -
   /* - SECTION -
   /* - */
@@ -312,7 +427,7 @@ body
       +box-shadow(none)
 
       article
-        height: 555px
+        height: 480px
         padding: 0 2% 40px
         width: 23%
 
@@ -732,7 +847,7 @@ body
     /* - */
     section
       &#web article
-        height: 4500px
+        height: 380px
 
 
 
@@ -743,7 +858,7 @@ body
     /* - */
     section
       &#web article
-        height: 500px
+        height: 430px
 
 
 
@@ -872,6 +987,10 @@ body
 
 
     section
+      &#web
+        article
+          height: 530px
+
       &#banner
         padding: 50px 5%
 
