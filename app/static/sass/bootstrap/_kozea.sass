@@ -52,8 +52,8 @@ body
           &:after
             background: none
             height: 60px
-            margin-left: -25px
-            top: 45px
+            margin-left: -27px
+            top: 41px
             width: 60px
 
           &:before
@@ -218,7 +218,7 @@ body
           height: 100%
           position: relative
 
-          article 
+          article
             padding: 0 0 20px
             +box-shadow(0 5px 5px -5px rgba(0, 0, 0, 0.1))
 
@@ -242,7 +242,7 @@ body
             color: #393b48
             text-decoration: underline
             margin-top: 25px
-            
+
 
           h2
             color: #608485
@@ -683,6 +683,66 @@ body
         background: #f1f1f1
 
 
+      ul
+        li
+          +border-right-radius(100%)
+          +border-left-radius(100%)
+          width: 190px
+          height: 190px
+          display: inline-block
+          color: transparent
+          font-size: 0
+          margin: 10px
+          border: 10px solid darken(#f1f1f1, 15%)
+          +box-shadow(1px 1px 1px rgba(0, 0, 0, 0.5) inset)
+          position: relative
+
+          &:before
+            content:  attr(title)
+            background: rgba(0, 0, 0, 0)
+            height: 170px
+            +border-right-radius(100%)
+            +border-left-radius(100%)
+            width: 170px
+            display: block
+            top: 0
+            left: 0
+            position: absolute
+            text-align: center
+
+          &.guillaume
+            background: url(images/guillaume.png) no-repeat center center
+
+          &.annabelle
+            background: url(images/annabelle.png) no-repeat center center
+
+          &.jean-marc
+            background: url(images/jean-marc.png) no-repeat center center
+
+          &.pauline
+            background: url(images/pauline.png) no-repeat center center
+
+          &.florian
+            background: url(images/florian.png) no-repeat center center
+
+          &.anaele
+            background: url(images/anaele.png) no-repeat center center
+
+          &.clement
+            background: url(images/clement.png) no-repeat center center
+
+          &:hover, &:focus
+            &:before
+              content: attr(title)
+              font-size: 20px
+              font-weight: bold
+              color: #f1f1f1
+              background: rgba(0, 0, 0, 0.7)
+              line-height: 170px
+              vertical-align: middle
+              +transition(0.5s ease-in)
+
+
 
     /* -------------------
     /* - SECTION CONTACT -
@@ -763,7 +823,6 @@ body
       ul
         font-size: 0
         padding: 0 6%
-        text-align: justify
 
         li
           background-color: #fff
@@ -920,6 +979,7 @@ body
 
           ul
             margin-top: 75px
+            +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
 
             li a
               color: #608485
@@ -1066,4 +1126,17 @@ body
           a
             margin-bottom: 10px
 
-      &#contact
+
+@media(max-width: 770px)
+  body
+
+    section#reference
+      ul
+        text-align: center
+
+
+@media(max-width: 570px)
+  body
+    section#libre
+      ul
+        text-align: center
