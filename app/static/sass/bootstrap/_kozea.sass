@@ -9,6 +9,13 @@ body
   button
     display: none
 
+  a
+    color: #608485
+
+    &:hover, &:focus
+      color: lighten(#608485, 15%)
+      text-decoration: none
+
   /* -
   /* - Navigation -
   /* - */
@@ -212,44 +219,102 @@ body
     #outerSlider
       background-color: transparent !important
 
+      .innerSlider
+        section.horizontal-slider#art-slide
+          ul
+            font-size: 0
+            padding-left: 0
+
+            li
+              border: 8px solid darken(#f1f1f1, 5%)
+              display: inline-block
+              list-style: none
+              width: 250px
+              height: 250px
+              overflow: hidden
+              z-index: 1
+              margin: 10px
+              position: relative
+              font-size: 14px
+
+              img
+                width: 250px
+
+              &:before
+                +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
+                content: ''
+                height: 250px
+                z-index: 5
+                position: absolute
+                top: -5px
+                left: -4px
+                width: 250px
+
+
+        section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#website-slide
+          article
+            +box-shadow(none)
+
+            h3
+              display: inline-block
+              border-bottom: 4px solid orange
+
+            h4
+              & + p
+                border: none
+                padding-top: 15px
+
       #innerSlider1, #innerSlider2, #innerSlider3, #innerSlider4
         section.horizontal-slider
           +box-shadow(none)
           height: 100%
-          position: relative
+
+          h2
+            & + p
+              margin-top: 30px
+              margin-bottom: 20px
 
           article
-            padding: 0 0 20px
             +box-shadow(0 5px 5px -5px rgba(0, 0, 0, 0.1))
+            padding: 0 0 20px
+            position: relative
+
+            p:first-of-type
+              padding-top: 20px
+
+            h3
+              border-bottom: 1px solid darken(#f1f1f1, 5%)
+              +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
+              color: orange
+              font-size: 1.8em
+              margin-top: 40px
+              margin-bottom: 0
+              padding: 0.1em 5px
+              +text-shadow(1px 1px 0 #fff)
+
+              &.pharmacy
+                border-color: #8eb931
+                color: #8eb931
+
+              &.doctor
+                border-color: #bd3333
+                color: #bd3333
+
+              &.pharmacy, &.doctor
+                display: inline-block
+                border-bottom: 5px solid
+                margin-bottom: 20px
+                +box-shadow(none)
 
           p
             font-size: 1.1em
             text-align: justify
 
-            &:first-of-type
-              margin-top: 40px
-
-          h3
-            border-bottom: 1px solid darken(#f1f1f1, 5%)
-            +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
-            color: orange
-            font-size: 1.8em
-            margin-bottom: -20px
-            margin-top: 40px
-            +text-shadow(1px 1px 0 #fff)
-
-          h4
-            color: #393b48
-            text-decoration: underline
-            margin-top: 25px
-
-
           h2
             color: #608485
-            display: table-cell
             font-size: 2.7em
             font-weight: normal
-            height: 100px
+            line-height: 100px
             margin-bottom: 20px
             padding-left: 150px
             position: relative
@@ -290,33 +355,72 @@ body
             &.design-title:before
               content: url(images/web-design.png)
 
+          h4
+            color: #393b48
+            margin-top: 25px
+            text-decoration: underline
+
+            & + p
+              border: none
+
+            &.kreasoft, &.kreaform, &.vitaleform, &.vitalesoft
+              color: transparent
+              height: 50px
+              font-size: 0
+              margin-bottom: 0
+
+            &.kreasoft
+              background: url(images/krea-soft.png) no-repeat top left
+
+            &.kreaform
+              background: url(images/krea-form.png) no-repeat top left
+
+            &.vitalesoft
+              background: url(images/vitalesoft.png) no-repeat top left
+              background-size: 190px
+
+            &.vitaleform
+              background: url(images/vitaleform.png) no-repeat top left
+              background-size: 190px
+
+          p.pharminfo, p.medsite
+            border: none
+            font-size: 1.4em
+            min-height: 210px
+            padding: 20px 20px 20px 250px
+
+          p.pharminfo
+            background: url(images/logo-pharminfo.png) no-repeat top left
+
+          p.medsite
+            background: url(images/logo-medsite.png) no-repeat top left
 
 
         a.backToFirstSlide
-          font-size: 0
           color: transparent
+          font-size: 0
           width: 40px
 
           &:before
+            background: orange
             border: 5px solid darken(#f1f1f1, 5%)
+            +border-left-radius(100%)
+            +border-right-radius(100%)
             +box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 1px 1px 0 rgba(255, 255, 255, 0.8))
+            color: white
             content: '<'
+            display: block
             float: left
             font-size: 22px
             font-weight: bold
-            color: white
             height: 50px
-            width: 50px
-            line-height: 40px
-            text-align: center
-            +border-left-radius(100%)
-            +border-right-radius(100%)
-            display: block
-            background: orange
-            position: absolute
-            top: 50%
-            margin-top: -20px
             left: 2%
+            line-height: 40px
+            margin-top: -20px
+            position: absolute
+            text-align: center
+            top: 50%
+            width: 50px
 
           &:hover, &:focus
             &:before
@@ -384,15 +488,15 @@ body
         font-size: 1.1em
 
       h2
+        display: inline-block
         font-size: 2em
+        margin-bottom: 40px
+        padding: 0 30px 0 100px
         position: relative
         text-align: left
         +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.2))
         text-transform: uppercase
-        display: inline-block
-        margin-bottom: 40px
         z-index: 15
-        padding: 0 30px 0 100px
 
         &:first-letter
           font-size: 1.65em
@@ -400,26 +504,26 @@ body
         &:after, &:before
           background: darken($gray-lighten, 5%)
           content: ''
-          position: absolute
           display: block
+          position: absolute
           z-index: -1
 
         &:after
           +border-right-radius(50px)
-          width: 100%
-          height: 1.5em
           display: block
-          top: 8px
+          height: 1.5em
           left: 0
+          top: 8px
+          width: 100%
 
         &:before
           +border-right-radius(100%)
           +border-left-radius(100%)
-          width: 70px
           height: 70px
-          z-index: -1
-          top: -9px
           left: 85px
+          top: -9px
+          width: 70px
+          z-index: -1
 
 
     /* - Web - */
@@ -499,11 +603,11 @@ body
             position: absolute
 
           &:after
+            +box-shadow(2px 2px 3px rgba(0, 0, 0, 0.1) inset)
             height: 100px
             margin-left: -50px
             top: 11px
             width: 100px
-            +box-shadow(2px 2px 3px rgba(0, 0, 0, 0.1) inset)
 
           &:before
             background: #dedede
@@ -524,9 +628,9 @@ body
         float: left
 
       p
+        clear: left
         padding: 3px 4%
         text-align: justify
-        clear: left
 
       article
         border-right: 1px solid darken(#f1f1f1, 5%)
@@ -608,12 +712,13 @@ body
             left: 0
             overflow: hidden
             position: absolute
-            top: 0
-            width: 240px
-            z-index: 5
             transition: height 0.8s ease-in
             -webkit-transition: height 0.8s ease-in
             -moz-transition: height 0.8s ease-in
+            top: 0
+            width: 240px
+            z-index: 5
+
 
           &.radicale
             background-image: url(images/radicale.png)
@@ -638,8 +743,6 @@ body
             background-image: url(images/umlaut.png)
             background-size: 200px
 
-
-
           &:hover, &:focus
             &:after
               height: 110px
@@ -660,9 +763,9 @@ body
         background: #f1f1f1
 
       ul
+        font-size: 0
         margin: 0
         padding: 0 2%
-        font-size: 0
 
         li
           font-size: 14px
@@ -685,30 +788,40 @@ body
 
       ul
         li
+          border: 10px solid darken(#f1f1f1, 15%)
           +border-right-radius(100%)
           +border-left-radius(100%)
-          width: 190px
-          height: 190px
-          display: inline-block
-          color: transparent
-          font-size: 0
-          margin: 10px
-          border: 10px solid darken(#f1f1f1, 15%)
           +box-shadow(1px 1px 1px rgba(0, 0, 0, 0.5) inset)
+          color: transparent
+          display: inline-block
+          font-size: 0
+          height: 190px
+          margin: 10px 10px 40px
           position: relative
+          width: 190px
+
+          span
+            bottom: -30px
+            color: #f1f1f1
+            display: block
+            font-size: 14px
+            position: absolute
+            text-align: center
+            width: 100%
 
           &:before
-            content:  attr(title)
             background: rgba(0, 0, 0, 0)
-            height: 170px
-            +border-right-radius(100%)
             +border-left-radius(100%)
-            width: 170px
+            +border-right-radius(100%)
+            border: none \9
+            content:  attr(title)
             display: block
-            top: 0
+            height: 170px
             left: 0
             position: absolute
             text-align: center
+            top: 0
+            width: 170px
 
           &.guillaume
             background: url(images/guillaume.png) no-repeat center center
@@ -733,14 +846,14 @@ body
 
           &:hover, &:focus
             &:before
+              background: rgba(0, 0, 0, 0.7)
+              color: #f1f1f1
               content: attr(title)
               font-size: 20px
               font-weight: bold
-              color: #f1f1f1
-              background: rgba(0, 0, 0, 0.7)
               line-height: 170px
-              vertical-align: middle
               +transition(0.5s ease-in)
+              vertical-align: middle
 
 
 
@@ -755,18 +868,18 @@ body
         background: #608485
 
       article
-        position: relative
         padding: 0 4% 20px
+        position: relative
         width: 32%
 
         &:after
-          height: 70px
-          width: 70px
           display: block
-          position: absolute
-          top: 40px
+          height: 70px
           left: 50%
           margin-left: -35px
+          position: absolute
+          top: 40px
+          width: 70px
 
         &.address:after
           content: url(images/postal.png)
@@ -860,12 +973,19 @@ body
           &.aepk
             background-image: url(images/aepk.png)
 
+          &.kubitus
+            background-image: url(images/kubitus.png)
+
+          &.keleos
+            background-image: url(images/keleos.png)
+
+
 
 
   footer
     background: #393b48
-    font-family: Verdana, sans-serif
     color: darken(#393b48, 10%)
+    font-family: Verdana, sans-serif
 
     ul
       padding: 1em 0
@@ -883,7 +1003,6 @@ body
           padding-left: 0.5em
           padding-right: 0.1em
 
-
         &:last-child:after
           content: ''
 
@@ -892,10 +1011,6 @@ body
 
           &:hover, &:focus
             color: orange
-
-
-
-
 
 
 
@@ -920,7 +1035,6 @@ body
         height: 430px
 
 
-
 @media(max-width: 970px)
   body
     background: #f1f1f1
@@ -928,7 +1042,10 @@ body
     padding-top: 80px !important
 
     button#navigation-dropdown
+      background: #393b48
       background: linear-gradient(#393b48, darken(#393b48, 8%))
+      background: -moz-linear-gradient(#393b48, darken(#393b48, 8%))
+      background: -webkit-linear-gradient(#393b48, darken(#393b48, 8%))
       border: 1px solid darken(#393b48, 8%)
       +box-shadow(0 1px 1px rgba(255, 255, 255, 0.7) inset)
       width: 35px
@@ -950,7 +1067,10 @@ body
         top: 5px
 
       &:hover, &:focus
+        background: lighten(#393b48, 15%)
         background: linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
+        background: -moz-linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
+        background: -webkit-linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
         border-color: #393b48
 
       &:before
