@@ -3,17 +3,26 @@
 +font-face("Ancillary", "fonts/Ancillary-Italic", "Ancillary", 400, italic)
 +font-face("Ancillary", "fonts/Ancillary-BoldItalic", "Ancillary", 700, italic)
 
+/* -
+/* - VARIABLES -
+/* - */
+$light-gray: #f1f1f1
+$gray-blue: #608485
+$darken-blue: #393b48
+
+
+
 body
-  border-top: 12px solid #f1f1f1
+  border-top: 12px solid $light-gray
 
   button
     display: none
 
   a
-    color: #608485
+    color: $gray-blue
 
     &:hover, &:focus
-      color: lighten(#608485, 15%)
+      color: lighten($gray-blue, 15%)
       text-decoration: none
 
   /* -
@@ -43,7 +52,6 @@ body
         & + li + li + li + li +li  a:after
           content: url(images/icon-reference.png)
 
-
         a
           color: $gray-lighten
 
@@ -64,10 +72,7 @@ body
             width: 60px
 
           &:before
-            background: #f1f1f1
-            background: linear-gradient(115deg, darken(#f1f1f1, 15%), #fff, darken(#f1f1f1, 15%))
-            background: -moz-linear-gradient(115deg, darken(#f1f1f1, 15%), #fff, darken(#f1f1f1, 15%))
-            background: -webkit-linear-gradient(115deg, darken(#f1f1f1, 15%), #fff, darken(#f1f1f1, 15%))
+            +gradient-directional-three-colors(darken($light-gray, 15%), #fff, 50%,  darken($light-gray, 15%), 115deg)
             +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
             height: 85px
             margin-left: -40px
@@ -76,7 +81,7 @@ body
 
       /* - position fixed - */
       &.fixed
-        background: #f1f1f1
+        background: $light-gray
         +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
         position: fixed
         right: 0
@@ -104,19 +109,19 @@ body
             &:after
               background: $gray-lighten
               bottom: -20px
+              content: ''
               height: 30px
               margin-left: -15px
-              width: 30px
-              content: ''
               top: 34px
+              width: 30px
 
             &:before
               background: #cccccc
               bottom: -12px
               height: 12px
               margin-left: -6px
-              width: 12px
               top: 43px
+              width: 12px
               z-index: 5
 
           li#main-header-link
@@ -162,7 +167,7 @@ body
           width: 140px
 
           a
-            color: #f1f1f1
+            color: $light-gray
             font-weight: bold
             text-transform: uppercase
 
@@ -181,13 +186,12 @@ body
   /* - HEADER -
   /* - */
   header
-    background: #393b48
+    background: $darken-blue
     +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5) inset)
 
     &:before
-      background: #f1f1f1
-      +border-right-radius(100%)
-      +border-left-radius(100%)
+      background: $light-gray
+      +border-radius(100%)
       content: ''
       display: block
       height: 60px
@@ -228,16 +232,16 @@ body
             padding-left: 0
 
             li
-              border: 8px solid darken(#f1f1f1, 5%)
+              border: 8px solid darken($light-gray, 5%)
               display: inline-block
-              list-style: none
-              width: 250px
-              height: 250px
-              overflow: hidden
-              z-index: 1
-              margin: 10px
-              position: relative
               font-size: 14px
+              height: 250px
+              list-style: none
+              margin: 10px
+              overflow: hidden
+              position: relative
+              width: 250px
+              z-index: 1
 
               img
                 width: 250px
@@ -246,11 +250,11 @@ body
                 +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
                 content: ''
                 height: 250px
-                z-index: 5
+                left: -4px
                 position: absolute
                 top: -5px
-                left: -4px
                 width: 250px
+                z-index: 5
 
 
         section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#website-slide
@@ -258,8 +262,8 @@ body
             +box-shadow(none)
 
             h3
-              display: inline-block
               border-bottom: 4px solid orange
+              display: inline-block
 
             h4
               & + p
@@ -269,41 +273,56 @@ body
       #innerSlider1, #innerSlider2, #innerSlider3, #innerSlider4
         section.horizontal-slider
           +box-shadow(none)
-          height: 100%
-          width: 70%
-          margin: 0 auto
           float: none !important
+          height: 100%
+          margin: 0 auto
+          padding: 50px 5%
+          width: 60%
 
           h2
             & + p
-              margin-top: 30px
               margin-bottom: 20px
+              margin-top: 30px
 
           article
-            +box-shadow(0 5px 5px -5px rgba(0, 0, 0, 0.1))
             margin-bottom: 30px
-            padding: 0 0 20px 35px
+            padding: 0 35px 20px
             position: relative
             text-align: center
 
             &:before
+              background: darken($light-gray, 5%)
+              +border-radius(5px)
+              +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
+              content: ''
+              display: block
               height: 100%
+              left: 0
               position: absolute
               top: 0
-              left: 0
-              content: ''
-              background: darken(#f1f1f1, 5%)
-              +border-left-radius(5px)
-              +border-right-radius(5px)
-              +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
               width: 8px
-              display: block
+
+            &.organism
+              background: lighten($light-gray, 5%)
+              border: 1px solid darken($light-gray, 5%)
+              +border-radius(5px)
+              +box-shadow(0 8px 8px -8px rgba(0, 0, 0, 0.3) inset)
+              padding-top: 10px
+
+              h3
+                border-color: $gray-blue
+                color: $gray-blue
+                font-weight: bold
+                text-transform: uppercase
+
+              &:before
+                display: none
 
             p:first-of-type
               padding-top: 20px
 
             h3
-              border-bottom: 1px solid darken(#f1f1f1, 5%)
+              border-bottom: 1px solid darken($light-gray, 5%)
               +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
               color: orange
               font-size: 1.8em
@@ -312,8 +331,10 @@ body
               text-align: center
               +text-shadow(1px 1px 0 #fff)
 
-
-              &.pharmacy
+              &.pharmacy, &.doctor
+                border-bottom: 5px solid
+                display: inline-block
+                font-size: 2em
 
               &.pharmacy
                 border-color: #8eb931
@@ -323,20 +344,14 @@ body
                 border-color: #bd3333
                 color: #bd3333
 
-              &.pharmacy, &.doctor
-                display: inline-block
-                border-bottom: 5px solid
-
-
           p
             font-size: 1.1em
             text-align: justify
 
           h2
-            color: #608485
+            color: $gray-blue
             font-size: 2.7em
-            font-weight: normal
-            margin-top: 0
+            margin: 0 0 40px
             padding-top: 225px
             position: relative
             text-align: center
@@ -346,23 +361,22 @@ body
               position: absolute
 
             &:after
-              background-color: #608485
-              border: 8px solid darken(#f1f1f1, 5%)
-              +border-left-radius(100%)
-              +border-right-radius(100%)
+              background-color: $gray-blue
+              border: 8px solid darken($light-gray, 5%)
+              +border-radius(100%)
               +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
               content: ''
               height: 210px
               left: 50%
-              top: 0
               margin-left: -105px
+              top: 0
               width: 210px
 
             &:before
               height: 150px
               left: 50%
-              top: 26px
               margin-left: -75px
+              top: 26px
               width: 150px
               z-index: 10
 
@@ -379,7 +393,7 @@ body
               content: url(images/big-web-design.png)
 
           h4
-            color: #393b48
+            color: $darken-blue
             margin-top: 25px
             text-decoration: underline
 
@@ -388,8 +402,8 @@ body
 
             &.kreasoft, &.kreaform, &.vitaleform, &.vitalesoft
               color: transparent
-              height: 50px
               font-size: 0
+              height: 50px
               margin-bottom: 0
 
             &.kreasoft
@@ -407,11 +421,11 @@ body
               background-size: 190px
 
           p.pharminfo, p.medsite
+            background-position: center 20px
+            background-repeat: no-repeat
             border: none
             font-size: 1.4em
             padding: 200px 0 20px !important
-            background-repeat: no-repeat
-            background-position: center 20px
 
           p.pharminfo
             background-image: url(images/logo-pharminfo.png)
@@ -427,14 +441,12 @@ body
 
           &:before
             background: orange
-            border: 5px solid darken(#f1f1f1, 5%)
-            +border-left-radius(100%)
-            +border-right-radius(100%)
+            border: 5px solid darken($light-gray, 5%)
+            +border-radius(100%)
             +box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 1px 1px 0 rgba(255, 255, 255, 0.8))
             color: white
             content: '<'
             display: block
-            float: left
             font-size: 22px
             font-weight: bold
             height: 50px
@@ -448,7 +460,7 @@ body
 
           &:hover, &:focus
             &:before
-              background: #f1f1f1
+              background: $light-gray
               color: orange
 
       #web article
@@ -468,8 +480,7 @@ body
       font-weight: bold
 
     &:before
-      +border-left-radius(100%)
-      +border-right-radius(100%)
+      +border-radius(100%)
       content: ''
       display: block
       height: 60px
@@ -478,7 +489,7 @@ body
 
     /* - Banner top - */
     &#banner
-      background: #393b48 url(images/bg-logo.png) no-repeat bottom right
+      background: $darken-blue url(images/bg-logo.png) no-repeat bottom right
       padding: 50px 10%
       text-align: center
 
@@ -487,9 +498,9 @@ body
         font-size: 0
 
       .slogan
-        border-bottom: 1px solid darken(#393b48, 5%)
-        +box-shadow(0 1px 0 lighten(#393b48, 5%))
-        color: #f1f1f1
+        border-bottom: 1px solid darken($darken-blue, 5%)
+        +box-shadow(0 1px 0 lighten($darken-blue, 5%))
+        color: $light-gray
         display: block
         font-size: 60px
         font-weight: bold
@@ -541,8 +552,7 @@ body
           width: 100%
 
         &:before
-          +border-right-radius(100%)
-          +border-left-radius(100%)
+          +border-radius(100%)
           height: 70px
           left: 85px
           top: -9px
@@ -612,15 +622,13 @@ body
           font-size: 15px
 
         h3
-          position: relative
-          text-align: center
-          padding-top: 150px
           font-size: 26px
-
+          position: relative
+          padding-top: 150px
+          text-align: center
 
           &:before, &:after
-            +border-left-radius(100%)
-            +border-right-radius(100%)
+            +border-radius(100%)
             content: ''
             display: block
             left: 50%
@@ -646,7 +654,7 @@ body
     /* ---------------
     &#web, &#contact
       &:before
-        background: #393b48
+        background: $darken-blue
 
       h2
         float: left
@@ -657,8 +665,8 @@ body
         text-align: justify
 
       article
-        border-right: 1px solid darken(#f1f1f1, 5%)
-        +box-shadow(1px 0 0 lighten(#f1f1f1, 5%))
+        border-right: 1px solid darken($light-gray, 5%)
+        +box-shadow(1px 0 0 lighten($light-gray, 5%))
         position: relative
         margin-top: 20px
 
@@ -675,10 +683,10 @@ body
           text-align: justify
 
         h3
-          color: #608485
+          color: $gray-blue
 
           &:after
-            background: #608485
+            background: $gray-blue
 
         &:after
           height: 70px
@@ -707,14 +715,14 @@ body
         color: #5a5a5a
 
         &:before, &:after
-          background: #f1f1f1
+          background: $light-gray
 
       ul
         li a
-          background-color: #f1f1f1
+          background-color: $light-gray
           background-position: center center
           background-repeat: no-repeat
-          border: 5px solid darken(#f1f1f1, 5%)
+          border: 5px solid darken($light-gray, 5%)
           +box-shadow(0 2px 3px rgba(0, 0, 0, 0.5) inset, 1px 1px 1px #fff)
           color: transparent
           display: block
@@ -728,7 +736,7 @@ body
 
           &:after
             background-color: rgba(0, 0, 0, 0.8)
-            color: #f1f1f1
+            color: $light-gray
             content: attr(title)
             display: block
             font-size: 15px
@@ -736,9 +744,7 @@ body
             left: 0
             overflow: hidden
             position: absolute
-            transition: height 0.8s ease-in
-            -webkit-transition: height 0.8s ease-in
-            -moz-transition: height 0.8s ease-in
+            +transition(height 0.8s ease-in)
             top: 0
             width: 240px
             z-index: 5
@@ -770,9 +776,7 @@ body
           &:hover, &:focus
             &:after
               height: 110px
-              transition: height 0.8s ease-in
-              -webkit-transition: height 0.8s ease-in
-              -moz-transition: height 0.8s ease-in
+              +transition( height 0.8s ease-in)
 
 
 
@@ -780,11 +784,11 @@ body
     /* - SECTION LIBRE -
     /* -----------------
     &#libre
-      background: #608485
+      background: $gray-blue
       color: #fff
 
       &:before
-        background: #f1f1f1
+        background: $light-gray
 
       ul
         font-size: 0
@@ -801,42 +805,40 @@ body
     /* - SECTION TEAM -
     /* ---------------------
     &#team
-      background: #608485
+      background: $gray-blue
 
       p
         color: #fff
 
       &:before
-        background: #f1f1f1
-
+        background: $light-gray
 
       ul
         li
-          border: 10px solid darken(#f1f1f1, 15%)
-          +border-right-radius(100%)
-          +border-left-radius(100%)
+          border: 10px solid darken($light-gray, 15%)
+          +border-radius(100%)
           +box-shadow(1px 1px 1px rgba(0, 0, 0, 0.5) inset)
           color: transparent
           display: inline-block
           font-size: 0
           height: 190px
-          margin: 10px 10px 40px
+          margin: 10px 10px 50px
           position: relative
           width: 190px
 
           span
-            bottom: -30px
-            color: #f1f1f1
+            bottom: -55px
+            color: $light-gray
             display: block
             font-size: 14px
+            height: 40px
             position: absolute
             text-align: center
             width: 100%
 
           &:before
             background: rgba(0, 0, 0, 0)
-            +border-left-radius(100%)
-            +border-right-radius(100%)
+            +border-radius(100%)
             border: none \9
             content:  attr(title)
             display: block
@@ -871,7 +873,7 @@ body
           &:hover, &:focus
             &:before
               background: rgba(0, 0, 0, 0.7)
-              color: #f1f1f1
+              color: $light-gray
               content: attr(title)
               font-size: 20px
               font-weight: bold
@@ -885,11 +887,11 @@ body
     /* - SECTION CONTACT -
     /* -------------------
     &#contact
-      background: #f1f1f1
+      background: $light-gray
       color: #5a5a5a
 
       &:before
-        background: #608485
+        background: $gray-blue
 
       article
         padding: 0 4% 20px
@@ -925,7 +927,7 @@ body
             +box-shadow(none)
 
         h3
-          color: #608485
+          color: $gray-blue
           +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
 
           &:after
@@ -939,7 +941,7 @@ body
           text-align: left
 
         a
-          color: #608485
+          color: $gray-blue
 
         dl
           dt
@@ -952,7 +954,7 @@ body
     /* ---------------------
     &#reference
       &:before
-        background: #608485
+        background: $gray-blue
 
       p
         padding: 0 6%
@@ -965,7 +967,7 @@ body
           background-color: #fff
           background-repeat: no-repeat
           background-position: center center
-          border: 5px solid darken(#f1f1f1, 5%)
+          border: 5px solid darken($light-gray, 5%)
           +border-right-radius(10px 0)
           +box-shadow(1px 1px 0 #fff, 2px 2px 2px rgba(0, 0, 0, 0.2) inset)
           color: transparent
@@ -1004,11 +1006,12 @@ body
             background-image: url(images/keleos.png)
 
 
-
-
+  /* ----------
+  /* - FOOTER -
+  /* ----------
   footer
-    background: #393b48
-    color: darken(#393b48, 10%)
+    background: $darken-blue
+    color: darken($darken-blue, 10%)
     font-family: Verdana, sans-serif
 
     ul
@@ -1016,7 +1019,7 @@ body
       text-align: center
 
       li
-        color: darken(#393b48, 10%)
+        color: darken($darken-blue, 10%)
         display: inline-block
         font-weight: bold
         +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
@@ -1031,7 +1034,7 @@ body
           content: ''
 
         a
-          color: darken(#393b48, 10%)
+          color: darken($darken-blue, 10%)
 
           &:hover, &:focus
             color: orange
@@ -1040,9 +1043,7 @@ body
 
 @media(min-width: 1600px)
   body
-    /* -
     /* - SECTION -
-    /* - */
     section
       &#web article
         height: 380px
@@ -1051,9 +1052,7 @@ body
 
 @media(min-width: 1200px)
   body
-    /* -
     /* - SECTION -
-    /* - */
     section
       &#web article
         height: 430px
@@ -1061,28 +1060,24 @@ body
 
 @media(max-width: 970px)
   body
-    background: #f1f1f1
+    background: $light-gray
     border: none
     padding-top: 80px !important
 
     button#navigation-dropdown
-      background: #393b48
-      background: linear-gradient(#393b48, darken(#393b48, 8%))
-      background: -moz-linear-gradient(#393b48, darken(#393b48, 8%))
-      background: -webkit-linear-gradient(#393b48, darken(#393b48, 8%))
-      border: 1px solid darken(#393b48, 8%)
+      +gradient-horizontal($darken-blue, darken($darken-blue, 8%),0, 100%)
+      border: 1px solid darken($darken-blue, 8%)
+      +border-radius(5px)
       +box-shadow(0 1px 1px rgba(255, 255, 255, 0.7) inset)
-      width: 35px
-      height: 35px
       display: block
+      height: 35px
       position: absolute
-      +border-left-radius(5px)
-      +border-right-radius(5px)
-      top: 15px
       right: 20px
+      top: 15px
+      width: 35px
 
       &:after
-        color: #393b48
+        color: $darken-blue
         content: 'Menu'
         font-size: 1.1em
         height: 40px
@@ -1091,11 +1086,8 @@ body
         top: 5px
 
       &:hover, &:focus
-        background: lighten(#393b48, 15%)
-        background: linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
-        background: -moz-linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
-        background: -webkit-linear-gradient(lighten(#393b48, 20%), lighten(#393b48, 10%))
-        border-color: #393b48
+        +gradient-horizontal(lighten($darken-blue, 20%), lighten($darken-blue, 10%), 0, 100%)
+        border-color: $darken-blue
 
       &:before
         content: url(images/icon-lenu.png)
@@ -1111,12 +1103,12 @@ body
       width: 100%
 
       &#main-menu
-        background: #f1f1f1
+        background: $light-gray
         text-align: left
         top: 0
 
         &.fixed
-          border-top: 5px solid #608485
+          border-top: 5px solid $gray-blue
           min-height: 80px
           position: fixed
           text-align: right
@@ -1126,10 +1118,10 @@ body
             +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
 
             li a
-              color: #608485
+              color: $gray-blue
 
         ul
-          background: #f1f1f1
+          background: $light-gray
           height: auto
           margin-top: 50px
           width: 100%
@@ -1138,7 +1130,7 @@ body
             display: none
 
           li
-            border-bottom: 1px solid darken(#f1f1f1, 5%)
+            border-bottom: 1px solid darken($light-gray, 5%)
             +box-shadow(0 1px 0 #fff)
             display: block
             text-align: left
@@ -1154,38 +1146,38 @@ body
             & + li a
               background: url(images/icon-web-small.png) no-repeat 10px center
 
-              &:hover
+              &:hover, &:focus
                 background: url(images/icon-web-small-orange.png) no-repeat 10px center
 
             & + li + li a
               background: url(images/icon-libre-small.png) no-repeat 10px center
 
-              &:hover
+              &:hover, &:focus
                 background: url(images/icon-libre-small-orange.png) no-repeat 10px center
 
             & + li + li + li a
               background: url(images/icon-phone-small.png) no-repeat 10px center
 
-              &:hover
+              &:hover, &:focus
                 background: url(images/icon-phone-small-orange.png) no-repeat 10px center
 
             & + li + li + li +  li a
               background: url(images/icon-team-small.png) no-repeat 10px center
 
-              &:hover
+              &:hover, &:focus
                 background: url(images/icon-team-small-orange.png) no-repeat 10px center
 
             & + li + li + li + li +li a
               background: url(images/icon-reference-small.png) no-repeat 10px center
 
-              &:hover
+              &:hover, &:focus
                 background: url(images/icon-reference-small-orange.png) no-repeat 10px center
 
             a
               background-position: 10px center
               background-repeat: no-repeat
+              color: $gray-blue
               padding-left: 35px
-              color: #608485
 
               &:before, &:after
                 display: none
@@ -1211,7 +1203,7 @@ body
     /* - */
     nav
       &:after
-        background: #f1f1f1
+        background: $light-gray
         width: 100%
         display: block
         height: 80px
@@ -1222,9 +1214,9 @@ body
     section
       &#contact, &#web
         article
-          border-bottom: 1px solid darken(#f1f1f1, 5%)
+          border-bottom: 1px solid darken($light-gray, 5%)
           border-right: none
-          +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
+          +box-shadow(0 1px 0 lighten($light-gray, 5%))
           display: block
           margin: 0 4%
           min-height: 180px
@@ -1273,14 +1265,11 @@ body
 
 @media(max-width: 770px)
   body
-
-    section#reference
-      ul
-        text-align: center
+    section#reference ul
+      text-align: center
 
 
 @media(max-width: 570px)
   body
-    section#libre
-      ul
-        text-align: center
+    section#libre ul
+      text-align: center
