@@ -220,6 +220,8 @@ body
       background-color: transparent !important
 
       .innerSlider
+        position: relative
+
         section.horizontal-slider#art-slide
           ul
             font-size: 0
@@ -268,6 +270,9 @@ body
         section.horizontal-slider
           +box-shadow(none)
           height: 100%
+          width: 70%
+          margin: 0 auto
+          float: none !important
 
           h2
             & + p
@@ -276,8 +281,23 @@ body
 
           article
             +box-shadow(0 5px 5px -5px rgba(0, 0, 0, 0.1))
-            padding: 0 0 20px
+            margin-bottom: 30px
+            padding: 0 0 20px 35px
             position: relative
+            text-align: center
+
+            &:before
+              height: 100%
+              position: absolute
+              top: 0
+              left: 0
+              content: ''
+              background: darken(#f1f1f1, 5%)
+              +border-left-radius(5px)
+              +border-right-radius(5px)
+              +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
+              width: 8px
+              display: block
 
             p:first-of-type
               padding-top: 20px
@@ -287,10 +307,13 @@ body
               +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
               color: orange
               font-size: 1.8em
-              margin-top: 40px
-              margin-bottom: 0
+              margin: 10px auto 0
               padding: 0.1em 5px
+              text-align: center
               +text-shadow(1px 1px 0 #fff)
+
+
+              &.pharmacy
 
               &.pharmacy
                 border-color: #8eb931
@@ -303,8 +326,7 @@ body
               &.pharmacy, &.doctor
                 display: inline-block
                 border-bottom: 5px solid
-                margin-bottom: 20px
-                +box-shadow(none)
+
 
           p
             font-size: 1.1em
@@ -314,11 +336,10 @@ body
             color: #608485
             font-size: 2.7em
             font-weight: normal
-            line-height: 100px
-            margin-bottom: 20px
-            padding-left: 150px
+            margin-top: 0
+            padding-top: 225px
             position: relative
-            vertical-align: middle
+            text-align: center
 
             &:after, &:before
               display: block
@@ -331,29 +352,31 @@ body
               +border-right-radius(100%)
               +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
               content: ''
-              height: 110px
-              left: 0
+              height: 210px
+              left: 50%
               top: 0
-              width: 110px
+              margin-left: -105px
+              width: 210px
 
             &:before
-              height: 100px
-              left: 20px
-              top: 20px
-              width: 100px
+              height: 150px
+              left: 50%
+              top: 26px
+              margin-left: -75px
+              width: 150px
               z-index: 10
 
             &.website-title:before
-              content: url(images/website.png)
+              content: url(images/big-website.png)
 
             &.elearning-title:before
-              content: url(images/elearning.png)
+              content: url(images/big-elearning.png)
 
             &.questionnary-title:before
-              content: url(images/questionnary.png)
+              content: url(images/big-questionnary.png)
 
             &.design-title:before
-              content: url(images/web-design.png)
+              content: url(images/big-web-design.png)
 
           h4
             color: #393b48
@@ -370,30 +393,31 @@ body
               margin-bottom: 0
 
             &.kreasoft
-              background: url(images/krea-soft.png) no-repeat top left
+              background: url(images/krea-soft.png) no-repeat top center
 
             &.kreaform
-              background: url(images/krea-form.png) no-repeat top left
+              background: url(images/krea-form.png) no-repeat top center
 
             &.vitalesoft
-              background: url(images/vitalesoft.png) no-repeat top left
+              background: url(images/vitalesoft.png) no-repeat top center
               background-size: 190px
 
             &.vitaleform
-              background: url(images/vitaleform.png) no-repeat top left
+              background: url(images/vitaleform.png) no-repeat top center
               background-size: 190px
 
           p.pharminfo, p.medsite
             border: none
             font-size: 1.4em
-            min-height: 210px
-            padding: 20px 20px 20px 250px
+            padding: 200px 0 20px !important
+            background-repeat: no-repeat
+            background-position: center 20px
 
           p.pharminfo
-            background: url(images/logo-pharminfo.png) no-repeat top left
+            background-image: url(images/logo-pharminfo.png)
 
           p.medsite
-            background: url(images/logo-medsite.png) no-repeat top left
+            background-image: url(images/logo-medsite.png)
 
 
         a.backToFirstSlide
