@@ -42,7 +42,8 @@ $ ->
 
     slider = $('.bxslider').bxSlider({
         controls: false,
-        pager: false
+        pager: false,
+        adaptiveHeight: true
     })
 
     $('#web .more').click (e) ->
