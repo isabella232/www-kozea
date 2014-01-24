@@ -43,7 +43,7 @@ $ ->
     slider = $('.bxslider').bxSlider({
         controls: false,
         pager: false,
-        adaptiveHeight: true
+        adaptiveHeight: true,
     })
 
     $('#web .more').click (e) ->
@@ -62,20 +62,10 @@ lock_scroll = ->
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
     }, 1500
-    scrollPosition = [
-        self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-        self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
-    ]
-    html = jQuery 'body'
-    html.data('scroll-position', scrollPosition)
-    html.data('previous-overflow', html.css('overflow'))
-    html.css('overflow', 'hidden')
-    window.scrollTo(scrollPosition[0], scrollPosition[1])
+    $('body').addClass('stop-scrolling')
 
 unlock_scroll = ->
-    html = jQuery 'body'
-    scrollPosition = if html.data 'scroll-position' then html.data 'scroll-position'  else [0, 0]
-    html.css('overflow', html.data('previous-overflow'))
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
     }, 1500
+    $('body').removeClass('stop-scrolling')
