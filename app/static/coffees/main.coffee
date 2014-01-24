@@ -40,20 +40,21 @@ $ ->
             $('#main-header-link').fadeIn(1000)
         return
 
+    slider = $('.bxslider').bxSlider({
+    controls: false,
+    pager: false
+    })
+
     $('#web .more').click (e) ->
         e.preventDefault()
         lock_scroll()
-        $.fn.ferroSlider.slideTo($(@).data('slide'))
+        slider.goToSlide($(@).data('slide'))
         return
     $('.backToFirstSlide').click (e) ->
         e.preventDefault()
         unlock_scroll()
-        $.fn.ferroSlider.slideTo('web')
+        slider.goToSlide(0)
         return
-    $('.horizontal-slider').ferroSlider {
-        disableSwipe: true,
-        preventArrowNavigation: true
-    }
     return
 
 lock_scroll = ->
@@ -64,14 +65,16 @@ lock_scroll = ->
         self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
         self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
     ]
-    html = jQuery 'html'
+    html = jQuery 'body'
     html.data('scroll-position', scrollPosition)
     html.data('previous-overflow', html.css('overflow'))
     html.css('overflow', 'hidden')
     window.scrollTo(scrollPosition[0], scrollPosition[1])
 
 unlock_scroll = ->
-    html = jQuery 'html'
-    scrollPosition = html.data 'scroll-position'
+    html = jQuery 'body'
+    scrollPosition = if html.data 'scroll-position' then html.data 'scroll-position'  else [0, 0]
     html.css('overflow', html.data('previous-overflow'))
-    window.scrollTo(scrollPosition[0], scrollPosition[1])
+    $('html, body').animate {
+        scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
+    }, 1500
