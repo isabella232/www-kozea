@@ -41,8 +41,8 @@ $ ->
         return
 
     slider = $('.bxslider').bxSlider({
-    controls: false,
-    pager: false
+        controls: false,
+        pager: false
     })
 
     $('#web .more').click (e) ->
@@ -51,9 +51,9 @@ $ ->
         slider.goToSlide($(@).data('slide'))
         return
     $('.backToFirstSlide').click (e) ->
+        slider.goToSlide(0)
         e.preventDefault()
         unlock_scroll()
-        slider.goToSlide(0)
         return
     return
 
