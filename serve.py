@@ -47,7 +47,7 @@ else:
 
 app.run(
     debug=True,
-    host=host,
+    host='0.0.0.0',
     port=port,
     use_debugger=werkzeug_debugger,
     threaded=True)
