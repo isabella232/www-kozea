@@ -42,10 +42,12 @@ $ ->
 
     $('#web .more').click (e) ->
         e.preventDefault()
+        lock_scroll()
         $.fn.ferroSlider.slideTo($(@).data('slide'))
         return
     $('.backToFirstSlide').click (e) ->
         e.preventDefault()
+        unlock_scroll()
         $.fn.ferroSlider.slideTo('web')
         return
     $('.horizontal-slider').ferroSlider {
@@ -54,3 +56,22 @@ $ ->
     }
     return
 
+lock_scroll = ->
+    $('html, body').animate {
+        scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
+    }, 1500
+    scrollPosition = [
+        self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+        self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+    ]
+    html = jQuery 'html'
+    html.data('scroll-position', scrollPosition)
+    html.data('previous-overflow', html.css('overflow'))
+    html.css('overflow', 'hidden')
+    window.scrollTo(scrollPosition[0], scrollPosition[1])
+
+unlock_scroll = ->
+    html = jQuery 'html'
+    scrollPosition = html.data 'scroll-position'
+    html.css('overflow', html.data('previous-overflow'))
+    window.scrollTo(scrollPosition[0], scrollPosition[1])
