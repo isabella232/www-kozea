@@ -214,258 +214,226 @@ body
       margin: 0
 
   /* -
-  /* - SECTION -
+  /* - SLIDER -
   /* - */
-  #outerSliderWrapper
-    background: none !important
-    position: relative !important
+  .bx-wrapper .bx-viewport
+    background: #f1f1f1
+    border-top: none !important
+    border-color: #f1f1f1
+    +box-shadow(none)
 
-    #outerSlider
-      background-color: transparent !important
+    a.backToFirstSlide
+      color: transparent
+      font-size: 0
+      width: 40px
 
-      .innerSlider
+      &:before
+        background: orange
+        border: 5px solid darken($light-gray, 5%)
+        +border-radius(100%)
+        +box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 1px 1px 0 rgba(255, 255, 255, 0.8))
+        color: white
+        content: '<'
+        display: block
+        font-size: 22px
+        font-weight: bold
+        height: 50px
+        left: 2%
+        line-height: 40px
+        margin-top: -20px
+        position: absolute
+        text-align: center
+        top: 50%
+        width: 50px
+
+      &:hover, &:focus
+        &:before
+          background: $light-gray
+          color: orange
+
+
+    section.horizontal-slider#website-slide, section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#art-slide
+      width: 70%
+      margin: 0 auto
+
+      article 
+        margin-bottom: 30px
+        padding: 0 35px 20px
         position: relative
+        text-align: center
 
-        section.horizontal-slider#art-slide
-          ul
-            font-size: 0
-            padding-left: 0
-
-            li
-              border: 8px solid darken($light-gray, 5%)
-              display: inline-block
-              font-size: 14px
-              height: 250px
-              list-style: none
-              margin: 10px
-              overflow: hidden
-              position: relative
-              width: 250px
-              z-index: 1
-
-              img
-                width: 250px
-
-              &:before
-                +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
-                content: ''
-                height: 250px
-                left: -4px
-                position: absolute
-                top: -5px
-                width: 250px
-                z-index: 5
-
-
-        section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#website-slide
-          article
-            +box-shadow(none)
-
-            h3
-              border-bottom: 4px solid orange
-              display: inline-block
-
-            h4
-              & + p
-                border: none
-                padding-top: 15px
-
-      #innerSlider1, #innerSlider2, #innerSlider3, #innerSlider4
-        section.horizontal-slider
-          +box-shadow(none)
-          float: none !important
+        &:before
+          background: darken($light-gray, 5%)
+          +border-radius(5px)
+          +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
+          content: ''
+          display: block
           height: 100%
-          margin: 0 auto
-          padding: 50px 5%
-          width: 60%
+          left: 0
+          position: absolute
+          top: 0
+          width: 8px
 
-          h2
-            & + p
-              margin-bottom: 20px
-              margin-top: 30px
+      p 
+        font-size: 1.1em
+        text-align: justify
 
-          article
-            margin-bottom: 30px
-            padding: 0 35px 20px
-            position: relative
-            text-align: center
+      h2
+        color: $gray-blue
+        font-size: 2.7em
+        margin: 0 0 40px
+        padding-top: 225px
+        position: relative
+        text-align: center
 
-            &:before
-              background: darken($light-gray, 5%)
-              +border-radius(5px)
-              +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
-              content: ''
-              display: block
-              height: 100%
-              left: 0
-              position: absolute
-              top: 0
-              width: 8px
+        &:after, &:before
+          display: block
+          position: absolute
 
-            &.organism
-              background: lighten($light-gray, 5%)
-              border: 1px solid darken($light-gray, 5%)
-              +border-radius(5px)
-              +box-shadow(0 8px 8px -8px rgba(0, 0, 0, 0.3) inset)
-              padding-top: 10px
+        &:after
+          background-color: $gray-blue
+          border: 8px solid darken($light-gray, 5%)
+          +border-radius(100%)
+          +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
+          content: ''
+          height: 210px
+          left: 50%
+          margin-left: -105px
+          top: 0
+          width: 210px
 
-              h3
-                border-color: $gray-blue
-                color: $gray-blue
-                font-weight: bold
-                text-transform: uppercase
+        &:before
+          height: 150px
+          left: 50%
+          margin-left: -75px
+          top: 26px
+          width: 150px
+          z-index: 10
 
-              &:before
-                display: none
+        &.website-title:before
+          content: url(images/big-website.png)
 
-            p:first-of-type
-              padding-top: 20px
+        &.elearning-title:before
+          content: url(images/big-elearning.png)
 
-            h3
-              border-bottom: 1px solid darken($light-gray, 5%)
-              +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
-              color: orange
-              font-size: 1.8em
-              margin: 10px auto 0
-              padding: 0.1em 5px
-              text-align: center
-              +text-shadow(1px 1px 0 #fff)
+        &.questionnary-title:before
+          content: url(images/big-questionnary.png)
 
-              &.pharmacy, &.doctor
-                border-bottom: 5px solid
-                display: inline-block
-                font-size: 2em
+        &.design-title:before
+          content: url(images/big-web-design.png)
 
-              &.pharmacy
-                border-color: #8eb931
-                color: #8eb931
+      h3
+        border-bottom: 4px solid orange
+        +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
+        color: orange
+        display: inline-block
+        font-size: 1.8em
+        margin: 10px auto
+        padding: 0.1em 5px
+        text-align: center
+        +text-shadow(1px 1px 0 #fff)
 
-              &.doctor
-                border-color: #bd3333
-                color: #bd3333
+        &.pharmacy, &.doctor
+          border-bottom: 5px solid
+          display: inline-block
+          font-size: 2em
 
-          p
-            font-size: 1.1em
-            text-align: justify
+        &.pharmacy
+          border-color: #8eb931
+          color: #8eb931
 
-          h2
-            color: $gray-blue
-            font-size: 2.7em
-            margin: 0 0 40px
-            padding-top: 225px
-            position: relative
-            text-align: center
+        &.doctor
+          border-color: #bd3333
+          color: #bd3333
 
-            &:after, &:before
-              display: block
-              position: absolute
+      h4
+        color: $darken-blue
+        margin-top: 25px
+        text-decoration: underline
 
-            &:after
-              background-color: $gray-blue
-              border: 8px solid darken($light-gray, 5%)
-              +border-radius(100%)
-              +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
-              content: ''
-              height: 210px
-              left: 50%
-              margin-left: -105px
-              top: 0
-              width: 210px
+      &#website-slide
+        p.pharminfo, p.medsite
+          background-position: center 20px
+          background-repeat: no-repeat
+          border: none
+          font-size: 1.4em
+          padding: 200px 0 20px !important
 
-            &:before
-              height: 150px
-              left: 50%
-              margin-left: -75px
-              top: 26px
-              width: 150px
-              z-index: 10
+        p.pharminfo
+          background-image: url(images/logo-pharminfo.png)
 
-            &.website-title:before
-              content: url(images/big-website.png)
+        p.medsite
+          background-image: url(images/logo-medsite.png)
 
-            &.elearning-title:before
-              content: url(images/big-elearning.png)
+  section.horizontal-slider#elearning-slide
+    article
+      &.organism
+        background: lighten($light-gray, 5%)
+        border: 1px solid darken($light-gray, 5%)
+        +border-radius(5px)
+        +box-shadow(0 8px 8px -8px rgba(0, 0, 0, 0.3) inset)
+        padding-top: 10px
 
-            &.questionnary-title:before
-              content: url(images/big-questionnary.png)
+        &:before
+          display: none
 
-            &.design-title:before
-              content: url(images/big-web-design.png)
+        h3
+          border-color: $gray-blue
+          color: $gray-blue
+          font-weight: bold
+          text-transform: uppercase
 
-          h4
-            color: $darken-blue
-            margin-top: 25px
-            text-decoration: underline
+  section.horizontal-slider#elearning-slide
+    article h4
+      &.kreasoft, &.kreaform, &.vitaleform, &.vitalesoft
+        color: transparent
+        font-size: 0
+        height: 50px
+        margin-bottom: 0
 
-            & + p
-              border: none
+      &.kreasoft
+        background: url(images/krea-soft.png) no-repeat top center
 
-            &.kreasoft, &.kreaform, &.vitaleform, &.vitalesoft
-              color: transparent
-              font-size: 0
-              height: 50px
-              margin-bottom: 0
+      &.kreaform
+        background: url(images/krea-form.png) no-repeat top center
 
-            &.kreasoft
-              background: url(images/krea-soft.png) no-repeat top center
+      &.vitalesoft
+        background: url(images/vitalesoft.png) no-repeat top center
+        background-size: 190px
 
-            &.kreaform
-              background: url(images/krea-form.png) no-repeat top center
+      &.vitaleform
+        background: url(images/vitaleform.png) no-repeat top center
+        background-size: 190px
 
-            &.vitalesoft
-              background: url(images/vitalesoft.png) no-repeat top center
-              background-size: 190px
+  section.horizontal-slider#art-slide
+    ul 
+      font-size: 0
+      padding-left: 0
 
-            &.vitaleform
-              background: url(images/vitaleform.png) no-repeat top center
-              background-size: 190px
+      li
+        border: 8px solid darken($light-gray, 5%)
+        display: inline-block
+        font-size: 14px
+        height: 250px
+        list-style: none
+        margin: 10px
+        overflow: hidden
+        position: relative
+        width: 250px
+        z-index: 1
 
-          p.pharminfo, p.medsite
-            background-position: center 20px
-            background-repeat: no-repeat
-            border: none
-            font-size: 1.4em
-            padding: 200px 0 20px !important
+        img
+          width: 250px
 
-          p.pharminfo
-            background-image: url(images/logo-pharminfo.png)
-
-          p.medsite
-            background-image: url(images/logo-medsite.png)
-
-
-        a.backToFirstSlide
-          color: transparent
-          font-size: 0
-          width: 40px
-
-          &:before
-            background: orange
-            border: 5px solid darken($light-gray, 5%)
-            +border-radius(100%)
-            +box-shadow(0 1px 1px rgba(0, 0, 0, 0.5) inset, 1px 1px 0 rgba(255, 255, 255, 0.8))
-            color: white
-            content: '<'
-            display: block
-            font-size: 22px
-            font-weight: bold
-            height: 50px
-            left: 2%
-            line-height: 40px
-            margin-top: -20px
-            position: absolute
-            text-align: center
-            top: 50%
-            width: 50px
-
-          &:hover, &:focus
-            &:before
-              background: $light-gray
-              color: orange
-
-      #web article
-        margin-top: 40px
-
+        &:before
+          +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
+          content: ''
+          height: 250px
+          left: -4px
+          position: absolute
+          top: -5px
+          width: 250px
+          z-index: 5
 
   /* -
   /* - SECTION -

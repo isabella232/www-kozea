@@ -49,7 +49,8 @@ $(function() {
   });
   slider = $('.bxslider').bxSlider({
     controls: false,
-    pager: false
+    pager: false,
+    adaptiveHeight: true
   });
   $('#web .more').click(function(e) {
     e.preventDefault();
@@ -64,24 +65,15 @@ $(function() {
 });
 
 lock_scroll = function() {
-  var html, scrollPosition;
   $('html, body').animate({
     scrollTop: $($('.nav li a').eq(1).attr('href')).offset().top - 82
   }, 1500);
-  scrollPosition = [self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft, self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop];
-  html = jQuery('body');
-  html.data('scroll-position', scrollPosition);
-  html.data('previous-overflow', html.css('overflow'));
-  html.css('overflow', 'hidden');
-  return window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  return $('body').addClass('stop-scrolling');
 };
 
 unlock_scroll = function() {
-  var html, scrollPosition;
-  html = jQuery('body');
-  scrollPosition = html.data('scroll-position') ? html.data('scroll-position') : [0, 0];
-  html.css('overflow', html.data('previous-overflow'));
-  return $('html, body').animate({
+  $('html, body').animate({
     scrollTop: $($('.nav li a').eq(1).attr('href')).offset().top - 82
   }, 1500);
+  return $('body').removeClass('stop-scrolling');
 };
