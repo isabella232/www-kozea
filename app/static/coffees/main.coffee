@@ -46,6 +46,9 @@ $ ->
         adaptiveHeight: true,
     })
 
+    $("#main-header-link-icon").click (e) ->
+        slider.goToSlide(0)
+
     $('#web .more').click (e) ->
         e.preventDefault()
         lock_scroll()
