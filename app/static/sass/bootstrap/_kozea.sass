@@ -223,7 +223,7 @@ body
     border-color: #f1f1f1
     +box-shadow(none)
 
-    p.note 
+    p.note
       color: lighten(#5a5a5a, 15%)
       font-size: 0.7em
 
@@ -258,7 +258,7 @@ body
 
 
     section.horizontal-slider#website-slide, section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#art-slide
-      width: 70%
+      width: 80%
       margin: 0 auto
       padding-left: 200px
 
@@ -371,11 +371,17 @@ body
         p, ul
           font-size: 1.4em
 
-        ul 
+        ul
           border-bottom: 1px solid darken(#f1f1f1, 5%)
           +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
           margin-bottom: 20px
           padding-bottom: 20px
+          list-style: none
+
+          li:before
+            content: '►'
+            margin: 0 5px 0 -1em
+
 
         article
           position: relative
@@ -451,7 +457,7 @@ body
 
             &:after
               margin-top: 0
-              
+
           &.vitale-form:after
             content: url(images/vitaleform.png)
 
@@ -545,7 +551,7 @@ body
       p
         color: #fff
         display: block
-        font-size: 1.3em
+        font-size: 1.45em
         text-align: justify
 
     &#web, &#libre, &#team, &#contact, &#reference
@@ -554,7 +560,7 @@ body
 
       p
         padding: 3px 4%
-        font-size: 1.1em
+        font-size: 1.25em
 
       h2
         display: inline-block
@@ -754,7 +760,7 @@ body
       a
         color: #f1f1f1
         text-decoration: underline
-        
+
         &:hover, &:focus
           color: darken(#f1f1f1, 10%)
           text-decoration: none
@@ -1316,3 +1322,10 @@ body
   body
     section#libre ul
       text-align: center
+
+
+@media(max-width: 480px)
+  body
+    section#team
+      ul
+        text-align: center
