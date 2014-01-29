@@ -21,7 +21,6 @@ body
     overflow: hidden
 
     .bx-wrapper
-      margin-top: 62px!important
       height: 100%
       overflow-y: scroll
 
@@ -1331,8 +1330,36 @@ body
 
 @media(max-width: 570px)
   body
-    section#libre ul
-      text-align: center
+    section
+      &#libre, &#web, &#team, &#contact, &#reference
+        h2
+          font-size: 1.8em
+
+      &#libre ul
+        text-align: center
+
+      &#web
+        article
+          padding-left: 0
+          padding-top: 115px
+          margin-top: 16px
+
+          &:after
+            left: 50%
+            margin-left: -35px
+
+          h3
+            position: initial
+
+            &:before, &:after
+              margin-left: 0
+              left: 50%
+
+            &:after
+              margin-left: -50px
+
+            &:before
+              margin-left: -61px
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
@@ -1341,7 +1368,7 @@ body
         width: auto
 
         a.backToFirstSlide:before
-          top: 50px
+          top: 30px
 
         article
           padding-top: 180px
