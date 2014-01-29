@@ -14,6 +14,7 @@ $darken-blue: #393b48
 
 body
   border-top: 12px solid $light-gray
+  font-size: 1.1em
 
   button
     display: none
@@ -222,6 +223,10 @@ body
     border-color: #f1f1f1
     +box-shadow(none)
 
+    p.note 
+      color: lighten(#5a5a5a, 15%)
+      font-size: 0.7em
+
     a.backToFirstSlide
       color: transparent
       font-size: 0
@@ -255,32 +260,45 @@ body
     section.horizontal-slider#website-slide, section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#art-slide
       width: 70%
       margin: 0 auto
+      padding-left: 200px
 
-      article 
-        margin-bottom: 30px
+      article
+        +box-shadow(none)
+        margin: 50px 0
+        min-height: 200px
         padding: 0 35px 20px
         position: relative
-        text-align: center
+
+        &:after, &:before
+          display: block
+          position: absolute
+          top: 0
+
+        &:after
+          height: 200px
+          width: 200px
+          left: -170px
+          overflow: hidden
+          margin-top: 20px
+
 
         &:before
           background: darken($light-gray, 5%)
           +border-radius(5px)
           +box-shadow(1px 1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 #fff)
           content: ''
-          display: block
           height: 100%
           left: 0
-          position: absolute
           top: 0
           width: 8px
 
-      p 
-        font-size: 1.1em
+      p
+        font-size: 1.4em
         text-align: justify
 
       h2
         color: $gray-blue
-        font-size: 2.7em
+        font-size: 3.2em
         margin: 0 0 40px
         padding-top: 225px
         position: relative
@@ -323,14 +341,10 @@ body
           content: url(images/big-web-design.png)
 
       h3
-        border-bottom: 4px solid orange
-        +box-shadow(0 1px 0 rgba(255, 255, 255, 0.8))
-        color: orange
-        display: inline-block
         font-size: 1.8em
+        font-weight: bold
         margin: 10px auto
         padding: 0.1em 5px
-        text-align: center
         +text-shadow(1px 1px 0 #fff)
 
         &.pharmacy, &.doctor
@@ -348,65 +362,117 @@ body
 
       h4
         color: $darken-blue
+        font-size: 1.6em
+        font-weight: bold
         margin-top: 25px
         text-decoration: underline
 
       &#website-slide
-        p.pharminfo, p.medsite
-          background-position: center 20px
-          background-repeat: no-repeat
-          border: none
+        p, ul
           font-size: 1.4em
-          padding: 200px 0 20px !important
 
-        p.pharminfo
-          background-image: url(images/logo-pharminfo.png)
+        ul 
+          border-bottom: 1px solid darken(#f1f1f1, 5%)
+          +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
+          margin-bottom: 20px
+          padding-bottom: 20px
 
-        p.medsite
-          background-image: url(images/logo-medsite.png)
+        article
+          position: relative
+
+          &.medsite
+            &:after
+              content: url(images/logo-medsite.png)
+              left: -180px
+
+          &.pharminfo
+            &:after
+              content: url(images/logo-pharminfo.png)
+              left: -180px
+
+      &#elearning-slide
+        article
+          &.gear:after
+            content: url(images/gears.png)
+            margin-top: 0
+
+          &.lcms:after
+            content: url(images/lcms.png)
+            margin-top: 0
+
+          &.evaluation:after
+            content: url(images/evaluation.png)
+            margin-top: 0
+
+
+      &#stat-slide
+        article
+          &.labsharing:after
+            content: url(images/labsharing.png)
+
+          &.question-360:after
+            content: url(images/360.png)
+
+          &.stats:after
+            content: url(images/graph.png)
+
+          &.questions:after
+            content: url(images/questions.png)
+
+          &.extraction:after
+            content: url(images/extraction.png)
+            margin-top: -20px
+
+
+
 
   section.horizontal-slider#elearning-slide
     article
       &.organism
-        background: lighten($light-gray, 5%)
-        border: 1px solid darken($light-gray, 5%)
-        +border-radius(5px)
-        +box-shadow(0 8px 8px -8px rgba(0, 0, 0, 0.3) inset)
         padding-top: 10px
 
-        &:before
-          display: none
+        div
+          margin: 45px 0
+          border-bottom: 1px solid darken(#f1f1f1, 5%)
+          +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
+          position: relative
+
+          &:after
+            display: block
+            height: 160px
+            left: -200px
+            margin-top: 20px
+            position: absolute
+            top: 0
+            width: 200px
+
+          &.vitale-form, &.vitale-soft
+            min-height: 160px
+
+            &:after
+              margin-top: 0
+              
+          &.vitale-form:after
+            content: url(images/vitaleform.png)
+
+          &.vitale-soft:after
+            content: url(images/vitalesoft.png)
+
+          &.krea-form:after
+            content: url(images/krea-form.png)
+
+          &.krea-soft:after
+            content: url(images/krea-soft.png)
+
 
         h3
-          border-color: $gray-blue
           color: $gray-blue
-          font-weight: bold
           text-transform: uppercase
 
-  section.horizontal-slider#elearning-slide
-    article h4
-      &.kreasoft, &.kreaform, &.vitaleform, &.vitalesoft
-        color: transparent
-        font-size: 0
-        height: 50px
-        margin-bottom: 0
 
-      &.kreasoft
-        background: url(images/krea-soft.png) no-repeat top center
-
-      &.kreaform
-        background: url(images/krea-form.png) no-repeat top center
-
-      &.vitalesoft
-        background: url(images/vitalesoft.png) no-repeat top center
-        background-size: 190px
-
-      &.vitaleform
-        background: url(images/vitaleform.png) no-repeat top center
-        background-size: 190px
 
   section.horizontal-slider#art-slide
-    ul 
+    ul
       font-size: 0
       padding-left: 0
 
@@ -685,6 +751,14 @@ body
         &:before, &:after
           background: $light-gray
 
+      a
+        color: #f1f1f1
+        text-decoration: underline
+        
+        &:hover, &:focus
+          color: darken(#f1f1f1, 10%)
+          text-decoration: none
+
       ul
         li a
           background-color: $light-gray
@@ -886,6 +960,7 @@ body
 
 
         dl, blockquote
+          font-size: 18px
           border-left: none
           padding: 10px 0
 

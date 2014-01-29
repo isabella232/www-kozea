@@ -52,6 +52,9 @@ $(function() {
     pager: false,
     adaptiveHeight: true
   });
+  $("#main-header-link-icon").click(function(e) {
+    return slider.goToSlide(0);
+  });
   $('#web .more').click(function(e) {
     e.preventDefault();
     lock_scroll();
