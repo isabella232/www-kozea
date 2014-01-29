@@ -3,9 +3,11 @@ $ ->
     if $(document).scrollTop() > position.offset().top + position.height()
             $("#main-menu").addClass('fixed')
     $('.nav li a').click (e) ->
+        prevent_flickering()
         $('html, body').animate {
             scrollTop: $($(@).attr 'href').offset().top - 82
-        }, 1500
+        }, 1500, () ->
+            restore_mousewheel()
         return false
 
     $(document).on('scroll', ->
@@ -47,6 +49,7 @@ $ ->
     })
 
     $("#main-header-link-icon").click (e) ->
+        e.preventDefault()
         slider.goToSlide(0)
 
     $('#web .more').click (e) ->
@@ -55,20 +58,33 @@ $ ->
         slider.goToSlide($(@).data('slide'))
         return
     $('.backToFirstSlide').click (e) ->
-        slider.goToSlide(0)
         e.preventDefault()
+        slider.goToSlide(0)
         unlock_scroll()
         return
     return
 
 lock_scroll = ->
+    prevent_flickering()
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
-    }, 1500
+    }, 1500, () ->
+        restore_mousewheel()
     $('body').addClass('stop-scrolling')
 
 unlock_scroll = ->
+    prevent_flickering()
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
-    }, 1500
+    }, 1500 , () ->
+        restore_mousewheel()
     $('body').removeClass('stop-scrolling')
+
+prevent_flickering = () ->
+    $('body').on('mousewheel', (e) ->
+        e.preventDefault()
+        return
+    )
+restore_mousewheel = () ->
+    $('body').off('mousewheel')
+    return
