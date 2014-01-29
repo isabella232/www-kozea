@@ -16,6 +16,15 @@ body
   border-top: 12px solid $light-gray
   font-size: 1.1em
 
+  &.stop-scrolling
+    height: 100%
+    overflow: hidden
+
+    .bx-wrapper
+      margin-top: 62px!important
+      height: 100%
+      overflow-y: scroll
+
   button
     display: none
 
@@ -229,7 +238,9 @@ body
 
     a.backToFirstSlide
       color: transparent
+      display: block
       font-size: 0
+      height: 40px
       width: 40px
 
       &:before
@@ -1323,6 +1334,46 @@ body
     section#libre ul
       text-align: center
 
+    .bx-wrapper .bx-viewport section
+      &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
+        padding: 50px 0
+        margin: 0 5%
+        width: auto
+
+        a.backToFirstSlide:before
+          top: 50px
+
+        article
+          padding-top: 180px
+
+          div 
+            margin-top: 0
+            padding-top: 140px
+
+            &.krea-soft, &.krea-form
+              padding-top: 100px
+
+              &:after
+                margin-top: -20px
+
+            &:after
+              left: 50%
+              margin-left: -100px
+
+          &.organism
+            padding-top: 20px
+
+          &:after
+            left: 50% !important
+            margin-left: -100px
+
+          &:before
+            width: 100%
+            height: 8px
+
+      &.horizontal-slider#art-slide
+        ul 
+          text-align: center
 
 @media(max-width: 480px)
   body
