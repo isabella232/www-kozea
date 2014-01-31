@@ -3,15 +3,30 @@ var lock_scroll, prevent_flickering, restore_mousewheel, unlock_scroll;
 
 $(function() {
   var lock, position, slider;
+  $('a').click(function() {
+    return $.address.value($(this).attr('href'));
+  });
+  $.address.change(function(e) {
+    if (e.value === '/#' || e.value === '/') {
+      slider.goToSlide(0);
+      unlock_scroll();
+      $('html, body').animate({
+        scrollTop: 0
+      }, 500);
+    }
+    return $('[href=' + e.value.replace('/', '') + ']').trigger('click');
+  });
   position = $("#switch");
   if ($(document).scrollTop() > position.offset().top + position.height()) {
     $("#main-menu").addClass('fixed');
   }
   $('.nav li a').click(function(e) {
+    slider.goToSlide(0);
+    unlock_scroll();
     prevent_flickering();
     $('html, body').animate({
       scrollTop: $($(this).attr('href')).offset().top - 82
-    }, 1500, function() {
+    }, 500, function() {
       return restore_mousewheel();
     });
     return false;
@@ -53,7 +68,8 @@ $(function() {
   slider = $('.bxslider').bxSlider({
     controls: false,
     pager: false,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    useCSS: true
   });
   $("#main-header-link-icon").click(function(e) {
     e.preventDefault();
@@ -75,7 +91,7 @@ lock_scroll = function() {
   prevent_flickering();
   $('html, body').animate({
     scrollTop: $($('.nav li a').eq(1).attr('href')).offset().top - 82
-  }, 1500, function() {
+  }, 500, function() {
     return restore_mousewheel();
   });
   return $('body').addClass('stop-scrolling');
@@ -85,7 +101,7 @@ unlock_scroll = function() {
   prevent_flickering();
   $('html, body').animate({
     scrollTop: $($('.nav li a').eq(1).attr('href')).offset().top - 82
-  }, 1500, function() {
+  }, 500, function() {
     return restore_mousewheel();
   });
   return $('body').removeClass('stop-scrolling');

@@ -1,12 +1,25 @@
 $ ->
+    $('a').click () ->
+        $.address.value($(@).attr('href'))
+    $.address.change (e) ->
+        if e.value == '/#' or e.value == '/'
+            slider.goToSlide(0)
+            unlock_scroll()
+            $('html, body').animate {
+                scrollTop: 0
+            }, 500
+        $('[href='+e.value.replace('/', '')+']').trigger('click')
+
     position = $("#switch")
     if $(document).scrollTop() > position.offset().top + position.height()
             $("#main-menu").addClass('fixed')
     $('.nav li a').click (e) ->
+        slider.goToSlide(0)
+        unlock_scroll()
         prevent_flickering()
         $('html, body').animate {
             scrollTop: $($(@).attr 'href').offset().top - 82
-        }, 1500, () ->
+        }, 500, () ->
             restore_mousewheel()
         return false
 
@@ -46,6 +59,7 @@ $ ->
         controls: false,
         pager: false,
         adaptiveHeight: true,
+        useCSS: true
     })
 
     $("#main-header-link-icon").click (e) ->
@@ -68,7 +82,7 @@ lock_scroll = ->
     prevent_flickering()
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
-    }, 1500, () ->
+    }, 500, () ->
         restore_mousewheel()
     $('body').addClass('stop-scrolling')
 
@@ -76,7 +90,7 @@ unlock_scroll = ->
     prevent_flickering()
     $('html, body').animate {
         scrollTop: $($('.nav li a').eq(1).attr 'href').offset().top - 82
-    }, 1500 , () ->
+    }, 500 , () ->
         restore_mousewheel()
     $('body').removeClass('stop-scrolling')
 
