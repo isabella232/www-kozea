@@ -393,6 +393,12 @@ body
             margin: 0 5px 0 -1em
 
 
+          ul li
+            font-size: 19px
+
+            &:before 
+              content: '-'
+
         article
           position: relative
 
@@ -822,7 +828,7 @@ body
 
           &.pyphen
             background-image: url(images/pyphen.png)
-            background-size: 120px
+            background-size: 190px
 
           &.pygal
             background-image: url(images/pygal.png)
@@ -866,13 +872,13 @@ body
     /* - SECTION TEAM -
     /* ---------------------
     &#team
-      background: $gray-blue
+      background: $light-gray
 
       p
         color: #fff
 
       &:before
-        background: $light-gray
+        background: $gray-blue
 
       ul
         li
@@ -948,16 +954,18 @@ body
     /* - SECTION CONTACT -
     /* -------------------
     &#contact
-      background: $light-gray
-      color: #5a5a5a
+      background: $gray-blue
+      color: #fff
 
       &:before
-        background: $gray-blue
+        background: $light-gray
 
       article
         padding: 0 4% 20px
         position: relative
         width: 32%
+        border-right: 1px solid darken($gray-blue, 5%)
+        +box-shadow(1px 0 0 lighten($gray-blue, 5%))
 
         &:after
           display: block
@@ -989,8 +997,7 @@ body
             +box-shadow(none)
 
         h3
-          color: $gray-blue
-          +text-shadow(1px 1px 0 rgba(255, 255, 255, 0.1))
+          color: #fff
 
           &:after
             background: orange
@@ -1000,6 +1007,7 @@ body
             +box-shadow(none)
 
         p, dl, blockquote
+          color: #fff
           text-align: left
 
         a
