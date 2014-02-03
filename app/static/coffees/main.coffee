@@ -52,13 +52,13 @@ $ ->
                 $('.nav.menu').slideDown()
                 $('#main-header-link').fadeIn(1000)
             return
+        return
 
     init_click_handlers = ->
         $("#main-header-link-icon").click (e) ->
             e.preventDefault()
             slider.goToSlide(0)
             return
-
         $('#web .more').click (e) ->
             e.preventDefault()
             lock_scroll()
@@ -70,6 +70,7 @@ $ ->
             slider.goToSlide(0)
             unlock_scroll()
             return
+        return
 
     init_address_history()
     init_responsive_menu()
