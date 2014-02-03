@@ -101,7 +101,7 @@ scrollTo = function(position, speed) {
   if (!position && position !== 0) {
     position = $($('.nav li a').eq(1).attr('href')).offset().top - 82;
   }
-  $('html').animate({
+  $('html, body').animate({
     scrollTop: position
   }, speed, function() {
     $('body').off('mousewheel');

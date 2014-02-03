@@ -89,7 +89,7 @@ scrollTo = (position=null, speed=500)->
     prevent_flickering()
     if (!position and position != 0)
         position = $($('.nav li a').eq(1).attr 'href').offset().top - 82
-    $('html').animate {
+    $('html, body').animate {
         scrollTop: position
     }, speed, () ->
         $('body').off('mousewheel')
