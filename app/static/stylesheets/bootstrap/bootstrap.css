@@ -553,7 +553,7 @@ body section.horizontal-slider#elearning-slide article.organism div:after {
   display: block;
   height: 160px;
   left: -200px;
-  margin-top: 20px;
+  margin-top: -20px;
   position: absolute;
   top: 0;
   width: 200px;
@@ -698,7 +698,7 @@ body section#web, body section#libre, body section#team, body section#contact, b
 /* line 576, ../../sass/bootstrap/_kozea.sass */
 body section#web p, body section#libre p, body section#team p, body section#contact p, body section#reference p {
   padding: 3px 4%;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 /* line 580, ../../sass/bootstrap/_kozea.sass */
 body section#web h2, body section#libre h2, body section#team h2, body section#contact h2, body section#reference h2 {
@@ -1041,7 +1041,7 @@ body section#team {
 }
 /* line 876, ../../sass/bootstrap/_kozea.sass */
 body section#team p {
-  color: white;
+  color: #5a5a5a;
 }
 /* line 879, ../../sass/bootstrap/_kozea.sass */
 body section#team:before {
@@ -1064,7 +1064,7 @@ body section#team ul li {
 /* line 895, ../../sass/bootstrap/_kozea.sass */
 body section#team ul li span {
   bottom: -55px;
-  color: #f1f1f1;
+  color: #5a5a5a;
   display: block;
   font-size: 14px;
   height: 40px;
@@ -1199,7 +1199,7 @@ body section#contact article p, body section#contact article dl, body section#co
 }
 /* line 1012, ../../sass/bootstrap/_kozea.sass */
 body section#contact article a {
-  color: #608485;
+  color: #fff;
 }
 /* line 1016, ../../sass/bootstrap/_kozea.sass */
 body section#contact article dl dt {
