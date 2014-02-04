@@ -553,7 +553,7 @@ body section.horizontal-slider#elearning-slide article.organism div:after {
   display: block;
   height: 160px;
   left: -200px;
-  margin-top: -20px;
+  margin-top: 20px;
   position: absolute;
   top: 0;
   width: 200px;
@@ -1132,10 +1132,14 @@ body section#contact {
   color: white;
 }
 /* line 959, ../../sass/bootstrap/_kozea.sass */
+body section#contact h2 {
+  color: #5a5a5a;
+}
+/* line 962, ../../sass/bootstrap/_kozea.sass */
 body section#contact:before {
   background: #f1f1f1;
 }
-/* line 962, ../../sass/bootstrap/_kozea.sass */
+/* line 965, ../../sass/bootstrap/_kozea.sass */
 body section#contact article {
   padding: 0 4% 20px;
   position: relative;
@@ -1144,7 +1148,7 @@ body section#contact article {
   -webkit-box-shadow: 1px 0 0 #6b9394;
   box-shadow: 1px 0 0 #6b9394;
 }
-/* line 969, ../../sass/bootstrap/_kozea.sass */
+/* line 972, ../../sass/bootstrap/_kozea.sass */
 body section#contact article:after {
   display: block;
   height: 70px;
@@ -1154,72 +1158,72 @@ body section#contact article:after {
   top: 40px;
   width: 70px;
 }
-/* line 978, ../../sass/bootstrap/_kozea.sass */
+/* line 981, ../../sass/bootstrap/_kozea.sass */
 body section#contact article.address:after {
   content: url(images/postal.png);
 }
-/* line 981, ../../sass/bootstrap/_kozea.sass */
+/* line 984, ../../sass/bootstrap/_kozea.sass */
 body section#contact article.email:after {
   content: url(images/mail.png);
 }
-/* line 984, ../../sass/bootstrap/_kozea.sass */
+/* line 987, ../../sass/bootstrap/_kozea.sass */
 body section#contact article.phone:after {
   content: url(images/phone.png);
 }
-/* line 988, ../../sass/bootstrap/_kozea.sass */
+/* line 991, ../../sass/bootstrap/_kozea.sass */
 body section#contact article dl, body section#contact article blockquote {
   font-size: 18px;
   border-left: none;
   padding: 10px 0;
 }
-/* line 994, ../../sass/bootstrap/_kozea.sass */
+/* line 997, ../../sass/bootstrap/_kozea.sass */
 body section#contact article:last-child dl, body section#contact article:last-child blockquote {
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 998, ../../sass/bootstrap/_kozea.sass */
+/* line 1001, ../../sass/bootstrap/_kozea.sass */
 body section#contact article h3 {
   color: white;
 }
-/* line 1001, ../../sass/bootstrap/_kozea.sass */
+/* line 1004, ../../sass/bootstrap/_kozea.sass */
 body section#contact article h3:after {
   background: orange;
 }
-/* line 1004, ../../sass/bootstrap/_kozea.sass */
+/* line 1007, ../../sass/bootstrap/_kozea.sass */
 body section#contact article h3:before {
   background: #dedede;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 1008, ../../sass/bootstrap/_kozea.sass */
+/* line 1011, ../../sass/bootstrap/_kozea.sass */
 body section#contact article p, body section#contact article dl, body section#contact article blockquote {
   color: white;
   text-align: left;
 }
-/* line 1012, ../../sass/bootstrap/_kozea.sass */
+/* line 1015, ../../sass/bootstrap/_kozea.sass */
 body section#contact article a {
-  color: #fff;
+  color: white;
 }
-/* line 1016, ../../sass/bootstrap/_kozea.sass */
+/* line 1019, ../../sass/bootstrap/_kozea.sass */
 body section#contact article dl dt {
   margin-bottom: 0.5em;
   margin-left: 1em;
 }
-/* line 1025, ../../sass/bootstrap/_kozea.sass */
+/* line 1028, ../../sass/bootstrap/_kozea.sass */
 body section#reference:before {
   background: #608485;
 }
-/* line 1028, ../../sass/bootstrap/_kozea.sass */
+/* line 1031, ../../sass/bootstrap/_kozea.sass */
 body section#reference p {
   padding: 0 6%;
 }
-/* line 1031, ../../sass/bootstrap/_kozea.sass */
+/* line 1034, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul {
   font-size: 0;
   padding: 0 6%;
 }
-/* line 1035, ../../sass/bootstrap/_kozea.sass */
+/* line 1038, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li {
   background-color: white;
   background-repeat: no-repeat;
@@ -1236,55 +1240,55 @@ body section#reference ul li {
   padding: 5px;
   width: 310px;
 }
-/* line 1049, ../../sass/bootstrap/_kozea.sass */
+/* line 1052, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.odialis {
   background-image: url(images/odialis.jpg);
 }
-/* line 1052, ../../sass/bootstrap/_kozea.sass */
+/* line 1055, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.tpa {
   background-image: url(images/logotpa.png);
 }
-/* line 1055, ../../sass/bootstrap/_kozea.sass */
+/* line 1058, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.safety-network {
   background-image: url(images/safety-network.png);
 }
-/* line 1058, ../../sass/bootstrap/_kozea.sass */
+/* line 1061, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.mylan {
   background-image: url(images/mylan.png);
   background-size: 200px;
 }
-/* line 1062, ../../sass/bootstrap/_kozea.sass */
+/* line 1065, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.bailly-creat {
   background-image: url(images/bailly_creat.png);
 }
-/* line 1065, ../../sass/bootstrap/_kozea.sass */
+/* line 1068, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.sanofi {
   background-image: url(images/sanofi-pasteur.png);
 }
-/* line 1068, ../../sass/bootstrap/_kozea.sass */
+/* line 1071, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.aepk {
   background-image: url(images/aepk.png);
 }
-/* line 1071, ../../sass/bootstrap/_kozea.sass */
+/* line 1074, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.kubitus {
   background-image: url(images/kubitus.png);
 }
-/* line 1074, ../../sass/bootstrap/_kozea.sass */
+/* line 1077, ../../sass/bootstrap/_kozea.sass */
 body section#reference ul li.keleos {
   background-image: url(images/keleos.png);
 }
-/* line 1081, ../../sass/bootstrap/_kozea.sass */
+/* line 1084, ../../sass/bootstrap/_kozea.sass */
 body footer {
   background: #393b48;
   color: #22242c;
   font-family: Verdana, sans-serif;
 }
-/* line 1086, ../../sass/bootstrap/_kozea.sass */
+/* line 1089, ../../sass/bootstrap/_kozea.sass */
 body footer ul {
   padding: 1em 0;
   text-align: center;
 }
-/* line 1090, ../../sass/bootstrap/_kozea.sass */
+/* line 1093, ../../sass/bootstrap/_kozea.sass */
 body footer ul li {
   color: #22242c;
   display: inline-block;
@@ -1293,50 +1297,50 @@ body footer ul li {
   -moz-text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
 }
-/* line 1096, ../../sass/bootstrap/_kozea.sass */
+/* line 1099, ../../sass/bootstrap/_kozea.sass */
 body footer ul li:after {
   content: "|";
   display: inline-block;
   padding-left: 0.5em;
   padding-right: 0.1em;
 }
-/* line 1102, ../../sass/bootstrap/_kozea.sass */
+/* line 1105, ../../sass/bootstrap/_kozea.sass */
 body footer ul li:last-child:after {
   content: "";
 }
-/* line 1105, ../../sass/bootstrap/_kozea.sass */
+/* line 1108, ../../sass/bootstrap/_kozea.sass */
 body footer ul li a {
   color: #22242c;
 }
-/* line 1108, ../../sass/bootstrap/_kozea.sass */
+/* line 1111, ../../sass/bootstrap/_kozea.sass */
 body footer ul li a:hover, body footer ul li a:focus {
   color: orange;
 }
 
 @media(min-width: 1600px) {
-  /* line 1114, ../../sass/bootstrap/_kozea.sass */
+  /* line 1117, ../../sass/bootstrap/_kozea.sass */
   body {
     /* - SECTION - */
   }
-  /* line 1117, ../../sass/bootstrap/_kozea.sass */
+  /* line 1120, ../../sass/bootstrap/_kozea.sass */
   body section#web article {
     height: 380px;
   }
 }
 
 @media(min-width: 1200px) {
-  /* line 1123, ../../sass/bootstrap/_kozea.sass */
+  /* line 1126, ../../sass/bootstrap/_kozea.sass */
   body {
     /* - SECTION - */
   }
-  /* line 1126, ../../sass/bootstrap/_kozea.sass */
+  /* line 1129, ../../sass/bootstrap/_kozea.sass */
   body section#web article {
     height: 430px;
   }
 }
 
 @media(max-width: 970px) {
-  /* line 1131, ../../sass/bootstrap/_kozea.sass */
+  /* line 1134, ../../sass/bootstrap/_kozea.sass */
   body {
     background: #f1f1f1;
     border: none;
@@ -1345,7 +1349,7 @@ body footer ul li a:hover, body footer ul li a:focus {
     /* - Navigation - */
     /* - */
   }
-  /* line 1136, ../../sass/bootstrap/_kozea.sass */
+  /* line 1139, ../../sass/bootstrap/_kozea.sass */
   body button#navigation-dropdown {
     background-image: -webkit-gradient(linear, 0 top, 100% top, from(#393b48), to(#272831));
     background-image: -webkit-linear-gradient(left, color-stop(#393b48 0), color-stop(#272831 100%));
@@ -1364,7 +1368,7 @@ body footer ul li a:hover, body footer ul li a:focus {
     top: 15px;
     width: 35px;
   }
-  /* line 1148, ../../sass/bootstrap/_kozea.sass */
+  /* line 1151, ../../sass/bootstrap/_kozea.sass */
   body button#navigation-dropdown:after {
     color: #393b48;
     content: "Menu";
@@ -1374,7 +1378,7 @@ body footer ul li a:hover, body footer ul li a:focus {
     right: 50px;
     top: 5px;
   }
-  /* line 1157, ../../sass/bootstrap/_kozea.sass */
+  /* line 1160, ../../sass/bootstrap/_kozea.sass */
   body button#navigation-dropdown:hover, body button#navigation-dropdown:focus {
     background-image: -webkit-gradient(linear, 0 top, 100% top, from(#666a81), to(#505264));
     background-image: -webkit-linear-gradient(left, color-stop(#666a81 0), color-stop(#505264 100%));
@@ -1384,52 +1388,52 @@ body footer ul li a:hover, body footer ul li a:focus {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF666A81', endColorstr='#FF505264', GradientType=1);
     border-color: #393b48;
   }
-  /* line 1161, ../../sass/bootstrap/_kozea.sass */
+  /* line 1164, ../../sass/bootstrap/_kozea.sass */
   body button#navigation-dropdown:before {
     content: url(images/icon-lenu.png);
     display: block;
     margin-left: -1px;
     padding-top: 4px;
   }
-  /* line 1171, ../../sass/bootstrap/_kozea.sass */
+  /* line 1174, ../../sass/bootstrap/_kozea.sass */
   body nav {
     width: 100%;
   }
-  /* line 1174, ../../sass/bootstrap/_kozea.sass */
+  /* line 1177, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu {
     background: #f1f1f1;
     text-align: left;
     top: 0;
   }
-  /* line 1179, ../../sass/bootstrap/_kozea.sass */
+  /* line 1182, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu.fixed {
     border-top: 5px solid #608485;
     min-height: 80px;
     position: fixed;
     text-align: right;
   }
-  /* line 1185, ../../sass/bootstrap/_kozea.sass */
+  /* line 1188, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu.fixed ul {
     margin-top: 75px;
     -webkit-box-shadow: 0 13px 13px -13px rgba(0, 0, 0, 0.5);
     box-shadow: 0 13px 13px -13px rgba(0, 0, 0, 0.5);
   }
-  /* line 1189, ../../sass/bootstrap/_kozea.sass */
+  /* line 1192, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu.fixed ul li a {
     color: #608485;
   }
-  /* line 1192, ../../sass/bootstrap/_kozea.sass */
+  /* line 1195, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul {
     background: #f1f1f1;
     height: auto;
     margin-top: 50px;
     width: 100%;
   }
-  /* line 1198, ../../sass/bootstrap/_kozea.sass */
+  /* line 1201, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul:after {
     display: none;
   }
-  /* line 1201, ../../sass/bootstrap/_kozea.sass */
+  /* line 1204, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li {
     border-bottom: 1px solid #e4e4e4;
     -webkit-box-shadow: 0 1px 0 white;
@@ -1438,81 +1442,81 @@ body footer ul li a:hover, body footer ul li a:focus {
     text-align: left;
     width: 100%;
   }
-  /* line 1208, ../../sass/bootstrap/_kozea.sass */
+  /* line 1211, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li:hover, body nav#main-menu ul li:focus {
     background-color: rgba(255, 255, 255, 0.6);
   }
-  /* line 1211, ../../sass/bootstrap/_kozea.sass */
+  /* line 1214, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li:hover a, body nav#main-menu ul li:focus a {
     color: orange;
   }
-  /* line 1215, ../../sass/bootstrap/_kozea.sass */
+  /* line 1218, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li a {
     background: url(images/icon-web-small.png) no-repeat 10px center;
   }
-  /* line 1218, ../../sass/bootstrap/_kozea.sass */
+  /* line 1221, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li a:hover, body nav#main-menu ul li + li a:focus {
     background: url(images/icon-web-small-orange.png) no-repeat 10px center;
   }
-  /* line 1221, ../../sass/bootstrap/_kozea.sass */
+  /* line 1224, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li + li a {
     background: url(images/icon-libre-small.png) no-repeat 10px center;
   }
-  /* line 1224, ../../sass/bootstrap/_kozea.sass */
+  /* line 1227, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li + li a:hover, body nav#main-menu ul li + li + li a:focus {
     background: url(images/icon-libre-small-orange.png) no-repeat 10px center;
   }
-  /* line 1227, ../../sass/bootstrap/_kozea.sass */
-  body nav#main-menu ul li + li + li + li a {
-    background: url(images/icon-phone-small.png) no-repeat 10px center;
-  }
   /* line 1230, ../../sass/bootstrap/_kozea.sass */
-  body nav#main-menu ul li + li + li + li a:hover, body nav#main-menu ul li + li + li + li a:focus {
-    background: url(images/icon-phone-small-orange.png) no-repeat 10px center;
-  }
-  /* line 1233, ../../sass/bootstrap/_kozea.sass */
-  body nav#main-menu ul li + li + li + li + li a {
+  body nav#main-menu ul li + li + li + li a {
     background: url(images/icon-team-small.png) no-repeat 10px center;
   }
-  /* line 1236, ../../sass/bootstrap/_kozea.sass */
-  body nav#main-menu ul li + li + li + li + li a:hover, body nav#main-menu ul li + li + li + li + li a:focus {
+  /* line 1233, ../../sass/bootstrap/_kozea.sass */
+  body nav#main-menu ul li + li + li + li a:hover, body nav#main-menu ul li + li + li + li a:focus {
     background: url(images/icon-team-small-orange.png) no-repeat 10px center;
   }
+  /* line 1236, ../../sass/bootstrap/_kozea.sass */
+  body nav#main-menu ul li + li + li + li + li a {
+    background: url(images/icon-phone-small.png) no-repeat 10px center;
+  }
   /* line 1239, ../../sass/bootstrap/_kozea.sass */
+  body nav#main-menu ul li + li + li + li + li a:hover, body nav#main-menu ul li + li + li + li + li a:focus {
+    background: url(images/icon-phone-small-orange.png) no-repeat 10px center;
+  }
+  /* line 1242, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li + li + li + li + li a {
     background: url(images/icon-reference-small.png) no-repeat 10px center;
   }
-  /* line 1242, ../../sass/bootstrap/_kozea.sass */
+  /* line 1245, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li + li + li + li + li + li a:hover, body nav#main-menu ul li + li + li + li + li + li a:focus {
     background: url(images/icon-reference-small-orange.png) no-repeat 10px center;
   }
-  /* line 1245, ../../sass/bootstrap/_kozea.sass */
+  /* line 1248, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li a {
     background-position: 10px center;
     background-repeat: no-repeat;
     color: #608485;
     padding-left: 35px;
   }
-  /* line 1251, ../../sass/bootstrap/_kozea.sass */
+  /* line 1254, ../../sass/bootstrap/_kozea.sass */
   body nav#main-menu ul li a:before, body nav#main-menu ul li a:after {
     display: none;
   }
-  /* line 1257, ../../sass/bootstrap/_kozea.sass */
+  /* line 1260, ../../sass/bootstrap/_kozea.sass */
   body section#web article {
     height: 530px;
   }
-  /* line 1260, ../../sass/bootstrap/_kozea.sass */
+  /* line 1263, ../../sass/bootstrap/_kozea.sass */
   body section#banner {
     padding: 50px 5%;
   }
-  /* line 1263, ../../sass/bootstrap/_kozea.sass */
+  /* line 1266, ../../sass/bootstrap/_kozea.sass */
   body section#banner span.slogan {
     margin-top: 40px;
   }
 }
 
 @media(max-width: 800px) {
-  /* line 1269, ../../sass/bootstrap/_kozea.sass */
+  /* line 1272, ../../sass/bootstrap/_kozea.sass */
   body {
     /* - */
     /* - NAVIGATION - */
@@ -1521,14 +1525,14 @@ body footer ul li a:hover, body footer ul li a:focus {
     /* - SECTION - */
     /* - */
   }
-  /* line 1274, ../../sass/bootstrap/_kozea.sass */
+  /* line 1277, ../../sass/bootstrap/_kozea.sass */
   body nav:after {
     background: #f1f1f1;
     width: 100%;
     display: block;
     height: 80px;
   }
-  /* line 1285, ../../sass/bootstrap/_kozea.sass */
+  /* line 1288, ../../sass/bootstrap/_kozea.sass */
   body section#contact article, body section#web article {
     border-bottom: 1px solid #e4e4e4;
     border-right: none;
@@ -1541,157 +1545,157 @@ body footer ul li a:hover, body footer ul li a:focus {
     width: auto;
     height: auto;
   }
-  /* line 1296, ../../sass/bootstrap/_kozea.sass */
+  /* line 1299, ../../sass/bootstrap/_kozea.sass */
   body section#contact article:last-of-type, body section#web article:last-of-type {
     border-bottom: none;
   }
-  /* line 1299, ../../sass/bootstrap/_kozea.sass */
+  /* line 1302, ../../sass/bootstrap/_kozea.sass */
   body section#contact article:after, body section#web article:after {
     top: 22px;
     left: 92px;
   }
-  /* line 1303, ../../sass/bootstrap/_kozea.sass */
+  /* line 1306, ../../sass/bootstrap/_kozea.sass */
   body section#contact article h3, body section#web article h3 {
     height: auto;
     padding-top: 10px;
     text-align: left;
   }
-  /* line 1308, ../../sass/bootstrap/_kozea.sass */
+  /* line 1311, ../../sass/bootstrap/_kozea.sass */
   body section#contact article h3:before, body section#contact article h3:after, body section#web article h3:before, body section#web article h3:after {
     left: 0;
   }
-  /* line 1311, ../../sass/bootstrap/_kozea.sass */
+  /* line 1314, ../../sass/bootstrap/_kozea.sass */
   body section#contact article h3:before, body section#web article h3:before {
     margin-left: -150px;
   }
-  /* line 1314, ../../sass/bootstrap/_kozea.sass */
+  /* line 1317, ../../sass/bootstrap/_kozea.sass */
   body section#contact article h3:after, body section#web article h3:after {
     margin-left: -138px;
   }
-  /* line 1319, ../../sass/bootstrap/_kozea.sass */
+  /* line 1322, ../../sass/bootstrap/_kozea.sass */
   body section#web p {
     text-align: justify;
   }
-  /* line 1323, ../../sass/bootstrap/_kozea.sass */
+  /* line 1326, ../../sass/bootstrap/_kozea.sass */
   body section#web article#questionnary:after {
     top: 25px;
   }
-  /* line 1326, ../../sass/bootstrap/_kozea.sass */
+  /* line 1329, ../../sass/bootstrap/_kozea.sass */
   body section#web article:after {
     left: 0;
     margin-left: 58px;
     top: 29px;
   }
-  /* line 1331, ../../sass/bootstrap/_kozea.sass */
+  /* line 1334, ../../sass/bootstrap/_kozea.sass */
   body section#web article a {
     margin-bottom: 10px;
   }
 }
 
 @media(max-width: 770px) {
-  /* line 1337, ../../sass/bootstrap/_kozea.sass */
+  /* line 1340, ../../sass/bootstrap/_kozea.sass */
   body section#reference ul {
     text-align: center;
   }
 }
 
 @media(max-width: 570px) {
-  /* line 1345, ../../sass/bootstrap/_kozea.sass */
+  /* line 1348, ../../sass/bootstrap/_kozea.sass */
   body section#libre h2, body section#web h2, body section#team h2, body section#contact h2, body section#reference h2 {
     font-size: 1.8em;
   }
-  /* line 1348, ../../sass/bootstrap/_kozea.sass */
+  /* line 1351, ../../sass/bootstrap/_kozea.sass */
   body section#libre ul {
     text-align: center;
   }
-  /* line 1352, ../../sass/bootstrap/_kozea.sass */
+  /* line 1355, ../../sass/bootstrap/_kozea.sass */
   body section#web article {
     padding-left: 0;
     padding-top: 115px;
     margin-top: 16px;
   }
-  /* line 1357, ../../sass/bootstrap/_kozea.sass */
+  /* line 1360, ../../sass/bootstrap/_kozea.sass */
   body section#web article:after {
     left: 50%;
     margin-left: -35px;
   }
-  /* line 1361, ../../sass/bootstrap/_kozea.sass */
+  /* line 1364, ../../sass/bootstrap/_kozea.sass */
   body section#web article h3 {
     position: initial;
   }
-  /* line 1364, ../../sass/bootstrap/_kozea.sass */
+  /* line 1367, ../../sass/bootstrap/_kozea.sass */
   body section#web article h3:before, body section#web article h3:after {
     margin-left: 0;
     left: 50%;
   }
-  /* line 1368, ../../sass/bootstrap/_kozea.sass */
+  /* line 1371, ../../sass/bootstrap/_kozea.sass */
   body section#web article h3:after {
     margin-left: -50px;
   }
-  /* line 1371, ../../sass/bootstrap/_kozea.sass */
+  /* line 1374, ../../sass/bootstrap/_kozea.sass */
   body section#web article h3:before {
     margin-left: -61px;
   }
-  /* line 1375, ../../sass/bootstrap/_kozea.sass */
+  /* line 1378, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide {
     padding: 50px 0;
     margin: 0 5%;
     width: auto;
   }
-  /* line 1380, ../../sass/bootstrap/_kozea.sass */
+  /* line 1383, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide a.backToFirstSlide:before, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide a.backToFirstSlide:before, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide a.backToFirstSlide:before, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide a.backToFirstSlide:before {
     top: 30px;
   }
-  /* line 1383, ../../sass/bootstrap/_kozea.sass */
+  /* line 1386, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article {
     padding-top: 180px;
   }
-  /* line 1386, ../../sass/bootstrap/_kozea.sass */
+  /* line 1389, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div {
     margin-top: 0;
     padding-top: 140px;
   }
-  /* line 1390, ../../sass/bootstrap/_kozea.sass */
+  /* line 1393, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div.krea-soft, body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div.krea-form, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div.krea-soft, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div.krea-form, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div.krea-soft, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div.krea-form, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div.krea-soft, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div.krea-form {
     padding-top: 100px;
   }
-  /* line 1393, ../../sass/bootstrap/_kozea.sass */
+  /* line 1396, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div.krea-soft:after, body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div.krea-form:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div.krea-soft:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div.krea-form:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div.krea-soft:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div.krea-form:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div.krea-soft:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div.krea-form:after {
     margin-top: -20px;
   }
-  /* line 1396, ../../sass/bootstrap/_kozea.sass */
+  /* line 1399, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article div:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article div:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article div:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article div:after {
     left: 50%;
     margin-left: -100px;
   }
-  /* line 1400, ../../sass/bootstrap/_kozea.sass */
+  /* line 1403, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article.organism, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article.organism, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article.organism, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article.organism {
     padding-top: 20px;
   }
-  /* line 1403, ../../sass/bootstrap/_kozea.sass */
+  /* line 1406, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article:after {
     left: 50% !important;
     margin-left: -100px;
   }
-  /* line 1407, ../../sass/bootstrap/_kozea.sass */
+  /* line 1410, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide article:before, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide article:before, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide article:before, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide article:before {
     width: 100%;
     height: 8px;
   }
-  /* line 1412, ../../sass/bootstrap/_kozea.sass */
+  /* line 1415, ../../sass/bootstrap/_kozea.sass */
   body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide ul {
     text-align: center;
   }
 }
 
 @media(max-width: 480px) {
-  /* line 1418, ../../sass/bootstrap/_kozea.sass */
+  /* line 1421, ../../sass/bootstrap/_kozea.sass */
   body section#team ul {
     text-align: center;
   }
 }
 
-/* normalize.css v2.1.3 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* line 11, ../../sass/bootstrap/_normalize.sass */
 article,
 aside,

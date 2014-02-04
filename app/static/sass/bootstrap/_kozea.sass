@@ -575,7 +575,7 @@ body
 
       p
         padding: 3px 4%
-        font-size: 1.25em
+        font-size: 1.5em
 
       h2
         display: inline-block
@@ -706,7 +706,7 @@ body
 
     /* ---------------
     /* - SECTION WEB -
-    /* ---------------
+    /* ---------------*/
     &#web, &#contact
       &:before
         background: $darken-blue
@@ -848,7 +848,7 @@ body
 
     /* -----------------
     /* - SECTION LIBRE -
-    /* -----------------
+    /* -----------------*/
     &#libre
       background: $gray-blue
       color: #fff
@@ -869,12 +869,12 @@ body
 
     /* ---------------------
     /* - SECTION TEAM -
-    /* ---------------------
+    /* ---------------------*/
     &#team
       background: $light-gray
 
       p
-        color: #fff
+        color: #5a5a5a
 
       &:before
         background: $gray-blue
@@ -894,7 +894,7 @@ body
 
           span
             bottom: -55px
-            color: $light-gray
+            color: #5a5a5a
             display: block
             font-size: 14px
             height: 40px
@@ -951,10 +951,13 @@ body
 
     /* -------------------
     /* - SECTION CONTACT -
-    /* -------------------
+    /* -------------------*/
     &#contact
       background: $gray-blue
       color: #fff
+      
+      h2
+        color: #5a5a5a
 
       &:before
         background: $light-gray
@@ -1010,7 +1013,7 @@ body
           text-align: left
 
         a
-          color: $gray-blue
+          color: #fff
 
         dl
           dt
@@ -1020,7 +1023,7 @@ body
 
     /* ---------------------
     /* - SECTION TEAM -
-    /* ---------------------
+    /* ---------------------*/
     &#reference
       &:before
         background: $gray-blue
@@ -1077,7 +1080,7 @@ body
 
   /* ----------
   /* - FOOTER -
-  /* ----------
+  /* ----------*/
   footer
     background: $darken-blue
     color: darken($darken-blue, 10%)
@@ -1112,7 +1115,7 @@ body
 
 @media(min-width: 1600px)
   body
-    /* - SECTION -
+    /* - SECTION -*/
     section
       &#web article
         height: 380px
@@ -1121,7 +1124,7 @@ body
 
 @media(min-width: 1200px)
   body
-    /* - SECTION -
+    /* - SECTION -*/
     section
       &#web article
         height: 430px
@@ -1225,16 +1228,16 @@ body
                 background: url(images/icon-libre-small-orange.png) no-repeat 10px center
 
             & + li + li + li a
-              background: url(images/icon-phone-small.png) no-repeat 10px center
-
-              &:hover, &:focus
-                background: url(images/icon-phone-small-orange.png) no-repeat 10px center
-
-            & + li + li + li +  li a
               background: url(images/icon-team-small.png) no-repeat 10px center
 
               &:hover, &:focus
                 background: url(images/icon-team-small-orange.png) no-repeat 10px center
+
+            & + li + li + li +  li a
+              background: url(images/icon-phone-small.png) no-repeat 10px center
+
+              &:hover, &:focus
+                background: url(images/icon-phone-small-orange.png) no-repeat 10px center
 
             & + li + li + li + li +li a
               background: url(images/icon-reference-small.png) no-repeat 10px center
