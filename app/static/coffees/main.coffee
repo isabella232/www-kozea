@@ -2,10 +2,10 @@ $ ->
     position = $("#switch")
     lock = false
     init_address_history = ->
-        $('a').click () ->
+        $('a').click (e) ->
             $.address.value($(@).attr('href'))
             return
-        $.address.change (e) ->
+        $.address.externalChange (e) ->
             if e.value == '/#' or e.value == '/'
                 slider.goToSlide(0)
                 unlock_scroll()
@@ -19,8 +19,18 @@ $ ->
                 $("#main-menu").addClass('fixed')
         $('.nav li a').click (e) ->
             slider.goToSlide(0)
+            href = $(@).attr 'href'
+            if $('body').hasClass('stop-scrolling')
+                timeanimation = true
             unlock_scroll()
-            scrollTo($($(@).attr 'href').offset().top - 82)
+            if timeanimation
+                setTimeout(() ->
+                    scrollTo($(href).offset().top - 82)
+                    return
+                , 700)
+            else
+                    scrollTo($(href).offset().top - 82)
+            timeanimation = false
             e.preventDefault()
             return
         $(document).on('scroll', ->

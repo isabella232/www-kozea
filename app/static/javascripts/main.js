@@ -6,10 +6,10 @@ $(function() {
   position = $("#switch");
   lock = false;
   init_address_history = function() {
-    $('a').click(function() {
+    $('a').click(function(e) {
       $.address.value($(this).attr('href'));
     });
-    $.address.change(function(e) {
+    $.address.externalChange(function(e) {
       if (e.value === '/#' || e.value === '/') {
         slider.goToSlide(0);
         unlock_scroll();
@@ -23,9 +23,21 @@ $(function() {
       $("#main-menu").addClass('fixed');
     }
     $('.nav li a').click(function(e) {
+      var href, timeanimation;
       slider.goToSlide(0);
+      href = $(this).attr('href');
+      if ($('body').hasClass('stop-scrolling')) {
+        timeanimation = true;
+      }
       unlock_scroll();
-      scrollTo($($(this).attr('href')).offset().top - 82);
+      if (timeanimation) {
+        setTimeout(function() {
+          scrollTo($(href).offset().top - 82);
+        }, 700);
+      } else {
+        scrollTo($(href).offset().top - 82);
+      }
+      timeanimation = false;
       e.preventDefault();
     });
     $(document).on('scroll', function() {
