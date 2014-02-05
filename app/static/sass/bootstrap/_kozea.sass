@@ -445,6 +445,11 @@ body
             content: url(images/extraction.png)
             margin-top: -20px
 
+      &#art-slide
+        article
+          &.design:after
+            content: url(images/website-gris.png)
+
 
 
 
@@ -513,7 +518,7 @@ body
         img
           width: 250px
 
-        &:before
+        /*&:before
           +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
           content: ''
           height: 250px
@@ -521,7 +526,7 @@ body
           position: absolute
           top: -5px
           width: 250px
-          z-index: 5
+          z-index: 5*/
 
   /* -
   /* - SECTION -
@@ -740,7 +745,7 @@ body
         p
           +gradient-vertical (#475f69,#6a7e86,0, 100%)
           color: #fff
-          height: 140px
+          height: 134px
           padding: 10px
           text-align: left
 
@@ -1036,7 +1041,7 @@ body
 
         p, dl, blockquote
           color: #fff
-          text-align: left
+          text-align: center
 
         a
           color: #fff
@@ -1146,6 +1151,10 @@ body
       &#web article
         height: 380px
 
+      h4
+        height: 60px
+        padding-left: 24px
+
 
 
 @media(min-width: 1200px)
@@ -1154,6 +1163,18 @@ body
     section
       &#web article
         height: 430px
+
+
+@media(max-width: 1165px)
+  body
+    section
+      &#web 
+        article 
+          p
+            height: 180px
+          a.more
+            top: 90%
+
 
 
 @media(max-width: 970px)
@@ -1285,6 +1306,13 @@ body
       &#web
         article
           height: 530px
+          
+          h4
+            height: 60px
+            padding-left: 24px
+
+          p
+            height: 250px
 
       &#banner
         padding: 50px 5%
@@ -1344,23 +1372,79 @@ body
               margin-left: -138px
 
       &#web
-        p
-          text-align: justify
-
         article
-          &#questionnary:after
-            top: 25px
+          padding-left: 0
+          padding-top: 115px
+          margin-top: 16px
 
           &:after
-            left: 0
-            margin-left: 58px
-            top: 29px
+            left: 50%
+            margin-left: -35px
 
-          a
-            margin-bottom: 10px
+          p
+            height: 84px
+            padding: 14px
 
-            &.more
-              top: 79%
+          &#questionnary:after
+            top: 22px
+
+          h3
+            position: initial
+
+            &:before, &:after
+              margin-left: 0
+              left: 50%
+
+            &:after
+              margin-left: -50px
+
+            &:before
+              margin-left: -61px
+          
+          a.more 
+            right: 4%
+            top: 76%
+            
+      &#contact
+        article
+          padding-left: 0
+          padding-top: 115px
+          margin-top: 36px
+
+          &:after
+            left: 50%
+            margin-left: -35px
+
+          p
+            height: 75px
+            padding: 14px
+
+          dl
+            margin-left: 4%
+            text-align: center
+
+          &:last-child blockquote
+            margin-left: 5%
+            text-align: center
+
+          h3
+            margin-left: 5%
+            position: initial
+
+            &:before, &:after
+              margin-left: 0
+              left: 50%
+
+            &:after
+              margin-left: -50px
+
+            &:before
+              margin-left: -61px
+          
+          a.more 
+            right: 4%
+            top: 76%
+
 
 
 @media(max-width: 770px)
