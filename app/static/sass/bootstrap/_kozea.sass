@@ -647,6 +647,8 @@ body
           font-size: 0
           position: absolute
           right: 12%
+          top: 89%
+
 
           &:before
             color: #fff
@@ -675,7 +677,7 @@ body
         vertical-align: top
 
         p, dl, blockquote
-          font-size: 15px
+          font-size: 16px
 
         h3
           font-size: 26px
@@ -738,15 +740,28 @@ body
         p
           +gradient-vertical (#475f69,#6a7e86,0, 100%)
           color: #fff
-          height: 120px
+          height: 140px
+          padding: 10px
           text-align: left
 
         h4
           background: darken(#475f69, 10%)
           color: #fff
           font-weight: bold
-          height: 37px
-          padding-top: 10px
+          height: 45px
+          /*margin: -10px -20px 20px -20px*/
+          padding-left: 14px
+          padding-top: 14px
+          position: relative
+
+          &:before
+            content: url(images/ecrou.png)
+            display: inline-block
+            height: 31px
+            left: 9px
+            position: absolute
+            top: 8px
+            width: 31px
 
         h3
           color: $gray-blue
@@ -1317,7 +1332,7 @@ body
           h3
             height: auto
             padding-top: 10px
-            text-align: left
+            text-align: center
 
             &:before, &:after
               left: 0
@@ -1327,7 +1342,6 @@ body
 
             &:after
               margin-left: -138px
-
 
       &#web
         p
@@ -1344,6 +1358,9 @@ body
 
           a
             margin-bottom: 10px
+
+            &.more
+              top: 79%
 
 
 @media(max-width: 770px)
