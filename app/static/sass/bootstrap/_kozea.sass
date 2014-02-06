@@ -269,7 +269,7 @@ body
     section.horizontal-slider#website-slide, section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#art-slide
       width: 80%
       margin: 0 auto
-      padding-left: 200px
+      padding: 3% 10% 10% 200px
 
       article
         +box-shadow(none)
@@ -289,7 +289,6 @@ body
           left: -170px
           overflow: hidden
           margin-top: 20px
-
 
         &:before
           background: darken($light-gray, 5%)
@@ -451,8 +450,6 @@ body
             content: url(images/website-gris.png)
 
 
-
-
   section.horizontal-slider#elearning-slide
     article
       &.organism
@@ -501,7 +498,7 @@ body
   section.horizontal-slider#art-slide
     ul
       font-size: 0
-      padding-left: 0
+
 
       li
         border: 8px solid darken($light-gray, 5%)
@@ -533,7 +530,7 @@ body
   /* - */
   section
     /*+box-shadow(0 -10px 10px -10px rgba(0, 0, 0, 0.5) inset)*/
-    padding: 3% 10% 10% 0
+    padding: 50px 10%
 
     h2
       font-family: "Droid"
@@ -1311,7 +1308,8 @@ body
 
           h4
             height: 60px
-            padding-left: 24px
+            padding-left: 20%
+            padding-right: 20%
 
           p
             height: 250px
@@ -1336,6 +1334,11 @@ body
         display: block
         height: 80px
 
+    /*.bx-wrapper .bx-viewport section
+      &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
+        padding: 50px 0
+        margin: 0 5%
+        width: auto*/
     /* -
     /* - SECTION -
     /* - */
@@ -1391,7 +1394,7 @@ body
             top: 22px
 
           h3
-            position: initial
+            position: static
 
             &:before, &:after
               margin-left: 0
@@ -1442,11 +1445,10 @@ body
 
             &:before
               margin-left: -61px
-          
+
           a.more 
             right: 4%
             top: 76%
-
 
 
 @media(max-width: 770px)
