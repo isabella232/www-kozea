@@ -91,7 +91,7 @@ $ ->
         controls: false,
         pager: false,
         adaptiveHeight: true,
-        useCSS: true
+        useCSS: 'webkitRequestAnimationFrame' in window
     })
     return
 
