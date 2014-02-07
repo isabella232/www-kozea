@@ -442,7 +442,7 @@ body
 
           &.extraction:after
             content: url(images/extraction.png)
-            margin-top: -20px
+            margin-top: -10px
 
       &#art-slide
         article
@@ -842,7 +842,6 @@ body
             width: 240px
             z-index: 5
 
-
           &.radicale
             background-image: url(images/radicale.png)
             background-size: 60px
@@ -873,7 +872,6 @@ body
             &:after
               height: 110px
               +transition( height 0.8s ease-in)
-
 
 
     /* -----------------
@@ -976,7 +974,6 @@ body
               line-height: 170px
               +transition(0.5s ease-in)
               vertical-align: middle
-
 
 
     /* -------------------
@@ -1142,7 +1139,6 @@ body
             color: orange
 
 
-
 @media(min-width: 1600px)
   body
     /* - SECTION -*/
@@ -1153,7 +1149,6 @@ body
       h4
         height: 60px
         padding-left: 24px
-
 
 
 @media(min-width: 1200px)
@@ -1173,7 +1168,6 @@ body
             height: 180px
           a.more
             top: 90%
-
 
 
 @media(max-width: 970px)
@@ -1300,7 +1294,6 @@ body
               &:before, &:after
                 display: none
 
-
     section
       &#web
         article
@@ -1321,24 +1314,102 @@ body
           margin-top: 40px
 
 
-
 @media(max-width: 800px)
   body
-    /* -
-    /* - NAVIGATION -
-    /* - */
-    nav
-      &:after
-        background: $light-gray
-        width: 100%
-        display: block
-        height: 80px
+    .bx-wrapper .bx-viewport
+      section
+        &#libre, &#web, &#team, &#contact, &#reference
+          h2
+            font-size: 1.8em
 
-    /*.bx-wrapper .bx-viewport section
+        &#elearning-slide
+          article
+            &.lcms:after, &.gear:after, &.evaluation:after
+              text-align: center
+
+        &#stat-slide
+          article
+            &.question-360:after, &.questions:after, &.stats:after
+              margin-top: 0
+              text-align: center
+
+            /*&.extraction:after
+              margin-top: 10px*/
+
+        &#elearning-slide, &#stat-slide
+          h3
+            text-align: center
+
+        &#libre ul
+          text-align: center
+
+        &#web
+          article
+            padding-left: 0
+            padding-top: 115px
+            margin-top: 16px
+
+            &:after
+              left: 50%
+              margin-left: -35px
+
+            h3
+              position: initial
+
+              &:before, &:after
+                margin-left: 0
+                left: 50%
+
+              &:after
+                margin-left: -50px
+
+              &:before
+                margin-left: -61px
+
+    .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
         padding: 50px 0
         margin: 0 5%
-        width: auto*/
+        width: auto
+
+        a.backToFirstSlide:before
+          top: 30px
+
+        p
+          text-align: left
+
+        article
+          padding-top: 180px
+
+          div 
+            margin-top: 0
+            padding-top: 140px
+
+            &.krea-soft, &.krea-form
+              padding-top: 100px
+
+              &:after
+                margin-top: -20px
+
+            &:after
+              left: 50%
+              margin-left: -100px
+
+          &.organism
+            padding-top: 20px
+
+          &:after
+            left: 50% !important
+            margin-left: -100px
+
+          &:before
+            width: 100%
+            height: 8px
+
+      &.horizontal-slider#art-slide
+        ul 
+          text-align: center
+
     /* -
     /* - SECTION -
     /* - */
