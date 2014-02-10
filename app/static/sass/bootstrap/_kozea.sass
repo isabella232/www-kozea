@@ -78,8 +78,9 @@ body
             width: 60px
 
           &:before
-            +gradient-directional-three-colors(darken($light-gray, 15%), #fff, 50%,  darken($light-gray, 15%), 115deg)
-            +box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)
+            background: $light-gray
+            /*+gradient-directional-three-colors(darken($light-gray, 15%), #fff, 50%,  darken($light-gray, 15%), 115deg)*/
+            /*+box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)*/
             height: 85px
             margin-left: -40px
             width: 85px
@@ -506,7 +507,6 @@ body
     ul
       font-size: 0
 
-
       li
         border: 8px solid darken($light-gray, 5%)
         display: inline-block
@@ -695,22 +695,23 @@ body
           padding-top: 150px
           text-align: center
 
-          &:before, &:after
-            +border-radius(100%)
-            content: ''
+          &:after, &:before
             display: block
-            left: 50%
             position: absolute
 
           &:after
-            +box-shadow(2px 2px 3px rgba(0, 0, 0, 0.1) inset)
-            height: 100px
-            margin-left: -50px
-            top: 11px
-            width: 100px
+            background-color: $gray-blue
+            border: 8px solid darken($light-gray, 5%)
+            +border-radius(100%)
+            +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
+            content: ''
+            height: 122px
+            left: 50%
+            margin-left: -63px
+            top: 0
+            width: 122px
 
           &:before
-            background: #dedede
             +box-shadow(1px 1px 0 rgba(255, 255, 255, 0.5))
             height: 122px
             margin-left: -61px
@@ -1350,6 +1351,11 @@ body
 
 
 @media(max-width: 800px)
+  .modal-content
+    margin: auto
+    width: 680px
+    img
+      width: 657px
   body
     .bx-wrapper .bx-viewport
       section
@@ -1396,7 +1402,7 @@ body
                 left: 50%
 
               &:after
-                margin-left: -50px
+                margin-left: -59px
 
               &:before
                 margin-left: -61px
@@ -1558,12 +1564,22 @@ body
 
 
 @media(max-width: 770px)
+  .modal-content
+    margin: auto
+    width: 569px
+    img
+      width: 540px
   body
     section#reference ul
       text-align: center
 
 
 @media(max-width: 570px)
+  .modal-content
+    margin: auto
+    width: 450px
+    img
+      width: 420px
   body
     section
       &#libre, &#web, &#team, &#contact, &#reference
@@ -1638,6 +1654,11 @@ body
           text-align: center
 
 @media(max-width: 480px)
+  .modal-content
+    margin: auto
+    width: 350px
+    img
+      width: 320px
   body
     section#team
       ul
