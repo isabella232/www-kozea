@@ -1,4 +1,4 @@
-+font-face("Droid", "fonts/Droid-Sans", "Droid-Sans", 400, normal)
++font-face("Droid", "fonts/DroidSans", "DroidSans", 400, normal)
 +font-face("Droid", "fonts/DroidSans-Bold", "DroidSans-Bold", 700, normal)
 
 
@@ -425,9 +425,9 @@ body
             content: url(images/gears.png)
             margin-top: 0
 
-          &.lcms:after
+          /*&.lcms:after
             content: url(images/lcms.png)
-            margin-top: 0
+            margin-top: 0*/
 
           &.evaluation:after
             content: url(images/evaluation.png)
@@ -657,7 +657,9 @@ body
           font-size: 0
           position: absolute
           right: 12%
+          right: 11%\9
           top: 89%
+          top: 79%\9
 
 
           &:before
@@ -691,8 +693,9 @@ body
 
         h3
           font-size: 26px
-          position: relative
+
           padding-top: 150px
+          position: relative
           text-align: center
 
           &:after, &:before
@@ -712,11 +715,33 @@ body
             width: 122px
 
           &:before
-            +box-shadow(1px 1px 0 rgba(255, 255, 255, 0.5))
-            height: 122px
-            margin-left: -61px
-            top: 0
-            width: 122px
+            height: 150px
+            left: 50%
+            margin-left: -75px
+            position: absolute
+            top: 26px
+            width: 150px
+            z-index: 10
+
+          &.website-title-h3:before
+            content: url(images/website.png)
+            margin-left: -35px\9
+            margin-left: -75px\9\0
+
+          &.webdesign-title-h3:before
+            content: url(images/web-design.png)
+            margin-left: -33px\9
+            margin-left: -75px\9\0
+
+          &.elearning-title-h3:before
+            content: url(images/elearning.png)
+            margin-left: -33px\9
+            margin-left: -75px\9\0
+
+          &.questionnary-title-h3:before
+            content: url(images/questionnary.png)
+            margin-left: -33px\9
+            margin-left: -75px\9\0
 
     /* ---------------
     /* - SECTION WEB -
@@ -789,20 +814,6 @@ body
           position: absolute
           top: 45px
           width: 70px
-
-        &#website:after
-          content: url(images/website.png)
-
-        &#webdesign:after
-          content: url(images/web-design.png)
-
-        &#elearning:after
-          content: url(images/elearning.png)
-
-        &#questionnary:after
-          content: url(images/questionnary.png)
-          top: 42px
-
 
     &#libre
       h2
@@ -883,6 +894,7 @@ body
               +transition( height 0.8s ease-in)
 
 
+
     /* -----------------
     /* - SECTION LIBRE -
     /* -----------------*/
@@ -942,7 +954,6 @@ body
           &:before
             background: rgba(0, 0, 0, 0)
             +border-radius(100%)
-            border: none \9
             content:  attr(title)
             display: block
             height: 170px
@@ -976,6 +987,8 @@ body
           &:hover, &:focus
             &:before
               background: rgba(0, 0, 0, 0.7)
+              background: #242424\9
+              +border-radius(100%)
               color: $light-gray
               content: attr(title)
               font-size: 20px
@@ -1014,14 +1027,14 @@ body
           top: 40px
           width: 70px
 
-        &.address:after
-          content: url(images/postal.png)
+        /*&.address:after
+          content: url(images/postal.png)*/
 
-        &.email:after
-          content: url(images/mail.png)
+        /*&.email:after
+          content: url(images/mail.png)*/
 
-        &.phone:after
-          content: url(images/phone.png)
+        /*&.phone:after
+          content: url(images/phone.png)*/
 
 
         dl, blockquote
@@ -1037,12 +1050,45 @@ body
         h3
           color: #fff
 
+          &:after, &:before
+            display: block
+            position: absolute
+
           &:after
-            background: orange
+            background-color: orange
+            border: 8px solid darken($light-gray, 5%)
+            +border-radius(100%)
+            +box-shadow(0 2px 2px rgba(0, 0, 0, 0.3) inset, 1px 1px 0 #fff)
+            content: ''
+            height: 122px
+            left: 50%
+            margin-left: -63px
+            top: 0
+            width: 122px
 
           &:before
-            background: #dedede
-            +box-shadow(none)
+            height: 150px
+            left: 49%
+            margin-left: -75px
+            position: absolute
+            top: 23px
+            width: 150px
+            z-index: 10
+
+          &.phone-h3:before
+            content: url(images/phone.png)
+            left: 55%\9
+            margin-left: -60px\9
+
+          &.email-h3:before
+            content: url(images/mail.png)
+            left: 55%\9
+            margin-left: -60px\9
+
+          &.address-h3:before
+            content: url(images/postal.png)
+            left: 55%\9
+            margin-left: -60px\9
 
         p, dl, blockquote
           color: #fff
@@ -1405,7 +1451,7 @@ body
                 margin-left: -59px
 
               &:before
-                margin-left: -61px
+                margin-left: -74px
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide

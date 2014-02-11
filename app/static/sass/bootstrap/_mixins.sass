@@ -109,22 +109,31 @@
 // Single side border-radius
 =border-radius($radius)
   border-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
 
 =border-top-radius($radius)
   border-top-right-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
   border-top-left-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
 
 =border-right-radius($radius)
   border-bottom-right-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
   border-top-right-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
 
 =border-bottom-radius($radius)
   border-bottom-right-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
   border-bottom-left-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
 
 =border-left-radius($radius)
   border-bottom-left-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
   border-top-left-radius: $radius
+  behavior: url(/static/javascripts/pie/pie.htc)
 
 // Drop shadows
 =box-shadow($shadow...)
@@ -136,7 +145,6 @@
   -webkit-text-shadow: $text-shadow
   -moz-text-shadow: $text-shadow
   text-shadow: $text-shadow
-
 
 // Transitions
 =transition($transition...)
