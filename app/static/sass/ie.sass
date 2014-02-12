@@ -1,11 +1,76 @@
 body
   .bx-wrapper .bx-viewport
     section.horizontal-slider#elearning-slide
-      article
-        p
-          color: green
-        h3:before
-          content: url(images/lcms.png)
+      h3
+        position: relative
+
+        &.lcms-title:before
+          content: url(bootstrap/images/lcms.png)
+          left: -190px
+          position: absolute
+
+        &.gestion-title:before
+          content: url(bootstrap/images/gears.png)
+          left: -190px
+          position: absolute
+
+        &.evaluation-title:before
+          content: url(bootstrap/images/evaluation.png)
+          left: -190px
+          position: absolute
+
+    section.horizontal-slider#website-slide
+      h3
+        position: relative
+
+        &.pharmacy:before
+          content: url(bootstrap/images/logo-pharminfo.png)
+          left: -230px
+          position: absolute
+
+        &.doctor:before
+          content: url(bootstrap/images/logo-medsite.png)
+          left: -230px
+          position: absolute
+
+    section.horizontal-slider#stat-slide
+      h3
+        position: relative
+
+        &.questionnary-title-h3:before
+          content: url(bootstrap/images/360.png)
+          left: -230px
+          position: absolute
+
+        &.labsharing-title-h3:before
+          content: url(bootstrap/images/labsharing.png)
+          left: -230px
+          position: absolute
+
+        &.questions-title-h3:before
+          content: url(bootstrap/images/questions.png)
+          left: -230px
+          position: absolute
+
+        &.stats-title-h3:before
+          content: url(bootstrap/images/graph.png)
+          left: -230px
+          position: absolute
+
+        &.extraction-title-h3:before
+          content: url(bootstrap/images/extraction.png)
+          left: -230px
+          position: absolute
+
+    section.horizontal-slider#art-slide
+      h3
+        position: relative
+
+        &.html5-title-h3:before
+          content: url(bootstrap/images/website-gris.png)
+          left: -230px
+          position: absolute
+
   section
     &#web
       article
