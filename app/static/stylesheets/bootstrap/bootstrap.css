@@ -516,15 +516,14 @@ body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide#website-sl
   content: url(images/logo-pharminfo.png);
   left: -180px;
 }
-/* line 423, ../../sass/bootstrap/_kozea.sass */
-body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide#elearning-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide#elearning-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide#elearning-slide article, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide#elearning-slide article {
-  /*&.lcms:after
-   * content: url(images/lcms.png)
-   * margin-top: 0 */
-}
 /* line 424, ../../sass/bootstrap/_kozea.sass */
 body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide#elearning-slide article.gear:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide#elearning-slide article.gear:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide#elearning-slide article.gear:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide#elearning-slide article.gear:after {
   content: url(images/gears.png);
+  margin-top: 0;
+}
+/* line 428, ../../sass/bootstrap/_kozea.sass */
+body .bx-wrapper .bx-viewport section.horizontal-slider#website-slide#elearning-slide article.lcms:after, body .bx-wrapper .bx-viewport section.horizontal-slider#elearning-slide#elearning-slide article.lcms:after, body .bx-wrapper .bx-viewport section.horizontal-slider#stat-slide#elearning-slide article.lcms:after, body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide#elearning-slide article.lcms:after {
+  content: url(images/lcms.png);
   margin-top: 0;
 }
 /* line 432, ../../sass/bootstrap/_kozea.sass */
