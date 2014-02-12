@@ -30,7 +30,7 @@ $(function() {
         $.address.value(e.value);
       }
       if (e.value.search('^\/#') === -1) {
-        e.value = '/';
+        e.value = '/#';
         $.address.value(e.value);
         slider.goToSlide(0);
         unlock_scroll();
