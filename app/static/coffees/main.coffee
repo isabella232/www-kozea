@@ -14,10 +14,11 @@ $ ->
             $.address.value($(@).attr('href'))
             return
         $.address.externalChange (e) ->
-            if e.value.replace('/', '') in themelist
+            console.log(decodeURIComponent(e.value))
+            if decodeURIComponent(e.value).replace('/', '') in themelist
                 e.value='/'
-                $.address.value e.value
-            if e.value.search('^\/#') is -1
+                $.address.value decodeURIComponent(e.value)
+            if decode.URIComponent(e.value).search('^\/#') is -1
                 e.value = '/#'
                 $.address.value e.value
                 slider.goToSlide(0)
