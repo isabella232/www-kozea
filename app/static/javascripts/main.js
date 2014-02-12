@@ -3,18 +3,39 @@ var lock_scroll, prevent_flickering, scrollTo, unlock_scroll,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 $(function() {
-  var init_address_history, init_click_handlers, init_responsive_menu, lock, position, slider;
+  var i, init_address_history, init_click_handlers, init_responsive_menu, lock, position, slider, themelist;
   position = $("#switch");
   lock = false;
+  $('.closeModal').click(function() {
+    var modalid;
+    modalid = "#" + $(this).closest('.modal').attr('id');
+    $(modalid).modal('hide');
+  });
+  themelist = (function() {
+    var _i, _ref, _results;
+    _results = [];
+    for (i = _i = 0, _ref = $('.modal').length; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+      _results.push("#theme" + i);
+    }
+    return _results;
+  })();
   init_address_history = function() {
     $('a').click(function(e) {
       $.address.value($(this).attr('href'));
     });
     $.address.externalChange(function(e) {
-      if (e.value === '/#' || e.value === '/') {
+      var _ref;
+      if (_ref = e.value.replace('/', ''), __indexOf.call(themelist, _ref) >= 0) {
+        e.value = '/';
+        $.address.value(e.value);
+      }
+      if (e.value.search('^\/#') === -1) {
+        e.value = '/';
+        $.address.value(e.value);
         slider.goToSlide(0);
         unlock_scroll();
         scrollTo(0);
+        return;
       }
       $('[href=' + e.value.replace('/', '') + ']').trigger('click');
     });

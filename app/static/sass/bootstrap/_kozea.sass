@@ -203,7 +203,7 @@ body
       display: block
       height: 60px
       left: 50%
-      margin-left: -30px
+      margin-left: -37px
       position: absolute
       top: -20px
       width: 60px
@@ -657,10 +657,7 @@ body
           font-size: 0
           position: absolute
           right: 12%
-          right: 11%\9
           top: 89%
-          top: 79%\9
-
 
           &:before
             color: #fff
@@ -692,8 +689,8 @@ body
           font-size: 16px
 
         h3
+          display: block
           font-size: 26px
-
           padding-top: 150px
           position: relative
           text-align: center
@@ -715,6 +712,7 @@ body
             width: 122px
 
           &:before
+            display: block
             height: 150px
             left: 50%
             margin-left: -75px
@@ -725,23 +723,15 @@ body
 
           &.website-title-h3:before
             content: url(images/website.png)
-            margin-left: -35px\9
-            margin-left: -75px\9\0
 
           &.webdesign-title-h3:before
             content: url(images/web-design.png)
-            margin-left: -33px\9
-            margin-left: -75px\9\0
 
           &.elearning-title-h3:before
             content: url(images/elearning.png)
-            margin-left: -33px\9
-            margin-left: -75px\9\0
 
           &.questionnary-title-h3:before
             content: url(images/questionnary.png)
-            margin-left: -33px\9
-            margin-left: -75px\9\0
 
     /* ---------------
     /* - SECTION WEB -
@@ -987,7 +977,6 @@ body
           &:hover, &:focus
             &:before
               background: rgba(0, 0, 0, 0.7)
-              background: #242424\9
               +border-radius(100%)
               color: $light-gray
               content: attr(title)
@@ -1004,6 +993,19 @@ body
     &#contact
       background: $gray-blue
       color: #fff
+
+      ul
+        li
+          border: 10px solid darken($light-gray, 15%)
+          +border-radius(100%)
+          +box-shadow(1px 1px 1px rgba(0, 0, 0, 0.5) inset)
+          color: transparent
+          display: inline-block
+          font-size: 0
+          height: 190px
+          margin: 10px 10px 50px
+          position: relative
+          width: 190px
 
       h2
         color: #5a5a5a
@@ -1077,18 +1079,12 @@ body
 
           &.phone-h3:before
             content: url(images/phone.png)
-            left: 55%\9
-            margin-left: -60px\9
 
           &.email-h3:before
             content: url(images/mail.png)
-            left: 55%\9
-            margin-left: -60px\9
 
           &.address-h3:before
             content: url(images/postal.png)
-            left: 55%\9
-            margin-left: -60px\9
 
         p, dl, blockquote
           color: #fff

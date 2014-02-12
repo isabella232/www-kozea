@@ -1,0 +1,44 @@
+/* line 5, ../sass/ie.sass */
+body section#web article a.more {
+  right: 11%;
+  top: 79% \9;
+}
+/* line 10, ../sass/ie.sass */
+body section#web h3.website-title-h3:before {
+  margin-left: -30px;
+}
+/* line 13, ../sass/ie.sass */
+body section#web h3.webdesign-title-h3:before {
+  margin-left: -33px;
+}
+/* line 16, ../sass/ie.sass */
+body section#web h3.elearning-title-h3:before {
+  margin-left: -33px;
+}
+/* line 19, ../sass/ie.sass */
+body section#web h3.questionnary-title-h3:before {
+  margin-left: -33px;
+}
+/* line 26, ../sass/ie.sass */
+body section#team ul li:hover:before, body section#team ul li:focus:before {
+  background: #242424;
+}
+/* line 32, ../sass/ie.sass */
+body section#libre ul li a:after {
+  background: #242424;
+}
+/* line 39, ../sass/ie.sass */
+body section#contact article h3.phone-h3:before {
+  left: 55%;
+  margin-left: -60px;
+}
+/* line 43, ../sass/ie.sass */
+body section#contact article h3.email-h3:before {
+  left: 55%;
+  margin-left: -60px;
+}
+/* line 47, ../sass/ie.sass */
+body section#contact article h3.address-h3:before {
+  left: 55%;
+  margin-left: -60px;
+}
