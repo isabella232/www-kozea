@@ -1,15 +1,29 @@
 $ ->
     position = $("#switch")
     lock = false
+
+
+    $('.closeModal').click ->
+        modalid = "#" + $(@).closest('.modal').attr('id')
+        $(modalid).modal('hide')
+        return
+
+    themelist = ("#theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
         $('a').click (e) ->
             $.address.value($(@).attr('href'))
             return
         $.address.externalChange (e) ->
-            if e.value == '/#' or e.value == '/'
+            if e.value.replace('/', '') in themelist
+                e.value='/'
+                $.address.value e.value
+            if e.value.search('^\/#') is -1
+                e.value = '/'
+                $.address.value e.value
                 slider.goToSlide(0)
                 unlock_scroll()
                 scrollTo(0)
+                return
             $('[href='+e.value.replace('/', '')+']').trigger('click')
             return
         return
