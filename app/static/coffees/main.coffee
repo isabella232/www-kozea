@@ -18,7 +18,7 @@ $ ->
                 e.value='/'
                 $.address.value e.value
             if e.value.search('^\/#') is -1
-                e.value = '/'
+                e.value = '/#'
                 $.address.value e.value
                 slider.goToSlide(0)
                 unlock_scroll()
