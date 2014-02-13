@@ -15,7 +15,7 @@ $ ->
         window.addEventListener 'popstate', (e) ->
             hash = History.getHash() or History.getState().hash
             if hash and hash != '/'
-                $('a[href=#'+hash.replace('/', '')+']').eq(0).click()
+                $('a[href=#'+hash.replace(/[\.#\/]/g, '')+']').eq(0).click()
             else
                 slider.goToSlide(0)
                 unlock_scroll()
@@ -24,7 +24,7 @@ $ ->
         $('a').click (e) ->
             e.preventDefault()
             if e.originalEvent
-                href = $(@).attr('href').replace('#', '')
+                href = $(@).attr('href').replace(/[\.#\/]/g, '')
                 History.pushState null, null, href
             return
         return
