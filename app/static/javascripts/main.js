@@ -25,12 +25,13 @@ $(function() {
     });
     $.address.externalChange(function(e) {
       var _ref;
-      if (_ref = e.value.replace('/', ''), __indexOf.call(themelist, _ref) >= 0) {
+      console.log(decodeURIComponent(e.value));
+      if (_ref = decodeURIComponent(e.value).replace('/', ''), __indexOf.call(themelist, _ref) >= 0) {
         e.value = '/';
-        $.address.value(e.value);
+        $.address.value(decodeURIComponent(e.value));
       }
-      if (e.value.search('^\/#') === -1) {
-        e.value = '/';
+      if (decode.URIComponent(e.value).search('^\/#') === -1) {
+        e.value = '/#';
         $.address.value(e.value);
         slider.goToSlide(0);
         unlock_scroll();
