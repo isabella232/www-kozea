@@ -10,22 +10,22 @@ $ ->
 
     themelist = ("#theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
-        $('a').click (e) ->
-            $.address.value($(@).attr('href'))
-            return
-        $.address.externalChange (e) ->
-            console.log(decodeURIComponent(e.value))
-            if decodeURIComponent(e.value).replace('/', '') in themelist
-                e.value='/'
-                $.address.value decodeURIComponent(e.value)
-            if decode.URIComponent(e.value).search('^\/#') is -1
-                e.value = '/#'
-                $.address.value e.value
+        is_intern = false
+        State = History.getState()
+        $(window).hashchange (e) ->
+            hash = History.getHash()
+            if hash and hash != '/'
+                $('a[href=#'+hash+']').eq(0).click()
+            else
                 slider.goToSlide(0)
                 unlock_scroll()
                 scrollTo(0)
-                return
-            $('[href='+e.value.replace('/', '')+']').trigger('click')
+            return
+        $('a').click (e) ->
+            e.preventDefault()
+            if e.originalEvent
+                href = $(@).attr('href')
+                History.pushState null, null, href
             return
         return
 
@@ -33,20 +33,11 @@ $ ->
         if $(document).scrollTop() > position.offset().top + position.height()
                 $("#main-menu").addClass('fixed')
         $('.nav li a').click (e) ->
-            slider.goToSlide(0)
-            href = $(@).attr 'href'
-            if $('body').hasClass('stop-scrolling')
-                timeanimation = true
-            unlock_scroll()
-            if timeanimation
-                setTimeout(() ->
-                    scrollTo($(href).offset().top - 82)
-                    return
-                , 700)
-            else
-                    scrollTo($(href).offset().top - 82)
-            timeanimation = false
             e.preventDefault()
+            href = $(@).attr 'href'
+            unlock_scroll()
+            slider.goToSlide(0)
+            scrollTo($(href).offset().top - 82)
             return
         $(document).on('scroll', ->
             if $(document).scrollTop() < position.offset().top + position.height()
@@ -68,6 +59,7 @@ $ ->
                 lock = false
                 return
         $('#navigation-dropdown').on 'click', ->
+            e.preventDefault()
             $('#main-header-link').hide()
             $(@).toggleClass('active')
             if ($('.nav.menu').is(':visible'))
@@ -97,17 +89,22 @@ $ ->
             return
         return
 
-    init_address_history()
-    init_responsive_menu()
-    init_click_handlers()
-
-
     slider = $('.bxslider').bxSlider({
         controls: false,
         pager: false,
         adaptiveHeight: true,
-        useCSS: 'webkitRequestAnimationFrame' in window
+        useCSS: 'webkitRequestAnimationFrame' in window,
+        touchEnabled: false,
+        onSlideBefore: (elem, oldindex, newindex) ->
+            if newindex == 0
+                scrollTo(0,0)
+            return
     })
+    init_responsive_menu()
+    init_click_handlers()
+    init_address_history()
+    $(window).hashchange()
+
     return
 
 scrollTo = (position=null, speed=500)->
