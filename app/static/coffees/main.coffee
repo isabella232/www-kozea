@@ -11,8 +11,7 @@ $ ->
     themelist = ("#theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
         is_intern = false
-        State = History.getState()
-        window.addEventListener 'popstate', (e) ->
+        History.Adapter.bind window, 'popstate', (e) ->
             hash = History.getHash() or History.getState().hash
             if hash and hash != '/'
                 $('a[href=#'+hash.replace(/[\.#\/]/g, '')+']').eq(0).click()
@@ -23,8 +22,7 @@ $ ->
             return
         $('a').click (e) ->
             if e.originalEvent
-                href = $(@).attr('href').replace(/[\.#\/]/g, '') or '/'
-                console.log href
+                href = $(@).attr('href').replace(/[\.#\/]/g, '')
                 History.pushState null, null, href
             return
         return
@@ -103,7 +101,6 @@ $ ->
     init_responsive_menu()
     init_click_handlers()
     init_address_history()
-    $(window).hashchange()
 
     return
 
