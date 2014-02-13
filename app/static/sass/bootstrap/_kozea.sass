@@ -9,6 +9,7 @@ $light-gray: #f1f1f1
 $gray-blue: #608485
 $darken-blue: #393b48
 
+
 body
   border-top: 12px solid $light-gray
   font-size: 1.1em
@@ -39,15 +40,15 @@ body
       top: -17px
 
   /* -
-  /* - Navigation -
+  /* - NAVIGATION -
   /* - */
   nav
     &#main-menu
       height: 80px
       position: absolute
       text-align: right
-      top: 135px
       right: 0
+      top: 135px
 
       ul li
         & + li a:after
@@ -86,14 +87,12 @@ body
 
           &:before
             background: $light-gray
-            /*+gradient-directional-three-colors(darken($light-gray, 15%), #fff, 50%,  darken($light-gray, 15%), 115deg)*/
-            /*+box-shadow(0 1px 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.1) inset)*/
             height: 85px
             margin-left: -40px
             width: 85px
 
 
-      /* - position fixed - */
+      /* - POSITION FIXED - */
       &.fixed
         background: $light-gray
         +box-shadow(0 13px 13px -13px rgba(0, 0, 0, 0.5))
@@ -141,15 +140,15 @@ body
           li#main-header-link
             a
               background: url(images/logo-kozea-small.png) no-repeat top left
-              background-size: 60px
+              background-size: 58px
               color: transparent
               display: block
               font-size: 0
-              height: 60px
+              height: 68px
               left: 10px
               position: fixed
               top: 15px
-              width: 63px
+              width: 68px
 
       ul
         display: inline-block
@@ -231,15 +230,15 @@ body
   /* - SLIDER -
   /* - */
   .bx-wrapper .bx-viewport
-    background: #f1f1f1
+    background: $light-gray
     border-top: none !important
-    border-color: #f1f1f1
+    border-color: $light-gray
     +box-shadow(none)
 
     section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
-        padding: 50px 0
         margin: 0 25%
+        padding: 50px 0
         width: auto
 
         a.backToFirstSlide:before
@@ -280,11 +279,10 @@ body
           background: $light-gray
           color: orange
 
-
     section.horizontal-slider#website-slide, section.horizontal-slider#elearning-slide, section.horizontal-slider#stat-slide, section.horizontal-slider#art-slide
-      width: 80%
       margin: 0 auto
       padding: 3% 10% 10% 200px
+      width: 80%
 
       article
         +box-shadow(none)
@@ -300,10 +298,10 @@ body
 
         &:after
           height: 200px
-          width: 200px
           left: -170px
-          overflow: hidden
           margin-top: 20px
+          overflow: hidden
+          width: 200px
 
         &:before
           background: darken($light-gray, 5%)
@@ -395,17 +393,16 @@ body
           font-size: 1.4em
 
         ul
-          border-bottom: 1px solid darken(#f1f1f1, 5%)
-          +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
+          border-bottom: 1px solid darken($light-gray, 5%)
+          +box-shadow(0 1px 0 lighten($light-gray, 5%))
+          list-style: none
           margin-bottom: 20px
           padding-bottom: 20px
-          list-style: none
 
           li:before
             content: '►'
             line-height: 2
             margin: 0 5px 0 -1em
-
 
           ul li
             font-size: 19px
@@ -440,7 +437,6 @@ body
             content: url(images/evaluation.png)
             margin-top: 0
 
-
       &#stat-slide
         article
           &.labsharing:after
@@ -457,13 +453,11 @@ body
 
           &.extraction:after
             content: url(images/extraction.png)
-            /*margin-top: -20px*/
 
       &#art-slide
         article
           &.design:after
             content: url(images/website-gris.png)
-
 
   section.horizontal-slider#elearning-slide
     article
@@ -471,9 +465,9 @@ body
         padding-top: 10px
 
         div
+          border-bottom: 1px solid darken($light-gray, 5%)
+          +box-shadow(0 1px 0 lighten($light-gray, 5%))
           margin: 45px 0
-          border-bottom: 1px solid darken(#f1f1f1, 5%)
-          +box-shadow(0 1px 0 lighten(#f1f1f1, 5%))
           position: relative
 
           &:after
@@ -503,12 +497,9 @@ body
           &.krea-soft:after
             content: url(images/krea-soft.png)
 
-
         h3
           color: $gray-blue
           text-transform: uppercase
-
-
 
   section.horizontal-slider#art-slide
     ul
@@ -527,17 +518,9 @@ body
         z-index: 1
 
         img
+          border: 0
+          margin-top: 0
           width: 250px
-
-        /*&:before
-          +box-shadow(0 8px 8px rgba(0, 0, 0, 0.3) inset)
-          content: ''
-          height: 250px
-          left: -4px
-          position: absolute
-          top: -5px
-          width: 250px
-          z-index: 5*/
 
   /* -
   /* - SECTION -
@@ -559,7 +542,7 @@ body
       margin: -80px auto 0
       width: 60px
 
-    /* - Banner top - */
+    /* - BANNER TOP - */
     &#banner
       background: $darken-blue url(images/bg-logo.png) no-repeat bottom right
       padding: 50px 10%
@@ -606,9 +589,6 @@ body
         text-transform: uppercase
         z-index: 15
 
-        /*&:first-letter
-          font-size: 1.65em*/
-
         &:after, &:before
           background: darken($gray-lighten, 5%)
           content: ''
@@ -633,7 +613,7 @@ body
           z-index: -1
 
 
-    /* - Web - */
+    /* - WEB - */
     &#web
       +box-shadow(none)
 
@@ -681,7 +661,6 @@ body
             height: 30px
             margin-top: -25px
             width: 30px
-
 
     &#web, &#contact
       text-align: center
@@ -784,7 +763,6 @@ body
           color: #fff
           font-weight: bold
           height: 45px
-          /*margin: -10px -20px 20px -20px*/
           padding-left: 14px
           padding-top: 14px
           position: relative
@@ -820,11 +798,11 @@ body
           background: $light-gray
 
       a
-        color: #f1f1f1
+        color: $light-gray
         text-decoration: underline
 
         &:hover, &:focus
-          color: darken(#f1f1f1, 10%)
+          color: darken($light-gray, 10%)
           text-decoration: none
 
       ul
@@ -854,8 +832,8 @@ body
             left: 0
             overflow: hidden
             position: absolute
-            +transition(height 0.8s ease-in)
             top: 0
+            +transition(height 0.8s ease-in)
             width: 240px
             z-index: 5
 
@@ -1022,10 +1000,10 @@ body
 
       article
         padding: 0 4% 20px
-        position: relative
-        width: 32%
         border-right: 1px solid darken($gray-blue, 5%)
         +box-shadow(1px 0 0 lighten($gray-blue, 5%))
+        position: relative
+        width: 32%
 
         &:after
           display: block
@@ -1035,16 +1013,6 @@ body
           position: absolute
           top: 40px
           width: 70px
-
-        /*&.address:after
-          content: url(images/postal.png)*/
-
-        /*&.email:after
-          content: url(images/mail.png)*/
-
-        /*&.phone:after
-          content: url(images/phone.png)*/
-
 
         dl, blockquote
           font-size: 18px
@@ -1078,7 +1046,6 @@ body
           &:before
             height: 150px
             left: 49%
-            margin-left: -75px
             position: absolute
             top: 23px
             width: 150px
@@ -1086,12 +1053,17 @@ body
 
           &.phone-h3:before
             content: url(images/phone.png)
+            margin-left: -77px
 
           &.email-h3:before
             content: url(images/mail.png)
+            margin-left: -74px
+            top: 25px
 
           &.address-h3:before
             content: url(images/postal.png)
+            margin-left: -73px
+            top: 22px
 
         p, dl, blockquote
           color: #fff
@@ -1199,7 +1171,6 @@ body
 
 @media(min-width: 1600px)
   body
-    /* - SECTION -*/
     section
       &#web article
         height: 380px
@@ -1208,10 +1179,8 @@ body
         height: 60px
         padding-left: 24px
 
-
 @media(min-width: 1200px)
   body
-    /* - SECTION -*/
     section
       &#web article
         height: 440px
@@ -1225,8 +1194,8 @@ body
   body
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
-        padding: 50px 0
         margin: 0 25%
+        padding: 50px 0
         width: auto
 
         a.backToFirstSlide:before
@@ -1241,7 +1210,6 @@ body
           a.more
             top: 475px
 
-
 @media(max-width: 970px)
   body
     background: $light-gray
@@ -1250,8 +1218,8 @@ body
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
-        padding: 50px 0
         margin: 0 25%
+        padding: 50px 0
         width: auto
 
         a.backToFirstSlide:before
@@ -1290,7 +1258,7 @@ body
 
 
     /* -
-    /* - Navigation -
+    /* - NAVIGATION -
     /* - */
     nav
       width: 100%
@@ -1334,7 +1302,6 @@ body
 
               a
                 color: orange
-
 
             & + li a
               background: url(images/icon-web-small.png) no-repeat 10px center
@@ -1398,16 +1365,44 @@ body
         span.slogan
           margin-top: 40px
 
+@media(max-width: 925px)
+  body
+    .modal-content
+      left: 10px
+      width: 775px
+
+      img
+        width: 745px
+
+      img.closeModal
+        left: 769px
+        height: 31px
+        width: 31px
+
+@media(max-width: 850px)
+  body
+    .modal-content
+      left: 10px
+      width: 725px
+
+      img
+        width: 695px
+
+      img.closeModal
+        left: 720px
+        height: 31px
+        width: 31px
 
 @media(max-width: 800px)
   body
     .modal-content
-      width: 680px
+      left: 10px
+      width: 675px
 
       img
-        width: 657px
+        width: 645px
       img.closeModal
-        left: 672px
+        left: 667px
         height: 31px
         width: 31px
 
@@ -1428,9 +1423,6 @@ body
               margin-top: 0
               text-align: center
 
-            /*&.extraction:after
-              margin-top: 10px*/
-
         &#elearning-slide, &#stat-slide
           h3
             text-align: center
@@ -1440,9 +1432,9 @@ body
 
         &#web
           article
+            margin-top: 16px
             padding-left: 0
             padding-top: 115px
-            margin-top: 16px
 
             &:after
               left: 50%
@@ -1452,8 +1444,8 @@ body
               position: initial
 
               &:before, &:after
-                margin-left: 0
                 left: 50%
+                margin-left: 0
 
               &:after
                 margin-left: -59px
@@ -1463,8 +1455,8 @@ body
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
-        padding: 50px 0
         margin: 0 5%
+        padding: 50px 0
         width: auto
 
         a.backToFirstSlide:before
@@ -1515,18 +1507,18 @@ body
           border-right: none
           +box-shadow(0 1px 0 lighten($light-gray, 5%))
           display: block
+          height: auto
           margin: 0 4%
           min-height: 180px
           padding-left: 180px
           width: auto
-          height: auto
 
           &:last-of-type
             border-bottom: none
 
           &:after
-            top: 22px
             left: 92px
+            top: 22px
 
           h3
             height: auto
@@ -1544,9 +1536,9 @@ body
 
       &#web
         article
+          margin-top: 16px
           padding-left: 0
           padding-top: 115px
-          margin-top: 16px
 
           &:after
             left: 50%
@@ -1563,8 +1555,8 @@ body
             position: static
 
             &:before, &:after
-              margin-left: 0
               left: 50%
+              margin-left: 0
 
             &:after
               margin-left: -50px
@@ -1578,9 +1570,9 @@ body
 
       &#contact
         article
+          margin-top: 36px
           padding-left: 0
           padding-top: 115px
-          margin-top: 36px
 
           &:after
             left: 50%
@@ -1602,6 +1594,15 @@ body
             margin-left: 5%
             position: initial
 
+            &.phone-h3:before
+              margin-left: -67px
+
+            &.email-h3:before
+              margin-left: -64px
+
+            &.address-h3:before
+              margin-left: -64px
+
             &:before, &:after
               margin-left: 0
               left: 50%
@@ -1620,25 +1621,151 @@ body
 @media(max-width: 770px)
   body
     .modal-content
-      left: 60px
-      width: 569px
+      left: 10px
+      top: 20px
+      width: 655px
+
       img
-        width: 540px
+        width: 625px
+
       img.closeModal
-        left: 565px
+        left: 647px
+
     section#reference ul
       text-align: center
 
+@media(max-width: 750px)
+  body
+    .modal-content
+      left: 10px
+      width: 645px
+
+      img
+        width: 615px
+
+      img.closeModal
+        left: 639px
+
+@media(max-width: 725px)
+  body
+    .modal-content
+      left: 10px
+      width: 625px
+
+      img
+        width: 595px
+
+      img.closeModal
+        left: 619px
+
+@media(max-width: 700px)
+  body
+    .modal-content
+      left: 10px
+      width: 605px
+
+      img
+        width: 575px
+
+      img.closeModal
+        left: 599px
+
+@media(max-width: 680px)
+  body
+    .modal-content
+      left: 10px
+      width: 585px
+
+      img
+        width: 555px
+
+      img.closeModal
+        left: 581px
+
+@media(max-width: 670px)
+  body
+    .modal-content
+      left: 10px
+      width: 575px
+
+      img
+        width: 545px
+
+      img.closeModal
+        left: 571px
+
+@media(max-width: 650px)
+  body
+    .modal-content
+      left: 10px
+      width: 565px
+
+      img
+        width: 535px
+
+      img.closeModal
+        left: 561px
+
+@media(max-width: 630px)
+  body
+    .modal-content
+      left: 10px
+      width: 545px
+
+      img
+        width: 515px
+
+      img.closeModal
+        left: 541px
+
+@media(max-width: 620px)
+  body
+    .modal-content
+      left: 10px
+      width: 530px
+
+      img
+        width: 500px
+
+      img.closeModal
+        left: 526px
+
+@media(max-width: 600px)
+  body
+    .modal-content
+      left: 10px
+      width: 510px
+
+      img
+        width: 480px
+
+      img.closeModal
+        left: 505px
+
+@media(max-width: 585px)
+  body
+    .modal-content
+      left: 10px
+      width: 495px
+
+      img
+        width: 465px
+
+      img.closeModal
+        left: 490px
 
 @media(max-width: 570px)
   body
     .modal-content
-      left: 0
-      width: 450px
+      left: 10px
+      width: 465px
+
       img
-        width: 420px
+        width: 435px
+
       img.closeModal
-        left: 444px
+        left: 461px
+
     section
       &#libre, &#web, &#team, &#contact, &#reference
         h2
@@ -1649,9 +1776,9 @@ body
 
       &#web
         article
+          margin-top: 16px
           padding-left: 0
           padding-top: 115px
-          margin-top: 16px
 
           &:after
             left: 50%
@@ -1661,8 +1788,8 @@ body
             position: initial
 
             &:before, &:after
-              margin-left: 0
               left: 50%
+              margin-left: 0
 
             &:after
               margin-left: -50px
@@ -1672,8 +1799,8 @@ body
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
-        padding: 50px 0
         margin: 0 5%
+        padding: 50px 0
         width: auto
 
         a.backToFirstSlide:before
@@ -1704,21 +1831,72 @@ body
             margin-left: -100px
 
           &:before
-            width: 100%
             height: 8px
+            width: 100%
 
       &.horizontal-slider#art-slide
         ul 
           text-align: center
 
+@media(max-width: 540px)
+  body
+    .modal-content
+      left: 10px
+      width: 435px
+
+      img
+        width: 405px
+
+      img.closeModal
+        left: 429px
+
+@media(max-width: 505px)
+  body
+    .modal-content
+      left: 10px
+      width: 425px
+
+      img
+        width: 395px
+
+      img.closeModal
+        left: 416px
+
+@media(max-width: 505px)
+  body
+    .modal-content
+      left: 10px
+      width: 385px
+
+      img
+        width: 355px
+
+      img.closeModal
+        left: 378px
+
+@media(max-width: 490px)
+  body
+    .modal-content
+      left: 10px
+      width: 375px
+
+      img
+        width: 345px
+
+      img.closeModal
+        left: 368px
+
 @media(max-width: 480px)
   body
     .modal-content
-      width: 350px
+      width: 371px
+
       img
-        width: 320px
+        width: 341px
+
       img.closeModal
-        left: 345px
+        left: 363px
+
     section#team
       ul
         text-align: center
