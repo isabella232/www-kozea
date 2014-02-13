@@ -22,9 +22,9 @@ $ ->
                 scrollTo(0)
             return
         $('a').click (e) ->
-            e.preventDefault()
             if e.originalEvent
-                href = $(@).attr('href').replace(/[\.#\/]/g, '')
+                href = $(@).attr('href').replace(/[\.#\/]/g, '') or '/'
+                console.log href
                 History.pushState null, null, href
             return
         return
