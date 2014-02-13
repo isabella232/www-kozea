@@ -58,7 +58,7 @@ $ ->
                     $('.nav.menu').show()
                 lock = false
                 return
-        $('#navigation-dropdown').on 'click', ->
+        $('#navigation-dropdown').click (e) ->
             e.preventDefault()
             $('#main-header-link').hide()
             $(@).toggleClass('active')
