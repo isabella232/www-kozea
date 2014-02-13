@@ -12,10 +12,10 @@ $ ->
     init_address_history = ->
         is_intern = false
         State = History.getState()
-        $(window).hashchange (e) ->
-            hash = History.getHash()
+        window.addEventListener 'popstate', (e) ->
+            hash = History.getHash() or History.getState().hash
             if hash and hash != '/'
-                $('a[href=#'+hash+']').eq(0).click()
+                $('a[href=#'+hash.replace('/', '')+']').eq(0).click()
             else
                 slider.goToSlide(0)
                 unlock_scroll()
@@ -24,7 +24,7 @@ $ ->
         $('a').click (e) ->
             e.preventDefault()
             if e.originalEvent
-                href = $(@).attr('href')
+                href = $(@).attr('href').replace('#', '')
                 History.pushState null, null, href
             return
         return
