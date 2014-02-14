@@ -10,8 +10,7 @@ $ ->
 
     themelist = ("#theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
-        is_intern = false
-        History.Adapter.bind window, 'popstate', (e) ->
+        $(window).bind('statechange', () ->
             hash = History.getHash() or History.getState().hash
             if hash and hash != '/'
                 $('a[href=#'+hash.replace(/[\.#\/]/g, '')+']').eq(0).click()
@@ -20,9 +19,10 @@ $ ->
                 unlock_scroll()
                 scrollTo(0)
             return
-        $('a').click (e) ->
+        )
+        $('a[href!=http], a[href!=https]').click (e) ->
             if e.originalEvent
-                href = $(@).attr('href').replace(/[\.#\/]/g, '')
+                href = $(@).attr('href').replace(/[\.#\/]/g, '/')
                 History.pushState null, null, href
             return
         return
