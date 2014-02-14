@@ -3,7 +3,7 @@ var lock_scroll, prevent_flickering, scrollTo, unlock_scroll,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 $(function() {
-  var i, init_address_history, init_click_handlers, init_responsive_menu, lock, position, slider, themelist;
+  var i, init_address_history, init_click_handlers, init_responsive_menu, link, lock, position, slider, themelist;
   position = $("#switch");
   lock = false;
   $('.closeModal').click(function() {
@@ -117,6 +117,10 @@ $(function() {
   init_responsive_menu();
   init_click_handlers();
   init_address_history();
+  if (path) {
+    link = path.replace(/[^a-z0-9\s]/gi, '');
+    $('a[href=#' + link + ']').click();
+  }
 });
 
 scrollTo = function(position, speed) {
