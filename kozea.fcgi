@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from flipflop import WSGIServer
-import app
+from app import app
 
 WSGIServer(app).run()
-
