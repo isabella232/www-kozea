@@ -67,12 +67,12 @@
         <article id="questionnary">
           <h3 class="questionnary-title-h3">Enquêtes et Statistiques</h3>
           <h4>Notre expertise</h4>
-          <p>Proposer une plateforme de création ou d'administration de questionnaires et gérer les analyses statistiques des données collectées <a href="#questionnary-slide-link" class="more" data-slide='3'>En savoir plus</a></p>
+          <p>Proposez une plateforme de création ou d'administration de questionnaires et gérez les analyses statistiques des données collectées <a href="#questionnary-slide-link" class="more" data-slide='3'>En savoir plus</a></p>
         </article>
         <article id="webdesign">
           <h3 class="webdesign-title-h3">Création graphique</h3>
           <h4>Notre expertise</h4>
-          <p>Vous apporter un outil qualitatif, adapté à vos besoins et à votre charte graphique <a href="#webdesign-slide-link" class="more" data-slide='4'>En savoir plus</a></p>
+          <p>Vous apportez un outil qualitatif, adapté à vos besoins et à votre charte graphique <a href="#webdesign-slide-link" class="more" data-slide='4'>En savoir plus</a></p>
         </article>
       </section>
       </li>
@@ -84,20 +84,20 @@
             <h2 class="website-title">Site Internet</h2>
             <p>Kozea développe des sites Internet pour les professionnels de santé. Nous nous engageons à fournir :</p>
             <ul>
-              <li>Des vrais services + pour les patients : <br/>- contenu pertinent sur la santé mis à jour régulièrement pour une information continue,<br/> - possibilité de prises de rendez-vous en ligne, <br/>- commande, <br/>- réservation d'ordonnances en ligne*....</li>
-              <li>Des outils de gestion adaptés aux professionnels de santé :<br/>- gestion de commandes*,<br/>- des patients inscrits sur les sites,<br/>- accès aux statistiques de vente*,<br/>- accès à des formations e-learning.</li>
-              <li>Des sites avec un module intégré de gestion des droits d’accès. Les professionnels de santé ont accès à tous les modules et à toutes les rubriques du site. Ils peuvent les consulter et/ou les modifier en toute autonomie.</li>
+              <li>Des vrais services + pour les patients : <br/>- contenu pertinent sur la santé mis à jour régulièrement pour une information continue<br/> - possibilité de prises de rendez-vous en ligne <br/>- commandes en ligne <br/>- réservation d'ordonnances en ligne*....</li>
+              <li>Des outils de gestion adaptés aux professionnels de santé :<br/>- gestion de commandes*<br/>- des patients inscrits sur les sites<br/>- accès aux statistiques de vente*<br/>- accès à des formations e-learning</li>
+              <li>Des sites avec un module intégré de gestion des droits d’accès<br/> Les professionnels de santé ont accès à tous les modules et à toutes les rubriques du site. Ils peuvent les consulter et/ou les modifier en toute autonomie.</li>
               <li>Le respect des différentes règles des conseils de l'ordre selon les professions</li>
             </ul>
             <p>Ces sites sont commercialisés sous les marques Medsite.fr et Pharminfo.fr. </p>
             <article class="pharminfo">
               <h3 class="pharmacy">Pharminfo.fr</h3>
-              <p><strong>Pharminfo.fr</strong> proposent aux pharmaciens d'officine des sites Internet de la simple vitrine au site Internet e-commerce.</p>
+              <p><strong>Pharminfo.fr</strong> propose aux pharmaciens d'officine des sites Internet de la simple vitrine au site Internet e-commerce.</p>
               <p><strong>Retrouvez toutes les informations sur <a href="http://www.pharminfo.fr/">Pharminfo.fr</a></strong></p>
             </article>
             <article class="medsite">
               <h3 class="doctor">Medsite.fr</h3>
-              <p><strong>Medsite.fr</strong> proposent aux médecins des sites Internet vitrine au site avec réservation en ligne de rendez-vous.</p>
+              <p><strong>Medsite.fr</strong> propose aux médecins des sites Internet vitrine au site avec réservation en ligne de rendez-vous.</p>
               <p><strong>Retrouvez toutes les informations sur <a href="http://www.medsite.fr/">Medsite.fr.</a></strong></p>
             </article>
             <p>Aujourd'hui, plus de 2000 professionnels de santé font confiance à nos solutions de site Internet.</p>
@@ -137,7 +137,7 @@
               <h4 class="vitaleform">Vitaleform.fr</h4>
               <p>Plateforme multimédia pour suivre des formations e-learning avec diaporamas commentés, vidéos et consultation des cours en ligne.</p>
             </div>
-            <p>Pour plus d'informations téléchargez nos plaquettes : <a href="static/stylesheets/bootstrap/documents/vitale-form.pdf">Vitale-Form</a> / <a href="static/stylesheets/bootstrap/documents/vitale-soft.pdf">Vitale-Soft</a></p>
+            <p>Pour plus d'informations téléchargez nos plaquettes : <a href="{{ static('stylesheets/bootstrap/documents/vitale-form.pdf')}}">Vitale-Form</a> / <a href="{{ static('stylesheets/bootstrap/documents/vitale-soft.pdf')}}">Vitale-Soft</a></p>
           </article>
           <article class="organism">
              <h3>Vous êtes une entreprise ?</h3>
@@ -149,7 +149,7 @@
                <h4>Krea-form.fr</h4>
                <p>Plateforme multimédia pour suivre des formations e-learning avec diaporamas commentés, vidéos et consultation des cours en ligne pour les équipes interne ou leurs clients.</p>
              </div>
-             <p>Pour plus d'informations téléchargez nos plaquettes :  <a href="static/stylesheets/bootstrap/documents/krea-soft.pdf">Krea-soft</a> / <a href="static/stylesheets/bootstrap/documents/krea-form.pdf">Krea-form</a></p>
+             <p>Pour plus d'informations téléchargez nos plaquettes :  <a href="{{ static('stylesheets/bootstrap/documents/krea-soft.pdf')}}">Krea-soft</a> / <a href="{{ static('stylesheets/bootstrap/documents/krea-form.pdf')}}">Krea-form</a></p>
            </article>
          </div>
       </section>
@@ -167,8 +167,8 @@
           </article>
           <article class="labsharing">
             <h3 class="labsharing-title-h3">Test de lisibilité : Labsharing</h3>
-            <p>Nous réalisons une application permettant d'effectuer des tests de lisibilité dans le cadre de l'amélioration de la qualité des notices de médicaments . Ces tests consistent à interviewer des personnes recrutées aléatoirement, sur la compréhension d'une notice à l'aide d'un questionnaire portant sur différentes de celle-ci.</p>
-            <p>Des rapports d'analyses des données sont ensuite générés semi-automatiquement par notre équipe d'experts (dont des pharmaciens)</p>
+            <p>Nous réalisons une application permettant d'effectuer des tests de lisibilité dans le cadre de l'amélioration de la qualité des notices de médicaments. Ces tests consistent à interviewer des personnes recrutées aléatoirement, sur la compréhension d'une notice à l'aide d'un questionnaire portant sur différentes sections de celle-ci.</p>
+            <p>Des rapports d'analyse des données sont ensuite générés semi-automatiquement par notre équipe d'experts (dont des pharmaciens)</p>
             <p>Plus d’informations sur <a href="http://www.labsharing.fr">www.labsharing.fr</a></p>
           </article>
           <article class="questions">
