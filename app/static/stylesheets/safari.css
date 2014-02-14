@@ -1,0 +1,8 @@
+/* line 1, ../sass/safari.sass */
+body {
+  border-top: 12px solid red;
+}
+/* line 3, ../sass/safari.sass */
+body p {
+  color: red;
+}
