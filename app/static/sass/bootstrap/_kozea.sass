@@ -1,14 +1,12 @@
 +font-face("Droid", "fonts/DroidSans", "DroidSans", 400, normal)
 +font-face("Droid", "fonts/DroidSans-Bold", "DroidSans-Bold", 700, normal)
 
-
 /* -
 /* - VARIABLES -
 /* - */
 $light-gray: #f1f1f1
 $gray-blue: #608485
 $darken-blue: #393b48
-
 
 body
   border-top: 12px solid $light-gray
@@ -519,7 +517,6 @@ body
 
         img
           border: 0
-          margin-top: 0
           width: 250px
 
   /* -
@@ -626,6 +623,9 @@ body
           height: 200px
           margin-bottom: 20px
 
+        p
+          position: relative
+
         &:hover, &:focus
           h3
             color: orange
@@ -639,19 +639,20 @@ body
           +box-shadow(none)
 
         a.more
-          bottom: 42px
+          bottom: 5%
           color: transparent
           font-size: 0
-          left: 281px
           position: absolute
-          top: 89%
+          right: 5%
+          width: 30px
 
           &:before
-            color: red
+            color: #fff
             content: '+'
+            left: 10px
             font-size: 16px
             font-weight: bold
-            padding-left: 1.5%
+            position: relative
 
           &:after
             background: darken(#dedede, 10%)
@@ -870,7 +871,6 @@ body
               +transition( height 0.8s ease-in)
 
 
-
     /* -----------------
     /* - SECTION LIBRE -
     /* -----------------*/
@@ -1054,16 +1054,13 @@ body
 
           &.phone-h3:before
             content: url(images/phone.png)
-            margin-left: -77px
 
           &.email-h3:before
             content: url(images/mail.png)
-            margin-left: -74px
             top: 25px
 
           &.address-h3:before
             content: url(images/postal.png)
-            margin-left: -73px
             top: 22px
 
         p, dl, blockquote
@@ -1169,7 +1166,6 @@ body
           &:hover, &:focus
             color: orange
 
-
 @media(min-width: 1600px)
   body
     section
@@ -1177,7 +1173,6 @@ body
         height: 380px
 
       h4
-        height: 60px
         padding-left: 24px
 
 @media(min-width: 1200px)
@@ -1188,8 +1183,6 @@ body
 
         p
           height: 180px
-        a.more
-          top: 426px
 
 @media(max-width: 1198px)
   body
@@ -1207,9 +1200,6 @@ body
         article
           p
             height: 223px
-
-          a.more
-            top: 475px
 
 @media(max-width: 970px)
   body
@@ -1357,9 +1347,6 @@ body
             height: 260px
             padding-bottom: 25px
 
-          a.more
-            top: 99%
-
       &#banner
         padding: 50px 5%
 
@@ -1436,6 +1423,16 @@ body
             margin-top: 16px
             padding-left: 0
             padding-top: 115px
+
+            h4
+              height: 43px
+
+          a.more
+            bottom: 10%
+            right: -3%
+
+            &:before
+              left: -84%
 
             &:after
               left: 50%
@@ -1565,10 +1562,6 @@ body
             &:before
               margin-left: -61px
 
-          a.more
-            right: 4%
-            top: 76%
-
       &#contact
         article
           margin-top: 36px
@@ -1593,7 +1586,7 @@ body
 
           h3
             margin-left: 5%
-            position: initial
+            position: static
 
             &.phone-h3:before
               margin-left: -67px
@@ -1613,11 +1606,6 @@ body
 
             &:before
               margin-left: -61px
-
-          a.more 
-            right: 4%
-            top: 76%
-
 
 @media(max-width: 770px)
   body
@@ -1719,6 +1707,11 @@ body
       img.closeModal
         left: 541px
 
+    section#web
+      article
+        p
+          height: 100px
+
 @media(max-width: 620px)
   body
     .modal-content
@@ -1742,6 +1735,11 @@ body
 
       img.closeModal
         left: 505px
+
+    section#web
+      article
+        p
+          height: 90px
 
 @media(max-width: 585px)
   body
@@ -1797,6 +1795,13 @@ body
 
             &:before
               margin-left: -61px
+
+          p
+            height: 130px
+
+            a.more
+              bottom: 5%
+              right: -6%
 
     .bx-wrapper .bx-viewport section
       &.horizontal-slider#website-slide, &.horizontal-slider#elearning-slide, &.horizontal-slider#stat-slide, &.horizontal-slider#art-slide
@@ -1863,18 +1868,6 @@ body
       img.closeModal
         left: 416px
 
-@media(max-width: 505px)
-  body
-    .modal-content
-      left: 10px
-      width: 385px
-
-      img
-        width: 355px
-
-      img.closeModal
-        left: 378px
-
 @media(max-width: 490px)
   body
     .modal-content
@@ -1901,3 +1894,12 @@ body
     section#team
       ul
         text-align: center
+
+    /* - HACKS IE 10+ - */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  body
+    section.horizontal-slider#art-slide
+      ul
+        li
+          img
+            margin-top: -28px

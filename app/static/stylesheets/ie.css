@@ -96,45 +96,40 @@ body .bx-wrapper .bx-viewport section.horizontal-slider#art-slide h3.html5-title
   left: -230px;
   position: absolute;
 }
-/* line 90, ../sass/ie.sass */
-body section#web article a.more {
-  right: 11%;
-  top: 79%;
-}
-/* line 95, ../sass/ie.sass */
+/* line 92, ../sass/ie.sass */
 body section#web h3.website-title-h3:before {
   margin-left: -33px;
 }
-/* line 98, ../sass/ie.sass */
+/* line 95, ../sass/ie.sass */
 body section#web h3.webdesign-title-h3:before {
   margin-left: -33px;
 }
-/* line 101, ../sass/ie.sass */
+/* line 98, ../sass/ie.sass */
 body section#web h3.elearning-title-h3:before {
   margin-left: -33px;
 }
-/* line 104, ../sass/ie.sass */
+/* line 101, ../sass/ie.sass */
 body section#web h3.questionnary-title-h3:before {
   margin-left: -33px;
 }
-/* line 111, ../sass/ie.sass */
+/* line 108, ../sass/ie.sass */
 body section#team ul li:hover:before, body section#team ul li:focus:before {
   background: #242424;
 }
-/* line 117, ../sass/ie.sass */
+/* line 114, ../sass/ie.sass */
 body section#libre ul li a:after {
   background: #242424;
 }
-/* line 124, ../sass/ie.sass */
+/* line 121, ../sass/ie.sass */
 body section#contact article h3.phone-h3:before {
   margin-left: -35px;
 }
-/* line 127, ../sass/ie.sass */
+/* line 124, ../sass/ie.sass */
 body section#contact article h3.email-h3:before {
   margin-left: -33px;
   margin-top: 2px;
 }
-/* line 131, ../sass/ie.sass */
+/* line 128, ../sass/ie.sass */
 body section#contact article h3.address-h3:before {
   margin-left: -30px;
 }
