@@ -81,7 +81,6 @@ $ ->
             slider.goToSlide($(@).data('slide'))
             return
         $('.backToFirstSlide').click (e) ->
-            e.preventDefault()
             slider.goToSlide(0)
             unlock_scroll()
             return
