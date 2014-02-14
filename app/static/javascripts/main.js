@@ -3,7 +3,7 @@ var lock_scroll, prevent_flickering, scrollTo, unlock_scroll,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 $(function() {
-  var i, init_address_history, init_click_handlers, init_responsive_menu, lock, position, slider, themelist;
+  var i, init_address_history, init_click_handlers, init_responsive_menu, link, lock, position, slider, themelist;
   position = $("#switch");
   lock = false;
   $('.closeModal').click(function() {
@@ -11,34 +11,34 @@ $(function() {
     modalid = "#" + $(this).closest('.modal').attr('id');
     $(modalid).modal('hide');
   });
+  $('.modal').on('hidden.bs.modal', function(e) {
+    return History.pushState(null, null, '/');
+  });
   themelist = (function() {
     var _i, _ref, _results;
     _results = [];
     for (i = _i = 0, _ref = $('.modal').length; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
-      _results.push("#theme" + i);
+      _results.push("/theme" + i);
     }
     return _results;
   })();
   init_address_history = function() {
-    var State, is_intern;
-    is_intern = false;
-    State = History.getState();
-    $(window).hashchange(function(e) {
-      var hash;
-      hash = History.getHash();
+    var hash;
+    hash = History.getHash() || History.getState().hash;
+    $(window).bind('statechange', function() {
+      hash = History.getHash() || History.getState().hash;
       if (hash && hash !== '/') {
-        $('a[href=#' + hash + ']').eq(0).click();
+        $('a[href=#' + hash.replace(/[\.#\/]/g, '') + ']').eq(0).click();
       } else {
         slider.goToSlide(0);
         unlock_scroll();
         scrollTo(0);
       }
     });
-    $('a').click(function(e) {
+    $('a[href!=http], a[href!=https]').click(function(e) {
       var href;
-      e.preventDefault();
       if (e.originalEvent) {
-        href = $(this).attr('href');
+        href = $(this).attr('href').replace(/[\.#\/]/g, '/');
         History.pushState(null, null, href);
       }
     });
@@ -102,7 +102,6 @@ $(function() {
       slider.goToSlide($(this).data('slide'));
     });
     $('.backToFirstSlide').click(function(e) {
-      e.preventDefault();
       slider.goToSlide(0);
       unlock_scroll();
     });
@@ -122,7 +121,10 @@ $(function() {
   init_responsive_menu();
   init_click_handlers();
   init_address_history();
-  $(window).hashchange();
+  if (path) {
+    link = path.replace(/[^a-z0-9\s]/gi, '');
+    $('a[href=#' + link + ']').click();
+  }
 });
 
 scrollTo = function(position, speed) {

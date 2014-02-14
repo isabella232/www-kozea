@@ -7,8 +7,12 @@ $ ->
         $(modalid).modal('hide')
         return
 
-    themelist = ("#theme"+i for i in [0..$('.modal').length])
+    $('.modal').on 'hidden.bs.modal', (e) ->
+        History.pushState null, null, '/'
+
+    themelist = ("/theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
+        hash = History.getHash() or History.getState().hash
         $(window).bind('statechange', () ->
             hash = History.getHash() or History.getState().hash
             if hash and hash != '/'
