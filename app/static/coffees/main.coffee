@@ -7,9 +7,6 @@ $ ->
         $(modalid).modal('hide')
         return
 
-    $('.modal').on 'hidden.bs.modal', (e) ->
-        History.pushState null, null, '/'
-
     themelist = ("/theme"+i for i in [0..$('.modal').length])
     init_address_history = ->
         hash = History.getHash() or History.getState().hash
@@ -23,7 +20,7 @@ $ ->
                 scrollTo(0)
             return
         )
-        $('a[href!=http], a[href!=https]').click (e) ->
+        $('a:not([href^=http]):not([href^=https]):not([href^=\\/static]').click (e) ->
             if e.originalEvent
                 href = $(@).attr('href').replace(/[\.#\/]/g, '/')
                 History.pushState null, null, href
@@ -104,8 +101,8 @@ $ ->
     init_click_handlers()
     init_address_history()
     if path
-        link = path.replace(/[^a-z0-9\s]/gi, '')
-        $('a[href=#'+link+']').click()
+        link = path
+        $('a[href=#'+link+']').eq(0).click()
 
 
     return
