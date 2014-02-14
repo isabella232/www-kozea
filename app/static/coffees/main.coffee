@@ -2,7 +2,6 @@ $ ->
     position = $("#switch")
     lock = false
 
-
     $('.closeModal').click ->
         modalid = "#" + $(@).closest('.modal').attr('id')
         $(modalid).modal('hide')
@@ -100,6 +99,9 @@ $ ->
     init_responsive_menu()
     init_click_handlers()
     init_address_history()
+    if path
+        $('a[href=#'+path+']').click()
+
 
     return
 
