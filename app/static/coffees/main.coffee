@@ -100,7 +100,8 @@ $ ->
     init_click_handlers()
     init_address_history()
     if path
-        $('a[href=#'+path+']').click()
+        link = path.replace(/[^a-z0-9\s]/gi, '')
+        $('a[href=#'+link+']').click()
 
 
     return
