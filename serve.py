@@ -4,8 +4,12 @@ host = 'kozea.l'
 port = 5000
 url = "http://%s:%d/*" % (host, port)
 
-from log_colorizer import colorize
-colorize()
+try:
+    from log_colorizer import colorize
+except ImportError:
+    pass
+else:
+    colorize()
 
 try:
     from wdb.ext import add_w_builtin
@@ -15,7 +19,6 @@ except ImportError:
 
 import logging
 from app import app
-app.logger.setLevel(logging.DEBUG)
 
 del app.logger.handlers[:]
 
@@ -45,9 +48,11 @@ else:
              'app/templates/']
     watch({'url': url}, files, unwatch_at_exit=True)
 
-app.run(
-    debug=True,
-    host='0.0.0.0',
-    port=port,
-    use_debugger=werkzeug_debugger,
-    threaded=True)
+if __name__ == '__main__':
+    app.logger.setLevel(logging.DEBUG)
+    app.run(
+        debug=True,
+        host='0.0.0.0',
+        port=port,
+        use_debugger=werkzeug_debugger,
+        threaded=True)
