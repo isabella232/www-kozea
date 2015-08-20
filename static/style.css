@@ -1,0 +1,199 @@
+body {
+  margin: auto;
+  width: 960px;
+}
+
+
+
+/* Header */
+
+header {
+  box-sizing: border-box;
+  height: 12em;
+  margin: 10px;
+  padding: 1em;
+  font-size: 3em;
+  padding-top: 5em;
+}
+
+header h1 {
+  margin: 0;
+  width: 300px;
+}
+
+header p {
+  width: 50%;
+}
+
+
+
+/* Main */
+
+main {
+  margin: auto;
+  overflow: auto;
+}
+
+main > * {
+  margin: 10px;
+}
+
+main h2, main h3 {
+  display: none;
+}
+
+main article, main section {
+  box-sizing: border-box;
+  float: left;
+  padding: 1em;
+}
+
+
+#who {
+  height: 460px;
+  width: 460px;
+}
+
+#who p:first-of-type {
+  font-size: 2em;
+}
+
+
+#contact {
+  margin: 0;
+  padding: 0;
+  width: 480px;
+}
+
+#contact section {
+  height: 220px;
+  float: left;
+  margin: 10px;
+  width: 220px;
+}
+
+
+#founders {
+  height: 220px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+#founders > * {
+  height: 220px;
+  margin: 0 10px;
+}
+
+#founders > p {
+  box-sizing: border-box;
+  float: right;
+  padding: 1em;
+  width: 460px;
+}
+
+#founders > section {
+  margin: 0 10px;
+  padding: 0;
+  width: 220px;
+}
+
+#founders > section * {
+  display: none;
+}
+
+#founders > section img {
+  display: block;
+  height: 220px;
+  width: 220px;
+}
+
+
+#team {
+  float: right;
+  margin: 10px 0;
+  padding: 0;
+  width: 720px
+}
+
+#team > * {
+  height: 220px;
+  margin: 0 10px;
+}
+
+#team > p {
+  box-sizing: border-box;
+  float: left;
+  padding: 1em;
+  width: 220px;
+}
+
+#team > ul {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 480px;
+}
+
+#team > ul li {
+  box-sizing: border-box;
+  float: left;
+  margin: 0 10px;
+  height: 220px;
+  padding: 1em;
+  width: 100px;
+}
+
+
+#health {
+  margin: 10px 0;
+  padding: 0;
+}
+
+#health > * {
+  height: 220px;
+  float: left;
+  margin: 0 10px;
+}
+
+#health > p {
+  box-sizing: border-box;
+  float: left;
+  padding: 1em;
+  width: 460px;
+}
+
+#health > section {
+  width: 220px;
+}
+
+
+#references {
+  margin: 0;
+  padding: 0;
+  width: 480px;
+}
+
+#references > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#references > ul li {
+  height: 220px;
+  float: left;
+  margin: 10px;
+  width: 220px;
+}
+
+
+
+/* Footer */
+
+footer {
+  clear: both;
+  color: white;
+  margin: 10px;
+  padding: 0.5em 1em;
+}
