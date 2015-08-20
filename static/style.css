@@ -1,8 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
 body {
+  background: url(img/background.jpg) 50% 0 no-repeat;
+  color: #1c1c1c;
+  font-family: "Open Sans";
+  font-size: 12pt;
   margin: auto;
   width: 960px;
 }
 
+ul {
+  list-style-type: square;
+}
 
 
 /* Header */
@@ -10,15 +19,19 @@ body {
 header {
   box-sizing: border-box;
   height: 12em;
-  margin: 10px;
-  padding: 1em;
-  font-size: 3em;
-  padding-top: 5em;
+  margin: 5px;
+  padding: 5px;
+  font-size: 2.2em;
+  font-weight: 300;
+  padding-top: 3em;
 }
 
 header h1 {
-  margin: 0;
-  width: 300px;
+  background: url("img/logo.svg");
+  font-size: 0;
+  height: 94px;
+  margin: 0 0 0 -10px;
+  width: 220px;
 }
 
 header p {
@@ -35,7 +48,7 @@ main {
 }
 
 main > * {
-  margin: 10px;
+  margin: 5px;
 }
 
 main h2, main h3 {
@@ -50,12 +63,16 @@ main article, main section {
 
 
 #who {
-  height: 460px;
-  width: 460px;
+  background: #499fc6;
+  color: white;
+  font-size: 0.85em;
+  height: 470px;
+  width: 470px;
 }
 
 #who p:first-of-type {
-  font-size: 2em;
+  font-size: 1.25em;
+  font-weight: 600;
 }
 
 
@@ -66,35 +83,37 @@ main article, main section {
 }
 
 #contact section {
-  height: 220px;
+  background: #cfdce2;
+  height: 230px;
   float: left;
-  margin: 10px;
-  width: 220px;
+  margin: 5px;
+  width: 230px;
 }
 
 
 #founders {
-  height: 220px;
-  margin: 10px 0;
+  height: 230px;
+  margin: 5px 0;
   padding: 0;
 }
 
 #founders > * {
-  height: 220px;
-  margin: 0 10px;
+  height: 230px;
+  margin: 0 5px;
 }
 
 #founders > p {
+  background: #f9d975;
   box-sizing: border-box;
   float: right;
   padding: 1em;
-  width: 460px;
+  width: 470px;
 }
 
 #founders > section {
-  margin: 0 10px;
+  margin: 0 5px;
   padding: 0;
-  width: 220px;
+  width: 230px;
 }
 
 #founders > section * {
@@ -103,28 +122,29 @@ main article, main section {
 
 #founders > section img {
   display: block;
-  height: 220px;
-  width: 220px;
+  height: 230px;
+  width: 230px;
 }
 
 
 #team {
   float: right;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 0;
   width: 720px
 }
 
 #team > * {
-  height: 220px;
-  margin: 0 10px;
+  height: 230px;
+  margin: 0 5px;
 }
 
 #team > p {
+  background: #cfdce2;
   box-sizing: border-box;
   float: left;
   padding: 1em;
-  width: 220px;
+  width: 230px;
 }
 
 #team > ul {
@@ -136,35 +156,40 @@ main article, main section {
 }
 
 #team > ul li {
+  background: #499fc6;
   box-sizing: border-box;
+  color: white;
   float: left;
-  margin: 0 10px;
-  height: 220px;
+  font-size: 0.8em;
+  height: 230px;
+  margin: 0 5px;
   padding: 1em;
-  width: 100px;
+  width: 110px;
 }
 
 
 #health {
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 0;
 }
 
 #health > * {
-  height: 220px;
+  height: 230px;
   float: left;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
 #health > p {
+  background: #f9d975;
   box-sizing: border-box;
   float: left;
   padding: 1em;
-  width: 460px;
+  width: 470px;
 }
 
 #health > section {
-  width: 220px;
+  border: 1px solid #cfdce2;
+  width: 230px;
 }
 
 
@@ -181,10 +206,12 @@ main article, main section {
 }
 
 #references > ul li {
-  height: 220px;
+  border: 1px solid #cfdce2;
+  box-sizing: border-box;
+  height: 230px;
   float: left;
-  margin: 10px;
-  width: 220px;
+  margin: 5px;
+  width: 230px;
 }
 
 
@@ -192,8 +219,9 @@ main article, main section {
 /* Footer */
 
 footer {
+  background: #1c1c1c;
   clear: both;
   color: white;
-  margin: 10px;
+  margin: 5px;
   padding: 0.5em 1em;
 }
