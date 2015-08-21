@@ -14,6 +14,7 @@ ul {
 }
 
 
+
 /* Header */
 
 header {
@@ -93,8 +94,8 @@ main article, main section {
 
 #contact section:before {
   display: block;
-  margin: 20px auto 0;
-  width: 70px;
+  margin: 30px auto 0;
+  width: 60px;
 }
 
 #contact #address:before {
@@ -102,11 +103,11 @@ main article, main section {
 }
 
 #contact #phone:before {
-  content: url("img/map.svg");
+  content: url("img/phone.svg");
 }
 
 #contact #mail:before {
-  content: url("img/map.svg");
+  content: url("img/mail.svg");
 }
 
 
@@ -232,23 +233,23 @@ main article, main section {
 #team > ul li:before {
   display: block;
   margin: 30px auto 0;
-  width: 70px;
+  width: 50px;
 }
 
 #team #sales:before {
-  content: url("img/map.svg");
+  content: url("img/sales.svg");
 }
 
 #team #websites:before {
-  content: url("img/map.svg");
+  content: url("img/website.svg");
 }
 
 #team #foot:before {
-  content: url("img/map.svg");
+  content: url("img/foot.svg");
 }
 
 #team #popcorn:before {
-  content: url("img/map.svg");
+  content: url("img/popcorn.svg");
 }
 
 
@@ -275,6 +276,7 @@ main article, main section {
 
 #health > section {
   border: 1px solid #cfdce2;
+  font-size: 11pt;
   position: absolute;
   top: 0;
   width: 230px;
@@ -291,10 +293,40 @@ main article, main section {
   left: 475px;
 }
 
+#health section h3 {
+  display: block;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+#health section:before {
+  display: block;
+  margin: 0 auto 0;
+  width: 60px;
+}
+
+#health #pharminfo:before {
+  content: url("img/pharminfo.svg");
+}
+
+#health #pharminfo:hover {
+  border-color: #00a77c;
+  transition: 1s;
+}
+
 #health #medsite {
   left: 715px;
 }
 
+#health #medsite:before {
+  content: url("img/medsite.svg");
+}
+
+#health #medsite:hover {
+  border-color: #ef5044;
+  transition: 1s;
+}
 
 #references {
   clear: both;
@@ -311,6 +343,38 @@ main article, main section {
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+#references #novartis {
+  content: url("img/novartis.png");
+}
+
+#references #safran {
+  content: url("img/safran.png");
+}
+
+#references #sanofi {
+  content: url("img/sanofi.png");
+}
+
+#references #lafarge {
+  content: url("img/lafarge.png");
+}
+
+#references #arrow {
+  content: url("img/arrow.png");
+}
+
+#references #mylan {
+  content: url("img/mylan.png");
+}
+
+#references #bailly {
+  content: url("img/bailly.png");
+}
+
+#references #septodont {
+  content: url("img/septodont.png");
 }
 
 @-webkit-keyframes reference {
