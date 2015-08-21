@@ -287,6 +287,8 @@ main article, main section {
   display: block;
   height: 100%;
   text-decoration: inherit;
+  margin: -1em;
+  padding: 1em;
 }
 
 #health #pharminfo {
@@ -300,13 +302,13 @@ main article, main section {
   text-align: center;
 }
 
-#health section:before {
+#health section a:before {
   display: block;
   margin: 0 auto 0;
   width: 60px;
 }
 
-#health #pharminfo:before {
+#health #pharminfo a:before {
   content: url("img/pharminfo.svg");
 }
 
@@ -319,7 +321,7 @@ main article, main section {
   left: 715px;
 }
 
-#health #medsite:before {
+#health #medsite a:before {
   content: url("img/medsite.svg");
 }
 
@@ -345,50 +347,50 @@ main article, main section {
   position: relative;
 }
 
-#references #novartis {
-  content: url("img/novartis.png");
+#references #novartis a {
+  background: url("img/novartis.png");
 }
 
-#references #safran {
-  content: url("img/safran.png");
+#references #safran a {
+  background: url("img/safran.png");
 }
 
-#references #sanofi {
-  content: url("img/sanofi.png");
+#references #sanofi a {
+  background: url("img/sanofi.png");
 }
 
-#references #lafarge {
-  content: url("img/lafarge.png");
+#references #lafarge a {
+  background: url("img/lafarge.png");
 }
 
-#references #arrow {
-  content: url("img/arrow.png");
+#references #arrow a {
+  background: url("img/arrow.png");
 }
 
-#references #mylan {
-  content: url("img/mylan.png");
+#references #mylan a {
+  background: url("img/mylan.png");
 }
 
-#references #bailly {
-  content: url("img/bailly.png");
+#references #bailly a {
+  background: url("img/bailly.png");
 }
 
-#references #septodont {
-  content: url("img/septodont.png");
+#references #septodont a {
+  background: url("img/septodont.png");
 }
 
 @-webkit-keyframes reference {
-  0% { opacity: 0; z-index: 1; }
-  40% { opacity: 0; z-index: 1; }
-  60% { opacity: 1; z-index:2; }
-  100% { opacity: 1; z-index:2; }
+  0% { opacity: 0; z-index: 0; }
+  40% { opacity: 0; z-index: 0; }
+  60% { opacity: 1; z-index: 1000; }
+  100% { opacity: 1; z-index: 1000; }
 }
 
 @keyframes reference {
-  0% { opacity: 0; z-index: 1; }
-  40% { opacity: 0; z-index: 1; }
-  60% { opacity: 1; z-index:2; }
-  100% { opacity: 1; z-index:2; }
+  0% { opacity: 0; z-index: 0; }
+  40% { opacity: 0; z-index: 0; }
+  60% { opacity: 1; z-index: 1000; }
+  100% { opacity: 1; z-index: 1000; }
 }
 
 #references > ul li {
