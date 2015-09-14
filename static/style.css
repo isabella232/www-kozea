@@ -429,3 +429,103 @@ footer {
   margin: 5px;
   padding: 0.5em 1em;
 }
+
+
+/* Responsive */
+
+@media screen and (min-width: 120px) and (max-width: 768px) {
+  body {
+    background: #fff;
+    background-size: contain;
+    width: 100%;
+  }
+
+  header {
+    height: auto;
+    font-size: 2em;
+    margin: 0;
+    padding: 25px 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0 auto;
+  }
+
+  header p {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  main {
+    margin: 0 5px;
+  }
+
+  main article, main section {
+    display: block;
+  }
+
+  #who {
+    margin: 0;
+  }
+
+  #who, #contact {
+    height: auto;
+    width: 100%;
+  }
+
+  #contact {
+    margin: 0 auto;
+  }
+
+  #contact section {
+    height: 15em;
+    width: 15em;
+  }
+
+  #founders {
+    display: block;
+    height: auto;
+    margin: 0;
+    width: 100%;
+  }
+
+  #founders > p {
+    display: block;
+    height: 150px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #founders > section {
+    left: 0;
+    top: 160px;
+  }
+
+  #founders #donadieu {
+    left: 0;
+  }
+
+  #founders #donadieu, #founders #ayoub {
+    height: auto;
+    width: 100%;
+  }
+
+  #health section {
+    left: 0;
+    position: static;
+    top: 0;
+  }
+
+  #team {
+    float: left;
+    width: 100%;
+  }
+
+  #team ul {
+    margin-top: 10px;
+    position: initial;
+    width: 100%;
+  }
+
+}
