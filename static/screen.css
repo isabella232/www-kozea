@@ -67,7 +67,6 @@ main article, main section {
   margin: 0 5px;
   position: absolute;
   top: 0;
-  transition: background 0.7s, color 0.7s, z-index 0.7s;
   width: 230px;
   z-index: 0;
 }
@@ -93,6 +92,7 @@ main article, main section {
 #founders > section:hover {
   background: #1c1c1c;
   color: white;
+  transition: background 0.7s, color 0.7s, z-index 0.7s;
   z-index: 100;
 }
 
