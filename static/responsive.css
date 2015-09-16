@@ -26,6 +26,20 @@ header {
   margin: 0 auto;
 }
 
+#contact {
+  background: #cfdce2;
+  text-align: center;
+}
+
+#contact section {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#contact section:before {
+  display: inline-block;
+  width: 40px;
+}
 
 #team {
   background: #499FC6;

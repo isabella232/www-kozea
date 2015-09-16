@@ -44,6 +44,12 @@ main article, main section {
   width: 230px;
 }
 
+#contact section:before {
+  display: block;
+  margin: 30px auto 0;
+  width: 60px;
+}
+
 
 #founders {
   height: 230px;

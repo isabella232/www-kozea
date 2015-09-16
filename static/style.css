@@ -68,12 +68,6 @@ main article, main section {
   text-align: center;
 }
 
-#contact section:before {
-  display: block;
-  margin: 30px auto 0;
-  width: 60px;
-}
-
 #contact #address:before {
   content: url("img/map.svg");
 }
