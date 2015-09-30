@@ -207,8 +207,8 @@ main article, main section {
 }
 
 #references > ul li:nth-child(n+5) {
-  -webkit-animation: reference 10s ease 0s infinite alternate;
-  animation: reference 10s ease 0s infinite alternate;
+  -webkit-animation: reference 5s ease 0s infinite alternate;
+  animation: reference 5s ease 0s infinite alternate;
   top: -480px;
 }
 
