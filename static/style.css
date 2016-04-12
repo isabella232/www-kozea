@@ -80,6 +80,21 @@ main article, main section {
   content: url("img/mail.svg");
 }
 
+#contact #booklet:before {
+  content: url("img/book.svg");
+}
+
+#contact #booklet a {
+  color: #1c1c1c;
+  display: block;
+  margin: 16px 0;
+  transition: color 0.3s;
+}
+
+#contact #booklet a:hover {
+  color: #499FC6;
+}
+
 
 #founders {
   padding: 0;
