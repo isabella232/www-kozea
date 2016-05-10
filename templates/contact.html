@@ -1,0 +1,19 @@
+{% extends '_layout.html' %}
+
+{% block body %}
+  <section id="trust">
+    <h2>Écrivez-nous</h2>
+    <p>
+      Vous souhaitez en savoir plus sur notre activité, nous soumettre un
+      projet, ou nous proposer une collaboration, vous pouvez nous écrire, nous
+      serons ravis de vous répondre.
+    </p>
+    <form {# TODO link #}>
+      <label>Email<input type="email" name="email" /></label>
+      <label>Nom / Société<input name="name" /></label>
+      <label>Demande<input name="question" /></label>
+      <input type="submit" />
+    </form>
+    {# TODO map #}
+  </section>
+{% endblock body %}
