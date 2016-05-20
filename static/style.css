@@ -1,0 +1,162 @@
+@import "https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700)";
+* {
+  color: #1c1c1c;
+  font-family: 'Hind', sans-serif; }
+
+h1 {
+  color: #1c1c1c;
+  font-size: 1em;
+  font-weight: 100; }
+  h1:before {
+    content: '[ '; }
+  h1:after {
+    content: ' ]'; }
+
+h2 {
+  color: #1a2530;
+  font-size: 2.3em; }
+
+p {
+  font-size: 1.2em;
+  font-weight: 100; }
+  p.intro {
+    font-size: 1.5em; }
+
+a {
+  text-decoration: none; }
+
+.links a:before {
+  content: '[ '; }
+
+.links a:after {
+  content: ' ]'; }
+
+ul {
+  padding-left: 0; }
+  ul li {
+    list-style-type: none; }
+
+#satisfaction > *, #big-data > *, #skills ul > *, #digital > *,
+#monprosante > *, #advice > *, #project > *, #advertisement > *,
+#work > *, #free > *, #projects dl > *, #projects dd > *,
+#numbers > *, #members > * > * {
+  color: #fff; }
+
+#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+  background: #1a2530; }
+
+#about ul ~ p, #backoffice, #develop, #skills,
+#story > p:not(.intro), #pharminfo, #medsite,
+#backflip, #solutions, #projects + #expert, #trust {
+  background: #f9f9f9; }
+
+#targets, #work, #numbers #media {
+  background: #e53c4c; }
+
+#innovation, #project, #numbers #link {
+  background: #f49a2f; }
+
+#r-and-d, #monprosante, #numbers #platform {
+  background: #007bb8; }
+
+#reactivity, #radicale, #numbers #community {
+  background: #6e5f84; }
+
+#pygal {
+  background: #87789e; }
+
+#weasyprint {
+  background: #554a66; }
+
+#structures
+#platform h2, #link h2, #media h2, #community h2 {
+  font-size: 8em;
+  opacity: 0.15; }
+
+#teepy {
+  background: #f1f1f1; }
+
+#big-data {
+  background: blue; }
+
+#projects h3 {
+  display: none; }
+
+html body {
+  margin: 0; }
+  html body > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    html body > section > * {
+      max-width: 1200px; }
+  html body #numbers li strong, html body #members h3 strong {
+    font-size: 6em; }
+  html body #skills ul {
+    display: flex;
+    flex-direction: column;
+    height: 375px;
+    flex-wrap: wrap;
+    padding-left: 0; }
+    html body #skills ul li {
+      width: 50%;
+      height: 125px; }
+      html body #skills ul li:nth-of-type(3) {
+        margin-top: 60px; }
+  html body #goals ul {
+    display: flex; }
+    html body #goals ul li {
+      flex: 1 33%; }
+  html body #partners ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    html body #partners ul li {
+      background: red;
+      width: 25%; }
+  html body #members dl dt {
+    background: red;
+    width: 200px;
+    height: 200px;
+    position: relative; }
+    html body #members dl dt:before {
+      content: '';
+      width: 90%;
+      height: 90%;
+      display: block;
+      position: absolute;
+      background: black;
+      opacity: 0.3; }
+  html body footer {
+    background: url(images/kozea-line.jpg) no-repeat bottom;
+    background-size: contain; }
+    html body footer dl {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding-bottom: 4px; }
+      html body footer dl > * {
+        border-left: 1px solid #e0e0e0;
+        box-sizing: border-box;
+        font-size: 0.8em;
+        padding-left: 1.5%;
+        width: 25%; }
+        html body footer dl > *:first-child {
+          border-left: none; }
+      html body footer dl dt {
+        color: #C1C8D0;
+        order: -1;
+        padding-top: 10px; }
+      html body footer dl dd {
+        margin-left: 0; }
+        html body footer dl dd:nth-of-type(3) ul {
+          display: flex;
+          flex-wrap: wrap; }
+          html body footer dl dd:nth-of-type(3) ul li {
+            width: 50%; }
+        html body footer dl dd:last-child ul {
+          display: flex; }
+          html body footer dl dd:last-child ul li:last-child:before {
+            content: '- '; }
+        html body footer dl dd ul {
+          margin-top: 0; }
