@@ -109,24 +109,65 @@ html body {
       flex: 1 33%; }
   html body #partners ul {
     display: flex;
-    flex-wrap: wrap;
     width: 100%; }
     html body #partners ul li {
       background: red;
       width: 25%; }
-  html body #members dl dt {
-    background: red;
-    width: 200px;
-    height: 200px;
-    position: relative; }
-    html body #members dl dt:before {
-      content: '';
-      width: 90%;
-      height: 90%;
-      display: block;
-      position: absolute;
-      background: black;
-      opacity: 0.3; }
+  html body #members {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto; }
+    html body #members > * {
+      width: 300px;
+      height: 300px;
+      margin: 0; }
+    html body #members section:hover:after, html body #members section:hover h4, html body #members section:hover p {
+      opacity: 1;
+      transform: scale(1); }
+    html body #members section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      html body #members section:after {
+        content: '';
+        background: rgba(26, 37, 48, 0.4);
+        opacity: 0;
+        transform: scale(0);
+        width: 250px;
+        height: 250px;
+        transition: opacity 0.35s, transform 0.35s;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        z-index: -1; }
+      html body #members section h4, html body #members section p {
+        padding: 0 12%;
+        opacity: 0;
+        transition: opacity 0.35s, transform 0.35s;
+        transform: scale(0); }
+      html body #members section h4 {
+        font-weight: 400;
+        font-size: 1.2em;
+        margin: 0;
+        line-height: 2.2em; }
+        html body #members section h4:after {
+          content: '';
+          width: 25px;
+          height: 2px;
+          background: #fff;
+          display: block; }
+      html body #members section p {
+        font-size: 1em;
+        font-style: italic;
+        padding-bottom: 20px;
+        line-height: 1.2em; }
+      html body #members section img {
+        width: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; }
   html body footer {
     background: url(images/kozea-line.jpg) no-repeat bottom;
     background-size: contain; }
