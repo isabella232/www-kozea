@@ -1,7 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700)";
 * {
   color: #1c1c1c;
-  font-family: 'Hind', sans-serif; }
+  font-family: 'Hind', sans-serif;
+  outline: none; }
 
 h1 {
   color: #1c1c1c;
@@ -15,12 +16,13 @@ h1 {
 h2 {
   color: #1a2530;
   font-size: 2.3em;
-  margin: 0; }
+  margin: 0;
+  text-align: center; }
 
-p, #skills li {
+p, li {
   font-size: 1.2em;
   font-weight: 100; }
-  p.intro, #skills li.intro {
+  p.intro, li.intro {
     font-size: 1.5em;
     text-align: center;
     margin: 0 auto 30px;
@@ -29,11 +31,24 @@ p, #skills li {
 a {
   text-decoration: none; }
 
+.links a:before, .links a:after {
+  opacity: 0;
+  transition: transform 0.35s, opacity 0.2s;
+  display: inline-block; }
+
 .links a:before {
-  content: '[ '; }
+  content: '[ ';
+  transform: translateX(20px);
+  margin-right: 5px; }
 
 .links a:after {
-  content: ' ]'; }
+  content: ' ]';
+  transform: translateX(-20px);
+  margin-left: 5px; }
+
+.links a:hover:before, .links a:hover:after {
+  opacity: 1;
+  transform: translateX(0px); }
 
 ul {
   padding-left: 0; }
@@ -51,19 +66,19 @@ ul {
 
 #about ul ~ p, #backoffice, #develop, #skills,
 #story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #trust {
+#backflip, #solutions, #projects + #expert, #trust form {
   background: #f9f9f9; }
 
-#work, #numbers #media {
+#work, #numbers #media, #targets {
   background: #e53c4c; }
 
-#project, #numbers #link {
+#project, #numbers #link, #reactivity {
   background: #f49a2f; }
 
-#monprosante, #numbers #platform {
+#monprosante, #numbers #platform, #innovation {
   background: #007bb8; }
 
-#radicale, #numbers #community {
+#radicale, #numbers #community, #r-and-d {
   background: #6e5f84; }
 
 #pygal {
@@ -222,46 +237,131 @@ html {
       height: 600px;
       padding-left: 0; }
       html body #skills ul li {
+        align-items: center;
         box-sizing: border-box;
         display: flex;
+        flex-direction: column;
         height: 270px;
-        padding: 160px 10px 0 10px;
-        position: relative;
+        padding: 20px 10px;
         text-align: center;
         width: 50%; }
-        html body #skills ul li:before {
+        html body #skills ul li:after {
           background: #fff;
           content: '';
-          display: block;
           height: 3px;
-          left: 47.5%;
-          position: absolute;
-          top: 140px;
+          margin: 10px 0 20px;
+          order: -1;
           width: 20px; }
         html body #skills ul li:nth-of-type(3) {
           margin-top: 60px; }
-        html body #skills ul li#targets {
-          background: url(images/target.svg) no-repeat center 30px #e53c4c;
-          background-size: 20%; }
-        html body #skills ul li#reactivity {
-          background: url(images/reactivity.svg) no-repeat center 30px #6e5f84;
-          background-size: 20%; }
-        html body #skills ul li#innovation {
-          background: url(images/idea.svg) no-repeat center 30px #f49a2f;
-          background-size: 20%; }
-        html body #skills ul li#r-and-d {
-          background: url(images/search.svg) no-repeat center 30px #007bb8;
-          background-size: 20%; }
+        html body #skills ul li:before {
+          order: -2;
+          width: 90px; }
+        html body #skills ul li#targets:before {
+          content: url(images/target.svg); }
+        html body #skills ul li#reactivity:before {
+          content: url(images/reactivity.svg); }
+        html body #skills ul li#innovation:before {
+          content: url(images/idea.svg); }
+        html body #skills ul li#r-and-d:before {
+          content: url(images/search.svg); }
     html body #goals ul {
-      display: flex; }
+      display: flex;
+      width: 100%; }
       html body #goals ul li {
-        flex: 1 33%; }
+        align-items: center;
+        display: flex;
+        flex: 1 33%;
+        flex-direction: column;
+        text-align: center; }
+        html body #goals ul li:after {
+          background: #1a2530;
+          content: '';
+          display: block;
+          height: 3px;
+          order: -1;
+          margin: 10px;
+          width: 20px; }
+        html body #goals ul li:before {
+          order: -2;
+          width: 90px; }
+        html body #goals ul li#specialist:before {
+          content: url(images/specialist.svg); }
+        html body #goals ul li#web-expert:before {
+          content: url(images/webexpert.svg); }
+        html body #goals ul li#create-solutions:before {
+          content: url(images/solutions.svg); }
     html body #partners ul {
       display: flex;
       width: 100%; }
       html body #partners ul li {
         background: red;
         width: 25%; }
+    html body #trust > dl {
+      background: #1a2530;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 20px;
+      margin-right: 33%;
+      box-sizing: border-box;
+      width: 33%; }
+      html body #trust > dl > * {
+        color: #fff;
+        width: 50%; }
+      html body #trust > dl ul {
+        margin: 0; }
+        html body #trust > dl ul li {
+          font-size: 1em; }
+          html body #trust > dl ul li a {
+            color: #fff; }
+      html body #trust > dl dd {
+        margin-left: 0;
+        font-weight: 100; }
+      html body #trust > dl dt {
+        font-weight: 400;
+        order: -1;
+        padding-top: 10px; }
+    html body #trust form, html body #trust #map {
+      width: 50%; }
+    html body #trust #map {
+      background: red;
+      height: 500px;
+      margin-right: 50%;
+      margin-top: -365px;
+      z-index: -10; }
+    html body #trust form {
+      border-top: 2px solid #1a2530;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      margin-left: 50%;
+      padding: 30px;
+      margin-top: -70px; }
+      html body #trust form input:not(:last-child), html body #trust form textarea {
+        background: none;
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        border-left: none;
+        margin-bottom: 20px;
+        padding: 5px 10px; }
+        html body #trust form input:not(:last-child)[placeholder], html body #trust form textarea[placeholder] {
+          color: #1c1c1c;
+          font-size: 1em;
+          font-weight: 100; }
+      html body #trust form textarea {
+        height: 120px; }
+      html body #trust form input[type="submit"] {
+        background: #1a2530;
+        border: none;
+        box-shadow: none;
+        color: #fff;
+        font-size: 1em;
+        padding: 7px;
+        width: 20%; }
+        html body #trust form input[type="submit"]:hover {
+          background: #2c3f51; }
     html body footer {
       margin-top: 25px; }
       html body footer dl {

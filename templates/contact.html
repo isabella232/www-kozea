@@ -2,18 +2,33 @@
 
 {% block body %}
   <section id="trust">
-    <h2>Écrivez-nous</h2>
+    <h2>Contactez-nous</h2>
     <p class="intro">
-      Vous souhaitez en savoir plus sur notre activité, nous soumettre un
-      projet, ou nous proposer une collaboration, vous pouvez nous écrire, nous
-      serons ravis de vous répondre.
+      Un projet ? Un collaboration ? Des questions ? Contactez-nous ! nous serons ravis de vous répondre.
     </p>
+
+    <dl>
+      <dt>Adresse</dt>
+      <dd>
+        107, boulevard Stalingrad<br/>
+        69100<br/>
+        Villeurbanne
+      </dd>
+      <dt>Contact</dt>
+      <dd>
+        <ul>
+          <li><a href="tel://+33478841928">+33 4 78 84 19 28</a></li>
+          <li><a href="mailto://contact@kozea.fr">contact@kozea.fr</a></li>
+        </ul>
+      </dd>
+    </dl>
+    
     <form {# TODO link #}>
-      <label>Email<input type="email" name="email" /></label>
-      <label>Nom / Société<input name="name" /></label>
-      <label>Demande<input name="question" /></label>
+      <input id="email" type="email" placeholder="[ Email ]" name="email" />
+      <input id="name" placeholder="[ Nom / Société ]" name="name" />
+      <textarea id="question" placeholder="[ Demande ]" name="question"></textarea>
       <input type="submit" />
     </form>
-    {# TODO map #}
+    <section id ="map">{# TODO map #}</section>
   </section>
 {% endblock body %}
