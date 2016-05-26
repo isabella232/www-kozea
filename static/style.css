@@ -14,12 +14,13 @@ h1 {
 
 h2 {
   color: #1a2530;
-  font-size: 2.3em; }
+  font-size: 2.3em;
+  margin: 0; }
 
-p {
+p, #skills li {
   font-size: 1.2em;
   font-weight: 100; }
-  p.intro {
+  p.intro, #skills li.intro {
     font-size: 1.5em; }
 
 a {
@@ -50,16 +51,16 @@ ul {
 #backflip, #solutions, #projects + #expert, #trust {
   background: #f9f9f9; }
 
-#targets, #work, #numbers #media {
+#work, #numbers #media {
   background: #e53c4c; }
 
-#innovation, #project, #numbers #link {
+#project, #numbers #link {
   background: #f49a2f; }
 
-#r-and-d, #monprosante, #numbers #platform {
+#monprosante, #numbers #platform {
   background: #007bb8; }
 
-#reactivity, #radicale, #numbers #community {
+#radicale, #numbers #community {
   background: #6e5f84; }
 
 #pygal {
@@ -68,7 +69,6 @@ ul {
 #weasyprint {
   background: #554a66; }
 
-#structures
 #platform h2, #link h2, #media h2, #community h2 {
   font-size: 8em;
   opacity: 0.15; }
@@ -88,11 +88,13 @@ html {
   background-size: contain; }
   html body {
     margin: 0 auto;
-    max-width: 1200px; }
+    max-width: 1200px;
+    /*about*/ }
     html body > section {
       display: flex;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      margin-top: 8%; }
     html body#about #numbers, html body#about #members, html body#about #tools {
       display: flex;
       flex-wrap: wrap; }
@@ -194,10 +196,6 @@ html {
           box-sizing: border-box; }
           html body#about #tools ul li:nth-child(-n+2) {
             border-top: 1px solid #e0e0e0; }
-          html body#about #tools ul li strong {
-            margin-top: 120px; }
-            html body#about #tools ul li strong:before {
-              background: #1c1c1c; }
           html body#about #tools ul li#soda {
             background: url(images/soda.svg) no-repeat center 40px;
             background-size: 30%; }
@@ -210,17 +208,47 @@ html {
           html body#about #tools ul li#popcorn {
             background: url(images/popcorn.svg) no-repeat center 40px;
             background-size: 30%; }
+          html body#about #tools ul li strong {
+            margin-top: 120px; }
+            html body#about #tools ul li strong:before {
+              background: #1c1c1c; }
     html body #skills ul {
       display: flex;
       flex-direction: column;
-      height: 375px;
       flex-wrap: wrap;
+      height: 600px;
       padding-left: 0; }
       html body #skills ul li {
-        width: 50%;
-        height: 125px; }
+        box-sizing: border-box;
+        display: flex;
+        height: 270px;
+        padding: 160px 10px 0 10px;
+        position: relative;
+        text-align: center;
+        width: 50%; }
+        html body #skills ul li:before {
+          background: #fff;
+          content: '';
+          display: block;
+          height: 3px;
+          left: 47.5%;
+          position: absolute;
+          top: 140px;
+          width: 20px; }
         html body #skills ul li:nth-of-type(3) {
           margin-top: 60px; }
+        html body #skills ul li#targets {
+          background: url(images/target.svg) no-repeat center 30px #e53c4c;
+          background-size: 20%; }
+        html body #skills ul li#reactivity {
+          background: url(images/reactivity.svg) no-repeat center 30px #6e5f84;
+          background-size: 20%; }
+        html body #skills ul li#innovation {
+          background: url(images/idea.svg) no-repeat center 30px #f49a2f;
+          background-size: 20%; }
+        html body #skills ul li#r-and-d {
+          background: url(images/search.svg) no-repeat center 30px #007bb8;
+          background-size: 20%; }
     html body #goals ul {
       display: flex; }
       html body #goals ul li {
