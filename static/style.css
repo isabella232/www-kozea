@@ -31,25 +31,6 @@ p, li {
 a {
   text-decoration: none; }
 
-.links a:before, .links a:after {
-  opacity: 0;
-  transition: transform 0.35s, opacity 0.2s;
-  display: inline-block; }
-
-.links a:before {
-  content: '[ ';
-  transform: translateX(20px);
-  margin-right: 5px; }
-
-.links a:after {
-  content: ' ]';
-  transform: translateX(-20px);
-  margin-left: 5px; }
-
-.links a:hover:before, .links a:hover:after {
-  opacity: 1;
-  transform: translateX(0px); }
-
 ul {
   padding-left: 0; }
   ul li {
@@ -113,6 +94,63 @@ html {
       flex-direction: column;
       align-items: center;
       margin-top: 8%; }
+    html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
+      opacity: 0;
+      transition: transform 0.35s, opacity 0.2s;
+      display: inline-block; }
+    html body #about .links a:before, html body #activity .links a:before, html body #follow .links a:before {
+      content: '[ ';
+      transform: translateX(20px);
+      margin-right: 5px; }
+    html body #about .links a:after, html body #activity .links a:after, html body #follow .links a:after {
+      content: ' ]';
+      transform: translateX(-20px);
+      margin-left: 5px; }
+    html body #about .links a:hover:before, html body #about .links a:hover:after, html body #activity .links a:hover:before, html body #activity .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
+      opacity: 1;
+      transform: translateX(0px); }
+    html body #news {
+      display: flex; }
+      html body #news ul {
+        width: 100%;
+        display: flex; }
+        html body #news ul li {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          padding: 30px; }
+          html body #news ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700; }
+          html body #news ul li:before {
+            display: block;
+            order: -2; }
+          html body #news ul li:after {
+            display: block;
+            background: #fff;
+            content: '';
+            height: 3px;
+            margin: 10px 0 20px;
+            order: -1;
+            width: 20px; }
+          html body #news ul li:first-child {
+            background: url(images/press-bkgd.jpg) no-repeat;
+            width: 50%;
+            height: 400px;
+            background-size: 100%; }
+            html body #news ul li:first-child:before {
+              content: url(images/press.svg);
+              width: 100px; }
+          html body #news ul li + li {
+            background: red;
+            width: 33%;
+            height: 200px; }
+            html body #news ul li + li:before {
+              content: url(images/brochure.svg);
+              width: 40px; }
     html body#about #numbers, html body#about #members, html body#about #tools {
       display: flex;
       flex-wrap: wrap; }
