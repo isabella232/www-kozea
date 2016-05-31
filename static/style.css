@@ -333,9 +333,52 @@ html {
       display: flex;
       width: 100%; }
       html body #partners ul li {
-        background: red;
-        width: 25%; }
-    html body #trust > dl {
+        flex: 1 25%;
+        text-align: center; }
+        html body #partners ul li a {
+          height: 100px;
+          display: block;
+          font-size: 0; }
+        html body #partners ul li#france-ehealth-tech a {
+          background: url(images/france-ehealth.jpg) no-repeat center center; }
+        html body #partners ul li#la-cuisine-du-web a {
+          background: url(images/cuisineduweb.jpg) no-repeat center center; }
+        html body #partners ul li#minalogic a {
+          background: url(images/minalogic.jpg) no-repeat center center; }
+        html body #partners ul li#i-care a {
+          background: url(images/i-care.jpg) no-repeat center center; }
+    html body#references section ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      html body#references section ul li {
+        flex: 1 25%;
+        text-align: center; }
+        html body#references section ul li a {
+          height: 100px;
+          display: block;
+          font-size: 0; }
+        html body#references section ul li#arrow a {
+          background: url(images/arrow.jpg) no-repeat center center; }
+        html body#references section ul li#novartis a {
+          background: url(images/novartis.jpg) no-repeat center center; }
+        html body#references section ul li#bailly a {
+          background: url(images/bailly-creat.jpg) no-repeat center center; }
+        html body#references section ul li#septodont a {
+          background: url(images/septodont.jpg) no-repeat center center; }
+        html body#references section ul li#sanofi a {
+          background: url(images/sanofi.jpg) no-repeat center center; }
+        html body#references section ul li#mylan a {
+          background: url(images/mylan.jpg) no-repeat center center; }
+        html body#references section ul li#safran a {
+          background: url(images/safran.jpg) no-repeat center center; }
+        html body#references section ul li#lafarge a {
+          background: url(images/lafarge.jpg) no-repeat center center; }
+        html body#references section ul li#airbus-helicopters a {
+          background: url(images/airbus.jpg) no-repeat center center; }
+        html body#references section ul li#safetynetwork a {
+          background: url(images/safety-network.jpg) no-repeat center center; }
+    html body #structures > dl {
       background: #1a2530;
       display: flex;
       flex-wrap: wrap;
@@ -344,31 +387,31 @@ html {
       margin-right: 33%;
       box-sizing: border-box;
       width: 33%; }
-      html body #trust > dl > * {
+      html body #structures > dl > * {
         color: #fff;
         width: 50%; }
-      html body #trust > dl ul {
+      html body #structures > dl ul {
         margin: 0; }
-        html body #trust > dl ul li {
+        html body #structures > dl ul li {
           font-size: 1em; }
-          html body #trust > dl ul li a {
+          html body #structures > dl ul li a {
             color: #fff; }
-      html body #trust > dl dd {
+      html body #structures > dl dd {
         margin-left: 0;
         font-weight: 100; }
-      html body #trust > dl dt {
+      html body #structures > dl dt {
         font-weight: 400;
         order: -1;
         padding-top: 10px; }
-    html body #trust form, html body #trust #map {
+    html body #structures form, html body #structures #map {
       width: 50%; }
-    html body #trust #map {
+    html body #structures #map {
       background: red;
       height: 500px;
       margin-right: 50%;
       margin-top: -365px;
       z-index: -10; }
-    html body #trust form {
+    html body #structures form {
       border-top: 2px solid #1a2530;
       box-sizing: border-box;
       display: flex;
@@ -376,7 +419,7 @@ html {
       margin-left: 50%;
       padding: 30px;
       margin-top: -70px; }
-      html body #trust form input:not(:last-child), html body #trust form textarea {
+      html body #structures form input:not(:last-child), html body #structures form textarea {
         background: none;
         border-top: none;
         border-right: none;
@@ -384,13 +427,13 @@ html {
         border-left: none;
         margin-bottom: 20px;
         padding: 5px 10px; }
-        html body #trust form input:not(:last-child)[placeholder], html body #trust form textarea[placeholder] {
+        html body #structures form input:not(:last-child)[placeholder], html body #structures form textarea[placeholder] {
           color: #1c1c1c;
           font-size: 1em;
           font-weight: 100; }
-      html body #trust form textarea {
+      html body #structures form textarea {
         height: 120px; }
-      html body #trust form input[type="submit"] {
+      html body #structures form input[type="submit"] {
         background: #1a2530;
         border: none;
         box-shadow: none;
@@ -398,7 +441,7 @@ html {
         font-size: 1em;
         padding: 7px;
         width: 20%; }
-        html body #trust form input[type="submit"]:hover {
+        html body #structures form input[type="submit"]:hover {
           background: #2c3f51; }
     html body footer {
       margin-top: 25px; }

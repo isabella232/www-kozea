@@ -512,13 +512,96 @@ html {
         width: 100%;
 
         li {
-          background: red;
-          width: 25%;
+          flex: 1 25%;
+          text-align: center;
+
+          a {
+            height: 100px;
+            display: block;
+            font-size: 0;
+          }
+
+          &#france-ehealth-tech a {
+            background: url(images/france-ehealth.jpg)no-repeat center center;
+          }
+
+          &#la-cuisine-du-web a {
+            background: url(images/cuisineduweb.jpg)no-repeat center center;
+          }
+
+          &#minalogic a {
+            background: url(images/minalogic.jpg)no-repeat center center;
+          }
+
+          &#i-care a {
+            background: url(images/i-care.jpg)no-repeat center center;
+          }
         }
       }
     }
 
-    #trust{
+    &#references {
+      section {
+        ul {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            flex: 1 25%;
+            text-align: center;
+
+            a {
+              height: 100px;
+              display: block;
+              font-size: 0;
+            }
+
+            &#arrow a {
+              background: url(images/arrow.jpg)no-repeat center center;
+            }
+
+            &#novartis a {
+              background: url(images/novartis.jpg)no-repeat center center;
+            }
+            
+            &#bailly a {
+              background: url(images/bailly-creat.jpg)no-repeat center center;
+            }
+            
+            &#septodont a {
+              background: url(images/septodont.jpg)no-repeat center center;
+            }
+            
+            &#sanofi a {
+              background: url(images/sanofi.jpg)no-repeat center center;
+            }
+            
+            &#mylan a {
+              background: url(images/mylan.jpg)no-repeat center center;
+            }
+            
+            &#safran a {
+              background: url(images/safran.jpg)no-repeat center center;
+            }
+            
+            &#lafarge a {
+              background: url(images/lafarge.jpg)no-repeat center center;
+            }
+            
+            &#airbus-helicopters a {
+              background: url(images/airbus.jpg)no-repeat center center;
+            }
+
+            &#safetynetwork a {
+              background: url(images/safety-network.jpg)no-repeat center center;
+            }
+          }
+        }
+      }
+    }
+
+    #structures {
       > dl {
         background: $primary;
         display: flex;
