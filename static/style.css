@@ -7,7 +7,8 @@
 h1 {
   color: #1c1c1c;
   font-size: 1em;
-  font-weight: 100; }
+  font-weight: 100;
+  margin-top: 5%; }
   h1:before {
     content: '[ '; }
   h1:after {
@@ -42,7 +43,7 @@ ul {
 #numbers > *, #members > * > * {
   color: #fff; }
 
-#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
   background: #1a2530; }
 
 #about ul ~ p, #backoffice, #develop, #skills,
@@ -86,14 +87,38 @@ html {
   background: url(images/kozea-line.jpg) no-repeat bottom;
   background-size: contain; }
   html body {
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     /*about*/ }
+    html body header {
+      display: flex;
+      justify-content: center; }
+    html body nav {
+      order: -1; }
+      html body nav ul {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap; }
+        html body nav ul:before {
+          content: url(images/logo-kozea.svg); }
+        html body nav ul li {
+          padding: 12px 10px;
+          font-size: .95em; }
+          html body nav ul li a {
+            color: #fff; }
+    html body nav + section {
+      margin-top: 0; }
     html body > section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 8%; }
+      margin: 5% auto;
+      max-width: 1200px;
+      width: 100%; }
     html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
       opacity: 0;
       transition: transform 0.35s, opacity 0.2s;
@@ -268,41 +293,43 @@ html {
             margin-top: 120px; }
             html body#about #tools ul li strong:before {
               background: #1c1c1c; }
-    html body #skills ul {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 600px;
-      padding-left: 0; }
-      html body #skills ul li {
-        align-items: center;
-        box-sizing: border-box;
+    html body #skills {
+      max-width: inherit; }
+      html body #skills ul {
         display: flex;
         flex-direction: column;
-        height: 270px;
-        padding: 20px 10px;
-        text-align: center;
-        width: 50%; }
-        html body #skills ul li:after {
-          background: #fff;
-          content: '';
-          height: 3px;
-          margin: 10px 0 20px;
-          order: -1;
-          width: 20px; }
-        html body #skills ul li:nth-of-type(3) {
-          margin-top: 60px; }
-        html body #skills ul li:before {
-          order: -2;
-          width: 90px; }
-        html body #skills ul li#targets:before {
-          content: url(images/target.svg); }
-        html body #skills ul li#reactivity:before {
-          content: url(images/reactivity.svg); }
-        html body #skills ul li#innovation:before {
-          content: url(images/idea.svg); }
-        html body #skills ul li#r-and-d:before {
-          content: url(images/search.svg); }
+        flex-wrap: wrap;
+        height: 600px;
+        padding-left: 0; }
+        html body #skills ul li {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          height: 270px;
+          padding: 20px 10px;
+          text-align: center;
+          width: 50%; }
+          html body #skills ul li:after {
+            background: #fff;
+            content: '';
+            height: 3px;
+            margin: 10px 0 20px;
+            order: -1;
+            width: 20px; }
+          html body #skills ul li:nth-of-type(3) {
+            margin-top: 60px; }
+          html body #skills ul li:before {
+            order: -2;
+            width: 90px; }
+          html body #skills ul li#targets:before {
+            content: url(images/target.svg); }
+          html body #skills ul li#reactivity:before {
+            content: url(images/reactivity.svg); }
+          html body #skills ul li#innovation:before {
+            content: url(images/idea.svg); }
+          html body #skills ul li#r-and-d:before {
+            content: url(images/search.svg); }
     html body #goals ul {
       display: flex;
       width: 100%; }
@@ -353,7 +380,9 @@ html {
       flex-wrap: wrap; }
       html body#references section ul li {
         flex: 1 25%;
-        text-align: center; }
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box; }
         html body#references section ul li a {
           height: 100px;
           display: block;

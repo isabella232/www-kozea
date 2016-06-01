@@ -6,12 +6,11 @@
   outline: none;
 }
 
-
-
 h1 {
   color: $h1;
   font-size: 1em;
   font-weight: 100;
+  margin-top: 5%;
 
   &:before {
     content: '[ ';
@@ -61,7 +60,7 @@ ul {
   }
 }
 
-#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav,#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
   background: $primary;
 }
 
@@ -122,18 +121,54 @@ html {
   background: url(images/kozea-line.jpg)no-repeat bottom;
   background-size: contain;
 
+
   body {
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    header {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav {
+      order: -1;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap;
+
+        &:before {
+          content: url(images/logo-kozea.svg);
+        }
+
+        li {
+          padding: 12px 10px;
+          font-size: .95em;
+
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    nav + section {
+      margin-top: 0;
+    }
 
     > section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 8%;
-
-      > * {
-      }
+      margin: 5% auto;
+      max-width: 1200px;
+      width: 100%;
     }
 
     #about, #activity, #follow {
@@ -410,6 +445,7 @@ html {
     }
 
     #skills {
+      max-width: inherit;
       ul {
         display: flex;
         flex-direction: column;
@@ -550,6 +586,8 @@ html {
           li {
             flex: 1 25%;
             text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
 
             a {
               height: 100px;
