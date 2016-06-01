@@ -60,13 +60,13 @@ ul {
   }
 }
 
-nav,#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
   background: $primary;
 }
 
 #about ul ~ p, #backoffice, #develop, #skills, 
 #story > p:not(.intro), #pharminfo, #medsite, 
-#backflip, #solutions, #projects + #expert, #trust form {
+#backflip, #solutions, #projects + #expert, #contact-us form {
   background: $secondary;
 }
 
@@ -142,14 +142,12 @@ html {
         max-width: 1200px;
         margin: auto;
         flex-wrap: wrap;
-
-        &:before {
-          content: url(images/logo-kozea.svg);
-        }
+        background: url(images/logo-kozea.svg)no-repeat left;
+        background-size: 90px;
 
         li {
           padding: 12px 10px;
-          font-size: .95em;
+          font-size: .9em;
 
           a {
             color: #fff;
@@ -444,6 +442,49 @@ html {
       }
     }
 
+    &#activity {
+      #community {
+        #projects {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+              a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 300px;
+                height: 300px;
+                color: #fff;
+                padding: 5%;
+                box-sizing: border-box;
+                text-align: center;
+                justify-content: flex-end;
+
+                &:before {
+                  order: -2;
+                }
+
+              }
+
+              &#radicale a:before {
+                content: url(images/radicale.svg);
+              }
+
+              &#pygal a:before {
+                content: url(images/pygal.svg);
+              }
+
+              &#weasyprint a:before {
+                content: url(images/weasyprint.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+
     #skills {
       max-width: inherit;
       ul {
@@ -639,7 +680,7 @@ html {
       }
     }
 
-    #structures {
+    #contact-us {
       > dl {
         background: $primary;
         display: flex;

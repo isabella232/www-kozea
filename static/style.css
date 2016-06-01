@@ -48,7 +48,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 
 #about ul ~ p, #backoffice, #develop, #skills,
 #story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #trust form {
+#backflip, #solutions, #projects + #expert, #contact-us form {
   background: #f9f9f9; }
 
 #work, #numbers #media, #targets {
@@ -102,12 +102,12 @@ html {
         justify-content: flex-end;
         max-width: 1200px;
         margin: auto;
-        flex-wrap: wrap; }
-        html body nav ul:before {
-          content: url(images/logo-kozea.svg); }
+        flex-wrap: wrap;
+        background: url(images/logo-kozea.svg) no-repeat left;
+        background-size: 90px; }
         html body nav ul li {
           padding: 12px 10px;
-          font-size: .95em; }
+          font-size: .9em; }
           html body nav ul li a {
             color: #fff; }
     html body nav + section {
@@ -293,6 +293,30 @@ html {
             margin-top: 120px; }
             html body#about #tools ul li strong:before {
               background: #1c1c1c; }
+    html body#activity #community #projects ul {
+      display: flex;
+      flex-wrap: wrap; }
+      html body#activity #community #projects ul li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        color: #fff;
+        padding: 5%;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: flex-end; }
+        html body#activity #community #projects ul li a:before {
+          order: -2; }
+        html body#activity #community #projects ul li a:before {
+          content: url(images/pygal.svg); }
+      html body#activity #community #projects ul li#radicale a:before {
+        content: url(images/radicale.svg); }
+      html body#activity #community #projects ul li#pygal a:before {
+        content: url(images/pygal.svg); }
+      html body#activity #community #projects ul li#weasyprint a:before {
+        content: url(images/weasyprint.svg); }
     html body #skills {
       max-width: inherit; }
       html body #skills ul {
@@ -407,7 +431,7 @@ html {
           background: url(images/airbus.jpg) no-repeat center center; }
         html body#references section ul li#safetynetwork a {
           background: url(images/safety-network.jpg) no-repeat center center; }
-    html body #structures > dl {
+    html body #contact-us > dl {
       background: #1a2530;
       display: flex;
       flex-wrap: wrap;
@@ -416,31 +440,31 @@ html {
       margin-right: 33%;
       box-sizing: border-box;
       width: 33%; }
-      html body #structures > dl > * {
+      html body #contact-us > dl > * {
         color: #fff;
         width: 50%; }
-      html body #structures > dl ul {
+      html body #contact-us > dl ul {
         margin: 0; }
-        html body #structures > dl ul li {
+        html body #contact-us > dl ul li {
           font-size: 1em; }
-          html body #structures > dl ul li a {
+          html body #contact-us > dl ul li a {
             color: #fff; }
-      html body #structures > dl dd {
+      html body #contact-us > dl dd {
         margin-left: 0;
         font-weight: 100; }
-      html body #structures > dl dt {
+      html body #contact-us > dl dt {
         font-weight: 400;
         order: -1;
         padding-top: 10px; }
-    html body #structures form, html body #structures #map {
+    html body #contact-us form, html body #contact-us #map {
       width: 50%; }
-    html body #structures #map {
+    html body #contact-us #map {
       background: red;
       height: 500px;
       margin-right: 50%;
       margin-top: -365px;
       z-index: -10; }
-    html body #structures form {
+    html body #contact-us form {
       border-top: 2px solid #1a2530;
       box-sizing: border-box;
       display: flex;
@@ -448,7 +472,7 @@ html {
       margin-left: 50%;
       padding: 30px;
       margin-top: -70px; }
-      html body #structures form input:not(:last-child), html body #structures form textarea {
+      html body #contact-us form input:not(:last-child), html body #contact-us form textarea {
         background: none;
         border-top: none;
         border-right: none;
@@ -456,13 +480,13 @@ html {
         border-left: none;
         margin-bottom: 20px;
         padding: 5px 10px; }
-        html body #structures form input:not(:last-child)[placeholder], html body #structures form textarea[placeholder] {
+        html body #contact-us form input:not(:last-child)[placeholder], html body #contact-us form textarea[placeholder] {
           color: #1c1c1c;
           font-size: 1em;
           font-weight: 100; }
-      html body #structures form textarea {
+      html body #contact-us form textarea {
         height: 120px; }
-      html body #structures form input[type="submit"] {
+      html body #contact-us form input[type="submit"] {
         background: #1a2530;
         border: none;
         box-shadow: none;
@@ -470,7 +494,7 @@ html {
         font-size: 1em;
         padding: 7px;
         width: 20%; }
-        html body #structures form input[type="submit"]:hover {
+        html body #contact-us form input[type="submit"]:hover {
           background: #2c3f51; }
     html body footer {
       margin-top: 25px; }
