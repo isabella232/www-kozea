@@ -4,14 +4,14 @@
   font-family: 'Hind', sans-serif;
   outline: none; }
 
-h1 {
+h1:not(#index h1) {
   color: #1c1c1c;
   font-size: 1em;
   font-weight: 100;
   margin-top: 5%; }
-  h1:before {
+  h1:not(#index h1):before {
     content: '[ '; }
-  h1:after {
+  h1:not(#index h1):after {
     content: ' ]'; }
 
 h2 {
@@ -95,6 +95,20 @@ html {
     html body header {
       display: flex;
       justify-content: center; }
+    html body#index header {
+      background: #1a2530;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      html body#index header:after {
+        content: url(images/kozea-line.jpg); }
+      html body#index header h1 {
+        color: transparent; }
+        html body#index header h1:before {
+          content: url(images/logo-icon.svg);
+          display: block;
+          width: 130px; }
     html body nav {
       order: -1; }
       html body nav ul {
@@ -306,11 +320,21 @@ html {
         padding: 5%;
         box-sizing: border-box;
         text-align: center;
-        justify-content: flex-end; }
+        justify-content: center; }
+        html body#activity #community #projects ul li a strong {
+          text-transform: uppercase;
+          color: #fff; }
         html body#activity #community #projects ul li a:before {
-          order: -2; }
-        html body#activity #community #projects ul li a:before {
-          content: url(images/pygal.svg); }
+          order: -2;
+          width: 90px; }
+        html body#activity #community #projects ul li a:after {
+          background: #fff;
+          content: '';
+          display: block;
+          height: 3px;
+          order: -1;
+          margin: 10px;
+          width: 20px; }
       html body#activity #community #projects ul li#radicale a:before {
         content: url(images/radicale.svg); }
       html body#activity #community #projects ul li#pygal a:before {
