@@ -1,3 +1,0 @@
-#!/bin/bash
-css=$(echo $1 | cut -f1 -d .)
-/home/pgirin/.venv/hydra/bin/sassc.py $1 $css.css -w
