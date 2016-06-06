@@ -7,7 +7,8 @@
 h1 {
   color: #1c1c1c;
   font-size: 1em;
-  font-weight: 100; }
+  font-weight: 100;
+  margin-top: 5%; }
   h1:before {
     content: '[ '; }
   h1:after {
@@ -31,25 +32,6 @@ p, li {
 a {
   text-decoration: none; }
 
-.links a:before, .links a:after {
-  opacity: 0;
-  transition: transform 0.35s, opacity 0.2s;
-  display: inline-block; }
-
-.links a:before {
-  content: '[ ';
-  transform: translateX(20px);
-  margin-right: 5px; }
-
-.links a:after {
-  content: ' ]';
-  transform: translateX(-20px);
-  margin-left: 5px; }
-
-.links a:hover:before, .links a:hover:after {
-  opacity: 1;
-  transform: translateX(0px); }
-
 ul {
   padding-left: 0; }
   ul li {
@@ -61,12 +43,12 @@ ul {
 #numbers > *, #members > * > * {
   color: #fff; }
 
-#satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
   background: #1a2530; }
 
 #about ul ~ p, #backoffice, #develop, #skills,
 #story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #trust form {
+#backflip, #solutions, #projects + #expert, #contact-us form {
   background: #f9f9f9; }
 
 #work, #numbers #media, #targets {
@@ -105,14 +87,95 @@ html {
   background: url(images/kozea-line.jpg) no-repeat bottom;
   background-size: contain; }
   html body {
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     /*about*/ }
+    html body header {
+      display: flex;
+      justify-content: center; }
+    html body nav {
+      order: -1; }
+      html body nav ul {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap;
+        background: url(images/logo-kozea.svg) no-repeat left;
+        background-size: 90px; }
+        html body nav ul li {
+          padding: 12px 10px;
+          font-size: .9em; }
+          html body nav ul li a {
+            color: #fff; }
+    html body nav + section {
+      margin-top: 0; }
     html body > section {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 8%; }
+      margin: 5% auto;
+      max-width: 1200px;
+      width: 100%; }
+    html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
+      opacity: 0;
+      transition: transform 0.35s, opacity 0.2s;
+      display: inline-block; }
+    html body #about .links a:before, html body #activity .links a:before, html body #follow .links a:before {
+      content: '[ ';
+      transform: translateX(20px);
+      margin-right: 5px; }
+    html body #about .links a:after, html body #activity .links a:after, html body #follow .links a:after {
+      content: ' ]';
+      transform: translateX(-20px);
+      margin-left: 5px; }
+    html body #about .links a:hover:before, html body #about .links a:hover:after, html body #activity .links a:hover:before, html body #activity .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
+      opacity: 1;
+      transform: translateX(0px); }
+    html body #news {
+      display: flex; }
+      html body #news ul {
+        width: 100%;
+        display: flex; }
+        html body #news ul li {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex-direction: column;
+          padding: 30px; }
+          html body #news ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700; }
+          html body #news ul li:before {
+            display: block;
+            order: -2; }
+          html body #news ul li:after {
+            display: block;
+            background: #fff;
+            content: '';
+            height: 3px;
+            margin: 10px 0 20px;
+            order: -1;
+            width: 20px; }
+          html body #news ul li:first-child {
+            background: url(images/press-bkgd.jpg) no-repeat;
+            width: 50%;
+            height: 400px;
+            background-size: 100%; }
+            html body #news ul li:first-child:before {
+              content: url(images/press.svg);
+              width: 100px; }
+          html body #news ul li + li {
+            background: red;
+            width: 33%;
+            height: 200px; }
+            html body #news ul li + li:before {
+              content: url(images/brochure.svg);
+              width: 40px; }
     html body#about #numbers, html body#about #members, html body#about #tools {
       display: flex;
       flex-wrap: wrap; }
@@ -230,41 +293,67 @@ html {
             margin-top: 120px; }
             html body#about #tools ul li strong:before {
               background: #1c1c1c; }
-    html body #skills ul {
+    html body#activity #community #projects ul {
       display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 600px;
-      padding-left: 0; }
-      html body #skills ul li {
-        align-items: center;
-        box-sizing: border-box;
+      flex-wrap: wrap; }
+      html body#activity #community #projects ul li a {
         display: flex;
         flex-direction: column;
-        height: 270px;
-        padding: 20px 10px;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        color: #fff;
+        padding: 5%;
+        box-sizing: border-box;
         text-align: center;
-        width: 50%; }
-        html body #skills ul li:after {
-          background: #fff;
-          content: '';
-          height: 3px;
-          margin: 10px 0 20px;
-          order: -1;
-          width: 20px; }
-        html body #skills ul li:nth-of-type(3) {
-          margin-top: 60px; }
-        html body #skills ul li:before {
-          order: -2;
-          width: 90px; }
-        html body #skills ul li#targets:before {
-          content: url(images/target.svg); }
-        html body #skills ul li#reactivity:before {
-          content: url(images/reactivity.svg); }
-        html body #skills ul li#innovation:before {
-          content: url(images/idea.svg); }
-        html body #skills ul li#r-and-d:before {
-          content: url(images/search.svg); }
+        justify-content: flex-end; }
+        html body#activity #community #projects ul li a:before {
+          order: -2; }
+        html body#activity #community #projects ul li a:before {
+          content: url(images/pygal.svg); }
+      html body#activity #community #projects ul li#radicale a:before {
+        content: url(images/radicale.svg); }
+      html body#activity #community #projects ul li#pygal a:before {
+        content: url(images/pygal.svg); }
+      html body#activity #community #projects ul li#weasyprint a:before {
+        content: url(images/weasyprint.svg); }
+    html body #skills {
+      max-width: inherit; }
+      html body #skills ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 600px;
+        padding-left: 0; }
+        html body #skills ul li {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          height: 270px;
+          padding: 20px 10px;
+          text-align: center;
+          width: 50%; }
+          html body #skills ul li:after {
+            background: #fff;
+            content: '';
+            height: 3px;
+            margin: 10px 0 20px;
+            order: -1;
+            width: 20px; }
+          html body #skills ul li:nth-of-type(3) {
+            margin-top: 60px; }
+          html body #skills ul li:before {
+            order: -2;
+            width: 90px; }
+          html body #skills ul li#targets:before {
+            content: url(images/target.svg); }
+          html body #skills ul li#reactivity:before {
+            content: url(images/reactivity.svg); }
+          html body #skills ul li#innovation:before {
+            content: url(images/idea.svg); }
+          html body #skills ul li#r-and-d:before {
+            content: url(images/search.svg); }
     html body #goals ul {
       display: flex;
       width: 100%; }
@@ -295,9 +384,54 @@ html {
       display: flex;
       width: 100%; }
       html body #partners ul li {
-        background: red;
-        width: 25%; }
-    html body #trust > dl {
+        flex: 1 25%;
+        text-align: center; }
+        html body #partners ul li a {
+          height: 100px;
+          display: block;
+          font-size: 0; }
+        html body #partners ul li#france-ehealth-tech a {
+          background: url(images/france-ehealth.jpg) no-repeat center center; }
+        html body #partners ul li#la-cuisine-du-web a {
+          background: url(images/cuisineduweb.jpg) no-repeat center center; }
+        html body #partners ul li#minalogic a {
+          background: url(images/minalogic.jpg) no-repeat center center; }
+        html body #partners ul li#i-care a {
+          background: url(images/i-care.jpg) no-repeat center center; }
+    html body#references section ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; }
+      html body#references section ul li {
+        flex: 1 25%;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box; }
+        html body#references section ul li a {
+          height: 100px;
+          display: block;
+          font-size: 0; }
+        html body#references section ul li#arrow a {
+          background: url(images/arrow.jpg) no-repeat center center; }
+        html body#references section ul li#novartis a {
+          background: url(images/novartis.jpg) no-repeat center center; }
+        html body#references section ul li#bailly a {
+          background: url(images/bailly-creat.jpg) no-repeat center center; }
+        html body#references section ul li#septodont a {
+          background: url(images/septodont.jpg) no-repeat center center; }
+        html body#references section ul li#sanofi a {
+          background: url(images/sanofi.jpg) no-repeat center center; }
+        html body#references section ul li#mylan a {
+          background: url(images/mylan.jpg) no-repeat center center; }
+        html body#references section ul li#safran a {
+          background: url(images/safran.jpg) no-repeat center center; }
+        html body#references section ul li#lafarge a {
+          background: url(images/lafarge.jpg) no-repeat center center; }
+        html body#references section ul li#airbus-helicopters a {
+          background: url(images/airbus.jpg) no-repeat center center; }
+        html body#references section ul li#safetynetwork a {
+          background: url(images/safety-network.jpg) no-repeat center center; }
+    html body #contact-us > dl {
       background: #1a2530;
       display: flex;
       flex-wrap: wrap;
@@ -306,31 +440,31 @@ html {
       margin-right: 33%;
       box-sizing: border-box;
       width: 33%; }
-      html body #trust > dl > * {
+      html body #contact-us > dl > * {
         color: #fff;
         width: 50%; }
-      html body #trust > dl ul {
+      html body #contact-us > dl ul {
         margin: 0; }
-        html body #trust > dl ul li {
+        html body #contact-us > dl ul li {
           font-size: 1em; }
-          html body #trust > dl ul li a {
+          html body #contact-us > dl ul li a {
             color: #fff; }
-      html body #trust > dl dd {
+      html body #contact-us > dl dd {
         margin-left: 0;
         font-weight: 100; }
-      html body #trust > dl dt {
+      html body #contact-us > dl dt {
         font-weight: 400;
         order: -1;
         padding-top: 10px; }
-    html body #trust form, html body #trust #map {
+    html body #contact-us form, html body #contact-us #map {
       width: 50%; }
-    html body #trust #map {
+    html body #contact-us #map {
       background: red;
       height: 500px;
       margin-right: 50%;
       margin-top: -365px;
       z-index: -10; }
-    html body #trust form {
+    html body #contact-us form {
       border-top: 2px solid #1a2530;
       box-sizing: border-box;
       display: flex;
@@ -338,7 +472,7 @@ html {
       margin-left: 50%;
       padding: 30px;
       margin-top: -70px; }
-      html body #trust form input:not(:last-child), html body #trust form textarea {
+      html body #contact-us form input:not(:last-child), html body #contact-us form textarea {
         background: none;
         border-top: none;
         border-right: none;
@@ -346,13 +480,13 @@ html {
         border-left: none;
         margin-bottom: 20px;
         padding: 5px 10px; }
-        html body #trust form input:not(:last-child)[placeholder], html body #trust form textarea[placeholder] {
+        html body #contact-us form input:not(:last-child)[placeholder], html body #contact-us form textarea[placeholder] {
           color: #1c1c1c;
           font-size: 1em;
           font-weight: 100; }
-      html body #trust form textarea {
+      html body #contact-us form textarea {
         height: 120px; }
-      html body #trust form input[type="submit"] {
+      html body #contact-us form input[type="submit"] {
         background: #1a2530;
         border: none;
         box-shadow: none;
@@ -360,7 +494,7 @@ html {
         font-size: 1em;
         padding: 7px;
         width: 20%; }
-        html body #trust form input[type="submit"]:hover {
+        html body #contact-us form input[type="submit"]:hover {
           background: #2c3f51; }
     html body footer {
       margin-top: 25px; }

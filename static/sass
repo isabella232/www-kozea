@@ -1,0 +1,2 @@
+#!/bin/bash
+/home/pgirin/.venv/hydra/bin/sassc.py style.scss style.css -w
