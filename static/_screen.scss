@@ -317,6 +317,103 @@ html {
       }
     }
 
+    &#index {
+      #activity {
+        dl {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+
+          dt {
+            display: none;
+
+            &#platform + dd {
+              background: url(images/platform-nb.jpg);
+
+              a {
+                background: $platform;
+                
+                &:before {
+                  content: url(images/kozea-platform-white.svg);
+                }
+              }
+            }
+
+            &#link + dd {
+              background: url(images/link-nb.jpg);
+
+              a {
+                background: $link;
+                
+                &:before {
+                  content: url(images/kozea-link-white.svg);
+                }
+              }
+            }
+
+            &#media + dd {
+              background: url(images/media-nb.jpg);
+
+              a {
+                background: $media;
+                
+                &:before {
+                  content: url(images/kozea-media-white.svg);
+                }
+              }
+            }
+
+            &#community + dd {
+              background: url(images/community-nb.jpg);
+
+              a {
+                background: $community;
+                
+                &:before {
+                  content: url(images/kozea-community-white.svg);
+                }
+              }
+            }
+          }
+
+          dd {
+            margin: 0;
+            width: 50%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+
+            a {
+              left: 25%;
+              position: absolute;
+              width: 250px;
+              color: #fff;
+              font-weight: 700;
+              padding: 25px;
+              position: absolute;
+              top: 120px;
+              opacity: 0;
+              transform: scale(0);
+              transition: opacity 0.35s, transform 0.35s;
+
+
+              &:before {
+                display: block;
+                width: 125px;
+              }
+            }
+
+            &:hover a {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
     /*about*/
     &#about {
       #numbers, #members, #tools {
