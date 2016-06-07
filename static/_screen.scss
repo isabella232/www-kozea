@@ -6,7 +6,7 @@
   outline: none;
 }
 
-h1:not(#index h1) {
+h1 {
   color: $h1;
   font-size: 1em;
   font-weight: 100;
@@ -28,19 +28,15 @@ h2 {
   text-align: center;
 }
 
-p, li {
-  font-size: 1.2em;
-  font-weight: 100;
-
-  &.intro {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0 auto 30px;
-    width: 80%  }
+h3 {
+  font-weight: 400;
 }
+
+
 
 a {
   text-decoration: none;
+  transition: .5s;
 }
 
 ul {
@@ -107,12 +103,18 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 }
 
 #big-data {
-  background: blue;
+  background: url(images/big-data.jpg);
 }
 
 #projects {
   h3 {
     display: none;
+  }
+}
+
+#missions {
+  section {
+    padding: 30px;
   }
 }
 
@@ -166,8 +168,7 @@ html {
         max-width: 1200px;
         margin: auto;
         flex-wrap: wrap;
-        background: url(images/logo-kozea.svg)no-repeat left;
-        background-size: 90px;
+        position: relative;
 
         li {
           padding: 12px 10px;
@@ -175,6 +176,22 @@ html {
 
           a {
             color: #fff;
+          }
+
+          &:first-child {
+            a:before {
+              position: absolute;
+              content: '';
+              background: url(images/logo-kozea.svg)no-repeat left;
+              left: 0;
+              top: 0;
+              width: 90px; 
+              height: 47px;
+            }
+
+            &:hover a:before {
+              opacity: 0.8;
+            }
           }
         }
       }
@@ -191,10 +208,26 @@ html {
       margin: 5% auto;
       max-width: 1200px;
       width: 100%;
+  
+      p, li {
+        font-size: 1.2em;
+        font-weight: 100;
+
+        &.intro {
+          font-size: 1.5em;
+          text-align: center;
+          margin: 0 auto 30px;
+          width: 80%  
+        }
+      }
     }
+
 
     #about, #activity, #follow {
       .links a {
+        font-size: 0.85em;
+        color: $a;
+
         &:before, &:after {
           opacity: 0;
           transition: transform 0.35s, opacity 0.2s;
@@ -353,7 +386,7 @@ html {
           position: relative;
 
           &:after {
-            background: rgba($primary,0.4);
+            background: rgba($primary,0.6);
             content: '';
             height: 250px;
             left: 25px;
@@ -403,7 +436,7 @@ html {
             z-index: -1;
           }
 
-          &:hover {
+          &:hover, &:focus {
             &:after,h4,p {
               opacity: 1;
               transform: scale(1);
@@ -579,7 +612,7 @@ html {
         }
       }
     }
-
+  
     #goals {
       ul {
         display: flex;
@@ -622,6 +655,35 @@ html {
       }
     }
 
+    &#expertise {
+      #missions {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        h2 {
+          flex: 1 100%;
+        }
+
+        section {
+          flex: 1 50%;
+          box-sizing: border-box;
+
+          &#backoffice {
+            &:after {
+              content: url(images/backoffice.png);
+            }
+          }
+
+          &#develop {
+            &:after {
+              //content: url(images/brainstorm.jpg);
+            }
+          }
+        }
+      }
+    }
+
     #partners {
       ul {
         display: flex;
@@ -652,6 +714,16 @@ html {
           &#i-care a {
             background: url(images/i-care.jpg)no-repeat center center;
           }
+        }
+      }
+    }
+
+    &#references, #partners {
+      ul li a {
+        opacity: 0.75;
+
+        &:hover {
+          opacity: 1;
         }
       }
     }
@@ -869,6 +941,36 @@ html {
 
           ul {
             margin-top: 0;
+
+            li a {
+              &:before, &:after {
+                opacity: 0;
+                transition: transform 0.35s, opacity 0.2s;
+                display: inline-block;
+              }
+
+              &:before {
+                content: '[ ';
+                transform: translateX(20px);
+                margin-right: 5px;
+              }
+
+              &:after {
+                content: ' ]';
+                transform: translateX(-20px);
+                margin-left: 5px;
+              }
+
+              &:hover {
+                color: $a;
+
+                &:before, &:after {
+                  opacity: 1;
+                  transform: translateX(0px);
+                }
+              }
+            }
+            
           }
         }
       }

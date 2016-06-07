@@ -4,14 +4,14 @@
   font-family: 'Hind', sans-serif;
   outline: none; }
 
-h1:not(#index h1) {
+h1 {
   color: #1c1c1c;
   font-size: 1em;
   font-weight: 100;
   margin-top: 5%; }
-  h1:not(#index h1):before {
+  h1:before {
     content: '[ '; }
-  h1:not(#index h1):after {
+  h1:after {
     content: ' ]'; }
 
 h2 {
@@ -20,17 +20,12 @@ h2 {
   margin: 0;
   text-align: center; }
 
-p, li {
-  font-size: 1.2em;
-  font-weight: 100; }
-  p.intro, li.intro {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0 auto 30px;
-    width: 80%; }
+h3 {
+  font-weight: 400; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  transition: .5s; }
 
 ul {
   padding-left: 0; }
@@ -77,10 +72,13 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: #f1f1f1; }
 
 #big-data {
-  background: blue; }
+  background: url(images/big-data.jpg); }
 
 #projects h3 {
   display: none; }
+
+#missions section {
+  padding: 30px; }
 
 /* HTML */
 html {
@@ -117,13 +115,22 @@ html {
         max-width: 1200px;
         margin: auto;
         flex-wrap: wrap;
-        background: url(images/logo-kozea.svg) no-repeat left;
-        background-size: 90px; }
+        position: relative; }
         html body nav ul li {
           padding: 12px 10px;
           font-size: .9em; }
           html body nav ul li a {
             color: #fff; }
+          html body nav ul li:first-child a:before {
+            position: absolute;
+            content: '';
+            background: url(images/logo-kozea.svg) no-repeat left;
+            left: 0;
+            top: 0;
+            width: 90px;
+            height: 47px; }
+          html body nav ul li:first-child:hover a:before {
+            opacity: 0.8; }
     html body nav + section {
       margin-top: 0; }
     html body > section {
@@ -133,21 +140,32 @@ html {
       margin: 5% auto;
       max-width: 1200px;
       width: 100%; }
-    html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
-      opacity: 0;
-      transition: transform 0.35s, opacity 0.2s;
-      display: inline-block; }
-    html body #about .links a:before, html body #activity .links a:before, html body #follow .links a:before {
-      content: '[ ';
-      transform: translateX(20px);
-      margin-right: 5px; }
-    html body #about .links a:after, html body #activity .links a:after, html body #follow .links a:after {
-      content: ' ]';
-      transform: translateX(-20px);
-      margin-left: 5px; }
-    html body #about .links a:hover:before, html body #about .links a:hover:after, html body #activity .links a:hover:before, html body #activity .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
-      opacity: 1;
-      transform: translateX(0px); }
+      html body > section p, html body > section li {
+        font-size: 1.2em;
+        font-weight: 100; }
+        html body > section p.intro, html body > section li.intro {
+          font-size: 1.5em;
+          text-align: center;
+          margin: 0 auto 30px;
+          width: 80%; }
+    html body #about .links a, html body #activity .links a, html body #follow .links a {
+      font-size: 0.85em;
+      color: #69737c; }
+      html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
+        opacity: 0;
+        transition: transform 0.35s, opacity 0.2s;
+        display: inline-block; }
+      html body #about .links a:before, html body #activity .links a:before, html body #follow .links a:before {
+        content: '[ ';
+        transform: translateX(20px);
+        margin-right: 5px; }
+      html body #about .links a:after, html body #activity .links a:after, html body #follow .links a:after {
+        content: ' ]';
+        transform: translateX(-20px);
+        margin-left: 5px; }
+      html body #about .links a:hover:before, html body #about .links a:hover:after, html body #activity .links a:hover:before, html body #activity .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
+        opacity: 1;
+        transform: translateX(0px); }
     html body #news {
       display: flex; }
       html body #news ul {
@@ -235,7 +253,7 @@ html {
         justify-content: flex-end;
         position: relative; }
         html body#about #members section:after {
-          background: rgba(26, 37, 48, 0.4);
+          background: rgba(26, 37, 48, 0.6);
           content: '';
           height: 250px;
           left: 25px;
@@ -273,7 +291,7 @@ html {
           top: 0;
           width: 300px;
           z-index: -1; }
-        html body#about #members section:hover:after, html body#about #members section:hover h4, html body#about #members section:hover p {
+        html body#about #members section:hover:after, html body#about #members section:hover h4, html body#about #members section:hover p, html body#about #members section:focus:after, html body#about #members section:focus h4, html body#about #members section:focus p {
           opacity: 1;
           transform: scale(1); }
     html body#about #tools {
@@ -404,6 +422,17 @@ html {
           content: url(images/webexpert.svg); }
         html body #goals ul li#create-solutions:before {
           content: url(images/solutions.svg); }
+    html body#expertise #missions {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      html body#expertise #missions h2 {
+        flex: 1 100%; }
+      html body#expertise #missions section {
+        flex: 1 50%;
+        box-sizing: border-box; }
+        html body#expertise #missions section#backoffice:after {
+          content: url(images/backoffice.png); }
     html body #partners ul {
       display: flex;
       width: 100%; }
@@ -422,6 +451,10 @@ html {
           background: url(images/minalogic.jpg) no-repeat center center; }
         html body #partners ul li#i-care a {
           background: url(images/i-care.jpg) no-repeat center center; }
+    html body#references ul li a, html body #partners ul li a {
+      opacity: 0.75; }
+      html body#references ul li a:hover, html body #partners ul li a:hover {
+        opacity: 1; }
     html body#references section ul {
       width: 100%;
       display: flex;
@@ -552,5 +585,22 @@ html {
               content: '- '; }
           html body footer dl dd ul {
             margin-top: 0; }
+            html body footer dl dd ul li a:before, html body footer dl dd ul li a:after {
+              opacity: 0;
+              transition: transform 0.35s, opacity 0.2s;
+              display: inline-block; }
+            html body footer dl dd ul li a:before {
+              content: '[ ';
+              transform: translateX(20px);
+              margin-right: 5px; }
+            html body footer dl dd ul li a:after {
+              content: ' ]';
+              transform: translateX(-20px);
+              margin-left: 5px; }
+            html body footer dl dd ul li a:hover {
+              color: #69737c; }
+              html body footer dl dd ul li a:hover:before, html body footer dl dd ul li a:hover:after {
+                opacity: 1;
+                transform: translateX(0px); }
 
 /*# sourceMappingURL=style.scss.css.map */
