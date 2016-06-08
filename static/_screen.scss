@@ -458,6 +458,44 @@ html {
         height: 300px;
       }
 
+      #story {
+        blockquote {
+          background: red;
+          width: 75%;
+          height: 450px;
+          align-self: flex-end;
+          margin: 0;
+          padding: 30px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+
+          & + p, & + p + p {
+            align-self: flex-end;
+            width: 50%;
+            padding: 30px;
+            box-sizing: border-box;
+            margin: 0;
+
+            & + p {
+              padding-top: 0;
+            }
+          }
+        }
+
+
+
+        #numbers {
+          margin: 0;
+          li {
+            &:first-child {
+              //margin-left: 300px;
+            }
+          }
+        }
+      }
+
       #members {
         margin: auto;
 
@@ -534,6 +572,43 @@ html {
               opacity: 1;
               transform: scale(1);
             }
+          }
+
+          @media screen and (min-width: 1200px) {
+            &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14), {
+              padding-right: 300px;
+            }
+
+            &:nth-of-type(10), &:nth-of-type(11) {
+              margin-left: 300px;
+            }
+
+            &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14) {
+              &:before {
+                content: '';
+                height: 300px;
+                position: absolute;
+                width: 300px;
+              }
+            }
+
+            &:nth-of-type(10):before {
+              background: $primary;
+              left: -300px;
+              top: 0;
+            }
+
+            &:nth-of-type(3), &:nth-of-type(14) {
+              &:before {
+                background: lighten($primary,25%);
+                right: 0;
+                top: 0;
+              }
+            }
+
+            &:nth-of-type(14):before {
+              background: $primary;
+            } 
           }
         }
       } 

@@ -290,6 +290,27 @@ html {
     html body#about #numbers li, html body#about #tools li {
       width: 300px;
       height: 300px; }
+    html body#about #story blockquote {
+      background: red;
+      width: 75%;
+      height: 450px;
+      align-self: flex-end;
+      margin: 0;
+      padding: 30px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      html body#about #story blockquote + p, html body#about #story blockquote + p + p {
+        align-self: flex-end;
+        width: 50%;
+        padding: 30px;
+        box-sizing: border-box;
+        margin: 0; }
+        html body#about #story blockquote + p + p, html body#about #story blockquote + p + p + p {
+          padding-top: 0; }
+    html body#about #story #numbers {
+      margin: 0; }
     html body#about #members {
       margin: auto; }
       html body#about #members h3 {
@@ -346,6 +367,26 @@ html {
         html body#about #members section:hover:after, html body#about #members section:hover h4, html body#about #members section:hover p, html body#about #members section:focus:after, html body#about #members section:focus h4, html body#about #members section:focus p {
           opacity: 1;
           transform: scale(1); }
+        @media screen and (min-width: 1200px) {
+          html body#about #members section:nth-of-type(2), html body#about #members section:nth-of-type(3), html body#about #members section:nth-of-type(14) {
+            padding-right: 300px; }
+          html body#about #members section:nth-of-type(10), html body#about #members section:nth-of-type(11) {
+            margin-left: 300px; }
+          html body#about #members section:nth-of-type(10):before, html body#about #members section:nth-of-type(3):before, html body#about #members section:nth-of-type(14):before {
+            content: '';
+            height: 300px;
+            position: absolute;
+            width: 300px; }
+          html body#about #members section:nth-of-type(10):before {
+            background: #1a2530;
+            left: -300px;
+            top: 0; }
+          html body#about #members section:nth-of-type(3):before, html body#about #members section:nth-of-type(14):before {
+            background: #476583;
+            right: 0;
+            top: 0; }
+          html body#about #members section:nth-of-type(14):before {
+            background: #1a2530; } }
     html body#about #tools {
       justify-content: flex-end; }
       html body#about #tools h3 {
