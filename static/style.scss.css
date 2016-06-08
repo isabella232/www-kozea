@@ -244,28 +244,22 @@ html {
         height: 400px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        position: relative; }
+        justify-content: center;
+        align-items: center; }
         html body#index #activity dl dd a {
-          left: 25%;
-          position: absolute;
           width: 250px;
           color: #fff;
           font-weight: 700;
           padding: 25px;
-          position: absolute;
-          top: 120px;
           opacity: 0;
           transform: scale(0);
           transition: opacity 0.35s, transform 0.35s; }
           html body#index #activity dl dd a:before {
             display: block;
             width: 125px; }
-        html body#index #activity dl dd:hover {
-          background: red; }
-          html body#index #activity dl dd:hover a {
-            opacity: 1;
-            transform: scale(1); }
+        html body#index #activity dl dd:hover a {
+          opacity: 1;
+          transform: scale(1); }
     html body#about #numbers, html body#about #members, html body#about #tools {
       display: flex;
       flex-wrap: wrap; }

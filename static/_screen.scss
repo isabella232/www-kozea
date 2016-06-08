@@ -382,18 +382,14 @@ html {
             height: 400px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
+            justify-content: center;
+            align-items: center;
 
             a {
-              left: 25%;
-              position: absolute;
               width: 250px;
               color: #fff;
               font-weight: 700;
               padding: 25px;
-              position: absolute;
-              top: 120px;
               opacity: 0;
               transform: scale(0);
               transition: opacity 0.35s, transform 0.35s;
