@@ -95,7 +95,7 @@ html {
       justify-content: center; }
     html body#index header {
       background: #1a2530;
-      height: 95.3vh;
+      height: 94.7vh;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -127,17 +127,17 @@ html {
         flex-wrap: wrap;
         position: relative; }
         html body nav ul li {
-          padding: 12px 10px;
+          padding: 15px 10px;
           font-size: .9em; }
           html body nav ul li a {
             color: #fff; }
           html body nav ul li:first-child a:before {
             position: absolute;
             content: '';
-            background: url(images/logo-kozea.svg) no-repeat left;
+            background: url(images/logo-04.svg) no-repeat left;
             left: 0;
-            top: 0;
-            width: 90px;
+            top: 4px;
+            width: 130px;
             height: 47px; }
           html body nav ul li:first-child:hover a:before {
             opacity: 0.8; }
