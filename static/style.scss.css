@@ -95,18 +95,28 @@ html {
       justify-content: center; }
     html body#index header {
       background: #1a2530;
-      height: 100vh;
+      height: 95.3vh;
       display: flex;
       align-items: center;
-      flex-direction: column; }
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative; }
       html body#index header:after {
-        content: url(images/kozea-line.jpg); }
+        content: '';
+        background: url(images/kozea-line.jpg) no-repeat bottom;
+        background-size: cover;
+        width: 100%;
+        height: 3px; }
       html body#index header h1 {
-        color: transparent; }
+        color: transparent;
+        margin: 0; }
         html body#index header h1:before {
           content: url(images/logo-icon.svg);
           display: block;
-          width: 130px; }
+          width: 130px;
+          position: absolute;
+          left: calc(50% - 65px);
+          top: calc(50% - 65px); }
     html body nav {
       order: -1; }
       html body nav ul {
