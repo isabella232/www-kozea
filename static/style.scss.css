@@ -620,8 +620,11 @@ html {
       box-sizing: border-box;
       width: 33%; }
       html body #contact-us > dl > * {
-        color: #fff;
-        width: 50%; }
+        color: #fff; }
+      html body #contact-us > dl dt:first-child, html body #contact-us > dl dt:first-child + dd {
+        width: 60%; }
+      html body #contact-us > dl dt:nth-of-type(2), html body #contact-us > dl dt:nth-of-type(2) + dd {
+        width: 40%; }
       html body #contact-us > dl ul {
         margin: 0; }
         html body #contact-us > dl ul li {

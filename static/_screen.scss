@@ -1003,9 +1003,16 @@ html {
         box-sizing: border-box;
         width: 33%;
 
-        > *,   {
+        > *{
           color: #fff;
-          width:50%
+        }
+
+        dt:first-child, dt:first-child + dd {
+          width: 60%;
+        }
+
+        dt:nth-of-type(2),dt:nth-of-type(2) + dd {
+          width: 40%;
         }
 
         ul {
