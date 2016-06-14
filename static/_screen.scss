@@ -279,46 +279,67 @@ html {
           align-items: center;
           flex-direction: column;
           padding: 30px;
+          position: relative;
 
           a {
             color: #fff;
             text-transform: uppercase;
             font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+  
+            &:before {
+              display: block;
+              order: -2;
+            }
+            
+            &:after  {
+              display: block;
+              background: #fff;
+              content: '';
+              height: 3px;
+              margin: 10px 0 20px;
+              order: -1;
+              width: 20px;
+            }
           }
 
-          &:before {
-            display: block;
-            order: -2;
-          }
-          
-          &:after  {
-            display: block;
-            background: #fff;
+          &:after {
+            background: rgba($primary,0.6);
             content: '';
-            height: 3px;
-            margin: 10px 0 20px;
-            order: -1;
-            width: 20px;
+            height: 250px;
+            left: 25px;
+            opacity: 0;
+            position: absolute;
+            top: 25px;
+            transform: scale(0);
+            transition: opacity 0.35s, transform 0.35s;
+            width: 250px;
+            z-index: -1;
           }
+
 
           &:first-child {
             background: url(images/press-bkgd.jpg)no-repeat;
             width: 50%;
             height: 400px;
-            background-size: 100%;
+            background-size: cover;
 
-            &:before {
+            a:before {
               content: url(images/press.svg); 
               width: 100px;
             }
           }
 
-          & + li {
-            background: red;
+          &:nth-of-type(2) {
+            background: url(images/brochure-bkgd.jpg)no-repeat;
             width: 33%;
             height: 200px;
+            background-size: cover;
 
-            &:before {
+            a:before {
               content: url(images/brochure.svg);
               width: 40px;
             }
@@ -912,12 +933,14 @@ html {
           width: 100%;
           display: flex;
           flex-wrap: wrap;
+          justify-content: center;
 
           li {
-            flex: 1 25%;
-            text-align: center;
-            padding: 10px;
+            padding: 40px 20px;
             box-sizing: border-box;
+            width: 25%;
+            box-shadow: 1px 0px 0px $border;
+            border-left: 1px solid $border;
 
             a {
               height: 100px;

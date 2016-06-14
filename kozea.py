@@ -14,4 +14,4 @@ if __name__ == '__main__':
     from sassutils.wsgi import SassMiddleware
     app.wsgi_app = SassMiddleware(app.wsgi_app, {
         'kozea': ('static', 'static', '/static')})
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
