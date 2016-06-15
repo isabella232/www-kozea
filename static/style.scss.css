@@ -71,9 +71,6 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #teepy {
   background: #f1f1f1; }
 
-#big-data {
-  background: url(images/big-data.jpg); }
-
 #projects h3 {
   display: none; }
 
@@ -545,14 +542,40 @@ html {
     html body#expertise #missions {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: row; }
+      flex-direction: row;
+      justify-content: center; }
       html body#expertise #missions h2 {
         flex: 1 100%; }
       html body#expertise #missions section {
-        flex: 1 50%;
+        width: 50%;
         box-sizing: border-box; }
-        html body#expertise #missions section#backoffice:after {
-          content: url(images/backoffice.png); }
+        html body#expertise #missions section:first-of-type {
+          position: relative;
+          margin-right: 50%; }
+          html body#expertise #missions section:first-of-type img {
+            position: absolute;
+            top: 0;
+            right: -265px;
+            width: 250px; }
+        html body#expertise #missions section:nth-of-type(2) {
+          margin-top: -90px;
+          margin-left: 50%; }
+        html body#expertise #missions section:nth-of-type(3) {
+          width: 100%;
+          margin-right: 50%;
+          position: relative; }
+          html body#expertise #missions section:nth-of-type(3):after {
+            content: '';
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            background: url(images/brainstorm.jpg) no-repeat;
+            right: -100%;
+            top: 0; }
+        html body#expertise #missions section#big-data {
+          background: url(images/big-data.jpg) no-repeat;
+          background-size: cover;
+          text-align: center; }
     html body #partners ul {
       display: flex;
       width: 100%; }
