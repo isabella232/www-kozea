@@ -75,7 +75,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #projects h3 {
   display: none; }
 
-#missions section {
+#missions section, #platform section, #link section, #media section, #community section {
   padding: 30px; }
 
 /* HTML */
@@ -109,7 +109,7 @@ html {
         color: transparent;
         margin: 0; }
         html body#index header h1:before {
-          content: url(images/logo-icon.svg);
+          content: url(images/logos/logo-icon.svg);
           display: block;
           width: 130px;
           position: absolute;
@@ -132,7 +132,7 @@ html {
           html body nav ul li:first-child a:before {
             position: absolute;
             content: '';
-            background: url(images/logo-04.svg) no-repeat left;
+            background: url(images/logos/logo-04.svg) no-repeat left;
             left: 0;
             top: 4px;
             width: 130px;
@@ -218,20 +218,20 @@ html {
             width: 250px;
             z-index: -1; }
           html body #news ul li:first-child {
-            background: url(images/press-bkgd.jpg) no-repeat;
+            background: url(images/photos/press-bkgd.jpg) no-repeat;
             width: 50%;
             height: 400px;
             background-size: cover; }
             html body #news ul li:first-child a:before {
-              content: url(images/press.svg);
+              content: url(images/icones/press.svg);
               width: 100px; }
           html body #news ul li:nth-of-type(2) {
-            background: url(images/brochure-bkgd.jpg) no-repeat;
+            background: url(images/photos/brochure-bkgd.jpg) no-repeat;
             width: 33%;
             height: 200px;
             background-size: cover; }
             html body #news ul li:nth-of-type(2) a:before {
-              content: url(images/brochure.svg);
+              content: url(images/icones/brochure.svg);
               width: 40px; }
     html body#index #activity dl {
       width: 100%;
@@ -240,29 +240,29 @@ html {
       html body#index #activity dl dt {
         display: none; }
         html body#index #activity dl dt#platform + dd {
-          background: url(images/platform-nb.jpg); }
+          background: url(images/photos/platform-nb.jpg); }
           html body#index #activity dl dt#platform + dd a {
             background: #007bb8; }
             html body#index #activity dl dt#platform + dd a:before {
-              content: url(images/kozea-platform-white.svg); }
+              content: url(images/logos/kozea-platform-white.svg); }
         html body#index #activity dl dt#link + dd {
-          background: url(images/link-nb.jpg); }
+          background: url(images/photos/link-nb.jpg); }
           html body#index #activity dl dt#link + dd a {
             background: #f49a2f; }
             html body#index #activity dl dt#link + dd a:before {
-              content: url(images/kozea-link-white.svg); }
+              content: url(images/logos/kozea-link-white.svg); }
         html body#index #activity dl dt#media + dd {
-          background: url(images/media-nb.jpg); }
+          background: url(images/photos/media-nb.jpg); }
           html body#index #activity dl dt#media + dd a {
             background: #e53c4c; }
             html body#index #activity dl dt#media + dd a:before {
-              content: url(images/kozea-media-white.svg); }
+              content: url(images/logos/kozea-media-white.svg); }
         html body#index #activity dl dt#community + dd {
-          background: url(images/community-nb.jpg); }
+          background: url(images/photos/community-nb.jpg); }
           html body#index #activity dl dt#community + dd a {
             background: #6e5f84; }
             html body#index #activity dl dt#community + dd a:before {
-              content: url(images/kozea-community-white.svg); }
+              content: url(images/logos/kozea-community-white.svg); }
       html body#index #activity dl dd {
         margin: 0;
         width: 50%;
@@ -428,16 +428,16 @@ html {
           html body#about #tools ul li:nth-child(-n+2) {
             border-top: 1px solid #e0e0e0; }
           html body#about #tools ul li#soda {
-            background: url(images/soda.svg) no-repeat center 40px;
+            background: url(images/icones/soda.svg) no-repeat center 40px;
             background-size: 30%; }
           html body#about #tools ul li#sport {
-            background: url(images/sport.svg) no-repeat center 40px;
+            background: url(images/icones/sport.svg) no-repeat center 40px;
             background-size: 30%; }
           html body#about #tools ul li#babyfoot {
-            background: url(images/babyfoot.svg) no-repeat center 40px;
+            background: url(images/icones/babyfoot.svg) no-repeat center 40px;
             background-size: 30%; }
           html body#about #tools ul li#popcorn {
-            background: url(images/popcorn.svg) no-repeat center 40px;
+            background: url(images/icones/popcorn.svg) no-repeat center 40px;
             background-size: 30%; }
           html body#about #tools ul li strong {
             margin-top: 120px; }
@@ -472,11 +472,11 @@ html {
           margin: 10px;
           width: 20px; }
       html body#activity #community #projects ul li#radicale a:before {
-        content: url(images/radicale.svg); }
+        content: url(images/icones/radicale.svg); }
       html body#activity #community #projects ul li#pygal a:before {
-        content: url(images/pygal.svg); }
+        content: url(images/icones/pygal.svg); }
       html body#activity #community #projects ul li#weasyprint a:before {
-        content: url(images/weasyprint.svg); }
+        content: url(images/icones/weasyprint.svg); }
     html body #skills {
       max-width: inherit;
       margin: 10% auto 0;
@@ -511,13 +511,13 @@ html {
             order: -2;
             width: 90px; }
           html body #skills ul li#targets:before {
-            content: url(images/target.svg); }
+            content: url(images/icones/target.svg); }
           html body #skills ul li#reactivity:before {
-            content: url(images/reactivity.svg); }
+            content: url(images/icones/reactivity.svg); }
           html body #skills ul li#innovation:before {
-            content: url(images/idea.svg); }
+            content: url(images/icones/idea.svg); }
           html body #skills ul li#r-and-d:before {
-            content: url(images/search.svg); }
+            content: url(images/icones/search.svg); }
     html body #goals ul {
       display: flex;
       width: 100%; }
@@ -539,11 +539,11 @@ html {
           order: -2;
           width: 90px; }
         html body #goals ul li#specialist:before {
-          content: url(images/specialist.svg); }
+          content: url(images/icones/specialist.svg); }
         html body #goals ul li#web-expert:before {
-          content: url(images/webexpert.svg); }
+          content: url(images/icones/webexpert.svg); }
         html body #goals ul li#create-solutions:before {
-          content: url(images/solutions.svg); }
+          content: url(images/icones/solutions.svg); }
     html body#expertise #missions {
       display: flex;
       flex-wrap: wrap;
@@ -557,10 +557,19 @@ html {
         html body#expertise #missions section:first-of-type {
           position: relative;
           margin-right: 50%; }
+          html body#expertise #missions section:first-of-type:after {
+            content: '';
+            display: block;
+            background: #1a2530;
+            height: 3px;
+            width: 60px;
+            position: absolute;
+            top: 60px;
+            right: -30px; }
           html body#expertise #missions section:first-of-type img {
             position: absolute;
             top: 0;
-            right: -265px;
+            right: -300px;
             width: 250px; }
         html body#expertise #missions section:nth-of-type(2) {
           margin-top: -90px;
@@ -574,11 +583,11 @@ html {
             height: 100%;
             position: absolute;
             width: 100%;
-            background: url(images/brainstorm.jpg) no-repeat;
+            background: url(images/photos/brainstorm.jpg) no-repeat;
             right: -100%;
             top: 0; }
         html body#expertise #missions section#big-data {
-          background: url(images/big-data.jpg) no-repeat;
+          background: url(images/photos/big-data.jpg) no-repeat;
           background-size: cover;
           text-align: center; }
     html body#legal h1:before {
@@ -608,13 +617,13 @@ html {
           display: block;
           font-size: 0; }
         html body #partners ul li#france-ehealth-tech a {
-          background: url(images/france-ehealth.jpg) no-repeat center center; }
+          background: url(images/marques/france-ehealth.jpg) no-repeat center center; }
         html body #partners ul li#la-cuisine-du-web a {
-          background: url(images/cuisineduweb.jpg) no-repeat center center; }
+          background: url(images/marques/cuisineduweb.jpg) no-repeat center center; }
         html body #partners ul li#minalogic a {
-          background: url(images/minalogic.jpg) no-repeat center center; }
+          background: url(images/marques/minalogic.jpg) no-repeat center center; }
         html body #partners ul li#i-care a {
-          background: url(images/i-care.jpg) no-repeat center center; }
+          background: url(images/marques/i-care.jpg) no-repeat center center; }
     html body#references ul li a, html body #partners ul li a {
       opacity: 0.75; }
       html body#references ul li a:hover, html body #partners ul li a:hover {
@@ -635,25 +644,25 @@ html {
           display: block;
           font-size: 0; }
         html body#references section ul li#arrow a {
-          background: url(images/arrow.jpg) no-repeat center center; }
+          background: url(images/marques/arrow.jpg) no-repeat center center; }
         html body#references section ul li#novartis a {
-          background: url(images/novartis.jpg) no-repeat center center; }
+          background: url(images/marques/novartis.jpg) no-repeat center center; }
         html body#references section ul li#bailly a {
-          background: url(images/bailly-creat.jpg) no-repeat center center; }
+          background: url(images/marques/bailly-creat.jpg) no-repeat center center; }
         html body#references section ul li#septodont a {
-          background: url(images/septodont.jpg) no-repeat center center; }
+          background: url(images/marques/septodont.jpg) no-repeat center center; }
         html body#references section ul li#sanofi a {
-          background: url(images/sanofi.jpg) no-repeat center center; }
+          background: url(images/marques/sanofi.jpg) no-repeat center center; }
         html body#references section ul li#mylan a {
-          background: url(images/mylan.jpg) no-repeat center center; }
+          background: url(images/marques/mylan.jpg) no-repeat center center; }
         html body#references section ul li#safran a {
-          background: url(images/safran.jpg) no-repeat center center; }
+          background: url(images/marques/safran.jpg) no-repeat center center; }
         html body#references section ul li#lafarge a {
-          background: url(images/lafarge.jpg) no-repeat center center; }
+          background: url(images/marques/lafarge.jpg) no-repeat center center; }
         html body#references section ul li#airbus-helicopters a {
-          background: url(images/airbus.jpg) no-repeat center center; }
+          background: url(images/marques/airbus.jpg) no-repeat center center; }
         html body#references section ul li#safetynetwork a {
-          background: url(images/safety-network.jpg) no-repeat center center; }
+          background: url(images/marques/safety-network.jpg) no-repeat center center; }
     html body #contact-us > dl {
       background: #1a2530;
       display: flex;

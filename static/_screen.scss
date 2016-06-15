@@ -108,7 +108,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   }
 }
 
-#missions {
+#missions, #platform, #link, #media, #community {
   section {
     padding: 30px;
   }
@@ -154,7 +154,7 @@ html {
           margin: 0;
 
           &:before {
-            content: url(images/logo-icon.svg);
+            content: url(images/logos/logo-icon.svg);
             display: block;
             width: 130px;
             position: absolute;
@@ -188,7 +188,7 @@ html {
             a:before {
               position: absolute;
               content: '';
-              background: url(images/logo-04.svg)no-repeat left;
+              background: url(images/logos/logo-04.svg)no-repeat left;
               left: 0;
               top: 4px;
               width: 130px; 
@@ -318,25 +318,25 @@ html {
 
 
           &:first-child {
-            background: url(images/press-bkgd.jpg)no-repeat;
+            background: url(images/photos/press-bkgd.jpg)no-repeat;
             width: 50%;
             height: 400px;
             background-size: cover;
 
             a:before {
-              content: url(images/press.svg); 
+              content: url(images/icones/press.svg); 
               width: 100px;
             }
           }
 
           &:nth-of-type(2) {
-            background: url(images/brochure-bkgd.jpg)no-repeat;
+            background: url(images/photos/brochure-bkgd.jpg)no-repeat;
             width: 33%;
             height: 200px;
             background-size: cover;
 
             a:before {
-              content: url(images/brochure.svg);
+              content: url(images/icones/brochure.svg);
               width: 40px;
             }
           }
@@ -355,49 +355,49 @@ html {
             display: none;
 
             &#platform + dd {
-              background: url(images/platform-nb.jpg);
+              background: url(images/photos/platform-nb.jpg);
 
               a {
                 background: $platform;
                 
                 &:before {
-                  content: url(images/kozea-platform-white.svg);
+                  content: url(images/logos/kozea-platform-white.svg);
                 }
               }
             }
 
             &#link + dd {
-              background: url(images/link-nb.jpg);
+              background: url(images/photos/link-nb.jpg);
 
               a {
                 background: $link;
                 
                 &:before {
-                  content: url(images/kozea-link-white.svg);
+                  content: url(images/logos/kozea-link-white.svg);
                 }
               }
             }
 
             &#media + dd {
-              background: url(images/media-nb.jpg);
+              background: url(images/photos/media-nb.jpg);
 
               a {
                 background: $media;
                 
                 &:before {
-                  content: url(images/kozea-media-white.svg);
+                  content: url(images/logos/kozea-media-white.svg);
                 }
               }
             }
 
             &#community + dd {
-              background: url(images/community-nb.jpg);
+              background: url(images/photos/community-nb.jpg);
 
               a {
                 background: $community;
                 
                 &:before {
-                  content: url(images/kozea-community-white.svg);
+                  content: url(images/logos/kozea-community-white.svg);
                 }
               }
             }
@@ -663,22 +663,22 @@ html {
             }
 
             &#soda {
-              background: url(images/soda.svg)no-repeat center 40px;
+              background: url(images/icones/soda.svg)no-repeat center 40px;
               background-size: 30%;
             }
 
             &#sport {
-              background: url(images/sport.svg)no-repeat center 40px;
+              background: url(images/icones/sport.svg)no-repeat center 40px;
               background-size: 30%;
             }
 
             &#babyfoot {
-              background: url(images/babyfoot.svg)no-repeat center 40px;
+              background: url(images/icones/babyfoot.svg)no-repeat center 40px;
               background-size: 30%;
             }
 
             &#popcorn {
-              background: url(images/popcorn.svg)no-repeat center 40px;
+              background: url(images/icones/popcorn.svg)no-repeat center 40px;
               background-size: 30%;
             }
 
@@ -736,15 +736,15 @@ html {
               }
 
               &#radicale a:before {
-                content: url(images/radicale.svg);
+                content: url(images/icones/radicale.svg);
               }
 
               &#pygal a:before {
-                content: url(images/pygal.svg);
+                content: url(images/icones/pygal.svg);
               }
 
               &#weasyprint a:before {
-                content: url(images/weasyprint.svg);
+                content: url(images/icones/weasyprint.svg);
               }
             }
           }
@@ -797,19 +797,19 @@ html {
           }
 
           &#targets:before {
-            content: url(images/target.svg);
+            content: url(images/icones/target.svg);
           }
 
           &#reactivity:before {
-            content: url(images/reactivity.svg);
+            content: url(images/icones/reactivity.svg);
           }
 
           &#innovation:before{
-            content: url(images/idea.svg);
+            content: url(images/icones/idea.svg);
           }
 
           &#r-and-d:before{
-            content: url(images/search.svg);
+            content: url(images/icones/search.svg);
           }
         }
       }
@@ -843,15 +843,15 @@ html {
           }
 
           &#specialist:before {
-            content: url(images/specialist.svg);
+            content: url(images/icones/specialist.svg);
           }
 
           &#web-expert:before {
-            content: url(images/webexpert.svg);
+            content: url(images/icones/webexpert.svg);
           }
 
           &#create-solutions:before {
-            content: url(images/solutions.svg);
+            content: url(images/icones/solutions.svg);
           }
         }
       }
@@ -876,10 +876,21 @@ html {
             position: relative;
             margin-right: 50%;
 
+            &:after {
+              content: '';
+              display: block;
+              background: $primary;
+              height: 3px;
+              width: 60px;
+              position: absolute;
+              top: 60px;
+              right: -30px;
+            }
+
             img {
               position: absolute;
               top: 0;
-              right: -265px;
+              right: -300px;
               width: 250px;
             }
           }
@@ -899,14 +910,14 @@ html {
               height: 100%;
               position: absolute;
               width: 100%;
-              background: url(images/brainstorm.jpg)no-repeat;
+              background: url(images/photos/brainstorm.jpg)no-repeat;
               right: -100%;
               top: 0;
             }
           }
 
           &#big-data {
-            background: url(images/big-data.jpg)no-repeat;
+            background: url(images/photos/big-data.jpg)no-repeat;
             background-size: cover;
             text-align: center;
           }
@@ -965,19 +976,19 @@ html {
           }
 
           &#france-ehealth-tech a {
-            background: url(images/france-ehealth.jpg)no-repeat center center;
+            background: url(images/marques/france-ehealth.jpg)no-repeat center center;
           }
 
           &#la-cuisine-du-web a {
-            background: url(images/cuisineduweb.jpg)no-repeat center center;
+            background: url(images/marques/cuisineduweb.jpg)no-repeat center center;
           }
 
           &#minalogic a {
-            background: url(images/minalogic.jpg)no-repeat center center;
+            background: url(images/marques/minalogic.jpg)no-repeat center center;
           }
 
           &#i-care a {
-            background: url(images/i-care.jpg)no-repeat center center;
+            background: url(images/marques/i-care.jpg)no-repeat center center;
           }
         }
       }
@@ -1015,43 +1026,43 @@ html {
             }
 
             &#arrow a {
-              background: url(images/arrow.jpg)no-repeat center center;
+              background: url(images/marques/arrow.jpg)no-repeat center center;
             }
 
             &#novartis a {
-              background: url(images/novartis.jpg)no-repeat center center;
+              background: url(images/marques/novartis.jpg)no-repeat center center;
             }
             
             &#bailly a {
-              background: url(images/bailly-creat.jpg)no-repeat center center;
+              background: url(images/marques/bailly-creat.jpg)no-repeat center center;
             }
             
             &#septodont a {
-              background: url(images/septodont.jpg)no-repeat center center;
+              background: url(images/marques/septodont.jpg)no-repeat center center;
             }
             
             &#sanofi a {
-              background: url(images/sanofi.jpg)no-repeat center center;
+              background: url(images/marques/sanofi.jpg)no-repeat center center;
             }
             
             &#mylan a {
-              background: url(images/mylan.jpg)no-repeat center center;
+              background: url(images/marques/mylan.jpg)no-repeat center center;
             }
             
             &#safran a {
-              background: url(images/safran.jpg)no-repeat center center;
+              background: url(images/marques/safran.jpg)no-repeat center center;
             }
             
             &#lafarge a {
-              background: url(images/lafarge.jpg)no-repeat center center;
+              background: url(images/marques/lafarge.jpg)no-repeat center center;
             }
             
             &#airbus-helicopters a {
-              background: url(images/airbus.jpg)no-repeat center center;
+              background: url(images/marques/airbus.jpg)no-repeat center center;
             }
 
             &#safetynetwork a {
-              background: url(images/safety-network.jpg)no-repeat center center;
+              background: url(images/marques/safety-network.jpg)no-repeat center center;
             }
           }
         }
