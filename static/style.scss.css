@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700)";
 * {
   color: #1c1c1c;
@@ -477,7 +478,11 @@ html {
       html body#activity #community #projects ul li#weasyprint a:before {
         content: url(images/weasyprint.svg); }
     html body #skills {
-      max-width: inherit; }
+      max-width: inherit;
+      margin: 10% auto 0;
+      padding-bottom: 5%; }
+      html body #skills h2 {
+        margin-top: -10%; }
       html body #skills ul {
         display: flex;
         flex-direction: column;
@@ -576,6 +581,10 @@ html {
           background: url(images/big-data.jpg) no-repeat;
           background-size: cover;
           text-align: center; }
+    html body#legal h1:before {
+      content: '[ Mentions légales ]'; }
+    html body#legal h1:after {
+      content: none; }
     html body#legal dl dt, html body#legal dl dd {
       display: inline; }
     html body#legal dl dt {

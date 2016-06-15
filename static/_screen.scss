@@ -754,6 +754,13 @@ html {
 
     #skills {
       max-width: inherit;
+      margin: 10% auto 0;
+      padding-bottom: 5%;
+
+      h2 {
+        margin-top: -10%;
+      }
+
       ul {
         display: flex;
         flex-direction: column;
@@ -908,6 +915,15 @@ html {
     }
 
     &#legal {
+      h1 {
+        &:before {
+          content: '[ Mentions légales ]';
+        }
+
+        &:after {
+          content: none;
+        }
+      }
       dl {
         dt, dd {
           display: inline;
@@ -924,7 +940,7 @@ html {
 
         dd {
           margin-left: 0;
-          
+
           &:after {
             content: '';
             display: block;
