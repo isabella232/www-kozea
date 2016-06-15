@@ -576,6 +576,18 @@ html {
           background: url(images/big-data.jpg) no-repeat;
           background-size: cover;
           text-align: center; }
+    html body#legal dl dt, html body#legal dl dd {
+      display: inline; }
+    html body#legal dl dt {
+      font-weight: 700; }
+      html body#legal dl dt:after {
+        content: ':';
+        display: inline; }
+    html body#legal dl dd {
+      margin-left: 0; }
+      html body#legal dl dd:after {
+        content: '';
+        display: block; }
     html body #partners ul {
       display: flex;
       width: 100%; }

@@ -907,6 +907,32 @@ html {
       }
     }
 
+    &#legal {
+      dl {
+        dt, dd {
+          display: inline;
+        }
+
+        dt {
+          font-weight: 700;
+
+          &:after {
+            content: ':';
+            display: inline;
+          }
+        }
+
+        dd {
+          margin-left: 0;
+          
+          &:after {
+            content: '';
+            display: block;
+          }
+        }
+      }
+    }
+
     #partners {
       ul {
         display: flex;
