@@ -23,7 +23,7 @@ h1 {
 
 h2 {
   color: $h2;
-  font-size: 2.3em;
+  font-size: 2.5em;
   margin: 0;
   text-align: center;
 }
@@ -48,7 +48,7 @@ ul {
 }
 
 #satisfaction, #big-data, #skills ul, #digital, 
-#monprosante, #advice, #project, #advertisement, 
+#professionnals, #advice, #project, #advertisement, 
 #work, #free, #projects dl, #projects dd, 
 #numbers, #members > *, {
   > * {
@@ -74,7 +74,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $link;
 }
 
-#monprosante, #numbers #platform, #innovation {
+#professionnals, #numbers #platform, #innovation {
   background: $platform;
 }
 
@@ -220,16 +220,16 @@ html {
         font-weight: 100;
 
         &.intro {
-          font-size: 1.5em;
+          font-size: 1.6em;
           text-align: center;
           margin: 0 auto 30px;
-          width: 80%  
+          width: 70%  
         }
       }
     }
 
 
-    #about, #activity, #follow {
+    #about, #pharminfo, #medsite, #teepy, #backflip, #follow {
       .links a {
         font-size: 0.85em;
         color: $a;
@@ -695,6 +695,76 @@ html {
     }
 
     &#activity {
+      #expert {
+        width: 75%;
+      }
+
+      #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions {
+        width: 50%;
+      }
+
+      #digital, #professionnals, #advice, #project, #work, #free {
+        width: 33%;
+      }
+
+      #teepy {
+        width: 25%;
+      }
+
+      section {
+        box-sizing: border-box;
+
+        &#platform {
+          margin-top: 0;
+        }
+      }
+
+      #platform {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position: relative;
+
+        h2 {
+          position: absolute;
+          top: 230px;
+          right: -40px;
+          z-index: -1;
+        }
+
+        &:before {
+          content: url(images/photos/platform.jpg);
+          position: absolute;
+          top: 0;
+          left: 25%;
+          z-index: -2;
+        }
+
+        #digital {
+          order: -2;
+          margin-left: 17%;
+          margin-top: 150px;
+
+        }
+
+        #pharminfo {
+          margin-left: 50%;
+          margin-top: -150px;
+        }
+
+        #professionnals {
+          margin-right: 17%;
+          align-self: flex-start;
+        }
+
+        #teepy {
+          margin-left: 25%;
+        }
+      }
+
+
+
+
       #community {
         #projects {
           ul {

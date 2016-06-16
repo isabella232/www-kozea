@@ -36,6 +36,6 @@
 		 M420.13947,126.52882V93.94298h-3.19269c-13.20877,0-23.73239,4.86091-23.73239,20.82819
 		c0,10.88639,6.38632,17.34606,15.02271,17.34606C413.23306,132.11723,417.15616,129.51213,420.13947,126.52882z"/>
 </g>
-<rect x="250.58333" y="145.90685" fill="none" width="177.69106" height="30.96478"/>
-<text transform="matrix(1 0 0 1 252.26132 169.46704)" fill="#FFFFFF" font-family="'OpenSans'" font-size="31px" letter-spacing="1">community</text>
+<rect x="367.58334" y="145.90685" fill="none" width="60.69105" height="30.96478"/>
+<text transform="matrix(1 0 0 1 372.64316 169.46704)" fill="#FFFFFF" font-family="'OpenSans'" font-size="31px" letter-spacing="1">link</text>
 </svg>
