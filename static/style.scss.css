@@ -17,7 +17,7 @@ h1 {
 
 h2 {
   color: #1a2530;
-  font-size: 2.3em;
+  font-size: 2.5em;
   margin: 0;
   text-align: center; }
 
@@ -34,7 +34,7 @@ ul {
     list-style-type: none; }
 
 #satisfaction > *, #big-data > *, #skills ul > *, #digital > *,
-#monprosante > *, #advice > *, #project > *, #advertisement > *,
+#professionnals > *, #advice > *, #project > *, #advertisement > *,
 #work > *, #free > *, #projects dl > *, #projects dd > *,
 #numbers > *, #members > * > * {
   color: #fff; }
@@ -53,7 +53,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #project, #numbers #link, #reactivity {
   background: #f49a2f; }
 
-#monprosante, #numbers #platform, #innovation {
+#professionnals, #numbers #platform, #innovation {
   background: #007bb8; }
 
 #radicale, #numbers #community, #r-and-d {
@@ -69,7 +69,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   font-size: 8em;
   opacity: 0.15; }
 
-#teepy {
+#teepy, #share {
   background: #f1f1f1; }
 
 #projects h3 {
@@ -132,7 +132,7 @@ html {
           html body nav ul li:first-child a:before {
             position: absolute;
             content: '';
-            background: url(images/logos/logo-04.svg) no-repeat left;
+            background: url(images/logos/logo-kozeagroup.svg) no-repeat left;
             left: 0;
             top: 4px;
             width: 130px;
@@ -152,26 +152,26 @@ html {
         font-size: 1.2em;
         font-weight: 100; }
         html body > section p.intro, html body > section li.intro {
-          font-size: 1.5em;
+          font-size: 1.6em;
           text-align: center;
           margin: 0 auto 30px;
-          width: 80%; }
-    html body #about .links a, html body #activity .links a, html body #follow .links a {
+          width: 70%; }
+    html body #about .links a, html body #pharminfo .links a, html body #medsite .links a, html body #teepy .links a, html body #backflip .links a, html body #follow .links a {
       font-size: 0.85em;
       color: #69737c; }
-      html body #about .links a:before, html body #about .links a:after, html body #activity .links a:before, html body #activity .links a:after, html body #follow .links a:before, html body #follow .links a:after {
+      html body #about .links a:before, html body #about .links a:after, html body #pharminfo .links a:before, html body #pharminfo .links a:after, html body #medsite .links a:before, html body #medsite .links a:after, html body #teepy .links a:before, html body #teepy .links a:after, html body #backflip .links a:before, html body #backflip .links a:after, html body #follow .links a:before, html body #follow .links a:after {
         opacity: 0;
         transition: transform 0.35s, opacity 0.2s;
         display: inline-block; }
-      html body #about .links a:before, html body #activity .links a:before, html body #follow .links a:before {
+      html body #about .links a:before, html body #pharminfo .links a:before, html body #medsite .links a:before, html body #teepy .links a:before, html body #backflip .links a:before, html body #follow .links a:before {
         content: '[ ';
         transform: translateX(20px);
         margin-right: 5px; }
-      html body #about .links a:after, html body #activity .links a:after, html body #follow .links a:after {
+      html body #about .links a:after, html body #pharminfo .links a:after, html body #medsite .links a:after, html body #teepy .links a:after, html body #backflip .links a:after, html body #follow .links a:after {
         content: ' ]';
         transform: translateX(-20px);
         margin-left: 5px; }
-      html body #about .links a:hover:before, html body #about .links a:hover:after, html body #activity .links a:hover:before, html body #activity .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
+      html body #about .links a:hover:before, html body #about .links a:hover:after, html body #pharminfo .links a:hover:before, html body #pharminfo .links a:hover:after, html body #medsite .links a:hover:before, html body #medsite .links a:hover:after, html body #teepy .links a:hover:before, html body #teepy .links a:hover:after, html body #backflip .links a:hover:before, html body #backflip .links a:hover:after, html body #follow .links a:hover:before, html body #follow .links a:hover:after {
         opacity: 1;
         transform: translateX(0px); }
     html body #news {
@@ -443,40 +443,134 @@ html {
             margin-top: 120px; }
             html body#about #tools ul li strong:before {
               background: #1c1c1c; }
-    html body#activity #community #projects ul {
+    html body#activity #digital, html body#activity #pharminfo, html body#activity #medsite, html body#activity #backflip, html body#activity #advertisement, html body#activity #solutions, html body#activity #expert {
+      width: 50%; }
+    html body#activity #digital, html body#activity #professionnals, html body#activity #advice, html body#activity #project, html body#activity #work, html body#activity #free, html body#activity #share {
+      width: 33%; }
+    html body#activity #teepy {
+      width: 25%; }
+    html body#activity #pharminfo h3, html body#activity #medsite h3, html body#activity #teepy h3, html body#activity #backflip h3 {
+      font-size: 0; }
+      html body#activity #pharminfo h3:before, html body#activity #medsite h3:before, html body#activity #teepy h3:before, html body#activity #backflip h3:before {
+        display: block;
+        content: ''; }
+    html body#activity section {
+      box-sizing: border-box; }
+      html body#activity section#platform {
+        margin-top: 0; }
+    html body#activity #platform {
       display: flex;
-      flex-wrap: wrap; }
-      html body#activity #community #projects ul li a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 300px;
-        height: 300px;
-        color: #fff;
-        padding: 5%;
-        box-sizing: border-box;
-        text-align: center;
-        justify-content: center; }
-        html body#activity #community #projects ul li a strong {
-          text-transform: uppercase;
-          color: #fff; }
-        html body#activity #community #projects ul li a:before {
-          order: -2;
-          width: 90px; }
-        html body#activity #community #projects ul li a:after {
-          background: #fff;
-          content: '';
+      flex-wrap: wrap;
+      flex-direction: row;
+      position: relative; }
+      html body#activity #platform h2 {
+        position: absolute;
+        top: 230px;
+        right: -40px;
+        z-index: -1; }
+      html body#activity #platform:before {
+        content: url(images/photos/platform.jpg);
+        position: absolute;
+        top: 0;
+        left: 25%;
+        z-index: -2; }
+      html body#activity #platform #digital {
+        order: -2;
+        margin-left: 17%;
+        margin-top: 150px;
+        position: relative; }
+        html body#activity #platform #digital:before {
+          content: url(images/logos/kozea-platform.svg);
+          width: 150px;
           display: block;
-          height: 3px;
-          order: -1;
-          margin: 10px;
-          width: 20px; }
-      html body#activity #community #projects ul li#radicale a:before {
-        content: url(images/icones/radicale.svg); }
-      html body#activity #community #projects ul li#pygal a:before {
-        content: url(images/icones/pygal.svg); }
-      html body#activity #community #projects ul li#weasyprint a:before {
-        content: url(images/icones/weasyprint.svg); }
+          position: absolute;
+          top: -70px;
+          left: -65px; }
+      html body#activity #platform #pharminfo {
+        margin-left: 50%;
+        margin-top: -150px; }
+        html body#activity #platform #pharminfo h3:before {
+          background: url(images/logos/logo-pharminfo.svg) no-repeat;
+          height: 50px; }
+      html body#activity #platform #medsite h3:before {
+        background: url(images/logos/medsite.svg) no-repeat;
+        height: 30px; }
+      html body#activity #platform #professionnals {
+        margin-right: 17%;
+        align-self: flex-start; }
+      html body#activity #platform #teepy {
+        margin-left: 25%; }
+        html body#activity #platform #teepy h3:before {
+          background: red;
+          height: 50px; }
+    html body#activity #link #backflip h3:before {
+      background: red;
+      height: 50px; }
+    html body#activity #community {
+      align-items: flex-start;
+      position: relative;
+      margin-top: 8%; }
+      html body#activity #community h2 {
+        position: absolute;
+        top: -90px;
+        right: 0;
+        z-index: -2; }
+      html body#activity #community #free {
+        margin-left: 17%;
+        position: relative; }
+        html body#activity #community #free:before {
+          content: url(images/logos/kozea-community.svg);
+          width: 150px;
+          position: absolute;
+          top: -70px;
+          left: 0; }
+        html body#activity #community #free:after {
+          content: url(images/photos/community.jpg);
+          position: absolute;
+          z-index: -1;
+          top: 30px;
+          left: 87%; }
+      html body#activity #community #projects {
+        padding: 0;
+        margin-left: 25%; }
+        html body#activity #community #projects ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0; }
+          html body#activity #community #projects ul li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+            color: #fff;
+            padding: 5%;
+            box-sizing: border-box;
+            text-align: center;
+            justify-content: center; }
+            html body#activity #community #projects ul li a strong {
+              text-transform: uppercase;
+              color: #fff; }
+            html body#activity #community #projects ul li a:before {
+              order: -2;
+              width: 90px; }
+            html body#activity #community #projects ul li a:after {
+              background: #fff;
+              content: '';
+              display: block;
+              height: 3px;
+              order: -1;
+              margin: 10px;
+              width: 20px; }
+          html body#activity #community #projects ul li#radicale a:before {
+            content: url(images/icones/radicale.svg); }
+          html body#activity #community #projects ul li#pygal a:before {
+            content: url(images/icones/pygal.svg); }
+          html body#activity #community #projects ul li#weasyprint a:before {
+            content: url(images/icones/weasyprint.svg); }
+      html body#activity #community #share {
+        margin-left: 50%;
+        margin-top: -15%; }
     html body #skills {
       max-width: inherit;
       margin: 10% auto 0;

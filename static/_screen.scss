@@ -98,7 +98,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   }
 }
 
-#teepy {
+#teepy, #share {
   background: darken($secondary,3%);
 }
 
@@ -188,7 +188,7 @@ html {
             a:before {
               position: absolute;
               content: '';
-              background: url(images/logos/logo-04.svg)no-repeat left;
+              background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
               left: 0;
               top: 4px;
               width: 130px; 
@@ -695,20 +695,27 @@ html {
     }
 
     &#activity {
-      #expert {
-        width: 75%;
-      }
-
-      #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions {
+      #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions, #expert {
         width: 50%;
       }
 
-      #digital, #professionnals, #advice, #project, #work, #free {
+      #digital, #professionnals, #advice, #project, #work, #free, #share {
         width: 33%;
       }
 
       #teepy {
         width: 25%;
+      }
+
+      #pharminfo, #medsite, #teepy, #backflip {
+        h3 {
+          font-size: 0;
+
+          &:before {
+            display: block;
+            content: '';
+          }
+        }
       }
 
       section {
@@ -744,12 +751,32 @@ html {
           order: -2;
           margin-left: 17%;
           margin-top: 150px;
+          position: relative;
+
+          &:before {
+            content: url(images/logos/kozea-platform.svg);
+            width: 150px;
+            display: block;
+            position: absolute;
+            top: -70px;
+            left: -65px;
+          }
 
         }
 
         #pharminfo {
           margin-left: 50%;
           margin-top: -150px;
+
+          h3:before {
+            background: url(images/logos/logo-pharminfo.svg)no-repeat;
+            height: 50px;
+          }
+        }
+
+        #medsite h3:before {
+          background: url(images/logos/medsite.svg)no-repeat;
+          height: 30px;
         }
 
         #professionnals {
@@ -759,17 +786,64 @@ html {
 
         #teepy {
           margin-left: 25%;
+
+          h3:before {
+            background: red;
+            height: 50px;
+          }
         }
       }
 
-
-
+      #link {
+        #backflip {
+          h3:before {
+            background: red;
+            height: 50px;
+          }
+        }
+      }
 
       #community {
+        align-items: flex-start;
+        position: relative;
+        margin-top: 8%;
+
+        h2 {
+          position: absolute;
+          top: -90px;
+          right: 0;
+          z-index: -2;
+        }
+
+        #free {
+          margin-left: 17%;
+          position: relative;
+
+          &:before {
+            content: url(images/logos/kozea-community.svg);
+            width: 150px;
+            position: absolute;
+            top: -70px;
+            left: 0;
+          }
+
+          &:after {
+            content: url(images/photos/community.jpg);
+            position: absolute;
+            z-index: -1;
+            top: 30px;
+            left: 87%;
+          }
+        }
+
         #projects {
+          padding: 0;
+          margin-left: 25%;
+
           ul {
             display: flex;
             flex-wrap: wrap;
+            margin: 0;
 
             li {
               a {
@@ -818,6 +892,11 @@ html {
               }
             }
           }
+        }
+
+        #share {
+          margin-left: 50%;
+          margin-top: -15%;
         }
       }
     }
