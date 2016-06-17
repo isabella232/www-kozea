@@ -506,6 +506,30 @@ html {
     html body#activity #link #backflip h3:before {
       background: red;
       height: 50px; }
+    html body#activity #media {
+      position: relative;
+      margin-top: 12%; }
+      html body#activity #media h2 {
+        position: absolute;
+        z-index: -2;
+        top: -130px;
+        right: 0; }
+      html body#activity #media #advertisement {
+        align-self: flex-end;
+        position: relative; }
+        html body#activity #media #advertisement:after {
+          content: url(images/photos/media.jpg);
+          position: absolute;
+          top: -120px;
+          left: -67%;
+          z-index: -2; }
+      html body#activity #media #work {
+        margin-left: 33%; }
+        html body#activity #media #work p strong {
+          color: #fff; }
+      html body#activity #media #solutions {
+        align-self: flex-start;
+        margin-top: -315px; }
     html body#activity #community {
       align-items: flex-start;
       position: relative;

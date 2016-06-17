@@ -803,6 +803,43 @@ html {
         }
       }
 
+      #media {
+        position: relative;
+        margin-top: 12%;
+
+        h2 {
+          position:absolute;
+          z-index: -2;
+          top: -130px;
+          right: 0;
+        }
+
+        #advertisement {
+          align-self: flex-end;
+          position: relative;
+
+          &:after {
+            content: url(images/photos/media.jpg);
+            position: absolute;
+            top: -120px;
+            left: -67%;
+            z-index: -2;
+          }
+        }
+
+        #work {
+          margin-left: 33%;
+          p strong {
+            color: #fff;
+          }
+        }
+
+        #solutions {
+          align-self: flex-start;
+          margin-top: -315px;
+        }
+      }
+
       #community {
         align-items: flex-start;
         position: relative;
