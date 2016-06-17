@@ -795,7 +795,46 @@ html {
       }
 
       #link {
+        position: relative;
+
+        h2 {
+          position:absolute;
+          top: -120px;
+          left: -70px;
+        }
+
+        #advice {
+          align-self: flex-start;
+          margin-left: 17%;
+          position: relative;
+
+          &:before {
+            content: url(images/logos/kozea-link.svg);
+            width: 150px;
+            display: block;
+            position: absolute;
+            top: -140px;
+            right: -160px;
+          }
+
+          &:after {
+            content: url(images/photos/link.jpg);
+            position: absolute;
+            z-index: -1;
+            top: -70px;
+            left: 100%;
+          }
+        }
+
+        #project {
+          align-self: flex-end;
+          margin-right: 17%;
+        }
+
         #backflip {
+          align-self: flex-start;
+          margin-top: -267px;
+
           h3:before {
             background: red;
             height: 50px;
