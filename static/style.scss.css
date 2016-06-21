@@ -503,9 +503,62 @@ html {
         html body#activity #platform #teepy h3:before {
           background: red;
           height: 50px; }
-    html body#activity #link #backflip h3:before {
-      background: red;
-      height: 50px; }
+    html body#activity #link {
+      position: relative; }
+      html body#activity #link h2 {
+        position: absolute;
+        top: -120px;
+        left: -70px; }
+      html body#activity #link #advice {
+        align-self: flex-start;
+        margin-left: 17%;
+        position: relative; }
+        html body#activity #link #advice:before {
+          content: url(images/logos/kozea-link.svg);
+          width: 150px;
+          display: block;
+          position: absolute;
+          top: -140px;
+          right: -160px; }
+        html body#activity #link #advice:after {
+          content: url(images/photos/link.jpg);
+          position: absolute;
+          z-index: -1;
+          top: -70px;
+          left: 100%; }
+      html body#activity #link #project {
+        align-self: flex-end;
+        margin-right: 17%; }
+      html body#activity #link #backflip {
+        align-self: flex-start;
+        margin-top: -267px; }
+        html body#activity #link #backflip h3:before {
+          background: red;
+          height: 50px; }
+    html body#activity #media {
+      position: relative;
+      margin-top: 12%; }
+      html body#activity #media h2 {
+        position: absolute;
+        z-index: -2;
+        top: -130px;
+        right: 0; }
+      html body#activity #media #advertisement {
+        align-self: flex-end;
+        position: relative; }
+        html body#activity #media #advertisement:after {
+          content: url(images/photos/media.jpg);
+          position: absolute;
+          top: -120px;
+          left: -67%;
+          z-index: -2; }
+      html body#activity #media #work {
+        margin-left: 33%; }
+        html body#activity #media #work p strong {
+          color: #fff; }
+      html body#activity #media #solutions {
+        align-self: flex-start;
+        margin-top: -315px; }
     html body#activity #community {
       align-items: flex-start;
       position: relative;
