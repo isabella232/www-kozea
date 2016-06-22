@@ -1,6 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700)";
 
-*{
+* {
   color: $text;
   font-family: 'Hind', sans-serif;
   outline: none;
@@ -9,7 +9,7 @@
 h1 {
   color: $h1;
   font-size: 1em;
-  font-weight: 100;
+  font-weight: 300;
   margin-top: 5%;
 
   &:before {
@@ -32,7 +32,9 @@ h3 {
   font-weight: 400;
 }
 
-
+p strong {
+  font-weight: 500;
+}
 
 a {
   text-decoration: none;
@@ -47,7 +49,8 @@ ul {
   }
 }
 
-#satisfaction, #big-data, #skills ul, #digital, 
+/* colors and backgrounds */
+nav ul li, #satisfaction, #big-data, #skills ul, #digital, 
 #professionnals, #advice, #project, #advertisement, 
 #work, #free, #projects dl, #projects dd, 
 #numbers, #members > *, {
@@ -66,19 +69,19 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $secondary;
 }
 
-#work, #numbers #media, #targets {
+#work, #numbers #media, #targets,  #structures #media + dd a {
   background: $media;
 }
 
-#project, #numbers #link, #reactivity {
+#project, #numbers #link, #reactivity,  #structures #link + dd a {
   background: $link;
 }
 
-#professionnals, #numbers #platform, #innovation {
+#professionnals, #numbers #platform, #innovation , #structures #platform + dd a{
   background: $platform;
 }
 
-#radicale,#numbers #community, #r-and-d {
+#radicale,#numbers #community, #r-and-d, #structures #community + dd a {
   background: $community;
 }
 
@@ -90,22 +93,8 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: darken($community, 10%);
 }
 
-
-#platform, #link, #media, #community {
-  h2 {
-    font-size: 8em;
-    opacity: 0.15;
-  }
-}
-
 #teepy, #share {
   background: darken($secondary,3%);
-}
-
-#projects {
-  h3 {
-    display: none;
-  }
 }
 
 #missions, #platform, #link, #media, #community {
@@ -114,55 +103,51 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   }
 }
 
+
 /* HTML */
 html {
   background: url(images/kozea-line.jpg)no-repeat bottom;
   background-size: contain;
 
-
   body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    //align-items: stretch;
+
+    /*animation lien*/
+    .links li a {
+      &:before, &:after {
+        display: inline-block;
+        opacity: 0;
+        transition: transform 0.35s, opacity 0.2s;
+      }
+
+      &:before {
+        content: '[ ';
+        margin-right: 5px;
+        transform: translateX(20px);
+      }
+
+      &:after {
+        content: ' ]';
+        margin-left: 5px;
+        transform: translateX(-20px);
+      }
+
+      &:hover {
+        color: $a;
+
+        &:before, &:after {
+          opacity: 1;
+          transform: translateX(0px);
+        }
+      }
+    }
 
     header {
       display: flex;
       justify-content: center;
-    }
-
-    &#index {
-      header {
-        background: $primary;
-        height: 94.7vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: flex-end;
-        position: relative;
-        
-        &:after {
-          content: '';
-          background: url(images/kozea-line.jpg) no-repeat bottom;
-          background-size: cover;
-          width: 100%;
-          height: 3px;
-        }
-
-        h1 {
-          color: transparent;
-          margin: 0;
-
-          &:before {
-            content: url(images/logos/logo-icon.svg);
-            display: block;
-            width: 130px;
-            position: absolute;
-            left: calc(50% - 65px);
-            top: calc(50% - 65px);
-          }
-        }
-      }
     }
 
     nav {
@@ -170,29 +155,25 @@ html {
 
       ul {
         display: flex;
-        justify-content: flex-end;
-        max-width: 1200px;
-        margin: auto;
         flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: auto;
+        max-width: 1200px;
         position: relative;
 
         li {
-          padding: 15px 10px;
           font-size: .9em;
-
-          a {
-            color: #fff;
-          }
+          padding: 15px 10px;
 
           &:first-child {
             a:before {
-              position: absolute;
-              content: '';
               background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
-              left: 0;
-              top: 4px;
-              width: 130px; 
+              content: '';
               height: 47px;
+              left: 0;
+              position: absolute;
+              top: 4px;
+              width: 130px;
             }
 
             &:hover a:before {
@@ -201,153 +182,85 @@ html {
           }
         }
       }
-    }
 
-    nav + section {
-      margin-top: 0;
+      & + section {
+        margin-top: 0;
+      }
     }
 
     > section {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       margin: 5% auto;
       max-width: 1200px;
       width: 100%;
-  
+
       p, li {
         font-size: 1.2em;
-        font-weight: 100;
+        font-weight: 300;
 
         &.intro {
           font-size: 1.6em;
-          text-align: center;
           margin: 0 auto 30px;
+          text-align: center;
           width: 70%  
         }
       }
-    }
 
-
-    #about, #pharminfo, #medsite, #teepy, #backflip, #follow {
-      .links a {
-        font-size: 0.85em;
+      .links a  {
         color: $a;
+        font-size: 0.85em;
+      }
+    }
 
-        &:before, &:after {
-          opacity: 0;
-          transition: transform 0.35s, opacity 0.2s;
-          display: inline-block;
-        }
-
-        &:before {
-          content: '[ ';
-          transform: translateX(20px);
-          margin-right: 5px;
-        }
-
+    &#index {/* Accueil */
+      header {
+        background: $primary;
+        height: 94.5vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        
         &:after {
-          content: ' ]';
-          transform: translateX(-20px);
-          margin-left: 5px;
+          background: url(images/kozea-line.jpg) no-repeat bottom;
+          background-size: cover;
+          content: '';
+          height: 3px;
+          width: 100%;
         }
 
-        &:hover {
-          &:before, &:after {
-            opacity: 1;
-            transform: translateX(0px);
-          }
-        }
-      }
-    }
+        h1 {
+          font-size: 0;
 
-    #news {
-      display: flex;
-
-      ul {
-        width: 100%;
-        display: flex;
-
-        li {
-          box-sizing: border-box;
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          flex-direction: column;
-          padding: 30px;
-          position: relative;
-
-          a {
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 700;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-  
-            &:before {
-              display: block;
-              order: -2;
-            }
-            
-            &:after  {
-              display: block;
-              background: #fff;
-              content: '';
-              height: 3px;
-              margin: 10px 0 20px;
-              order: -1;
-              width: 20px;
-            }
-          }
-
-          &:after {
-            background: rgba($primary,0.6);
-            content: '';
-            height: 250px;
-            left: 25px;
-            opacity: 0;
+          &:before {
+            content: url(images/logos/logo-icon.svg);
+            left: calc(50% - 65px);
             position: absolute;
-            top: 25px;
-            transform: scale(0);
-            transition: opacity 0.35s, transform 0.35s;
-            width: 250px;
-            z-index: -1;
-          }
-
-
-          &:first-child {
-            background: url(images/photos/press-bkgd.jpg)no-repeat;
-            width: 50%;
-            height: 400px;
-            background-size: cover;
-
-            a:before {
-              content: url(images/icones/press.svg); 
-              width: 100px;
-            }
-          }
-
-          &:nth-of-type(2) {
-            background: url(images/photos/brochure-bkgd.jpg)no-repeat;
-            width: 33%;
-            height: 200px;
-            background-size: cover;
-
-            a:before {
-              content: url(images/icones/brochure.svg);
-              width: 40px;
-            }
+            top: calc(50% - 150px);
+            width: 130px;
           }
         }
       }
-    }
 
-    &#index {
+      #about {
+        margin-bottom: 0;
+
+        h2 {
+          display: none;
+        }
+
+        p {
+          color: #fff;
+          font-size: 2em;
+          left: 14vw;
+          position: absolute;
+          top: 53vh;
+        }
+      }
+
       #activity {
         dl {
-          width: 100%;
           display: flex;
           flex-wrap: wrap;
 
@@ -357,70 +270,51 @@ html {
             &#platform + dd {
               background: url(images/photos/platform-nb.jpg);
 
-              a {
-                background: $platform;
-                
-                &:before {
-                  content: url(images/logos/kozea-platform-white.svg);
-                }
+              a:before {
+                content: url(images/logos/kozea-platform-white.svg);
               }
             }
 
             &#link + dd {
               background: url(images/photos/link-nb.jpg);
 
-              a {
-                background: $link;
-                
-                &:before {
-                  content: url(images/logos/kozea-link-white.svg);
-                }
+              a:before {
+                content: url(images/logos/kozea-link-white.svg);
               }
             }
 
             &#media + dd {
               background: url(images/photos/media-nb.jpg);
 
-              a {
-                background: $media;
-                
-                &:before {
-                  content: url(images/logos/kozea-media-white.svg);
-                }
+              a:before {
+                content: url(images/logos/kozea-media-white.svg);
               }
             }
 
             &#community + dd {
               background: url(images/photos/community-nb.jpg);
 
-              a {
-                background: $community;
-                
-                &:before {
-                  content: url(images/logos/kozea-community-white.svg);
-                }
+              a:before {
+                content: url(images/logos/kozea-community-white.svg);
               }
             }
           }
 
           dd {
+            align-items: center;
+            display: flex;
+            height: 400px;
+            justify-content: center;
             margin: 0;
             width: 50%;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
 
             a {
-              width: 250px;
               color: #fff;
-              font-weight: 700;
+              font-weight: 600;
               padding: 25px;
-              opacity: 0;
               transform: scale(0);
               transition: opacity 0.35s, transform 0.35s;
-
+              width: 250px;
 
               &:before {
                 display: block;
@@ -435,41 +329,130 @@ html {
           }
         }
       }
-    }
 
-    /*about*/
-    &#about {
+      #news ul {
+        display: flex;
+        width: 100%;
+
+        li {
+          box-sizing: border-box;
+          flex-direction: column;
+          display: flex;
+          justify-content: flex-end;
+          padding: 30px;
+
+          a {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &:before {
+              order: -2;
+            }
+            
+            &:after  {
+              background: #fff;
+              content: '';
+              height: 3px;
+              margin: 10px 0 20px;
+              order: -1;
+              width: 20px;
+            }
+          }
+
+          &:first-child {
+            background: url(images/photos/press-bkgd.jpg)no-repeat;
+            background-size: cover;
+            height: 400px;
+            width: 50%;
+
+            a:before {
+              content: url(images/icones/press.svg); 
+              width: 100px;
+            }
+          }
+
+          &:nth-child(2) {
+            background: url(images/photos/brochure-bkgd.jpg)no-repeat;
+            background-size: cover;
+            height: 200px;
+            width: 33%;
+
+            a:before {
+              content: url(images/icones/brochure.svg);
+              width: 40px;
+            }
+          }
+        }
+      }
+
+      #partners ul {
+        display: flex;
+        width: 100%;
+
+        li {
+          flex: 1 25%;
+
+          a {
+            display: block;
+            font-size: 0;
+            height: 100px;
+          }
+
+          &#france-ehealth-tech a {
+            background: url(images/marques/france-ehealth.jpg)no-repeat center center;
+          }
+
+          &#la-cuisine-du-web a {
+            background: url(images/marques/cuisineduweb.jpg)no-repeat center center;
+          }
+
+          &#minalogic a {
+            background: url(images/marques/minalogic.jpg)no-repeat center center;
+          }
+
+          &#i-care a {
+            background: url(images/marques/i-care.jpg)no-repeat center center;
+          }
+        }
+      }
+    }
+  
+    &#about {/* À propos */
       #numbers, #members, #tools {
         display: flex;
         flex-wrap: wrap;
       }
 
       #numbers li, #members h3, #tools li {
-        text-transform: uppercase;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        text-transform: uppercase;
 
         strong {
           position: relative;
 
           span {
             color: #fff;
-            font-size: 6em;
             display: flex;
+            font-size: 6em;
             justify-content: center;
           }
 
           &:before {
             content: '';
-            position: absolute;
-            left: 140px;
             background: #fff;
-            width: 20px;
-            height: 3px;
-            display: block;
             bottom: 50px;
+            display: block;
+            height: 3px;
+            left: 140px;
+            position: absolute;
+            width: 20px;
           }
         }
       }
@@ -487,23 +470,23 @@ html {
 
       #story {
         blockquote {
-          background: red;
-          width: 75%;
-          height: 450px;
           align-self: flex-end;
-          margin: 0;
-          padding: 30px;
+          background: red;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
+          height: 450px;
           justify-content: flex-end;
+          margin: 0;
+          padding: 30px;
+          width: 75%;
 
           & + p, & + p + p {
             align-self: flex-end;
-            width: 50%;
-            padding: 30px;
             box-sizing: border-box;
+            padding: 30px;
             margin: 0;
+            width: 50%;
 
             & + p {
               padding-top: 0;
@@ -511,182 +494,181 @@ html {
           }
         }
 
-
-
-        #numbers {
+        ul {
           margin: 0;
+
           li {
-            &:first-child {
-              //margin-left: 300px;
+            &:first-child, &:last-child {
+              margin-left: 25%;
+            }
+
+            &:nth-child(2) {
+              margin-right: 25%;
             }
           }
         }
       }
 
-      #members {
-        margin: auto;
-
-        h3 {
-          font-weight: 100;
-          color: #fff;
-        }
-
-        > * {
-          width: 300px;
-          height: 300px;
-          margin: 0;
-        }
-
-        section {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          position: relative;
-
-          &:after {
-            background: rgba($primary,0.6);
-            content: '';
-            height: 250px;
-            left: 25px;
-            opacity: 0;
-            position: absolute;
-            top: 25px;
-            transform: scale(0);
-            transition: opacity 0.35s, transform 0.35s;
-            width: 250px;
-            z-index: -1;
+      #team {
+        #members {
+          h3 {
+            color: #fff;
           }
 
-          h4,p {
-            opacity: 0;
-            padding: 0 12%;
-            transform: scale(0);
-            transition: opacity 0.35s, transform 0.35s;
-          }
-
-          h4 {
-            font-size: 1.2em;
-            font-weight: 400;
-            line-height: 2.2em;
+          > * {
+            height: 300px;
             margin: 0;
+            width: 300px;
+          }
+
+          section {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
 
             &:after {
-              background: #fff;
+              background: rgba($primary,0.6);
               content: '';
-              display: block;
-              height: 2px;
-              width: 25px;
-            }
-          }
-
-          p {
-            font-size: 1em;
-            font-style: italic;
-            line-height: 1.2em;
-            padding-bottom: 20px;
-          }
-
-          img {
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 300px;
-            z-index: -1;
-          }
-
-          &:hover, &:focus {
-            &:after,h4,p {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-
-          @media screen and (min-width: 1200px) {
-            &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14), {
-              padding-right: 300px;
+              height: 250px;
+              left: 25px;
+              opacity: 0;
+              position: absolute;
+              top: 25px;
+              transform: scale(0);
+              transition: opacity 0.35s, transform 0.35s;
+              width: 250px;
+              z-index: -1;
             }
 
-            &:nth-of-type(10), &:nth-of-type(11) {
-              margin-left: 300px;
+            h4, p {
+              opacity: 0;
+              padding: 0 12%;
+              transform: scale(0);
+              transition: opacity 0.35s, transform 0.35s;
             }
 
-            &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14) {
-              &:before {
+            h4 {
+              font-size: 1.2em;
+              font-weight: 400;
+              line-height: 2.2em;
+              margin: 0;
+
+              &:after {
+                background: #fff;
                 content: '';
-                height: 300px;
-                position: absolute;
-                width: 300px;
+                display: block;
+                height: 2px;
+                width: 25px;
               }
             }
 
-            &:nth-of-type(10):before {
-              background: $primary;
-              left: -300px;
-              top: 0;
+            p {
+              font-size: 1em;
+              font-style: italic;
+              line-height: 1.2em;
+              padding-bottom: 20px;
             }
 
-            &:nth-of-type(3), &:nth-of-type(14) {
-              &:before {
-                background: lighten($primary,25%);
-                right: 0;
+            img {
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 300px;
+              z-index: -1;
+            }
+
+            &:hover, &:focus {
+              &:after,h4,p {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+
+            @media screen and (min-width: 1200px) {
+              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14), {
+                padding-right: 300px;
+              }
+
+              &:nth-of-type(10), &:nth-of-type(11) {
+                margin-left: 300px;
+              }
+
+              &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14) {
+                &:before {
+                  content: '';
+                  height: 300px;
+                  position: absolute;
+                  width: 300px;
+                }
+              }
+
+              &:nth-of-type(10):before {
+                background: $primary;
+                left: -300px;
                 top: 0;
               }
-            }
 
-            &:nth-of-type(14):before {
-              background: $primary;
-            } 
+              &:nth-of-type(3), &:nth-of-type(14) {
+                &:before {
+                  background: lighten($primary,25%);
+                  right: 0;
+                  top: 0;
+                }
+              }
+
+              &:nth-of-type(14):before {
+                background: $primary;
+              } 
+            }
           }
         }
-      } 
 
-      #tools {
-        justify-content: flex-end;
+        #tools {
+          justify-content: flex-end;
 
-        h3 {
-          display: none;
-        }
+          h3 {
+            display: none;
+          }
 
-        ul {
-          width: 50%;
-          display: flex;
-          flex-wrap: wrap;
-          margin: 0;
-          
-          li {
-            box-shadow: 1px 1px 0px $border;
-            border-left: 1px solid $border;
-            box-sizing: border-box;
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            width: 50%;
+            
+            li {
+              border-left: 1px solid $border;
+              box-shadow: 1px 1px 0px $border;
+              box-sizing: border-box;
+              background-size: 30% !important;
 
-            &:nth-child(-n+2) {
-              border-top: 1px solid $border;
-            }
+              &:nth-child(-n+2) {
+                border-top: 1px solid $border;
+              }
 
-            &#soda {
-              background: url(images/icones/soda.svg)no-repeat center 40px;
-              background-size: 30%;
-            }
+              &#soda {
+                background: url(images/icones/soda.svg)no-repeat center 40px;
+              }
 
-            &#sport {
-              background: url(images/icones/sport.svg)no-repeat center 40px;
-              background-size: 30%;
-            }
+              &#sport {
+                background: url(images/icones/sport.svg)no-repeat center 40px;
+              }
 
-            &#babyfoot {
-              background: url(images/icones/babyfoot.svg)no-repeat center 40px;
-              background-size: 30%;
-            }
+              &#babyfoot {
+                background: url(images/icones/babyfoot.svg)no-repeat center 40px;
+              }
 
-            &#popcorn {
-              background: url(images/icones/popcorn.svg)no-repeat center 40px;
-              background-size: 30%;
-            }
+              &#popcorn {
+                background: url(images/icones/popcorn.svg)no-repeat center 40px;
+              }
 
-            strong {
-              margin-top: 120px;
+              strong {
+                margin-top: 120px;
 
-              &:before {
-                background: $text;
+                &:before {
+                  background: $text;
+                }
               }
             }
           }
@@ -694,20 +676,23 @@ html {
       }
     }
 
-    &#activity {
-      #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions, #expert {
-        width: 50%;
-      }
+    &#activity {/* Activité */
+      section:not(:first-of-type) {
+        position: relative; 
 
-      #digital, #professionnals, #advice, #project, #work, #free, #share {
-        width: 33%;
-      }
+        &:before {
+          display: block;
+          position: absolute;
+          width: 150px;
+        }
 
-      #teepy {
-        width: 25%;
-      }
+        h2 {
+          font-size: 8em;
+          opacity: 0.08;
+          position: absolute;
+          z-index: -1;
+        }
 
-      #pharminfo, #medsite, #teepy, #backflip {
         h3 {
           font-size: 0;
 
@@ -721,327 +706,399 @@ html {
       section {
         box-sizing: border-box;
 
-        &#platform {
-          margin-top: 0;
-        }
-      }
-
-      #platform {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        position: relative;
-
-        h2 {
-          position: absolute;
-          top: 230px;
-          right: -40px;
-          z-index: -1;
+        #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions, #expert {
+          width: 50%;
         }
 
-        &:before {
-          content: url(images/photos/platform.jpg);
-          position: absolute;
-          top: 0;
-          left: 25%;
-          z-index: -2;
-        }
-
-        #digital {
-          order: -2;
-          margin-left: 17%;
-          margin-top: 150px;
-          position: relative;
-
-          &:before {
-            content: url(images/logos/kozea-platform.svg);
-            width: 150px;
-            display: block;
-            position: absolute;
-            top: -70px;
-            left: -65px;
-          }
-
-        }
-
-        #pharminfo {
-          margin-left: 50%;
-          margin-top: -150px;
-
-          h3:before {
-            background: url(images/logos/logo-pharminfo.svg)no-repeat;
-            height: 50px;
-          }
-        }
-
-        #medsite h3:before {
-          background: url(images/logos/medsite.svg)no-repeat;
-          height: 30px;
-        }
-
-        #professionnals {
-          margin-right: 17%;
-          align-self: flex-start;
+        #digital, #professionnals, #advice, #project, #work, #free, #share {
+          width: 33%;
         }
 
         #teepy {
-          margin-left: 25%;
-
-          h3:before {
-            background: red;
-            height: 50px;
-          }
+          width: 25%;
         }
-      }
-
-      #link {
-        position: relative;
-
-        h2 {
-          position:absolute;
-          top: -120px;
-          left: -70px;
-        }
-
-        #advice {
-          align-self: flex-start;
-          margin-left: 17%;
-          position: relative;
-
-          &:before {
-            content: url(images/logos/kozea-link.svg);
-            width: 150px;
-            display: block;
-            position: absolute;
-            top: -140px;
-            right: -160px;
-          }
-
-          &:after {
-            content: url(images/photos/link.jpg);
-            position: absolute;
-            z-index: -1;
-            top: -70px;
-            left: 100%;
-          }
-        }
-
-        #project {
-          align-self: flex-end;
-          margin-right: 17%;
-        }
-
-        #backflip {
-          align-self: flex-start;
-          margin-top: -267px;
-
-          h3:before {
-            background: red;
-            height: 50px;
-          }
-        }
-      }
-
-      #media {
-        position: relative;
-        margin-top: 12%;
-
-        h2 {
-          position:absolute;
-          z-index: -2;
-          top: -130px;
-          right: 0;
-        }
-
-        #advertisement {
-          align-self: flex-end;
+        
+        > section:first-of-type {
           position: relative;
 
           &:after {
-            content: url(images/photos/media.jpg);
             position: absolute;
-            top: -120px;
-            left: -67%;
             z-index: -2;
           }
         }
 
-        #work {
-          margin-left: 33%;
-          p strong {
-            color: #fff;
-          }
-        }
-
-        #solutions {
-          align-self: flex-start;
-          margin-top: -315px;
-        }
-      }
-
-      #community {
-        align-items: flex-start;
-        position: relative;
-        margin-top: 8%;
-
-        h2 {
-          position: absolute;
-          top: -90px;
-          right: 0;
-          z-index: -2;
-        }
-
-        #free {
-          margin-left: 17%;
-          position: relative;
+        &#platform {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-top: 0;
 
           &:before {
-            content: url(images/logos/kozea-community.svg);
-            width: 150px;
-            position: absolute;
-            top: -70px;
-            left: 0;
+            content: url(images/logos/kozea-platform.svg);
+            left: 10%;
+            top: 4%;
           }
 
-          &:after {
-            content: url(images/photos/community.jpg);
-            position: absolute;
-            z-index: -1;
-            top: 30px;
-            left: 87%;
+          h2 {
+            right: -40px;
+            top: 150px;
           }
-        }
 
-        #projects {
-          padding: 0;
-          margin-left: 25%;
+          section {
+            &:first-of-type {
+              margin-left: 17%;
+              margin-top: 150px;
+              order: -2;
 
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
 
-            li {
-              a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 300px;
-                height: 300px;
-                color: #fff;
-                padding: 5%;
-                box-sizing: border-box;
-                text-align: center;
-                justify-content: center;
-
-                strong {
-                  text-transform: uppercase;
-                  color: #fff;
-                }
-
-                &:before {
-                  order: -2;
-                  width: 90px;
-                }
-
-                &:after {
-                  background: #fff;
-                  content: '';
-                  display: block;
-                  height: 3px;
-                  order: -1;
-                  margin: 10px;
-                  width: 20px;
-                }
+              &:after {
+                content: url(images/photos/platform.jpg);
+                left: 25%;
+                top: -190px;
               }
+            }
 
-              &#radicale a:before {
-                content: url(images/icones/radicale.svg);
+            &#pharminfo {
+              margin-top: -150px;
+              margin-left: 50%;
+
+              h3:before {
+                background: url(images/logos/logo-pharminfo.svg)no-repeat;
+                height: 50px;
               }
+            }
 
-              &#pygal a:before {
-                content: url(images/icones/pygal.svg);
-              }
+            &#medsite h3:before {
+              background: url(images/logos/medsite.svg)no-repeat;
+              height: 30px;
+            }
 
-              &#weasyprint a:before {
-                content: url(images/icones/weasyprint.svg);
+            &#professionnals {
+              align-self: flex-start;
+              margin-right: 17%;
+            }
+
+            &#teepy {
+              margin-left: 25%;
+
+              h3:before {
+                background: red;
+                height: 50px;
               }
             }
           }
         }
 
-        #share {
-          margin-left: 50%;
-          margin-top: -15%;
+        &#link {
+          &:before {
+            content: url(images/logos/kozea-link.svg);
+            right: 35%;
+            top: -150px;
+          }
+
+          h2 {
+            left: 150px;
+            top: -120px;
+          }
+
+          section {
+            &:first-of-type {
+              align-self: flex-start;
+              margin-left: 17%;
+
+              &:after {
+                content: url(images/photos/link.jpg);
+                left: 100%;
+                top: -70px;
+              }
+            }
+
+            &#project {
+              align-self: flex-end;
+              margin-right: 17%;
+            }
+
+            &#backflip {
+              align-self: flex-start;
+              margin-top: -218px;
+
+              h3:before {
+                background: red;
+                height: 50px;
+              }
+            }
+          }
         }
-      }
-    }
 
-    #skills {
-      max-width: inherit;
-      margin: 10% auto 0;
-      padding-bottom: 5%;
-
-      h2 {
-        margin-top: -10%;
-      }
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 600px;
-        padding-left: 0;
-
-        li {
-          align-items: center;
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          height: 270px;
-          padding: 20px 10px;
-          text-align: center;
-          width: 50%;
-
-          &:after {
-            background: #fff;
-            content: '';
-            height: 3px;
-            margin: 10px 0 20px;
-            order: -1;
-            width: 20px;
-          }
-
-          &:nth-of-type(3) {
-            margin-top: 60px;
-          }
+        &#media {
+          margin-top: 12%;
 
           &:before {
-            order: -2;
-            width: 90px;
+            content: url(images/logos/kozea-media.svg);
+            left: 35%;
+            top: -200px;
           }
 
-          &#targets:before {
-            content: url(images/icones/target.svg);
+          h2 {
+            right: 0;
+            top: -130px;
           }
 
-          &#reactivity:before {
-            content: url(images/icones/reactivity.svg);
+          section {
+            &:first-of-type {
+              align-self: flex-end;
+              position: relative;
+
+              &:after {
+                content: url(images/photos/media.jpg);
+                left: -67%;
+                position: absolute;
+                top: -120px;
+                z-index: -2;
+              }
+            }
+
+            &#work {
+              margin-left: 33%;
+
+              p strong {
+                color: #fff;
+              }
+            }
+
+            &#solutions {
+              align-self: flex-start;
+              margin-top: -315px;
+            }
+          }
+        }
+
+        &#community {
+          align-items: flex-start;
+          margin-top: 8%;
+
+          &:before {
+            content: url(images/logos/kozea-community.svg);
+            left: 17%;
+            top: -80px;
           }
 
-          &#innovation:before{
-            content: url(images/icones/idea.svg);
+          h2 {
+            right: 0;
+            top: -90px;
           }
 
-          &#r-and-d:before{
-            content: url(images/icones/search.svg);
+          section {
+            &#free {
+              margin-left: 17%;
+              position: relative;
+
+
+              &:after {
+                content: url(images/photos/community.jpg);
+                left: 87%;
+                position: absolute;
+                top: 30px;
+                z-index: -1;
+              }
+            }
+
+            &#projects {
+              margin-left: 25%;
+              padding: 0;
+              
+              h3 {
+                display: none;
+              }
+
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0;
+
+                li {
+                  a {
+                    align-items: center;
+                    box-sizing: border-box;
+                    color: #fff;
+                    display: flex;
+                    flex-direction: column;
+                    height: 300px;
+                    justify-content: center;
+                    padding: 5%;
+                    text-align: center;
+                    width: 300px;
+
+                    strong {
+                      color: #fff;
+                      text-transform: uppercase;
+                    }
+
+                    &:before {
+                      order: -2;
+                      width: 90px;
+                    }
+
+                    &:after {
+                      background: #fff;
+                      content: '';
+                      display: block;
+                      height: 3px;
+                      margin: 10px;
+                      order: -1;
+                      width: 20px;
+                    }
+                  }
+
+                  &#radicale a:before {
+                    content: url(images/icones/radicale.svg);
+                  }
+
+                  &#pygal a:before {
+                    content: url(images/icones/pygal.svg);
+                  }
+
+                  &#weasyprint a:before {
+                    content: url(images/icones/weasyprint.svg);
+                  }
+                }
+              }
+            }
+            
+            &#share {
+              margin-top: -15%;
+              margin-left: 50%;
+            }
           }
         }
       }
     }
-  
-    #goals {
-      ul {
+
+    &#expertise {/* Expertise */
+      #missions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        section {
+          box-sizing: border-box;
+          width: 50%;
+
+          &:first-of-type {
+            margin-right: 50%;
+            position: relative;
+
+            &:after {
+              background: $primary;
+              content: '';
+              display: block;
+              height: 3px;
+              position: absolute;
+              right: -30px;
+              top: 60px;
+              width: 60px;
+            }
+
+            img {
+              position: absolute;
+              right: -300px;
+              top: 0;
+              width: 250px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            margin-top: -90px;
+            margin-left: 50%;
+          }
+
+          &:nth-of-type(3){
+            margin-right: 50%;
+            position: relative;
+
+            &:after {
+              background: url(images/photos/brainstorm.jpg)no-repeat;
+              content: '';
+              height: 100%;
+              position: absolute;
+              right: -100%;
+              top: 0;
+              width: 100%;
+            }
+          }
+
+          &#big-data {
+            background: url(images/photos/big-data.jpg)no-repeat;
+            background-size: cover;
+            text-align: center;
+          }
+        }
+      }
+
+      #skills {
+        margin: 10% auto 0;
+        max-width: inherit;
+        padding-bottom: 5%;
+
+        h2 {
+          margin-top: -10%;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 600px;
+
+          li {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: 270px;
+            padding: 20px 10px;
+            text-align: center;
+            width: 50%;
+
+            &:after {
+              background: #fff;
+              content: '';
+              height: 3px;
+              margin: 10px 0 20px;
+              order: -1;
+              width: 20px;
+            }
+
+            &:nth-of-type(3) {
+              margin-top: 60px;
+            }
+
+            &:before {
+              order: -2;
+              width: 90px;
+            }
+
+            &#targets:before {
+              content: url(images/icones/target.svg);
+            }
+
+            &#reactivity:before {
+              content: url(images/icones/reactivity.svg);
+            }
+
+            &#innovation:before{
+              content: url(images/icones/idea.svg);
+            }
+
+            &#r-and-d:before{
+              content: url(images/icones/search.svg);
+            }
+          }
+        }
+      }
+    
+      #goals ul {
         display: flex;
         width: 100%;
 
@@ -1050,7 +1107,6 @@ html {
           display: flex;
           flex: 1 33%;
           flex-direction: column;
-          text-align: center;
 
           &:after {
             background: $primary;
@@ -1082,219 +1138,68 @@ html {
       }
     }
 
-    &#expertise {
-      #missions {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+    &#references section ul {/* Références */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
 
-        h2 {
-          flex: 1 100%;
+      li {
+        border-left: 1px solid $border;
+        box-shadow: 1px 0px 0px $border;
+        box-sizing: border-box;
+        padding: 40px 20px;
+        width: 25%;
+
+        a {
+          display: block;
+          font-size: 0;
+          height: 100px;
         }
 
-        section {
-          width: 50%;
-          box-sizing: border-box;
+        &#arrow a {
+          background: url(images/marques/arrow.jpg)no-repeat center center;
+        }
 
-          &:first-of-type {
-            position: relative;
-            margin-right: 50%;
+        &#novartis a {
+          background: url(images/marques/novartis.jpg)no-repeat center center;
+        }
+        
+        &#bailly a {
+          background: url(images/marques/bailly-creat.jpg)no-repeat center center;
+        }
+        
+        &#septodont a {
+          background: url(images/marques/septodont.jpg)no-repeat center center;
+        }
+        
+        &#sanofi a {
+          background: url(images/marques/sanofi.jpg)no-repeat center center;
+        }
+        
+        &#mylan a {
+          background: url(images/marques/mylan.jpg)no-repeat center center;
+        }
+        
+        &#safran a {
+          background: url(images/marques/safran.jpg)no-repeat center center;
+        }
+        
+        &#lafarge a {
+          background: url(images/marques/lafarge.jpg)no-repeat center center;
+        }
+        
+        &#airbus-helicopters a {
+          background: url(images/marques/airbus.jpg)no-repeat center center;
+        }
 
-            &:after {
-              content: '';
-              display: block;
-              background: $primary;
-              height: 3px;
-              width: 60px;
-              position: absolute;
-              top: 60px;
-              right: -30px;
-            }
-
-            img {
-              position: absolute;
-              top: 0;
-              right: -300px;
-              width: 250px;
-            }
-          }
-
-          &:nth-of-type(2) {
-            margin-top: -90px;
-            margin-left: 50%;
-          }
-
-          &:nth-of-type(3){
-            width: 100%;
-            margin-right: 50%;
-            position: relative;
-
-            &:after {
-              content: '';
-              height: 100%;
-              position: absolute;
-              width: 100%;
-              background: url(images/photos/brainstorm.jpg)no-repeat;
-              right: -100%;
-              top: 0;
-            }
-          }
-
-          &#big-data {
-            background: url(images/photos/big-data.jpg)no-repeat;
-            background-size: cover;
-            text-align: center;
-          }
+        &#safetynetwork a {
+          background: url(images/marques/safety-network.jpg)no-repeat center center;
         }
       }
     }
-
-    &#legal {
-      h1 {
-        &:before {
-          content: '[ Mentions légales ]';
-        }
-
-        &:after {
-          content: none;
-        }
-      }
-      dl {
-        dt, dd {
-          display: inline;
-        }
-
-        dt {
-          font-weight: 700;
-
-          &:after {
-            content: ':';
-            display: inline;
-          }
-        }
-
-        dd {
-          margin-left: 0;
-
-          &:after {
-            content: '';
-            display: block;
-          }
-        }
-      }
-    }
-
-    #partners {
-      ul {
-        display: flex;
-        width: 100%;
-
-        li {
-          flex: 1 25%;
-          text-align: center;
-
-          a {
-            height: 100px;
-            display: block;
-            font-size: 0;
-          }
-
-          &#france-ehealth-tech a {
-            background: url(images/marques/france-ehealth.jpg)no-repeat center center;
-          }
-
-          &#la-cuisine-du-web a {
-            background: url(images/marques/cuisineduweb.jpg)no-repeat center center;
-          }
-
-          &#minalogic a {
-            background: url(images/marques/minalogic.jpg)no-repeat center center;
-          }
-
-          &#i-care a {
-            background: url(images/marques/i-care.jpg)no-repeat center center;
-          }
-        }
-      }
-    }
-
-    &#references, #partners {
-      ul li a {
-        opacity: 0.75;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
-
-    &#references {
-      section {
-        ul {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-
-          li {
-            padding: 40px 20px;
-            box-sizing: border-box;
-            width: 25%;
-            box-shadow: 1px 0px 0px $border;
-            border-left: 1px solid $border;
-
-            a {
-              height: 100px;
-              display: block;
-              font-size: 0;
-            }
-
-            &#arrow a {
-              background: url(images/marques/arrow.jpg)no-repeat center center;
-            }
-
-            &#novartis a {
-              background: url(images/marques/novartis.jpg)no-repeat center center;
-            }
-            
-            &#bailly a {
-              background: url(images/marques/bailly-creat.jpg)no-repeat center center;
-            }
-            
-            &#septodont a {
-              background: url(images/marques/septodont.jpg)no-repeat center center;
-            }
-            
-            &#sanofi a {
-              background: url(images/marques/sanofi.jpg)no-repeat center center;
-            }
-            
-            &#mylan a {
-              background: url(images/marques/mylan.jpg)no-repeat center center;
-            }
-            
-            &#safran a {
-              background: url(images/marques/safran.jpg)no-repeat center center;
-            }
-            
-            &#lafarge a {
-              background: url(images/marques/lafarge.jpg)no-repeat center center;
-            }
-            
-            &#airbus-helicopters a {
-              background: url(images/marques/airbus.jpg)no-repeat center center;
-            }
-
-            &#safetynetwork a {
-              background: url(images/marques/safety-network.jpg)no-repeat center center;
-            }
-          }
-        }
-      }
-    }
-
-    #contact-us {
+    
+    &#contact section {/* Contact */
       > dl {
         background: $primary;
         display: flex;
@@ -1396,9 +1301,45 @@ html {
           }
         }
       }
-    }   
-    
-    footer  {
+    }
+
+    &#legal {/* Mentions légales */
+      h1 {
+        &:before {
+          content: '[ Mentions légales ]';
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      dl {
+        dt, dd {
+          display: inline;
+        }
+
+        dt {
+          font-weight: 700;
+
+          &:after {
+            content: ':';
+            display: inline;
+          }
+        }
+
+        dd {
+          margin-left: 0;
+
+          &:after {
+            content: '';
+            display: block;
+          }
+        }
+      }
+    }
+
+    footer {
       margin-top: 25px;
 
       dl {
@@ -1420,7 +1361,7 @@ html {
         }
 
         dt {
-          color: #C1C8D0;
+          color: $footer_titles;
           order: -1;
           padding-top: 10px;
         }
@@ -1428,59 +1369,25 @@ html {
         dd {
           margin-left: 0;
 
-          &:nth-of-type(3) {
-            ul {
-              display: flex;
-              flex-wrap: wrap;
+          &:nth-of-type(3) ul {
+            display: flex;
+            flex-wrap: wrap;
 
-              li {
-                width: 50%;
-              }
+            li {
+              width: 50%;
             }
           }
 
-          &:last-child ul {
+          &:last-of-type ul {
             display: flex;
             
-            li:last-child {
-              &:before {
-                content: '- ';
-              }
+            li:last-child:before {
+              content: ' - ';
             }
           }
 
           ul {
             margin-top: 0;
-
-            li a {
-              &:before, &:after {
-                opacity: 0;
-                transition: transform 0.35s, opacity 0.2s;
-                display: inline-block;
-              }
-
-              &:before {
-                content: '[ ';
-                transform: translateX(20px);
-                margin-right: 5px;
-              }
-
-              &:after {
-                content: ' ]';
-                transform: translateX(-20px);
-                margin-left: 5px;
-              }
-
-              &:hover {
-                color: $a;
-
-                &:before, &:after {
-                  opacity: 1;
-                  transform: translateX(0px);
-                }
-              }
-            }
-            
           }
         }
       }
