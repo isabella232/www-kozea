@@ -7,7 +7,12 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<page>')
 def page(page='index'):
-    return render_template('{}.html'.format(page), page=page)
+    recorded_pages = ['404', 'about', 'activity', 'contact', 'expertise',
+        'index', 'legal', 'references']
+    if page in recorded_pages:
+        return render_template('{}.html'.format(page), page=page)
+    else:
+        return render_template('404.html')
 
 
 if __name__ == '__main__':
