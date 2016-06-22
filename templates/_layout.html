@@ -14,12 +14,19 @@
     <title>Kozea - {{ dict(titles)[page] }} - L’innovation digitale au service des acteurs de la santé</title>
     <link type="image/png" rel="icon" href="static/favicon.png" />
     <link type="text/css" rel="stylesheet" href="static/style.scss.css" />
+    <link type="text/css" rel="stylesheet" href="static/scrolltop.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
+    <script type="text/javascript" src="static/js/kozea.js"></script>
   </head>
 
   <body id="{{ page }}">
-    <header>
-      <h1>{{ dict(titles)[page] }}</h1>
-    </header>
+      <header>
+        {% if page == 'index' %}
+          <a id="go-to-about" href="#about" style="color: #ffffff">En savoir plus</h1>
+        {% else %}
+          <h1>{{ dict(titles)[page] or 404}}</h1>
+        {% endif %}
+      </header>
 
     <nav>
       <ul>
@@ -32,6 +39,8 @@
     </nav>
 
     {% block body %}{% endblock body %}
+
+    <span id='back-to-top'>&uarr;</span>
 
     <footer>
       <dl>
