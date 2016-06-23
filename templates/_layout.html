@@ -22,17 +22,16 @@
   <body id="{{ page }}">
       <header>
         {% if page == 'index' %}
-          <a id="go-to-about" href="#about" style="color: #ffffff">En savoir plus</h1>
-        {% else %}
-          <h1>{{ dict(titles)[page] or 404}}</h1>
+          <a id="go-to-about" href="#about">En savoir plus</a>
         {% endif %}
+        <h1>{{ dict(titles)[page] or 404}}</h1>
       </header>
 
     <nav>
       <ul>
         {% for id, title in titles %}
           <li{% if id == page %} class="active"{% endif %}>
-            <a href="{{ url_for('page', page=id) }}">{{ title }}</a>
+            <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -41,7 +40,7 @@
     {% block body %}{% endblock body %}
 
     <span id='back-to-top'>&uarr;</span>
-
+    <span id="background-line"></span>
     <footer>
       <dl>
         <dt>Adresse</dt>

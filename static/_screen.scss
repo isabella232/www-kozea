@@ -10,7 +10,6 @@ h1 {
   color: $h1;
   font-size: 1em;
   font-weight: 300;
-  margin-top: 5%;
 
   &:before {
     content: '[ ';
@@ -39,6 +38,7 @@ p strong {
 a {
   text-decoration: none;
   transition: .5s;
+  cursor: pointer;
 }
 
 ul {
@@ -148,6 +148,28 @@ html {
     header {
       display: flex;
       justify-content: center;
+
+      /* en savoir plus home page*/
+      #go-to-about {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: -30px auto;
+        padding: 10px;
+        font-size: 0;
+
+        &:after {
+          content: url(images/icones/more.svg);
+          width: 15px;
+          animation: bounce 1.5s ease-in-out;
+        }
+
+        @keyframes bounce {
+          0%  { transform:translateY(-20px);opacity:0;}
+          50% { transform:translateY(10px);}
+          100% { transform:translateY(0);}
+        }
+      }
     }
 
     nav {
@@ -214,6 +236,12 @@ html {
       }
     }
 
+    &:not(#index) {
+      header {
+        margin-top: 5%;
+      }
+    }
+
     &#index {/* Accueil */
       header {
         background: $primary;
@@ -231,7 +259,7 @@ html {
         }
 
         h1 {
-          font-size: 0;
+          //font-size: 0;
 
           &:before {
             content: url(images/logos/logo-icon.svg);
@@ -1138,63 +1166,70 @@ html {
       }
     }
 
-    &#references section ul {/* Références */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
+    &#references {
+      section:not(:first-of-type) h2 {
+        font-size: 8em;
+        opacity: 0.08;
+      }
 
-      li {
-        border-left: 1px solid $border;
-        box-shadow: 1px 0px 0px $border;
-        box-sizing: border-box;
-        padding: 40px 20px;
-        width: 25%;
+      section ul {/* Références */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
 
-        a {
-          display: block;
-          font-size: 0;
-          height: 100px;
-        }
+        li {
+          border-left: 1px solid $border;
+          box-shadow: 1px 0px 0px $border;
+          box-sizing: border-box;
+          padding: 40px 20px;
+          width: 25%;
 
-        &#arrow a {
-          background: url(images/marques/arrow.jpg)no-repeat center center;
-        }
+          a {
+            display: block;
+            font-size: 0;
+            height: 100px;
+          }
 
-        &#novartis a {
-          background: url(images/marques/novartis.jpg)no-repeat center center;
-        }
-        
-        &#bailly a {
-          background: url(images/marques/bailly-creat.jpg)no-repeat center center;
-        }
-        
-        &#septodont a {
-          background: url(images/marques/septodont.jpg)no-repeat center center;
-        }
-        
-        &#sanofi a {
-          background: url(images/marques/sanofi.jpg)no-repeat center center;
-        }
-        
-        &#mylan a {
-          background: url(images/marques/mylan.jpg)no-repeat center center;
-        }
-        
-        &#safran a {
-          background: url(images/marques/safran.jpg)no-repeat center center;
-        }
-        
-        &#lafarge a {
-          background: url(images/marques/lafarge.jpg)no-repeat center center;
-        }
-        
-        &#airbus-helicopters a {
-          background: url(images/marques/airbus.jpg)no-repeat center center;
-        }
+          &#arrow a {
+            background: url(images/marques/arrow.jpg)no-repeat center center;
+          }
 
-        &#safetynetwork a {
-          background: url(images/marques/safety-network.jpg)no-repeat center center;
+          &#novartis a {
+            background: url(images/marques/novartis.jpg)no-repeat center center;
+          }
+          
+          &#bailly a {
+            background: url(images/marques/bailly-creat.jpg)no-repeat center center;
+          }
+          
+          &#septodont a {
+            background: url(images/marques/septodont.jpg)no-repeat center center;
+          }
+          
+          &#sanofi a {
+            background: url(images/marques/sanofi.jpg)no-repeat center center;
+          }
+          
+          &#mylan a {
+            background: url(images/marques/mylan.jpg)no-repeat center center;
+          }
+          
+          &#safran a {
+            background: url(images/marques/safran.jpg)no-repeat center center;
+          }
+          
+          &#lafarge a {
+            background: url(images/marques/lafarge.jpg)no-repeat center center;
+          }
+          
+          &#airbus-helicopters a {
+            background: url(images/marques/airbus.jpg)no-repeat center center;
+          }
+
+          &#safetynetwork a {
+            background: url(images/marques/safety-network.jpg)no-repeat center center;
+          }
         }
       }
     }
@@ -1336,6 +1371,39 @@ html {
             display: block;
           }
         }
+      }
+    }
+
+    span#back-to-top {
+      background: none;
+      bottom: 0;
+      color: $primary;
+      display: block;
+      font-size: 1.3em;
+      opacity: 0.6;
+      right: 15px;
+
+      &:hover {
+        background: none;
+        color: $a;
+      }
+    }
+
+    span#background-line {
+      height: 100%;
+      left: 50%;
+      position: fixed;
+      top: 0;
+      z-index: -20;
+
+
+      &:after {
+        content: '';
+        background: $border;
+        height: calc(100% - 4px);
+        position: absolute;
+        top: 0;
+        width: 1px;
       }
     }
 
