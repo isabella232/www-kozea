@@ -47,9 +47,9 @@ ul {
   }
 }
 
-#satisfaction, #big-data, #skills ul, #digital, 
-#professionnals, #advice, #project, #advertisement, 
-#work, #free, #projects dl, #projects dd, 
+#satisfaction, #big-data, #skills ul, #digital,
+#professionnals, #advice, #project, #advertisement,
+#work, #free, #projects dl, #projects dd,
 #numbers, #members > *, {
   > * {
     color: #fff;
@@ -60,8 +60,8 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $primary;
 }
 
-#about ul ~ p, #backoffice, #develop, #skills, 
-#story > p:not(.intro), #pharminfo, #medsite, 
+#about ul ~ p, #backoffice, #develop, #skills,
+#story > p:not(.intro), #pharminfo, #medsite,
 #backflip, #solutions, #projects + #expert, #contact-us form {
   background: $secondary;
 }
@@ -140,7 +140,7 @@ html {
         flex-direction: column;
         justify-content: flex-end;
         position: relative;
-        
+
         &:after {
           content: '';
           background: url(images/kozea-line.jpg) no-repeat bottom;
@@ -191,7 +191,7 @@ html {
               background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
               left: 0;
               top: 4px;
-              width: 130px; 
+              width: 130px;
               height: 47px;
             }
 
@@ -214,7 +214,7 @@ html {
       margin: 5% auto;
       max-width: 1200px;
       width: 100%;
-  
+
       p, li {
         font-size: 1.2em;
         font-weight: 100;
@@ -223,7 +223,7 @@ html {
           font-size: 1.6em;
           text-align: center;
           margin: 0 auto 30px;
-          width: 70%  
+          width: 70%
         }
       }
     }
@@ -285,12 +285,12 @@ html {
             flex-direction: column;
             align-items: center;
 
-  
+
             &:before {
               display: block;
               order: -2;
             }
-            
+
             &:after  {
               display: block;
               background: #fff;
@@ -324,7 +324,7 @@ html {
             background-size: cover;
 
             a:before {
-              content: url(images/icones/press.svg); 
+              content: url(images/icones/press.svg);
               width: 100px;
             }
           }
@@ -359,7 +359,7 @@ html {
 
               a {
                 background: $platform;
-                
+
                 &:before {
                   content: url(images/logos/kozea-platform-white.svg);
                 }
@@ -371,7 +371,7 @@ html {
 
               a {
                 background: $link;
-                
+
                 &:before {
                   content: url(images/logos/kozea-link-white.svg);
                 }
@@ -383,7 +383,7 @@ html {
 
               a {
                 background: $media;
-                
+
                 &:before {
                   content: url(images/logos/kozea-media-white.svg);
                 }
@@ -395,7 +395,7 @@ html {
 
               a {
                 background: $community;
-                
+
                 &:before {
                   content: url(images/logos/kozea-community-white.svg);
                 }
@@ -635,10 +635,10 @@ html {
 
             &:nth-of-type(14):before {
               background: $primary;
-            } 
+            }
           }
         }
-      } 
+      }
 
       #tools {
         justify-content: flex-end;
@@ -652,7 +652,7 @@ html {
           display: flex;
           flex-wrap: wrap;
           margin: 0;
-          
+
           li {
             box-shadow: 1px 1px 0px $border;
             border-left: 1px solid $border;
@@ -1039,7 +1039,7 @@ html {
         }
       }
     }
-  
+
     #goals {
       ul {
         display: flex;
@@ -1257,31 +1257,31 @@ html {
             &#novartis a {
               background: url(images/marques/novartis.jpg)no-repeat center center;
             }
-            
+
             &#bailly a {
               background: url(images/marques/bailly-creat.jpg)no-repeat center center;
             }
-            
+
             &#septodont a {
               background: url(images/marques/septodont.jpg)no-repeat center center;
             }
-            
+
             &#sanofi a {
               background: url(images/marques/sanofi.jpg)no-repeat center center;
             }
-            
+
             &#mylan a {
               background: url(images/marques/mylan.jpg)no-repeat center center;
             }
-            
+
             &#safran a {
               background: url(images/marques/safran.jpg)no-repeat center center;
             }
-            
+
             &#lafarge a {
               background: url(images/marques/lafarge.jpg)no-repeat center center;
             }
-            
+
             &#airbus-helicopters a {
               background: url(images/marques/airbus.jpg)no-repeat center center;
             }
@@ -1350,7 +1350,7 @@ html {
         height: 500px;
         margin-right: 50%;
         margin-top: -365px;
-        z-index: -10;
+        // z-index: -10;
       }
 
       form {
@@ -1396,8 +1396,8 @@ html {
           }
         }
       }
-    }   
-    
+    }
+
     footer  {
       margin-top: 25px;
 
@@ -1441,7 +1441,7 @@ html {
 
           &:last-child ul {
             display: flex;
-            
+
             li:last-child {
               &:before {
                 content: '- ';
@@ -1480,7 +1480,7 @@ html {
                 }
               }
             }
-            
+
           }
         }
       }
