@@ -1,0 +1,221 @@
+
+
+@media screen and (max-width: 480px) {
+  html {
+    body {
+      header {}
+
+      nav {}
+
+      > section {
+        p.intro {
+          font-size: 1.2em;
+          padding: 0 30px;
+          box-sizing: border-box;
+          width: 100%;
+        }
+      }
+
+      &#index {
+        header {
+          h1:before {
+            top: calc(50% - 210px);
+            width: 110px;
+            left: calc(50% - 55px);
+          }
+        }
+
+        #about {
+          p {
+            left: initial;
+            font-size: 1.5em;
+          }
+        }
+
+        #activity {
+          dl {
+            width: 100%;
+            flex-direction: column;
+
+            dd {
+              width: 100%;
+
+              a {
+                transform: none;
+              }
+            }
+          }
+        }
+
+        #news ul {
+          flex-direction: column;
+
+          > li {
+            width: 100% !important;
+
+            &:first-child {
+              height: 200px;
+            }
+          }
+        }
+
+        #partners ul {
+          li {
+            box-sizing: border-box;
+            padding: 20px 0;
+            width: 50%;
+          }
+        }
+      }
+
+      &#about {
+        #story {
+          > * {
+
+          }
+
+          blockquote  {
+            display: none;
+
+            & + p + p, & + p {
+              width: 100%;
+            }
+          }
+
+          #numbers {
+            li {
+              margin: 0;
+              width: 100%;
+
+              strong:before {
+
+              }
+            }
+          }
+        }
+        #team {
+          section {
+            justify-content: center;
+            width: 100%;
+          
+            &#members {
+              section, h3 {
+                width: 100%;
+              }
+
+              section {
+                img {
+                  width: 100%;
+                }
+
+                h4, p {
+                  display: none;
+                }
+
+                &:after {
+                  content: none;
+                }
+              }
+            }
+
+            &#tools {
+              ul, ul li {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      &#activity {}
+      &#expertise {
+        #missions {
+          #backoffice, #satisfaction, #develop, #big-data{
+            width: 100%;
+            margin: 0;
+          }
+
+          section:first-of-type {
+            &:after {
+              content: none;
+            }
+
+            img {
+              position: initial;
+            }
+          }
+        }
+
+        #skills {
+          ul {
+            height: initial;
+            li {
+              width: 100%;
+
+              &:nth-of-type(3) {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        #goals ul {
+          flex-direction: column;
+          li {
+            margin-bottom: 50px;
+          }
+        }
+      }
+
+      &#references {
+        section {
+          ul li {
+            width: 100%;
+            padding: 20px 0;
+          }
+        }
+      }
+
+      &#contact section {
+        dl, form, #map {
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      &#legal {}
+
+      span#background-line {
+        display: none;
+      }
+
+      footer {
+        dl {
+          flex-direction: column;
+          padding: 0 10px;
+
+          dt, dd {
+            order: initial;
+            width: 100%;
+            border-left: none;
+          }
+
+          dd {
+            &:first-of-type, &:last-of-type li:last-child {
+              margin-left: 9px;
+            }
+
+            &:last-of-type {
+              ul {
+                display: initial;
+
+                li:last-child:before {
+                  content: none;
+                } 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

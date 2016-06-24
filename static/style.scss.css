@@ -96,9 +96,9 @@ html {
       content: ' ]';
       margin-left: 5px;
       transform: translateX(-20px); }
-    html body .links li a:hover {
+    html body .links li a:hover, html body .links li a:focus {
       color: #69737c; }
-      html body .links li a:hover:before, html body .links li a:hover:after {
+      html body .links li a:hover:before, html body .links li a:hover:after, html body .links li a:focus:before, html body .links li a:focus:after {
         opacity: 1;
         transform: translateX(0px); }
     html body header {
@@ -283,9 +283,10 @@ html {
               width: 40px; }
       html body#index #partners ul {
         display: flex;
-        width: 100%; }
+        width: 100%;
+        flex-wrap: wrap; }
         html body#index #partners ul li {
-          flex: 1 25%; }
+          width: 25%; }
           html body#index #partners ul li a {
             display: block;
             font-size: 0;
@@ -322,7 +323,7 @@ html {
             bottom: 50px;
             display: block;
             height: 3px;
-            left: 140px;
+            left: calc(50% - 10px);
             position: absolute;
             width: 20px; }
       html body#about #numbers li strong, html body#about #members h3 strong {
@@ -438,12 +439,12 @@ html {
           margin: 0;
           width: 50%; }
           html body#about #team #tools ul li {
-            border-left: 1px solid #ececec;
-            box-shadow: 1px 1px 0px #ececec;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: 1px 1px 0px #f3f3f3;
             box-sizing: border-box;
             background-size: 30% !important; }
             html body#about #team #tools ul li:nth-child(-n+2) {
-              border-top: 1px solid #ececec; }
+              border-top: 1px solid #f3f3f3; }
             html body#about #team #tools ul li#soda {
               background: url(images/icones/soda.svg) no-repeat center 40px; }
             html body#about #team #tools ul li#sport {
@@ -721,7 +722,8 @@ html {
               content: url(images/icones/search.svg); }
       html body#expertise #goals ul {
         display: flex;
-        width: 100%; }
+        width: 100%;
+        flex-wrap: wrap; }
         html body#expertise #goals ul li {
           align-items: center;
           display: flex;
@@ -754,8 +756,8 @@ html {
       justify-content: center;
       width: 100%; }
       html body#references section ul li {
-        border-left: 1px solid #ececec;
-        box-shadow: 1px 0px 0px #ececec;
+        border-left: 1px solid #f3f3f3;
+        box-shadow: 1px 0px 0px #f3f3f3;
         box-sizing: border-box;
         padding: 40px 20px;
         width: 25%; }
@@ -833,7 +835,7 @@ html {
           background: none;
           border-top: none;
           border-right: none;
-          border-bottom: 1px solid #ececec;
+          border-bottom: 1px solid #f3f3f3;
           border-left: none;
           margin-bottom: 20px;
           padding: 5px 10px; }
@@ -890,7 +892,7 @@ html {
       z-index: -20; }
       html body span#background-line:after {
         content: '';
-        background: #ececec;
+        background: #f3f3f3;
         height: calc(100% - 4px);
         position: absolute;
         top: 0;
@@ -903,7 +905,7 @@ html {
         margin: 0;
         padding-bottom: 4px; }
         html body footer dl > * {
-          border-left: 1px solid #ececec;
+          border-left: 1px solid #f3f3f3;
           box-sizing: border-box;
           font-size: 0.8em;
           padding-left: 1.5%;
@@ -927,5 +929,94 @@ html {
               content: ' - '; }
           html body footer dl dd ul {
             margin-top: 0; }
+
+@media screen and (max-width: 480px) {
+  html body > section p.intro {
+    font-size: 1.2em;
+    padding: 0 30px;
+    box-sizing: border-box;
+    width: 100%; }
+  html body#index header h1:before {
+    top: calc(50% - 210px);
+    width: 110px;
+    left: calc(50% - 55px); }
+  html body#index #about p {
+    left: initial;
+    font-size: 1.5em; }
+  html body#index #activity dl {
+    width: 100%;
+    flex-direction: column; }
+    html body#index #activity dl dd {
+      width: 100%; }
+      html body#index #activity dl dd a {
+        transform: none; }
+  html body#index #news ul {
+    flex-direction: column; }
+    html body#index #news ul > li {
+      width: 100% !important; }
+      html body#index #news ul > li:first-child {
+        height: 200px; }
+  html body#index #partners ul li {
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 50%; }
+  html body#about #story blockquote {
+    display: none; }
+    html body#about #story blockquote + p + p, html body#about #story blockquote + p {
+      width: 100%; }
+  html body#about #story #numbers li {
+    margin: 0;
+    width: 100%; }
+  html body#about #team section {
+    justify-content: center;
+    width: 100%; }
+    html body#about #team section#members section, html body#about #team section#members h3 {
+      width: 100%; }
+    html body#about #team section#members section img {
+      width: 100%; }
+    html body#about #team section#members section h4, html body#about #team section#members section p {
+      display: none; }
+    html body#about #team section#members section:after {
+      content: none; }
+    html body#about #team section#tools ul, html body#about #team section#tools ul li {
+      width: 100%; }
+  html body#expertise #missions #backoffice, html body#expertise #missions #satisfaction, html body#expertise #missions #develop, html body#expertise #missions #big-data {
+    width: 100%;
+    margin: 0; }
+  html body#expertise #missions section:first-of-type:after {
+    content: none; }
+  html body#expertise #missions section:first-of-type img {
+    position: initial; }
+  html body#expertise #skills ul {
+    height: initial; }
+    html body#expertise #skills ul li {
+      width: 100%; }
+      html body#expertise #skills ul li:nth-of-type(3) {
+        margin: 0; }
+  html body#expertise #goals ul {
+    flex-direction: column; }
+    html body#expertise #goals ul li {
+      margin-bottom: 50px; }
+  html body#references section ul li {
+    width: 100%;
+    padding: 20px 0; }
+  html body#contact section dl, html body#contact section form, html body#contact section #map {
+    width: 100%;
+    margin: 0; }
+  html body span#background-line {
+    display: none; }
+  html body footer dl {
+    flex-direction: column;
+    padding: 0 10px; }
+    html body footer dl dt, html body footer dl dd {
+      order: initial;
+      width: 100%;
+      border-left: none; }
+    html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
+      margin-left: 9px; }
+    html body footer dl dd:last-of-type ul {
+      display: initial; }
+      html body footer dl dd:last-of-type ul li:last-child:before {
+        content: none; } }
 
 /*# sourceMappingURL=style.scss.css.map */

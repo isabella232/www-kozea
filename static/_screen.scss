@@ -135,7 +135,7 @@ html {
         transform: translateX(-20px);
       }
 
-      &:hover {
+      &:hover, &:focus {
         color: $a;
 
         &:before, &:after {
@@ -420,9 +420,10 @@ html {
       #partners ul {
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
 
         li {
-          flex: 1 25%;
+          width: 25%;
 
           a {
             display: block;
@@ -478,7 +479,7 @@ html {
             bottom: 50px;
             display: block;
             height: 3px;
-            left: 140px;
+            left: calc(50% - 10px);
             position: absolute;
             width: 20px;
           }
@@ -1129,6 +1130,7 @@ html {
       #goals ul {
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
 
         li {
           align-items: center;
