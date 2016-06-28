@@ -60,6 +60,11 @@
     <ul class="links">
       <li><a href="{{ url_for('page', page='about') }} ">À propos</a></li>
     </ul>
+    <ul class="insta">
+      {% for media in render_insta %}
+        <li><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" title="{{ media.title }}"/></a></li>
+      {% endfor %}
+    </ul>
     {# TODO images #}
   </section>
 {% endblock body %}

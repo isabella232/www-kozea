@@ -1,2 +1,6 @@
 flask
 libsass
+httplib2
+simplejson
+six
+requests
