@@ -1,7 +1,6 @@
 #!/usr/bin/env python
-from flask import Flask, redirect, request, render_template
+from flask import Flask, redirect, render_template
 from instagram.client import InstagramAPI
-from instagram.oauth2 import OAuth2AuthExchangeError
 
 
 app = Flask(__name__)
@@ -26,6 +25,7 @@ def page(page='index'):
     return render_template('404.html')
 
 def get_insta_media():
+    #Care with access_token. It may expire one day.
     instaAPI = InstagramAPI(
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET, access_token=ACCESS_TOKEN)
