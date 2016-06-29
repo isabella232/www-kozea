@@ -15,6 +15,11 @@
         }
       }
     }
+
+    &#contact section > dl {
+      width: 50%;
+      margin-right: 50%;
+    }
   }
 }
 
@@ -97,6 +102,25 @@
           font-size: 1.5em;
         }
       }
+
+      #partners {
+        ul li {
+          box-sizing: border-box;
+          padding: 20px 0;
+          width: 50%;
+        }
+      }
+    }
+
+    &#contact section {
+      > dl {
+        width: 75%;
+        margin-right: 25%;
+      }
+
+      form {
+        margin-top: -2px;
+      }
     }
   }
 }
@@ -160,14 +184,6 @@
             &:first-child {
               height: 200px;
             }
-          }
-        }
-
-        #partners ul {
-          li {
-            box-sizing: border-box;
-            padding: 20px 0;
-            width: 50%;
           }
         }
       }

@@ -255,6 +255,7 @@ html {
             display: flex;
             flex-direction: column;
             font-weight: 700;
+            text-align: center;
             text-transform: uppercase; }
             html body#index #news ul li a:before {
               order: -2; }
@@ -329,8 +330,8 @@ html {
       html body#about #numbers li strong, html body#about #members h3 strong {
         color: #fff; }
       html body#about #numbers li {
-        width: 300px;
-        height: 300px; }
+        height: 300px;
+        width: 300px; }
       html body#about #story blockquote {
         align-self: flex-end;
         background: red;
@@ -440,12 +441,12 @@ html {
           margin: 0;
           width: 50%; }
           html body#about #team #tools ul li {
+            background-size: 30% !important;
             border-left: 1px solid #f3f3f3;
             box-shadow: 1px 1px 0px #f3f3f3;
             box-sizing: border-box;
-            background-size: 30% !important;
-            width: 50%;
-            height: 300px; }
+            height: 300px;
+            width: 50%; }
             html body#about #team #tools ul li:nth-child(-n+2) {
               border-top: 1px solid #f3f3f3; }
             html body#about #team #tools ul li#soda {
@@ -476,8 +477,8 @@ html {
         html body#activity section:not(:first-of-type) h3 {
           font-size: 0; }
           html body#activity section:not(:first-of-type) h3:before {
-            display: block;
-            content: ''; }
+            content: '';
+            display: block; }
       html body#activity section {
         box-sizing: border-box; }
         html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #medsite, html body#activity section #backflip, html body#activity section #advertisement, html body#activity section #solutions, html body#activity section #expert {
@@ -940,7 +941,10 @@ html {
 
 @media screen and (max-width: 1024px) {
   html body#index #news ul li {
-    padding: 15px; } }
+    padding: 15px; }
+  html body#contact section > dl {
+    width: 50%;
+    margin-right: 50%; } }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
   html body#about #story ul li:first-child, html body#about #story ul li:last-child {
@@ -971,7 +975,16 @@ html {
 
 @media screen and (max-width: 768px) {
   html body#index #about p {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+  html body#index #partners ul li {
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 50%; }
+  html body#contact section > dl {
+    width: 75%;
+    margin-right: 25%; }
+  html body#contact section form {
+    margin-top: -2px; } }
 
 @media screen and (max-width: 480px) {
   html body > section:not(:first-of-type) {
@@ -1000,10 +1013,6 @@ html {
       width: 100% !important; }
       html body#index #news ul > li:first-child {
         height: 200px; }
-  html body#index #partners ul li {
-    box-sizing: border-box;
-    padding: 20px 0;
-    width: 50%; }
   html body#about #story blockquote {
     display: none; }
     html body#about #story blockquote + p + p, html body#about #story blockquote + p {

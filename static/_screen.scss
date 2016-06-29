@@ -375,6 +375,7 @@ html {
             display: flex;
             flex-direction: column;
             font-weight: 700;
+            text-align: center;
             text-transform: uppercase;
 
             &:before {
@@ -493,8 +494,8 @@ html {
       }
 
       #numbers li {
-        width: 300px;
         height: 300px;
+        width: 300px;
       }
 
       #story {
@@ -668,12 +669,12 @@ html {
             width: 50%;
             
             li {
+              background-size: 30% !important;
               border-left: 1px solid $border;
               box-shadow: 1px 1px 0px $border;
               box-sizing: border-box;
-              background-size: 30% !important;
-              width: 50%;
               height: 300px;
+              width: 50%;
 
               &:nth-child(-n+2) {
                 border-top: 1px solid $border;
@@ -729,8 +730,8 @@ html {
           font-size: 0;
 
           &:before {
-            display: block;
             content: '';
+            display: block;
           }
         }
       }
@@ -924,7 +925,6 @@ html {
             &#free {
               margin-left: 17%;
               position: relative;
-
 
               &:after {
                 content: url(images/photos/community.jpg);
