@@ -946,7 +946,13 @@ html {
     padding: 40px 0; }
   html body#contact section > dl {
     width: 50%;
-    margin-right: 50%; } }
+    margin-right: 50%; }
+  html body footer dl dd:last-of-type ul {
+    flex-direction: column; }
+    html body footer dl dd:last-of-type ul li:last-child {
+      margin-left: 9px; }
+      html body footer dl dd:last-of-type ul li:last-child:before {
+        content: none; } }
 
 @media screen and (min-width: 600px) and (max-width: 1200px) {
   html body#about #story ul li:first-child, html body#about #story ul li:last-child {
@@ -1091,17 +1097,12 @@ html {
   html body span#background-line {
     display: none; }
   html body footer dl {
-    flex-direction: column;
     padding: 0 10px; }
     html body footer dl dt, html body footer dl dd {
       order: initial;
       width: 100%;
       border-left: none; }
     html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
-      margin-left: 9px; }
-    html body footer dl dd:last-of-type ul {
-      display: initial; }
-      html body footer dl dd:last-of-type ul li:last-child:before {
-        content: none; } }
+      margin-left: 9px; } }
 
 /*# sourceMappingURL=style.scss.css.map */
