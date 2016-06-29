@@ -942,6 +942,8 @@ html {
 @media screen and (max-width: 1024px) {
   html body#index #news ul li {
     padding: 15px; }
+  html body#references section ul li {
+    padding: 40px 0; }
   html body#contact section > dl {
     width: 50%;
     margin-right: 50%; } }
@@ -979,6 +981,8 @@ html {
   html body#index #partners ul li {
     box-sizing: border-box;
     padding: 20px 0;
+    width: 50%; }
+  html body#references section ul li {
     width: 50%; }
   html body#contact section > dl {
     width: 75%;
