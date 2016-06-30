@@ -1,4 +1,4 @@
-#backToTop{
+#back-to-top{
     position: fixed;
     display: none;
     right: 70px;
@@ -14,6 +14,6 @@
     border-radius: 5px;
 }
 
-#backToTop:hover{
+#back-to-top:hover{
     background-color: #305274;
 }

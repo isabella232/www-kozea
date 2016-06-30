@@ -17,13 +17,18 @@
     <link type="text/css" rel="stylesheet" href="static/scrolltop.css" />
     <link type="text/css" rel="stylesheet" href="static/insta.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&language=fr"></script>
     <script type="text/javascript" src="static/js/kozea.js"></script>
   </head>
 
   <body id="{{ page }}">
-    <header>
-      <h1>{{ dict(titles)[page] }}</h1>
-    </header>
+      <header>
+        {% if page == 'index' %}
+          <a id="go-to-about" href="#about" style="color: #ffffff">En savoir plus</h1>
+        {% else %}
+          <h1>{{ dict(titles)[page] or 404}}</h1>
+        {% endif %}
+      </header>
 
     <nav>
       <ul>
@@ -37,7 +42,7 @@
 
     {% block body %}{% endblock body %}
 
-    <span id='backToTop'>&uarr;</span>
+    <span id='back-to-top'>&uarr;</span>
 
     <footer>
       <dl>
