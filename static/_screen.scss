@@ -214,7 +214,7 @@ html {
       align-items: center;
       display: flex;
       flex-direction: column;
-      margin: 5% auto;
+      margin: 50px auto;
       max-width: 1200px;
       width: 100%;
 
@@ -773,7 +773,7 @@ html {
           }
 
           h2 {
-            right: -40px;
+            right: 4%;
             top: 150px;
           }
 
@@ -823,6 +823,8 @@ html {
         }
 
         &#link {
+          margin-top: 180px;
+
           &:before {
             content: url(images/logos/kozea-link.svg);
             right: 35%;
@@ -830,7 +832,7 @@ html {
           }
 
           h2 {
-            left: 150px;
+            left: 8%;
             top: -120px;
           }
 
@@ -840,9 +842,12 @@ html {
               margin-left: 17%;
 
               &:after {
-                content: url(images/photos/link.jpg);
+                content: '';
+                background: url(images/photos/link.jpg);
+                height: 183%;
                 left: 100%;
                 top: -70px;
+                width: 150%;
               }
             }
 
@@ -864,7 +869,7 @@ html {
         }
 
         &#media {
-          margin-top: 12%;
+          margin-top: 230px;
 
           &:before {
             content: url(images/logos/kozea-media.svg);
@@ -873,7 +878,7 @@ html {
           }
 
           h2 {
-            right: 0;
+            right: 4%;
             top: -130px;
           }
 
@@ -883,10 +888,13 @@ html {
               position: relative;
 
               &:after {
-                content: url(images/photos/media.jpg);
+                content: '';
+                background: url(images/photos/media.jpg);
                 left: -67%;
                 position: absolute;
                 top: -120px;
+                height: 150%;
+                width: 100%;
                 z-index: -2;
               }
             }
@@ -917,7 +925,7 @@ html {
           }
 
           h2 {
-            right: 0;
+            right: 1%;
             top: -90px;
           }
 
@@ -1069,7 +1077,7 @@ html {
       }
 
       #skills {
-        margin: 10% auto 0;
+        margin: 13% auto 0;
         max-width: inherit;
         padding-bottom: 5%;
 
