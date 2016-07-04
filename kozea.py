@@ -36,7 +36,7 @@ def get_insta_media():
     for media in recent_media:
         render_insta.append({
             'link': media.link,
-            'src': media.get_low_resolution_url(),
+            'src': media.get_standard_resolution_url(),
             'title': media.caption.text})
     return render_template(
         'index.html', page='index', render_insta=render_insta)
