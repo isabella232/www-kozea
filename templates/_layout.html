@@ -19,12 +19,14 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&language=fr"></script>
     <script type="text/javascript" src="static/js/kozea.js"></script>
+    {% block more_js %}{% endblock more_js %}
   </head>
 
   <body id="{{ page }}">
       <header>
         {% if page == 'index' %}
           <a id="go-to-about" href="#about">En savoir plus</a>
+          <canvas class="canvas"></canvas>
         {% endif %}
         <h1>{{ dict(titles)[page] or 404}}</h1>
       </header>
@@ -78,5 +80,6 @@
         </dd>
       </dl>
     </footer>
+    {% block end_js %}{% endblock end_js %}
   </body>
 </html>

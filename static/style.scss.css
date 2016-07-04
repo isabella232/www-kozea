@@ -837,8 +837,7 @@ html {
         background: red;
         height: 500px;
         margin-right: 50%;
-        margin-top: -365px;
-        z-index: -10; }
+        margin-top: -365px; }
       html body#contact section form {
         border-top: 2px solid #1a2530;
         box-sizing: border-box;
