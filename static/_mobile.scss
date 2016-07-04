@@ -58,13 +58,55 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  html body#about {
-    #story ul li:nth-child(2) {
-      margin-right: 0;
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  html body {
+    &#about {
+      #story ul li:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+
+    &#activity {
+      section {
+        &#platform, &#link, &#media, &#community {
+          > section {
+            width: 50%;
+
+            &#digital, &#advice, &#work, &#free, &#projects {
+              margin-left: 0;
+            }
+
+            &#professionnals, &#project {
+              margin-right: 0;
+            }
+
+            &#digital:after {
+              left: 55%;
+              top: -160px;
+              width: 120%;
+              height: 130%;
+            }
+
+            &#work {
+              align-self: flex-end;
+            }
+
+            &#projects {
+              width: 100%;
+            }
+          }
+        }
+
+        &#platform {
+          &:before {
+            left: 5%;
+          }
+        }
+      }
     }
   }
 }
+
 @media screen and (min-width: 480px) and (max-width: 600px) {
   html body#about {
     #story ul li {
@@ -305,6 +347,7 @@
 
           &#community {
             align-items: center;
+
             section#free:after {
               content: none;
             }

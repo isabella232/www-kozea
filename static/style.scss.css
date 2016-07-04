@@ -153,7 +153,7 @@ html {
       align-items: center;
       display: flex;
       flex-direction: column;
-      margin: 5% auto;
+      margin: 50px auto;
       max-width: 1200px;
       width: 100%; }
       html body > section p, html body > section li {
@@ -502,16 +502,19 @@ html {
             left: 10%;
             top: 4%; }
           html body#activity section#platform h2 {
-            right: -40px;
+            right: 4%;
             top: 150px; }
           html body#activity section#platform section:first-of-type {
             margin-left: 17%;
             margin-top: 150px;
             order: -2; }
             html body#activity section#platform section:first-of-type:after {
-              content: url(images/photos/platform.jpg);
+              content: '';
+              background: url(images/photos/platform.jpg);
               left: 25%;
-              top: -190px; }
+              top: -190px;
+              width: 150%;
+              height: 130%; }
           html body#activity section#platform section#pharminfo {
             margin-top: -150px;
             margin-left: 50%; }
@@ -529,46 +532,54 @@ html {
             html body#activity section#platform section#teepy h3:before {
               background: red;
               height: 50px; }
-        html body#activity section#link:before {
-          content: url(images/logos/kozea-link.svg);
-          right: 35%;
-          top: -150px; }
-        html body#activity section#link h2 {
-          left: 150px;
-          top: -120px; }
-        html body#activity section#link section:first-of-type {
-          align-self: flex-start;
-          margin-left: 17%; }
-          html body#activity section#link section:first-of-type:after {
-            content: url(images/photos/link.jpg);
-            left: 100%;
-            top: -70px; }
-        html body#activity section#link section#project {
-          align-self: flex-end;
-          margin-right: 17%; }
-        html body#activity section#link section#backflip {
-          align-self: flex-start;
-          margin-top: -218px; }
-          html body#activity section#link section#backflip h3:before {
-            background: url(images/logos/logo-backflip.svg) no-repeat;
-            height: 80px; }
+        html body#activity section#link {
+          margin-top: 180px; }
+          html body#activity section#link:before {
+            content: url(images/logos/kozea-link.svg);
+            right: 35%;
+            top: -150px; }
+          html body#activity section#link h2 {
+            left: 8%;
+            top: -120px; }
+          html body#activity section#link section:first-of-type {
+            align-self: flex-start;
+            margin-left: 17%; }
+            html body#activity section#link section:first-of-type:after {
+              content: '';
+              background: url(images/photos/link.jpg);
+              height: 183%;
+              left: 100%;
+              top: -70px;
+              width: 150%; }
+          html body#activity section#link section#project {
+            align-self: flex-end;
+            margin-right: 17%; }
+          html body#activity section#link section#backflip {
+            align-self: flex-start;
+            margin-top: -218px; }
+            html body#activity section#link section#backflip h3:before {
+              background: url(images/logos/logo-backflip.svg) no-repeat;
+              height: 80px; }
         html body#activity section#media {
-          margin-top: 12%; }
+          margin-top: 230px; }
           html body#activity section#media:before {
             content: url(images/logos/kozea-media.svg);
             left: 35%;
             top: -200px; }
           html body#activity section#media h2 {
-            right: 0;
+            right: 4%;
             top: -130px; }
           html body#activity section#media section:first-of-type {
             align-self: flex-end;
             position: relative; }
             html body#activity section#media section:first-of-type:after {
-              content: url(images/photos/media.jpg);
+              content: '';
+              background: url(images/photos/media.jpg);
               left: -67%;
               position: absolute;
               top: -120px;
+              height: 150%;
+              width: 100%;
               z-index: -2; }
           html body#activity section#media section#work {
             margin-left: 33%; }
@@ -585,7 +596,7 @@ html {
             left: 17%;
             top: -80px; }
           html body#activity section#community h2 {
-            right: 0;
+            right: 1%;
             top: -90px; }
           html body#activity section#community section#free {
             margin-left: 17%;
@@ -685,7 +696,7 @@ html {
             background-size: cover;
             text-align: center; }
       html body#expertise #skills {
-        margin: 10% auto 0;
+        margin: 13% auto 0;
         max-width: inherit;
         padding-bottom: 5%; }
         html body#expertise #skills h2 {
@@ -878,6 +889,10 @@ html {
         html body#legal dl dd:after {
           content: '';
           display: block; }
+    html body#references section ul li a, html body#index #partners ul li a {
+      opacity: 0.75; }
+      html body#references section ul li a:hover, html body#index #partners ul li a:hover {
+        opacity: 1; }
     html body span#back-to-top {
       background: none;
       bottom: 0;
@@ -958,9 +973,26 @@ html {
   html body#about #story ul li:first-child, html body#about #story ul li:last-child {
     margin: 0; } }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 480px) and (max-width: 800px) {
   html body#about #story ul li:nth-child(2) {
-    margin-right: 0; } }
+    margin-right: 0; }
+  html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
+    width: 50%; }
+    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+      margin-left: 0; }
+    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+      margin-right: 0; }
+    html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
+      left: 55%;
+      top: -160px;
+      width: 120%;
+      height: 130%; }
+    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+      align-self: flex-end; }
+    html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
+      width: 100%; }
+  html body#activity section#platform:before {
+    left: 5%; } }
 
 @media screen and (min-width: 480px) and (max-width: 600px) {
   html body#about #story ul li {
