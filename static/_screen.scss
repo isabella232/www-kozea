@@ -50,9 +50,9 @@ ul {
 }
 
 /* colors and backgrounds */
-nav ul li, #satisfaction, #big-data, #skills ul, #digital, 
-#professionnals, #advice, #project, #advertisement, 
-#work, #free, #projects dl, #projects dd, 
+nav ul li, #satisfaction, #big-data, #skills ul, #digital,
+#professionnals, #advice, #project, #advertisement,
+#work, #free, #projects dl, #projects dd,
 #numbers, #members > *, {
   > * {
     color: #fff;
@@ -63,8 +63,8 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $primary;
 }
 
-#about ul ~ p, #backoffice, #develop, #skills, 
-#story > p:not(.intro), #pharminfo, #medsite, 
+#about ul ~ p, #backoffice, #develop, #skills,
+#story > p:not(.intro), #pharminfo, #medsite,
 #backflip, #solutions, #projects + #expert, #contact-us form {
   background: $secondary;
 }
@@ -226,7 +226,7 @@ html {
           font-size: 1.6em;
           margin: 0 auto 30px;
           text-align: center;
-          width: 70%  
+          width: 70%
         }
       }
 
@@ -249,7 +249,7 @@ html {
         flex-direction: column;
         justify-content: flex-end;
         position: relative;
-        
+
         &:after {
           background: url(images/kozea-line.jpg) no-repeat bottom;
           background-size: cover;
@@ -259,8 +259,6 @@ html {
         }
 
         h1 {
-          //font-size: 0;
-
           &:before {
             content: url(images/logos/logo-icon.svg);
             left: calc(50% - 65px);
@@ -381,7 +379,7 @@ html {
             &:before {
               order: -2;
             }
-            
+
             &:after  {
               background: #fff;
               content: '';
@@ -399,7 +397,7 @@ html {
             width: 50%;
 
             a:before {
-              content: url(images/icones/press.svg); 
+              content: url(images/icones/press.svg);
               width: 100px;
             }
           }
@@ -450,7 +448,7 @@ html {
         }
       }
     }
-  
+
     &#about {/* À propos */
       #numbers, #members, #tools {
         display: flex;
@@ -649,7 +647,7 @@ html {
 
               &:nth-of-type(14):before {
                 background: $primary;
-              } 
+              }
             }
           }
         }
@@ -667,7 +665,7 @@ html {
             flex-wrap: wrap;
             margin: 0;
             width: 50%;
-            
+
             li {
               background-size: 30% !important;
               border-left: 1px solid $border;
@@ -711,7 +709,7 @@ html {
 
     &#activity {/* Activité */
       section:not(:first-of-type) {
-        position: relative; 
+        position: relative;
 
         &:before {
           display: block;
@@ -750,7 +748,7 @@ html {
         #teepy {
           width: 25%;
         }
-        
+
         > section:first-of-type {
           position: relative;
 
@@ -938,7 +936,7 @@ html {
             &#projects {
               margin-left: 25%;
               padding: 0;
-              
+
               h3 {
                 display: none;
               }
@@ -996,7 +994,7 @@ html {
                 }
               }
             }
-            
+
             &#share {
               margin-top: -15%;
               margin-left: 50%;
@@ -1129,7 +1127,7 @@ html {
           }
         }
       }
-    
+
       #goals ul {
         display: flex;
         width: 100%;
@@ -1204,31 +1202,31 @@ html {
           &#novartis a {
             background: url(images/marques/novartis.jpg)no-repeat center center;
           }
-          
+
           &#bailly a {
             background: url(images/marques/bailly-creat.jpg)no-repeat center center;
           }
-          
+
           &#septodont a {
             background: url(images/marques/septodont.jpg)no-repeat center center;
           }
-          
+
           &#sanofi a {
             background: url(images/marques/sanofi.jpg)no-repeat center center;
           }
-          
+
           &#mylan a {
             background: url(images/marques/mylan.jpg)no-repeat center center;
           }
-          
+
           &#safran a {
             background: url(images/marques/safran.jpg)no-repeat center center;
           }
-          
+
           &#lafarge a {
             background: url(images/marques/lafarge.jpg)no-repeat center center;
           }
-          
+
           &#airbus-helicopters a {
             background: url(images/marques/airbus.jpg)no-repeat center center;
           }
@@ -1239,7 +1237,7 @@ html {
         }
       }
     }
-    
+
     &#contact section {/* Contact */
       > dl {
         background: $primary;
@@ -1296,7 +1294,7 @@ html {
         height: 500px;
         margin-right: 50%;
         margin-top: -365px;
-        z-index: -10;
+        // z-index: -10;
       }
 
       form {
@@ -1454,7 +1452,6 @@ html {
 
           &:last-of-type ul {
             display: flex;
-            
             li:last-child:before {
               content: ' - ';
             }

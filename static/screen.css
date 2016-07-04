@@ -1,0 +1,218 @@
+body {
+  width: 960px;
+}
+
+header {
+  height: 12em;
+  margin: 5px;
+  padding: 3em 5px 5px 5px;
+}
+
+header h1 {
+  margin: 0 0 0 -10px;
+}
+
+header p {
+  margin-left: 10px;
+  width: 50%;
+}
+
+
+main > * {
+  margin: 5px;
+}
+
+main article, main section {
+  float: left;
+}
+
+
+#who {
+  height: 470px;
+  width: 470px;
+}
+
+
+#contact {
+  width: 480px;
+}
+
+#contact section {
+  height: 230px;
+  float: left;
+  margin: 5px;
+  width: 230px;
+}
+
+#contact section:before {
+  display: block;
+  margin: 30px auto 0;
+  width: 60px;
+}
+
+
+#founders {
+  height: 230px;
+  margin: 5px 0 5px 485px;
+  position: relative;
+  width: 470px;
+}
+
+#founders > p {
+  display: table-cell;
+  margin-left: 460px;
+  width: 470px;
+}
+
+#founders > * {
+  height: 230px;
+  margin: 0 5px;
+}
+
+#founders > section {
+  margin: 0 5px;
+  position: absolute;
+  top: 0;
+  width: 230px;
+  z-index: 0;
+}
+
+#founders > section > * {
+  display: none;
+}
+
+#founders > section img {
+  float: left;
+}
+
+#founders #donadieu {
+  left: -485px;
+  width: 950px;
+}
+
+#founders #ayoub {
+  left: -245px;
+  width: 710px;
+}
+
+#founders > section:hover {
+  background: #1c1c1c;
+  color: white;
+  transition: background 0.7s, color 0.7s, z-index 0.7s;
+  z-index: 100;
+}
+
+#founders > section:hover > * {
+  display: block;
+}
+
+#founders > section:hover > h3 {
+  display: none;
+}
+
+
+#team {
+  float: right;
+  margin: 5px 0;
+  position: relative;
+  width: 715px
+}
+
+#team > * {
+  height: 230px;
+  margin: 0 5px;
+}
+
+#team p {
+  display: table-cell;
+  width: 230px;
+}
+
+#team > ul {
+  left: 235px;
+  position: absolute;
+  top: 0;
+  width: 480px;
+}
+
+#team > ul li {
+  height: 230px;
+  float: left;
+  margin: 0 5px;
+  width: 110px;
+}
+
+
+#health {
+  margin: 5px 0 5px 5px;
+  position: relative;
+}
+
+#health > * {
+  height: 230px;
+  margin: 0 5px;
+}
+
+#health > p {
+  display: table-cell;
+  width: 470px;
+}
+
+#health > section {
+  position: absolute;
+  top: 0;
+  width: 230px;
+}
+
+#health #pharminfo {
+  left: 475px;
+}
+
+#health #medsite {
+  left: 715px;
+}
+
+
+#references {
+  clear: both;
+  height: 480px;
+  width: 480px;
+}
+
+#references > ul {
+  position: relative;
+}
+
+#references > ul li {
+  height: 230px;
+  float: left;
+  margin: 5px;
+  position: relative;
+  width: 230px;
+  z-index: 1;
+}
+
+@-webkit-keyframes reference {
+  0% { opacity: 0; z-index: 0; }
+  40% { opacity: 0; z-index: 0; }
+  60% { opacity: 1; z-index: 1000; }
+  100% { opacity: 1; z-index: 1000; }
+}
+
+@keyframes reference {
+  0% { opacity: 0; z-index: 0; }
+  40% { opacity: 0; z-index: 0; }
+  60% { opacity: 1; z-index: 1000; }
+  100% { opacity: 1; z-index: 1000; }
+}
+
+#references > ul li:nth-child(n+5) {
+  -webkit-animation: reference 3s ease 0s infinite alternate;
+  animation: reference 3s ease 0s infinite alternate;
+  top: -480px;
+}
+
+
+footer {
+  margin: 5px;
+}

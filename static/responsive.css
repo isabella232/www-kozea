@@ -1,0 +1,95 @@
+body {
+  background: #fff;
+}
+
+header {
+  padding: 0.7em;
+}
+
+#founders > p, #team > p, #health > p {
+  clear: both;
+  margin: 0;
+}
+
+#founders section {
+  background: #1c1c1c;
+  color: white;
+}
+
+#founders > section ≥ * {
+  display: block;
+  background: black;
+  color: #fff;
+}
+
+#founders > section img {
+  margin: 0 auto;
+}
+
+#contact {
+  background: #cfdce2;
+  text-align: center;
+}
+
+#contact section {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#contact section:before {
+  display: inline-block;
+  width: 40px;
+}
+
+#team {
+  background: #499FC6;
+  overflow: hidden;
+}
+
+#team > ul li {
+  float: left;
+  min-height: 200px;
+  width: 25%;
+}
+
+
+#health > section {
+  border: none;
+  float: left;
+  width: 50%;
+}
+
+#health #pharminfo {
+  border-right: 1px solid #cfdce2;
+}
+
+
+#references {
+  clear: both;
+}
+
+#references ul li {
+  border-bottom: none;
+  border-left: none;
+  display: block;
+  height: 100px;
+  float: left;
+  width: 50%;
+}
+
+#references ul li:nth-child(even) {
+  border-right: none;
+}
+
+#references #novartis a,
+#references #safran a,
+#references #sanofi a,
+#references #lafarge a,
+#references #arrow a,
+#references #mylan a,
+#references #bailly a,
+#references #septodont a {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}

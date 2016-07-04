@@ -1,0 +1,299 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+body {
+  background: url(img/background.jpg) 50% 0 no-repeat;
+  color: #1c1c1c;
+  font-family: "Open Sans";
+  font-size: 12pt;
+  margin: auto;
+}
+
+ul {
+  list-style-type: square;
+}
+
+
+/* Header */
+
+header {
+  box-sizing: border-box;
+  font-size: 2.2em;
+  font-weight: 300;
+}
+
+header h1 {
+  background: url("img/logo.svg");
+  font-size: 0;
+  height: 94px;
+  width: 220px;
+}
+
+
+/* Main */
+
+main {
+  margin: auto;
+  overflow: auto;
+}
+
+main h2, main h3 {
+  display: none;
+}
+
+main article, main section {
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+
+#who {
+  background: #499fc6;
+  color: white;
+  font-size: 0.85em;
+}
+
+#who p:first-of-type {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+
+#contact {
+  margin: 0;
+  padding: 0;
+}
+
+#contact section {
+  background: #cfdce2;
+  text-align: center;
+}
+
+#contact #address:before {
+  content: url("img/map.svg");
+}
+
+#contact #phone:before {
+  content: url("img/phone.svg");
+}
+
+#contact #mail:before {
+  content: url("img/mail.svg");
+}
+
+#contact #booklet:before {
+  content: url("img/book.svg");
+}
+
+#contact #booklet a {
+  color: #1c1c1c;
+  display: block;
+  margin: 16px 0;
+  transition: color 0.3s;
+}
+
+#contact #booklet a:hover {
+  color: #499FC6;
+}
+
+
+#founders {
+  padding: 0;
+}
+
+#founders > p {
+  background: #f9d975;
+  box-sizing: border-box;
+  font-size: 1.3em;
+  padding: 1em;
+  vertical-align: middle;
+}
+
+#founders > section {
+  color: transparent;
+  font-size: 0.8em;
+}
+
+#founders > section img {
+  display: block;
+  height: 230px;
+  margin: -1em 1em -1em -1em;
+  width: 230px;
+}
+
+
+#team {
+  padding: 0;
+}
+
+#team > p {
+  background: #cfdce2;
+  box-sizing: border-box;
+  font-size: 1.3em;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#team > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#team > ul li {
+  background: #499fc6;
+  box-sizing: border-box;
+  color: white;
+  font-size: 0.8em;
+  padding: 1em;
+  text-align: center;
+}
+
+#team > ul li:before {
+  display: block;
+  margin: 30px auto 0;
+  width: 50px;
+}
+
+#team #sales:before {
+  content: url("img/sales.svg");
+}
+
+#team #websites:before {
+  content: url("img/website.svg");
+}
+
+#team #foot:before {
+  content: url("img/foot.svg");
+}
+
+#team #popcorn:before {
+  content: url("img/popcorn.svg");
+}
+
+
+#health {
+  padding: 0;
+}
+
+#health > p {
+  background: #f9d975;
+  box-sizing: border-box;
+  font-size: 1.3em;
+  padding: 1em;
+  vertical-align: middle;
+}
+
+#health > section {
+  border: 1px solid #cfdce2;
+  font-size: 11pt;
+}
+
+#health > section a {
+  color: inherit;
+  display: block;
+  height: 100%;
+  text-decoration: inherit;
+  margin: -1em;
+  padding: 1em;
+}
+
+#health section h3 {
+  display: block;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+
+#health section a:before {
+  display: block;
+  margin: 0 auto 0;
+  width: 60px;
+}
+
+#health #pharminfo a:before {
+  content: url("img/pharminfo.svg");
+}
+
+#health #pharminfo:hover {
+  border-color: #00a77c;
+  transition: 1s;
+}
+
+#health #medsite a:before {
+  content: url("img/medsite.svg");
+}
+
+#health #medsite:hover {
+  border-color: #ef5044;
+  transition: 1s;
+}
+
+
+#references {
+  font-size: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#references > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#references > ul li {
+  border: 1px solid #cfdce2;
+  box-sizing: border-box;
+}
+
+#references > ul li a {
+  color: inherit;
+  display: block;
+  height: 100%;
+  text-decoration: inherit;
+}
+
+#references #novartis a {
+  background: url("img/novartis.png");
+}
+
+#references #safran a {
+  background: url("img/safran.png");
+}
+
+#references #sanofi a {
+  background: url("img/sanofi.png");
+}
+
+#references #lafarge a {
+  background: url("img/lafarge.png");
+}
+
+#references #arrow a {
+  background: url("img/arrow.png");
+}
+
+#references #mylan a {
+  background: url("img/mylan.png");
+}
+
+#references #bailly a {
+  background: url("img/bailly.png");
+}
+
+#references #septodont a {
+  background: url("img/septodont.png");
+}
+
+
+/* Footer */
+
+footer {
+  background: #1c1c1c;
+  clear: both;
+  color: white;
+  font-weight: 300;
+  padding: 0.5em 1em;
+}
