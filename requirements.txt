@@ -1,5 +1,3 @@
 flask
 libsass
-httplib2
-simplejson
-six
+python-instagram
