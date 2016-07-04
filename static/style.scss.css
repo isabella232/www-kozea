@@ -300,6 +300,32 @@ html {
             background: url(images/marques/minalogic.jpg) no-repeat center center; }
           html body#index #partners ul li#i-care a {
             background: url(images/marques/i-care.jpg) no-repeat center center; }
+      html body#index #follow .insta {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative; }
+        html body#index #follow .insta li {
+          height: 300px;
+          width: 300px; }
+          html body#index #follow .insta li img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; }
+        html body#index #follow .insta:after {
+          content: '@kozea';
+          background: #f3f3f3;
+          width: 300px;
+          height: 300px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2em;
+          font-style: italic;
+          color: #1c1c1c;
+          font-weight: 100; }
     html body#about {
       /* À propos */ }
       html body#about #numbers, html body#about #members, html body#about #tools {
@@ -811,7 +837,8 @@ html {
         padding: 20px;
         margin-right: 33%;
         box-sizing: border-box;
-        width: 33%; }
+        width: 33%;
+        z-index: 1; }
         html body#contact section > dl > * {
           color: #fff; }
         html body#contact section > dl dt:first-child, html body#contact section > dl dt:first-child + dd {
@@ -834,11 +861,9 @@ html {
       html body#contact section form, html body#contact section #map {
         width: 50%; }
       html body#contact section #map {
-        background: red;
         height: 500px;
         margin-right: 50%;
-        margin-top: -365px;
-        z-index: -10; }
+        margin-top: -365px; }
       html body#contact section form {
         border-top: 2px solid #1a2530;
         box-sizing: border-box;
@@ -866,6 +891,7 @@ html {
           border: none;
           box-shadow: none;
           color: #fff;
+          cursor: pointer;
           font-size: 1em;
           padding: 7px;
           width: 90px; }
