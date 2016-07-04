@@ -4,7 +4,7 @@ from instagram.client import InstagramAPI
 
 
 app = Flask(__name__)
-app.config.from_envvar('KOZEA_SETTINGS')
+app.config.from_pyfile('kozea.cfg')
 
 CLIENT_ID = app.config['CLIENT_ID']
 CLIENT_SECRET = app.config['CLIENT_SECRET']
