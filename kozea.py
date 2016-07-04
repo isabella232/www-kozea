@@ -12,6 +12,7 @@ REDIRECT_URI = app.config['REDIRECT_URI']
 USER_ID = app.config['USER_ID']
 ACCESS_TOKEN = app.config['ACCESS_TOKEN']
 
+
 @app.route('/')
 @app.route('/<page>')
 def page(page='index'):
@@ -23,6 +24,7 @@ def page(page='index'):
             return get_insta_media()
         return render_template('{}.html'.format(page), page=page)
     return render_template('404.html')
+
 
 def get_insta_media():
     #Care with access_token. It may expire one day.
