@@ -509,9 +509,12 @@ html {
             margin-top: 150px;
             order: -2; }
             html body#activity section#platform section:first-of-type:after {
-              content: url(images/photos/platform.jpg);
+              content: '';
+              background: url(images/photos/platform.jpg);
               left: 25%;
-              top: -190px; }
+              top: -190px;
+              width: 150%;
+              height: 130%; }
           html body#activity section#platform section#pharminfo {
             margin-top: -150px;
             margin-left: 50%; }
@@ -886,6 +889,10 @@ html {
         html body#legal dl dd:after {
           content: '';
           display: block; }
+    html body#references section ul li a, html body#index #partners ul li a {
+      opacity: 0.75; }
+      html body#references section ul li a:hover, html body#index #partners ul li a:hover {
+        opacity: 1; }
     html body span#back-to-top {
       background: none;
       bottom: 0;
@@ -966,7 +973,7 @@ html {
   html body#about #story ul li:first-child, html body#about #story ul li:last-child {
     margin: 0; } }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 480px) and (max-width: 800px) {
   html body#about #story ul li:nth-child(2) {
     margin-right: 0; }
   html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
@@ -975,10 +982,17 @@ html {
       margin-left: 0; }
     html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
       margin-right: 0; }
+    html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
+      left: 55%;
+      top: -160px;
+      width: 120%;
+      height: 130%; }
     html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
       align-self: flex-end; }
     html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
-      width: 100%; } }
+      width: 100%; }
+  html body#activity section#platform:before {
+    left: 5%; } }
 
 @media screen and (min-width: 480px) and (max-width: 600px) {
   html body#about #story ul li {

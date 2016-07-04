@@ -58,7 +58,7 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 480px) and (max-width: 800px) {
   html body {
     &#about {
       #story ul li:nth-child(2) {
@@ -80,6 +80,13 @@
               margin-right: 0;
             }
 
+            &#digital:after {
+              left: 55%;
+              top: -160px;
+              width: 120%;
+              height: 130%;
+            }
+
             &#work {
               align-self: flex-end;
             }
@@ -87,6 +94,12 @@
             &#projects {
               width: 100%;
             }
+          }
+        }
+
+        &#platform {
+          &:before {
+            left: 5%;
           }
         }
       }

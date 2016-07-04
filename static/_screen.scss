@@ -785,9 +785,12 @@ html {
 
 
               &:after {
-                content: url(images/photos/platform.jpg);
+                content: '';
+                background : url(images/photos/platform.jpg);
                 left: 25%;
                 top: -190px;
+                width: 150%;
+                height: 130%;
               }
             }
 
@@ -1384,6 +1387,16 @@ html {
             content: '';
             display: block;
           }
+        }
+      }
+    }
+
+    &#references section, &#index #partners {
+      ul li a {
+        opacity: 0.75;
+
+        &:hover {
+          opacity: 1;
         }
       }
     }
