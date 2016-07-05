@@ -25,8 +25,8 @@
   <body id="{{ page }}">
       <header>
         {% if page == 'index' %}
-          <a id="go-to-about" href="#about">En savoir plus</a>
           <canvas class="canvas"></canvas>
+          <a id="go-to-about" href="#about">En savoir plus</a>
         {% endif %}
         <h1>{{ dict(titles)[page] or 404}}</h1>
       </header>
