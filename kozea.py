@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 import requests
-from flask import Flask, redirect, render_template
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 app.config.from_pyfile('kozea.cfg')
 
-CLIENT_ID = app.config['CLIENT_ID']
-CLIENT_SECRET = app.config['CLIENT_SECRET']
-REDIRECT_URI = app.config['REDIRECT_URI']
-USER_ID = app.config['USER_ID']
 ACCESS_TOKEN = app.config['ACCESS_TOKEN']
 
 
