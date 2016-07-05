@@ -108,17 +108,27 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 600px) {
-  html body#about {
-    #story ul li {
-      width: 50%;
+  html body {
+     &#about {
+      #story ul li {
+        width: 50%;
 
-      &:first-child, &:last-child {
-        margin-left: 0;
+        &:first-child, &:last-child {
+          margin-left: 0;
+        }
+      }
+
+      #team #members section {
+        width: 50%;
       }
     }
 
-    #team #members section {
-      width: 50%;
+    &#index {
+      #follow {
+        .insta li, .insta:after {
+         height: 230px;
+        }
+      }
     }
   }
 }
@@ -169,6 +179,12 @@
         ul li {
           box-sizing: border-box;
           padding: 20px 0;
+          width: 50%;
+        }
+      }
+
+      #follow {
+        .insta li, .insta:after {
           width: 50%;
         }
       }
@@ -252,6 +268,12 @@
             &:first-child {
               height: 200px;
             }
+          }
+        }
+
+        #follow {
+          .insta li, .insta:after {
+           height: 230px;
           }
         }
       }

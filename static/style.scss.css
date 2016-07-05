@@ -1035,7 +1035,9 @@ html {
     html body#about #story ul li:first-child, html body#about #story ul li:last-child {
       margin-left: 0; }
   html body#about #team #members section {
-    width: 50%; } }
+    width: 50%; }
+  html body#index #follow .insta li, html body#index #follow .insta:after {
+    height: 230px; } }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   html body#index header h1:before {
@@ -1054,6 +1056,8 @@ html {
   html body#index #partners ul li {
     box-sizing: border-box;
     padding: 20px 0;
+    width: 50%; }
+  html body#index #follow .insta li, html body#index #follow .insta:after {
     width: 50%; }
   html body#references section ul li {
     width: 50%; }
@@ -1090,6 +1094,8 @@ html {
       width: 100% !important; }
       html body#index #news ul > li:first-child {
         height: 200px; }
+  html body#index #follow .insta li, html body#index #follow .insta:after {
+    height: 230px; }
   html body#about #story blockquote {
     display: none; }
     html body#about #story blockquote + p + p, html body#about #story blockquote + p {
