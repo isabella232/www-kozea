@@ -1,3 +1,4 @@
 *.map
 kozea.cfg
 __pycache__
+static/style.scss.css

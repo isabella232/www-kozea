@@ -20,7 +20,7 @@
 
       canvas = document.getElementsByClassName('canvas')[0];
       canvas.width = width;
-      canvas.height = height;
+      canvas.height = height * 92.5 / 100;
       ctx = canvas.getContext('2d');
 
       // create points
