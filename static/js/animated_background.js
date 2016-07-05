@@ -16,7 +16,7 @@
       target = {x: width/2, y: height/2};
 
       largeHeader = document.getElementsByTagName('header')[0];
-      largeHeader.style.height = height+'px';
+      largeHeader.style.height = '94.5vh';
 
       canvas = document.getElementsByClassName('canvas')[0];
       canvas.width = width;
