@@ -1,6 +1,6 @@
 #!/usr/bin/env python
+import requests
 from flask import Flask, redirect, render_template
-from instagram.client import InstagramAPI
 
 
 app = Flask(__name__)
@@ -27,17 +27,16 @@ def page(page='index'):
 
 
 def get_insta_media():
-    #Care with access_token. It may expire one day.
-    instaAPI = InstagramAPI(
-        client_id=CLIENT_ID,
-        client_secret=CLIENT_SECRET, access_token=ACCESS_TOKEN)
-    recent_media, next_ = instaAPI.user_recent_media(user_id=USER_ID, count=3)
+    """ Care with access_token. It may expire one day. """
+    request = requests.get(
+        "https://api.instagram.com/v1/users/self/media/recent/"
+        "?access_token={}&count=3".format(ACCESS_TOKEN)).json()
     render_insta = []
-    for media in recent_media:
+    for media in request.get('data'):
         render_insta.append({
-            'link': media.link,
-            'src': media.get_standard_resolution_url(),
-            'title': media.caption.text})
+            'link': media.get('link'),
+            'src': media.get('images').get('standard_resolution').get('url'),
+            'title': media.get('caption').get('text')})
     return render_template(
         'index.html', page='index', render_insta=render_insta)
 
