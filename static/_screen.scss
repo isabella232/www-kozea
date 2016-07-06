@@ -1356,6 +1356,7 @@ html {
       #map {
         align-self: flex-start;
         height: 500px;
+        margin-top: -100px;
       }
 
       form {
@@ -1366,7 +1367,7 @@ html {
         flex-direction: column;
         order: 2;
         padding: 30px;
-        margin-top: -502px;
+        margin-top: -402px;
 
         input:not(:last-child), textarea {
           background: none;
