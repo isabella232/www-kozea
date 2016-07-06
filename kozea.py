@@ -1,16 +1,12 @@
 #!/usr/bin/env python
 from flask import Flask, render_template, request
-from instagram.client import InstagramAPI
 import mandrill
+import requests
 
 
 app = Flask(__name__)
 app.config.from_pyfile('kozea.cfg')
 
-CLIENT_ID = app.config['CLIENT_ID']
-CLIENT_SECRET = app.config['CLIENT_SECRET']
-REDIRECT_URI = app.config['REDIRECT_URI']
-USER_ID = app.config['USER_ID']
 ACCESS_TOKEN = app.config['ACCESS_TOKEN']
 
 
@@ -44,17 +40,16 @@ def contact():
 
 
 def get_insta_media():
-    #Care with access_token. It may expire one day.
-    instaAPI = InstagramAPI(
-        client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
-        access_token=ACCESS_TOKEN)
-    recent_media, next_ = instaAPI.user_recent_media(user_id=USER_ID, count=3)
+    """ Care with access_token. It may expire one day. """
+    request = requests.get(
+        "https://api.instagram.com/v1/users/self/media/recent/"
+        "?access_token={}&count=3".format(ACCESS_TOKEN)).json()
     render_insta = []
-    for media in recent_media:
+    for media in request.get('data'):
         render_insta.append({
-            'link': media.link,
-            'src': media.get_low_resolution_url(),
-            'title': media.caption.text})
+            'link': media.get('link'),
+            'src': media.get('images').get('standard_resolution').get('url'),
+            'title': media.get('caption').get('text')})
     return render_template(
         'index.html', page='index', render_insta=render_insta)
 

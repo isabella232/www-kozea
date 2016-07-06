@@ -1,10 +1,15 @@
 {% extends '_layout.html' %}
 
+{% block more_js %}
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&language=fr"></script>
+  <script type="text/javascript" src="static/js/googleMap.js"></script>
+{% endblock more_js%}
+
 {% block body %}
   <section id="contact-us">
     <h2>Contactez-nous</h2>
     <p class="intro">
-      Un projet ? Une collaboration ? Des questions ? Contactez-nous ! nous serons ravis de vous répondre.
+      Un projet ? Une collaboration ? Des questions ? Écrivez-nous ! Nous serons ravis de vous répondre.
     </p>
 
     <dl>

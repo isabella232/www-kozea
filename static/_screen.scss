@@ -28,7 +28,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 p strong {
@@ -63,7 +63,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $primary;
 }
 
-#about ul ~ p, #backoffice, #develop, #skills,
+#about ul ~ p, #gestion-backoffice, #develop, #skills,
 #story > p:not(.intro), #pharminfo, #medsite,
 #backflip, #solutions, #projects + #expert, #contact-us form {
   background: $secondary;
@@ -93,7 +93,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: darken($community, 10%);
 }
 
-#teepy, #share {
+#backoffice, #share {
   background: darken($secondary,3%);
 }
 
@@ -184,17 +184,17 @@ html {
         position: relative;
 
         li {
-          font-size: .9em;
-          padding: 15px 10px;
+          font-size: 1em;
+          padding: 22px 10px;
 
           &:first-child {
             a:before {
               background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
               content: '';
-              height: 47px;
+              height: 58px;
               left: 0;
               position: absolute;
-              top: 4px;
+              top: 6px;
               width: 130px;
             }
 
@@ -263,7 +263,7 @@ html {
             content: url(images/logos/logo-icon.svg);
             left: calc(50% - 65px);
             position: absolute;
-            top: calc(50% - 150px);
+            top: calc(50% - 200px);
             width: 130px;
           }
         }
@@ -413,6 +413,11 @@ html {
               width: 40px;
             }
           }
+
+          &:hover {
+            a:before {
+            }
+          }
         }
       }
 
@@ -444,6 +449,53 @@ html {
 
           &#i-care a {
             background: url(images/marques/i-care.jpg)no-repeat center center;
+          }
+        }
+      }
+
+      #follow {
+        .insta {
+          display: flex;
+          flex-wrap: wrap;
+          position:relative;
+          width: 100%;
+
+          li {
+            height: 300px;
+            position: relative;
+            width: 300px;
+
+            &:before {
+              background: url(images/icones/instagram.svg);
+              content: '';
+              height: 25px;
+              position: absolute;
+              right: 10px;
+              top: 10px;
+              width: 25px;
+            }
+
+            img {
+              display: block;
+              height: 100%;
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+
+          &:after {
+            align-items: center;
+            background: $border;
+            color: $text;
+            content: '@kozea';
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: 100;
+            height: 300px;
+            justify-content: center;
+            width: 300px;
           }
         }
       }
@@ -745,7 +797,7 @@ html {
           width: 33%;
         }
 
-        #teepy {
+        #backoffice {
           width: 25%;
         }
 
@@ -812,7 +864,7 @@ html {
               margin-right: 17%;
             }
 
-            &#teepy {
+            &#backoffice {
               margin-left: 25%;
 
               h3:before {
@@ -1259,6 +1311,7 @@ html {
         margin-right: 33%;
         box-sizing: border-box;
         width: 33%;
+        z-index: 1;
 
         > *{
           color: #fff;
@@ -1301,21 +1354,19 @@ html {
       }
 
       #map {
-        background: red;
+        align-self: flex-start;
         height: 500px;
-        margin-right: 50%;
-        margin-top: -365px;
-        // z-index: -10;
       }
 
       form {
+        align-self: flex-end;
         border-top: 2px solid $primary;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        margin-left: 50%;
+        order: 2;
         padding: 30px;
-        margin-top: -70px;
+        margin-top: -502px;
 
         input:not(:last-child), textarea {
           background: none;
@@ -1342,6 +1393,7 @@ html {
           border: none;
           box-shadow: none;
           color: #fff;
+          cursor: pointer;
           font-size: 1em;
           padding: 7px;
           width: 90px;

@@ -26,18 +26,14 @@
       <dt id="link">Kozea Link</dt>
       <dd><a href="{{ url_for('page', page='activity') }}#link">Conseil et services aux acteurs de santé</a></dd>
       <dt id="media">Kozea Media</dt>
-      <dd><a href="{{ url_for('page', page='activity') }}#media">Régie publicitaire pour Kozea Platform</a></dd>
+      <dd><a href="{{ url_for('page', page='activity') }}#media">Régie publicitaire pour Kozea platform</a></dd>
       <dt id="community">Kozea Community</dt>
-      <dd><a href="{{ url_for('page', page='activity') }}#community">Logiciels libres de l'équipe de Kozea</a></dd>
+      <dd><a href="{{ url_for('page', page='activity') }}#community">Projets en logiciels libres de l'équipe de Kozea</a></dd>
     </dl>
   </section>
 
   <section id="news">
     <h2>Nos actualités</h2>
-    <p class="intro">
-      Kozea group est aussi présent ailleurs que sur le web, et parfois on
-      parle même de nous.
-    </p>
     <ul>
       <li>
         <a href="#">Communiqués de presse</a>
@@ -52,7 +48,7 @@
   <section id="partners">
     <h2>Nos partenariats</h2>
     <p class="intro">
-      Kozea groupe collabore au sein de plusieurs associations spécialisées dans le web et dans la e-santé.
+      Kozea group collabore au sein de plusieurs associations spécialisées dans le web et dans la e-santé.
     </p>
     <ul>
       <li id="france-ehealth-tech"><a href="http://www.france-ehealthtech.org/">France eHealth Tech</a></li>
@@ -63,9 +59,9 @@
   </section>
 
   <section id="follow">
-    <h2>Suivez nous</h2>
+    <h2>Suivez-nous</h2>
     <ul class="links">
-      <li><a href="{{ url_for('page', page='about') }} ">À propos</a></li>
+      <li><a href="{{ url_for('page', page='about') }} ">En savoir plus</a></li>
     </ul>
     <ul class="insta">
       {% for media in render_insta %}
