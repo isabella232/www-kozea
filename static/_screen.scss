@@ -28,7 +28,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 p strong {
@@ -63,7 +63,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: $primary;
 }
 
-#about ul ~ p, #backoffice, #develop, #skills,
+#about ul ~ p, #gestion-backoffice, #develop, #skills,
 #story > p:not(.intro), #pharminfo, #medsite,
 #backflip, #solutions, #projects + #expert, #contact-us form {
   background: $secondary;
@@ -93,7 +93,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: darken($community, 10%);
 }
 
-#teepy, #share {
+#backoffice, #share {
   background: darken($secondary,3%);
 }
 
@@ -184,17 +184,17 @@ html {
         position: relative;
 
         li {
-          font-size: .9em;
-          padding: 15px 10px;
+          font-size: 1em;
+          padding: 22px 10px;
 
           &:first-child {
             a:before {
               background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
               content: '';
-              height: 47px;
+              height: 58px;
               left: 0;
               position: absolute;
-              top: 4px;
+              top: 6px;
               width: 130px;
             }
 
@@ -263,7 +263,7 @@ html {
             content: url(images/logos/logo-icon.svg);
             left: calc(50% - 65px);
             position: absolute;
-            top: calc(50% - 150px);
+            top: calc(50% - 200px);
             width: 130px;
           }
         }
@@ -797,7 +797,7 @@ html {
           width: 33%;
         }
 
-        #teepy {
+        #backoffice {
           width: 25%;
         }
 
@@ -864,7 +864,7 @@ html {
               margin-right: 17%;
             }
 
-            &#teepy {
+            &#backoffice {
               margin-left: 25%;
 
               h3:before {
@@ -1354,19 +1354,19 @@ html {
       }
 
       #map {
+        align-self: flex-start;
         height: 500px;
-        margin-right: 50%;
-        margin-top: -365px;
       }
 
       form {
+        align-self: flex-end;
         border-top: 2px solid $primary;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        margin-left: 50%;
+        order: 2;
         padding: 30px;
-        margin-top: -70px;
+        margin-top: -502px;
 
         input:not(:last-child), textarea {
           background: none;

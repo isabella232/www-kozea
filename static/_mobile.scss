@@ -155,8 +155,8 @@
         width: 75%;
       }
 
-      form {
-        margin-top: -2px;
+      #map {
+        margin-top: 0;
       }
     }
   }
@@ -236,24 +236,12 @@
           width: 100%;
 
           &#members {
-            section, h3 {
-              height: 100%;
+            h3 {
               width: 100%;
             }
 
             section {
-              img {
-                position: initial;
-                width: 100%;
-              }
-
-              h4, p {
-                display: none;
-              }
-
-              &:after {
-                content: none;
-              }
+              display: none;
             }
           }
 
@@ -310,7 +298,7 @@
 
       &#expertise {
         #missions {
-          #backoffice, #satisfaction, #develop, #big-data {
+          #gestion-backoffice, #satisfaction, #develop, #big-data {
             margin: 0;
             width: 100%;
           }
@@ -361,10 +349,24 @@
         width: 100%;
       }
 
+      &#references section, &#index #partners {
+        ul li a {
+          opacity: 1;
+        }
+      }
+
       &#contact section {
         dl, form, #map {
           width: 100%;
           margin: 0;
+        }
+
+        form {
+          order: 0;
+        }
+
+        dl, #map {
+          order: 1;
         }
       }
 
