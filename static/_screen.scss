@@ -157,6 +157,7 @@ html {
         margin: -30px auto;
         padding: 10px;
         font-size: 0;
+        z-index: 3;
 
         &:after {
           content: url(images/icones/more.svg);
@@ -1458,12 +1459,12 @@ html {
 
     span#back-to-top {
       background: none;
-      bottom: 0;
+      bottom: 35px;
       color: $primary;
       display: block;
       font-size: 1.3em;
       opacity: 0.6;
-      right: 15px;
+      right: 45px;
 
       &:hover {
         background: none;
