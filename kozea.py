@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-from flask import Flask, redirect, render_template
+from flask import Flask, render_template, request
 from instagram.client import InstagramAPI
+import mandrill
 
 
 app = Flask(__name__)
@@ -17,8 +18,8 @@ ACCESS_TOKEN = app.config['ACCESS_TOKEN']
 @app.route('/<page>')
 def page(page='index'):
     recorded_pages = [
-        'index', 'about', 'activity', 'contact',
-        'expertise', 'legal', 'references']
+        'index', 'about', 'activity', 'contact', 'expertise', 'legal',
+        'references']
     if page in recorded_pages:
         if page == 'index':
             return get_insta_media()
@@ -26,11 +27,27 @@ def page(page='index'):
     return render_template('404.html')
 
 
+@app.route('/contact', methods=['POST'])
+def contact():
+    mandrill_client = mandrill.Mandrill("viE6U6aNtPop0aBqvAPu4g")
+    form = request.form
+    message = {
+        'to': ['clement.plasse@kozea.fr'],
+        'subject': 'Prise de contact sur le site de Kozea',
+        'from_email': 'contact@kozea.fr',
+        'html': '<br>'.join(
+            'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
+            'Demande : % ' % form['question'])
+    }
+    mandrill_client.messages.send(message=message)
+    return ''
+
+
 def get_insta_media():
     #Care with access_token. It may expire one day.
     instaAPI = InstagramAPI(
-        client_id=CLIENT_ID,
-        client_secret=CLIENT_SECRET, access_token=ACCESS_TOKEN)
+        client_id=CLIENT_ID, client_secret=CLIENT_SECRET,
+        access_token=ACCESS_TOKEN)
     recent_media, next_ = instaAPI.user_recent_media(user_id=USER_ID, count=3)
     render_insta = []
     for media in recent_media:
