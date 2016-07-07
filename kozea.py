@@ -1,25 +1,44 @@
 #!/usr/bin/env python
+from flask import Flask, render_template, request
+import mandrill
 import requests
-from flask import Flask, render_template
 
 
 app = Flask(__name__)
-app.config.from_pyfile('kozea.cfg')
+app.config.from_envvar('KOZEA_CONFIG')
 
 ACCESS_TOKEN = app.config['ACCESS_TOKEN']
+MANDRILL_KEY = app.config['MANDRILL_KEY']
 
 
 @app.route('/')
 @app.route('/<page>')
 def page(page='index'):
     recorded_pages = [
-        'index', 'about', 'activity', 'contact',
-        'expertise', 'legal', 'references']
+        'index', 'about', 'activity', 'contact', 'expertise', 'legal',
+        'references']
     if page in recorded_pages:
         if page == 'index':
             return get_insta_media()
         return render_template('{}.html'.format(page), page=page)
     return render_template('404.html')
+
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    # Send mail when everything is finish
+    # mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
+    form = request.form
+    message = {
+        'to': [{'email': 'contact@kozea.fr'}],
+        'subject': 'Prise de contact sur le site de Kozea',
+        'from_email': 'contact@kozea.fr',
+        'html': '<br>'.join([
+            'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
+            'Demande : %s ' % form['question']])
+    }
+    # mandrill_client.messages.send(message=message)
+    return ''
 
 
 def get_insta_media():
