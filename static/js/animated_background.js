@@ -16,11 +16,10 @@
       target = {x: width/2, y: height/2};
 
       largeHeader = document.getElementsByTagName('header')[0];
-      largeHeader.style.height = '94.5vh';
 
       canvas = document.getElementsByClassName('canvas')[0];
       canvas.width = width;
-      canvas.height = height * 92.5 / 100;
+      canvas.height = height * 92 / 100;
       ctx = canvas.getContext('2d');
 
       // create points
@@ -102,7 +101,7 @@
     function resize() {
       width = window.innerWidth;
       height = window.innerHeight;
-      largeHeader.style.height = height+'px';
+      largeHeader.style.height = height * 92 / 100+'px';
       canvas.width = width;
       canvas.height = height;
     }

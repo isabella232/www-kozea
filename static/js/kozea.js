@@ -20,15 +20,21 @@ $(document).ready(function() {
     e.preventDefault();
     $.post($(e.target).attr('action'), $(e.target).serialize())
       .done(function() {
-        var $popup = $('<div class="popup">').append('<p>Message envoyé.</p>')
-        $('body').append($popup, $('<div class="black-overlay">'));
-
-        function remove_popup() {
-          $popup.fadeOut(400, function() {
-            $(".popup, .black-overlay").remove();
-          });
+        $('form input:first').before('<p class="message">Votre message a été envoyé.</p>');
+        function remove_message() {
+          $('.message').fadeOut(400);
         }
-        setTimeout(remove_popup, 2000);
+        setTimeout(remove_message, 2000);
       });
   });
 });
+
+/* Use this for the popup on the index page
+var $popup = $('<div class="popup">').append('<p>Message envoyé.</p>')
+$('body').append($popup, $('<div class="black-overlay">'));
+
+function remove_popup() {
+  $popup.fadeOut(400, function() {
+    $(".popup, .black-overlay").remove();
+  });
+}*/

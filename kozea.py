@@ -7,8 +7,8 @@ import requests
 app = Flask(__name__)
 app.config.from_envvar('KOZEA_CONFIG')
 
-ACCESS_TOKEN = app.config['ACCESS_TOKEN']
-MANDRILL_KEY = app.config['MANDRILL_KEY']
+ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
+MANDRILL_KEY = app.config.get('MANDRILL_KEY')
 
 
 @app.route('/')
