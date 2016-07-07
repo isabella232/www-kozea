@@ -9,7 +9,7 @@
     }
 
     &#contact section > dl {
-      margin-right: 50%;
+      margin-right: 17%;
       width: 50%;
     }
 
@@ -151,12 +151,15 @@
 
     &#contact section {
       > dl {
-        margin-right: 25%;
         width: 75%;
       }
 
       #map {
         margin-top: 0;
+      }
+
+      form {
+        margin-top: -502px;
       }
     }
   }

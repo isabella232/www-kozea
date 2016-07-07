@@ -157,6 +157,7 @@ html {
         margin: -30px auto;
         padding: 10px;
         font-size: 0;
+        z-index: 3;
 
         &:after {
           content: url(images/icones/more.svg);
@@ -201,6 +202,10 @@ html {
             &:hover a:before {
               opacity: 0.8;
             }
+          }
+
+          &:hover, &:focus {
+            opacity: 0.85;
           }
         }
       }
@@ -868,7 +873,7 @@ html {
               margin-left: 25%;
 
               h3:before {
-                background: red;
+                background: url(images/logos/logo-backoffice.svg)no-repeat;
                 height: 50px;
               }
             }
@@ -1356,6 +1361,7 @@ html {
       #map {
         align-self: flex-start;
         height: 500px;
+        margin-top: -100px;
       }
 
       form {
@@ -1366,7 +1372,7 @@ html {
         flex-direction: column;
         order: 2;
         padding: 30px;
-        margin-top: -502px;
+        margin-top: -402px;
 
         input:not(:last-child), textarea {
           background: none;
@@ -1453,12 +1459,12 @@ html {
 
     span#back-to-top {
       background: none;
-      bottom: 0;
+      bottom: 35px;
       color: $primary;
       display: block;
       font-size: 1.3em;
       opacity: 0.6;
-      right: 15px;
+      right: 45px;
 
       &:hover {
         background: none;
