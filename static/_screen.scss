@@ -233,6 +233,16 @@ html {
           text-align: center;
           width: 70%
         }
+
+        &.message { /*pop up message contact form*/
+          align-self: center;
+          border: 2px solid lighten($primary,10%);
+          color: $primary;
+          font-size: 1em;
+          padding: 10px;
+          text-align: center;
+          width: 50%;
+        }
       }
 
       .links a  {
