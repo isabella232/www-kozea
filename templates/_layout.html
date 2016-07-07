@@ -11,7 +11,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kozea - {{ dict(titles)[page] }} - L’innovation digitale au service des acteurs de la santé</title>
+    <title>Kozea -{% if page in dict(titles) or page == 'legal' %} {{ dict(titles)[page] or 'Mentions légales' }} -{% endif %} L’innovation digitale au service des acteurs de la santé</title>
     <link type="image/png" rel="icon" href="static/favicon.png" />
     <link type="text/css" rel="stylesheet" href="static/style.scss.css" />
     <link type="text/css" rel="stylesheet" href="static/scrolltop.css" />
@@ -27,7 +27,11 @@
           <canvas class="canvas"></canvas>
           <a id="go-to-about" href="#about">En savoir plus</a>
         {% endif %}
-        <h1>{{ dict(titles)[page] or 404}}</h1>
+        {% if (page in dict(titles) or page == 'legal') %}
+          <h1>{{ dict(titles)[page] }}</h1>
+        {% else %}
+          <h1>404</h1>
+        {% endif %}
       </header>
 
     <nav>

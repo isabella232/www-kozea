@@ -36,7 +36,6 @@ def contact():
             'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
             'Demande : %s ' % form['question']])
     }
-    import wdb;wdb.set_trace()
     if not current_app.debug:
         mandrill_client.messages.send(message=message)
     return ''
