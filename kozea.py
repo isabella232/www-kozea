@@ -5,9 +5,10 @@ import requests
 
 
 app = Flask(__name__)
-app.config.from_pyfile('kozea.cfg')
+app.config.from_envvar('KOZEA_CONFIG')
 
 ACCESS_TOKEN = app.config['ACCESS_TOKEN']
+MANDRILL_KEY = app.config['MANDRILL_KEY']
 
 
 @app.route('/')
@@ -25,17 +26,18 @@ def page(page='index'):
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    mandrill_client = mandrill.Mandrill("viE6U6aNtPop0aBqvAPu4g")
+    # Send mail when everything is finish
+    # mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
     message = {
-        'to': ['clement.plasse@kozea.fr'],
+        'to': [{'email': 'contact@kozea.fr'}],
         'subject': 'Prise de contact sur le site de Kozea',
         'from_email': 'contact@kozea.fr',
-        'html': '<br>'.join(
+        'html': '<br>'.join([
             'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
-            'Demande : % ' % form['question'])
+            'Demande : %s ' % form['question']])
     }
-    mandrill_client.messages.send(message=message)
+    # mandrill_client.messages.send(message=message)
     return ''
 
 
