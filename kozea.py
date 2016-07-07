@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from flask import Flask, render_template, request
+from flask import current_app, Flask, render_template, request
 import mandrill
 import requests
 
@@ -26,8 +26,7 @@ def page(page='index'):
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    # Send mail when everything is finish
-    # mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
+    mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
     message = {
         'to': [{'email': 'contact@kozea.fr'}],
@@ -37,7 +36,8 @@ def contact():
             'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
             'Demande : %s ' % form['question']])
     }
-    # mandrill_client.messages.send(message=message)
+    if not current_app.debug:
+        mandrill_client.messages.send(message=message)
     return ''
 
 
