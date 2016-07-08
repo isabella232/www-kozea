@@ -9,46 +9,46 @@
 
 {% block body %}
   <section id="about">
-    <h2>Kozea</h2>
-    <p class="intro">
+    <h2 data-sr="enter bottom, move 100px, wait 0.5s">Kozea</h2>
+    <p data-sr="enter bottom, move 100px, wait 0.5s" class="intro">
       Kozea group a été fondée en 2007 avec la volonté de se positionner comme un expert du web pour les acteurs de santé.
     </p>
   </section>
 
   <section id="activity">
-    <h2>Notre activité</h2>
-    <p class="intro">
+    <h2 data-sr="enter bottom, move 100px, wait 0.5s">Notre activité</h2>
+    <p data-sr="enter bottom, move 200px, wait 0.6s" class="intro">
       Kozea group se compose de quatre structures au service de la santé.
     </p>
     <dl id="structures">
       <dt id="platform">Kozea Platform</dt>
-      <dd data-sr="enter top, move 100px, wait 0.9s"><a href="{{ url_for('page', page='activity') }}#platform">Plateformes digitales pour les acteurs de santé</a></dd>
+      <dd data-sr="enter left, move 100px, wait 0.5s"><a href="{{ url_for('page', page='activity') }}#platform">Plateformes digitales pour les acteurs de santé</a></dd>
       <dt id="link">Kozea Link</dt>
-      <dd data-sr="enter right, move 200px, wait 0.4s"><a href="{{ url_for('page', page='activity') }}#link">Conseil et services aux acteurs de santé</a></dd>
+      <dd data-sr="enter right, move 100px, wait 0.5s"><a href="{{ url_for('page', page='activity') }}#link">Conseil et services aux acteurs de santé</a></dd>
       <dt id="media">Kozea Media</dt>
-      <dd data-sr="enter left, move 150px, wait 0.5s"><a href="{{ url_for('page', page='activity') }}#media">Régie publicitaire pour Kozea platform</a></dd>
+      <dd data-sr="enter left, move 100px, wait 0.5s"><a href="{{ url_for('page', page='activity') }}#media">Régie publicitaire pour Kozea platform</a></dd>
       <dt id="community">Kozea Community</dt>
-      <dd data-sr="enter bottom, move 100px, wait 0.7s"><a href="{{ url_for('page', page='activity') }}#community">Projets en logiciels libres de l'équipe de Kozea</a></dd>
+      <dd data-sr="enter right, move 100px, wait 0.5s"><a href="{{ url_for('page', page='activity') }}#community">Projets en logiciels libres de l'équipe de Kozea</a></dd>
     </dl>
   </section>
 
   <section id="news">
-    <h2>Nos actualités</h2>
+    <h2 data-sr="enter bottom, move 100px, wait 0.5s">Nos actualités</h2>
     <ul>
-      <li data-sr="enter left, move 200px, wait 0.4s" id="press-release">
-        <a href="#" >Communiqués de presse</a>
-      </li>
-      <li data-sr="enter top, move 150px, wait 0.5s"><a href="#">S'abonner à la newsletter</a></li>
-      <li data-sr="enter right, move 150px, wait 0.5s">
+      <li data-sr="enter left, move 150px, wait 0.5s"><a href="#">S'abonner à la newsletter</a></li>
+      <li data-sr="enter bottom, move 150px, wait 0.5s">
         <a href="{{ url_for('static', filename='documents/brochure-kozeagroup.pdf')}}">Télécharger notre brochure</a>
+      </li>
+      <li data-sr="enter right, move 200px, wait 0.4s" id="press-release">
+        <a href="#" >Communiqués de presse</a>
       </li>
     </ul>
     {# TODO links #}
   </section>
 
   <section id="partners">
-    <h2>Nos partenariats</h2>
-    <p class="intro">
+    <h2 data-sr="enter bottom, move 100px, wait 0.5s">Nos partenariats</h2>
+    <p data-sr="enter bottom, move 100px, wait 0.5s" class="intro">
       Kozea group collabore au sein de plusieurs associations spécialisées dans le web et dans la e-santé.
     </p>
     <ul>
@@ -60,13 +60,15 @@
   </section>
 
   <section id="follow">
-    <h2>Suivez-nous</h2>
+    <h2 data-sr="enter bottom, move 100px, wait 0.5s">Suivez-nous</h2>
     <ul class="links">
-      <li><a href="{{ url_for('page', page='about') }} ">En savoir plus</a></li>
+      <li data-sr="enter bottom, move 100px, wait 0.5s"><a href="{{ url_for('page', page='about') }} ">En savoir plus</a></li>
     </ul>
     <ul class="insta">
       {% for media in render_insta %}
-        <li><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" title="{{ media.title }}"/></a></li>
+        {% set side = 'right' if loop.index > 2 else 'left' %}
+        {% set wait = '0.8' if loop.index in [1, 4] else '0.5' %}
+        <li data-sr="enter {{ side }}, move 100px, wait {{ wait }}s"><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" title="{{ media.title }}"/></a></li>
       {% endfor %}
     </ul>
   </section>
