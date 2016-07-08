@@ -5,7 +5,7 @@ import requests
 
 
 app = Flask(__name__)
-app.config.from_envvar('KOZEA_CONFIG')
+app.config.from_envvar('KOZEA_CONFIG', silent=True)
 
 ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
 MANDRILL_KEY = app.config.get('MANDRILL_KEY')
@@ -24,8 +24,8 @@ def page(page='index'):
     return render_template('404.html')
 
 
-@app.route('/contact', methods=['POST'])
-def contact():
+@app.route('/make_contact', methods=['POST'])
+def make_contact():
     mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
     message = {

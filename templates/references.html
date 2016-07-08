@@ -2,14 +2,14 @@
 
 {% block body %}
   <section id="trust">
-    <h2>Ils nous font confiance</h2>
+    <h2 data-sr="{{ sr_bottom }}">Ils nous font confiance</h2>
     <ul>
-      <li id="arrow"><a href="http://www.arrow-generiques.com/">Arrow Génériques</a></li>
-      <li id="novartis"><a href="http://www.novartis.fr/">Novartis</a></li>
-      <li id="bailly"><a href="http://www.baillycreat.com/">Bailly-Creat</a></li>
-      <li id="septodont"><a href="http://www.septodont.fr/">Septodont</a></li>
-      <li id="sanofi"><a href="http://www.sanofi.com/">Sanofi</a></li>
-      <li id="mylan"><a href="http://www.mylan.fr/">Mylan</a></li>
+      <li data-sr="{{ sr_left }}" id="arrow"><a href="http://www.arrow-generiques.com/">Arrow Génériques</a></li>
+      <li data-sr="{{ sr_bottom }}" id="novartis"><a href="http://www.novartis.fr/">Novartis</a></li>
+      <li data-sr="{{ sr_bottom }}" id="bailly"><a href="http://www.baillycreat.com/">Bailly-Creat</a></li>
+      <li data-sr="{{ sr_right }}" id="septodont"><a href="http://www.septodont.fr/">Septodont</a></li>
+      <li data-sr="{{ sr_bottom }}" id="sanofi"><a href="http://www.sanofi.com/">Sanofi</a></li>
+      <li data-sr="{{ sr_bottom }}" id="mylan"><a href="http://www.mylan.fr/">Mylan</a></li>
     </ul>
   </section>
 
@@ -17,10 +17,10 @@
     <h2>Link</h2>
     {# TODO #}
     <ul>
-      <li id="safran"><a href="http://www.safran-group.com/fr">Safran</a></li>
-      <li id="lafarge"><a href="http://www.lafargeholcim.com/">Lafarge</a></li>
-      <li id="airbus-helicopters"><a href="http://www.airbushelicopters.com/">Airbus helicopters</a></li>
-      <li id="safetynetwork"><a href="http://www.safetynetwork.fr/">Safety Network</a></li>
+      <li data-sr="{{ sr_left }}" id="safran"><a href="http://www.safran-group.com/fr">Safran</a></li>
+      <li data-sr="{{ sr_bottom }}" id="lafarge"><a href="http://www.lafargeholcim.com/">Lafarge</a></li>
+      <li data-sr="{{ sr_bottom }}" id="airbus-helicopters"><a href="http://www.airbushelicopters.com/">Airbus helicopters</a></li>
+      <li data-sr="{{ sr_right }}" id="safetynetwork"><a href="http://www.safetynetwork.fr/">Safety Network</a></li>
     </ul>
   </section>
 {% endblock body %}
