@@ -7,6 +7,10 @@
   ['references', 'Nos références'],
   ['contact', 'Contact'],
 ] %}
+{% set sr_top = "enter top, move 200px, wait 0.5s" %}
+{% set sr_right = "enter right, move 200px, wait 0.5s" %}
+{% set sr_bottom = "enter bottom, move 200px, wait 0.5s" %}
+{% set sr_left = "enter left, move 200px, wait 0.5s" %}
 <html>
   <head>
     <meta charset="UTF-8"/>
@@ -81,6 +85,6 @@
         </dd>
       </dl>
     </footer>
-    {% block end_js %}{% endblock end_js %}
+    <script type="text/javascript" src="static/js/scrollReveal.min.js"></script>
   </body>
 </html>

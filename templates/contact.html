@@ -7,27 +7,27 @@
 
 {% block body %}
   <section id="contact-us">
-    <h2>Contactez-nous</h2>
-    <p class="intro">
+      <h2 data-sr="{{ sr_bottom }}">Contactez-nous</h2>
+    <p data-sr="{{ sr_bottom }}" class="intro">
       Un projet ? Une collaboration ? Des questions ? Écrivez-nous ! Nous serons ravis de vous répondre.
     </p>
 
     <dl>
-      <dt>Adresse</dt>
-      <dd>
+      <dt data-sr="{{ sr_left }}">Adresse</dt>
+      <dd data-sr="{{ sr_left }}">
         107, boulevard de Stalingrad<br/>
         69100<br/>
         Villeurbanne
       </dd>
-      <dt>Contact</dt>
-      <dd>
+      <dt data-sr="{{ sr_left }}">Contact</dt>
+      <dd data-sr="{{ sr_left }}">
         <ul>
           <li><a href="tel://+33478841928">+33 4 78 84 19 28</a></li>
           <li><a href="mailto://contact@kozea.fr">contact@kozea.fr</a></li>
         </ul>
       </dd>
     </dl>
-    <form action="/contact" method="POST">
+    <form action="/make_contact" method="POST" data-sr="{{ sr_right }}">
       <input id="email" type="email" placeholder="[ Email ]" name="email" required/>
       <input id="name" placeholder="[ Nom / Société ]" name="name" required/>
       <textarea id="question" placeholder="[ Demande ]" name="question" required></textarea>

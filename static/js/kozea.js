@@ -27,7 +27,7 @@ $(document).ready(function() {
         setTimeout(remove_message, 2000);
       });
   });
-  if ($('#about').size() > 0) {window.sr = new scrollReveal();}
+  window.sr = new scrollReveal();
 });
 
 /* Use this for the popup on the index page
