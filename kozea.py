@@ -45,7 +45,7 @@ def get_insta_media():
     """ Care with access_token. It may expire one day. """
     request = requests.get(
         "https://api.instagram.com/v1/users/self/media/recent/"
-        "?access_token={}&count=3".format(ACCESS_TOKEN)).json()
+        "?access_token={}&count=4".format(ACCESS_TOKEN)).json()
     render_insta = []
     for media in request.get('data', []):
         render_insta.append({

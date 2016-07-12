@@ -374,6 +374,7 @@ html {
       #news ul {
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
 
         li {
           box-sizing: border-box;
@@ -381,6 +382,25 @@ html {
           display: flex;
           justify-content: flex-end;
           padding: 30px;
+          position: relative;
+
+          &:after {
+            background: rgba($primary,0.6);
+            content: '';
+            height: calc(100% - 50px);
+            left: 25px;
+            opacity: 0;
+            position: absolute;
+            top: 25px;
+            transform: scale(0);
+            transition: opacity 0.35s, transform 0.35s;
+            width: calc(100% - 50px);
+          }
+
+          &:hover:after {
+            opacity: 1;
+            transform: scale(1);
+          }
 
           a {
             align-items: center;
@@ -390,6 +410,7 @@ html {
             font-weight: 700;
             text-align: center;
             text-transform: uppercase;
+            z-index: 1;
 
             &:before {
               order: -2;
@@ -405,19 +426,23 @@ html {
             }
           }
 
-          &:first-child {
-            background: url(images/photos/press-bkgd.jpg)no-repeat;
-            background-size: cover;
-            height: 400px;
-            width: 50%;
+          &#newsletter {
+            background: $primary;
+            height: 200px;
+            margin-left: 17%;
+            width: 33%;
+
+            &:after {
+              background: lighten(rgba(26,37,48,0.1),25%);
+            }
 
             a:before {
-              content: url(images/icones/press.svg);
-              width: 100px;
+              content: url(images/icones/newsletter.svg);
+              width: 70px;
             }
           }
 
-          &:nth-child(2) {
+          &#download-brochure {
             background: url(images/photos/brochure-bkgd.jpg)no-repeat;
             background-size: cover;
             height: 200px;
@@ -429,8 +454,16 @@ html {
             }
           }
 
-          &:hover {
+          &#press-release {
+            background: url(images/photos/press-bkgd.jpg)no-repeat;
+            background-size: cover;
+            height: 400px;
+            margin-left: 50%;
+            width: 50%;
+
             a:before {
+              content: url(images/icones/press.svg);
+              width: 100px;
             }
           }
         }
@@ -496,21 +529,6 @@ html {
               object-fit: cover;
               width: 100%;
             }
-          }
-
-          &:after {
-            align-items: center;
-            background: $border;
-            color: $text;
-            content: '@kozea';
-            display: flex;
-            flex-direction: column;
-            font-size: 1.2em;
-            font-style: italic;
-            font-weight: 100;
-            height: 300px;
-            justify-content: center;
-            width: 300px;
           }
         }
       }

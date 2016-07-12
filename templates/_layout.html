@@ -26,17 +26,21 @@
   </head>
 
   <body id="{{ page }}">
-      <header>
+    <header>
+      {% if page == 'index' %}
+        <canvas class="canvas"></canvas>
+        <a id="go-to-about" href="#about">En savoir plus</a>
+      {% endif %}
+      {% if (page in dict(titles) or page == 'legal') %}
         {% if page == 'index' %}
-          <canvas class="canvas"></canvas>
-          <a id="go-to-about" href="#about">En savoir plus</a>
-        {% endif %}
-        {% if (page in dict(titles) or page == 'legal') %}
-          <h1>{{ dict(titles)[page] }}</h1>
+          <h1 data-sr="enter top, move 200px, wait 0.5s, over 3s">{{ dict(titles)[page] }}</h1>
         {% else %}
-          <h1>404</h1>
+          <h1 data-sr="{{ sr_bottom }}">{{ dict(titles)[page] }}</h1>
         {% endif %}
-      </header>
+      {% else %}
+        <h1>404</h1>
+      {% endif %}
+    </header>
 
     <nav>
       <ul>
@@ -71,7 +75,7 @@
         <dd>
           <ul class="links">
             <li id="instagram"><a href="https://www.instagram.com/kozea/">Instagram</a></li>
-            <li id="linkedin"><a href="{# TODO link #}">LinkedIn</a></li>
+            <li id="linkedin"><a href="https://www.linkedin.com/company/kozeagroup">LinkedIn</a></li>
             <li id="youtube"><a href="https://www.youtube.com/channel/UCx5VGRSsjpRWhc55EpI_gEw">Youtube</a></li>
             <li id="github"><a href="https://github.com/Kozea">GitHub</a></li>
           </ul>
@@ -86,5 +90,6 @@
       </dl>
     </footer>
     <script type="text/javascript" src="static/js/scrollReveal.min.js"></script>
+    {% block end_js %}{% endblock end_js %}
   </body>
 </html>

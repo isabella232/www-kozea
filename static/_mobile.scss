@@ -127,6 +127,10 @@
 
 @media screen and (max-width: 768px) {
   html body {
+    header #go-to-about {
+      display: none;
+    }
+    
     &#index {
       #about p {
         font-size: 1.5em;
