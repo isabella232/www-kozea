@@ -47,7 +47,7 @@ def get_insta_media():
         "https://api.instagram.com/v1/users/self/media/recent/"
         "?access_token={}&count=3".format(ACCESS_TOKEN)).json()
     render_insta = []
-    for media in request.get('data'):
+    for media in request.get('data', []):
         render_insta.append({
             'link': media.get('link'),
             'src': media.get('images').get('standard_resolution').get('url'),
