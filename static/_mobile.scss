@@ -39,6 +39,24 @@
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
   html body {
+    &#index #news ul li {
+      &:after {
+        height:  calc(100% - 30px);
+        left: 15px;
+        top: 15px;
+        width: calc(100% - 30px);
+      }
+
+      &#newsletter, &#download-brochure {
+        margin-left: 0;
+        width: 50%;
+      }
+
+      &#press-release {
+        height: 100%;
+      }
+    }
+
     &#about #story ul li:nth-child(2) {
       margin-right: 0;
     }
@@ -207,10 +225,9 @@
           flex-direction: column;
 
           > li {
-            width: 100% !important;
-
-            &:first-child {
-              height: 200px;
+            &#newsletter, &#download-brochure, &#press-release {
+              width: 100%;
+              margin-left: 0;
             }
           }
         }
