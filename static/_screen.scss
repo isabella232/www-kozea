@@ -584,7 +584,7 @@ html {
       #story {
         blockquote {
           align-self: flex-end;
-          background: red;
+          background: url(images/photos/boss.jpg) 100% 0 no-repeat;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
@@ -810,12 +810,7 @@ html {
         }
 
         h3 {
-          font-size: 0;
 
-          &:before {
-            content: '';
-            display: block;
-          }
         }
       }
 
@@ -832,6 +827,17 @@ html {
 
         #backoffice {
           width: 25%;
+        }
+
+        #pharminfo, #medsite, #backoffice, #backflip {
+          h3 {
+            font-size: 0;
+
+            &:before {
+              content: '';
+              display: block;
+            }
+          }
         }
 
         > section:first-of-type {
@@ -930,7 +936,7 @@ html {
               &:after {
                 content: '';
                 background: url(images/photos/link.jpg);
-                height: 183%;
+                height: 165%;
                 left: 100%;
                 top: -70px;
                 width: 150%;
@@ -944,7 +950,7 @@ html {
 
             &#backflip {
               align-self: flex-start;
-              margin-top: -218px;
+              margin-top: -237px;
 
               h3:before {
                 background: url(images/logos/logo-backflip.svg)no-repeat;

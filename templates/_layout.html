@@ -33,7 +33,7 @@
       {% endif %}
       {% if (page in dict(titles) or page == 'legal') %}
         {% if page == 'index' %}
-          <h1 data-sr="enter top, move 200px, wait 0.5s, over 3s">{{ dict(titles)[page] }}</h1>
+          <h1>{{ dict(titles)[page] }}</h1>
         {% else %}
           <h1 data-sr="{{ sr_bottom }}">{{ dict(titles)[page] }}</h1>
         {% endif %}
