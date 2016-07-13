@@ -1,0 +1,1239 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700)";
+* {
+  color: #1c1c1c;
+  font-family: 'Hind', sans-serif;
+  outline: none; }
+
+h1 {
+  color: #1c1c1c;
+  font-size: 1em;
+  font-weight: 300; }
+  h1:before {
+    content: '[ '; }
+  h1:after {
+    content: ' ]'; }
+
+h2 {
+  color: #1a2530;
+  font-size: 2.5em;
+  margin: 0;
+  text-align: center; }
+
+h3 {
+  font-weight: 500; }
+
+p strong {
+  font-weight: 500; }
+
+a {
+  text-decoration: none;
+  transition: .5s;
+  cursor: pointer; }
+
+ul {
+  padding-left: 0; }
+  ul li {
+    list-style-type: none; }
+
+/* colors and backgrounds */
+nav ul li > *, #satisfaction > *, #big-data > *, #skills ul > *, #digital > *,
+#professionnals > *, #advice > *, #project > *, #advertisement > *,
+#work > *, #free > *, #projects dl > *, #projects dd > *,
+#numbers > *, #members > * > * {
+  color: #fff; }
+
+nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+  background: #1a2530; }
+
+#about ul ~ p, #gestion-backoffice, #develop, #skills,
+#story > p:not(.intro), #pharminfo, #medsite,
+#backflip, #solutions, #projects + #expert, #contact-us form {
+  background: #f9f9f9; }
+
+#work, #numbers #media, #targets, #structures #media + dd a {
+  background: #e53c4c; }
+
+#project, #numbers #link, #reactivity, #structures #link + dd a {
+  background: #f49a2f; }
+
+#professionnals, #numbers #platform, #innovation, #structures #platform + dd a {
+  background: #007bb8; }
+
+#radicale, #numbers #community, #r-and-d, #structures #community + dd a {
+  background: #6e5f84; }
+
+#pygal {
+  background: #87789e; }
+
+#weasyprint {
+  background: #554a66; }
+
+#backoffice, #share {
+  background: #f1f1f1; }
+
+#missions section, #platform section, #link section, #media section, #community section {
+  padding: 30px; }
+
+/* HTML */
+html {
+  background: url(images/kozea-line.jpg) no-repeat bottom;
+  background-size: contain; }
+  html body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /*animation lien*/ }
+    html body .links li a:before, html body .links li a:after {
+      display: inline-block;
+      opacity: 0;
+      transition: transform 0.35s, opacity 0.2s; }
+    html body .links li a:before {
+      content: '[ ';
+      margin-right: 5px;
+      transform: translateX(20px); }
+    html body .links li a:after {
+      content: ' ]';
+      margin-left: 5px;
+      transform: translateX(-20px); }
+    html body .links li a:hover, html body .links li a:focus {
+      color: #69737c; }
+      html body .links li a:hover:before, html body .links li a:hover:after, html body .links li a:focus:before, html body .links li a:focus:after {
+        opacity: 1;
+        transform: translateX(0px); }
+    html body header {
+      display: flex;
+      justify-content: center;
+      /* en savoir plus home page*/ }
+      html body header #go-to-about {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin: -30px auto;
+        padding: 10px;
+        font-size: 0;
+        z-index: 3; }
+        html body header #go-to-about:after {
+          content: url(images/icones/more.svg);
+          width: 15px;
+          animation: bounce 1.5s ease-in-out; }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0; }
+  50% {
+    transform: translateY(10px); }
+  100% {
+    transform: translateY(0); } }
+    html body nav {
+      order: -1; }
+      html body nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin: auto;
+        max-width: 1200px;
+        position: relative; }
+        html body nav ul li {
+          font-size: 1em;
+          padding: 22px 10px; }
+          html body nav ul li:first-child a:before {
+            background: url(images/logos/logo-kozeagroup.svg) no-repeat left;
+            content: '';
+            height: 58px;
+            left: 0;
+            position: absolute;
+            top: 6px;
+            width: 130px; }
+          html body nav ul li:first-child:hover a:before {
+            opacity: 0.8; }
+          html body nav ul li:hover, html body nav ul li:focus {
+            opacity: 0.85; }
+      html body nav + section {
+        margin-top: 0; }
+    html body > section {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin: 50px auto;
+      max-width: 1200px;
+      width: 100%; }
+      html body > section p, html body > section li {
+        font-size: 1.2em;
+        font-weight: 300; }
+        html body > section p.intro, html body > section li.intro {
+          font-size: 1.6em;
+          margin: 0 auto 30px;
+          text-align: center;
+          width: 70%; }
+        html body > section p.message, html body > section li.message {
+          /*pop up message contact form*/
+          align-self: center;
+          border: 2px solid #2c3f51;
+          color: #1a2530;
+          font-size: 1em;
+          padding: 10px;
+          text-align: center;
+          width: 50%; }
+      html body > section .links a {
+        color: #69737c;
+        font-size: 0.85em; }
+    html body:not(#index) header {
+      margin-top: 5%; }
+    html body#index {
+      /* Accueil */ }
+      html body#index header {
+        background: #1a2530;
+        height: 94.5vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative; }
+        html body#index header:after {
+          background: url(images/kozea-line.jpg) no-repeat bottom;
+          background-size: cover;
+          content: '';
+          height: 3px;
+          width: 100%; }
+        html body#index header h1:before {
+          content: url(images/logos/logo-icon.svg);
+          left: calc(50% - 65px);
+          position: absolute;
+          top: calc(50% - 200px);
+          width: 130px; }
+      html body#index #about {
+        margin-bottom: 0; }
+        html body#index #about h2 {
+          display: none; }
+        html body#index #about p {
+          color: #fff;
+          font-size: 2em;
+          left: 14vw;
+          position: absolute;
+          top: 53vh; }
+      html body#index #activity dl {
+        display: flex;
+        flex-wrap: wrap; }
+        html body#index #activity dl dt {
+          display: none; }
+          html body#index #activity dl dt#platform + dd {
+            background: url(images/photos/platform-nb.jpg); }
+            html body#index #activity dl dt#platform + dd a:before {
+              content: url(images/logos/kozea-platform-white.svg); }
+          html body#index #activity dl dt#link + dd {
+            background: url(images/photos/link-nb.jpg); }
+            html body#index #activity dl dt#link + dd a:before {
+              content: url(images/logos/kozea-link-white.svg); }
+          html body#index #activity dl dt#media + dd {
+            background: url(images/photos/media-nb.jpg); }
+            html body#index #activity dl dt#media + dd a:before {
+              content: url(images/logos/kozea-media-white.svg); }
+          html body#index #activity dl dt#community + dd {
+            background: url(images/photos/community-nb.jpg); }
+            html body#index #activity dl dt#community + dd a:before {
+              content: url(images/logos/kozea-community-white.svg); }
+        html body#index #activity dl dd {
+          align-items: center;
+          display: flex;
+          height: 400px;
+          justify-content: center;
+          margin: 0;
+          width: 50%; }
+          html body#index #activity dl dd a {
+            color: #fff;
+            font-weight: 600;
+            padding: 25px;
+            transform: scale(0);
+            transition: opacity 0.35s, transform 0.35s;
+            width: 250px; }
+            html body#index #activity dl dd a:before {
+              display: block;
+              width: 125px; }
+          html body#index #activity dl dd:hover a {
+            opacity: 1;
+            transform: scale(1); }
+      html body#index #news ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap; }
+        html body#index #news ul li {
+          box-sizing: border-box;
+          flex-direction: column;
+          display: flex;
+          justify-content: flex-end;
+          padding: 30px;
+          position: relative; }
+          html body#index #news ul li:after {
+            background: rgba(26, 37, 48, 0.6);
+            content: '';
+            height: calc(100% - 50px);
+            left: 25px;
+            opacity: 0;
+            position: absolute;
+            top: 25px;
+            transform: scale(0);
+            transition: opacity 0.35s, transform 0.35s;
+            width: calc(100% - 50px); }
+          html body#index #news ul li:hover:after {
+            opacity: 1;
+            transform: scale(1); }
+          html body#index #news ul li a {
+            align-items: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            z-index: 1; }
+            html body#index #news ul li a:before {
+              order: -2; }
+            html body#index #news ul li a:after {
+              background: #fff;
+              content: '';
+              height: 3px;
+              margin: 10px 0 20px;
+              order: -1;
+              width: 20px; }
+          html body#index #news ul li#newsletter {
+            background: #1a2530;
+            height: 200px;
+            margin-left: 17%;
+            width: 33%; }
+            html body#index #news ul li#newsletter:after {
+              background: rgba(71, 101, 131, 0.1); }
+            html body#index #news ul li#newsletter a:before {
+              content: url(images/icones/newsletter.svg);
+              width: 70px; }
+          html body#index #news ul li#download-brochure {
+            background: url(images/photos/brochure-bkgd.jpg) no-repeat;
+            background-size: cover;
+            height: 200px;
+            width: 33%; }
+            html body#index #news ul li#download-brochure a:before {
+              content: url(images/icones/brochure.svg);
+              width: 40px; }
+          html body#index #news ul li#press-release {
+            background: url(images/photos/press-bkgd.jpg) no-repeat;
+            background-size: cover;
+            height: 400px;
+            margin-left: 50%;
+            width: 50%; }
+            html body#index #news ul li#press-release a:before {
+              content: url(images/icones/press.svg);
+              width: 100px; }
+      html body#index #partners ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap; }
+        html body#index #partners ul li {
+          width: 25%; }
+          html body#index #partners ul li a {
+            display: block;
+            font-size: 0;
+            height: 100px; }
+          html body#index #partners ul li#france-ehealth-tech a {
+            background: url(images/marques/france-ehealth.jpg) no-repeat center center; }
+          html body#index #partners ul li#la-cuisine-du-web a {
+            background: url(images/marques/cuisineduweb.jpg) no-repeat center center; }
+          html body#index #partners ul li#minalogic a {
+            background: url(images/marques/minalogic.jpg) no-repeat center center; }
+          html body#index #partners ul li#i-care a {
+            background: url(images/marques/i-care.jpg) no-repeat center center; }
+      html body#index #follow .insta {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%; }
+        html body#index #follow .insta li {
+          height: 300px;
+          position: relative;
+          width: 300px; }
+          html body#index #follow .insta li:before {
+            background: url(images/icones/instagram.svg);
+            content: '';
+            height: 25px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 25px; }
+          html body#index #follow .insta li img {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%; }
+    html body#about {
+      /* À propos */ }
+      html body#about #numbers, html body#about #members, html body#about #tools {
+        display: flex;
+        flex-wrap: wrap; }
+      html body#about #numbers li, html body#about #members h3, html body#about #tools li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase; }
+        html body#about #numbers li strong, html body#about #members h3 strong, html body#about #tools li strong {
+          position: relative; }
+          html body#about #numbers li strong span, html body#about #members h3 strong span, html body#about #tools li strong span {
+            color: #fff;
+            display: flex;
+            font-size: 6em;
+            justify-content: center; }
+          html body#about #numbers li strong:before, html body#about #members h3 strong:before, html body#about #tools li strong:before {
+            content: '';
+            background: #fff;
+            bottom: 50px;
+            display: block;
+            height: 3px;
+            left: calc(50% - 10px);
+            position: absolute;
+            width: 20px; }
+      html body#about #numbers li strong, html body#about #members h3 strong {
+        color: #fff; }
+      html body#about #numbers li {
+        height: 300px;
+        width: 300px; }
+      html body#about #story blockquote {
+        align-self: flex-end;
+        background: url(images/photos/boss.jpg) 100% 0 no-repeat;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+        justify-content: flex-end;
+        margin: 0;
+        padding: 30px;
+        width: 75%; }
+        html body#about #story blockquote + p, html body#about #story blockquote + p + p {
+          align-self: flex-end;
+          box-sizing: border-box;
+          padding: 30px;
+          margin: 0;
+          width: 50%; }
+          html body#about #story blockquote + p + p, html body#about #story blockquote + p + p + p {
+            padding-top: 0; }
+      html body#about #story ul {
+        margin: 0; }
+        html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+          margin-left: 25%; }
+        html body#about #story ul li:nth-child(2) {
+          margin-right: 25%; }
+      html body#about #team #members h3 {
+        color: #fff; }
+      html body#about #team #members > * {
+        height: 300px;
+        margin: 0;
+        width: 300px; }
+      html body#about #team #members section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative; }
+        html body#about #team #members section:after {
+          background: rgba(26, 37, 48, 0.6);
+          content: '';
+          height: 250px;
+          left: 25px;
+          opacity: 0;
+          position: absolute;
+          top: 25px;
+          transform: scale(0);
+          transition: opacity 0.35s, transform 0.35s;
+          width: 250px;
+          z-index: -1; }
+        html body#about #team #members section h4, html body#about #team #members section p {
+          opacity: 0;
+          padding: 0 12%;
+          transform: scale(0);
+          transition: opacity 0.35s, transform 0.35s; }
+        html body#about #team #members section h4 {
+          font-size: 1.2em;
+          font-weight: 400;
+          line-height: 2.2em;
+          margin: 0; }
+          html body#about #team #members section h4:after {
+            background: #fff;
+            content: '';
+            display: block;
+            height: 2px;
+            width: 25px; }
+        html body#about #team #members section p {
+          font-size: 1em;
+          font-style: italic;
+          line-height: 1.2em;
+          padding-bottom: 20px; }
+        html body#about #team #members section img {
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 300px;
+          z-index: -1; }
+        html body#about #team #members section:hover:after, html body#about #team #members section:hover h4, html body#about #team #members section:hover p, html body#about #team #members section:focus:after, html body#about #team #members section:focus h4, html body#about #team #members section:focus p {
+          opacity: 1;
+          transform: scale(1); }
+        @media screen and (min-width: 1200px) {
+          html body#about #team #members section:nth-of-type(2), html body#about #team #members section:nth-of-type(3), html body#about #team #members section:nth-of-type(14) {
+            padding-right: 300px; }
+          html body#about #team #members section:nth-of-type(10), html body#about #team #members section:nth-of-type(11) {
+            margin-left: 300px; }
+          html body#about #team #members section:nth-of-type(10):before, html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before {
+            content: '';
+            height: 300px;
+            position: absolute;
+            width: 300px; }
+          html body#about #team #members section:nth-of-type(10):before {
+            background: #1a2530;
+            left: -300px;
+            top: 0; }
+          html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before {
+            background: #476583;
+            right: 0;
+            top: 0; }
+          html body#about #team #members section:nth-of-type(14):before {
+            background: #1a2530; } }
+      html body#about #team #tools {
+        justify-content: flex-end;
+        width: 100%; }
+        html body#about #team #tools h3 {
+          display: none; }
+        html body#about #team #tools ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0;
+          width: 50%; }
+          html body#about #team #tools ul li {
+            background-size: 30% !important;
+            border-left: 1px solid #f3f3f3;
+            box-shadow: 1px 1px 0px #f3f3f3;
+            box-sizing: border-box;
+            height: 300px;
+            width: 50%; }
+            html body#about #team #tools ul li:nth-child(-n+2) {
+              border-top: 1px solid #f3f3f3; }
+            html body#about #team #tools ul li#soda {
+              background: url(images/icones/soda.svg) no-repeat center 40px; }
+            html body#about #team #tools ul li#sport {
+              background: url(images/icones/sport.svg) no-repeat center 40px; }
+            html body#about #team #tools ul li#babyfoot {
+              background: url(images/icones/babyfoot.svg) no-repeat center 40px; }
+            html body#about #team #tools ul li#popcorn {
+              background: url(images/icones/popcorn.svg) no-repeat center 40px; }
+            html body#about #team #tools ul li strong {
+              margin-top: 120px; }
+              html body#about #team #tools ul li strong:before {
+                background: #1c1c1c; }
+    html body#activity {
+      /* Activité */ }
+      html body#activity section:not(:first-of-type) {
+        position: relative; }
+        html body#activity section:not(:first-of-type):before {
+          display: block;
+          position: absolute;
+          width: 150px; }
+        html body#activity section:not(:first-of-type) h2 {
+          font-size: 8em;
+          opacity: 0.08;
+          position: absolute;
+          z-index: -1; }
+      html body#activity section {
+        box-sizing: border-box; }
+        html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #medsite, html body#activity section #backflip, html body#activity section #advertisement, html body#activity section #solutions, html body#activity section #expert {
+          width: 50%; }
+        html body#activity section #digital, html body#activity section #professionnals, html body#activity section #advice, html body#activity section #project, html body#activity section #work, html body#activity section #free, html body#activity section #share {
+          width: 33%; }
+        html body#activity section #backoffice {
+          width: 25%; }
+        html body#activity section #pharminfo h3, html body#activity section #medsite h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
+          font-size: 0; }
+          html body#activity section #pharminfo h3:before, html body#activity section #medsite h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
+            content: '';
+            display: block; }
+        html body#activity section > section:first-of-type {
+          position: relative; }
+          html body#activity section > section:first-of-type:after {
+            position: absolute;
+            z-index: -2; }
+        html body#activity section#platform {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-top: 0; }
+          html body#activity section#platform:before {
+            content: url(images/logos/kozea-platform.svg);
+            left: 10%;
+            top: 4%; }
+          html body#activity section#platform h2 {
+            right: 4%;
+            top: 150px; }
+          html body#activity section#platform section:first-of-type {
+            margin-left: 17%;
+            margin-top: 150px;
+            order: -2; }
+            html body#activity section#platform section:first-of-type:after {
+              content: '';
+              background: url(images/photos/platform.jpg);
+              left: 25%;
+              top: -190px;
+              width: 150%;
+              height: 130%; }
+          html body#activity section#platform section#pharminfo {
+            margin-top: -150px;
+            margin-left: 50%; }
+            html body#activity section#platform section#pharminfo h3:before {
+              background: url(images/logos/logo-pharminfo.svg) no-repeat;
+              height: 50px; }
+          html body#activity section#platform section#medsite h3:before {
+            background: url(images/logos/medsite.svg) no-repeat;
+            height: 30px; }
+          html body#activity section#platform section#professionnals {
+            align-self: flex-start;
+            margin-right: 17%; }
+          html body#activity section#platform section#backoffice {
+            margin-left: 25%; }
+            html body#activity section#platform section#backoffice h3:before {
+              background: url(images/logos/logo-backoffice.svg) no-repeat;
+              height: 50px; }
+        html body#activity section#link {
+          margin-top: 180px; }
+          html body#activity section#link:before {
+            content: url(images/logos/kozea-link.svg);
+            right: 35%;
+            top: -150px; }
+          html body#activity section#link h2 {
+            left: 8%;
+            top: -120px; }
+          html body#activity section#link section:first-of-type {
+            align-self: flex-start;
+            margin-left: 17%; }
+            html body#activity section#link section:first-of-type:after {
+              content: '';
+              background: url(images/photos/link.jpg);
+              height: 165%;
+              left: 100%;
+              top: -70px;
+              width: 150%; }
+          html body#activity section#link section#project {
+            align-self: flex-end;
+            margin-right: 17%; }
+          html body#activity section#link section#backflip {
+            align-self: flex-start;
+            margin-top: -237px; }
+            html body#activity section#link section#backflip h3:before {
+              background: url(images/logos/logo-backflip.svg) no-repeat;
+              height: 80px; }
+        html body#activity section#media {
+          margin-top: 230px; }
+          html body#activity section#media:before {
+            content: url(images/logos/kozea-media.svg);
+            left: 35%;
+            top: -200px; }
+          html body#activity section#media h2 {
+            right: 4%;
+            top: -130px; }
+          html body#activity section#media section:first-of-type {
+            align-self: flex-end;
+            position: relative; }
+            html body#activity section#media section:first-of-type:after {
+              content: '';
+              background: url(images/photos/media.jpg);
+              left: -67%;
+              position: absolute;
+              top: -120px;
+              height: 150%;
+              width: 100%;
+              z-index: -2; }
+          html body#activity section#media section#work {
+            margin-left: 33%; }
+            html body#activity section#media section#work p strong {
+              color: #fff; }
+          html body#activity section#media section#solutions {
+            align-self: flex-start;
+            margin-top: -315px; }
+        html body#activity section#community {
+          align-items: flex-start;
+          margin-top: 8%; }
+          html body#activity section#community:before {
+            content: url(images/logos/kozea-community.svg);
+            left: 17%;
+            top: -80px; }
+          html body#activity section#community h2 {
+            right: 1%;
+            top: -90px; }
+          html body#activity section#community section#free {
+            margin-left: 17%;
+            position: relative; }
+            html body#activity section#community section#free:after {
+              content: url(images/photos/community.jpg);
+              left: 87%;
+              position: absolute;
+              top: 30px;
+              z-index: -1; }
+          html body#activity section#community section#projects {
+            margin-left: 25%;
+            padding: 0; }
+            html body#activity section#community section#projects h3 {
+              display: none; }
+            html body#activity section#community section#projects ul {
+              display: flex;
+              flex-wrap: wrap;
+              margin: 0; }
+              html body#activity section#community section#projects ul li a {
+                align-items: center;
+                box-sizing: border-box;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                height: 300px;
+                justify-content: center;
+                padding: 5%;
+                text-align: center;
+                width: 300px; }
+                html body#activity section#community section#projects ul li a strong {
+                  color: #fff;
+                  text-transform: uppercase; }
+                html body#activity section#community section#projects ul li a:before {
+                  order: -2;
+                  width: 90px; }
+                html body#activity section#community section#projects ul li a:after {
+                  background: #fff;
+                  content: '';
+                  display: block;
+                  height: 3px;
+                  margin: 10px;
+                  order: -1;
+                  width: 20px; }
+              html body#activity section#community section#projects ul li#radicale a:before {
+                content: url(images/icones/radicale.svg); }
+              html body#activity section#community section#projects ul li#pygal a:before {
+                content: url(images/icones/pygal.svg); }
+              html body#activity section#community section#projects ul li#weasyprint a:before {
+                content: url(images/icones/weasyprint.svg); }
+          html body#activity section#community section#share {
+            margin-top: -15%;
+            margin-left: 50%; }
+    html body#expertise {
+      /* Expertise */ }
+      html body#expertise #missions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        html body#expertise #missions section {
+          box-sizing: border-box;
+          width: 50%; }
+          html body#expertise #missions section:first-of-type {
+            margin-right: 50%;
+            position: relative; }
+            html body#expertise #missions section:first-of-type:after {
+              background: #1a2530;
+              content: '';
+              display: block;
+              height: 3px;
+              position: absolute;
+              right: -30px;
+              top: 60px;
+              width: 60px; }
+            html body#expertise #missions section:first-of-type img {
+              position: absolute;
+              right: -300px;
+              top: 0;
+              width: 250px; }
+          html body#expertise #missions section:nth-of-type(2) {
+            margin-top: -90px;
+            margin-left: 50%; }
+          html body#expertise #missions section:nth-of-type(3) {
+            margin-right: 50%;
+            position: relative; }
+            html body#expertise #missions section:nth-of-type(3):after {
+              background: url(images/photos/brainstorm.jpg) no-repeat;
+              content: '';
+              height: 100%;
+              position: absolute;
+              right: -100%;
+              top: 0;
+              width: 100%; }
+          html body#expertise #missions section#big-data {
+            background: url(images/photos/big-data.jpg) no-repeat;
+            background-size: cover;
+            text-align: center; }
+      html body#expertise #skills {
+        margin: 13% auto 0;
+        max-width: inherit;
+        padding-bottom: 5%; }
+        html body#expertise #skills h2 {
+          margin-top: -10%; }
+        html body#expertise #skills ul {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 600px; }
+          html body#expertise #skills ul li {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: 270px;
+            padding: 20px 10px;
+            text-align: center;
+            width: 50%; }
+            html body#expertise #skills ul li:after {
+              background: #fff;
+              content: '';
+              height: 3px;
+              margin: 10px 0 20px;
+              order: -1;
+              width: 20px; }
+            html body#expertise #skills ul li:nth-of-type(3) {
+              margin-top: 60px; }
+            html body#expertise #skills ul li:before {
+              order: -2;
+              width: 90px; }
+            html body#expertise #skills ul li#targets:before {
+              content: url(images/icones/target.svg); }
+            html body#expertise #skills ul li#reactivity:before {
+              content: url(images/icones/reactivity.svg); }
+            html body#expertise #skills ul li#innovation:before {
+              content: url(images/icones/idea.svg); }
+            html body#expertise #skills ul li#r-and-d:before {
+              content: url(images/icones/search.svg); }
+      html body#expertise #goals ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap; }
+        html body#expertise #goals ul li {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 33%; }
+          html body#expertise #goals ul li:after {
+            background: #1a2530;
+            content: '';
+            display: block;
+            height: 3px;
+            order: -1;
+            margin: 10px;
+            width: 20px; }
+          html body#expertise #goals ul li:before {
+            order: -2;
+            width: 90px; }
+          html body#expertise #goals ul li#specialist:before {
+            content: url(images/icones/specialist.svg); }
+          html body#expertise #goals ul li#web-expert:before {
+            content: url(images/icones/webexpert.svg); }
+          html body#expertise #goals ul li#create-solutions:before {
+            content: url(images/icones/solutions.svg); }
+    html body#references section:not(:first-of-type) h2 {
+      font-size: 8em;
+      opacity: 0.08; }
+    html body#references section ul {
+      /* Références */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%; }
+      html body#references section ul li {
+        border-left: 1px solid #f3f3f3;
+        box-shadow: 1px 0px 0px #f3f3f3;
+        box-sizing: border-box;
+        padding: 40px 20px;
+        width: 25%; }
+        html body#references section ul li a {
+          display: block;
+          font-size: 0;
+          height: 100px; }
+        html body#references section ul li#arrow a {
+          background: url(images/marques/arrow.jpg) no-repeat center center; }
+        html body#references section ul li#novartis a {
+          background: url(images/marques/novartis.jpg) no-repeat center center; }
+        html body#references section ul li#bailly a {
+          background: url(images/marques/bailly-creat.jpg) no-repeat center center; }
+        html body#references section ul li#septodont a {
+          background: url(images/marques/septodont.jpg) no-repeat center center; }
+        html body#references section ul li#sanofi a {
+          background: url(images/marques/sanofi.jpg) no-repeat center center; }
+        html body#references section ul li#mylan a {
+          background: url(images/marques/mylan.jpg) no-repeat center center; }
+        html body#references section ul li#safran a {
+          background: url(images/marques/safran.jpg) no-repeat center center; }
+        html body#references section ul li#lafarge a {
+          background: url(images/marques/lafarge.jpg) no-repeat center center; }
+        html body#references section ul li#airbus-helicopters a {
+          background: url(images/marques/airbus.jpg) no-repeat center center; }
+        html body#references section ul li#safetynetwork a {
+          background: url(images/marques/safety-network.jpg) no-repeat center center; }
+    html body#contact section {
+      /* Contact */ }
+      html body#contact section > dl {
+        background: #1a2530;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 20px;
+        margin-right: 33%;
+        box-sizing: border-box;
+        width: 33%;
+        z-index: 1; }
+        html body#contact section > dl > * {
+          color: #fff; }
+        html body#contact section > dl dt:first-child, html body#contact section > dl dt:first-child + dd {
+          width: 60%; }
+        html body#contact section > dl dt:nth-of-type(2), html body#contact section > dl dt:nth-of-type(2) + dd {
+          width: 40%; }
+        html body#contact section > dl ul {
+          margin: 0; }
+          html body#contact section > dl ul li {
+            font-size: 1em; }
+            html body#contact section > dl ul li a {
+              color: #fff; }
+        html body#contact section > dl dd {
+          margin-left: 0;
+          font-weight: 100; }
+        html body#contact section > dl dt {
+          font-weight: 400;
+          order: -1;
+          padding-top: 10px; }
+      html body#contact section form, html body#contact section #map {
+        width: 50%; }
+      html body#contact section #map {
+        align-self: flex-start;
+        height: 500px;
+        margin-top: -100px; }
+      html body#contact section form {
+        align-self: flex-end;
+        border-top: 2px solid #1a2530;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        padding: 30px;
+        margin-top: -402px; }
+        html body#contact section form input:not(:last-child), html body#contact section form textarea {
+          background: none;
+          border-top: none;
+          border-right: none;
+          border-bottom: 1px solid #f3f3f3;
+          border-left: none;
+          margin-bottom: 20px;
+          padding: 5px 10px; }
+          html body#contact section form input:not(:last-child)[placeholder], html body#contact section form textarea[placeholder] {
+            color: #1c1c1c;
+            font-size: 1em;
+            font-weight: 100; }
+        html body#contact section form textarea {
+          height: 120px; }
+        html body#contact section form input[type="submit"] {
+          background: #1a2530;
+          border: none;
+          box-shadow: none;
+          color: #fff;
+          cursor: pointer;
+          font-size: 1em;
+          padding: 7px;
+          width: 90px; }
+          html body#contact section form input[type="submit"]:hover {
+            background: #2c3f51; }
+    html body#legal {
+      /* Mentions légales */ }
+      html body#legal h1:before {
+        content: '[ Mentions légales ]'; }
+      html body#legal h1:after {
+        content: none; }
+      html body#legal dl dt, html body#legal dl dd {
+        display: inline; }
+      html body#legal dl dt {
+        font-weight: 700; }
+        html body#legal dl dt:after {
+          content: ':';
+          display: inline; }
+      html body#legal dl dd {
+        margin-left: 0; }
+        html body#legal dl dd:after {
+          content: '';
+          display: block; }
+    html body#references section ul li a, html body#index #partners ul li a {
+      opacity: 0.75; }
+      html body#references section ul li a:hover, html body#index #partners ul li a:hover {
+        opacity: 1; }
+    html body span#back-to-top {
+      background: none;
+      bottom: 35px;
+      color: #1a2530;
+      display: block;
+      font-size: 1.3em;
+      opacity: 0.6;
+      right: 45px; }
+      html body span#back-to-top:hover {
+        background: none;
+        color: #69737c; }
+    html body span#background-line {
+      height: 100%;
+      left: 50%;
+      position: fixed;
+      top: 0;
+      z-index: -20; }
+      html body span#background-line:after {
+        content: '';
+        background: #f3f3f3;
+        height: calc(100% - 4px);
+        position: absolute;
+        top: 0;
+        width: 1px; }
+    html body .black-overlay {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 1001;
+      -moz-opacity: 0.8;
+      opacity: .80;
+      filter: alpha(opacity=80); }
+    html body .popup {
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      padding: 16px;
+      background-color: white;
+      z-index: 1002;
+      overflow: auto; }
+    html body footer {
+      margin-top: 25px; }
+      html body footer dl {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding-bottom: 15px; }
+        html body footer dl > * {
+          border-left: 1px solid #f3f3f3;
+          box-sizing: border-box;
+          font-size: 0.8em;
+          padding-left: 1.5%;
+          width: 25%; }
+          html body footer dl > *:first-child, html body footer dl > *:first-child + dd {
+            border-left: none; }
+        html body footer dl dt {
+          color: #C1C8D0;
+          order: -1;
+          padding-top: 10px; }
+        html body footer dl dd {
+          margin-left: 0; }
+          html body footer dl dd:nth-of-type(3) ul {
+            display: flex;
+            flex-wrap: wrap; }
+            html body footer dl dd:nth-of-type(3) ul li {
+              width: 50%; }
+          html body footer dl dd:last-of-type ul {
+            display: flex; }
+            html body footer dl dd:last-of-type ul li:last-child:before {
+              content: ' - '; }
+          html body footer dl dd ul {
+            margin-top: 0; }
+
+@media screen and (max-width: 1024px) {
+  html body#index #news ul li {
+    padding: 15px; }
+  html body#references section ul li {
+    padding: 40px 0; }
+  html body#contact section > dl {
+    margin-right: 17%;
+    width: 50%; }
+  html body footer dl dd:last-of-type ul {
+    flex-direction: column; }
+    html body footer dl dd:last-of-type ul li:last-child {
+      margin-left: 9px; }
+      html body footer dl dd:last-of-type ul li:last-child:before {
+        content: none; } }
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+    margin: 0; } }
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  html body#index #news ul li:after {
+    height: calc(100% - 30px);
+    left: 15px;
+    top: 15px;
+    width: calc(100% - 30px); }
+  html body#index #news ul li#newsletter, html body#index #news ul li#download-brochure {
+    margin-left: 0;
+    width: 50%; }
+  html body#index #news ul li#press-release {
+    height: 100%; }
+  html body#about #story ul li:nth-child(2) {
+    margin-right: 0; }
+  html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
+    width: 50%; }
+    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+      margin-left: 0; }
+    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+      margin-right: 0; }
+    html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
+      height: 130%;
+      left: 55%;
+      top: -160px;
+      width: 120%; }
+    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+      align-self: flex-end; }
+    html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
+      width: 100%; }
+  html body#activity section#platform :before {
+    left: 5%; } }
+
+@media screen and (min-width: 480px) and (max-width: 600px) {
+  html body#about #story ul li {
+    width: 50%; }
+    html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+      margin-left: 0; }
+  html body#about #team #members section {
+    width: 50%; }
+  html body#index #follow .insta li, html body .insta:after {
+    height: 230px; } }
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  html body#index header h1:before {
+    top: calc(50% - 200px); }
+  html body#index #about p {
+    left: calc(50% - 35%);
+    width: 70%; }
+  html body#index #activity dl dd {
+    height: 200px; }
+  html body#about #team #tools ul {
+    width: 100%; } }
+
+@media screen and (max-width: 768px) {
+  html body header #go-to-about {
+    display: none; }
+  html body#index #about p {
+    font-size: 1.5em; }
+  html body#index #partners ul li {
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 50%; }
+  html body#index #follow .insta li, html body#index #follow .insta:after {
+    width: 50%; }
+  html body#references section ul li {
+    width: 50%; }
+  html body#contact section > dl {
+    width: 75%; }
+  html body#contact section #map {
+    margin-top: 0; }
+  html body#contact section form {
+    margin-top: -502px; } }
+
+@media screen and (max-width: 480px) {
+  html body > section p.intro {
+    box-sizing: border-box;
+    font-size: 1.2em;
+    padding: 0 30px;
+    width: 100%; }
+  html body#index header h1:before {
+    left: calc(50% - 55px);
+    top: calc(50% - 210px);
+    width: 110px; }
+  html body#index #about p {
+    left: initial; }
+  html body#index #activity dl {
+    flex-direction: column;
+    width: 100%; }
+    html body#index #activity dl dd {
+      width: 100%; }
+      html body#index #activity dl dd a {
+        transform: none; }
+  html body#index #news ul {
+    flex-direction: column; }
+    html body#index #news ul > li#newsletter, html body#index #news ul > li#download-brochure, html body#index #news ul > li#press-release {
+      width: 100%;
+      margin-left: 0; }
+  html body#index #follow .insta li, html body#index #follow .insta:after {
+    height: 230px; }
+  html body#about #story blockquote {
+    display: none; }
+    html body#about #story blockquote + p + p, html body#about #story blockquote + p {
+      width: 100%; }
+  html body#about #story #numbers li {
+    margin: 0;
+    width: 100%; }
+  html body#about #team section {
+    justify-content: center;
+    width: 100%; }
+    html body#about #team section#members h3 {
+      width: 100%; }
+    html body#about #team section#members section {
+      display: none; }
+    html body#about #team section#tools ul, html body#about #team section#tools ul li {
+      width: 100%; }
+  html body#activity section#platform, html body#activity section#link, html body#activity section#media, html body#activity section#community {
+    flex-direction: column;
+    margin-top: 20%; }
+    html body#activity section#platform > *, html body#activity section#link > *, html body#activity section#media > *, html body#activity section#community > * {
+      margin: 0 !important;
+      width: 100%; }
+    html body#activity section#platform h2, html body#activity section#link h2, html body#activity section#media h2, html body#activity section#community h2 {
+      display: none; }
+    html body#activity section#platform:before, html body#activity section#link:before, html body#activity section#media:before, html body#activity section#community:before {
+      left: 0;
+      order: -2;
+      position: relative;
+      top: 0; }
+    html body#activity section#platform section:first-of-type:after, html body#activity section#link section:first-of-type:after, html body#activity section#media section:first-of-type:after, html body#activity section#community section:first-of-type:after {
+      content: none; }
+  html body#activity section#community {
+    align-items: center; }
+    html body#activity section#community section#free:after {
+      content: none; }
+    html body#activity section#community section#projects ul li, html body#activity section#community section#projects ul li a {
+      width: 100%; }
+  html body#expertise #missions #gestion-backoffice, html body#expertise #missions #satisfaction, html body#expertise #missions #develop, html body#expertise #missions #big-data {
+    margin: 0;
+    width: 100%; }
+  html body#expertise #missions #develop:after {
+    content: none; }
+  html body#expertise #missions section:first-of-type:after {
+    content: none; }
+  html body#expertise #missions section:first-of-type img {
+    position: initial; }
+  html body#expertise #skills {
+    background: none; }
+    html body#expertise #skills ul {
+      height: initial; }
+      html body#expertise #skills ul li {
+        width: 100%; }
+        html body#expertise #skills ul li:nth-of-type(3) {
+          margin: 0; }
+  html body#expertise #goals ul {
+    flex-direction: column; }
+    html body#expertise #goals ul li {
+      margin-bottom: 50px;
+      width: 100%; }
+  html body#references section ul li {
+    padding: 20px 0;
+    width: 100%; }
+  html body#references section ul li a, html body#index #partners ul li a {
+    opacity: 1; }
+  html body#contact section dl, html body#contact section form, html body#contact section #map {
+    width: 100%;
+    margin: 0; }
+  html body#contact section form {
+    order: 0; }
+  html body#contact section dl, html body#contact section #map {
+    order: 1; }
+  html body#legal section {
+    box-sizing: border-box;
+    padding: 10px; }
+  html body span#background-line {
+    display: none; }
+  html body footer dl {
+    padding: 0 10px; }
+    html body footer dl dt, html body footer dl dd {
+      border-left: none;
+      order: initial;
+      width: 100%; }
+    html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
+      margin-left: 9px; } }
+
+/*# sourceMappingURL=style.scss.css.map */
