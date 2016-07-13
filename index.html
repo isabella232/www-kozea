@@ -4,10 +4,10 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kozea - L’innovation digitale au service des acteurs de la santé</title>
-    <link type="image/png" rel="icon" href="static/img/favicon.png" />
-    <link type="text/css" rel="stylesheet" href="static/style.css" />
-    <link type="text/css" rel="stylesheet" href="static/screen.css" media="(min-width: 970px)"/>
-    <link type="text/css" rel="stylesheet" href="static/responsive.css" media="(max-width: 969px)"/>
+    <link type="image/png" rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='screen.css') }}" media="(min-width: 970px)"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}" media="(max-width: 969px)"/>
   </head>
 
   <body>
@@ -63,7 +63,7 @@
         </section>
         <section id="booklet">
           <h3>Plaquette</h3>
-        <a href="static/kozea_booklet.pdf">Plaquette Kozea</a>
+        <a href="{{ url_for('static', filename='kozea_booklet.pdf') }}">Plaquette Kozea</a>
         </section>
       </article>
 
@@ -75,7 +75,7 @@
         </p>
         <section id="donadieu">
           <h3>Philippe Donadieu</h3>
-          <img alt="Philippe Donadieu" src="static/img/donadieu.jpg" />
+          <img alt="Philippe Donadieu" src="{{ url_for('static', filename='img/donadieu.jpg') }}" />
           <p>
             Philippe Donadieu est docteur en pharmacie et titulaire d'un
             diplôme de troisième cycle universitaire en marketing et gestion à
@@ -97,7 +97,7 @@
         </section>
         <section id="ayoub">
           <h3>Guillaume Ayoub</h3>
-          <img alt="Guillaume Ayoub" src="static/img/ayoub.jpg" />
+          <img alt="Guillaume Ayoub" src="{{ url_for('static', filename='static/img/ayoub.jpg') }}" />
           <p>
             Guillaume Ayoub est un ingénieur de l’INSA en informatique qui a
             commencé chez Kozea en tant que stagiaire. Sa pugnacité et sa
