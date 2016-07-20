@@ -37,7 +37,7 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 800px) {
+@media screen and (min-width: 481px) and (max-width: 800px) {
   html body {
     &#index #news ul li {
       &:after {
@@ -64,7 +64,7 @@
     &#activity section {
       &#platform, &#link, &#media, &#community {
         > section {
-          width: 50%;
+          //width: 50%;
 
           &#digital, &#advice, &#work, &#free, &#projects {
             margin-left: 0;
@@ -72,6 +72,11 @@
 
           &#professionnals, &#project {
             margin-right: 0;
+          }
+
+          &#advice:after {
+            left: 50%;
+            width: 100%;
           }
 
           &#digital:after {
@@ -95,12 +100,22 @@
         left: 5%;
       }
     }
+
+    &#contact {
+      section form {
+        margin-top: -402px;
+
+        textarea {
+          min-height: 130px;
+        }
+      }
+    }
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 600px) {
+@media screen and (min-width: 481px) and (max-width: 600px) {
   html body {
-     &#about {
+    &#about {
       #story ul li {
         width: 50%;
 
@@ -120,13 +135,9 @@
   }
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   html body {
     &#index {
-      header h1:before {
-        top: calc(50% - 200px);
-      }
-
       #about p {
         left: calc(50% - 35%);
         width: 70%;
@@ -151,7 +162,8 @@
     
     &#index {
       #about p {
-        font-size: 1.5em;
+        font-size: 2.5em;
+        margin-top: 30px;
       }
 
       #partners ul li {
@@ -179,15 +191,11 @@
       #map {
         margin-top: 0;
       }
-
-      form {
-        margin-top: -502px;
-      }
     }
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 481px) {
   html {
     body {
       > section p.intro {
@@ -199,13 +207,11 @@
 
       &#index {
         header h1:before {
-          left: calc(50% - 55px);
-          top: calc(50% - 210px);
-          width: 110px;
+        top: calc(50% - 138px);
         }
 
         #about p {
-          left: initial;
+          display: none;
         }
 
         #activity dl {
@@ -418,6 +424,22 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 351px) {
+  html body {
+    &#index {
+      #partners ul, #follow .insta {
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+    &#expertise #missions section:first-of-type img {
+      width: initial;
     }
   }
 }

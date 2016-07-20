@@ -280,6 +280,22 @@ html {
             position: absolute;
             top: calc(50% - 200px);
             width: 130px;
+            animation: FadeInDown 2s ease;
+
+
+            @keyframes FadeInDown {
+              0% {opacity: 0;}
+
+              25% {
+                opacity: 0;
+                transform: translate3d(0, 250px, 0);
+              }
+
+              100% {
+                opacity: 1;
+                transform: none;
+              }
+            }
           }
         }
       }
@@ -293,10 +309,10 @@ html {
 
         p {
           color: #fff;
-          font-size: 2em;
+          font-size: 3em;
           left: 14vw;
           position: absolute;
-          top: 53vh;
+          top: 50vh;
         }
       }
 
@@ -461,9 +477,30 @@ html {
             margin-left: 50%;
             width: 50%;
 
-            a:before {
-              content: url(images/icones/press.svg);
-              width: 100px;
+            &:before {
+              content: '[ à venir ]';
+              display: flex;
+              justify-content: center;
+              color: white;
+              z-index: 1;
+              font-style: italic;
+              font-size: 1.1em;
+              transform: scale(0);
+              transition: opacity 0.35s, transform 0.35s;
+            }
+
+            &:hover:before {
+              opacity: 1;
+              transform: scale(1);
+            }
+
+            a{
+              z-index: 0;
+
+              &:before {
+                content: url(images/icones/press.svg);
+                width: 100px;
+              }
             }
           }
         }
@@ -502,11 +539,12 @@ html {
       }
 
       #follow {
-        .insta {
+        ul + ul {
           display: flex;
           flex-wrap: wrap;
           position:relative;
           width: 100%;
+          justify-content: center;
 
           li {
             height: 300px;
@@ -875,7 +913,7 @@ html {
 
               &:after {
                 content: '';
-                background : url(images/photos/platform.jpg);
+                background : url(images/photos/platform.jpg)no-repeat;
                 left: 25%;
                 top: -190px;
                 width: 150%;
@@ -935,7 +973,7 @@ html {
 
               &:after {
                 content: '';
-                background: url(images/photos/link.jpg);
+                background: url(images/photos/link.jpg)no-repeat;
                 height: 165%;
                 left: 100%;
                 top: -70px;
@@ -981,7 +1019,7 @@ html {
 
               &:after {
                 content: '';
-                background: url(images/photos/media.jpg);
+                background: url(images/photos/media.jpg)no-repeat;
                 left: -67%;
                 position: absolute;
                 top: -120px;
@@ -1394,7 +1432,7 @@ html {
 
       #map {
         align-self: flex-start;
-        height: 500px;
+        height: 400px;
         margin-top: -100px;
       }
 
@@ -1406,7 +1444,7 @@ html {
         flex-direction: column;
         order: 2;
         padding: 30px;
-        margin-top: -402px;
+        margin-top: -302px;
 
         input:not(:last-child), textarea {
           background: none;
@@ -1425,7 +1463,7 @@ html {
         }
 
         textarea {
-          height: 120px;
+          max-width: 100%;
         }
 
         input[type="submit"] {

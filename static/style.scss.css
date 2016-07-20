@@ -200,17 +200,28 @@ html {
           left: calc(50% - 65px);
           position: absolute;
           top: calc(50% - 200px);
-          width: 130px; }
+          width: 130px;
+          animation: FadeInDown 2s ease; }
+
+@keyframes FadeInDown {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0;
+    transform: translate3d(0, 250px, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
       html body#index #about {
         margin-bottom: 0; }
         html body#index #about h2 {
           display: none; }
         html body#index #about p {
           color: #fff;
-          font-size: 2em;
+          font-size: 3em;
           left: 14vw;
           position: absolute;
-          top: 53vh; }
+          top: 50vh; }
       html body#index #activity dl {
         display: flex;
         flex-wrap: wrap; }
@@ -319,9 +330,24 @@ html {
             height: 400px;
             margin-left: 50%;
             width: 50%; }
-            html body#index #news ul li#press-release a:before {
-              content: url(images/icones/press.svg);
-              width: 100px; }
+            html body#index #news ul li#press-release:before {
+              content: '[ à venir ]';
+              display: flex;
+              justify-content: center;
+              color: white;
+              z-index: 1;
+              font-style: italic;
+              font-size: 1.1em;
+              transform: scale(0);
+              transition: opacity 0.35s, transform 0.35s; }
+            html body#index #news ul li#press-release:hover:before {
+              opacity: 1;
+              transform: scale(1); }
+            html body#index #news ul li#press-release a {
+              z-index: 0; }
+              html body#index #news ul li#press-release a:before {
+                content: url(images/icones/press.svg);
+                width: 100px; }
       html body#index #partners ul {
         display: flex;
         width: 100%;
@@ -340,16 +366,17 @@ html {
             background: url(images/marques/minalogic.jpg) no-repeat center center; }
           html body#index #partners ul li#i-care a {
             background: url(images/marques/i-care.jpg) no-repeat center center; }
-      html body#index #follow .insta {
+      html body#index #follow ul + ul {
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        width: 100%; }
-        html body#index #follow .insta li {
+        width: 100%;
+        justify-content: center; }
+        html body#index #follow ul + ul li {
           height: 300px;
           position: relative;
           width: 300px; }
-          html body#index #follow .insta li:before {
+          html body#index #follow ul + ul li:before {
             background: url(images/icones/instagram.svg);
             content: '';
             height: 25px;
@@ -357,7 +384,7 @@ html {
             right: 10px;
             top: 10px;
             width: 25px; }
-          html body#index #follow .insta li img {
+          html body#index #follow ul + ul li img {
             display: block;
             height: 100%;
             object-fit: cover;
@@ -572,7 +599,7 @@ html {
             order: -2; }
             html body#activity section#platform section:first-of-type:after {
               content: '';
-              background: url(images/photos/platform.jpg);
+              background: url(images/photos/platform.jpg) no-repeat;
               left: 25%;
               top: -190px;
               width: 150%;
@@ -608,7 +635,7 @@ html {
             margin-left: 17%; }
             html body#activity section#link section:first-of-type:after {
               content: '';
-              background: url(images/photos/link.jpg);
+              background: url(images/photos/link.jpg) no-repeat;
               height: 165%;
               left: 100%;
               top: -70px;
@@ -636,7 +663,7 @@ html {
             position: relative; }
             html body#activity section#media section:first-of-type:after {
               content: '';
-              background: url(images/photos/media.jpg);
+              background: url(images/photos/media.jpg) no-repeat;
               left: -67%;
               position: absolute;
               top: -120px;
@@ -898,7 +925,7 @@ html {
         width: 50%; }
       html body#contact section #map {
         align-self: flex-start;
-        height: 500px;
+        height: 400px;
         margin-top: -100px; }
       html body#contact section form {
         align-self: flex-end;
@@ -908,7 +935,7 @@ html {
         flex-direction: column;
         order: 2;
         padding: 30px;
-        margin-top: -402px; }
+        margin-top: -302px; }
         html body#contact section form input:not(:last-child), html body#contact section form textarea {
           background: none;
           border-top: none;
@@ -922,7 +949,7 @@ html {
             font-size: 1em;
             font-weight: 100; }
         html body#contact section form textarea {
-          height: 120px; }
+          max-width: 100%; }
         html body#contact section form input[type="submit"] {
           background: #1a2530;
           border: none;
@@ -1053,7 +1080,7 @@ html {
   html body#about #story ul li:first-child, html body#about #story ul li:last-child {
     margin: 0; } }
 
-@media screen and (min-width: 480px) and (max-width: 800px) {
+@media screen and (min-width: 481px) and (max-width: 800px) {
   html body#index #news ul li:after {
     height: calc(100% - 30px);
     left: 15px;
@@ -1066,25 +1093,30 @@ html {
     height: 100%; }
   html body#about #story ul li:nth-child(2) {
     margin-right: 0; }
-  html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
-    width: 50%; }
-    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
-      margin-left: 0; }
-    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
-      margin-right: 0; }
-    html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
-      height: 130%;
-      left: 55%;
-      top: -160px;
-      width: 120%; }
-    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
-      align-self: flex-end; }
-    html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
-      width: 100%; }
+  html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+    margin-left: 0; }
+  html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+    margin-right: 0; }
+  html body#activity section#platform > section#advice:after, html body#activity section#link > section#advice:after, html body#activity section#media > section#advice:after, html body#activity section#community > section#advice:after {
+    left: 50%;
+    width: 100%; }
+  html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
+    height: 130%;
+    left: 55%;
+    top: -160px;
+    width: 120%; }
+  html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+    align-self: flex-end; }
+  html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
+    width: 100%; }
   html body#activity section#platform :before {
-    left: 5%; } }
+    left: 5%; }
+  html body#contact section form {
+    margin-top: -402px; }
+    html body#contact section form textarea {
+      min-height: 130px; } }
 
-@media screen and (min-width: 480px) and (max-width: 600px) {
+@media screen and (min-width: 481px) and (max-width: 600px) {
   html body#about #story ul li {
     width: 50%; }
     html body#about #story ul li:first-child, html body#about #story ul li:last-child {
@@ -1094,9 +1126,7 @@ html {
   html body#index #follow .insta li, html body .insta:after {
     height: 230px; } }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
-  html body#index header h1:before {
-    top: calc(50% - 200px); }
+@media screen and (min-width: 481px) and (max-width: 768px) {
   html body#index #about p {
     left: calc(50% - 35%);
     width: 70%; }
@@ -1109,7 +1139,8 @@ html {
   html body header #go-to-about {
     display: none; }
   html body#index #about p {
-    font-size: 1.5em; }
+    font-size: 2.5em;
+    margin-top: 30px; }
   html body#index #partners ul li {
     box-sizing: border-box;
     padding: 20px 0;
@@ -1121,22 +1152,18 @@ html {
   html body#contact section > dl {
     width: 75%; }
   html body#contact section #map {
-    margin-top: 0; }
-  html body#contact section form {
-    margin-top: -502px; } }
+    margin-top: 0; } }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 481px) {
   html body > section p.intro {
     box-sizing: border-box;
     font-size: 1.2em;
     padding: 0 30px;
     width: 100%; }
   html body#index header h1:before {
-    left: calc(50% - 55px);
-    top: calc(50% - 210px);
-    width: 110px; }
+    top: calc(50% - 138px); }
   html body#index #about p {
-    left: initial; }
+    display: none; }
   html body#index #activity dl {
     flex-direction: column;
     width: 100%; }
@@ -1235,5 +1262,11 @@ html {
       width: 100%; }
     html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
       margin-left: 9px; } }
+
+@media screen and (max-width: 351px) {
+  html body#index #partners ul li, html body#index #follow .insta li {
+    width: 100%; }
+  html body#expertise #missions section:first-of-type img {
+    width: initial; } }
 
 /*# sourceMappingURL=style.scss.css.map */
