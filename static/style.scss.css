@@ -54,7 +54,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #work, #numbers #media, #targets, #structures #media + dd a {
   background: #e53c4c; }
 
-#project, #numbers #link, #reactivity, #structures #link + dd a {
+#project, #numbers #link, #reactivity, #structures #link + dd a
   background: #f49a2f; }
 
 #professionnals, #numbers #platform, #innovation, #structures #platform + dd a {
@@ -128,17 +128,17 @@ html {
     transform: translateY(0); } }
     html body nav {
       order: -1; }
-      html body nav ul {
+      html body nav .menu {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
         margin: auto;
         max-width: 1200px;
         position: relative; }
-        html body nav ul li {
+        html body nav .menu li {
           font-size: 1em;
           padding: 22px 10px; }
-          html body nav ul li:first-child a:before {
+          html body nav .menu li:first-child a:before {
             background: url(images/logos/logo-kozeagroup.svg) no-repeat left;
             content: '';
             height: 58px;
@@ -146,9 +146,9 @@ html {
             position: absolute;
             top: 6px;
             width: 130px; }
-          html body nav ul li:first-child:hover a:before {
+          html body nav .menu li:first-child:hover a:before {
             opacity: 0.8; }
-          html body nav ul li:hover, html body nav ul li:focus {
+          html body nav .menu li:hover, html body nav .menu li:focus {
             opacity: 0.85; }
       html body nav + section {
         margin-top: 0; }
@@ -1028,6 +1028,8 @@ html {
       background-color: white;
       z-index: 1002;
       overflow: auto; }
+    html body .hide {
+      display: none; }
     html body footer {
       margin-top: 25px; }
       html body footer dl {
@@ -1263,10 +1265,42 @@ html {
     html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
       margin-left: 9px; } }
 
+
 @media screen and (max-width: 351px) {
   html body#index #partners ul li, html body#index #follow .insta li {
     width: 100%; }
   html body#expertise #missions section:first-of-type img {
     width: initial; } }
+
+html .collapsible .collapsible-icon {
+  cursor: pointer;
+  margin-top: 20px;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 4px;
+  background: white;
+  transition: all .2s ease-in-out; }
+  html .collapsible .collapsible-icon:before, html .collapsible .collapsible-icon:after {
+    position: absolute;
+    background: white;
+    content: '';
+    width: 20px;
+    height: 4px;
+    transition: all .2s ease-in-out; }
+  html .collapsible .collapsible-icon:before {
+    top: -8px; }
+  html .collapsible .collapsible-icon:after {
+    top: 8px; }
+
+html .collapsible span.clicked {
+  background: transparent; }
+  html .collapsible span.clicked:before {
+    transform: rotate(45deg) translate(5px, 6px); }
+  html .collapsible span.clicked:after {
+    transform: rotate(-45deg) translate(5px, -6px); }
+
+html .collapsible .menu li:first-child a:before {
+  content: none; }
 
 /*# sourceMappingURL=style.scss.css.map */

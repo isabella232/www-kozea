@@ -28,6 +28,33 @@ $(document).ready(function() {
       });
   });
   window.sr = new scrollReveal();
+
+  /* Window size stuff for burger menu */
+  $(window).on('resize', function() {
+    $size = window.innerWidth / parseFloat($('body').css('font-size'));
+    if ($size < 46) {
+      $('nav').addClass('collapsible');
+      if ($('.clicked').size()) { $('.menu').css('display', 'block'); }
+      else { $('.menu').css('display', 'none'); }
+      if (!$('.collapsible-icon').size()) {
+        $('nav').prepend('<span class="collapsible-icon"></span>');
+        $('.collapsible-icon').click(function() {
+          $(this).toggleClass('clicked');
+          if ($('.menu').is(':visible')) { $('.menu').slideUp(); }
+          else {
+            $('.menu').slideDown();
+            $('.menu').css('display', 'block');
+          }
+        })
+      }
+    }
+    else {
+      $('nav').removeClass('collapsible');
+      $('.menu').css('display', 'flex');
+      $('.collapsible-icon').remove();
+    }
+  })
+  $(window).trigger('resize')
 });
 
 /* Use this for the popup on the index page
