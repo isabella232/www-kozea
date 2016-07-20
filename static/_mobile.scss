@@ -148,7 +148,7 @@
     header #go-to-about {
       display: none;
     }
-    
+
     &#index {
       #about p {
         font-size: 1.5em;
@@ -220,7 +220,7 @@
             }
           }
         }
-        
+
         #news ul {
           flex-direction: column;
 
@@ -418,6 +418,56 @@
           }
         }
       }
+    }
+  }
+}
+
+html {
+
+  .collapsible {
+
+    .collapsible-icon {
+      cursor: pointer;
+      margin-top : 20px;
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 4px;
+      background: white;
+      transition: all .2s ease-in-out;
+
+      &:before, &:after {
+        position: absolute;
+        background: white;
+        content: '';
+        width: 20px;
+        height: 4px;
+        transition: all .2s ease-in-out;
+      }
+
+      &:before {
+        top: -8px;
+      }
+
+      &:after {
+        top: 8px;
+      }
+    }
+
+    span.clicked {
+      background: transparent;
+
+      &:before {
+        transform: rotate(45deg) translate(5px, 6px);
+      }
+
+      &:after {
+        transform: rotate(-45deg) translate(5px, -6px);
+      }
+    }
+
+    .menu li:first-child a:before {
+      content: none;
     }
   }
 }

@@ -43,7 +43,7 @@
     </header>
 
     <nav>
-      <ul>
+      <ul class="menu">
         {% for id, title in titles %}
           <li{% if id == page %} class="active"{% endif %}>
             <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
