@@ -54,7 +54,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #work, #numbers #media, #targets, #structures #media + dd a {
   background: #e53c4c; }
 
-#project, #numbers #link, #reactivity, #structures #link + dd a
+#project, #numbers #link, #reactivity, #structures #link + dd a {
   background: #f49a2f; }
 
 #professionnals, #numbers #platform, #innovation, #structures #platform + dd a {
@@ -339,7 +339,9 @@ html {
               font-style: italic;
               font-size: 1.1em;
               transform: scale(0);
-              transition: opacity 0.35s, transform 0.35s; }
+              transition: opacity 0.35s, transform 0.35s;
+              position: absolute;
+              left: calc(50% - 40px); }
             html body#index #news ul li#press-release:hover:before {
               opacity: 1;
               transform: scale(1); }
@@ -1093,6 +1095,8 @@ html {
     width: 50%; }
   html body#index #news ul li#press-release {
     height: 100%; }
+    html body#index #news ul li#press-release:before {
+      top: calc(50% - 15px); }
   html body#about #story ul li:nth-child(2) {
     margin-right: 0; }
   html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
@@ -1264,7 +1268,6 @@ html {
       width: 100%; }
     html body footer dl dd:first-of-type, html body footer dl dd:last-of-type li:last-child {
       margin-left: 9px; } }
-
 
 @media screen and (max-width: 351px) {
   html body#index #partners ul li, html body#index #follow .insta li {

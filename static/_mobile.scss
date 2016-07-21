@@ -54,6 +54,9 @@
 
       &#press-release {
         height: 100%;
+        &:before {
+          top: calc(50% - 15px);
+        }
       }
     }
 

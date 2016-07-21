@@ -487,6 +487,8 @@ html {
               font-size: 1.1em;
               transform: scale(0);
               transition: opacity 0.35s, transform 0.35s;
+              position: absolute;
+              left: calc(50% - 40px);
             }
 
             &:hover:before {
