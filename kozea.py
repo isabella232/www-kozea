@@ -24,17 +24,24 @@ def page(page='index'):
     return render_template('404.html')
 
 
-@app.route('/make_contact', methods=['POST'])
-def make_contact():
+@app.route('/send_mail/<mail_type>', methods=['POST'])
+def send_mail(mail_type):
     mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
+    if mail_type == 'contact':
+        subject = 'Prise de contact sur le site de Kozea'
+        content = '<br>'.join([
+            'Email : %s' % form['email'],
+            'Nom / Société: %s' % form['name'],
+            'Demande : %s ' % form['question']])
+    else:
+        subject = 'Inscription à la newsletter Kozea'
+        content = 'Mail : %s' % form['email']
     message = {
         'to': [{'email': 'contact@kozea.fr'}],
-        'subject': 'Prise de contact sur le site de Kozea',
+        'subject': subject,
         'from_email': 'contact@kozea.fr',
-        'html': '<br>'.join([
-            'Email : %s' % form['email'], 'Nom / Société: %s' % form['name'],
-            'Demande : %s ' % form['question']])
+        'html': content
     }
     if not current_app.debug:
         mandrill_client.messages.send(message=message)

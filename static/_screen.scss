@@ -1524,6 +1524,10 @@ html {
       }
     }
 
+    .hidden {
+      display: none;
+    }
+
     .black-overlay {
       position: absolute;
       top: 0%;
@@ -1549,8 +1553,9 @@ html {
       overflow: auto;
     }
 
-    .hide {
-      display: none;
+    .close-popup {
+      float: right;
+      cursor: pointer;
     }
 
     footer {

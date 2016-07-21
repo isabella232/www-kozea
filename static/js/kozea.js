@@ -16,7 +16,7 @@ $(document).ready(function() {
     $('html, body').animate({scrollTop : $($.attr(this, 'href')).offset().top}, 900);
   });
 
-  $('form').on('submit', function(e) {
+  $('.contact-form').on('submit', function(e) {
     e.preventDefault();
     $.post($(e.target).attr('action'), $(e.target).serialize())
       .done(function() {
@@ -35,7 +35,7 @@ $(document).ready(function() {
     if ($size < 46) {
       $('nav').addClass('collapsible');
       if ($('.clicked').size()) { $('.menu').css('display', 'block'); }
-      else { $('.menu').css('display', 'none'); }
+      else { $('.menu').hide(); }
       if (!$('.collapsible-icon').size()) {
         $('nav').prepend('<span class="collapsible-icon"></span>');
         $('.collapsible-icon').click(function() {
@@ -55,14 +55,46 @@ $(document).ready(function() {
     }
   })
   $(window).trigger('resize')
-});
 
-/* Use this for the popup on the index page
-var $popup = $('<div class="popup">').append('<p>Message envoyé.</p>')
-$('body').append($popup, $('<div class="black-overlay">'));
+  /* Newsletter  */
+  $('#newsletter a').click(function() {
+    $(window).keyup(function(e) {
+      if (e.keyCode === 27) {
+        remove_popup();
+        $('body > :not(#newsletter, .popup)').off('click');
+      }
+    });
+    $('.close-popup').click(function() {
+      remove_popup();
+      $('body > :not(#newsletter, .popup)').off('click');
+    });
 
-function remove_popup() {
-  $popup.fadeOut(400, function() {
-    $(".popup, .black-overlay").remove();
+    $('.popup').slideDown(function() {
+      $('body > :not(#newsletter, .popup)').click(function() {
+        remove_popup();
+        $('body > :not(#newsletter, .popup)').off('click');
+      });
+    });
+
+    $('body').append($('<div class="black-overlay">'));
+    $form = $('.newsletter-form')
+    $form.on('submit', function(e) {
+      e.preventDefault();
+      $.post($form.attr('action'), $form.serialize()).done(function() {
+        $('.popup div').slideUp(400, function() {
+          $('.popup .hidden').slideDown();
+          setTimeout(remove_popup, 2000);
+        });
+      });
+    });
   });
-}*/
+
+  function remove_popup() {
+    $('.popup').fadeOut(400, function() {
+      $('.popup .sent').hide();
+      $('.popup div').show();
+      $(".black-overlay").remove();
+      $(window).off('keyup');
+    });
+  };
+});

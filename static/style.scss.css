@@ -980,6 +980,8 @@ html {
         position: absolute;
         top: 0;
         width: 1px; }
+    html body .hidden {
+      display: none; }
     html body .black-overlay {
       position: absolute;
       top: 0%;
@@ -1001,8 +1003,9 @@ html {
       background-color: white;
       z-index: 1002;
       overflow: auto; }
-    html body .hide {
-      display: none; }
+    html body .close-popup {
+      float: right;
+      cursor: pointer; }
     html body footer {
       margin-top: 25px; }
       html body footer dl {
