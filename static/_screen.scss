@@ -115,6 +115,16 @@ html {
     flex-direction: column;
     //align-items: stretch;
 
+    .popup {
+      background-color: black;
+      -moz-opacity: 0.8;
+      opacity:.80;
+      top: 50vh;
+      left: 50vw;
+      padding: 16px;
+      overflow: auto;
+    }
+
     /*animation lien*/
     .links li a {
       &:before, &:after {
@@ -141,6 +151,26 @@ html {
         &:before, &:after {
           opacity: 1;
           transform: translateX(0px);
+        }
+      }
+    }
+
+    /*animation loading before*/
+    &#index header h1:before, &#activity section:before, &#activity section:after {
+      animation: FadeInDown 1.75s ease;
+
+
+      @keyframes FadeInDown {
+        0% {opacity: 0;}
+
+        25% {
+          opacity: 0;
+          transform: translate3d(0, 150px, 0);
+        }
+
+        100% {
+          opacity: 1;
+          transform: none;
         }
       }
     }
@@ -193,7 +223,7 @@ html {
               background: url(images/logos/logo-kozeagroup.svg)no-repeat left;
               content: '';
               height: 58px;
-              left: 0;
+              left: 10px;
               position: absolute;
               top: 6px;
               width: 130px;
@@ -280,22 +310,6 @@ html {
             position: absolute;
             top: calc(50% - 200px);
             width: 130px;
-            animation: FadeInDown 2s ease;
-
-
-            @keyframes FadeInDown {
-              0% {opacity: 0;}
-
-              25% {
-                opacity: 0;
-                transform: translate3d(0, 250px, 0);
-              }
-
-              100% {
-                opacity: 1;
-                transform: none;
-              }
-            }
           }
         }
       }
@@ -622,17 +636,8 @@ html {
       }
 
       #story {
-        blockquote {
+        img {
           align-self: flex-end;
-          background: url(images/photos/boss.jpg) 100% 0 no-repeat;
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-          height: 450px;
-          justify-content: flex-end;
-          margin: 0;
-          padding: 30px;
-          width: 75%;
 
           & + p, & + p + p {
             align-self: flex-end;
@@ -917,14 +922,14 @@ html {
                 content: '';
                 background : url(images/photos/platform.jpg)no-repeat;
                 left: 25%;
-                top: -190px;
+                top: -150px;
                 width: 150%;
                 height: 130%;
               }
             }
 
             &#pharminfo {
-              margin-top: -150px;
+              margin-top: -210px;
               margin-left: 50%;
 
               h3:before {
@@ -941,6 +946,10 @@ html {
             &#professionnals {
               align-self: flex-start;
               margin-right: 17%;
+              
+              p {
+                margin-bottom: 5px;
+              }
             }
 
             &#backoffice {
@@ -1024,8 +1033,8 @@ html {
                 background: url(images/photos/media.jpg)no-repeat;
                 left: -67%;
                 position: absolute;
-                top: -120px;
-                height: 150%;
+                top: -110px;
+                height: 160%;
                 width: 100%;
                 z-index: -2;
               }
@@ -1041,7 +1050,7 @@ html {
 
             &#solutions {
               align-self: flex-start;
-              margin-top: -315px;
+              margin-top: -358px;
             }
           }
         }
@@ -1070,7 +1079,7 @@ html {
                 content: url(images/photos/community.jpg);
                 left: 87%;
                 position: absolute;
-                top: 30px;
+                top: 100px;
                 z-index: -1;
               }
             }
@@ -1566,31 +1575,6 @@ html {
 
     .hidden {
       display: none;
-    }
-
-    .black-overlay {
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      z-index:1001;
-      -moz-opacity: 0.8;
-      opacity:.80;
-      filter: alpha(opacity=80);
-    }
-
-    .popup {
-      position: absolute;
-      top: 25%;
-      left: 25%;
-      width: 50%;
-      height: 50%;
-      padding: 16px;
-      background-color: white;
-      z-index:1002;
-      overflow: auto;
     }
 
     .close-popup {

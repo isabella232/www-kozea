@@ -83,7 +83,16 @@ html {
     margin: 0;
     display: flex;
     flex-direction: column;
-    /*animation lien*/ }
+    /*animation lien*/
+    /*animation loading before*/ }
+    html body .popup {
+      background-color: black;
+      -moz-opacity: 0.8;
+      opacity: .80;
+      top: 50vh;
+      left: 50vw;
+      padding: 16px;
+      overflow: auto; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -101,6 +110,18 @@ html {
       html body .links li a:hover:before, html body .links li a:hover:after, html body .links li a:focus:before, html body .links li a:focus:after {
         opacity: 1;
         transform: translateX(0px); }
+    html body#index header h1:before, html body#activity section:before, html body#activity section:after {
+      animation: FadeInDown 1.75s ease; }
+
+@keyframes FadeInDown {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0;
+    transform: translate3d(0, 150px, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
     html body header {
       display: flex;
       justify-content: center;
@@ -142,7 +163,7 @@ html {
             background: url(images/logos/logo-kozeagroup.svg) no-repeat left;
             content: '';
             height: 58px;
-            left: 0;
+            left: 10px;
             position: absolute;
             top: 6px;
             width: 130px; }
@@ -200,18 +221,7 @@ html {
           left: calc(50% - 65px);
           position: absolute;
           top: calc(50% - 200px);
-          width: 130px;
-          animation: FadeInDown 2s ease; }
-
-@keyframes FadeInDown {
-  0% {
-    opacity: 0; }
-  25% {
-    opacity: 0;
-    transform: translate3d(0, 250px, 0); }
-  100% {
-    opacity: 1;
-    transform: none; } }
+          width: 130px; }
       html body#index #about {
         margin-bottom: 0; }
         html body#index #about h2 {
@@ -423,24 +433,15 @@ html {
       html body#about #numbers li {
         height: 300px;
         width: 300px; }
-      html body#about #story blockquote {
-        align-self: flex-end;
-        background: url(images/photos/boss.jpg) 100% 0 no-repeat;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        height: 450px;
-        justify-content: flex-end;
-        margin: 0;
-        padding: 30px;
-        width: 75%; }
-        html body#about #story blockquote + p, html body#about #story blockquote + p + p {
+      html body#about #story img {
+        align-self: flex-end; }
+        html body#about #story img + p, html body#about #story img + p + p {
           align-self: flex-end;
           box-sizing: border-box;
           padding: 30px;
           margin: 0;
           width: 50%; }
-          html body#about #story blockquote + p + p, html body#about #story blockquote + p + p + p {
+          html body#about #story img + p + p, html body#about #story img + p + p + p {
             padding-top: 0; }
       html body#about #story ul {
         margin: 0; }
@@ -603,11 +604,11 @@ html {
               content: '';
               background: url(images/photos/platform.jpg) no-repeat;
               left: 25%;
-              top: -190px;
+              top: -150px;
               width: 150%;
               height: 130%; }
           html body#activity section#platform section#pharminfo {
-            margin-top: -150px;
+            margin-top: -210px;
             margin-left: 50%; }
             html body#activity section#platform section#pharminfo h3:before {
               background: url(images/logos/logo-pharminfo.svg) no-repeat;
@@ -618,6 +619,8 @@ html {
           html body#activity section#platform section#professionnals {
             align-self: flex-start;
             margin-right: 17%; }
+            html body#activity section#platform section#professionnals p {
+              margin-bottom: 5px; }
           html body#activity section#platform section#backoffice {
             margin-left: 25%; }
             html body#activity section#platform section#backoffice h3:before {
@@ -668,8 +671,8 @@ html {
               background: url(images/photos/media.jpg) no-repeat;
               left: -67%;
               position: absolute;
-              top: -120px;
-              height: 150%;
+              top: -110px;
+              height: 160%;
               width: 100%;
               z-index: -2; }
           html body#activity section#media section#work {
@@ -678,7 +681,7 @@ html {
               color: #fff; }
           html body#activity section#media section#solutions {
             align-self: flex-start;
-            margin-top: -315px; }
+            margin-top: -358px; }
         html body#activity section#community {
           align-items: flex-start;
           margin-top: 8%; }
@@ -696,7 +699,7 @@ html {
               content: url(images/photos/community.jpg);
               left: 87%;
               position: absolute;
-              top: 30px;
+              top: 100px;
               z-index: -1; }
           html body#activity section#community section#projects {
             margin-left: 25%;
@@ -1011,27 +1014,6 @@ html {
         width: 1px; }
     html body .hidden {
       display: none; }
-    html body .black-overlay {
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      z-index: 1001;
-      -moz-opacity: 0.8;
-      opacity: .80;
-      filter: alpha(opacity=80); }
-    html body .popup {
-      position: absolute;
-      top: 25%;
-      left: 25%;
-      width: 50%;
-      height: 50%;
-      padding: 16px;
-      background-color: white;
-      z-index: 1002;
-      overflow: auto; }
     html body .close-popup {
       float: right;
       cursor: pointer; }
@@ -1068,9 +1050,47 @@ html {
           html body footer dl dd ul {
             margin-top: 0; }
 
+/*== burger menu when navigation is to short */
+html .collapsible .collapsible-icon {
+  background: white;
+  cursor: pointer;
+  display: block;
+  height: 3px;
+  margin: 30px auto;
+  position: relative;
+  transition: all .2s ease-in-out;
+  width: 25px; }
+  html .collapsible .collapsible-icon:before, html .collapsible .collapsible-icon:after {
+    background: white;
+    content: '';
+    height: 3px;
+    position: absolute;
+    transition: all .2s ease-in-out;
+    width: 25px; }
+  html .collapsible .collapsible-icon:before {
+    top: -8px; }
+  html .collapsible .collapsible-icon:after {
+    top: 8px; }
+
+html .collapsible span.clicked {
+  background: transparent; }
+  html .collapsible span.clicked:before {
+    transform: rotate(45deg) translate(5px, 6px); }
+  html .collapsible span.clicked:after {
+    transform: rotate(-45deg) translate(5px, -6px); }
+
+html .collapsible .menu {
+  text-align: center; }
+  html .collapsible .menu li:first-child a:before {
+    content: none; }
+
 @media screen and (max-width: 1024px) {
   html body#index #news ul li {
     padding: 15px; }
+  html body#activity section#media section#solutions {
+    margin-top: -387px; }
+  html body#activity section#link section#backflip {
+    margin-top: -268px; }
   html body#references section ul li {
     padding: 40px 0; }
   html body#contact section > dl {
@@ -1102,47 +1122,34 @@ html {
       top: calc(50% - 15px); }
   html body#about #story ul li:nth-child(2) {
     margin-right: 0; }
-  html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
-    margin-left: 0; }
-  html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
-    margin-right: 0; }
-  html body#activity section#platform > section#advice:after, html body#activity section#link > section#advice:after, html body#activity section#media > section#advice:after, html body#activity section#community > section#advice:after {
-    left: 50%;
-    width: 100%; }
-  html body#activity section#platform > section#digital:after, html body#activity section#link > section#digital:after, html body#activity section#media > section#digital:after, html body#activity section#community > section#digital:after {
+  html body#about #team #members {
+    justify-content: center; }
+  html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
+    width: 50%; }
+    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+      margin-left: 0; }
+    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+      margin-right: 0; }
+    html body#activity section#platform > section#advice:after, html body#activity section#link > section#advice:after, html body#activity section#media > section#advice:after, html body#activity section#community > section#advice:after {
+      left: 70%;
+      width: 100%; }
+    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+      align-self: flex-end; }
+    html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
+      width: 100%; }
+  html body#activity section#platform:before {
+    left: 2%; }
+  html body#activity section#platform #digital:after {
     height: 130%;
-    left: 55%;
-    top: -160px;
+    left: 50%;
+    top: -110px;
     width: 120%; }
-  html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
-    align-self: flex-end; }
-  html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
-    width: 100%; }
-  html body#activity section#platform :before {
-    left: 5%; }
+  html body#activity section#community section#free:after {
+    left: 70%; }
   html body#contact section form {
     margin-top: -402px; }
     html body#contact section form textarea {
       min-height: 130px; } }
-
-@media screen and (min-width: 481px) and (max-width: 600px) {
-  html body#about #story ul li {
-    width: 50%; }
-    html body#about #story ul li:first-child, html body#about #story ul li:last-child {
-      margin-left: 0; }
-  html body#about #team #members section {
-    width: 50%; }
-  html body#index #follow .insta li, html body .insta:after {
-    height: 230px; } }
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  html body#index #about p {
-    left: calc(50% - 35%);
-    width: 70%; }
-  html body#index #activity dl dd {
-    height: 200px; }
-  html body#about #team #tools ul {
-    width: 100%; } }
 
 @media screen and (max-width: 768px) {
   html body header #go-to-about {
@@ -1156,12 +1163,51 @@ html {
     width: 50%; }
   html body#index #follow .insta li, html body#index #follow .insta:after {
     width: 50%; }
+  html body#about img {
+    width: 100%; }
   html body#references section ul li {
     width: 50%; }
   html body#contact section > dl {
     width: 75%; }
   html body#contact section #map {
-    margin-top: 0; } }
+    margin-top: 0; }
+  html body span#background-line:after {
+    content: none; } }
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  html body#index #about p {
+    left: calc(50% - 35%);
+    width: 70%; }
+  html body#index #activity dl dd {
+    height: 200px; }
+  html body#about #team #tools ul {
+    width: 100%; } }
+
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  html body#activity section#community {
+    margin-top: 15%; }
+    html body#activity section#community section#free:after {
+      left: 40%; }
+  html body#activity section#media section#solutions {
+    margin-top: -490px; } }
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  html body#about #story ul li {
+    width: 50%; }
+    html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+      margin-left: 0; }
+  html body#about #team #members {
+    justify-content: flex-start; }
+    html body#about #team #members section {
+      width: 50%; }
+  html body#index #follow .insta li, html body .insta:after {
+    height: 230px; } }
+
+@media screen and (min-width: 481px) and (max-width: 568px) {
+  html body#activity section#link section#backflip {
+    margin-top: -328px; }
+  html body#activity section#media section#solutions {
+    margin-top: -530px; } }
 
 @media screen and (max-width: 481px) {
   html body > section p.intro {
@@ -1187,10 +1233,8 @@ html {
       margin-left: 0; }
   html body#index #follow .insta li, html body#index #follow .insta:after {
     height: 230px; }
-  html body#about #story blockquote {
-    display: none; }
-    html body#about #story blockquote + p + p, html body#about #story blockquote + p {
-      width: 100%; }
+  html body#about #story img + p + p, html body#about #story img + p {
+    width: 100%; }
   html body#about #story #numbers li {
     margin: 0;
     width: 100%; }
@@ -1277,36 +1321,5 @@ html {
     width: 100%; }
   html body#expertise #missions section:first-of-type img {
     width: initial; } }
-
-html .collapsible .collapsible-icon {
-  cursor: pointer;
-  margin-top: 20px;
-  position: relative;
-  display: block;
-  width: 20px;
-  height: 4px;
-  background: white;
-  transition: all .2s ease-in-out; }
-  html .collapsible .collapsible-icon:before, html .collapsible .collapsible-icon:after {
-    position: absolute;
-    background: white;
-    content: '';
-    width: 20px;
-    height: 4px;
-    transition: all .2s ease-in-out; }
-  html .collapsible .collapsible-icon:before {
-    top: -8px; }
-  html .collapsible .collapsible-icon:after {
-    top: 8px; }
-
-html .collapsible span.clicked {
-  background: transparent; }
-  html .collapsible span.clicked:before {
-    transform: rotate(45deg) translate(5px, 6px); }
-  html .collapsible span.clicked:after {
-    transform: rotate(-45deg) translate(5px, -6px); }
-
-html .collapsible .menu li:first-child a:before {
-  content: none; }
 
 /*# sourceMappingURL=style.scss.css.map */

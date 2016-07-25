@@ -1,7 +1,70 @@
+/*== burger menu when navigation is to short */
+html .collapsible {
+  .collapsible-icon {
+    background: white;
+    cursor: pointer;
+    display: block;
+    height: 3px;
+    margin: 30px auto;
+    position: relative;
+    transition: all .2s ease-in-out;
+    width: 25px;
+
+    &:before, &:after {
+      background: white;
+      content: '';
+      height: 3px;
+      position: absolute;
+      transition: all .2s ease-in-out;
+      width: 25px;
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      top: 8px;
+    }
+  }
+
+  span.clicked {
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    &:after {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+  }
+
+  .menu {
+    text-align: center;
+
+    li:first-child a:before {
+      content: none;
+    }
+  }
+}
+
+
+
 @media screen and (max-width: 1024px) {
   html body {
     &#index #news ul li {
       padding: 15px;
+    }
+
+    &#activity {
+      section#media section#solutions {
+        margin-top: -387px;
+      }
+
+      section#link section#backflip {
+        margin-top: -268px;
+      }
     }
 
     &#references section ul li {
@@ -54,20 +117,28 @@
 
       &#press-release {
         height: 100%;
+
         &:before {
           top: calc(50% - 15px);
         }
       }
     }
 
-    &#about #story ul li:nth-child(2) {
-      margin-right: 0;
+    &#about { 
+      #story ul li:nth-child(2) {
+        margin-right: 0;
+      }
+
+      #team #members {
+        justify-content: center;
+      }
     }
+
 
     &#activity section {
       &#platform, &#link, &#media, &#community {
         > section {
-          //width: 50%;
+          width: 50%;
 
           &#digital, &#advice, &#work, &#free, &#projects {
             margin-left: 0;
@@ -78,15 +149,8 @@
           }
 
           &#advice:after {
-            left: 50%;
+            left: 70%;
             width: 100%;
-          }
-
-          &#digital:after {
-            height: 130%;
-            left: 55%;
-            top: -160px;
-            width: 120%;
           }
 
           &#work {
@@ -99,8 +163,21 @@
         }
       }
 
-      &#platform :before {
-        left: 5%;
+      &#platform {
+        &:before {
+          left: 2%;
+        }
+
+        #digital:after {
+          height: 130%;
+          left: 50%;
+          top: -110px;
+          width: 120%;
+        }
+      }
+
+      &#community section#free:after {
+        left: 70%;
       }
     }
 
@@ -112,47 +189,6 @@
           min-height: 130px;
         }
       }
-    }
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 600px) {
-  html body {
-    &#about {
-      #story ul li {
-        width: 50%;
-
-        &:first-child, &:last-child {
-          margin-left: 0;
-        }
-      }
-
-      #team #members section {
-        width: 50%;
-      }
-    }
-
-    &#index #follow .insta li, .insta:after {
-      height: 230px;
-    }
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  html body {
-    &#index {
-      #about p {
-        left: calc(50% - 35%);
-        width: 70%;
-      }
-
-      #activity dl dd {
-        height: 200px;
-      }
-    }
-
-    &#about #team #tools ul {
-      width: 100%;
     }
   }
 }
@@ -182,6 +218,12 @@
       }
     }
 
+    &#about {
+      img {
+        width: 100%;
+      }
+    }
+
     &#references section ul li {
       width: 50%;
     }
@@ -194,6 +236,87 @@
       #map {
         margin-top: 0;
       }
+    }
+
+    span#background-line:after {
+      content: none;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  html body {
+    &#index {
+      #about p {
+        left: calc(50% - 35%);
+        width: 70%;
+      }
+
+      #activity dl dd {
+        height: 200px;
+      }
+    }
+
+    &#about #team {
+      #tools ul {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width:640px) {
+  html body {
+    &#activity section {
+      &#community {
+        margin-top: 15%;
+
+        section#free:after  {   
+          left: 40%;
+        }
+      }
+
+      &#media section#solutions {
+        margin-top: -490px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  html body {
+    &#about {
+      #story ul li {
+        width: 50%;
+
+        &:first-child, &:last-child {
+          margin-left: 0;
+        }
+      }
+
+      #team #members {
+        justify-content: flex-start;
+
+        section {
+          width: 50%;
+        }
+      }
+    }
+
+    &#index #follow .insta li, .insta:after {
+      height: 230px;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width:568px) {
+  html body#activity {
+    section#link section#backflip {
+       margin-top: -328px; 
+    }
+
+    section#media section#solutions {
+      margin-top: -530px;
     }
   }
 }
@@ -210,7 +333,7 @@
 
       &#index {
         header h1:before {
-        top: calc(50% - 138px);
+          top: calc(50% - 138px);
         }
 
         #about p {
@@ -250,9 +373,7 @@
 
       &#about {
         #story {
-          blockquote {
-            display: none;
-
+          img {
             & + p + p, & + p {
               width: 100%;
             }
@@ -431,7 +552,6 @@
   }
 }
 
-
 @media screen and (max-width: 351px) {
   html body {
     &#index {
@@ -448,52 +568,3 @@
   }
 }
 
-html {
-
-  .collapsible {
-
-    .collapsible-icon {
-      cursor: pointer;
-      margin-top : 20px;
-      position: relative;
-      display: block;
-      width: 20px;
-      height: 4px;
-      background: white;
-      transition: all .2s ease-in-out;
-
-      &:before, &:after {
-        position: absolute;
-        background: white;
-        content: '';
-        width: 20px;
-        height: 4px;
-        transition: all .2s ease-in-out;
-      }
-
-      &:before {
-        top: -8px;
-      }
-
-      &:after {
-        top: 8px;
-      }
-    }
-
-    span.clicked {
-      background: transparent;
-
-      &:before {
-        transform: rotate(45deg) translate(5px, 6px);
-      }
-
-      &:after {
-        transform: rotate(-45deg) translate(5px, -6px);
-      }
-    }
-
-    .menu li:first-child a:before {
-      content: none;
-    }
-  }
-}

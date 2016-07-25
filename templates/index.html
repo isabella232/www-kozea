@@ -1,11 +1,5 @@
 {% extends '_layout.html' %}
 
-{% block end_js %}
-  <script type="text/javascript" src="static/js/TweenLite.min.js"></script>
-  <script type="text/javascript" src="static/js/EasePack.min.js"></script>
-  <script type="text/javascript" src="static/js/animated_background.js"></script>
-{% endblock end_js %}
-
 {% block body %}
   <section id="about">
     <h2 data-sr="enter bottom, move 100px, wait 0.5s">Kozea</h2>
@@ -34,15 +28,14 @@
   <section id="news">
     <h2 data-sr="enter bottom, move 100px, wait 0.5s">Nos actualités</h2>
     <ul>
-      <li id="newsletter" data-sr="enter bottom, move 150px, wait 0.6s"><a href="#">S'abonner à la newsletter</a></li>
+      <li id="newsletter" data-sr="enter bottom, move 150px, wait 0.6s"><a>S'abonner à la newsletter</a></li>
       <li id="download-brochure" data-sr="enter bottom, move 150px, wait 0.7s">
         <a href="{{ url_for('static', filename='documents/brochure-kozeagroup.pdf')}}">Télécharger notre brochure</a>
       </li>
       <li data-sr="enter bottom, move 200px, wait 0.8s" id="press-release">
-        <a href="#" >Communiqués de presse</a>
+        <a>Communiqués de presse</a>
       </li>
     </ul>
-    {# TODO links #}
   </section>
 
   <section id="partners">
