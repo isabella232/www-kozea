@@ -1154,8 +1154,12 @@ html .collapsible .menu {
 @media screen and (max-width: 768px) {
   html body header #go-to-about {
     display: none; }
+  html body#index header h1:before {
+    width: 100px;
+    left: calc(50% - 50px);
+    top: calc(50% - 130px); }
   html body#index #about p {
-    font-size: 2.5em;
+    font-size: 1.9em;
     margin-top: 30px; }
   html body#index #partners ul li {
     box-sizing: border-box;
