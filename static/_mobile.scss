@@ -255,6 +255,12 @@ html .collapsible {
   }
 }
 
+@media screen and (max-width: 735px) {
+  html body#index header {
+    height: calc(100vh - 63px);
+  }
+}
+
 @media screen and (min-width: 481px) and (max-width: 768px) {
   html body {
     &#index {

@@ -323,7 +323,7 @@ html {
     &#index {/* Accueil */
       header {
         background: $primary;
-        height: 94.5vh;
+        height: calc(100vh - 70px);
         flex-direction: column;
         justify-content: flex-end;
         position: relative;

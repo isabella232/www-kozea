@@ -229,7 +229,7 @@ html {
       /* Accueil */ }
       html body#index header {
         background: #1a2530;
-        height: 94.5vh;
+        height: calc(100vh - 70px);
         flex-direction: column;
         justify-content: flex-end;
         position: relative; }
@@ -1200,6 +1200,10 @@ html .collapsible .menu {
     margin-top: 0; }
   html body span#background-line:after {
     content: none; } }
+
+@media screen and (max-width: 735px) {
+  html body#index header {
+    height: calc(100vh - 63px); } }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   html body#index #about p {
