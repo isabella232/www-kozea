@@ -967,7 +967,7 @@ html {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        margin-top: -302px;
+        margin-top: -390px;
         order: 2;
         padding: 30px; }
         html body#contact section form input:not(:last-child), html body#contact section form textarea {
