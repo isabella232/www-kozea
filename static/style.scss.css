@@ -27,9 +27,9 @@ p strong {
   font-weight: 500; }
 
 a {
+  cursor: pointer;
   text-decoration: none;
-  transition: .5s;
-  cursor: pointer; }
+  transition: .5s; }
 
 ul {
   padding-left: 0; }
@@ -80,10 +80,11 @@ html {
   background: url(images/kozea-line.jpg) no-repeat bottom;
   background-size: contain; }
   html body {
-    margin: 0;
     display: flex;
     flex-direction: column;
+    margin: 0;
     position: relative;
+    /* popup newsletter */
     /*animation lien*/
     /*animation loading before*/ }
     html body input[type="submit"] {
@@ -95,17 +96,16 @@ html {
       width: 90px; }
     html body .popup {
       background-color: #1a2530;
-      -moz-opacity: 0.8;
-      opacity: .9;
-      padding: 16px;
-      overflow: auto;
-      width: 33%;
-      position: absolute;
-      z-index: 20;
-      min-width: 205px;
-      top: 50%;
+      box-shadow: 0 0 5px rgba(26, 37, 48, 0.5);
       left: calc(50% - 17.5%);
-      box-shadow: 0 0 5px rgba(26, 37, 48, 0.5); }
+      min-width: 205px;
+      opacity: .9;
+      overflow: auto;
+      padding: 16px;
+      position: absolute;
+      top: 50%;
+      width: 33%;
+      z-index: 20; }
       html body .popup p {
         color: #fff; }
       html body .popup form input {
@@ -116,6 +116,12 @@ html {
         background: #fff;
         color: #1c1c1c;
         margin-top: 10px; }
+    html body .hidden {
+      display: none; }
+    html body .close-popup {
+      color: #fff;
+      float: right;
+      cursor: pointer; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -152,15 +158,15 @@ html {
       html body header #go-to-about {
         color: #fff;
         display: flex;
+        font-size: 0;
         justify-content: center;
         margin: -30px auto;
         padding: 10px;
-        font-size: 0;
         z-index: 3; }
         html body header #go-to-about:after {
+          animation: bounce 1.5s ease-in-out;
           content: url(images/icones/more.svg);
-          width: 15px;
-          animation: bounce 1.5s ease-in-out; }
+          width: 15px; }
 
 @keyframes bounce {
   0% {
@@ -172,17 +178,16 @@ html {
     transform: translateY(0); } }
     html body nav {
       order: -1; }
-      html body nav .menu {
-        display: flex;
+      html body nav ul {
         flex-wrap: wrap;
         justify-content: flex-end;
         margin: auto;
         max-width: 1200px;
         position: relative; }
-        html body nav .menu li {
+        html body nav ul li {
           font-size: 1em;
           padding: 22px 10px; }
-          html body nav .menu li:first-child a:before {
+          html body nav ul li:first-child a:before {
             background: url(images/logos/logo-kozeagroup.svg) no-repeat left;
             content: '';
             height: 58px;
@@ -190,9 +195,9 @@ html {
             position: absolute;
             top: 6px;
             width: 130px; }
-          html body nav .menu li:first-child:hover a:before {
+          html body nav ul li:first-child:hover a:before {
             opacity: 0.8; }
-          html body nav .menu li:hover, html body nav .menu li:focus {
+          html body nav ul li:hover, html body nav ul li:focus {
             opacity: 0.85; }
       html body nav + section {
         margin-top: 0; }
@@ -300,12 +305,12 @@ html {
         position: relative; }
         html body#index #news ul {
           display: flex;
-          width: 100%;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+          width: 100%; }
           html body#index #news ul li {
             box-sizing: border-box;
-            flex-direction: column;
             display: flex;
+            flex-direction: column;
             justify-content: flex-end;
             padding: 30px;
             position: relative; }
@@ -366,17 +371,17 @@ html {
               margin-left: 50%;
               width: 50%; }
               html body#index #news ul li#press-release:before {
+                color: #fff;
                 content: '[ à venir ]';
                 display: flex;
-                justify-content: center;
-                color: white;
-                z-index: 1;
-                font-style: italic;
                 font-size: 1.1em;
+                font-style: italic;
+                justify-content: center;
+                left: calc(50% - 40px);
+                position: absolute;
                 transform: scale(0);
                 transition: opacity 0.35s, transform 0.35s;
-                position: absolute;
-                left: calc(50% - 40px); }
+                z-index: 1; }
               html body#index #news ul li#press-release:hover:before {
                 opacity: 1;
                 transform: scale(1); }
@@ -406,9 +411,9 @@ html {
       html body#index #follow ul + ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         position: relative;
-        width: 100%;
-        justify-content: center; }
+        width: 100%; }
         html body#index #follow ul + ul li {
           height: 300px;
           position: relative;
@@ -445,9 +450,9 @@ html {
             font-size: 6em;
             justify-content: center; }
           html body#about #numbers li strong:before, html body#about #members h3 strong:before, html body#about #tools li strong:before {
-            content: '';
             background: #fff;
             bottom: 50px;
+            content: '';
             display: block;
             height: 3px;
             left: calc(50% - 10px);
@@ -626,12 +631,12 @@ html {
             margin-top: 150px;
             order: -2; }
             html body#activity section#platform section:first-of-type:after {
-              content: '';
               background: url(images/photos/platform.jpg) no-repeat;
+              content: '';
+              height: 130%;
               left: 25%;
               top: -150px;
-              width: 150%;
-              height: 130%; }
+              width: 150%; }
           html body#activity section#platform section#pharminfo {
             margin-top: -210px;
             margin-left: 50%; }
@@ -664,8 +669,8 @@ html {
             align-self: flex-start;
             margin-left: 17%; }
             html body#activity section#link section:first-of-type:after {
-              content: '';
               background: url(images/photos/link.jpg) no-repeat;
+              content: '';
               height: 165%;
               left: 100%;
               top: -70px;
@@ -692,12 +697,12 @@ html {
             align-self: flex-end;
             position: relative; }
             html body#activity section#media section:first-of-type:after {
-              content: '';
               background: url(images/photos/media.jpg) no-repeat;
+              content: '';
+              height: 160%;
               left: -67%;
               position: absolute;
               top: -110px;
-              height: 160%;
               width: 100%;
               z-index: -2; }
           html body#activity section#media section#work {
@@ -856,8 +861,8 @@ html {
               content: url(images/icones/search.svg); }
       html body#expertise #goals ul {
         display: flex;
-        width: 100%;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+        width: 100%; }
         html body#expertise #goals ul li {
           align-items: center;
           display: flex;
@@ -869,8 +874,8 @@ html {
             content: '';
             display: block;
             height: 3px;
-            order: -1;
             margin: 10px;
+            order: -1;
             width: 20px; }
           html body#expertise #goals ul li:before {
             order: -2;
@@ -924,12 +929,11 @@ html {
       /* Contact */ }
       html body#contact section > dl {
         background: #1a2530;
+        box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
-        margin: 0;
+        margin: 0 33% 0 0;
         padding: 20px;
-        margin-right: 33%;
-        box-sizing: border-box;
         width: 33%;
         z-index: 1; }
         html body#contact section > dl > * {
@@ -945,8 +949,8 @@ html {
             html body#contact section > dl ul li a {
               color: #fff; }
         html body#contact section > dl dd {
-          margin-left: 0;
-          font-weight: 100; }
+          font-weight: 100;
+          margin-left: 0; }
         html body#contact section > dl dt {
           font-weight: 400;
           order: -1;
@@ -963,9 +967,9 @@ html {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin-top: -302px;
         order: 2;
-        padding: 30px;
-        margin-top: -302px; }
+        padding: 30px; }
         html body#contact section form input:not(:last-child), html body#contact section form textarea {
           background: none;
           border-top: none;
@@ -1025,18 +1029,12 @@ html {
       top: 0;
       z-index: -20; }
       html body span#background-line:after {
-        content: '';
         background: #f3f3f3;
+        content: '';
         height: calc(100% - 4px);
         position: absolute;
         top: 0;
         width: 1px; }
-    html body .hidden {
-      display: none; }
-    html body .close-popup {
-      color: #fff;
-      float: right;
-      cursor: pointer; }
     html body footer {
       margin-top: 25px; }
       html body footer dl {
@@ -1104,9 +1102,18 @@ html .collapsible .menu {
   html .collapsible .menu li:first-child a:before {
     content: none; }
 
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+    margin: 0; } }
+
 @media screen and (max-width: 1024px) {
   html body#index #news ul li {
     padding: 15px; }
+    html body#index #news ul li:after {
+      height: calc(100% - 30px);
+      left: 15px;
+      top: 15px;
+      width: calc(100% - 30px); }
   html body#activity section#media section#solutions {
     margin-top: -387px; }
   html body#activity section#link section#backflip {
@@ -1123,16 +1130,7 @@ html .collapsible .menu {
       html body footer dl dd:last-of-type ul li:last-child:before {
         content: none; } }
 
-@media screen and (min-width: 600px) and (max-width: 1200px) {
-  html body#about #story ul li:first-child, html body#about #story ul li:last-child {
-    margin: 0; } }
-
 @media screen and (min-width: 481px) and (max-width: 800px) {
-  html body#index #news ul li:after {
-    height: calc(100% - 30px);
-    left: 15px;
-    top: 15px;
-    width: calc(100% - 30px); }
   html body#index #news ul li#newsletter, html body#index #news ul li#download-brochure {
     margin-left: 0;
     width: 50%; }
@@ -1178,9 +1176,9 @@ html .collapsible .menu {
   html body header #go-to-about {
     display: none; }
   html body#index header h1:before {
-    width: 100px;
     left: calc(50% - 50px);
-    top: calc(50% - 130px); }
+    top: calc(50% - 130px);
+    width: 100px; }
   html body#index #about p {
     font-size: 1.9em;
     margin-top: 30px; }
@@ -1188,7 +1186,7 @@ html .collapsible .menu {
     box-sizing: border-box;
     padding: 20px 0;
     width: 50%; }
-  html body#index #follow .insta li, html body#index #follow .insta:after {
+  html body#index #follow .insta li, html body#index .insta:after {
     width: 50%; }
   html body#about img {
     width: 100%; }
@@ -1260,8 +1258,8 @@ html .collapsible .menu {
   html body#index #news ul {
     flex-direction: column; }
     html body#index #news ul > li#newsletter, html body#index #news ul > li#download-brochure, html body#index #news ul > li#press-release {
-      width: 100%;
-      margin-left: 0; }
+      margin-left: 0;
+      width: 100%; }
   html body#index #follow .insta li, html body#index #follow .insta:after {
     height: 230px; }
   html body#about #story img + p + p, html body#about #story img + p {
@@ -1327,8 +1325,8 @@ html .collapsible .menu {
   html body#references section ul li a, html body#index #partners ul li a {
     opacity: 1; }
   html body#contact section dl, html body#contact section form, html body#contact section #map {
-    width: 100%;
-    margin: 0; }
+    margin: 0;
+    width: 100%; }
   html body#contact section form {
     order: 0; }
   html body#contact section dl, html body#contact section #map {

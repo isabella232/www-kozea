@@ -49,12 +49,25 @@ html .collapsible {
   }
 }
 
-
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  html body#about #story ul li {
+    &:first-child, &:last-child {
+      margin: 0 ;
+    }
+  }
+}
 
 @media screen and (max-width: 1024px) {
   html body {
     &#index #news ul li {
       padding: 15px;
+      
+      &:after {
+        height: calc(100% - 30px);
+        left: 15px;
+        top: 15px;
+        width: calc(100% - 30px);
+      }
     }
 
     &#activity {
@@ -76,26 +89,16 @@ html .collapsible {
       width: 50%;
     }
 
-    footer {
-      dl dd:last-of-type ul {
-        flex-direction: column;
+    footer dl dd:last-of-type ul {
+      flex-direction: column;
 
-        li:last-child {
-          margin-left: 9px;
+      li:last-child {
+        margin-left: 9px;
 
-          &:before {
-            content: none;
-          }
+        &:before {
+          content: none;
         }
       }
-    }
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1200px) {
-  html body#about #story ul li {
-    &:first-child, &:last-child {
-      margin: 0 ;
     }
   }
 }
@@ -103,13 +106,6 @@ html .collapsible {
 @media screen and (min-width: 481px) and (max-width: 800px) {
   html body {
     &#index #news ul li {
-      &:after {
-        height:  calc(100% - 30px);
-        left: 15px;
-        top: 15px;
-        width: calc(100% - 30px);
-      }
-
       &#newsletter, &#download-brochure {
         margin-left: 0;
         width: 50%;
@@ -133,7 +129,6 @@ html .collapsible {
         justify-content: center;
       }
     }
-
 
     &#activity section {
       &#platform, &#link, &#media, &#community {
@@ -206,9 +201,9 @@ html .collapsible {
 
     &#index {
       header h1:before {
-        width: 100px;
         left: calc(50% - 50px);
         top: calc(50% - 130px);
+        width: 100px;
       }
 
       #about p {
@@ -222,17 +217,13 @@ html .collapsible {
         width: 50%;
       }
 
-      #follow {
-        .insta li, .insta:after {
-          width: 50%;
-        }
+      #follow .insta li, .insta:after {
+        width: 50%;
       }
     }
 
-    &#about {
-      img {
-        width: 100%;
-      }
+    &#about img {
+      width: 100%;
     }
 
     &#references section ul li {
@@ -274,28 +265,24 @@ html .collapsible {
       }
     }
 
-    &#about #team {
-      #tools ul {
-        width: 100%;
-      }
+    &#about #team #tools ul {
+      width: 100%;
     }
   }
 }
 
 @media screen and (min-width: 461px) and (max-width:640px) {
-  html body {
-    &#activity section {
-      &#community {
-        margin-top: 15%;
+  html body#activity section {
+    &#community {
+      margin-top: 15%;
 
-        section#free:after  {   
-          left: 40%;
-        }
+      section#free:after  {   
+        left: 40%;
       }
+    }
 
-      &#media section#solutions {
-        margin-top: -490px;
-      }
+    &#media section#solutions {
+      margin-top: -490px;
     }
   }
 }
@@ -341,231 +328,225 @@ html .collapsible {
 }
 
 @media screen and (max-width: 481px) {
-  html {
-    body {
-      > section p.intro {
-        box-sizing: border-box;
-        font-size: 1.2em;
-        padding: 0 30px;
-        width: 100%;
+  html body {
+    > section p.intro {
+      box-sizing: border-box;
+      font-size: 1.2em;
+      padding: 0 30px;
+      width: 100%;
+    }
+
+    &#index {
+      header h1:before {
+        top: calc(50% - 138px);
       }
 
-      &#index {
-        header h1:before {
-          top: calc(50% - 138px);
-        }
-
-        #about p {
-          display: none;
-        }
-
-        #activity dl {
-          flex-direction: column;
-          width: 100%;
-
-          dd {
-            width: 100%;
-
-            a {
-              transform: none;
-            }
-          }
-        }
-
-        #news ul {
-          flex-direction: column;
-
-          > li {
-            &#newsletter, &#download-brochure, &#press-release {
-              width: 100%;
-              margin-left: 0;
-            }
-          }
-        }
-
-        #follow {
-          .insta li, .insta:after {
-           height: 230px;
-          }
-        }
-      }
-
-      &#about {
-        #story {
-          img {
-            & + p + p, & + p {
-              width: 100%;
-            }
-          }
-
-          #numbers li {
-            margin: 0;
-            width: 100%;
-          }
-        }
-
-        #team section {
-          justify-content: center;
-          width: 100%;
-
-          &#members {
-            h3 {
-              width: 100%;
-            }
-
-            section {
-              display: none;
-            }
-          }
-
-          &#tools {
-            ul, ul li {
-              width: 100%;
-            }
-          }
-        }
-      }
-
-      &#activity {
-        section {
-          &#platform, &#link, &#media, &#community {
-            flex-direction: column;
-            margin-top: 20%;
-
-            > * {
-              margin: 0 !important;
-              width: 100%;
-            }
-
-            h2 {
-              display: none;
-            }
-
-            &:before {
-              left: 0;
-              order: -2;
-              position: relative;
-              top: 0;
-            }
-
-            section:first-of-type:after {
-              content: none;
-            }
-          }
-
-          &#community {
-            align-items: center;
-
-            section#free:after {
-              content: none;
-            }
-
-             section#projects ul {
-              li, li a {
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-
-      &#expertise {
-        #missions {
-          #gestion-backoffice, #satisfaction, #develop, #big-data {
-            margin: 0;
-            width: 100%;
-          }
-
-          #develop:after {
-            content: none;
-          }
-
-          section:first-of-type {
-            &:after {
-              content: none;
-            }
-
-            img {
-              position: initial;
-            }
-          }
-        }
-
-        #skills {
-          background: none;
-
-          ul {
-            height: initial;
-
-            li {
-              width: 100%;
-
-              &:nth-of-type(3) {
-                margin: 0;
-              }
-            }
-          }
-        }
-
-        #goals ul {
-          flex-direction: column;
-
-          li {
-            margin-bottom: 50px;
-            width: 100%;
-          }
-        }
-      }
-
-      &#references section ul li {
-        padding: 20px 0;
-        width: 100%;
-      }
-
-      &#references section, &#index #partners {
-        ul li a {
-          opacity: 1;
-        }
-      }
-
-      &#contact section {
-        dl, form, #map {
-          width: 100%;
-          margin: 0;
-        }
-
-        form {
-          order: 0;
-        }
-
-        dl, #map {
-          order: 1;
-        }
-      }
-
-      &#legal section {
-        box-sizing: border-box;
-        padding: 10px;
-      }
-
-      span#background-line {
+      #about p {
         display: none;
       }
 
-      footer dl {
-        padding: 0 10px;
+      #activity dl {
+        flex-direction: column;
+        width: 100%;
 
-        dt, dd {
-          border-left: none;
-          order: initial;
+        dd {
+          width: 100%;
+
+          a {
+            transform: none;
+          }
+        }
+      }
+
+      #news ul {
+        flex-direction: column;
+
+        > li {
+          &#newsletter, &#download-brochure, &#press-release {
+            margin-left: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      #follow {
+        .insta li, .insta:after {
+          height: 230px;
+        }
+      }
+    }
+
+    &#about {
+      #story {
+        img + p + p, img + p {
           width: 100%;
         }
 
-        dd {
-          &:first-of-type, &:last-of-type li:last-child {
-            margin-left: 9px;
+        #numbers li {
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+      #team section {
+        justify-content: center;
+        width: 100%;
+
+        &#members {
+          h3 {
+            width: 100%;
+          }
+
+          section {
+            display: none;
           }
         }
+
+        &#tools {
+          ul, ul li {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &#activity {
+      section {
+        &#platform, &#link, &#media, &#community {
+          flex-direction: column;
+          margin-top: 20%;
+
+          > * {
+            margin: 0 !important;
+            width: 100%;
+          }
+
+          h2 {
+            display: none;
+          }
+
+          &:before {
+            left: 0;
+            order: -2;
+            position: relative;
+            top: 0;
+          }
+
+          section:first-of-type:after {
+            content: none;
+          }
+        }
+
+        &#community {
+          align-items: center;
+
+          section#free:after {
+            content: none;
+          }
+
+          section#projects ul {
+            li, li a {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    &#expertise {
+      #missions {
+        #gestion-backoffice, #satisfaction, #develop, #big-data {
+          margin: 0;
+          width: 100%;
+        }
+
+        #develop:after {
+          content: none;
+        }
+
+        section:first-of-type {
+          &:after {
+            content: none;
+          }
+
+          img {
+            position: initial;
+          }
+        }
+      }
+
+      #skills {
+        background: none;
+
+        ul {
+          height: initial;
+
+          li {
+            width: 100%;
+
+            &:nth-of-type(3) {
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      #goals ul {
+        flex-direction: column;
+
+        li {
+          margin-bottom: 50px;
+          width: 100%;
+        }
+      }
+    }
+
+    &#references section ul li {
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    &#references section, &#index #partners {
+      ul li a {
+        opacity: 1;
+      }
+    }
+
+    &#contact section {
+      dl, form, #map {
+        margin: 0;
+        width: 100%;
+      }
+
+      form {
+        order: 0;
+      }
+
+      dl, #map {
+        order: 1;
+      }
+    }
+
+    &#legal section {
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    span#background-line {
+      display: none;
+    }
+
+    footer dl {
+      padding: 0 10px;
+
+      dt, dd {
+        border-left: none;
+        order: initial;
+        width: 100%;
+      }
+
+      dd:first-of-type, dd:last-of-type li:last-child {
+        margin-left: 9px;
       }
     }
   }
