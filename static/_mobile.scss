@@ -309,8 +309,15 @@ html .collapsible {
       }
     }
 
-    &#index #follow .insta li, .insta:after {
-      height: 230px;
+    &#index  {
+
+      #news .popup {
+        left: calc(50vw - 102px);
+      }
+
+      #follow .insta li, .insta:after {
+        height: 230px;
+      }
     }
   }
 }

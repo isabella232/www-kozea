@@ -101,8 +101,9 @@ html {
       width: 33%;
       position: absolute;
       left: calc(50vw - 16.5%);
-      top: calc(50vh - 50px);
-      z-index: 20; }
+      top: 42%;
+      z-index: 20;
+      min-width: 205px; }
       html body .popup p {
         color: #fff; }
       html body .popup form input {
@@ -111,7 +112,8 @@ html {
         padding: 7px; }
       html body .popup form input[type="submit"] {
         background: #fff;
-        color: #1c1c1c; }
+        color: #1c1c1c;
+        margin-top: 10px; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -1220,7 +1222,9 @@ html .collapsible .menu {
     justify-content: flex-start; }
     html body#about #team #members section {
       width: 50%; }
-  html body#index #follow .insta li, html body .insta:after {
+  html body#index #news .popup {
+    left: calc(50vw - 102px); }
+  html body#index #follow .insta li, html body#index .insta:after {
     height: 230px; } }
 
 @media screen and (min-width: 481px) and (max-width: 568px) {

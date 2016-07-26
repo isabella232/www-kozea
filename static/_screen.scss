@@ -133,8 +133,9 @@ html {
       width: 33%;
       position: absolute;
       left: calc(50vw - 16.5%);
-      top: calc(50vh - 50px);
+      top: 42%;
       z-index: 20;
+      min-width: 205px;
 
   
       p {
@@ -151,6 +152,7 @@ html {
         input[type="submit"] {
           background: #fff;
           color: $text;
+          margin-top: 10px;
         }
       }
     }

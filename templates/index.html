@@ -36,6 +36,17 @@
         <a>Communiqués de presse</a>
       </li>
     </ul>
+    <div class="hidden popup">
+      <span class="close-popup">X</span>
+      <p class="sent hidden">Vous avez été ajouté à la liste d'envoi de la newsletter</p>
+      <div>
+        <p>Entrez votre adresse mail pour recevoir la newsletter</p>
+        <form class="newsletter-form" action="/send_mail/newsletter" method="POST">
+          <input type="email" name="email" placeholder="[ Email ]" required />
+          <input type="submit" value="Valider" />
+        </form>
+      </div>
+    </div>
   </section>
 
   <section id="partners">
@@ -64,16 +75,4 @@
       {% endfor %}
     </ul>
   </section>
-
-  <div class="hidden popup">
-    <span class="close-popup">X</span>
-    <p class="sent hidden">Vous avez été ajouté à la liste d'envoi de la newsletter</p>
-    <div>
-      <p>Entrez votre adresse mail pour recevoir la newsletter</p>
-      <form class="newsletter-form" action="/send_mail/newsletter" method="POST">
-        <input type="email" name="email" placeholder="[ Email ]" required />
-        <input type="submit" value="Valider" />
-      </form>
-    </div>
-  </div>
 {% endblock body %}
