@@ -114,6 +114,7 @@ html {
     display: flex;
     flex-direction: column;
     //align-items: stretch;
+    position: relative;
   
     input[type="submit"] {
       border: none;
@@ -127,16 +128,16 @@ html {
     .popup {
       background-color: $primary;
       -moz-opacity: 0.8;
-      opacity:.80;
+      opacity:.9;
       padding: 16px;
       overflow: auto;
       width: 33%;
       position: absolute;
-      left: calc(50vw - 16.5%);
-      top: 42%;
       z-index: 20;
       min-width: 205px;
-
+      top: 50%;
+      left: calc(50% - 17.5%);
+      box-shadow: 0 0 5px rgba($primary, 0.5);
   
       p {
         color: #fff;

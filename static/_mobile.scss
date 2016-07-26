@@ -195,6 +195,11 @@ html .collapsible {
 
 @media screen and (max-width: 768px) {
   html body {
+    .popup {
+      left: calc(50vw - 130px);
+      top: 55%;
+    }
+
     header #go-to-about {
       display: none;
     }
@@ -310,11 +315,6 @@ html .collapsible {
     }
 
     &#index  {
-
-      #news .popup {
-        left: calc(50vw - 102px);
-      }
-
       #follow .insta li, .insta:after {
         height: 230px;
       }
