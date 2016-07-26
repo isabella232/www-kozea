@@ -61,22 +61,23 @@ $(document).ready(function() {
     $(window).keyup(function(e) {
       if (e.keyCode === 27) {
         remove_popup();
-        $('body > :not(#newsletter, .popup)').off('click');
+        $('body > :not(.popup)').off('click');
       }
     });
     $('.close-popup').click(function() {
       remove_popup();
-      $('body > :not(#newsletter, .popup)').off('click');
+      $('body > :not(.popup)').off('click');
     });
 
     $('.popup').slideDown(function() {
-      $('body > :not(#newsletter, .popup)').click(function() {
-        remove_popup();
-        $('body > :not(#newsletter, .popup)').off('click');
+      $('body').click(function(e) {
+        if (!$(e.target).parents('div').is('.popup')) {
+          remove_popup();
+          $('body').off('click');
+        }
       });
     });
 
-    $('body').append($('<div class="black-overlay">'));
     $form = $('.newsletter-form')
     $form.on('submit', function(e) {
       e.preventDefault();
@@ -93,7 +94,6 @@ $(document).ready(function() {
     $('.popup').fadeOut(400, function() {
       $('.popup .sent').hide();
       $('.popup div').show();
-      $(".black-overlay").remove();
       $(window).off('keyup');
     });
   };
