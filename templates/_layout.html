@@ -20,13 +20,11 @@
     <link type="text/css" rel="stylesheet" href="static/style.scss.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
     <script type="text/javascript" src="static/js/kozea.js"></script>
-    {% block more_js %}{% endblock more_js %}
   </head>
 
   <body id="{{ page }}">
     <header>
       {% if page == 'index' %}
-        <canvas class="canvas"></canvas>
         <a id="go-to-about" href="#about">En savoir plus</a>
       {% endif %}
       {% if (page in dict(titles) or page == 'legal') %}
@@ -88,6 +86,5 @@
       </dl>
     </footer>
     <script type="text/javascript" src="static/js/scrollReveal.min.js"></script>
-    {% block end_js %}{% endblock end_js %}
   </body>
 </html>
