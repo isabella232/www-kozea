@@ -1496,6 +1496,7 @@ html {
         display: flex;
         flex-direction: column;
         margin-top: -390px;
+        margin-bottom: 50px;
         order: 2;
         padding: 30px;
 
@@ -1608,7 +1609,7 @@ html {
         width: 1px;
       }
     }
-    
+
     #back-to-top{
       position: fixed;
       display: none;
