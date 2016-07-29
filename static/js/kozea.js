@@ -58,6 +58,21 @@ $(document).ready(function() {
 
   /* Newsletter  */
   $('#newsletter a').click(function() {
+    if ($('.popup').size() === 0) {
+      $popup = $('<div class="hidden popup">')
+      $popup.append($('<span class="close-popup">')).append(
+        $('<p class="sent hidden">').html(
+        'Vous avez été ajouté à la liste dʼenvoi de la newsletter'))
+      $popup.append($("<div>").append($('<p>').html(
+        'Entrez votre adresse mail pour recevoir la newsletter</p>')).append(
+        $('<form class="newsletter-form" method="POST">').attr(
+          "action", "/send_mail/newsletter").append(
+          $('<input type="email" placeholder="[ Email ]" required />').attr(
+            "name", "email")
+          ).append($('<input type ="submit" value="Valider"/>'))))
+      $('#news').append($popup)
+    }
+
     $(window).keyup(function(e) {
       if (e.keyCode === 27) {
         remove_popup();
