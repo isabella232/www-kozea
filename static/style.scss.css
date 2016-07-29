@@ -108,10 +108,15 @@ html {
       z-index: 20; }
       html body .popup p {
         color: #fff; }
+      html body .popup span:before {
+        content: 'x';
+        display: block;
+        padding: 5px; }
       html body .popup form input {
         border: none;
         font-size: 1em;
-        padding: 7px; }
+        padding: 7px;
+        margin-right: 10px; }
       html body .popup form input[type="submit"] {
         background: #fff;
         color: #1c1c1c;

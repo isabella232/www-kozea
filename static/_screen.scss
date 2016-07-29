@@ -142,10 +142,17 @@ html {
         color: #fff;
       }
 
+      span:before {
+        content: 'x';
+        display: block;
+        padding: 5px;
+      }
+
       form {
         input {
           border: none;
           font-size: 1em;
+          margin-right: 10px;
           padding: 7px;
         }
 
