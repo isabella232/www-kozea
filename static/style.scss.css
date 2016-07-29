@@ -244,12 +244,14 @@ html {
           content: '';
           height: 3px;
           width: 100%; }
-        html body#index header h1:before {
-          content: url(images/logos/logo-icon.svg);
-          left: calc(50% - 65px);
-          position: absolute;
-          top: calc(50% - 200px);
-          width: 130px; }
+        html body#index header h1 {
+          color: transparent; }
+          html body#index header h1:before {
+            content: url(images/logos/logo-icon.svg);
+            left: calc(50% - 65px);
+            position: absolute;
+            top: calc(50% - 200px);
+            width: 130px; }
       html body#index #about {
         margin-bottom: 0; }
         html body#index #about h2 {
@@ -968,7 +970,7 @@ html {
         display: flex;
         flex-direction: column;
         margin-top: -390px;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         order: 2;
         padding: 30px; }
         html body#contact section form input:not(:last-child), html body#contact section form textarea {

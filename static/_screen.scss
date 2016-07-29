@@ -347,6 +347,8 @@ html {
         }
 
         h1 {
+          color: transparent;
+          
           &:before {
             content: url(images/logos/logo-icon.svg);
             left: calc(50% - 65px);
