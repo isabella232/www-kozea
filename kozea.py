@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from flask import current_app, Flask, render_template, request
+from jinja2.exceptions import TemplateNotFound
 import mandrill
 import requests
 
@@ -11,17 +12,18 @@ ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
 MANDRILL_KEY = app.config.get('MANDRILL_KEY')
 
 
+@app.errorhandler(404)
+@app.errorhandler(TemplateNotFound)
+def page_not_found(e):
+    return render_template('404.html')
+
+
 @app.route('/')
 @app.route('/<page>')
 def page(page='index'):
-    recorded_pages = [
-        'index', 'about', 'activity', 'contact', 'expertise', 'legal',
-        'references']
-    if page in recorded_pages:
-        if page == 'index':
-            return get_insta_media()
-        return render_template('{}.html'.format(page), page=page)
-    return render_template('404.html')
+    if page == 'index':
+        return get_insta_media()
+    return render_template('{}.html'.format(page), page=page)
 
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
