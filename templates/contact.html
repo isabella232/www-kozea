@@ -7,12 +7,12 @@
 
 {% block body %}
   <section id="contact-us">
-      <h2 data-sr="enter bottom, move 100px, wait 0.6s">Contactez-nous</h2>
-    <p data-sr="enter bottom, move 100px, wait 0.7s" class="intro">
+    <h2 data-sr="{{ sr(wait=0.6) }}">Contactez-nous</h2>
+    <p data-sr="{{ sr(wait=0.7) }}" class="intro">
       Un projet ? Une collaboration ? Des questions ? Écrivez-nous ! Nous serons ravis de vous répondre.
     </p>
 
-    <dl data-sr="enter bottom, move 100px, wait 0.8s">
+    <dl data-sr="{{ sr(wait=0.8) }}">
       <dt >Adresse</dt>
       <dd>
         107, boulevard de Stalingrad<br/>
@@ -27,7 +27,7 @@
         </ul>
       </dd>
     </dl>
-    <form class="contact-form" action="/send_mail/contact" method="POST" data-sr="enter bottom, move 100px, wait 0.9s">
+    <form class="contact-form" action="/send_mail/contact" method="POST" data-sr="{{ sr(wait=0.9) }}">
       <input id="email" type="email" placeholder="[ Email ]" name="email" required/>
       <input id="name" placeholder="[ Nom / Société ]" name="name" required/>
       <textarea id="question" placeholder="[ Demande ]" name="question" required></textarea>

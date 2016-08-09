@@ -7,10 +7,11 @@
   ['references', 'Nos références'],
   ['contact', 'Contact'],
 ] %}
-{% set sr_top = "enter top, move 200px, wait 0.5s" %}
-{% set sr_right = "enter right, move 200px, wait 0.5s" %}
-{% set sr_bottom = "enter bottom, move 200px, wait 0.5s" %}
-{% set sr_left = "enter left, move 200px, wait 0.5s" %}
+
+{% macro sr(side="bottom", move="200px", wait=0.5) %}
+  enter {{ side }}, move {{ move }}, wait {{ wait }}s
+{% endmacro %}
+
 <html>
   <head>
     <meta charset="UTF-8"/>
@@ -31,7 +32,7 @@
         {% if page == 'index' %}
           <h1>{{ dict(titles)[page] }}</h1>
         {% else %}
-          <h1 data-sr="{{ sr_bottom }}">{{ dict(titles)[page] }}</h1>
+          <h1 data-sr="{{ sr() }}">{{ dict(titles)[page] }}</h1>
         {% endif %}
       {% else %}
         <h1>404</h1>
