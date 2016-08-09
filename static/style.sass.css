@@ -165,7 +165,6 @@ html {
         display: flex;
         font-size: 0;
         justify-content: center;
-        margin: -30px auto;
         padding: 10px;
         z-index: 3; }
         html body header #go-to-about:after {
@@ -236,8 +235,8 @@ html {
       margin-top: 5%; }
     html body#index header {
       background: #1a2531;
-      height: calc(100vh - 70px);
       flex-direction: column;
+      height: calc(100vh - 70px);
       justify-content: flex-end;
       position: relative; }
       html body#index header:after {
@@ -984,20 +983,16 @@ html {
         color: #fff; }
         html body#contact section form input[type="submit"]:hover {
           background: #2c3e52; }
-    html body#legal h1:before {
-      content: '[ Mentions légales ]'; }
-    html body#legal h1:after {
-      content: none; }
-    html body#legal dl dt, html body#legal dl dd {
+    html body#contact section dl dt, html body#contact section dl dd {
       display: inline; }
-    html body#legal dl dt {
+    html body#contact section dl dt {
       font-weight: 700; }
-      html body#legal dl dt:after {
+      html body#contact section dl dt:after {
         content: ':';
         display: inline; }
-    html body#legal dl dd {
+    html body#contact section dl dd {
       margin-left: 0; }
-      html body#legal dl dd:after {
+      html body#contact section dl dd:after {
         content: '';
         display: block; }
     html body#references section ul li a, html body#index #partners ul li a {
