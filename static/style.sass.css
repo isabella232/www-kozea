@@ -52,22 +52,22 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
   background: #f9f9f9; }
 
 #work, #numbers #media, #targets, #structures #media + dd a {
-  background: #e63c4d; }
+  background: #e73c4d; }
 
 #project, #numbers #link, #reactivity, #structures #link + dd a {
-  background: #f49c30; }
+  background: #f59c30; }
 
 #professionnals, #numbers #platform, #innovation, #structures #platform + dd a {
-  background: #017ab9; }
+  background: #0a7cba; }
 
 #radicale, #numbers #community, #r-and-d, #structures #community + dd a {
-  background: #6e6086; }
+  background: #6e6186; }
 
 #pygal {
-  background: #887a9f; }
+  background: #887b9f; }
 
 #weasyprint {
-  background: #564b68; }
+  background: #564c68; }
 
 #backoffice, #share {
   background: #f1f1f1; }
@@ -140,7 +140,7 @@ html {
       margin-left: 5px;
       transform: translateX(-20px); }
     html body .links li a:hover, html body .links li a:focus {
-      color: #36597c; }
+      color: #354353; }
       html body .links li a:hover:before, html body .links li a:hover:after, html body .links li a:focus:before, html body .links li a:focus:after {
         opacity: 1;
         transform: translateX(0px); }
@@ -230,7 +230,7 @@ html {
           text-align: center;
           width: 50%; }
       html body > section .links a {
-        color: #36597c;
+        color: #354353;
         font-size: 0.85em; }
     html body:not(#index) header {
       margin-top: 5%; }
@@ -1014,7 +1014,7 @@ html {
       right: 45px; }
       html body span#back-to-top:hover {
         background: none;
-        color: #36597c; }
+        color: #354353; }
     html body span#background-line {
       height: 100%;
       left: 50%;
