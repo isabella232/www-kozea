@@ -59,7 +59,7 @@
     <ul class="insta">
       {% set wait = 0.5 %}
       {% for media in render_insta %}
-      <li data-sr="{{ sr(wait=wait=wait) }}"><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" title="{{ media.title }}"/></a></li>
+      <li data-sr="{{ sr(wait=wait) }}"><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" title="{{ media.title }}"/></a></li>
         {% set wait = wait + 0.1 %}
       {% endfor %}
     </ul>

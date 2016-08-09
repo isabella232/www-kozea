@@ -1,14 +1,6 @@
 <!DOCTYPE html>
-{% set titles = [
-  ['index', 'Accueil'],
-  ['about', 'À propos'],
-  ['activity', 'Notre activité'],
-  ['expertise', 'Notre expertise'],
-  ['references', 'Nos références'],
-  ['contact', 'Contact']
-] %}
 
-{% macro sr(side="bottom", move="200px", wait=0.5) %}
+{% macro sr(side="bottom", move="150px", wait=0.5) %}
   enter {{ side }}, move {{ move }}, wait {{ wait }}s
 {% endmacro %}
 
@@ -16,7 +8,7 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kozea -{% if page in dict(titles) or page == 'legal' %} {{ dict(titles)[page] or 'Mentions légales' }} -{% endif %} L’innovation digitale au service des acteurs de la santé</title>
+    <title>Kozea - {{ current_title }} - L’innovation digitale au service des acteurs de la santé</title>
     <link type="image/png" rel="icon" href="static/favicon.png" />
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.sass.css') }}" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
@@ -24,28 +16,22 @@
     {% block more_js %}{% endblock more_js %}
   </head>
 
-  <body id="{{ page or 404 }}">
+  <body id="{{ page }}">
     <header>
+      <h1 {% if page == 'index' %}data-sr="{{ sr() }}"{% endif %}>{{ current_title }}</h1>
       {% if page == 'index' %}
         <a id="go-to-about" href="#about">En savoir plus</a>
-      {% endif %}
-      {% if (page in dict(titles) or page == 'legal') %}
-        {% if page == 'index' %}
-          <h1>{{ dict(titles)[page] }}</h1>
-        {% else %}
-          <h1 data-sr="{{ sr() }}">{{ dict(titles)[page] }}</h1>
-        {% endif %}
-      {% else %}
-        <h1>404</h1>
       {% endif %}
     </header>
 
     <nav>
       <ul class="menu">
-        {% for id, title in titles %}
-          <li{% if id == page %} class="active"{% endif %}>
-            <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
-          </li>
+        {% for id, title in titles.items() %}
+          {% if id != 'legal' %}
+            <li{% if id == page %} class="active"{% endif %}>
+              <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>
