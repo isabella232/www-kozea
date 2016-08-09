@@ -5,7 +5,7 @@
   ['activity', 'Notre activité'],
   ['expertise', 'Notre expertise'],
   ['references', 'Nos références'],
-  ['contact', 'Contact'],
+  ['contact', 'Contact']
 ] %}
 
 {% macro sr(side="bottom", move="200px", wait=0.5) %}
@@ -18,12 +18,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kozea -{% if page in dict(titles) or page == 'legal' %} {{ dict(titles)[page] or 'Mentions légales' }} -{% endif %} L’innovation digitale au service des acteurs de la santé</title>
     <link type="image/png" rel="icon" href="static/favicon.png" />
-    <link type="text/css" rel="stylesheet" href="static/style.scss.css" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.sass.css') }}" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
-    <script type="text/javascript" src="static/js/kozea.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/kozea.js') }}"></script>
+    {% block more_js %}{% endblock more_js %}
   </head>
 
-  <body id="{{ page }}">
+  <body id="{{ page or 404 }}">
     <header>
       {% if page == 'index' %}
         <a id="go-to-about" href="#about">En savoir plus</a>
@@ -86,6 +87,6 @@
         </dd>
       </dl>
     </footer>
-    <script type="text/javascript" src="static/js/scrollReveal.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
   </body>
 </html>
