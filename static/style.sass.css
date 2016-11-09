@@ -133,11 +133,11 @@ html {
       transition: transform 0.35s, opacity 0.2s; }
     html body .links li a:before {
       content: '[ ';
-      margin-right: 5px;
+      margin-right: 0.3em;
       transform: translateX(20px); }
     html body .links li a:after {
       content: ' ]';
-      margin-left: 5px;
+      margin-left: 0.3em;
       transform: translateX(-20px); }
     html body .links li a:hover, html body .links li a:focus {
       color: #354353; }
@@ -999,6 +999,8 @@ html {
       opacity: 0.75; }
       html body#references section ul li a:hover, html body#index #partners ul li a:hover {
         opacity: 1; }
+    html body#error404 p {
+      text-align: center; }
     html body span#back-to-top {
       background: none;
       bottom: 35px;
@@ -1065,12 +1067,10 @@ html {
             flex-wrap: wrap; }
             html body footer dl dd:nth-of-type(3) ul li {
               width: 50%; }
-          html body footer dl dd:last-of-type ul {
-            display: flex; }
-            html body footer dl dd:last-of-type ul li:last-child:before {
-              content: ' - '; }
           html body footer dl dd ul {
             margin-top: 0; }
+        html body footer dl .links a:before {
+          margin-left: -0.6em; }
 
 /*== burger menu when navigation is to short */
 html .collapsible .collapsible-icon {

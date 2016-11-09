@@ -151,12 +151,12 @@ html
 
       &:before
         content: '[ '
-        margin-right: 5px
+        margin-right: 0.3em
         transform: translateX(20px)
 
       &:after
         content: ' ]'
-        margin-left: 5px
+        margin-left: 0.3em
         transform: translateX(-20px)
 
       &:hover, &:focus
@@ -1283,6 +1283,10 @@ html
         &:hover
           opacity: 1
 
+    &#error404
+      p
+        text-align: center
+
     span#back-to-top
       background: none
       bottom: 35px
@@ -1365,11 +1369,8 @@ html
             li
               width: 50%
 
-          &:last-of-type ul
-            display: flex
-
-            li:last-child:before
-              content: ' - '
-
           ul
             margin-top: 0
+
+        .links a:before
+          margin-left: -0.6em
