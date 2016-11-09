@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from collections import OrderedDict
+
 from flask import current_app, Flask, render_template, request
 from jinja2.exceptions import TemplateNotFound
 import mandrill
@@ -12,9 +13,10 @@ app.config.from_envvar('KOZEA_CONFIG', silent=True)
 ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
 MANDRILL_KEY = app.config.get('MANDRILL_KEY')
 TITLES = OrderedDict([
-    ('index', 'Accueil'), ('about', 'À propos'), ('activity', 'Notre activité'),
-    ('expertise', 'Notre expertise'), ('references', 'Nos références'),
-    ('contact', 'Contact'), ('legal', 'Mentions légales')
+    ('index', 'Accueil'), ('about', 'À propos'),
+    ('activity', 'Notre activité'), ('expertise', 'Notre expertise'),
+    ('references', 'Nos références'), ('contact', 'Contact'),
+    ('legal', 'Mentions légales')
 ])
 
 
