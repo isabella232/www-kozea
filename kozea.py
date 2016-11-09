@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from collections import OrderedDict
 
-from flask import current_app, Flask, render_template, request
+from flask import abort, current_app, Flask, render_template, request
 from jinja2.exceptions import TemplateNotFound
 import mandrill
 import requests
@@ -23,7 +23,8 @@ TITLES = OrderedDict([
 @app.errorhandler(404)
 @app.errorhandler(TemplateNotFound)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template(
+        '404.html', titles=TITLES, page='error404', current_title='404')
 
 
 @app.route('/')
@@ -43,9 +44,12 @@ def page(page='index'):
                     media.get('images').get('standard_resolution').get('url')),
                 'title': media.get('caption').get('text')})
         kwargs = {'render_insta': render_insta}
-    return render_template(
-        '{}.html'.format(page), page=page, current_title=TITLES[page],
-        titles=TITLES, **kwargs)
+    try:
+        return render_template(
+            '{}.html'.format(page), page=page, current_title=TITLES[page],
+            titles=TITLES, **kwargs)
+    except KeyError:
+        abort(404)
 
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
