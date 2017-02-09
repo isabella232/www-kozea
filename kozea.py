@@ -24,7 +24,7 @@ TITLES = OrderedDict([
 @app.errorhandler(TemplateNotFound)
 def page_not_found(e):
     return render_template(
-        '404.html', titles=TITLES, page='error404', current_title='404')
+        '404.html', titles=TITLES, page='error404', current_title='404'), 404
 
 
 @app.route('/')
