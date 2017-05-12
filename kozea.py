@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 from collections import OrderedDict
 
-from flask import abort, current_app, Flask, render_template, request
-from jinja2.exceptions import TemplateNotFound
 import mandrill
 import requests
+from flask import Flask, abort, current_app, render_template, request
+from jinja2.exceptions import TemplateNotFound
 
 
 app = Flask(__name__)
