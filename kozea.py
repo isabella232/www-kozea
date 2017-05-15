@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from collections import OrderedDict
+from xml.etree import ElementTree as etree
 
 import mandrill
 import requests
@@ -33,17 +34,32 @@ def page(page='index'):
     """Display each view."""
     kwargs = {}
     if page == 'index':
-        request = requests.get(
+        json = requests.get(
             "https://api.instagram.com/v1/users/self/media/recent/"
             "?access_token={}&count=4".format(ACCESS_TOKEN)).json()
         render_insta = []
-        for media in request.get('data', []):
+        for media in json.get('data', []):
             render_insta.append({
                 'link': media.get('link'),
                 'src': (
                     media.get('images').get('standard_resolution').get('url')),
                 'title': media.get('caption').get('text')})
-        kwargs = {'render_insta': render_insta}
+        tree = etree.fromstring(requests.get(
+            'https://kozeagroup.wordpress.com/category/kozea/feed/').text)
+        channel, = tree
+        render_wordpress = []
+        for child in channel:
+            if child.tag == 'item':
+                item = {}
+                for grandchild in child:
+                    if grandchild.tag == 'title':
+                        item['title'] = grandchild.text
+                    elif grandchild.tag == 'link':
+                        item['link'] = grandchild.text
+                render_wordpress.append(item)
+        kwargs = {
+            'render_insta': render_insta,
+            'render_wordpress': render_wordpress}
     try:
         return render_template(
             '{}.html'.format(page), page=page, current_title=TITLES[page],

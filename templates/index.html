@@ -32,8 +32,13 @@
       <li id="download-brochure" data-sr="{{ sr(wait=0.7) }}">
         <a href="{{ url_for('static', filename='documents/brochure-kozeagroup.pdf')}}">Télécharger notre brochure</a>
       </li>
-      <li data-sr="{{ sr(wait=0.8) }}" id="press-release">
-        <a>Communiqués de presse</a>
+      <li data-sr="{{ sr(wait=0.8) }}" id="latest-news">
+        <a>News</a>
+        <ul>
+          {% for wordpress_link in render_wordpress[:3] %}
+            <li><a href="{{ wordpress_link.link }}">{{ wordpress_link.title }}</a></li>
+          {% endfor %}
+        </ul>
       </li>
     </ul>
   </section>

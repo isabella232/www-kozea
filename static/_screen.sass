@@ -450,36 +450,42 @@ html
                 content: url(images/icones/brochure.svg)
                 width: 40px
 
-            &#press-release
+            &#latest-news
               background: url(images/photos/press-bkgd.jpg)no-repeat
               background-size: cover
               height: 400px
               margin-left: 50%
+              position: relative
               width: 50%
 
-              &:before
-                color: #fff
-                content: '[ à venir ]'
-                display: flex
-                font-size: 1.1em
-                font-style: italic
-                justify-content: center
-                left: calc(50% - 40px)
-                position: absolute
-                transform: scale(0)
-                transition: opacity 0.35s, transform 0.35s
-                z-index: 1
-
-              &:hover:before
-                opacity: 1
-                transform: scale(1)
-
-              a
+              > a
                 z-index: 0
 
                 &:before
                   content: url(images/icones/press.svg)
                   width: 100px
+
+              > ul
+                display: flex
+                flex-direction: column
+                height: 350px
+                justify-content: space-around
+                left: 25px
+                opacity: 0
+                position: absolute
+                top: 25px
+                width: calc(100% - 50px)
+
+                li
+                  background: $primary
+                  line-height: 1
+
+                  a
+                    &:after
+                      display: none
+
+              &:hover > ul
+                opacity: 1
 
       #partners ul
         display: flex
