@@ -7,7 +7,6 @@ import requests
 from flask import Flask, abort, current_app, render_template, request
 from jinja2.exceptions import TemplateNotFound
 
-
 app = Flask(__name__)
 app.config.from_envvar('KOZEA_CONFIG', silent=True)
 
