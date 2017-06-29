@@ -65,11 +65,15 @@ $(document).ready(function() {
         'Vous avez été ajouté à la liste dʼenvoi de la newsletter'))
       $popup.append($("<div>").append($('<p>').html(
         'Entrez votre adresse mail pour recevoir la newsletter</p>')).append(
-        $('<form class="newsletter-form" method="POST">').attr(
-          "action", "/send_mail/newsletter").append(
-          $('<input type="email" placeholder="[ Email ]" required />').attr(
-            "name", "email")
-          ).append($('<input type ="submit" value="Valider"/>'))))
+          $('<form action="//kozea.us8.list-manage.com/subscribe/post?' +
+            'u=dde3a36d2f82cc3f75534f533&amp;id=521653ecf5" ' +
+            'method="post" id="mc-embedded-subscribe-form" ' +
+            'name="mc-embedded-subscribe-form" ' +
+            'class="validate" target="_blank" novalidate>').append(
+              $('<input type="email" value="" name="EMAIL" class="email" ' +
+                'id="mce-EMAIL" placeholder="[ Email ]" required>')
+            ).append($('<input type="submit" value="Valider" name="subscribe" ' +
+                       'id="mc-embedded-subscribe">'))))
       $('#news').append($popup)
     }
 

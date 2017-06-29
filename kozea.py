@@ -70,17 +70,14 @@ def page(page='index'):
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
 def send_mail(mail_type):
+    assert mail_type == 'contact'
     mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
-    if mail_type == 'contact':
-        subject = 'Prise de contact sur le site de Kozea'
-        content = '<br>'.join([
-            'Email : %s' % form['email'],
-            'Nom / Société: %s' % form['name'],
-            'Demande : %s ' % form['question']])
-    else:
-        subject = 'Inscription à la newsletter Kozea'
-        content = 'Mail : %s' % form['email']
+    subject = 'Prise de contact sur le site de Kozea'
+    content = '<br>'.join([
+        'Email : %s' % form['email'],
+        'Nom / Société: %s' % form['name'],
+        'Demande : %s ' % form['question']])
     message = {
         'to': [{'email': 'contact@kozea.fr'}],
         'subject': subject,
