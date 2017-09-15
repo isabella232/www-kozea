@@ -37,20 +37,20 @@ ul {
 
 /* colors and backgrounds */
 nav ul li > *, #satisfaction > *, #big-data > *, #skills ul > *, #digital > *,
-#professionnals > *, #advice > *, #project > *, #advertisement > *,
-#work > *, #free > *, #projects dl > *, #projects dd > *,
+#professionnals > *, #advice > *, #project > *, #agency > *,
+#markting > *, #free > *, #projects dl > *, #projects dd > *,
 #numbers > *, #members > * > * {
   color: #fff; }
 
-nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav, #satisfaction, #digital, #advice, #agency, #free, #group, #members h3 {
   background: #1a2531; }
 
 #about ul ~ p, #gestion-backoffice, #develop, #skills,
-#story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #contact-us form {
+#story > p:not(.intro), #pharminfo, #promomaker,
+#backflip, #services, #projects + #expert, #contact-us form {
   background: #f9f9f9; }
 
-#work, #numbers #media, #targets, #structures #media + dd a {
+#marketing, #numbers #media, #targets, #structures #media + dd a {
   background: #e73c4d; }
 
 #project, #numbers #link, #reactivity, #structures #link + dd a {
@@ -598,15 +598,15 @@ html {
         z-index: -1; }
     html body#activity section {
       box-sizing: border-box; }
-      html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #medsite, html body#activity section #backflip, html body#activity section #advertisement, html body#activity section #solutions, html body#activity section #expert {
+      html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #promomaker, html body#activity section #backflip, html body#activity section #agency, html body#activity section #services, html body#activity section #expert {
         width: 50%; }
-      html body#activity section #digital, html body#activity section #professionnals, html body#activity section #advice, html body#activity section #project, html body#activity section #work, html body#activity section #free, html body#activity section #share {
+      html body#activity section #digital, html body#activity section #professionnals, html body#activity section #advice, html body#activity section #project, html body#activity section #marketing, html body#activity section #free, html body#activity section #share {
         width: 33%; }
       html body#activity section #backoffice {
         width: 25%; }
-      html body#activity section #pharminfo h3, html body#activity section #medsite h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
+      html body#activity section #pharminfo h3, html body#activity section #promomaker h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
         font-size: 0; }
-        html body#activity section #pharminfo h3:before, html body#activity section #medsite h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
+        html body#activity section #pharminfo h3:before, html body#activity section #promomaker h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
           content: '';
           display: block; }
       html body#activity section > section:first-of-type {
@@ -643,9 +643,6 @@ html {
           html body#activity section#platform section#pharminfo h3:before {
             background: url(images/logos/logo-pharminfo.svg) no-repeat;
             height: 50px; }
-        html body#activity section#platform section#medsite h3:before {
-          background: url(images/logos/medsite.svg) no-repeat;
-          height: 30px; }
         html body#activity section#platform section#professionnals {
           align-self: flex-start;
           margin-right: 17%; }
@@ -705,11 +702,11 @@ html {
             top: -110px;
             width: 100%;
             z-index: -2; }
-        html body#activity section#media section#work {
+        html body#activity section#media section#marketing {
           margin-left: 33%; }
-          html body#activity section#media section#work p strong {
+          html body#activity section#media section#marketing p strong {
             color: #fff; }
-        html body#activity section#media section#solutions {
+        html body#activity section#media section#services {
           align-self: flex-start;
           margin-top: -358px; }
       html body#activity section#community {
@@ -1150,14 +1147,14 @@ html .collapsible .menu {
     justify-content: center; }
   html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
     width: 50%; }
-    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#marketing, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#marketing, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#marketing, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#marketing, html body#activity section#community > section#free, html body#activity section#community > section#projects {
       margin-left: 0; }
-    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+    html body#activity section#platform > section#project, html body#activity section#link > section#project, html body#activity section#media > section#project, html body#activity section#community > section#project {
       margin-right: 0; }
     html body#activity section#platform > section#advice:after, html body#activity section#link > section#advice:after, html body#activity section#media > section#advice:after, html body#activity section#community > section#advice:after {
       left: 70%;
       width: 100%; }
-    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+    html body#activity section#platform > section#marketing, html body#activity section#link > section#marketing, html body#activity section#media > section#marketing, html body#activity section#community > section#marketing {
       align-self: flex-end; }
     html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
       width: 100%; }
@@ -1223,7 +1220,7 @@ html .collapsible .menu {
     margin-top: 15%; }
     html body#activity section#community section#free:after {
       left: 40%; }
-  html body#activity section#media section#solutions {
+  html body#activity section#media section#services {
     margin-top: -490px; } }
 
 @media screen and (min-width: 481px) and (max-width: 600px) {
@@ -1241,7 +1238,7 @@ html .collapsible .menu {
 @media screen and (min-width: 481px) and (max-width: 568px) {
   html body#activity section#link section#backflip {
     margin-top: -328px; }
-  html body#activity section#media section#solutions {
+  html body#activity section#media section#services {
     margin-top: -530px; } }
 
 @media screen and (max-width: 481px) {

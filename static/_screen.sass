@@ -41,21 +41,21 @@ ul
 
 /* colors and backgrounds */
 nav ul li, #satisfaction, #big-data, #skills ul, #digital,
-#professionnals, #advice, #project, #advertisement,
-#work, #free, #projects dl, #projects dd,
+#professionnals, #advice, #project, #agency,
+#markting, #free, #projects dl, #projects dd,
 #numbers, #members > *,
   > *
     color: #fff
 
-nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3
+nav, #satisfaction, #digital, #advice, #agency, #free, #group, #members h3
   background: $primary
 
 #about ul ~ p, #gestion-backoffice, #develop, #skills,
-#story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #contact-us form
+#story > p:not(.intro), #pharminfo, #promomaker,
+#backflip, #services, #projects + #expert, #contact-us form
   background: $secondary
 
-#work, #numbers #media, #targets,  #structures #media + dd a
+#marketing, #numbers #media, #targets,  #structures #media + dd a
   background: $media
 
 #project, #numbers #link, #reactivity,  #structures #link + dd a
@@ -757,16 +757,16 @@ html
       section
         box-sizing: border-box
 
-        #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions, #expert
+        #digital, #pharminfo, #promomaker, #backflip, #agency, #services, #expert
           width: 50%
 
-        #digital, #professionnals, #advice, #project, #work, #free, #share
+        #digital, #professionnals, #advice, #project, #marketing, #free, #share
           width: 33%
 
         #backoffice
           width: 25%
 
-        #pharminfo, #medsite, #backoffice, #backflip
+        #pharminfo, #promomaker, #backoffice, #backflip
           h3
             font-size: 0
 
@@ -818,10 +818,6 @@ html
               h3:before
                 background: url(images/logos/logo-pharminfo.svg)no-repeat
                 height: 50px
-
-            &#medsite h3:before
-              background: url(images/logos/medsite.svg)no-repeat
-              height: 30px
 
             &#professionnals
               align-self: flex-start
@@ -901,13 +897,13 @@ html
                 width: 100%
                 z-index: -2
 
-            &#work
+            &#marketing
               margin-left: 33%
 
               p strong
                 color: #fff
 
-            &#solutions
+            &#services
               align-self: flex-start
               margin-top: -358px
 
