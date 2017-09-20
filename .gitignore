@@ -1,3 +1,6 @@
+.cache
+.env
+*.egg-info
 *.map
 kozea.cfg
 __pycache__

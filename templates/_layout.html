@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-{% set titles = [
-  ['index', 'Accueil'],
-  ['about', 'À propos'],
-  ['activity', 'Notre activité'],
-  ['expertise', 'Notre expertise'],
-  ['references', 'Nos références'],
-  ['contact', 'Contact']
-] %}
-{% set sr_top = "enter top, move 200px, wait 0.5s" %}
-{% set sr_right = "enter right, move 200px, wait 0.5s" %}
-{% set sr_bottom = "enter bottom, move 200px, wait 0.5s" %}
-{% set sr_left = "enter left, move 200px, wait 0.5s" %}
-<html>
+
+{% macro sr(side="bottom", move="150px", wait=0.5) %}
+  enter {{ side }}, move {{ move }}, wait {{ wait }}s
+{% endmacro %}
+
+<html lang="fr">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kozea -{% if page in dict(titles) or page == 'legal' %} {{ dict(titles)[page] or 'Mentions légales' }} -{% endif %} L’innovation digitale au service des acteurs de la santé</title>
+    <meta name="description" content="Kozea Group est un expert du web qui vous apporte des solutions digitales performantes pour simplifier la gestion de votre back office.">
+    <title>Kozea - {{ current_title }} - L’innovation digitale au service des acteurs de la santé</title>
     <link type="image/png" rel="icon" href="static/favicon.png" />
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.sass.css') }}" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.2.js"></script>
@@ -23,28 +17,22 @@
     {% block more_js %}{% endblock more_js %}
   </head>
 
-  <body id="{{ page or 404 }}">
+  <body id="{{ page }}">
     <header>
+      <h1 {% if page != 'index' %}data-sr="{{ sr() }}"{% endif %}>{{ current_title }}</h1>
       {% if page == 'index' %}
         <a id="go-to-about" href="#about">En savoir plus</a>
-      {% endif %}
-      {% if (page in dict(titles) or page == 'legal') %}
-        {% if page == 'index' %}
-          <h1>{{ dict(titles)[page] }}</h1>
-        {% else %}
-          <h1 data-sr="{{ sr_bottom }}">{{ dict(titles)[page] }}</h1>
-        {% endif %}
-      {% else %}
-        <h1>404</h1>
       {% endif %}
     </header>
 
     <nav>
       <ul class="menu">
-        {% for id, title in titles %}
-          <li{% if id == page %} class="active"{% endif %}>
-            <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
-          </li>
+        {% for id, title in titles.items() %}
+          {% if id != 'legal' %}
+            <li{% if id == page %} class="active"{% endif %}>
+              <a data-hover="{{ title }}" href="{{ url_for('page', page=id) }}">{{ title }}</a>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     </nav>
@@ -71,6 +59,8 @@
         <dt>Suivez-nous</dt>
         <dd>
           <ul class="links">
+            <li id="facebook"><a href="https://www.facebook.com/kozeagroup/">Facebook</a></li>
+            <li id="twitter"><a href="https://twitter.com/Kozeagroup">Twitter</a></li>
             <li id="instagram"><a href="https://www.instagram.com/kozea/">Instagram</a></li>
             <li id="linkedin"><a href="https://www.linkedin.com/company/kozeagroup">LinkedIn</a></li>
             <li id="youtube"><a href="https://www.youtube.com/channel/UCx5VGRSsjpRWhc55EpI_gEw">Youtube</a></li>
@@ -87,5 +77,27 @@
       </dl>
     </footer>
     <script type="text/javascript" src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-62616971-6']);
+      _gaq.push(['_setDomainName', 'kozea.fr']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '205553666602266');
+      fbq('track', 'PageView');
+    </script>
   </body>
 </html>

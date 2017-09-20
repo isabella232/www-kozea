@@ -1,44 +1,82 @@
 #!/usr/bin/env python
-from flask import current_app, Flask, render_template, request
-from jinja2.exceptions import TemplateNotFound
+from collections import OrderedDict
+from xml.etree import ElementTree as etree
+
 import mandrill
 import requests
-
+from flask import Flask, abort, current_app, render_template, request
+from jinja2.exceptions import TemplateNotFound
 
 app = Flask(__name__)
 app.config.from_envvar('KOZEA_CONFIG', silent=True)
 
 ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
 MANDRILL_KEY = app.config.get('MANDRILL_KEY')
+TITLES = OrderedDict([
+    ('index', 'Accueil'), ('about', 'À propos'),
+    ('activity', 'Notre activité'), ('expertise', 'Notre expertise'),
+    ('references', 'Nos références'), ('contact', 'Contact'),
+    ('legal', 'Mentions légales')
+])
 
 
 @app.errorhandler(404)
 @app.errorhandler(TemplateNotFound)
 def page_not_found(e):
-    return render_template('404.html')
+    return render_template(
+        '404.html', titles=TITLES, page='error404', current_title='404'), 404
 
 
 @app.route('/')
 @app.route('/<page>')
 def page(page='index'):
+    """Display each view."""
+    kwargs = {}
     if page == 'index':
-        return get_insta_media()
-    return render_template('{}.html'.format(page), page=page)
+        json = requests.get(
+            "https://api.instagram.com/v1/users/self/media/recent/"
+            "?access_token={}&count=4".format(ACCESS_TOKEN)).json()
+        render_insta = []
+        for media in json.get('data', []):
+            render_insta.append({
+                'link': media.get('link'),
+                'src': (
+                    media.get('images').get('standard_resolution').get('url')),
+                'title': media.get('caption').get('text')})
+        tree = etree.fromstring(requests.get(
+            'https://kozeagroup.wordpress.com/category/kozea/feed/').text)
+        channel, = tree
+        render_wordpress = []
+        for child in channel:
+            if child.tag == 'item':
+                item = {}
+                for grandchild in child:
+                    if grandchild.tag == 'title':
+                        item['title'] = grandchild.text
+                    elif grandchild.tag == 'link':
+                        item['link'] = grandchild.text
+                render_wordpress.append(item)
+        kwargs = {
+            'render_insta': render_insta,
+            'render_wordpress': render_wordpress}
+    try:
+        return render_template(
+            '{}.html'.format(page), page=page, current_title=TITLES[page],
+            titles=TITLES, **kwargs)
+    except KeyError:
+        abort(404)
 
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
 def send_mail(mail_type):
+    assert mail_type == 'contact'
     mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
     form = request.form
-    if mail_type == 'contact':
-        subject = 'Prise de contact sur le site de Kozea'
-        content = '<br>'.join([
-            'Email : %s' % form['email'],
-            'Nom / Société: %s' % form['name'],
-            'Demande : %s ' % form['question']])
-    else:
-        subject = 'Inscription à la newsletter Kozea'
-        content = 'Mail : %s' % form['email']
+    subject = 'Prise de contact sur le site de Kozea'
+    content = '<br>'.join([
+        'Email : %s' % form['email'],
+        'Nom / Société: %s' % form['name'],
+        'Demande : %s ' % form['question']])
     message = {
         'to': [{'email': 'contact@kozea.fr'}],
         'subject': subject,
@@ -48,21 +86,6 @@ def send_mail(mail_type):
     if not current_app.debug:
         mandrill_client.messages.send(message=message)
     return ''
-
-
-def get_insta_media():
-    """ Care with access_token. It may expire one day. """
-    request = requests.get(
-        "https://api.instagram.com/v1/users/self/media/recent/"
-        "?access_token={}&count=4".format(ACCESS_TOKEN)).json()
-    render_insta = []
-    for media in request.get('data', []):
-        render_insta.append({
-            'link': media.get('link'),
-            'src': media.get('images').get('standard_resolution').get('url'),
-            'title': media.get('caption').get('text')})
-    return render_template(
-        'index.html', page='index', render_insta=render_insta)
 
 
 if __name__ == '__main__':

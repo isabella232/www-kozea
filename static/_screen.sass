@@ -91,14 +91,14 @@ html
     flex-direction: column
     margin: 0
     position: relative
-  
+
     input[type="submit"]
       border: none
       box-shadow: none
       cursor: pointer
       font-size: 1em
       padding: 7px
-      width: 90px;  
+      width: 90px;
 
     /* popup newsletter */
     .popup
@@ -113,7 +113,7 @@ html
       top: 50%
       width: 33%
       z-index: 20
-  
+
       p
         color: #fff
 
@@ -151,12 +151,12 @@ html
 
       &:before
         content: '[ '
-        margin-right: 5px
+        margin-right: 0.3em
         transform: translateX(20px)
 
       &:after
         content: ' ]'
-        margin-left: 5px
+        margin-left: 0.3em
         transform: translateX(-20px)
 
       &:hover, &:focus
@@ -193,7 +193,6 @@ html
         display: flex
         font-size: 0
         justify-content: center
-        margin: -30px auto
         padding: 10px
         z-index: 3
 
@@ -284,8 +283,8 @@ html
     &#index
       header
         background: $primary
-        height: calc(100vh - 70px)
         flex-direction: column
+        height: calc(100vh - 70px)
         justify-content: flex-end
         position: relative
 
@@ -298,7 +297,7 @@ html
 
         h1
           color: transparent
-          
+
           &:before
             content: url(images/logos/logo-icon.svg)
             left: calc(50% - 65px)
@@ -451,36 +450,42 @@ html
                 content: url(images/icones/brochure.svg)
                 width: 40px
 
-            &#press-release
+            &#latest-news
               background: url(images/photos/press-bkgd.jpg)no-repeat
               background-size: cover
               height: 400px
               margin-left: 50%
+              position: relative
               width: 50%
 
-              &:before
-                color: #fff
-                content: '[ à venir ]'
-                display: flex
-                font-size: 1.1em
-                font-style: italic
-                justify-content: center
-                left: calc(50% - 40px)
-                position: absolute
-                transform: scale(0)
-                transition: opacity 0.35s, transform 0.35s
-                z-index: 1
-
-              &:hover:before
-                opacity: 1
-                transform: scale(1)
-
-              a
+              > a
                 z-index: 0
 
                 &:before
                   content: url(images/icones/press.svg)
                   width: 100px
+
+              > ul
+                display: flex
+                flex-direction: column
+                height: 350px
+                justify-content: space-around
+                left: 25px
+                opacity: 0
+                position: absolute
+                top: 25px
+                width: calc(100% - 50px)
+
+                li
+                  background: $primary
+                  line-height: 1
+
+                  a
+                    &:after
+                      display: none
+
+              &:hover > ul
+                opacity: 1
 
       #partners ul
         display: flex
@@ -821,7 +826,7 @@ html
             &#professionnals
               align-self: flex-start
               margin-right: 17%
-              
+
               p
                 margin-bottom: 5px
 
@@ -1258,13 +1263,6 @@ html
           &:hover
             background: lighten($primary,10%)
 
-    &#legal
-      h1
-        &:before
-          content: '[ Mentions légales ]'
-
-        &:after
-          content: none
 
       dl
         dt, dd
@@ -1290,6 +1288,10 @@ html
 
         &:hover
           opacity: 1
+
+    &#error404
+      p
+        text-align: center
 
     span#back-to-top
       background: none
@@ -1373,11 +1375,8 @@ html
             li
               width: 50%
 
-          &:last-of-type ul
-            display: flex
-
-            li:last-child:before
-              content: ' - '
-
           ul
             margin-top: 0
+
+        .links a:before
+          margin-left: -0.6em
