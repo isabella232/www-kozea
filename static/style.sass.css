@@ -25,6 +25,10 @@ h3 {
 p strong {
   font-weight: 500; }
 
+abbr {
+  cursor: default;
+  text-decoration: underline; }
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -660,6 +664,8 @@ html {
           html body#activity section#platform section#backoffice h3:before {
             background: url(images/logos/logo-backoffice.svg) no-repeat;
             height: 50px; }
+          html body#activity section#platform section#backoffice dt {
+            margin-top: 10px; }
         html body#activity section#platform section#promomaker {
           margin-top: 210px;
           width: 33%; }
