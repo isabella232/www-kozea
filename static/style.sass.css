@@ -211,15 +211,20 @@ html {
       margin: 50px auto;
       max-width: 1200px;
       width: 100%; }
-      html body > section p, html body > section li {
+      html body > section dt {
+        font-size: 1.2em;
+        font-weight: 600; }
+      html body > section dd {
+        margin-left: 0; }
+      html body > section p, html body > section li, html body > section dd {
         font-size: 1.2em;
         font-weight: 300; }
-        html body > section p.intro, html body > section li.intro {
+        html body > section p.intro, html body > section li.intro, html body > section dd.intro {
           font-size: 1.6em;
           margin: 0 auto 30px;
           text-align: center;
           width: 70%; }
-        html body > section p.message, html body > section li.message {
+        html body > section p.message, html body > section li.message, html body > section dd.message {
           align-self: center;
           border: 2px solid #2c3e52;
           color: #1a2531;
@@ -232,6 +237,8 @@ html {
         font-size: 0.85em; }
     html body:not(#index) header {
       margin-top: 5%; }
+    html body#legal dl dt:after {
+      content: ':'; }
     html body#index header {
       background: #1a2531;
       flex-direction: column;
@@ -603,7 +610,7 @@ html {
       html body#activity section #digital, html body#activity section #professionnals, html body#activity section #advice, html body#activity section #project, html body#activity section #marketing, html body#activity section #free, html body#activity section #share {
         width: 33%; }
       html body#activity section #backoffice {
-        width: 25%; }
+        width: 50%; }
       html body#activity section #pharminfo h3, html body#activity section #promomaker h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
         font-size: 0; }
         html body#activity section #pharminfo h3:before, html body#activity section #promomaker h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
@@ -649,12 +656,18 @@ html {
           html body#activity section#platform section#professionnals p {
             margin-bottom: 5px; }
         html body#activity section#platform section#backoffice {
-          margin-left: 25%; }
+          margin-top: -524px; }
           html body#activity section#platform section#backoffice h3:before {
             background: url(images/logos/logo-backoffice.svg) no-repeat;
             height: 50px; }
+        html body#activity section#platform section#promomaker {
+          margin-top: 210px;
+          width: 33%; }
+          html body#activity section#platform section#promomaker h3:before {
+            background: url(images/logos/logo-promomaker.svg) no-repeat;
+            height: 55px; }
       html body#activity section#link {
-        margin-top: 180px; }
+        margin-top: 280px; }
         html body#activity section#link:before {
           content: url(images/logos/kozea-link.svg);
           right: 35%;
@@ -682,7 +695,7 @@ html {
             background: url(images/logos/logo-backflip.svg) no-repeat;
             height: 80px; }
       html body#activity section#media {
-        margin-top: 230px; }
+        margin-top: 20%; }
         html body#activity section#media:before {
           content: url(images/logos/kozea-media.svg);
           left: 35%;
@@ -704,14 +717,14 @@ html {
             z-index: -2; }
         html body#activity section#media section#marketing {
           margin-left: 33%; }
-          html body#activity section#media section#marketing p strong {
+          html body#activity section#media section#marketing h3, html body#activity section#media section#marketing p {
             color: #fff; }
         html body#activity section#media section#services {
           align-self: flex-start;
           margin-top: -358px; }
       html body#activity section#community {
         align-items: flex-start;
-        margin-top: 8%; }
+        margin-top: 12%; }
         html body#activity section#community:before {
           content: url(images/logos/kozea-community.svg);
           left: 17%;
@@ -726,7 +739,7 @@ html {
             content: url(images/photos/community.jpg);
             left: 87%;
             position: absolute;
-            top: 100px;
+            top: 40px;
             z-index: -1; }
         html body#activity section#community section#projects {
           margin-left: 25%;
