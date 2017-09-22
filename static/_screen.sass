@@ -686,13 +686,13 @@ html
                 transform: scale(1)
 
             @media screen and (min-width: 1200px)
-              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14),
+              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14),&:nth-of-type(15)
                 padding-right: 300px
 
-              &:nth-of-type(10), &:nth-of-type(11)
+              &:nth-of-type(10), &:nth-of-type(11),&:nth-of-type(20)
                 margin-left: 300px
 
-              &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14)
+              &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14), &:nth-of-type(20)
                 &:before
                   content: ''
                   height: 300px
@@ -704,14 +704,15 @@ html
                 left: -300px
                 top: 0
 
-              &:nth-of-type(3), &:nth-of-type(14)
+              &:nth-of-type(3), &:nth-of-type(14),
                 &:before
                   background: lighten($primary,25%)
                   right: 0
                   top: 0
 
-              &:nth-of-type(14):before
+              &:nth-of-type(20):before
                 background: $primary
+                left: -300px
 
         #tools
           justify-content: flex-end
@@ -859,6 +860,12 @@ html
               h3:before
                 background: url(images/logos/logo-promomaker.svg)no-repeat
                 height: 55px
+              
+              p a 
+                color: $platform
+
+                &:hover
+                  color: darken($platform,20%)
 
         &#link
           margin-top: 280px

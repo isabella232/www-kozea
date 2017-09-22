@@ -546,11 +546,11 @@ html {
         opacity: 1;
         transform: scale(1); }
       @media screen and (min-width: 1200px) {
-        html body#about #team #members section:nth-of-type(2), html body#about #team #members section:nth-of-type(3), html body#about #team #members section:nth-of-type(14) {
+        html body#about #team #members section:nth-of-type(2), html body#about #team #members section:nth-of-type(3), html body#about #team #members section:nth-of-type(14), html body#about #team #members section:nth-of-type(15) {
           padding-right: 300px; }
-        html body#about #team #members section:nth-of-type(10), html body#about #team #members section:nth-of-type(11) {
+        html body#about #team #members section:nth-of-type(10), html body#about #team #members section:nth-of-type(11), html body#about #team #members section:nth-of-type(20) {
           margin-left: 300px; }
-        html body#about #team #members section:nth-of-type(10):before, html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before {
+        html body#about #team #members section:nth-of-type(10):before, html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before, html body#about #team #members section:nth-of-type(20):before {
           content: '';
           height: 300px;
           position: absolute;
@@ -563,8 +563,9 @@ html {
           background: #466484;
           right: 0;
           top: 0; }
-        html body#about #team #members section:nth-of-type(14):before {
-          background: #1a2531; } }
+        html body#about #team #members section:nth-of-type(20):before {
+          background: #1a2531;
+          left: -300px; } }
     html body#about #team #tools {
       justify-content: flex-end;
       width: 100%; }
@@ -672,6 +673,10 @@ html {
           html body#activity section#platform section#promomaker h3:before {
             background: url(images/logos/logo-promomaker.svg) no-repeat;
             height: 55px; }
+          html body#activity section#platform section#promomaker p a {
+            color: #0a7cba; }
+            html body#activity section#platform section#promomaker p a:hover {
+              color: #053b59; }
       html body#activity section#link {
         margin-top: 280px; }
         html body#activity section#link:before {
