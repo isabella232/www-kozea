@@ -23,7 +23,7 @@
       <dt id="link">Kozea Link</dt>
       <dd data-sr="{{ sr(wait=0.9) }}"><a href="{{ url_for('page', page='activity') }}#link">Conseil et services aux acteurs de santé</a></dd>
       <dt id="media">Kozea Media</dt>
-      <dd data-sr="{{ sr(wait=1) }}"><a href="{{ url_for('page', page='activity') }}#media">Régie publicitaire pour Kozea platform</a></dd>
+      <dd data-sr="{{ sr(wait=1) }}"><a href="{{ url_for('page', page='activity') }}#media">L’agence digitale des professionnels de santé</a></dd>
       <dt id="community">Kozea Community</dt>
       <dd data-sr="{{ sr(wait=1.1) }}"><a href="{{ url_for('page', page='activity') }}#community">Projets en logiciels libres de l'équipe de Kozea</a></dd>
     </dl>
@@ -37,12 +37,9 @@
         <a href="{{ url_for('static', filename='documents/brochure-kozeagroup.pdf')}}">Télécharger notre brochure</a>
       </li>
       <li data-sr="{{ sr(wait=0.8) }}" id="latest-news">
-        <a>News</a>
-        <ul>
-          {% for wordpress_link in render_wordpress[:3] %}
-            <li><a href="{{ wordpress_link.link }}">{{ wordpress_link.title }}</a></li>
-          {% endfor %}
-        </ul>
+        <a>Les news de Kozea group</a>
+          <a href="{{ render_wordpress[0].link }}">{{ render_wordpress[0].title }}</a>
+          <img src="{{ render_wordpress[0].src }}" alt="{{ render_wordpress[0].title }}">
       </li>
     </ul>
   </section>

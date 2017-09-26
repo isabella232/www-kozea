@@ -56,6 +56,13 @@ html .collapsible
         width: calc(100% - 30px)
 
     &#activity
+      section#platform section
+        &#backoffice
+          margin-top: -593px
+        
+        &#professionnals
+          margin-top: -320px
+
       section#media section#solutions
         margin-top: -387px
 
@@ -103,8 +110,11 @@ html .collapsible
         > section
           width: 50%
 
-          &#digital, &#advice, &#marketing, &#free, &#projects
+          &#digital, &#professionnals, &#advice, &#marketing, &#free, &#projects
             margin-left: 0
+
+          &#professionnals
+            margin-top: -215px
 
           &#project
             margin-right: 0
@@ -128,6 +138,9 @@ html .collapsible
           left: 50%
           top: -110px
           width: 120%
+
+      &#media
+        margin-top: 30%
 
       &#community section#free:after
         left: 70%
@@ -165,9 +178,13 @@ html .collapsible
 
       #follow .insta li, .insta:after
         width: 50%
-
+    
     &#about img
       width: 100%
+
+    &#activity
+      section#platform section#professionnals
+        margin-top: -230px
 
     &#references section ul li
       width: 50%
@@ -212,6 +229,10 @@ html .collapsible
 
 @media screen and (min-width: 481px) and (max-width: 600px)
   html body
+    &#index
+      #follow .insta li, .insta:after
+        height: 230px
+
     &#about
       #story ul li
         width: 50%
@@ -224,15 +245,15 @@ html .collapsible
 
         section
           width: 50%
-
-    &#index
-      #follow .insta li, .insta:after
-        height: 230px
+    
+    &#activity
+      section#platform section#professionnals
+        margin-top: -170px
 
 @media screen and (min-width: 481px) and (max-width:568px)
   html body#activity
     section#link section#backflip
-       margin-top: -328px
+      margin-top: -328px
 
     section#media section#services
       margin-top: -530px
