@@ -862,9 +862,46 @@ html
 
                 &:hover
                   color: darken($platform,20%)
+        
+        &#media
+          margin-top: 270px
+          
+          &:before
+            content: url(images/logos/kozea-media.svg)
+            left: 35%
+            top: -200px
+
+          h2
+            right: 4%
+            top: -130px
+
+          section
+            &:first-of-type
+              align-self: flex-end
+              position: relative
+
+              &:after
+                background: url(images/photos/media.jpg)no-repeat
+                content: ''
+                height: 160%
+                left: -67%
+                position: absolute
+                top: -110px
+                width: 100%
+                z-index: -2
+
+            &#marketing
+              margin-left: 33%
+
+              h3, p
+                color: #fff
+
+            &#services
+              align-self: flex-start
+              margin-top: -358px
 
         &#link
-          margin-top: 280px
+          margin-top: 290px
 
           &:before
             content: url(images/logos/kozea-link.svg)
@@ -900,46 +937,10 @@ html
                 background: url(images/logos/logo-backflip.svg)no-repeat
                 height: 80px
 
-        &#media
-          margin-top: 20%
-
-          &:before
-            content: url(images/logos/kozea-media.svg)
-            left: 35%
-            top: -200px
-
-          h2
-            right: 4%
-            top: -130px
-
-          section
-            &:first-of-type
-              align-self: flex-end
-              position: relative
-
-              &:after
-                background: url(images/photos/media.jpg)no-repeat
-                content: ''
-                height: 160%
-                left: -67%
-                position: absolute
-                top: -110px
-                width: 100%
-                z-index: -2
-
-            &#marketing
-              margin-left: 33%
-
-              h3, p
-                color: #fff
-
-            &#services
-              align-self: flex-start
-              margin-top: -358px
 
         &#community
           align-items: flex-start
-          margin-top: 12%
+          margin-top: 140px
 
           &:before
             content: url(images/logos/kozea-community.svg)

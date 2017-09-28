@@ -675,36 +675,8 @@ html {
             color: #0a7cba; }
             html body#activity section#platform section#promomaker p a:hover {
               color: #053b59; }
-      html body#activity section#link {
-        margin-top: 280px; }
-        html body#activity section#link:before {
-          content: url(images/logos/kozea-link.svg);
-          right: 35%;
-          top: -150px; }
-        html body#activity section#link h2 {
-          left: 8%;
-          top: -120px; }
-        html body#activity section#link section:first-of-type {
-          align-self: flex-start;
-          margin-left: 17%; }
-          html body#activity section#link section:first-of-type:after {
-            background: url(images/photos/link.jpg) no-repeat;
-            content: '';
-            height: 165%;
-            left: 100%;
-            top: -70px;
-            width: 150%; }
-        html body#activity section#link section#project {
-          align-self: flex-end;
-          margin-right: 17%; }
-        html body#activity section#link section#backflip {
-          align-self: flex-start;
-          margin-top: -237px; }
-          html body#activity section#link section#backflip h3:before {
-            background: url(images/logos/logo-backflip.svg) no-repeat;
-            height: 80px; }
       html body#activity section#media {
-        margin-top: 20%; }
+        margin-top: 270px; }
         html body#activity section#media:before {
           content: url(images/logos/kozea-media.svg);
           left: 35%;
@@ -731,9 +703,37 @@ html {
         html body#activity section#media section#services {
           align-self: flex-start;
           margin-top: -358px; }
+      html body#activity section#link {
+        margin-top: 290px; }
+        html body#activity section#link:before {
+          content: url(images/logos/kozea-link.svg);
+          right: 35%;
+          top: -150px; }
+        html body#activity section#link h2 {
+          left: 8%;
+          top: -120px; }
+        html body#activity section#link section:first-of-type {
+          align-self: flex-start;
+          margin-left: 17%; }
+          html body#activity section#link section:first-of-type:after {
+            background: url(images/photos/link.jpg) no-repeat;
+            content: '';
+            height: 165%;
+            left: 100%;
+            top: -70px;
+            width: 150%; }
+        html body#activity section#link section#project {
+          align-self: flex-end;
+          margin-right: 17%; }
+        html body#activity section#link section#backflip {
+          align-self: flex-start;
+          margin-top: -237px; }
+          html body#activity section#link section#backflip h3:before {
+            background: url(images/logos/logo-backflip.svg) no-repeat;
+            height: 80px; }
       html body#activity section#community {
         align-items: flex-start;
-        margin-top: 12%; }
+        margin-top: 140px; }
         html body#activity section#community:before {
           content: url(images/logos/kozea-community.svg);
           left: 17%;
