@@ -40,9 +40,10 @@ html .collapsible
       content: none
 
 @media screen and (min-width: 600px) and (max-width: 1200px)
-  html body#about #story ul li
-    &:first-child, &:last-child
-      margin: 0
+  html body
+    &#about #story ul li
+      &:first-child, &:last-child
+        margin: 0
 
 @media screen and (max-width: 1024px)
   html body
@@ -68,6 +69,10 @@ html .collapsible
 
       section#link section#backflip
         margin-top: -268px
+
+      section#community
+        section#free:after
+          top: 57px
 
     &#references section ul li
       padding: 40px 0
@@ -114,7 +119,7 @@ html .collapsible
             margin-left: 0
 
           &#professionnals
-            margin-top: -215px
+            margin-top: -233px
 
           &#project
             margin-right: 0
@@ -140,7 +145,7 @@ html .collapsible
           width: 120%
 
       &#media
-        margin-top: 30%
+        margin-top: 280px
 
       &#community section#free:after
         left: 70%
@@ -200,9 +205,17 @@ html .collapsible
       content: none
 
 @media screen and (max-width: 735px)
-  html body#index header
-    height: calc(100vh - 63px)
+  html body
+    &#index header
+      height: calc(100vh - 63px)
 
+    &#activity section#platform 
+      section#backoffice
+        margin-top: -655px
+
+      section#professionnals
+        margin-top: -248px
+      
 @media screen and (min-width: 481px) and (max-width: 768px)
   html body
     &#index
@@ -218,14 +231,21 @@ html .collapsible
 
 @media screen and (min-width: 461px) and (max-width:640px)
   html body#activity section
-    &#community
-      margin-top: 15%
+    &#platform section
+      &#backoffice
+        margin-top: -805px
 
-      section#free:after
-        left: 40%
+      &#professionnals
+        margin-top: -308px
 
     &#media section#services
       margin-top: -490px
+
+    &#community
+      margin-top: 120px
+
+      section#free:after
+        left: 40%
 
 @media screen and (min-width: 481px) and (max-width: 600px)
   html body
@@ -251,12 +271,22 @@ html .collapsible
         margin-top: -170px
 
 @media screen and (min-width: 481px) and (max-width:568px)
-  html body#activity
-    section#link section#backflip
+  html body#activity section
+    &#platform section
+      &#backoffice
+        margin-top: -865px
+
+      &#professionnals
+        margin-top: -276px
+
+    &#link section#backflip
       margin-top: -328px
 
-    section#media section#services
+    &#media section#services
       margin-top: -530px
+
+    &#community section#free:after
+      left: 20%
 
 @media screen and (max-width: 481px)
   html body
