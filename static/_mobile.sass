@@ -104,9 +104,6 @@ html .collapsible
           top: calc(50% - 15px)
 
     &#about
-      #story ul li:nth-child(2)
-        margin-right: 0
-
       #team #members
         justify-content: center
 
@@ -257,14 +254,11 @@ html .collapsible
       #story ul li
         width: 50%
 
-        &:first-child, &:last-child
+        &:first-child
           margin-left: 0
 
-      #team #members
-        justify-content: flex-start
-
-        section
-          width: 50%
+        &:last-child
+          margin-top: 0
     
     &#activity
       section#platform section#professionnals
