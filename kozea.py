@@ -55,9 +55,6 @@ def page(page='index'):
                         item['title'] = grandchild.text
                     elif grandchild.tag == 'link':
                         item['link'] = grandchild.text
-                    elif grandchild.tag.endswith('}content'):
-                        if not item.get('src', '').endswith('.jpg'):
-                            item['src'] = grandchild.attrib['url']
                 render_wordpress.append(item)
         kwargs = {
             'render_insta': render_insta,
