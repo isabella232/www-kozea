@@ -368,12 +368,12 @@ html {
             html body#index #news ul li#newsletter a:before {
               content: url(images/icones/newsletter.svg);
               width: 70px; }
-          html body#index #news ul li#download-brochure {
-            background: url(images/photos/brochure-bkgd.jpg) no-repeat;
+          html body#index #news ul li#download-whitepaper {
+            background: url(images/photos/telecharger-livre-blanc.jpg) no-repeat;
             background-size: cover;
             height: 200px;
             width: 33%; }
-            html body#index #news ul li#download-brochure a:before {
+            html body#index #news ul li#download-whitepaper a:before {
               content: url(images/icones/brochure.svg);
               width: 40px; }
           html body#index #news ul li#latest-news {
