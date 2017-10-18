@@ -977,8 +977,12 @@ html {
       opacity: 0.75; }
       html body#references section ul li a:hover, html body#index #partners ul li a:hover {
         opacity: 1; }
-    html body#error404 p {
-      text-align: center; }
+    html body#error404 {
+      height: 100vh; }
+      html body#error404 section {
+        background: url(images/illustration-page404.svg) no-repeat center bottom;
+        background-size: 50%;
+        height: 100%; }
     html body span#back-to-top {
       background: none;
       bottom: 35px;
