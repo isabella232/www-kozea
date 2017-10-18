@@ -86,7 +86,6 @@ html {
     flex-direction: column;
     margin: 0;
     position: relative;
-    /* popup newsletter */
     /*animation lien*/
     /*animation loading before*/ }
     html body input[type="submit"] {
@@ -96,39 +95,6 @@ html {
       font-size: 1em;
       padding: 7px;
       width: 90px; }
-    html body .popup {
-      background-color: #1a2531;
-      box-shadow: 0 0 5px rgba(26, 37, 49, 0.5);
-      left: calc(50% - 17.5%);
-      min-width: 205px;
-      opacity: 0.9;
-      overflow: auto;
-      padding: 16px;
-      position: absolute;
-      top: 50%;
-      width: 33%;
-      z-index: 20; }
-      html body .popup p {
-        color: #fff; }
-      html body .popup span:before {
-        content: 'x';
-        display: block;
-        padding: 5px; }
-      html body .popup form input {
-        border: none;
-        font-size: 1em;
-        margin-right: 10px;
-        padding: 7px; }
-      html body .popup form input[type="submit"] {
-        background: #fff;
-        color: #1c1c1c;
-        margin-top: 10px; }
-    html body .hidden {
-      display: none; }
-    html body .close-popup {
-      color: #fff;
-      float: right;
-      cursor: pointer; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -1192,9 +1158,6 @@ html .collapsible .menu {
       min-height: 130px; } }
 
 @media screen and (max-width: 768px) {
-  html body .popup {
-    left: calc(50vw - 130px);
-    top: 55%; }
   html body header #go-to-about {
     display: none; }
   html body#index header h1:before {
