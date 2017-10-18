@@ -1,5 +1,9 @@
 {% extends '_layout.html' %}
 
+{% block head_title %}
+  <title>Kozea - Accueil - L’innovation digitale au service des acteurs de la santé</title>
+{% endblock head_title %}
+
 {% block more_js %}
   <meta name="p:domain_verify" content="f2b1b8fac45895b228119fb3df0adca1"/>
 {% endblock more_js %}
@@ -32,7 +36,7 @@
   <section id="news">
     <h2 data-sr="{{ sr(wait=0.5) }}">Nos actualités</h2>
     <ul>
-      <li id="newsletter" data-sr="{{ sr(wait=0.6) }}"><a>S'abonner à la newsletter</a></li>
+      <li id="newsletter" data-sr="{{ sr(wait=0.6) }}"><a href="http://kozea.us8.list-manage1.com/subscribe?u=dde3a36d2f82cc3f75534f533&id=521653ecf5">S'abonner à la newsletter</a></li>
       <li id="download-brochure" data-sr="{{ sr(wait=0.7) }}">
         <a href="{{ url_for('static', filename='documents/brochure-kozeagroup.pdf')}}">Télécharger notre brochure</a>
       </li>
