@@ -5,6 +5,9 @@
 {% endblock head_title %}
 
 {% block body %}
-  <p>Tu t'es égaré dans le cyber-espace bonhomme.</p>
-  <p><a href="{{ url_for('page') }}">Retour dans la bonne dimension ?</a></p>
+  <section>
+    <h2>Un incident s'est produit</h2>
+    <p class="intro">Il semblerait que cette page n'existe pas. Rassurez-vous, nos spécialistes sont sur le coup.</p>
+    <a href="{{ url_for('page') }}">Revenir à l'accueil</a>
+  </section>
 {% endblock body %}

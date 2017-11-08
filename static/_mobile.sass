@@ -40,15 +40,16 @@ html .collapsible
       content: none
 
 @media screen and (min-width: 600px) and (max-width: 1200px)
-  html body#about #story ul li
-    &:first-child, &:last-child
-      margin: 0
+  html body
+    &#about #story ul li
+      &:first-child, &:last-child
+        margin: 0
 
 @media screen and (max-width: 1024px)
   html body
     &#index #news ul li
       padding: 15px
-      
+
       &:after
         height: calc(100% - 30px)
         left: 15px
@@ -56,11 +57,19 @@ html .collapsible
         width: calc(100% - 30px)
 
     &#activity
+      section#platform section
+        &#backoffice
+          margin-top: -593px
+
       section#media section#solutions
         margin-top: -387px
 
       section#link section#backflip
         margin-top: -268px
+
+      section#community
+        section#free:after
+          top: 57px
 
     &#references section ul li
       padding: 40px 0
@@ -92,9 +101,6 @@ html .collapsible
           top: calc(50% - 15px)
 
     &#about
-      #story ul li:nth-child(2)
-        margin-right: 0
-
       #team #members
         justify-content: center
 
@@ -103,17 +109,17 @@ html .collapsible
         > section
           width: 50%
 
-          &#digital, &#advice, &#work, &#free, &#projects
+          &#digital, &#advice, &#marketing, &#free, &#projects
             margin-left: 0
 
-          &#professionnals, &#project
+          &#project
             margin-right: 0
 
           &#advice:after
             left: 70%
             width: 100%
 
-          &#work
+          &#marketing
             align-self: flex-end
 
           &#projects
@@ -129,6 +135,12 @@ html .collapsible
           top: -110px
           width: 120%
 
+      &#media
+        margin-top: 280px
+
+      &#link section#sprintdesign
+        margin-top: -230px
+
       &#community section#free:after
         left: 70%
 
@@ -141,10 +153,6 @@ html .collapsible
 
 @media screen and (max-width: 768px)
   html body
-    .popup
-      left: calc(50vw - 130px)
-      top: 55%
-
     header #go-to-about
       display: none
 
@@ -165,9 +173,16 @@ html .collapsible
 
       #follow .insta li, .insta:after
         width: 50%
-
+    
     &#about img
       width: 100%
+
+    &#activity section
+      &#platform section#backoffice
+        margin-top: -625px
+
+      &#link section#sprintdesign
+        margin-top: -260px
 
     &#references section ul li
       width: 50%
@@ -183,9 +198,13 @@ html .collapsible
       content: none
 
 @media screen and (max-width: 735px)
-  html body#index header
-    height: calc(100vh - 63px)
+  html body
+    &#index header
+      height: calc(100vh - 63px)
 
+    &#activity section#platform section#backoffice
+      margin-top: -655px
+      
 @media screen and (min-width: 481px) and (max-width: 768px)
   html body
     &#index
@@ -201,41 +220,59 @@ html .collapsible
 
 @media screen and (min-width: 461px) and (max-width:640px)
   html body#activity section
+    &#platform section#backoffice
+      margin-top: -805px
+
+    &#media section#services
+      margin-top: -490px
+
+    &#link section#sprintdesign
+      margin-top: -350px
+
     &#community
-      margin-top: 15%
+      margin-top: 120px
 
       section#free:after
         left: 40%
 
-    &#media section#solutions
-      margin-top: -490px
-
 @media screen and (min-width: 481px) and (max-width: 600px)
   html body
-    &#about
-      #story ul li
-        width: 50%
-
-        &:first-child, &:last-child
-          margin-left: 0
-
-      #team #members
-        justify-content: flex-start
-
-        section
-          width: 50%
-
     &#index
       #follow .insta li, .insta:after
         height: 230px
 
-@media screen and (min-width: 481px) and (max-width:568px)
-  html body#activity
-    section#link section#backflip
-       margin-top: -328px; 
+    &#about
+      #story ul li
+        width: 50%
 
-    section#media section#solutions
+        &:first-child
+          margin-left: 0
+
+        &:last-child
+          margin-top: 0
+
+    &#activity
+      section#link section #sprintdesign
+        margin-top: -410px
+
+@media screen and (min-width: 481px) and (max-width:568px)
+  html body#activity section
+    &#platform section
+      &#backoffice
+        margin-top: -865px
+
+    &#link section
+      &#backflip
+        margin-top: -328px
+
+      &#sprintdesign
+        margin-top: -350px
+
+    &#media section#services
       margin-top: -530px
+
+    &#community section#free:after
+      left: 20%
 
 @media screen and (max-width: 481px)
   html body
