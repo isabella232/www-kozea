@@ -25,6 +25,10 @@ h3 {
 p strong {
   font-weight: 500; }
 
+abbr {
+  cursor: default;
+  text-decoration: underline; }
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -36,27 +40,26 @@ ul {
     list-style-type: none; }
 
 /* colors and backgrounds */
-nav ul li > *, #satisfaction > *, #big-data > *, #skills ul > *, #digital > *,
-#professionnals > *, #advice > *, #project > *, #advertisement > *,
-#work > *, #free > *, #projects dl > *, #projects dd > *,
+nav ul li > *, #satisfaction > *, #innovations > *, #skills ul > *, #digital > *,
+#advice > *, #project > *, #agency > *, #markting > *, #free > *, #projects dl > *, #projects dd > *,
 #numbers > *, #members > * > * {
   color: #fff; }
 
-nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3 {
+nav, #satisfaction, #digital, #advice, #agency, #free, #group, #members h3 {
   background: #1a2531; }
 
 #about ul ~ p, #gestion-backoffice, #develop, #skills,
-#story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #contact-us form {
+#story > p:not(.intro), #pharminfo, #promomaker,
+#backflip, #services, #projects + #expert, #contact-us form {
   background: #f9f9f9; }
 
-#work, #numbers #media, #targets, #structures #media + dd a {
+#marketing, #numbers #media, #targets, #structures #media + dd a {
   background: #e73c4d; }
 
 #project, #numbers #link, #reactivity, #structures #link + dd a {
   background: #f59c30; }
 
-#professionnals, #numbers #platform, #innovation, #structures #platform + dd a {
+#numbers #platform, #innovation, #structures #platform + dd a {
   background: #0a7cba; }
 
 #radicale, #numbers #community, #r-and-d, #structures #community + dd a {
@@ -68,7 +71,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #weasyprint {
   background: #564c68; }
 
-#backoffice, #share {
+#backoffice, #sprintdesign, #share {
   background: #f1f1f1; }
 
 #missions section, #platform section, #link section, #media section, #community section {
@@ -83,7 +86,6 @@ html {
     flex-direction: column;
     margin: 0;
     position: relative;
-    /* popup newsletter */
     /*animation lien*/
     /*animation loading before*/ }
     html body input[type="submit"] {
@@ -93,39 +95,6 @@ html {
       font-size: 1em;
       padding: 7px;
       width: 90px; }
-    html body .popup {
-      background-color: #1a2531;
-      box-shadow: 0 0 5px rgba(26, 37, 49, 0.5);
-      left: calc(50% - 17.5%);
-      min-width: 205px;
-      opacity: 0.9;
-      overflow: auto;
-      padding: 16px;
-      position: absolute;
-      top: 50%;
-      width: 33%;
-      z-index: 20; }
-      html body .popup p {
-        color: #fff; }
-      html body .popup span:before {
-        content: 'x';
-        display: block;
-        padding: 5px; }
-      html body .popup form input {
-        border: none;
-        font-size: 1em;
-        margin-right: 10px;
-        padding: 7px; }
-      html body .popup form input[type="submit"] {
-        background: #fff;
-        color: #1c1c1c;
-        margin-top: 10px; }
-    html body .hidden {
-      display: none; }
-    html body .close-popup {
-      color: #fff;
-      float: right;
-      cursor: pointer; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -168,7 +137,7 @@ html {
         z-index: 3; }
         html body header #go-to-about:after {
           animation: bounce 1.5s ease-in-out;
-          content: url(images/icones/more.svg);
+          content: url(images/icones/en-savoir-plus.svg);
           width: 15px; }
 
 @keyframes bounce {
@@ -211,15 +180,20 @@ html {
       margin: 50px auto;
       max-width: 1200px;
       width: 100%; }
-      html body > section p, html body > section li {
+      html body > section dt {
+        font-size: 1.2em;
+        font-weight: 600; }
+      html body > section dd {
+        margin-left: 0; }
+      html body > section p, html body > section li, html body > section dd {
         font-size: 1.2em;
         font-weight: 300; }
-        html body > section p.intro, html body > section li.intro {
+        html body > section p.intro, html body > section li.intro, html body > section dd.intro {
           font-size: 1.6em;
           margin: 0 auto 30px;
           text-align: center;
           width: 70%; }
-        html body > section p.message, html body > section li.message {
+        html body > section p.message, html body > section li.message, html body > section dd.message {
           align-self: center;
           border: 2px solid #2c3e52;
           color: #1a2531;
@@ -232,6 +206,8 @@ html {
         font-size: 0.85em; }
     html body:not(#index) header {
       margin-top: 5%; }
+    html body#legal dl dt:after {
+      content: ':'; }
     html body#index header {
       background: #1a2531;
       flex-direction: column;
@@ -247,7 +223,7 @@ html {
       html body#index header h1 {
         color: transparent; }
         html body#index header h1:before {
-          content: url(images/logos/logo-icon.svg);
+          content: url(images/logos/logo-icone.svg);
           left: calc(50% - 65px);
           position: absolute;
           top: calc(50% - 200px);
@@ -358,12 +334,12 @@ html {
             html body#index #news ul li#newsletter a:before {
               content: url(images/icones/newsletter.svg);
               width: 70px; }
-          html body#index #news ul li#download-brochure {
-            background: url(images/photos/brochure-bkgd.jpg) no-repeat;
+          html body#index #news ul li#download-whitepaper {
+            background: url(images/photos/telecharger-livre-blanc.jpg) no-repeat;
             background-size: cover;
             height: 200px;
             width: 33%; }
-            html body#index #news ul li#download-brochure a:before {
+            html body#index #news ul li#download-whitepaper a:before {
               content: url(images/icones/brochure.svg);
               width: 40px; }
           html body#index #news ul li#latest-news {
@@ -374,27 +350,22 @@ html {
             position: relative;
             width: 50%; }
             html body#index #news ul li#latest-news > a {
-              z-index: 0; }
-              html body#index #news ul li#latest-news > a:before {
-                content: url(images/icones/press.svg);
+              transform: translate3d(0, 30px, 0);
+              transition: transform 0.35s; }
+              html body#index #news ul li#latest-news > a:not(:last-child):before {
+                content: url(images/icones/news.svg);
                 width: 100px; }
-            html body#index #news ul li#latest-news > ul {
-              display: flex;
-              flex-direction: column;
-              height: 350px;
-              justify-content: space-around;
-              left: 25px;
-              opacity: 0;
-              position: absolute;
-              top: 25px;
-              width: calc(100% - 50px); }
-              html body#index #news ul li#latest-news > ul li {
-                background: #1a2531;
-                line-height: 1; }
-                html body#index #news ul li#latest-news > ul li a:after {
-                  display: none; }
-            html body#index #news ul li#latest-news:hover > ul {
-              opacity: 1; }
+              html body#index #news ul li#latest-news > a:last-child {
+                opacity: 0;
+                transition: opacity 0.2s, transform 0.35s; }
+                html body#index #news ul li#latest-news > a:last-child:after {
+                  content: none; }
+            html body#index #news ul li#latest-news:hover > a {
+              transform: translate3d(0, 0, 0); }
+              html body#index #news ul li#latest-news:hover > a:last-child {
+                opacity: 1;
+                transition-delay: 0.05s;
+                transition-duration: 0.35s; }
     html body#index #partners ul {
       display: flex;
       width: 100%;
@@ -477,10 +448,10 @@ html {
           padding-top: 0; }
     html body#about #story ul {
       margin: 0; }
-      html body#about #story ul li:first-child, html body#about #story ul li:last-child {
-        margin-left: 25%; }
-      html body#about #story ul li:nth-child(2) {
-        margin-right: 25%; }
+      html body#about #story ul li:first-child {
+        margin-left: -300px; }
+      html body#about #story ul li:last-child {
+        margin-top: 300px; }
     html body#about #team #members h3 {
       color: #fff; }
     html body#about #team #members > * {
@@ -535,11 +506,11 @@ html {
         opacity: 1;
         transform: scale(1); }
       @media screen and (min-width: 1200px) {
-        html body#about #team #members section:nth-of-type(2), html body#about #team #members section:nth-of-type(3), html body#about #team #members section:nth-of-type(14) {
+        html body#about #team #members section:nth-of-type(2), html body#about #team #members section:nth-of-type(3), html body#about #team #members section:nth-of-type(14), html body#about #team #members section:nth-of-type(15) {
           padding-right: 300px; }
-        html body#about #team #members section:nth-of-type(10), html body#about #team #members section:nth-of-type(11) {
+        html body#about #team #members section:nth-of-type(10), html body#about #team #members section:nth-of-type(11), html body#about #team #members section:nth-of-type(20) {
           margin-left: 300px; }
-        html body#about #team #members section:nth-of-type(10):before, html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before {
+        html body#about #team #members section:nth-of-type(10):before, html body#about #team #members section:nth-of-type(3):before, html body#about #team #members section:nth-of-type(14):before, html body#about #team #members section:nth-of-type(20):before {
           content: '';
           height: 300px;
           position: absolute;
@@ -552,8 +523,9 @@ html {
           background: #466484;
           right: 0;
           top: 0; }
-        html body#about #team #members section:nth-of-type(14):before {
-          background: #1a2531; } }
+        html body#about #team #members section:nth-of-type(20):before {
+          background: #1a2531;
+          left: -300px; } }
     html body#about #team #tools {
       justify-content: flex-end;
       width: 100%; }
@@ -598,15 +570,13 @@ html {
         z-index: -1; }
     html body#activity section {
       box-sizing: border-box; }
-      html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #medsite, html body#activity section #backflip, html body#activity section #advertisement, html body#activity section #solutions, html body#activity section #expert {
+      html body#activity section #digital, html body#activity section #pharminfo, html body#activity section #backoffice, html body#activity section #backflip, html body#activity section #sprintdesign, html body#activity section #agency, html body#activity section #services, html body#activity section #expert {
         width: 50%; }
-      html body#activity section #digital, html body#activity section #professionnals, html body#activity section #advice, html body#activity section #project, html body#activity section #work, html body#activity section #free, html body#activity section #share {
+      html body#activity section #digital, html body#activity section #promomaker, html body#activity section #advice, html body#activity section #project, html body#activity section #marketing, html body#activity section #free, html body#activity section #share {
         width: 33%; }
-      html body#activity section #backoffice {
-        width: 25%; }
-      html body#activity section #pharminfo h3, html body#activity section #medsite h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
+      html body#activity section #pharminfo h3, html body#activity section #promomaker h3, html body#activity section #backoffice h3, html body#activity section #backflip h3 {
         font-size: 0; }
-        html body#activity section #pharminfo h3:before, html body#activity section #medsite h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
+        html body#activity section #pharminfo h3:before, html body#activity section #promomaker h3:before, html body#activity section #backoffice h3:before, html body#activity section #backflip h3:before {
           content: '';
           display: block; }
       html body#activity section > section:first-of-type {
@@ -622,7 +592,7 @@ html {
         html body#activity section#platform:before {
           content: url(images/logos/kozea-platform.svg);
           left: 10%;
-          top: 4%; }
+          top: 70px; }
         html body#activity section#platform h2 {
           right: 4%;
           top: 150px; }
@@ -638,26 +608,57 @@ html {
             top: -150px;
             width: 150%; }
         html body#activity section#platform section#pharminfo {
-          margin-top: -210px;
+          margin-top: -225px;
           margin-left: 50%; }
           html body#activity section#platform section#pharminfo h3:before {
             background: url(images/logos/logo-pharminfo.svg) no-repeat;
             height: 50px; }
-        html body#activity section#platform section#medsite h3:before {
-          background: url(images/logos/medsite.svg) no-repeat;
-          height: 30px; }
-        html body#activity section#platform section#professionnals {
-          align-self: flex-start;
-          margin-right: 17%; }
-          html body#activity section#platform section#professionnals p {
-            margin-bottom: 5px; }
         html body#activity section#platform section#backoffice {
-          margin-left: 25%; }
+          margin-top: -505px; }
           html body#activity section#platform section#backoffice h3:before {
             background: url(images/logos/logo-backoffice.svg) no-repeat;
             height: 50px; }
+          html body#activity section#platform section#backoffice dt {
+            margin-top: 10px; }
+        html body#activity section#platform section#promomaker {
+          margin-top: 210px; }
+          html body#activity section#platform section#promomaker h3:before {
+            background: url(images/logos/logo-promomaker.svg) no-repeat;
+            height: 55px; }
+          html body#activity section#platform section#promomaker p a {
+            color: #0a7cba; }
+            html body#activity section#platform section#promomaker p a:hover {
+              color: #053b59; }
+      html body#activity section#media {
+        margin-top: 270px; }
+        html body#activity section#media:before {
+          content: url(images/logos/kozea-media.svg);
+          left: 35%;
+          top: -200px; }
+        html body#activity section#media h2 {
+          right: 4%;
+          top: -130px; }
+        html body#activity section#media section:first-of-type {
+          align-self: flex-end;
+          position: relative; }
+          html body#activity section#media section:first-of-type:after {
+            background: url(images/photos/media.jpg) no-repeat;
+            content: '';
+            height: 160%;
+            left: -67%;
+            position: absolute;
+            top: -110px;
+            width: 100%;
+            z-index: -2; }
+        html body#activity section#media section#marketing {
+          margin-left: 33%; }
+          html body#activity section#media section#marketing h3, html body#activity section#media section#marketing p {
+            color: #fff; }
+        html body#activity section#media section#services {
+          align-self: flex-start;
+          margin-top: -358px; }
       html body#activity section#link {
-        margin-top: 180px; }
+        margin-top: 290px; }
         html body#activity section#link:before {
           content: url(images/logos/kozea-link.svg);
           right: 35%;
@@ -684,37 +685,12 @@ html {
           html body#activity section#link section#backflip h3:before {
             background: url(images/logos/logo-backflip.svg) no-repeat;
             height: 80px; }
-      html body#activity section#media {
-        margin-top: 230px; }
-        html body#activity section#media:before {
-          content: url(images/logos/kozea-media.svg);
-          left: 35%;
-          top: -200px; }
-        html body#activity section#media h2 {
-          right: 4%;
-          top: -130px; }
-        html body#activity section#media section:first-of-type {
-          align-self: flex-end;
-          position: relative; }
-          html body#activity section#media section:first-of-type:after {
-            background: url(images/photos/media.jpg) no-repeat;
-            content: '';
-            height: 160%;
-            left: -67%;
-            position: absolute;
-            top: -110px;
-            width: 100%;
-            z-index: -2; }
-        html body#activity section#media section#work {
-          margin-left: 33%; }
-          html body#activity section#media section#work p strong {
-            color: #fff; }
-        html body#activity section#media section#solutions {
-          align-self: flex-start;
-          margin-top: -358px; }
+        html body#activity section#link section#sprintdesign {
+          margin-left: 50%;
+          margin-top: -172px; }
       html body#activity section#community {
         align-items: flex-start;
-        margin-top: 8%; }
+        margin-top: 140px; }
         html body#activity section#community:before {
           content: url(images/logos/kozea-community.svg);
           left: 17%;
@@ -729,7 +705,7 @@ html {
             content: url(images/photos/community.jpg);
             left: 87%;
             position: absolute;
-            top: 100px;
+            top: 40px;
             z-index: -1; }
         html body#activity section#community section#projects {
           margin-left: 25%;
@@ -813,8 +789,8 @@ html {
             right: -100%;
             top: 0;
             width: 100%; }
-        html body#expertise #missions section#big-data {
-          background: url(images/photos/big-data.jpg) no-repeat;
+        html body#expertise #missions section#innovations {
+          background: url(images/photos/innovations.jpg) no-repeat;
           background-size: cover;
           text-align: center; }
     html body#expertise #skills {
@@ -1001,8 +977,12 @@ html {
       opacity: 0.75; }
       html body#references section ul li a:hover, html body#index #partners ul li a:hover {
         opacity: 1; }
-    html body#error404 p {
-      text-align: center; }
+    html body#error404 {
+      height: 100vh; }
+      html body#error404 section {
+        background: url(images/illustration-page404.svg) no-repeat center bottom;
+        background-size: 50%;
+        height: 100%; }
     html body span#back-to-top {
       background: none;
       bottom: 35px;
@@ -1120,10 +1100,14 @@ html .collapsible .menu {
       left: 15px;
       top: 15px;
       width: calc(100% - 30px); }
+  html body#activity section#platform section#backoffice {
+    margin-top: -593px; }
   html body#activity section#media section#solutions {
     margin-top: -387px; }
   html body#activity section#link section#backflip {
     margin-top: -268px; }
+  html body#activity section#community section#free:after {
+    top: 57px; }
   html body#references section ul li {
     padding: 40px 0; }
   html body#contact section > dl {
@@ -1144,20 +1128,18 @@ html .collapsible .menu {
     height: 100%; }
     html body#index #news ul li#latest-news:before {
       top: calc(50% - 15px); }
-  html body#about #story ul li:nth-child(2) {
-    margin-right: 0; }
   html body#about #team #members {
     justify-content: center; }
   html body#activity section#platform > section, html body#activity section#link > section, html body#activity section#media > section, html body#activity section#community > section {
     width: 50%; }
-    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#work, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#work, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#work, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#work, html body#activity section#community > section#free, html body#activity section#community > section#projects {
+    html body#activity section#platform > section#digital, html body#activity section#platform > section#advice, html body#activity section#platform > section#marketing, html body#activity section#platform > section#free, html body#activity section#platform > section#projects, html body#activity section#link > section#digital, html body#activity section#link > section#advice, html body#activity section#link > section#marketing, html body#activity section#link > section#free, html body#activity section#link > section#projects, html body#activity section#media > section#digital, html body#activity section#media > section#advice, html body#activity section#media > section#marketing, html body#activity section#media > section#free, html body#activity section#media > section#projects, html body#activity section#community > section#digital, html body#activity section#community > section#advice, html body#activity section#community > section#marketing, html body#activity section#community > section#free, html body#activity section#community > section#projects {
       margin-left: 0; }
-    html body#activity section#platform > section#professionnals, html body#activity section#platform > section#project, html body#activity section#link > section#professionnals, html body#activity section#link > section#project, html body#activity section#media > section#professionnals, html body#activity section#media > section#project, html body#activity section#community > section#professionnals, html body#activity section#community > section#project {
+    html body#activity section#platform > section#project, html body#activity section#link > section#project, html body#activity section#media > section#project, html body#activity section#community > section#project {
       margin-right: 0; }
     html body#activity section#platform > section#advice:after, html body#activity section#link > section#advice:after, html body#activity section#media > section#advice:after, html body#activity section#community > section#advice:after {
       left: 70%;
       width: 100%; }
-    html body#activity section#platform > section#work, html body#activity section#link > section#work, html body#activity section#media > section#work, html body#activity section#community > section#work {
+    html body#activity section#platform > section#marketing, html body#activity section#link > section#marketing, html body#activity section#media > section#marketing, html body#activity section#community > section#marketing {
       align-self: flex-end; }
     html body#activity section#platform > section#projects, html body#activity section#link > section#projects, html body#activity section#media > section#projects, html body#activity section#community > section#projects {
       width: 100%; }
@@ -1168,6 +1150,10 @@ html .collapsible .menu {
     left: 50%;
     top: -110px;
     width: 120%; }
+  html body#activity section#media {
+    margin-top: 280px; }
+  html body#activity section#link section#sprintdesign {
+    margin-top: -230px; }
   html body#activity section#community section#free:after {
     left: 70%; }
   html body#contact section form {
@@ -1176,9 +1162,6 @@ html .collapsible .menu {
       min-height: 130px; } }
 
 @media screen and (max-width: 768px) {
-  html body .popup {
-    left: calc(50vw - 130px);
-    top: 55%; }
   html body header #go-to-about {
     display: none; }
   html body#index header h1:before {
@@ -1196,6 +1179,10 @@ html .collapsible .menu {
     width: 50%; }
   html body#about img {
     width: 100%; }
+  html body#activity section#platform section#backoffice {
+    margin-top: -625px; }
+  html body#activity section#link section#sprintdesign {
+    margin-top: -260px; }
   html body#references section ul li {
     width: 50%; }
   html body#contact section > dl {
@@ -1207,7 +1194,9 @@ html .collapsible .menu {
 
 @media screen and (max-width: 735px) {
   html body#index header {
-    height: calc(100vh - 63px); } }
+    height: calc(100vh - 63px); }
+  html body#activity section#platform section#backoffice {
+    margin-top: -655px; } }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   html body#index #about p {
@@ -1219,30 +1208,40 @@ html .collapsible .menu {
     width: 100%; } }
 
 @media screen and (min-width: 461px) and (max-width: 640px) {
+  html body#activity section#platform section#backoffice {
+    margin-top: -805px; }
+  html body#activity section#media section#services {
+    margin-top: -490px; }
+  html body#activity section#link section#sprintdesign {
+    margin-top: -350px; }
   html body#activity section#community {
-    margin-top: 15%; }
+    margin-top: 120px; }
     html body#activity section#community section#free:after {
-      left: 40%; }
-  html body#activity section#media section#solutions {
-    margin-top: -490px; } }
+      left: 40%; } }
 
 @media screen and (min-width: 481px) and (max-width: 600px) {
+  html body#index #follow .insta li, html body#index .insta:after {
+    height: 230px; }
   html body#about #story ul li {
     width: 50%; }
-    html body#about #story ul li:first-child, html body#about #story ul li:last-child {
+    html body#about #story ul li:first-child {
       margin-left: 0; }
-  html body#about #team #members {
-    justify-content: flex-start; }
-    html body#about #team #members section {
-      width: 50%; }
-  html body#index #follow .insta li, html body#index .insta:after {
-    height: 230px; } }
+    html body#about #story ul li:last-child {
+      margin-top: 0; }
+  html body#activity section#link section #sprintdesign {
+    margin-top: -410px; } }
 
 @media screen and (min-width: 481px) and (max-width: 568px) {
+  html body#activity section#platform section#backoffice {
+    margin-top: -865px; }
   html body#activity section#link section#backflip {
     margin-top: -328px; }
-  html body#activity section#media section#solutions {
-    margin-top: -530px; } }
+  html body#activity section#link section#sprintdesign {
+    margin-top: -350px; }
+  html body#activity section#media section#services {
+    margin-top: -530px; }
+  html body#activity section#community section#free:after {
+    left: 20%; } }
 
 @media screen and (max-width: 481px) {
   html body > section p.intro {

@@ -28,6 +28,10 @@ h3
 p strong
   font-weight: 500
 
+abbr
+  cursor: default
+  text-decoration: underline
+
 a
   cursor: pointer
   text-decoration: none
@@ -40,28 +44,27 @@ ul
     list-style-type: none
 
 /* colors and backgrounds */
-nav ul li, #satisfaction, #big-data, #skills ul, #digital,
-#professionnals, #advice, #project, #advertisement,
-#work, #free, #projects dl, #projects dd,
+nav ul li, #satisfaction, #innovations, #skills ul, #digital, 
+#advice, #project, #agency, #markting, #free, #projects dl, #projects dd,
 #numbers, #members > *,
   > *
     color: #fff
 
-nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h3
+nav, #satisfaction, #digital, #advice, #agency, #free, #group, #members h3
   background: $primary
 
 #about ul ~ p, #gestion-backoffice, #develop, #skills,
-#story > p:not(.intro), #pharminfo, #medsite,
-#backflip, #solutions, #projects + #expert, #contact-us form
+#story > p:not(.intro), #pharminfo, #promomaker,
+#backflip, #services, #projects + #expert, #contact-us form
   background: $secondary
 
-#work, #numbers #media, #targets,  #structures #media + dd a
+#marketing, #numbers #media, #targets, #structures #media + dd a
   background: $media
 
 #project, #numbers #link, #reactivity,  #structures #link + dd a
   background: $link
 
-#professionnals, #numbers #platform, #innovation , #structures #platform + dd a
+#numbers #platform, #innovation, #structures #platform + dd a
   background: $platform
 
 #radicale,#numbers #community, #r-and-d, #structures #community + dd a
@@ -73,7 +76,7 @@ nav, #satisfaction, #digital, #advice, #advertisement, #free, #group, #members h
 #weasyprint
   background: darken($community, 10%)
 
-#backoffice, #share
+#backoffice, #sprintdesign, #share
   background: darken($secondary,3%)
 
 #missions, #platform, #link, #media, #community
@@ -99,48 +102,6 @@ html
       font-size: 1em
       padding: 7px
       width: 90px;
-
-    /* popup newsletter */
-    .popup
-      background-color: $primary
-      box-shadow: 0 0 5px rgba($primary, 0.5)
-      left: calc(50% - 17.5%)
-      min-width: 205px
-      opacity:.9
-      overflow: auto
-      padding: 16px
-      position: absolute
-      top: 50%
-      width: 33%
-      z-index: 20
-
-      p
-        color: #fff
-
-      span:before
-        content: 'x'
-        display: block
-        padding: 5px
-
-      form
-        input
-          border: none
-          font-size: 1em
-          margin-right: 10px
-          padding: 7px
-
-        input[type="submit"]
-          background: #fff
-          color: $text
-          margin-top: 10px
-
-    .hidden
-      display: none
-
-    .close-popup
-      color: #fff
-      float: right
-      cursor: pointer
 
     /*animation lien*/
     .links li a
@@ -198,7 +159,7 @@ html
 
         &:after
           animation: bounce 1.5s ease-in-out
-          content: url(images/icones/more.svg)
+          content: url(images/icones/en-savoir-plus.svg)
           width: 15px
 
         @keyframes bounce
@@ -253,7 +214,14 @@ html
       max-width: 1200px
       width: 100%
 
-      p, li
+      dt 
+        font-size: 1.2em
+        font-weight: 600
+
+      dd
+        margin-left: 0
+
+      p, li, dd
         font-size: 1.2em
         font-weight: 300
 
@@ -279,7 +247,12 @@ html
     &:not(#index)
       header
         margin-top: 5%
+    &#legal 
+      dl 
+        dt:after 
+          content: ':'
 
+    
     &#index
       header
         background: $primary
@@ -299,7 +272,7 @@ html
           color: transparent
 
           &:before
-            content: url(images/logos/logo-icon.svg)
+            content: url(images/logos/logo-icone.svg)
             left: calc(50% - 65px)
             position: absolute
             top: calc(50% - 200px)
@@ -440,8 +413,8 @@ html
                 content: url(images/icones/newsletter.svg)
                 width: 70px
 
-            &#download-brochure
-              background: url(images/photos/brochure-bkgd.jpg)no-repeat
+            &#download-whitepaper
+              background: url(images/photos/telecharger-livre-blanc.jpg)no-repeat
               background-size: cover
               height: 200px
               width: 33%
@@ -459,33 +432,27 @@ html
               width: 50%
 
               > a
-                z-index: 0
+                transform: translate3d(0,30px,0)
+                transition: transform 0.35s
 
-                &:before
-                  content: url(images/icones/press.svg)
+                &:not(:last-child):before
+                  content: url(images/icones/news.svg)
                   width: 100px
 
-              > ul
-                display: flex
-                flex-direction: column
-                height: 350px
-                justify-content: space-around
-                left: 25px
-                opacity: 0
-                position: absolute
-                top: 25px
-                width: calc(100% - 50px)
+                &:last-child
+                  opacity: 0
+                  transition: opacity 0.2s, transform 0.35s
 
-                li
-                  background: $primary
-                  line-height: 1
+                  &:after
+                    content: none
 
-                  a
-                    &:after
-                      display: none
+              &:hover > a
+                transform: translate3d(0,0,0,)
 
-              &:hover > ul
-                opacity: 1
+                &:last-child
+                  opacity: 1
+                  transition-delay: 0.05s
+                  transition-duration: 0.35s
 
       #partners ul
         display: flex
@@ -597,11 +564,11 @@ html
           margin: 0
 
           li
-            &:first-child, &:last-child
-              margin-left: 25%
+            &:first-child
+              margin-left: -300px
 
-            &:nth-child(2)
-              margin-right: 25%
+            &:last-child
+              margin-top: 300px
 
       #team
         #members
@@ -670,13 +637,13 @@ html
                 transform: scale(1)
 
             @media screen and (min-width: 1200px)
-              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14),
+              &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(14),&:nth-of-type(15)
                 padding-right: 300px
 
-              &:nth-of-type(10), &:nth-of-type(11)
+              &:nth-of-type(10), &:nth-of-type(11),&:nth-of-type(20)
                 margin-left: 300px
 
-              &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14)
+              &:nth-of-type(10),&:nth-of-type(3), &:nth-of-type(14), &:nth-of-type(20)
                 &:before
                   content: ''
                   height: 300px
@@ -688,14 +655,15 @@ html
                 left: -300px
                 top: 0
 
-              &:nth-of-type(3), &:nth-of-type(14)
+              &:nth-of-type(3), &:nth-of-type(14),
                 &:before
                   background: lighten($primary,25%)
                   right: 0
                   top: 0
 
-              &:nth-of-type(14):before
+              &:nth-of-type(20):before
                 background: $primary
+                left: -300px
 
         #tools
           justify-content: flex-end
@@ -757,16 +725,13 @@ html
       section
         box-sizing: border-box
 
-        #digital, #pharminfo, #medsite, #backflip, #advertisement, #solutions, #expert
+        #digital, #pharminfo, #backoffice, #backflip, #sprintdesign, #agency, #services, #expert
           width: 50%
 
-        #digital, #professionnals, #advice, #project, #work, #free, #share
+        #digital, #promomaker, #advice, #project, #marketing, #free, #share
           width: 33%
 
-        #backoffice
-          width: 25%
-
-        #pharminfo, #medsite, #backoffice, #backflip
+        #pharminfo, #promomaker, #backoffice, #backflip
           h3
             font-size: 0
 
@@ -790,7 +755,7 @@ html
           &:before
             content: url(images/logos/kozea-platform.svg)
             left: 10%
-            top: 4%
+            top: 70px
 
           h2
             right: 4%
@@ -802,7 +767,6 @@ html
               margin-top: 150px
               order: -2
 
-
               &:after
                 background : url(images/photos/platform.jpg)no-repeat
                 content: ''
@@ -812,33 +776,75 @@ html
                 width: 150%
 
             &#pharminfo
-              margin-top: -210px
+              margin-top: -225px
               margin-left: 50%
 
               h3:before
                 background: url(images/logos/logo-pharminfo.svg)no-repeat
                 height: 50px
 
-            &#medsite h3:before
-              background: url(images/logos/medsite.svg)no-repeat
-              height: 30px
-
-            &#professionnals
-              align-self: flex-start
-              margin-right: 17%
-
-              p
-                margin-bottom: 5px
-
             &#backoffice
-              margin-left: 25%
+              margin-top: -505px
 
               h3:before
                 background: url(images/logos/logo-backoffice.svg)no-repeat
                 height: 50px
 
+              dt
+                margin-top: 10px
+
+            &#promomaker
+              margin-top: 210px
+              
+              h3:before
+                background: url(images/logos/logo-promomaker.svg)no-repeat
+                height: 55px
+              
+              p a 
+                color: $platform
+
+                &:hover
+                  color: darken($platform,20%)
+        
+        &#media
+          margin-top: 270px
+
+          &:before
+            content: url(images/logos/kozea-media.svg)
+            left: 35%
+            top: -200px
+
+          h2
+            right: 4%
+            top: -130px
+
+          section
+            &:first-of-type
+              align-self: flex-end
+              position: relative
+
+              &:after
+                background: url(images/photos/media.jpg)no-repeat
+                content: ''
+                height: 160%
+                left: -67%
+                position: absolute
+                top: -110px
+                width: 100%
+                z-index: -2
+
+            &#marketing
+              margin-left: 33%
+
+              h3, p
+                color: #fff
+
+            &#services
+              align-self: flex-start
+              margin-top: -358px
+
         &#link
-          margin-top: 180px
+          margin-top: 290px
 
           &:before
             content: url(images/logos/kozea-link.svg)
@@ -874,46 +880,15 @@ html
                 background: url(images/logos/logo-backflip.svg)no-repeat
                 height: 80px
 
-        &#media
-          margin-top: 230px
+            &#sprintdesign
+              align-self:flex-end
+              margin-left: 50% 
+              margin-top: -172px
 
-          &:before
-            content: url(images/logos/kozea-media.svg)
-            left: 35%
-            top: -200px
-
-          h2
-            right: 4%
-            top: -130px
-
-          section
-            &:first-of-type
-              align-self: flex-end
-              position: relative
-
-              &:after
-                background: url(images/photos/media.jpg)no-repeat
-                content: ''
-                height: 160%
-                left: -67%
-                position: absolute
-                top: -110px
-                width: 100%
-                z-index: -2
-
-            &#work
-              margin-left: 33%
-
-              p strong
-                color: #fff
-
-            &#solutions
-              align-self: flex-start
-              margin-top: -358px
 
         &#community
           align-items: flex-start
-          margin-top: 8%
+          margin-top: 140px
 
           &:before
             content: url(images/logos/kozea-community.svg)
@@ -933,7 +908,7 @@ html
                 content: url(images/photos/community.jpg)
                 left: 87%
                 position: absolute
-                top: 100px
+                top: 40px
                 z-index: -1
 
             &#projects
@@ -1039,8 +1014,8 @@ html
               top: 0
               width: 100%
 
-          &#big-data
-            background: url(images/photos/big-data.jpg)no-repeat
+          &#innovations
+            background: url(images/photos/innovations.jpg)no-repeat
             background-size: cover
             text-align: center
 
@@ -1289,9 +1264,13 @@ html
         &:hover
           opacity: 1
 
-    &#error404
-      p
-        text-align: center
+    &#error404 
+      height: 100vh
+
+      section
+        background: url(images/illustration-page404.svg)no-repeat center bottom
+        background-size: 50%
+        height: 100%
 
     span#back-to-top
       background: none
