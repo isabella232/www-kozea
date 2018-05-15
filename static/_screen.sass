@@ -44,7 +44,7 @@ ul
     list-style-type: none
 
 /* colors and backgrounds */
-nav ul li, #satisfaction, #innovations, #skills ul, #digital, 
+nav ul li, #satisfaction, #innovations, #skills ul, #digital,
 #advice, #project, #agency, #markting, #free, #projects dl, #projects dd,
 #numbers, #members > *,
   > *
@@ -214,7 +214,7 @@ html
       max-width: 1200px
       width: 100%
 
-      dt 
+      dt
         font-size: 1.2em
         font-weight: 600
 
@@ -247,12 +247,12 @@ html
     &:not(#index)
       header
         margin-top: 5%
-    &#legal 
-      dl 
-        dt:after 
+    &#legal
+      dl
+        dt:after
           content: ':'
 
-    
+
     &#index
       header
         background: $primary
@@ -795,17 +795,17 @@ html
 
             &#promomaker
               margin-top: 210px
-              
+
               h3:before
                 background: url(images/logos/logo-promomaker.svg)no-repeat
                 height: 55px
-              
-              p a 
+
+              p a
                 color: $platform
 
                 &:hover
                   color: darken($platform,20%)
-        
+
         &#media
           margin-top: 270px
 
@@ -882,7 +882,7 @@ html
 
             &#sprintdesign
               align-self:flex-end
-              margin-left: 50% 
+              margin-left: 50%
               margin-top: -172px
 
 
@@ -1214,6 +1214,12 @@ html
         order: 2
         padding: 30px
 
+        label[for="data"], a
+          font-size: .8em
+
+        a
+          color: $a
+
         input:not(:last-child), textarea
           background: none
           border-top: none
@@ -1264,7 +1270,7 @@ html
         &:hover
           opacity: 1
 
-    &#error404 
+    &#error404
       height: 100vh
 
       section

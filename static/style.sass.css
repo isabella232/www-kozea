@@ -942,6 +942,10 @@ html {
       margin-bottom: 50px;
       order: 2;
       padding: 30px; }
+      html body#contact section form label[for="data"], html body#contact section form a {
+        font-size: .8em; }
+      html body#contact section form a {
+        color: #354353; }
       html body#contact section form input:not(:last-child), html body#contact section form textarea {
         background: none;
         border-top: none;
