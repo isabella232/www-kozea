@@ -4,7 +4,7 @@ from xml.etree import ElementTree as etree
 
 import mandrill
 import requests
-from flask import (Flask, abort, current_app, render_template, redirect,
+from flask import (Flask, abort, current_app, redirect, render_template,
                    request, session, url_for)
 from jinja2.exceptions import TemplateNotFound
 
