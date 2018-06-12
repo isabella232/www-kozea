@@ -1365,3 +1365,57 @@ html
 
         .links a:before
           margin-left: -0.6em
+
+      #cookies
+        align-items: center
+        background: $primary
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+
+        &::before
+          background: url(images/kozea-line.jpg) bottom / cover no-repeat
+          content: ''
+          height: 3px
+          width: 100%
+
+        p
+          color: #fff
+          padding: .25em
+
+        button
+          background: #fff
+          border: none
+          box-shadow: none
+          color: $primary
+          cursor: pointer
+          font-size: .9em
+          margin: .25em .5em
+          padding: 7px
+
+          &:hover
+            text-decoration: underline
+
+  #options
+    form
+      animation: FadeInDown 1.75s ease
+      @keyframes FadeInDown
+        0%
+          opacity: 0
+
+        25%
+          opacity: 0
+          transform: translate3d(0, 150px, 0)
+
+        100%
+          opacity: 1
+          transform: none
+
+      input[type="submit"]
+        background: $primary
+        color: #fff
+        display: block
+        margin: .5em auto
+
+        &:hover
+          background: lighten($primary,10%)
