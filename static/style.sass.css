@@ -206,8 +206,6 @@ html {
         font-size: 0.85em; }
     html body:not(#index) header {
       margin-top: 5%; }
-    html body#legal dl dt:after {
-      content: ':'; }
     html body#index header {
       background: #1a2531;
       flex-direction: column;
@@ -1082,6 +1080,29 @@ html {
           padding: 7px; }
           html body footer #cookies button:hover {
             text-decoration: underline; }
+    html body #legal > section p {
+      font-size: 1.1em; }
+    html body #legal > section h3 {
+      font-size: 1.5em;
+      font-weight: 600; }
+    html body #legal > section h4, html body #legal > section h5 {
+      font-weight: 500; }
+    html body #legal > section h4 {
+      font-size: 1.1em; }
+    html body #legal > section h5 {
+      font-size: 1em; }
+    html body #legal > section:first-of-type {
+      text-align: center; }
+      html body #legal > section:first-of-type h3:nth-of-type(2) {
+        color: #0a7cba; }
+      html body #legal > section:first-of-type h3:nth-of-type(3) {
+        color: #f59c30; }
+      html body #legal > section:first-of-type h3:nth-of-type(4) {
+        color: #e73c4d; }
+    html body #legal > section:nth-of-type(2) dl {
+      background: #f9f9f9;
+      font-size: .9em;
+      padding: 2em; }
   html #options form {
     animation: FadeInDown 1.75s ease; }
 

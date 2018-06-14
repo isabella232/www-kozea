@@ -247,11 +247,6 @@ html
     &:not(#index)
       header
         margin-top: 5%
-    &#legal
-      dl
-        dt:after
-          content: ':'
-
 
     &#index
       header
@@ -1395,6 +1390,44 @@ html
 
           &:hover
             text-decoration: underline
+
+    #legal
+      > section
+        p
+          font-size: 1.1em
+
+        h3
+          font-size: 1.5em
+          font-weight: 600
+
+        h4, h5
+          font-weight: 500
+
+        h4
+          font-size: 1.1em
+
+        h5
+          font-size: 1em
+
+        &:first-of-type
+          text-align: center
+
+          h3
+            &:nth-of-type(2)
+              color: $platform
+
+            &:nth-of-type(3)
+              color: $link
+
+            &:nth-of-type(4)
+              color: $media
+
+        &:nth-of-type(2)
+          dl
+            background: $secondary
+            font-size: .9em
+            padding: 2em
+
 
   #options
     form
