@@ -4,10 +4,12 @@ from xml.etree import ElementTree as etree
 
 import mandrill
 import requests
-from flask import Flask, abort, current_app, render_template, request
+from flask import (Flask, abort, current_app, redirect, render_template,
+                   request, session, url_for)
 from jinja2.exceptions import TemplateNotFound
 
 app = Flask(__name__)
+app.secret_key = 'change_me!'
 app.config.from_envvar('KOZEA_CONFIG', silent=True)
 
 ACCESS_TOKEN = app.config.get('ACCESS_TOKEN')
@@ -16,7 +18,8 @@ TITLES = OrderedDict([
     ('index', 'Accueil'), ('about', 'À propos'),
     ('activity', 'Notre activité'), ('expertise', 'Notre expertise'),
     ('references', 'Nos références'), ('contact', 'Contact'),
-    ('legal', 'Mentions légales')
+    ('legal', 'Mentions légales'),
+    ('options', 'Options de confidentialité')
 ])
 
 
@@ -86,6 +89,20 @@ def send_mail(mail_type):
     if not current_app.debug:
         mandrill_client.messages.send(message=message)
     return ''
+
+
+@app.route('/cookies', methods=['POST'])
+def cookies():
+    if request.form.get('allow'):
+        session['analytics'] = session['facebook'] = True
+        return 'ok'
+    elif request.form.get('deny'):
+        session['analytics'] = session['facebook'] = False
+        return 'ok'
+
+    for cookie in ('analytics', 'facebook'):
+        session[cookie] = bool(request.form.get(cookie))
+    return redirect(url_for('page'))
 
 
 if __name__ == '__main__':

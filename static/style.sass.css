@@ -206,8 +206,6 @@ html {
         font-size: 0.85em; }
     html body:not(#index) header {
       margin-top: 5%; }
-    html body#legal dl dt:after {
-      content: ':'; }
     html body#index header {
       background: #1a2531;
       flex-direction: column;
@@ -942,6 +940,10 @@ html {
       margin-bottom: 50px;
       order: 2;
       padding: 30px; }
+      html body#contact section form label[for="data"], html body#contact section form a {
+        font-size: .8em; }
+      html body#contact section form a {
+        color: #354353; }
       html body#contact section form input:not(:last-child), html body#contact section form textarea {
         background: none;
         border-top: none;
@@ -1053,6 +1055,76 @@ html {
             margin-top: 0; }
         html body footer dl .links a:before {
           margin-left: -0.6em; }
+      html body footer #cookies {
+        align-items: center;
+        background: #1a2531;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; }
+        html body footer #cookies::before {
+          background: url(images/kozea-line.jpg) bottom/cover no-repeat;
+          content: '';
+          height: 3px;
+          width: 100%; }
+        html body footer #cookies p {
+          color: #fff;
+          padding: .25em; }
+        html body footer #cookies button {
+          background: #fff;
+          border: none;
+          box-shadow: none;
+          color: #1a2531;
+          cursor: pointer;
+          font-size: .9em;
+          margin: .25em .5em;
+          padding: 7px; }
+          html body footer #cookies button:hover {
+            text-decoration: underline; }
+    html body #legal > section h2 {
+      font-size: 1.8em; }
+    html body #legal > section p {
+      font-size: 1em; }
+    html body #legal > section h3 {
+      font-weight: 600; }
+    html body #legal > section h4, html body #legal > section h5 {
+      font-weight: 500; }
+    html body #legal > section h4 {
+      font-size: 1.1em; }
+    html body #legal > section h5 {
+      font-size: 1em; }
+    html body #legal > section:first-of-type {
+      text-align: center; }
+      html body #legal > section:first-of-type h3 {
+        font-size: 1.5em; }
+        html body #legal > section:first-of-type h3:nth-of-type(2) {
+          color: #0a7cba; }
+        html body #legal > section:first-of-type h3:nth-of-type(3) {
+          color: #f59c30; }
+        html body #legal > section:first-of-type h3:nth-of-type(4) {
+          color: #e73c4d; }
+    html body #legal > section:nth-of-type(2) dl {
+      background: #f9f9f9;
+      font-size: .8em;
+      padding: 2em; }
+  html #options form {
+    animation: FadeInDown 1.75s ease; }
+
+@keyframes FadeInDown {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0;
+    transform: translate3d(0, 150px, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+    html #options form input[type="submit"] {
+      background: #1a2531;
+      color: #fff;
+      display: block;
+      margin: .5em auto; }
+      html #options form input[type="submit"]:hover {
+        background: #2c3e52; }
 
 /*== burger menu when navigation is to short */
 html .collapsible .collapsible-icon {
