@@ -133,7 +133,7 @@ html {
         display: flex;
         font-size: 0;
         justify-content: center;
-        padding: 10px;
+        padding: 10px 10px 150px 10px;
         z-index: 3; }
         html body header #go-to-about:after {
           animation: bounce 1.5s ease-in-out;
@@ -987,7 +987,7 @@ html {
         height: 100%; }
     html body span#back-to-top {
       background: none;
-      bottom: 35px;
+      bottom: 50px;
       color: #1a2531;
       display: block;
       font-size: 1.3em;
@@ -1026,7 +1026,8 @@ html {
     html body #back-to-top:hover {
       background-color: #305274; }
     html body footer {
-      margin-top: 25px; }
+      margin-top: 25px;
+      padding-bottom: 2em; }
       html body footer dl {
         display: flex;
         flex-wrap: wrap;
@@ -1058,9 +1059,14 @@ html {
       html body footer #cookies {
         align-items: center;
         background: #1a2531;
+        bottom: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; }
+        left: 0;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        z-index: 1; }
         html body footer #cookies::before {
           background: url(images/kozea-line.jpg) bottom/cover no-repeat;
           content: '';

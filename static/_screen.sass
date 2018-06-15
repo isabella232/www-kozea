@@ -154,7 +154,7 @@ html
         display: flex
         font-size: 0
         justify-content: center
-        padding: 10px
+        padding: 10px 10px 150px 10px
         z-index: 3
 
         &:after
@@ -1275,7 +1275,7 @@ html
 
     span#back-to-top
       background: none
-      bottom: 35px
+      bottom: 50px
       color: $primary
       display: block
       font-size: 1.3em
@@ -1323,6 +1323,7 @@ html
 
     footer
       margin-top: 25px
+      padding-bottom: 2em
 
       dl
         display: flex
@@ -1364,9 +1365,14 @@ html
       #cookies
         align-items: center
         background: $primary
+        bottom: 0
         display: flex
         flex-wrap: wrap
+        left: 0
         justify-content: center
+        position: fixed
+        right: 0
+        z-index: 1
 
         &::before
           background: url(images/kozea-line.jpg) bottom / cover no-repeat
