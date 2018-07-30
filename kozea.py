@@ -33,9 +33,13 @@ def page(page='index'):
     """Display each view."""
     kwargs = {}
     if page == 'index':
-        json = requests.get(
-            "https://api.instagram.com/v1/users/self/media/recent/"
-            "?access_token={}&count=4".format(ACCESS_TOKEN)).json()
+        try:
+            json = requests.get(
+                "https://api.instagram.com/v1/users/self/media/recent/"
+                "?access_token={}&count=4".format(ACCESS_TOKEN),
+                timeout=3).json()
+        except requests.exceptions.ReadTimeout as e:
+            json = {}
         render_insta = []
         for media in json.get('data', []):
             render_insta.append({
@@ -43,9 +47,14 @@ def page(page='index'):
                 'src': (
                     media.get('images').get('standard_resolution').get('url')),
                 'title': media.get('caption').get('text')})
-        tree = etree.fromstring(requests.get(
-            'https://kozeagroup.wordpress.com/category/kozea/feed/').text)
-        channel, = tree
+        try:
+            tree = etree.fromstring(requests.get(
+                'https://kozeagroup.wordpress.com/category/kozea/feed/',
+                timeout=3).text)
+        except requests.exceptions.ReadTimeout as e:
+            channel = []
+        else:
+            channel, = tree
         render_wordpress = []
         for child in channel:
             if child.tag == 'item':

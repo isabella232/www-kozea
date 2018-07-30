@@ -40,10 +40,12 @@
       <li id="download-whitepaper" data-sr="{{ sr(wait=0.7) }}">
         <a href="#">découvrez bientôt le Livre blanc</a>
       </li>
-      <li data-sr="{{ sr(wait=0.8) }}" id="latest-news">
-        <a>Les dernières actualités</a>
-        <a href="{{ render_wordpress[0].link }}">{{ render_wordpress[0].title }}</a>
-      </li>
+      {% if render_wordpress %}
+        <li data-sr="{{ sr(wait=0.8) }}" id="latest-news">
+          <a>Les dernières actualités</a>
+          <a href="{{ render_wordpress[0].link }}">{{ render_wordpress[0].title }}</a>
+        </li>
+      {% endif %}
     </ul>
   </section>
 
@@ -65,12 +67,14 @@
     <ul class="links">
       <li data-sr="{{ sr(wait=0.6) }}"><a href="{{ url_for('page', page='about') }} ">En savoir plus</a></li>
     </ul>
-    <ul class="insta">
-      {% set wait = 0.5 %}
-      {% for media in render_insta %}
-      <li data-sr="{{ sr(wait=wait) }}"><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" alt="{{ media.title }}" title="{{ media.title }}"/></a></li>
-        {% set wait = wait + 0.1 %}
-      {% endfor %}
-    </ul>
+    {% if render_insta %}
+      <ul class="insta">
+        {% set wait = 0.5 %}
+        {% for media in render_insta %}
+          <li data-sr="{{ sr(wait=wait) }}"><a href="{{ media.link }}" target="_blank"><img src="{{ media.src }}" alt="{{ media.title }}" title="{{ media.title }}"/></a></li>
+          {% set wait = wait + 0.1 %}
+        {% endfor %}
+      </ul>
+    {% endif %}
   </section>
 {% endblock body %}
