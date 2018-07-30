@@ -44,7 +44,7 @@ ul
     list-style-type: none
 
 /* colors and backgrounds */
-nav ul li, #satisfaction, #innovations, #skills ul, #digital, 
+nav ul li, #satisfaction, #innovations, #skills ul, #digital,
 #advice, #project, #agency, #markting, #free, #projects dl, #projects dd,
 #numbers, #members > *,
   > *
@@ -154,7 +154,7 @@ html
         display: flex
         font-size: 0
         justify-content: center
-        padding: 10px
+        padding: 10px 10px 150px 10px
         z-index: 3
 
         &:after
@@ -214,7 +214,7 @@ html
       max-width: 1200px
       width: 100%
 
-      dt 
+      dt
         font-size: 1.2em
         font-weight: 600
 
@@ -247,12 +247,7 @@ html
     &:not(#index)
       header
         margin-top: 5%
-    &#legal 
-      dl 
-        dt:after 
-          content: ':'
 
-    
     &#index
       header
         background: $primary
@@ -795,17 +790,17 @@ html
 
             &#promomaker
               margin-top: 210px
-              
+
               h3:before
                 background: url(images/logos/logo-promomaker.svg)no-repeat
                 height: 55px
-              
-              p a 
+
+              p a
                 color: $platform
 
                 &:hover
                   color: darken($platform,20%)
-        
+
         &#media
           margin-top: 270px
 
@@ -882,7 +877,7 @@ html
 
             &#sprintdesign
               align-self:flex-end
-              margin-left: 50% 
+              margin-left: 50%
               margin-top: -172px
 
 
@@ -1202,6 +1197,8 @@ html
         align-self: flex-start
         height: 400px
         margin-top: -100px
+        position: relative
+        z-index: 0
 
       form
         align-self: flex-end
@@ -1213,6 +1210,12 @@ html
         margin-bottom: 50px
         order: 2
         padding: 30px
+
+        label[for="data"], a
+          font-size: .8em
+
+        a
+          color: $a
 
         input:not(:last-child), textarea
           background: none
@@ -1264,7 +1267,7 @@ html
         &:hover
           opacity: 1
 
-    &#error404 
+    &#error404
       height: 100vh
 
       section
@@ -1274,7 +1277,7 @@ html
 
     span#back-to-top
       background: none
-      bottom: 35px
+      bottom: 50px
       color: $primary
       display: block
       font-size: 1.3em
@@ -1322,6 +1325,7 @@ html
 
     footer
       margin-top: 25px
+      padding-bottom: 2em
 
       dl
         display: flex
@@ -1359,3 +1363,104 @@ html
 
         .links a:before
           margin-left: -0.6em
+
+      #cookies
+        align-items: center
+        background: $primary
+        bottom: 0
+        display: flex
+        flex-wrap: wrap
+        left: 0
+        justify-content: center
+        position: fixed
+        right: 0
+        z-index: 1
+
+        &::before
+          background: url(images/kozea-line.jpg) bottom / cover no-repeat
+          content: ''
+          height: 3px
+          width: 100%
+
+        p
+          color: #fff
+          padding: .25em
+
+        button
+          background: #fff
+          border: none
+          box-shadow: none
+          color: $primary
+          cursor: pointer
+          font-size: .9em
+          margin: .25em .5em
+          padding: 7px
+
+          &:hover
+            text-decoration: underline
+
+    #legal
+      > section
+        h2
+          font-size: 1.8em
+
+        p
+          font-size: 1em
+
+        h3
+          font-weight: 600
+
+        h4, h5
+          font-weight: 500
+
+        h4
+          font-size: 1.1em
+
+        h5
+          font-size: 1em
+
+        &:first-of-type
+          text-align: center
+
+          h3
+            font-size: 1.5em
+
+            &:nth-of-type(2)
+              color: $platform
+
+            &:nth-of-type(3)
+              color: $link
+
+            &:nth-of-type(4)
+              color: $media
+
+        &:nth-of-type(2)
+          dl
+            background: $secondary
+            font-size: .8em
+            padding: 2em
+
+
+  #options
+    form
+      animation: FadeInDown 1.75s ease
+      @keyframes FadeInDown
+        0%
+          opacity: 0
+
+        25%
+          opacity: 0
+          transform: translate3d(0, 150px, 0)
+
+        100%
+          opacity: 1
+          transform: none
+
+      input[type="submit"]
+        background: $primary
+        color: #fff
+        display: block
+        margin: .5em auto
+
+        &:hover
+          background: lighten($primary,10%)
