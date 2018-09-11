@@ -42,15 +42,15 @@
     <h2 data-sr="{{ sr() }}">L’équipe</h2>
     <section id="members">
       <h3 data-sr="{{ sr(wait=0.6) }}"><strong><span>20</span> collaborateurs</strong> dévoués</h3>
+      <section data-sr="{{ sr(wait=(range(10)|random)/10) }}" id="guillaume">
+        <h4>Guillaume Ayoub</h4>
+        <p>Directeur associé, Responsable Technique</p>
+        <img src="/static/images/team/guillaume.jpg" alt="Guillaume, Directeur associé">
+      </section>
       <section data-sr="{{ sr(wait=0.7) }}" id="philippe">
         <h4>Philippe Donadieu</h4>
         <p>Directeur associé, Docteur en pharmacie</p>
         <img src="/static/images/team/philippe.jpg" alt="Philippe, Directeur associé">
-      </section>
-      <section data-sr="{{ sr(wait=(range(10)|random)/10) }}" id="guillaume">
-        <h4>Guillaume Ayoub</h4>
-        <p>Directeur associé, Responsable Technique.</p>
-        <img src="/static/images/team/guillaume.jpg" alt="Guillaume, Directeur associé">
       </section>
       <section data-sr="{{ sr(wait=(range(10)|random)/10) }}" id="annabelle">
         <h4>Alexis</h4>
