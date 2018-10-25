@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from collections import OrderedDict
+from json import JSONDecodeError
 from xml.etree import ElementTree as etree
 
 import mandrill
@@ -41,7 +42,7 @@ def page(page='index'):
                 "https://api.instagram.com/v1/users/self/media/recent/"
                 "?access_token={}&count=4".format(ACCESS_TOKEN),
                 timeout=3).json()
-        except requests.exceptions.ReadTimeout as e:
+        except (requests.exceptions.ReadTimeout, JSONDecodeError) as e:
             json = {}
         render_insta = []
         for media in json.get('data', []):
