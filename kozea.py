@@ -47,10 +47,10 @@ def page(page='index'):
         render_insta = []
         for media in json.get('data', []):
             render_insta.append({
-                'link': media.get('link'),
+                'link': media.get('link', ''),
                 'src': (
                     media.get('images').get('standard_resolution').get('url')),
-                'title': media.get('caption').get('text')})
+                'title': media.get('caption', {}).get('text', '')})
         try:
             tree = etree.fromstring(requests.get(
                 'https://kozeagroup.wordpress.com/category/kozea/feed/',
