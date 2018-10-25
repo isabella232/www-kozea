@@ -76,9 +76,12 @@ def page(page='index'):
             'render_insta': render_insta,
             'render_wordpress': render_wordpress}
     current_title = TITLES[page] if page in TITLES else HIDDEN_TITLES[page]
-    return render_template(
-        '{}.html'.format(page), page=page, current_title=current_title,
-        titles=TITLES, **kwargs)
+    try:
+        return render_template(
+            '{}.html'.format(page), page=page, current_title=current_title,
+            titles=TITLES, **kwargs)
+    except KeyError:
+        abort(404)
 
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
