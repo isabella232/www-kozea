@@ -93,8 +93,7 @@ html {
       box-shadow: none;
       cursor: pointer;
       font-size: 1em;
-      padding: 7px;
-      width: 90px; }
+      padding: 7px; }
     html body .links li a:before, html body .links li a:after {
       display: inline-block;
       opacity: 0;
@@ -933,38 +932,9 @@ html {
       position: relative;
       z-index: 0; }
     html body#contact section form {
-      align-self: flex-end;
-      border-top: 2px solid #1a2531;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
       margin-top: -390px;
       margin-bottom: 50px;
-      order: 2;
-      padding: 30px; }
-      html body#contact section form label[for="data"], html body#contact section form a {
-        font-size: .8em; }
-      html body#contact section form a {
-        color: #354353; }
-      html body#contact section form input:not(:last-child), html body#contact section form textarea {
-        background: none;
-        border-top: none;
-        border-right: none;
-        border-bottom: 1px solid #f3f3f3;
-        border-left: none;
-        margin-bottom: 20px;
-        padding: 5px 10px; }
-        html body#contact section form input:not(:last-child)[placeholder], html body#contact section form textarea[placeholder] {
-          color: #1c1c1c;
-          font-size: 1em;
-          font-weight: 100; }
-      html body#contact section form textarea {
-        max-width: 100%; }
-      html body#contact section form input[type="submit"] {
-        background: #1a2531;
-        color: #fff; }
-        html body#contact section form input[type="submit"]:hover {
-          background: #2c3e52; }
+      order: 2; }
     html body#contact section dl dt, html body#contact section dl dd {
       display: inline; }
     html body#contact section dl dt {
@@ -1114,6 +1084,66 @@ html {
       background: #f9f9f9;
       font-size: .8em;
       padding: 2em; }
+  html #whitepaper h2 {
+    margin-bottom: 1em; }
+  html #whitepaper #social, html #whitepaper #form {
+    box-sizing: border-box;
+    width: 50%; }
+  html #whitepaper #social {
+    background-color: #f9f9f9;
+    margin: 5em 0 0 50%;
+    padding: 1em 2em;
+    position: relative; }
+    html #whitepaper #social::before {
+      background: url(images/photos/reseaux-sociaux.jpg) center/cover no-repeat;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 100%;
+      top: -5em;
+      width: 80%; }
+  html #whitepaper #form {
+    background-color: #e0e0e0;
+    margin: -5em 50% 2em 0; }
+  html #contact section form, html #whitepaper #form form {
+    align-self: flex-end;
+    border-top: 2px solid #1a2531;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 30px; }
+    html #contact section form label[for="data"], html #whitepaper #form form label[for="data"] {
+      align-items: flex-start;
+      display: flex;
+      margin-top: 1em; }
+      html #contact section form label[for="data"] input, html #whitepaper #form form label[for="data"] input {
+        margin-right: .75em; }
+    html #contact section form label[for="data"], html #contact section form a, html #whitepaper #form form label[for="data"], html #whitepaper #form form a {
+      font-size: .8em; }
+    html #contact section form a, html #whitepaper #form form a {
+      color: #354353; }
+    html #contact section form input:not(:last-child), html #contact section form textarea, html #whitepaper #form form input:not(:last-child), html #whitepaper #form form textarea {
+      background: none;
+      border-top: none;
+      border-right: none;
+      border-bottom: 1px solid #f3f3f3;
+      border-left: none;
+      margin-bottom: 20px;
+      padding: 5px 10px; }
+      html #contact section form input:not(:last-child)[placeholder], html #contact section form textarea[placeholder], html #whitepaper #form form input:not(:last-child)[placeholder], html #whitepaper #form form textarea[placeholder] {
+        color: #1c1c1c;
+        font-size: 1em;
+        font-weight: 100; }
+    html #contact section form textarea, html #whitepaper #form form textarea {
+      max-width: 100%; }
+    html #contact section form input[type="submit"], html #whitepaper #form form input[type="submit"] {
+      align-self: flex-start;
+      background: #1a2531;
+      color: #fff;
+      padding: .5em 1.5em; }
+      html #contact section form input[type="submit"]:hover, html #whitepaper #form form input[type="submit"]:hover {
+        background: #2c3e52; }
   html #options form {
     animation: FadeInDown 1.75s ease; }
 
@@ -1270,7 +1300,16 @@ html .collapsible .menu {
   html body#contact section #map {
     margin-top: 0; }
   html body span#background-line:after {
-    content: none; } }
+    content: none; }
+  html body#whitepaper {
+    margin-bottom: 0; }
+    html body#whitepaper #social, html body#whitepaper #form {
+      margin: 0;
+      width: 100%; }
+    html body#whitepaper #social::before {
+      content: none; }
+    html body#whitepaper #form {
+      margin-bottom: 3em; } }
 
 @media screen and (max-width: 735px) {
   html body#index header {

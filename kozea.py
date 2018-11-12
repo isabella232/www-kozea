@@ -20,8 +20,11 @@ TITLES = OrderedDict([
     ('activity', 'Notre activité'), ('expertise', 'Notre expertise'),
     ('references', 'Nos références'), ('contact', 'Contact'),
     ('legal', 'Mentions légales'),
-    ('options', 'Options de confidentialité')
+    ('options', 'Options de confidentialité'),
 ])
+HIDDEN_TITLES = {
+    'whitepaper': 'Livre blanc',
+}
 
 
 @app.errorhandler(404)
@@ -72,9 +75,10 @@ def page(page='index'):
         kwargs = {
             'render_insta': render_insta,
             'render_wordpress': render_wordpress}
+    current_title = TITLES[page] if page in TITLES else HIDDEN_TITLES[page]
     try:
         return render_template(
-            '{}.html'.format(page), page=page, current_title=TITLES[page],
+            '{}.html'.format(page), page=page, current_title=current_title,
             titles=TITLES, **kwargs)
     except KeyError:
         abort(404)
@@ -82,22 +86,36 @@ def page(page='index'):
 
 @app.route('/send_mail/<mail_type>', methods=['POST'])
 def send_mail(mail_type):
-    assert mail_type == 'contact'
-    mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
+    assert mail_type in ('contact', 'whitepaper')
+
+    if mail_type == 'contact':
+        subject = 'Prise de contact sur le site de Kozea'
+    elif mail_type == 'whitepaper':
+        subject = 'Téléchargement du livre blanc'
+
     form = request.form
-    subject = 'Prise de contact sur le site de Kozea'
     content = '<br>'.join([
-        'Email : %s' % form['email'],
-        'Nom / Société: %s' % form['name'],
-        'Demande : %s ' % form['question']])
+        'Email : %s' % form.get('email', ''),
+        'Nom / Société: %s' % form.get('name', ''),
+        'Numéro de téléphone: %s' % form.get('phone', ''),
+        'Demande : %s' % form.get('question', '')])
     message = {
         'to': [{'email': 'contact@kozea.fr'}],
         'subject': subject,
         'from_email': 'contact@kozea.fr',
         'html': content
     }
-    if not current_app.debug:
+
+    if current_app.debug:
+        print(message)
+    else:
+        mandrill_client = mandrill.Mandrill(MANDRILL_KEY)
         mandrill_client.messages.send(message=message)
+
+    if mail_type == 'whitepaper':
+        return redirect(url_for(
+            'static', filename='documents/livre-blanc-reseaux-sociaux.pdf'))
+
     return ''
 
 

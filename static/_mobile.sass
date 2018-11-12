@@ -173,7 +173,7 @@ html .collapsible
 
       #follow .insta li, .insta:after
         width: 50%
-    
+
     &#about img
       width: 100%
 
@@ -197,6 +197,18 @@ html .collapsible
     span#background-line:after
       content: none
 
+    &#whitepaper
+      #social, #form
+        margin: 0
+        width: 100%
+
+      #social
+        &::before
+          content: none
+
+      #form
+        margin-bottom: 3em
+
 @media screen and (max-width: 735px)
   html body
     &#index header
@@ -204,7 +216,7 @@ html .collapsible
 
     &#activity section#platform section#backoffice
       margin-top: -655px
-      
+
 @media screen and (min-width: 481px) and (max-width: 768px)
   html body
     &#index
@@ -448,4 +460,3 @@ html .collapsible
 
     &#expertise #missions section:first-of-type img
       width: initial
-

@@ -101,7 +101,6 @@ html
       cursor: pointer
       font-size: 1em
       padding: 7px
-      width: 90px;
 
     /*animation lien*/
     .links li a
@@ -1201,46 +1200,9 @@ html
         z-index: 0
 
       form
-        align-self: flex-end
-        border-top: 2px solid $primary
-        box-sizing: border-box
-        display: flex
-        flex-direction: column
         margin-top: -390px
         margin-bottom: 50px
         order: 2
-        padding: 30px
-
-        label[for="data"], a
-          font-size: .8em
-
-        a
-          color: $a
-
-        input:not(:last-child), textarea
-          background: none
-          border-top: none
-          border-right: none
-          border-bottom: 1px solid $border
-          border-left: none
-          margin-bottom: 20px
-          padding: 5px 10px
-
-          &[placeholder]
-            color: $text
-            font-size: 1em
-            font-weight: 100
-
-        textarea
-          max-width: 100%
-
-        input[type="submit"]
-          background: $primary
-          color: #fff
-
-          &:hover
-            background: lighten($primary,10%)
-
 
       dl
         dt, dd
@@ -1439,6 +1401,85 @@ html
             background: $secondary
             font-size: .8em
             padding: 2em
+
+
+  #whitepaper
+    h2
+      margin-bottom: 1em
+
+    #social, #form
+      box-sizing: border-box
+      width: 50%
+
+    #social
+      background-color: $secondary
+      margin: 5em 0 0 50%
+      padding: 1em 2em
+      position: relative
+
+      &::before
+        background: url(images/photos/reseaux-sociaux.jpg) center / cover no-repeat
+        content: ''
+        display: block
+        height: 100%
+        position: absolute
+        right: 100%
+        top: -5em
+        width: 80%
+
+    #form
+      background-color: darken($secondary, 10)
+      margin: -5em 50% 2em 0
+
+
+  #contact section, #whitepaper #form
+    form
+      align-self: flex-end
+      border-top: 2px solid $primary
+      box-sizing: border-box
+      display: flex
+      flex-direction: column
+      padding: 30px
+
+      label[for="data"]
+        align-items: flex-start
+        display: flex
+        margin-top: 1em
+
+        input
+          margin-right: .75em
+
+      label[for="data"], a
+        font-size: .8em
+
+      a
+        color: $a
+
+      input:not(:last-child), textarea
+        background: none
+        border-top: none
+        border-right: none
+        border-bottom: 1px solid $border
+        border-left: none
+        margin-bottom: 20px
+        padding: 5px 10px
+
+        &[placeholder]
+          color: $text
+          font-size: 1em
+          font-weight: 100
+
+      textarea
+        max-width: 100%
+
+      input[type="submit"]
+        align-self: flex-start
+        background: $primary
+        color: #fff
+        padding: .5em 1.5em
+
+        &:hover
+          background: lighten($primary,10%)
 
 
   #options
