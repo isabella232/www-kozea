@@ -1301,15 +1301,13 @@ html .collapsible .menu {
     margin-top: 0; }
   html body span#background-line:after {
     content: none; }
-  html body#whitepaper {
-    margin-bottom: 0; }
-    html body#whitepaper #social, html body#whitepaper #form {
-      margin: 0;
-      width: 100%; }
-    html body#whitepaper #social::before {
-      content: none; }
-    html body#whitepaper #form {
-      margin-bottom: 3em; } }
+  html body#whitepaper #social, html body#whitepaper #form {
+    margin: 0;
+    width: 100%; }
+  html body#whitepaper #social::before {
+    content: none; }
+  html body#whitepaper #form {
+    margin-bottom: 3em; } }
 
 @media screen and (max-width: 735px) {
   html body#index header {
