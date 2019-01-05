@@ -88,12 +88,17 @@ def page(page='index'):
 def send_mail(mail_type):
     assert mail_type in ('contact', 'whitepaper')
 
+    form = request.form
+
+    # Catch bots with a hidden field
+    if form.get('city'):
+        return redirect(url_for('page'))
+
     if mail_type == 'contact':
         subject = 'Prise de contact sur le site de Kozea'
     elif mail_type == 'whitepaper':
         subject = 'Téléchargement du livre blanc'
 
-    form = request.form
     content = '<br>'.join([
         'Email : %s' % form.get('email', ''),
         'Nom / Société: %s' % form.get('name', ''),

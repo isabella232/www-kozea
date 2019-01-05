@@ -39,6 +39,7 @@
     <form class="contact-form" action="/send_mail/contact" method="POST" data-sr="{{ sr(wait=0.9) }}">
       <input id="email" type="email" placeholder="[ Email ]" name="email" required/>
       <input id="name" placeholder="[ Nom / Société ]" name="name" required/>
+      <input style="display: none" id="city" name="city" placeholder="[ Ville (piège à robots) ]"/>
       <textarea id="question" placeholder="[ Demande ]" name="question" required></textarea>
       <label for="data">
         <input id="data" name="data" type="checkbox" required />
