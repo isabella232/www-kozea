@@ -95,7 +95,7 @@ def send_mail(mail_type):
     if mail_type == 'contact':
         subject = 'Prise de contact sur le site de Kozea'
     elif mail_type == 'whitepaper':
-        subject = 'Téléchargement du livre blanc'
+        subject = 'Téléchargement du livre blanc Kozea'
 
     content = '<br>'.join([
         'Email : %s' % form.get('email', ''),
