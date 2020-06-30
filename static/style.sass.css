@@ -1131,7 +1131,7 @@ html {
       border-left: none;
       margin-bottom: 20px;
       padding: 5px 10px; }
-      html #contact section form input:not(:last-child)[placeholder], html #contact section form textarea[placeholder], html #whitepaper #form form input:not(:last-child)[placeholder], html #whitepaper #form form textarea[placeholder] {
+      html #contact section form input[placeholder]:not(:last-child), html #contact section form textarea[placeholder], html #whitepaper #form form input[placeholder]:not(:last-child), html #whitepaper #form form textarea[placeholder] {
         color: #1c1c1c;
         font-size: 1em;
         font-weight: 100; }
