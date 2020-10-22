@@ -5,3 +5,4 @@
 kozea.cfg
 __pycache__
 base.Makefile
+config.custom.Makefile
