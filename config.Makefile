@@ -8,5 +8,6 @@ export FLASK_APP = $(PWD)/$(PROJECT_NAME).py
 PYTHON_ONLY = 1
 VENV = $(PWD)/.env
 PYTHON = python3.8
+PYTHON_SRCDIR = $(PWD)
 
 URL_PROD = https://www.kozea.fr
