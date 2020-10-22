@@ -7,6 +7,6 @@ export FLASK_APP = $(PWD)/$(PROJECT_NAME).py
 # Python env
 PYTHON_ONLY = 1
 VENV = $(PWD)/.env
-PYTHON = python3.7
+PYTHON = python3.8
 
 URL_PROD = https://www.kozea.fr
