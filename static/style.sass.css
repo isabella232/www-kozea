@@ -1231,7 +1231,7 @@ html .collapsible .menu {
         content: none; } }
 
 @media screen and (min-width: 481px) and (max-width: 800px) {
-  html body#index #news ul li#newsletter, html body#index #news ul li#download-brochure {
+  html body#index #news ul li#newsletter {
     margin-left: 0;
     width: 50%; }
   html body#index #news ul li#latest-news {
@@ -1379,7 +1379,7 @@ html .collapsible .menu {
         transform: none; }
   html body#index #news ul {
     flex-direction: column; }
-    html body#index #news ul > li#newsletter, html body#index #news ul > li#download-brochure, html body#index #news ul > li#latest-news {
+    html body#index #news ul > li#newsletter, html body#index #news ul > li#latest-news {
       margin-left: 0;
       width: 100%; }
   html body#index #follow .insta li, html body#index #follow .insta:after {
