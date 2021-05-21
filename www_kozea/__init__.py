@@ -2,19 +2,39 @@ from flask import Flask, render_template
 
 
 def create_app():
-    # breakpoint()
     app = Flask(__name__)
 
-    @app.route("/solutions/")
-    def solutions():
-        return render_template("solutions.html")
+    page_list = [
+        "à-propos",
+        "backoffice",
+        "community",
+        "contact",
+        "groupement",
+        "kozea-media",
+        "livres-blancs",
+        "lost",
+        "newsletter",
+        "nous-rejoindre",
+        "pharminfo",
+        "promomaker",
+        "ressources",
+        "solutions",
+        "témoignages",
+    ]
 
-    @app.route("/lost/")
-    def lost():
-        return render_template("lost.html")
+    for page in page_list:
+        create_endpoint(app, page)
 
     @app.route("/")
     def home():
         return render_template("home.html")
 
     return app
+
+
+def create_endpoint(app, page):
+    @app.route(f"/{page}/", endpoint=page)
+    def view_func():
+        return render_template(f"{page}.html")
+
+    return view_func
