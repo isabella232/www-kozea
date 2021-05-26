@@ -10,8 +10,30 @@
     <link type="image/png" rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
-  <body>
+  <body class="bg-gray-50 text-gray-500">
+    <header>
+      <nav>
+        <ul class="flex justify-center gap-4">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Ressources</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
     {% block content %}{% endblock %}
+    <footer>
+      <nav>
+        <ul class="flex justify-center gap-4">
+          <li><a href="#">Mon diagnostic</a></li>
+          <li><a href="#">Nous rejoindre</a></li>
+          <li><a href="#">Inscription newsletter</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
 
