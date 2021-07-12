@@ -1,8 +1,14 @@
 from flask import Flask, render_template
+from sassutils.wsgi import SassMiddleware
 
 
 def create_app():
     app = Flask(__name__)
+
+    app.wsgi_app = SassMiddleware(
+        app.wsgi_app,
+        {"www_kozea": ("static/sass", "static/css", "/static/css", False)},
+    )
 
     page_list = [
         "à-propos",
