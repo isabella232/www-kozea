@@ -139,7 +139,6 @@ nav.primary {
 
     h1 {
       margin-bottom: 2em;
-      text-transform: uppercase;
     }
 
     h2 {
@@ -170,7 +169,7 @@ nav.secondary {
 
 .wide-content {
   margin: 0 auto;
-  max-width: 60em;
+  max-width: 70em;
 }
 
 .small-p, .large-p {
@@ -180,12 +179,12 @@ nav.secondary {
 }
 
 .small-p {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .large-p {
   font-size: 1.2em;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .h-centered {
