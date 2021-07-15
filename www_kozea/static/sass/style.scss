@@ -63,6 +63,7 @@ input, select {
 
 $font-stack: Inter, sans-serif;
 $dark-blue: #000e51;
+$medium-blue: #0041C5;
 $light-blue: #006fff;
 $gradient-start-blue: $light-blue;
 $gradient-stop-blue: #00adff;
@@ -212,4 +213,70 @@ section {
 
   margin-bottom: 3em;
   margin-top: 3em;
+}
+
+.grid-wrapper {
+  column-gap: 1em;
+  display: grid;
+  //grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 1em;
+}
+
+.card {
+  border-color: $outline-grey;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+
+  img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+  }
+
+  figcaption {
+    padding: 1em;
+    p, div {
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+}
+
+.card__headline {
+  color: $dark-grey;
+  font-size: 0.7em;
+}
+
+.card__title {
+  color: $primary-color;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card__body {
+}
+
+.card__list {
+  list-style: inside "✓";
+  li {
+    margin-bottom: 1em;
+  }
+}
+
+.card__cta {
+  color: white;
+  a {
+    background-color: $light-blue;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1em;
+    transition: background-color 150ms;
+    &:hover {
+      background-color: $medium-blue;
+    }
+  }
 }

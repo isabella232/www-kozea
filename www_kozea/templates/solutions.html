@@ -30,33 +30,35 @@ Solutions
         l'attribution de nouvelles missions. Aujourd’hui, plus que jamais, les patients comptent sur vous.
         </p>
         <p class="large-p">
-        Les solutions complémentaires Kozea group ont été créées par et
+        Les solutions complémentaires Kozea group ont été créées par et pour
         des pharmaciens, dans le but de vous libérer du temps pour
         être plus proche de vos patients.
         </p>
       </div>
     </header>
-    <div>
-      <figure>
-        <img src="https://picsum.photos/300/200">
-        <figcaption>
-          <p>pharminfo.fr</p>
-          <p>Votre pharmacie disponible 24h/24 et 7j/7</p>
-          <p>
-          Des services adaptés pour vous et vos patients :
-          </p>
-          <ul>
-            <li>Envoi d'ordonnance</li>
-            <li>Click and Collect</li>
-            <li>Vente en ligne</li>
-            <li>Prise de rendez-vous</li>
-          </ul>
-          <button>→ En savoir plus</button>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src="https://picsum.photos/300/200">
-      </figure>
+    <div class="grid-wrapper wide-content">
+      {% for card in data['cards'] %}
+        <figure class="card">
+          <img src="{{ url_for('static', filename=card['cover']) }}">
+          <figcaption>
+            <p class="card__headline">{{ card['headline'] }}</p>
+            <p class="card__title">{{ card['title'] }}</p>
+            <div class="card__body">
+              <p>
+                {{ card['body'] }}
+              </p>
+              <ul class="card__list">
+                {% for feature in card['features'] %}
+                  <li>{{ feature }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            <p class="card__cta">
+              <a href="#">→ En savoir plus</a>
+            </p>
+          </figcaption>
+        </figure>
+      {% endfor %}
     </div>
   </section>
   <section class="h-centered gradient-filled light-text wide-content">
