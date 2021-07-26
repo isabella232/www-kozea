@@ -94,6 +94,18 @@ a {
 body {
   & > header {
     background: $dark-blue;
+    position: relative;
+
+    .logo {
+      display: flex;
+      position: absolute;
+      height: 100%;
+
+      img {
+        margin-left: 1em;
+        width: 11em;
+      }
+    }
   }
 }
 
@@ -101,7 +113,6 @@ nav {
   ul {
     display: flex;
     justify-content: center;
-
 
     li {
       a {
