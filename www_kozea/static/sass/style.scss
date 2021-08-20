@@ -101,19 +101,15 @@ body {
   }
 
   & > header {
-    .logo {
-      display: flex;
-      position: absolute;
-      height: 100%;
+    padding: 0 10em;
 
-      img {
-        margin-left: 1em;
-        width: 11em;
-      }
+    .logo {
+      display: block;
+      height: 4em;
     }
   }
 
-  footer {
+  & > footer {
     padding: 0 10em;
 
     .lower {
