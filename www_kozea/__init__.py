@@ -1,3 +1,5 @@
+import datetime
+
 from flask import Flask, render_template
 from sassutils.wsgi import SassMiddleware
 
@@ -99,6 +101,8 @@ def create_app():
     @app.route("/")
     def home():
         return render_template("home.html")
+
+    app.add_template_global(datetime)
 
     return app
 
