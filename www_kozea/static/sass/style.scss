@@ -72,6 +72,7 @@ $light-grey: #f6f7fb;
 $outline-grey: #d7d7ec;
 $label-grey: #7f86a8;
 $primary-color: $dark-blue;
+$text-bright: #fff;
 
 // Universal Box Sizing with Inheritance
 html {
@@ -92,10 +93,14 @@ a {
 }
 
 body {
-  & > header {
+  & > header, footer {
     background: $dark-blue;
+    color: $text-bright;
     position: relative;
 
+  }
+
+  & > header {
     .logo {
       display: flex;
       position: absolute;
@@ -107,9 +112,63 @@ body {
       }
     }
   }
+
+  footer {
+    padding: 0 10em;
+
+    .lower {
+      padding: 2em 0;
+    }
+    .upper {
+      padding: 2em 0;
+    }
+    .logo {
+      display: block;
+      height: 4em;
+    }
+    hr {
+      border: none;
+      background: white;
+      height: 1px;
+      margin: 0;
+    }
+  }
 }
 
-nav {
+.columns3-middle-expanded {
+  align-items: center;
+  display: flex;
+  .left, .right {
+    flex-basis: 0px; // Make side elements' width equal whatever their content
+    flex-grow: 1; // Make both side elements grow centering the middle one
+  }
+  .center {
+    margin: 0 2em;
+  }
+}
+
+.columns2-right-expanded {
+  align-items: center;
+  display: flex;
+  .right {
+    flex-grow: 1; // expand right column
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.lower {
+  .right {
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}
+
+nav.primary {
+  padding: 1em 0;
+
   ul {
     display: flex;
     justify-content: center;
@@ -121,7 +180,6 @@ nav {
       }
 
       &.active {
-        //color: $light-blue;
         font-weight: bold;
         a {
           text-decoration: underline;
@@ -132,9 +190,27 @@ nav {
   }
 }
 
-nav.primary {
-  color: #fff;
-  padding: 1em 0;
+nav.alternative {
+  ul {
+    display: flex;
+    li {
+      a {
+        display: inline-block;
+        padding: 1em 1em;
+      }
+    }
+  }
+}
+
+nav.social-media {
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  img {
+    height: 2.5em;
+  }
 }
 
 .page-banner {

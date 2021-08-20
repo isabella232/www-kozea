@@ -30,14 +30,65 @@
     </header>
     {% block content %}{% endblock %}
     <footer>
-      <nav>
-        <ul>
-          <li><a href="#">Mon diagnostic</a></li>
-          <li><a href="#">Nous rejoindre</a></li>
-          <li><a href="#">Inscription newsletter</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="upper columns3-middle-expanded">
+        <div class="left">
+          <img class="logo" src="{{ url_for('static', filename='images/logo-kozea-white.svg') }}">
+        </div>
+        <nav class="alternative center">
+          <ul>
+            <li><a href="#">Mon diagnostic</a></li>
+            <li><a href="#">Nous rejoindre</a></li>
+            <li><a href="#">Inscription newsletter</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="right">
+          <nav class="social-media">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/kozeagroup/">
+                  <img src="{{ url_for('static', filename='images/social/facebook.svg') }}" alt="Facebook">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/kozea/">
+                  <img src="{{ url_for('static', filename='images/social/instagram.svg') }}" alt="Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Kozeagroup">
+                  <img src="{{ url_for('static', filename='images/social/twitter.svg') }}" alt="Twitter">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/kozeagroup">
+                  <img src="{{ url_for('static', filename='images/social/linkedin.svg') }}" alt="LinkedIn">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UCx5VGRSsjpRWhc55EpI_gEw">
+                  <img src="{{ url_for('static', filename='images/social/youtube.svg') }}" alt="YouTube">
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Kozea">
+                  <img src="{{ url_for('static', filename='images/social/github.svg') }}" alt="GitHub">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <hr>
+      <div class="lower columns2-right-expanded">
+        <p class="left">© Copyright {{ datetime.date.today().year }}. Made with ♥ by Kozea group</p>
+        <nav class="alternative right">
+          <ul>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Conformité RGPD</a></li>
+          </ul>
+        </nav>
+      </div>
     </footer>
 
     <call-us
