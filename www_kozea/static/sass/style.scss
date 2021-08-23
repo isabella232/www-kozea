@@ -252,7 +252,8 @@ nav.secondary {
 }
 
 .wide-content {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 70em;
 }
 
@@ -377,15 +378,22 @@ section {
   display: flex;
   justify-content: space-between;
   padding: 5em 5em;
+
+  & > * {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }
 
 .big-cta-card__cta {
   color: white;
+  flex-shrink: 0; // Never shrink to always keep button label on a single line
   a {
     background-color: $light-blue;
     border-radius: 4px;
     display: inline-block;
-    padding: 1em;
+    font-weight: bold;
+    padding: 2em;
     transition: background-color 150ms;
     &:hover {
       background-color: $medium-blue;
