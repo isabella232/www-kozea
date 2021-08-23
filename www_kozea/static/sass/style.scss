@@ -386,17 +386,18 @@ section {
 }
 
 .big-cta-card__cta {
-  color: white;
   flex-shrink: 0; // Never shrink to always keep button label on a single line
-  a {
-    background-color: $light-blue;
-    border-radius: 4px;
-    display: inline-block;
-    font-weight: bold;
-    padding: 2em;
-    transition: background-color 150ms;
-    &:hover {
-      background-color: $medium-blue;
-    }
+}
+
+.cta-button {
+  background-color: $light-blue;
+  border-radius: 4px;
+  color: $text-bright;
+  display: inline-block;
+  font-weight: bold;
+  padding: 2em;
+  transition: background-color 150ms;
+  &:hover {
+    background-color: $medium-blue;
   }
 }
