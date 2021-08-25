@@ -315,6 +315,8 @@ section {
   row-gap: 1em;
 }
 
+// BEM components:
+
 .card {
   border-color: $outline-grey;
   border-radius: 5px;
@@ -400,4 +402,49 @@ section {
   &:hover {
     background-color: $medium-blue;
   }
+}
+
+.product-banner {
+  background: $dark-blue;
+  color: $text-bright;
+  display: flex;
+  padding: 5em;
+}
+
+.product-banner__descriptive {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  margin-right: 0.5em;
+
+  * {
+    margin: 2rem 0;
+  }
+}
+
+.product-banner__illustrative {
+  align-items: center;
+  display: flex;
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
+
+.product-banner__name {
+  font-size: 1.5em;
+}
+
+.product-banner__catchphrase {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.product-banner__description {
+  font-size: 1.5em;
+}
+
+.product-banner__image {
+  width: 100%;
 }

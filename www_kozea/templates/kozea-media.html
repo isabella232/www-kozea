@@ -5,6 +5,18 @@ Kozea Media
 {% endblock %}
 
 {% block content %}
+  <div class="product-banner">
+    <div class="product-banner__descriptive">
+      <span class="product-banner__name">Kozea media</span>
+      <p class="product-banner__catchphrase">Optimisez votre communication et votre visibilité en ligne</p>
+      <p class="product-banner__description">Kozea media conseille et accompagne les acteurs de santé dans leur communication digitale.</p>
+      <a href="#" class="cta-button">→ Contactez-nous</a>
+    </div>
+    <div class="product-banner__illustrative">
+      <img class="product-banner__image" src="{{ url_for('static', filename='images/kozea-media-header.png') }}">
+    </div>
+  </div>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Échangeons ensemble sur vos besoins et vos projets !</h1>
