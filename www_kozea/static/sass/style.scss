@@ -109,6 +109,13 @@ body {
     }
   }
 
+  &.home > header {
+    background-image: url("../images/accueil-header.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+
   & > footer {
     padding: 0 10em;
 

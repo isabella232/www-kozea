@@ -100,7 +100,7 @@ def create_app():
 
     @app.route("/")
     def home():
-        return render_template("home.html")
+        return render_template("home.html", page="home")
 
     app.add_template_global(datetime)
 
@@ -110,6 +110,8 @@ def create_app():
 def create_endpoint(app, page, page_data):
     @app.route(f"/{page}/", endpoint=page)
     def view_func():
-        return render_template(f"{page}.html", data=page_data.get(page))
+        return render_template(
+            f"{page}.html", data=page_data.get(page), page=page
+        )
 
     return view_func
