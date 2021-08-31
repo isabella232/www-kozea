@@ -3,6 +3,31 @@ import datetime
 from flask import Flask, render_template
 from sassutils.wsgi import SassMiddleware
 
+MENU_LIST = {
+    "solutions": "Solutions",
+    "ressources": "Ressources",
+    "à-propos": "À propos",
+    "contact": "Contact",
+}
+
+PAGE_LIST = [
+    "à-propos",
+    "backoffice",
+    "community",
+    "contact",
+    "groupement",
+    "kozea-media",
+    "livres-blancs",
+    "lost",
+    "newsletter",
+    "nous-rejoindre",
+    "pharminfo",
+    "promomaker",
+    "ressources",
+    "solutions",
+    "témoignages",
+]
+
 
 def create_app():
     app = Flask(__name__)
@@ -11,24 +36,6 @@ def create_app():
         app.wsgi_app,
         {"www_kozea": ("static/sass", "static/css", "/static/css", False)},
     )
-
-    page_list = [
-        "à-propos",
-        "backoffice",
-        "community",
-        "contact",
-        "groupement",
-        "kozea-media",
-        "livres-blancs",
-        "lost",
-        "newsletter",
-        "nous-rejoindre",
-        "pharminfo",
-        "promomaker",
-        "ressources",
-        "solutions",
-        "témoignages",
-    ]
 
     page_data = {
         "solutions": {
@@ -95,12 +102,12 @@ def create_app():
         }
     }
 
-    for page in page_list:
+    for page in PAGE_LIST:
         create_endpoint(app, page, page_data)
 
     @app.route("/")
     def home():
-        return render_template("home.html", page="home")
+        return render_template("home.html", page="home", menu_list=MENU_LIST)
 
     app.add_template_global(datetime)
 
@@ -111,7 +118,10 @@ def create_endpoint(app, page, page_data):
     @app.route(f"/{page}/", endpoint=page)
     def view_func():
         return render_template(
-            f"{page}.html", data=page_data.get(page), page=page
+            f"{page}.html",
+            data=page_data.get(page),
+            page=page,
+            menu_list=MENU_LIST,
         )
 
     return view_func

@@ -20,12 +20,11 @@
         </div>
         <nav class="primary center">
           <ul>
-            <li><a href="#">Accueil</a></li>
-            <li class="active"><a href="#">Solutions</a></li>
-            <li><a href="#">Ressources</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li class="{% if page == 'home' %}active{% endif %}"><a href="{{ url_for('home') }}">Accueil</a></li>
+            {% for key, label in menu_list.items() %}
+              <li class="{% if page == key %}active{% endif %}"><a href="{{ url_for(key) }}">{{ label }}</a></li>
+            {% endfor %}
+            <li class="{% if page == 'blog' %}active{% endif %}"><a href="#">Blog</a></li>
           </ul>
         </nav>
         <div class="right"></div>
