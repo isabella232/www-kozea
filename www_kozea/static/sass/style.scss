@@ -241,10 +241,6 @@ nav.secondary {
   background: #f1f0f5
 }
 
-.big-text {
-  font-size: 2em;
-}
-
 .small-text {
   font-size: 0.8em;
 }
@@ -264,23 +260,26 @@ nav.secondary {
   max-width: 70em;
 }
 
-.small-p, .large-p {
-  line-height: 1.5;
-  margin: 1em 0;
-  text-align: justify;
-}
-
 .small-p {
   font-size: 1em;
 }
 
 .large-p {
   font-size: 1.2em;
-  font-weight: 600;
+  font-weight: bold;
+}
+
+.big-text {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .h-centered {
  text-align: center;
+}
+
+.justified {
+  text-align: justify;
 }
 
 .rounded-corner {
@@ -308,6 +307,11 @@ nav.secondary {
 section {
   header {
     margin-bottom: 3em;
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 1rem 0;
   }
 
   margin-bottom: 3em;
