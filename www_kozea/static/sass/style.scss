@@ -423,10 +423,13 @@ section {
 }
 
 .product-banner {
-  background: $dark-blue;
-  color: $text-bright;
   display: flex;
   padding: 5em;
+}
+
+.product-banner--heading {
+  background: $dark-blue;
+  color: $text-bright;
 }
 
 .product-banner__descriptive {
