@@ -51,6 +51,7 @@ def create_app():
                         "Vente en ligne",
                         "Prise de rendez-vous",
                     ],
+                    "page": "pharminfo",
                 },
                 {
                     "cover": "images/kozea-media-mini-solutions.png",
@@ -63,6 +64,7 @@ def create_app():
                         "Régie média (publicité)",
                         "Création graphique et contenu rédactionnel",
                     ],
+                    "page": "kozea-media",
                 },
                 {
                     "cover": "images/backoffice-mini-solutions.png",
@@ -76,6 +78,7 @@ def create_app():
                         "Formations adaptées à l'équipe officinale",
                         "Suivi et contrôle en toute autonomie",
                     ],
+                    "page": "backoffice",
                 },
                 {
                     "cover": "images/promomaker-mini-solutions.png",
@@ -88,6 +91,7 @@ def create_app():
                         "Accessible pour tous et pour votre groupement",
                         "Choix du format d'impression",
                     ],
+                    "page": "promomaker",
                 },
                 {
                     "cover": "images/kozea-community-mini-solutions.png",
@@ -97,6 +101,7 @@ def create_app():
                     "les membres de l'équipe Kozea group et de leur expertise "
                     "pour la création de nouveaux projets.",
                     "features": [],
+                    "page": "community",
                 },
             ]
         }
