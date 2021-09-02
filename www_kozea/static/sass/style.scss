@@ -282,6 +282,14 @@ nav.secondary {
   text-align: justify;
 }
 
+.big-link {
+  color: $light-blue;
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .rounded-corner {
   border-radius: 5px;
 }
