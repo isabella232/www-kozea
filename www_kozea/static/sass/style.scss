@@ -469,3 +469,25 @@ section {
 .product-banner__image {
   width: 100%;
 }
+
+.key-figures {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-bottom: 5em;
+  padding-top: 5em;
+
+  @at-root #{&}__figure {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+}
+
+.key-figure {
+  @at-root #{&}__number {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+}
