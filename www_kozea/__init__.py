@@ -38,6 +38,36 @@ def create_app():
     )
 
     page_data = {
+        "home": {
+            "cards": [
+                {
+                    "icon": "images/service-pharminfo.svg",
+                    "title": "Votre pharmacie disponible 24h/24",
+                    "body": "Site internet avec réservation d'ordonnance, "
+                    "Click & Collect, vente en ligne.",
+                    "page": "pharminfo",
+                },
+                {
+                    "icon": "images/service-kozea-media.svg",
+                    "title": "Votre communication maîtrisée et externalisée",
+                    "body": "Réseaux sociaux, rédaction d'articles, "
+                    "création visuelle, régie média.",
+                    "page": "kozea-media",
+                },
+                {
+                    "icon": "images/service-backoffice.svg",
+                    "title": "Votre tiers-payant géré de A à Z",
+                    "body": "Délégation, formation, gestion en interne.",
+                    "page": "backoffice",
+                },
+                {
+                    "icon": "images/service-promomaker.svg",
+                    "title": "Vos campagnes promotionnelles en 1 clic",
+                    "body": "Outil simple et accessible pour votre PLV.",
+                    "page": "promomaker",
+                },
+            ]
+        },
         "solutions": {
             "cards": [
                 {
@@ -104,7 +134,7 @@ def create_app():
                     "page": "community",
                 },
             ]
-        }
+        },
     }
 
     for page in PAGE_LIST:
@@ -112,7 +142,12 @@ def create_app():
 
     @app.route("/")
     def home():
-        return render_template("home.html", page="home", menu_list=MENU_LIST)
+        return render_template(
+            "home.html",
+            page="home",
+            data=page_data.get("home"),
+            menu_list=MENU_LIST,
+        )
 
     app.add_template_global(datetime)
 

@@ -393,6 +393,36 @@ section {
   }
 }
 
+.card2 {
+  border-color: $outline-grey;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  text-align: left;
+
+  @at-root #{&}__title {
+    color: $primary-color;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  @at-root #{&}__body {
+  }
+
+  @at-root #{&}__cta {
+    color: $light-blue;
+    font-weight: bold;
+  }
+
+  @at-root #{&}__icon {
+    width: 75px;
+  }
+}
+
 .big-cta-card {
   align-items: center;
   display: flex;

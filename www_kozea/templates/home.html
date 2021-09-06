@@ -8,6 +8,27 @@ Accueil
   <section class="h-centered wide-content">
     <p class="big-text">Des solutions adaptées à vos besoins</p>
     <p>Libérez-vous du temps pour être au plus proche de vos patients, avec les services complémentaires Kozea group.</p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+        <p class="card2__body">
+        {{ card['body'] }}
+        </p>
+        <p class="card2__cta">
+          <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+    <section>
+      <a class="cta-button" href="{{ url_for('solutions') }}">→ Toutes nos solutions</a>
+    </section>
   </section>
 
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
