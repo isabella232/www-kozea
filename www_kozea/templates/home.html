@@ -9,13 +9,14 @@ Accueil
     <p class="big-text">Des solutions adaptées à vos besoins</p>
     <p>Libérez-vous du temps pour être au plus proche de vos patients, avec les services complémentaires Kozea group.</p>
   </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Vous êtes un groupement ?</h1>
       <p>Découvrez nos solutions et offres adaptées pour vous, vos adhérents et leurs patients.</p>
     </div>
     <p class="big-cta-card__cta" >
-      <a class="cta-button" href="#">→ C'est par ici !</a>
+      <a class="cta-button" href="{{ url_for('groupement') }}">→ C'est par ici !</a>
     </p>
   </section>
 
@@ -30,7 +31,7 @@ Accueil
         pour vous recentrer sur votre cœur de métier (la vente et le conseil) et vous donner les clés pour acquérir
         de nouvelles parts de marché.
         </p>
-        <a href="#" class="cta-button">→ En savoir plus</a>
+        <a href="{{ url_for('à-propos') }}" class="cta-button">→ En savoir plus</a>
       </div>
       <div class="product-banner__illustrative">
         <img class="product-banner__image" src="{{ url_for('static', filename='images/accueil-equipe.png') }}">
