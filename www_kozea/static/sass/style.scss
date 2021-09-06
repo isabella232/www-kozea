@@ -342,6 +342,8 @@ section {
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
+  display: flex;
+  flex-direction: column;
 
   img {
     object-fit: cover;
@@ -350,6 +352,10 @@ section {
   }
 
   figcaption {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
     padding: 1em;
     p, div {
       &:not(:last-child) {
