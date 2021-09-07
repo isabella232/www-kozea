@@ -53,9 +53,11 @@ Solutions
                 {% endfor %}
               </ul>
             </div>
-            <p class="card__cta">
-              <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
-            </p>
+            <div class="card__cta">
+              <div class="cta-button">
+                <a class="cta-button__inner" href="{{ url_for(card['page']) }}">En savoir plus</a>
+              </div>
+            </div>
           </figcaption>
         </figure>
       {% endfor %}
@@ -67,9 +69,11 @@ Solutions
       <h1 class="big-text">Vous êtes un groupement ?</h1>
       <p>Découvrez nos solutions et offres adaptées pour vous, vos adhérents et leurs patients.</p>
     </div>
-    <p class="big-cta-card__cta" >
-    <a class="cta-button" href="{{ url_for('groupement') }}">→ C'est par ici !</a>
-    </p>
+    <div class="big-cta-card__cta" >
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('groupement') }}">C'est par ici !</a>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -86,9 +90,11 @@ Solutions
       <h1 class="big-text">Besoin d'aide ?</h1>
       <p>Vous ne savez pas vers quelle(s) offre(s) ou service(s) vous tourner ? Suivez notre guide !</p>
     </div>
-    <p class="big-cta-card__cta" >
-      <a class="cta-button" href="#">→ C'est par ici !</a>
-    </p>
+    <div class="big-cta-card__cta" >
+      <div class="cta-button">
+        <a class="cta-button__inner" href="#">C'est par ici !</a>
+      </div>
+    </div>
   </section>
   <section class="wide-content">
     <p class="big-text">Plus de 2700 clients font confiance à Kozea group, pourquoi pas vous ?</p>

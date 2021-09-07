@@ -9,8 +9,10 @@ Groupement
     <div class="stacking-block">
       <h1 class="big-text">Une autre idée de projet en tête ? Échangeons ensemble sur vos besoins !</h1>
     </div>
-    <p class="big-cta-card__cta" >
-      <a class="cta-button" href="#">→ Contactez-nous</a>
-    </p>
+    <div class="big-cta-card__cta" >
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+      </div>
+    </div>
   </section>
 {% endblock %}

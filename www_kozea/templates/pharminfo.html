@@ -10,7 +10,9 @@ Pharminfo
       <span class="product-banner__name">Pharminfo.fr</span>
       <p class="product-banner__catchphrase">Le site internet de votre pharmacie pour rester connecté à vos patients</p>
       <p class="product-banner__description">Simple d'utilisation, il assure à votre pharmacie une meilleure visibilité en ligne et des services adaptés pour vous et vos patients.</p>
-      <a href="#" class="cta-button">→ Réservez une démonstration</a>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="#">Réservez une démonstration</a>
+      </div>
     </div>
     <div class="product-banner__illustrative">
       <img class="product-banner__image" src="{{ url_for('static', filename='images/pharminfo-header.png') }}">
@@ -22,8 +24,10 @@ Pharminfo
       <h1 class="big-text">Aujourd'hui, avoir un site internet est indispensable !</h1>
       <p>Lancez-vous !</p>
     </div>
-    <p class="big-cta-card__cta" >
-      <a class="cta-button" href="#">→ Réserver une démonstration</a>
-    </p>
+    <div class="big-cta-card__cta">
+      <div class="cta-button">
+        <a class="cta-button__inner" href="#">Réservez une démonstration</a>
+      </div>
+    </div>
   </section>
 {% endblock %}

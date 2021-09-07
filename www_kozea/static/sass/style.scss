@@ -412,14 +412,8 @@ section {
 .card__cta {
   color: white;
   a {
-    background-color: $light-blue;
-    border-radius: 4px;
-    display: inline-block;
+    font-weight: normal;
     padding: 1em;
-    transition: background-color 150ms;
-    &:hover {
-      background-color: $medium-blue;
-    }
   }
 }
 
@@ -475,10 +469,25 @@ section {
   color: $text-bright;
   display: inline-block;
   font-weight: bold;
-  padding: 2em;
   transition: background-color 150ms;
+
   &:hover {
     background-color: $medium-blue;
+  }
+
+  @at-root #{&}__inner {
+    align-items: center;
+    display: flex;
+    padding: 2em;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      background-image: url("/static/images/arrow-white.svg");
+      height: 1em;
+      margin-right: 0.5em;
+      width: 1em;
+    }
   }
 }
 
@@ -501,7 +510,7 @@ section {
   justify-content: center;
   margin-right: 0.5em;
 
-  * {
+  & > * {
     margin: 2rem 0;
   }
 }

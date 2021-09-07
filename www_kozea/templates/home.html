@@ -8,9 +8,9 @@ Accueil
   <div class="hero-text hero__hero-text">
     <p class="hero-text__title">Recentrez-vous sur votre cœur de métier</p>
     <p class="hero-text__catchphrase">Des solutions digitales pour améliorer la performance de votre officine</p>
-    <p>
-      <a class="cta-button" href="#">→ Nos solutions</a>
-    </p>
+    <div class="cta-button">
+      <a class="cta-button__inner" href="{{ url_for('solutions') }}">Nos solutions</a>
+    </div>
   </div>
 {% endblock %}
 
@@ -37,7 +37,9 @@ Accueil
       {% endfor %}
     </div>
     <section>
-      <a class="cta-button" href="{{ url_for('solutions') }}">→ Toutes nos solutions</a>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('solutions') }}">Toutes nos solutions</a>
+      </div>
     </section>
   </section>
 
@@ -47,7 +49,9 @@ Accueil
       <p>Découvrez nos solutions et offres adaptées pour vous, vos adhérents et leurs patients.</p>
     </div>
     <p class="big-cta-card__cta" >
-      <a class="cta-button" href="{{ url_for('groupement') }}">→ C'est par ici !</a>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('groupement') }}">C'est par ici !</a>
+      </div>
     </p>
   </section>
 
@@ -62,7 +66,9 @@ Accueil
         pour vous recentrer sur votre cœur de métier (la vente et le conseil) et vous donner les clés pour acquérir
         de nouvelles parts de marché.
         </p>
-        <a href="{{ url_for('à-propos') }}" class="cta-button">→ En savoir plus</a>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('à-propos') }}">En savoir plus</a>
+        </div>
       </div>
       <div class="product-banner__illustrative">
         <img class="product-banner__image" src="{{ url_for('static', filename='images/accueil-equipe.png') }}">
@@ -101,7 +107,9 @@ Accueil
         en ligne de médicaments et de produits de parapharmacie. Il vous permettra d'identifier les solutions à
         mettre en œuvre pour accélérer les ventes sur votre site internet.
         </p>
-        <a href="https://3a99a3e5.sibforms.com/serve/MUIEAIB1GiFexNvTNs4GXz69RhG-YxXdCZwlj9fH6WZbvYqcT52sNzrvTsvgsP7qIW-Ows15p8z24pU2VV-vd7lMYV4_OUtcfuLH13q5ZLwN_Iuu3dPI-81BZ3gYlpRNsNM_11J0yzRLcarVI-yEn4F4h_YipYrV1ucCR7NQgeBesZm-emCF-RYDQIcn9vlDcaZikfNX-J5HqUz3" class="cta-button">→ Télécharger</a>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="https://3a99a3e5.sibforms.com/serve/MUIEAIB1GiFexNvTNs4GXz69RhG-YxXdCZwlj9fH6WZbvYqcT52sNzrvTsvgsP7qIW-Ows15p8z24pU2VV-vd7lMYV4_OUtcfuLH13q5ZLwN_Iuu3dPI-81BZ3gYlpRNsNM_11J0yzRLcarVI-yEn4F4h_YipYrV1ucCR7NQgeBesZm-emCF-RYDQIcn9vlDcaZikfNX-J5HqUz3">Télécharger</a>
+        </div>
       </div>
       <div class="product-banner__illustrative">
         <img class="product-banner__image" src="{{ url_for('static', filename='images/livre-blanc-pharminfo-developpement.jpg') }}">
@@ -110,7 +118,9 @@ Accueil
   </section>
 
   <section class="h-centered wide-content">
-    <a class="cta-button" href="https://kozeagroup.wordpress.com/">→ Notre blog</a>
+    <div class="cta-button">
+      <a class="cta-button__inner" href="https://kozeagroup.wordpress.com/">Notre blog</a>
+    </div>
   </section>
 
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
@@ -118,9 +128,11 @@ Accueil
       <h1 class="big-text">Optimisez votre présence digitale et suivez nos actualités !</h1>
       <p>Tous les mois, recevez des conseils faciles à mettre en place pour développer votre pharmacie en ligne !</p>
     </div>
-    <p class="big-cta-card__cta" >
-      <a class="cta-button" href="https://3a99a3e5.sibforms.com/serve/MUIEAMliWFdHXgDn1V8zASAK2tVyNzu3IMDoYlFSpsGCXf84ZgTIV0iO2nCOMEU77n_8CYFLsHCGR0dhsAz0CMLSkHbtMW9MBe22nVkPhqyzAN5LVR6jrmBjEmgJ4OcMkWJHEBAckmU6Cj-EHTMqHlIm-QDE4MNZo2BNZ9GCSLKZT3vdd46oTJcRviZd5l06UYaTtqop6BcPo3zp">→ M'inscrire à la newsletter</a>
-    </p>
+    <div class="big-cta-card__cta"></p>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="https://3a99a3e5.sibforms.com/serve/MUIEAMliWFdHXgDn1V8zASAK2tVyNzu3IMDoYlFSpsGCXf84ZgTIV0iO2nCOMEU77n_8CYFLsHCGR0dhsAz0CMLSkHbtMW9MBe22nVkPhqyzAN5LVR6jrmBjEmgJ4OcMkWJHEBAckmU6Cj-EHTMqHlIm-QDE4MNZo2BNZ9GCSLKZT3vdd46oTJcRviZd5l06UYaTtqop6BcPo3zp">M'inscrire à la newsletter</a>
+      </div>
+    </div>
   </section>
   <section class="h-centered wide-content">
     <p class="big-text">Un projet ? Une collaboration ? Des questions ?</p>
