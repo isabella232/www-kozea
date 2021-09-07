@@ -13,7 +13,7 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
   <body class="{{ page }}">
-    <header>
+    <header {% if page == 'home' %}class="hero"{% endif %}>
       <div class="columns3-middle-expanded">
         <div class="left">
           <img class="logo" src="{{ url_for('static', filename='images/logo-kozea-white.svg') }}">
@@ -29,6 +29,7 @@
         </nav>
         <div class="right"></div>
       </div>
+      {% block header_content %}{% endblock %}
     </header>
     {% block content %}{% endblock %}
     <footer>

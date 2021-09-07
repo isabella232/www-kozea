@@ -109,13 +109,6 @@ body {
     }
   }
 
-  &.home > header {
-    background-image: url("../images/accueil-header.png");
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-  }
-
   & > footer {
     padding: 0 10em;
 
@@ -335,7 +328,36 @@ section {
   row-gap: 1em;
 }
 
+
 // BEM components:
+
+.hero {
+    background-image: url("../images/accueil-header.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    @at-root #{&}__hero-text {
+      bottom: 5em;
+      position: absolute;
+      width: 50%;
+    }
+}
+
+.hero-text {
+  @at-root #{&}__title {
+    font-size: 4em;
+    font-weight: bold;
+  }
+
+  @at-root #{&}__catchphrase {
+    font-size: 1.2em;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
 
 .card {
   border-color: $outline-grey;
