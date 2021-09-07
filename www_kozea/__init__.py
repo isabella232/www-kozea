@@ -17,6 +17,7 @@ PAGE_LIST = [
     "contact",
     "groupement",
     "kozea-media",
+    "legal",
     "livres-blancs",
     "lost",
     "newsletter",
