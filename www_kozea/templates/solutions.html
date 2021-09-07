@@ -68,7 +68,7 @@ Solutions
       <p>Découvrez nos solutions et offres adaptées pour vous, vos adhérents et leurs patients.</p>
     </div>
     <p class="big-cta-card__cta" >
-      <a class="cta-button" href="#">→ C'est par ici !</a>
+    <a class="cta-button" href="{{ url_for('groupement') }}">→ C'est par ici !</a>
     </p>
   </section>
 
@@ -89,5 +89,11 @@ Solutions
     <p class="big-cta-card__cta" >
       <a class="cta-button" href="#">→ C'est par ici !</a>
     </p>
+  </section>
+  <section class="wide-content">
+    <p class="big-text">Plus de 2700 clients font confiance à Kozea group, pourquoi pas vous ?</p>
+  </section>
+  <section class="h-centered wide-content">
+    <p><a class="big-link" href="{{ url_for('contact') }}">Contactez-nous !</a></p>
   </section>
 {% endblock %}
