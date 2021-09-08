@@ -450,6 +450,11 @@ section {
   @at-root #{&}__icon {
     width: 75px;
   }
+
+  @at-root #{&}--filled {
+    background: $light-grey;
+    border-style: none;
+  }
 }
 
 .big-card {

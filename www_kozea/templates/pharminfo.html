@@ -53,6 +53,26 @@ Pharminfo
     Aujourd'hui, plus de 2500 pharmacies font confiance à Pharminfo.fr, pourquoi pas vous ?
   </section>
 
+  <section class="wide-content">
+    <p class="h-centered large-p narrow-content">
+      Pharminfo.fr propose 4 offres dédiées aux pharmacies d'officine
+    </p>
+    <div class="grid-wrapper">
+      {% for card in data['cards_alt'] %}
+        <figure class="card2 card2--filled">
+          <div>
+            <p class="card2__title">
+              {{ card["title"] }}
+            </p>
+            <p class="card2__body">
+              {{ card["body"] }}
+            </p>
+          </div>
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="big-text stacking-block">
       <h1>Aujourd'hui, avoir un site internet est indispensable !</h1>

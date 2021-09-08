@@ -182,6 +182,28 @@ def create_app():
                     "title": "Prise de rendez-vous en ligne",
                 },
             ],
+            "cards_alt": [
+                {
+                    "title": "Ecoweb",
+                    "body": "Site internet vitrine",
+                },
+                {
+                    "title": "Flexiweb+",
+                    "body": "Envoi d'ordonnance et prise de rendez-vous "
+                    "en ligne",
+                },
+                {
+                    "title": "Click and Collect",
+                    "body": "Commande en ligne avec retrait et paiement "
+                    "en pharmacie",
+                },
+                {
+                    "title": "Optiweb",
+                    "body": "Vente en ligne avec une base de plus de "
+                    "8000 produits "
+                    "et la synchronisation possible avec votre LGO",
+                },
+            ],
         },
     }
 
