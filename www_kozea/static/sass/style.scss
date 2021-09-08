@@ -564,3 +564,50 @@ section {
     margin-bottom: 0.3em;
   }
 }
+
+.fact {
+  margin-bottom: 15em;
+  position: relative;
+
+  @at-root #{&}__illustration {
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+  }
+
+  @at-root #{&}__illustration--pharminfo {
+    background-image: url("../images/pharminfo-presentation.jpg");
+  }
+
+  @at-root #{&}__illustration--kozea-media {
+    background-image: url("../images/kozea-media-presentation.png");
+  }
+
+  @at-root #{&}__illustration--backoffice {
+    background-image: url("../images/backoffice-presentation.png");
+  }
+
+  @at-root #{&}__illustration--promomaker {
+    background-image: url("../images/promomaker-presentation.png");
+  }
+
+  @at-root #{&}__content {
+    border-radius: 5px;
+    bottom: 0;
+    background: $dark-blue;
+    color: $text-bright;
+    line-height: 1.5;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 3em;
+    position: absolute;
+    transform: translate(3em, 50%);
+    width: 40%;
+  }
+
+  @at-root #{&}__figure {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
