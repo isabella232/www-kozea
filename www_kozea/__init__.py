@@ -163,6 +163,26 @@ def create_app():
                 },
             ],
         },
+        "pharminfo": {
+            "cards": [
+                {
+                    "icon": "images/pharminfo-ordonnance.svg",
+                    "title": "Envoi d'ordonnance",
+                },
+                {
+                    "icon": "images/pharminfo-click-collect.svg",
+                    "title": "Click and Collect",
+                },
+                {
+                    "icon": "images/pharminfo-vente.svg",
+                    "title": "Vente en ligne",
+                },
+                {
+                    "icon": "images/pharminfo-rendez-vous.svg",
+                    "title": "Prise de rendez-vous en ligne",
+                },
+            ],
+        },
     }
 
     for page in PAGE_LIST:

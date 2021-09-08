@@ -30,6 +30,25 @@ Pharminfo
     </div>
   </section>
 
+  <section class="wide-content">
+    <p class="h-centered large-p narrow-content">
+      L'objectif de Pharminfo.fr est de prolonger sur le web la relation entre le pharmacien
+      et ses patients, à travers un site internet clé en main à personnaliser.
+    </p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="big-text stacking-block">
       <h1>Aujourd'hui, avoir un site internet est indispensable !</h1>
