@@ -85,6 +85,25 @@ Solutions
       <p>Laissez faire l’équipe Kozea group !</p>
     </div>
   </section>
+
+  <section class="h-centered wide-content">
+    <div class="grid-wrapper">
+      {% for card in data['cards_alt'] %}
+        <figure class="card2">
+          <p class="card2__title">
+            {{ card["title"] }}
+          </p>
+          <p class="card2__body">
+            {{ card["body"] }}
+          </p>
+          <p class="card2__cta">
+            <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
+          </p>
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Besoin d'aide ?</h1>

@@ -134,7 +134,34 @@ def create_app():
                     "features": [],
                     "page": "community",
                 },
-            ]
+            ],
+            "cards_alt": [
+                {
+                    "title": "Mise à jour de votre site internet",
+                    "body": "Augmentez votre référencement sur internet pour "
+                    "plus de trafic en officine.",
+                    "page": "kozea-media",
+                },
+                {
+                    "title": "Animation des réseaux sociaux",
+                    "body": "Soyez au plus proche de vos patients et "
+                    "optimisez votre présence en ligne.",
+                    "page": "kozea-media",
+                },
+                {
+                    "title": "Création de vos contenus rédactionnels et "
+                    "graphiques",
+                    "body": "Valorisez votre communication et l'image de "
+                    "votre pharmacie.",
+                    "page": "kozea-media",
+                },
+                {
+                    "title": "Gestion de votre tiers-payant",
+                    "body": "Déléguez les tâches administratives pour vous "
+                    "recentrer sur votre cœur de métier.",
+                    "page": "backoffice",
+                },
+            ],
         },
     }
 
