@@ -205,6 +205,36 @@ def create_app():
                 },
             ],
         },
+        "kozea-media": {
+            "cards": [
+                {
+                    "icon": "images/kozea-media-gestion.svg",
+                    "title": "Gestion des réseaux sociaux",
+                    "body": "Facebook & Instagram",
+                },
+                {
+                    "icon": "images/kozea-media-creation.svg",
+                    "title": "Création graphique",
+                    "body": "Logo, affiche, charte graphique, thème "
+                    "personnalisé pour votre site internet",
+                },
+                {
+                    "icon": "images/kozea-media-redaction.svg",
+                    "title": "Contenu rédactionnel",
+                    "body": "Article de blog, newsletter",
+                },
+                {
+                    "icon": "images/kozea-media-conseil.svg",
+                    "title": "Conseil stratégie digitale",
+                    "body": "Plan d'actions, accompagnement",
+                },
+                {
+                    "icon": "images/kozea-media-regie.svg",
+                    "title": "Régie média",
+                    "body": "Gestion d'espaces publicitaires, plan média",
+                },
+            ]
+        },
     }
 
     for page in PAGE_LIST:

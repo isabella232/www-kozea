@@ -30,6 +30,57 @@ Kozea Media
     </div>
   </section>
 
+  <section class="h-centered narrow-content">
+    <div>
+      <p class="big-text">L'agence digitale des professionnels de santé</p>
+      <p>Notre agence s'engage à vous apporter son expertise en respectant les
+      contraintes du secteur de la santé et à vous assurer un retour sur investissement
+      de vos actions de communication.</p>
+    </div>
+  </section>
+
+  <section class="wide-content">
+    <p class="h-centered large-p narrow-content">
+      En réponse à vos besoins, Kozea media vous propose les services suivants :
+    </p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+        <p class="card2__body">
+        {{ card['body'] }}
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="wide-content">
+    <div class="product-banner product-banner--flipped">
+      <div class="product-banner__descriptive">
+        <p class="product-banner__catchphrase">Nous vous garantissons</p>
+        <ul class="feature-list product-banner__description">
+          <li>Une plus grande visibilité sur le web</li>
+          <li>Le respect des chartes déontologiques et juridiques</li>
+          <li>Des résultats concrets</li>
+          <li>Un accompagnement personnalisé</li>
+          <li>Une totale satisfactions de nos services</li>
+        </ul>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="https://media.kozea.fr/">Plus d'informations sur le site dédié</a>
+        </div>
+      </div>
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/kozea-media-avantages.png') }}">
+      </div>
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Échangeons ensemble sur vos besoins et vos projets !</h1>
@@ -38,6 +89,57 @@ Kozea Media
       <div class="cta-button">
         <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid-wrapper wide-content">
+      <figure class="card">
+        <figcaption>
+          <p class="card__headline">Services associés</p>
+          <p class="card__title">Focus sur la gestion de vos réseaux sociaux</p>
+          <div class="card__body">
+            <p>
+            Avec 38 millions d'utilisateurs actifs mensuels en France en 2021 pour
+            Facebook et 24 millions pour Instagram, ce sont les réseaux sociaux sur
+            lesquels il faut être présent aujourd'hui. Vos patients se trouvent
+            déjà probablement sur ces réseaux.
+            </p>
+            <p>
+            Avec la publication de conseils santé, de relais d'information de santé,
+            de vos événements, vos promotions, etc… gérée par un professionnel de
+            la communication, vous répondrez aux attentes de vos patients et optimiserez
+            votre visibilité !
+            </p>
+          </div>
+          <div class="card__cta">
+            <div class="cta-button">
+              <a class="cta-button__inner" href="#">En savoir plus</a>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="card">
+        <figcaption>
+          <p class="card__headline">Services associés</p>
+          <p class="card__title">Focus sur la création de contenu rédactionnel et graphique</p>
+          <div class="card__body">
+            <p>
+            Que vous ayez besoin d'aide dans la rédaction d'articles pour votre blog, vos
+            newsletters, ou bien dans la création d'une nouvelle identité graphique pour
+            vous différencier, nous sommes là pour vous accompagner dans la réussite de vos
+            projets. En fonction de vos besoins, notre équipe de chargés de communication et de
+            webdesigners seront là pour vous conseiller et vous assurer le retour sur investissement
+            de vos actions de communication.
+            </p>
+          </div>
+          <div class="card__cta">
+            <div class="cta-button">
+              <a class="cta-button__inner" href="#">En savoir plus</a>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   </section>
 {% endblock %}
