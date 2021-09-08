@@ -11,7 +11,7 @@ Backoffice
       <p class="product-banner__catchphrase">Votre tiers-payant géré de A à Z</p>
       <p class="product-banner__description">Backoffice regroupe un ensemble de services essentiels à la gestion du tiers-payant pour les professionnels de santé.</p>
       <div class="cta-button">
-        <a class="cta-button__inner" href="#">Mon diagnostic</a>
+        <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
       </div>
     </div>
     <div class="product-banner__illustrative">
@@ -19,13 +19,24 @@ Backoffice
     </div>
   </div>
 
+  <section class="wide-content">
+    <div class="fact">
+      <div class="fact__illustration fact__illustration--backoffice">
+      </div>
+      <div class="fact__content">
+        <span class="fact__figure">96%</span> des pharmaciens souhaitent réduire le
+        temps passé à la gestion du tier-payant. Et vous ?
+      </div>
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Pour un diagnostic rapide et sans engagement de vos rejets et impayés, contactez nous !</h1>
     </div>
     <div class="big-cta-card__cta" >
       <div class="cta-button">
-        <a class="cta-button__inner" href="#">Mon diagnostic</a>
+        <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
       </div>
     </div>
   </section>

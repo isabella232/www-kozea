@@ -140,7 +140,7 @@ def create_app():
                     "title": "Mise à jour de votre site internet",
                     "body": "Augmentez votre référencement sur internet pour "
                     "plus de trafic en officine.",
-                    "page": "kozea-media",
+                    "page": "pharminfo",
                 },
                 {
                     "title": "Animation des réseaux sociaux",
