@@ -30,6 +30,60 @@ Backoffice
     </div>
   </section>
 
+  <section class="wide-content">
+    <p class="h-centered large-p narrow-content">
+      La gestion de votre tiers-payant
+    </p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+        <p class="card2__body">
+        {{ card['body'] }}
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="h-centered">
+    <iframe
+           width="560"
+           height="315"
+           src="https://www.youtube-nocookie.com/embed/Xhf10RkEvwY"
+           title="YouTube video player"
+           frameborder="0"
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           allowfullscreen>
+    </iframe>
+  </section>
+
+  <section class="wide-content">
+    <div class="product-banner product-banner--flipped">
+      <div class="product-banner__descriptive">
+        <p class="product-banner__catchphrase">Pourquoi faire appel à Backoffice ?</p>
+        <ul class="feature-list product-banner__description">
+          <li>Gain de temps et optimisation au comptoir</li>
+          <li>Récupération rapide de la trésorerie (98% de taux de recouvrement)</li>
+          <li>Accélération des délais d'encaissement</li>
+          <li>Simplification du suivi des impayés</li>
+          <li>Suivi statistique pour aider à réduire le nombre de rejets</li>
+        </ul>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="https://lagestiondutierspayant.fr/">Plus d'informations sur le site dédié</a>
+        </div>
+      </div>
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/backoffice-avantages.png') }}">
+      </div>
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Pour un diagnostic rapide et sans engagement de vos rejets et impayés, contactez nous !</h1>
@@ -38,6 +92,35 @@ Backoffice
       <div class="cta-button">
         <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
       </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid-wrapper wide-content">
+      <figure class="card">
+        <figcaption>
+          <p class="card__headline">Services associés</p>
+          <p class="card__title">Focus sur la gestion de votre tiers-payant</p>
+          <div class="card__body">
+            <p>
+            La gestion du tiers-payant vous semble chronophage ? Déléguez l'ensemble
+            de ces tâches à un expert de ce domaine.
+            </p>
+            <p>
+            La gestion du tiers-payant représente en moyenne 2038 € de coût de gestion
+            et 12 heures de travail par mois pour le suivi et le traitement des contentieux.
+            Avec une équipe de gestionnaires Backoffice, gagnez du temps et de l'argent, et
+            bénéficiez d'un accompagnement régulier et personnalisé pour vous aider à
+            réduire le nombre de rejets.
+            </p>
+          </div>
+          <div class="card__cta">
+            <div class="cta-button">
+              <a class="cta-button__inner" href="#">En savoir plus</a>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
     </div>
   </section>
 {% endblock %}

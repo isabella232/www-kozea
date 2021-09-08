@@ -235,6 +235,31 @@ def create_app():
                 },
             ]
         },
+        "backoffice": {
+            "cards": [
+                {
+                    "icon": "images/backoffice-gestion.svg",
+                    "title": "Pour gérer votre tiers-payant en interne",
+                    "body": "Nous mettons à votre disposition un outil web "
+                    "facile d'utilisation avec un contrôle simple et rapide "
+                    "de vos rejets",
+                },
+                {
+                    "icon": "images/backoffice-externalisation.svg",
+                    "title": "Un service d'externalisation pour plus de "
+                    "liberté",
+                    "body": "Déléguez l'ensemble de la gestion de votre "
+                    "tiers-payant à nos experts !",
+                },
+                {
+                    "icon": "images/backoffice-formation.svg",
+                    "title": "Pour comprendre et approfondir la gestion du "
+                    "tiers-payant",
+                    "body": "Nous proposons plusieurs offres de formations "
+                    "pour les débutants comme pour les plus experts !",
+                },
+            ]
+        },
     }
 
     for page in PAGE_LIST:
