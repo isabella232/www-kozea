@@ -5,6 +5,153 @@
 {% endblock %}
 
 {% block content %}
+  <section class="wide-content">
+    <div class="fact fact--story">
+      <div class="fact__illustration fact__illustration--a-propos">
+      </div>
+      <div class="fact__content">
+        <h1 class="fact__header">La petite histoire</h1>
+        <p>Kozea group a été fondé en 2007 avec la volonté de simplifier et d'améliorer le
+        quotidien des acteurs de santé.</p>
+        <p>À l'origine, Guillaume Ayoub (ingénieur INSA) et Philippe Donadieu (docteur en
+        pharmacie) ont associé leurs compétences pour créer les premiers sites internet pour
+        les pharmacies d'officine.</p>
+        <p>Aujourd'hui, nous mettons à disposition des pharmaciens d'officine des solutions
+        digitales performantes pour leur permettre de se recentrer sur leur cœur de métier.
+        En simplifiant et en améliorant la gestion du back office des professionnels de santé,
+        ils se dégagent donc plus de tmeps au comptoir pour s'occuper de leurs patients.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="h-centered wide-content">
+    <p class="big-text">Des solutions adaptées à vos besoins</p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+        <p class="card2__cta">
+          <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+    <section>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('solutions') }}">Nos services</a>
+      </div>
+    </section>
+  </section>
+
+  <section class="wide-content">
+    <div class="product-banner">
+      <div class="product-banner__descriptive">
+        <div class="product-banner__description">
+          <p>
+          Véritable incubateur de solutions digitales innovantes, Kozea group propose
+          également des services web à forte valeur ajoutée pour accompagner les entreprises
+          dans leur recherche d'innovation.
+          </p>
+          <p>
+          En utilisant des méthodes de travail comme le design sprint, l'équipe de Koze
+          group crée des projets avec rigueur et réactivité.
+          </p>
+          <p>
+          Grâce à son expertise technique et de développement web, Kozea group est aujourd'hui
+          reconnu au niveau mondial pour sa contribution dans l'univers du logiciel libre.
+          </p>
+        </div>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('à-propos') }}">En savoir plus</a>
+        </div>
+      </div>
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/a-propos-community.png') }}">
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-filled light-text">
+    <ul class="key-figures">
+      <li class="key-figure key-figures__figure">
+        <span class="key-figure__number">37+%</span> projets développés
+      </li>
+      <li class="key-figure key-figures__figure">
+        <span class="key-figure__number">2700</span> clients
+      </li>
+      <li class="key-figure key-figures__figure">
+        <span class="key-figure__number">15</span> groupements pharmaceutiques partenaires
+      </li>
+      <li class="key-figure key-figures__figure">
+        <span class="key-figure__number">20</span> collaborateurs dévoués
+      </li>
+      <li class="key-figure key-figures__figure">
+        <span class="key-figure__number">1</span> collectif pour aider les pharmaciens
+        pendant la crise sanitaire
+      </li>
+    </ul>
+  </section>
+
+  <section class="wide-content">
+    <div class="product-banner">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Notre mission</span>
+        <p class="product-banner__catchphrase">Créer des solutions digitales à votre service, pour vous consacrer
+        pleinement à votre cœur de métier</p>
+        <div class="product-banner__description">
+          <p>
+          Aujourd'hui, face à la transformation du système de santé et l'optimisation de l'accès
+          aux soins en France, le métier de pharmacien ne cesse d'évoluer. Entre les e-prescriptions,
+          la gestion en ligne du tiers-payant, la mise en place d'un site web ou encore d'une communication
+          sur les réseaux sociaux, le monde médical et le monde digital n'ont jamais été aussi liés.
+          </p>
+          <p>
+          C'est grâce à une parfaite connaissance de ces nouveaux enjeux que Kozea group propose
+          une offre globale et synergique de services digitaux pour simplifier le quotidien des officines
+          et leur assurer une meilleure visibilité.
+          </p>
+          <p>
+          En tant qu'expert de la transformation digitale de la pharmacie, nous libérons du temps
+          aux pharmaciens pour qu'ils puissent se consacrer pleinement à leur métier et mieux satisfaire
+          leurs clients.
+          </p>
+          <p class="large-p">
+          En somme, Kozea group donne du temps à ceux qui en prennent pour les autres.
+          </p>
+        </div>
+      </div>
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/a-propos-pharmacien.png') }}">
+      </div>
+    </div>
+  </section>
+
+  <section class="h-centered wide-content">
+    <p class="big-text">Nos engagements</p>
+  </section>
+  <section class="h-centered wide-content">
+    <div class="grid-wrapper">
+      {% for card in data['cards_alt'] %}
+        <figure class="card2">
+          <p class="card2__title">
+            {{ card["title"] }}
+          </p>
+          <p class="card2__body">
+            {{ card["body"] }}
+          </p>
+          <p class="card2__cta">
+            <a href="{{ card['url'] }}">→ En savoir plus</a>
+          </p>
+        </figure>
+      {% endfor %}
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Vous souhaitez en savoir plus sur nous ou nos solutions ?</h1>

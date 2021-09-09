@@ -296,6 +296,55 @@ def create_app():
                 },
             ]
         },
+        "à-propos": {
+            "cards": [
+                {
+                    "icon": "images/service-pharminfo.svg",
+                    "title": "Création de sites internet",
+                    "page": "pharminfo",
+                },
+                {
+                    "icon": "images/service-kozea-media.svg",
+                    "title": "Gestion de la communication digitale",
+                    "page": "kozea-media",
+                },
+                {
+                    "icon": "images/service-backoffice.svg",
+                    "title": "Gestion du tiers-payant",
+                    "page": "backoffice",
+                },
+                {
+                    "icon": "images/service-promomaker.svg",
+                    "title": "Créations d'affiches promotionnelles",
+                    "page": "promomaker",
+                },
+            ],
+            "cards_alt": [
+                {
+                    "title": "J'aide ma pharmacie",
+                    "body": "Augmentez votre référencement sur internet pour "
+                    "plus de trafic en officine.",
+                    "url": "https://www.jaidemapharmacie.fr/",
+                },
+                {
+                    "title": "Engagé pour la e-santé",
+                    "body": "Nous sommes fiers de faire partie des "
+                    "signataires de la charte «Engagé pour la e-santé» aux "
+                    "côtés du Ministère des Solidarités et de la Santé",
+                    "url": "https://esante.gouv.fr/sites/default/files/"
+                    "media_entity/documents/charte-engage-pour-la-e-sante"
+                    "-06-06-21.pdf",
+                },
+                {
+                    "title": "Femmes de santé",
+                    "body": "Nous soutenons également le collectif «Femmes "
+                    "de santé» en signant leur charte et en nous engageant "
+                    "vers une meilleure visibilité des femmes expertes dans "
+                    "le secteur de la santé.",
+                    "url": "https://www.femmesdesante.fr/",
+                },
+            ],
+        },
     }
 
     for page in PAGE_LIST:

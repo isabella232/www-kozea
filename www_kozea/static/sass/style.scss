@@ -629,6 +629,10 @@ section {
     background-image: url("../images/groupement-presentation.jpg");
   }
 
+  @at-root #{&}__illustration--a-propos {
+    background-image: url("../images/a-propos-equipe.png");
+  }
+
   @at-root #{&}__content {
     border-radius: 5px;
     bottom: 0;
@@ -647,6 +651,29 @@ section {
     display: block;
     font-size: 2em;
     font-weight: bold;
+  }
+
+  @at-root #{&}__content--story {
+    font-size: 1rem;
+    line-height: 2;
+    width: 35em;
+    .fact__header {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @at-root #{&}--story {
+    margin-bottom: 20em;
+    .fact__content {
+      font-size: 1rem;
+      line-height: 2;
+      width: 35em;
+    }
+    .fact__header {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
   }
 }
 
