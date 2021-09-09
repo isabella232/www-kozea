@@ -727,3 +727,13 @@ section {
     font-weight: bold;
   }
 }
+
+.carousel {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+
+  @at-root #{&}__item {
+    height: 75px;
+  }
+}
