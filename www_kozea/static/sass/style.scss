@@ -625,6 +625,10 @@ section {
     background-image: url("../images/promomaker-presentation.png");
   }
 
+  @at-root #{&}__illustration--groupement {
+    background-image: url("../images/groupement-presentation.jpg");
+  }
+
   @at-root #{&}__content {
     border-radius: 5px;
     bottom: 0;

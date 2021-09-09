@@ -260,6 +260,42 @@ def create_app():
                 },
             ]
         },
+        "groupement": {
+            "cards": [
+                {
+                    "icon": "images/service-pharminfo.svg",
+                    "title": "Site internet pour mettre en avant votre "
+                    "groupement et vos adhérents",
+                    "body": "Vitrine pour votre groupement et des services "
+                    "adaptés comme la réservation d'ordonnances, le Click & "
+                    "Collect, la vente en ligne ou la prise de rendez-vous "
+                    "en ligne",
+                    "page": "pharminfo",
+                },
+                {
+                    "icon": "images/service-kozea-media.svg",
+                    "title": "Votre communication maîtrisée et externalisée",
+                    "body": "Réseaux sociaux, rédaction d'articles, "
+                    "création visuelle, régie média : pour vous et vos "
+                    "adhérents.",
+                    "page": "kozea-media",
+                },
+                {
+                    "icon": "images/service-backoffice.svg",
+                    "title": "Le tiers-payant de vos adhérents géré de A à Z",
+                    "body": "Délégation, formation, gestion en interne : "
+                    "recentrez le pharmacien sur son cœur de métier.",
+                    "page": "backoffice",
+                },
+                {
+                    "icon": "images/service-promomaker.svg",
+                    "title": "Vos campagnes promotionnelles en 1 clic",
+                    "body": "Outil simple et accessible pour uniformiser "
+                    "vos PLV (Publicités sur Lieu de Vente).",
+                    "page": "promomaker",
+                },
+            ]
+        },
     }
 
     for page in PAGE_LIST:

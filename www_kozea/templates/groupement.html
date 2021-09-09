@@ -5,6 +5,57 @@ Groupement
 {% endblock %}
 
 {% block content %}
+  <section class="wide-content">
+    <div class="fact">
+      <div class="fact__illustration fact__illustration--groupement">
+      </div>
+      <div class="fact__content">
+        Nous accompagnons de nombreux groupements pharmaceutiques ainsi que leurs
+        adhérents dans la réalisation de leurs objectifs, que ce soit l'augmentation
+        du chiffre d'affaires, de nouvelles parts de marché ou bien de la notoriété.
+      </div>
+    </div>
+  </section>
+
+  <section class="h-centered wide-content">
+    <p class="big-text">Différenciez-vous</p>
+    <div class="grid-wrapper">
+      {% for card in data['cards'] %}
+      <figure class="card2">
+        <p>
+          <img class="card2__icon" src="{{ url_for('static', filename=card['icon']) }}" alt="">
+        </p>
+        <p class="card2__title">
+        {{ card['title'] }}
+        </p>
+        <p class="card2__body">
+        {{ card['body'] }}
+        </p>
+        <p class="card2__cta">
+          <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
+        </p>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="wide-content">
+    <div class="product-banner product-banner--flipped">
+      <div class="product-banner__descriptive">
+        <p class="product-banner__catchphrase">Pourquoi faire appel à Kozea group ?</p>
+        <ul class="feature-list product-banner__description">
+          <li>Des offres sur mesure et des tarifs adaptés</li>
+          <li>Un plan d'actions personnalisé et évolutif</li>
+          <li>Un reporting régulier</li>
+          <li>Un contact dédié</li>
+        </ul>
+      </div>
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/groupement-equipe.png') }}">
+      </div>
+    </div>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Une autre idée de projet en tête ? Échangeons ensemble sur vos besoins !</h1>
