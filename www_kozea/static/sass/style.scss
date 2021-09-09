@@ -708,3 +708,22 @@ section {
     font-weight: bold;
   }
 }
+
+.testimony {
+  text-align: left;
+
+  @at-root #{&}__content {
+    margin-bottom: 3em;
+  }
+
+  @at-root #{&}__author {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+  }
+
+  @at-root #{&}__author-name {
+    font-weight: bold;
+  }
+}
