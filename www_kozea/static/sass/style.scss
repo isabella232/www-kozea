@@ -681,3 +681,30 @@ section {
   line-height: 2;
   list-style-position: inside;
 }
+
+.map {
+  @at-root #{&}__map {
+    height: 500px;
+  }
+
+  @at-root #{&}__address {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 35em;
+  }
+}
+
+.address {
+  background: $dark-blue;
+  border-radius: 5px;
+  color: $text-bright;
+  display: flex;
+  line-height: 2;
+  justify-content: space-around;
+  padding: 3em;
+
+  @at-root #{&}__heading {
+    font-weight: bold;
+  }
+}

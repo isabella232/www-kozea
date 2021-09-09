@@ -4,15 +4,77 @@
 Contact
 {% endblock %}
 
+{% block head %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+  <script>
+window.addEventListener('DOMContentLoaded', event => {
+  var mymap = L.map('mapid').setView([45.776999, 4.859773], 15);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoia296ZWEiLCJhIjoiY2ppZzRncmliMGM3MjN3bzV3dXN4dm9lNiJ9.XR70vL5oT1vDpZ3JryRZDA'
+  }).addTo(mymap);
+  L.marker(
+    [45.776999, 4.859773],
+    {'icon': L.icon({iconUrl: '/static/images/map_cursor.png', iconAnchor: [20, 61]})}
+  ).addTo(mymap);
+});
+  </script>
+{% endblock %}
+
 {% block content %}
+  <section class="h-centered wide-content">
+    <p class="big-text">Un projet ? Une collaboration ? Des questions ? Échangeons !</p>
+  </section>
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
-      <h1 class="big-text">Quel pharmacien êtes-vous ?</h1>
+      <h1 class="big-text">Pour en savoir plus sur nos services</h1>
     </div>
     <div class="big-cta-card__cta" >
       <div class="cta-button">
-        <a class="cta-button__inner" href="#">Mon diagnostic</a>
+        <a class="cta-button__inner" href="mailto:contact@kozea.fr">contact@kozea.fr</a>
       </div>
     </div>
+  </section>
+  <section class="narrow-content map">
+    <div class="map__map" id="mapid"></div>
+    <div class="map__address">
+      <dl class="address">
+        <div>
+          <dt class="address__heading">Adresse</dt>
+          <dd>
+          107, boulevard de Stalingrad<br>
+          69100 Villeurbanne
+          </dd>
+        </div>
+        <div>
+          <dt class="address__heading">Contact</dt>
+          <dd>
+          <a href="tel:+33478971928">+33 (0)4 78 97 19 28</a><br>
+          <a href="mailto:contact@kozea.fr">contact@kozea.fr</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+  <section class="h-centered wide-content">
+    <p class="big-text">Contact presse</p>
+    <p>
+    Vous êtes un journaliste et vous souhaitez nous contacter ? Notre équipe reste
+    à votre disposition pour toute demande d'information, d'interview ou de contact.
+    </p>
+    <section>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="mailto:presse@kozea.fr">presse@kozea.fr</a>
+      </div>
+    </section>
   </section>
 {% endblock %}

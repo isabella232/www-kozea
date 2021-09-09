@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.scss.css') }}">
     <link type="image/png" rel="icon" href="{{ url_for('static', filename='favicon.png') }}" />
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block head %}{% endblock head %}
   </head>
   <body class="{{ page }}">
     <header {% if page == 'home' %}class="hero"{% endif %}>
