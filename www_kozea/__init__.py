@@ -124,16 +124,6 @@ def create_app():
                     ],
                     "page": "promomaker",
                 },
-                {
-                    "cover": "images/kozea-community-mini-solutions.png",
-                    "headline": "Kozea community",
-                    "title": "Développement de projets innovants",
-                    "body": "Bénéficiez des logiciels libres développés par "
-                    "les membres de l'équipe Kozea group et de leur expertise "
-                    "pour la création de nouveaux projets.",
-                    "features": [],
-                    "page": "community",
-                },
             ],
             "cards_alt": [
                 {
