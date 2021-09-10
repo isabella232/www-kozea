@@ -666,9 +666,20 @@ section {
   padding-bottom: 5em;
   padding-top: 5em;
 
+  @media #{$tablet} {
+    flex-wrap: wrap;
+    padding: 2em 0;
+  }
+
   @at-root #{&}__figure {
     margin-left: 5em;
     margin-right: 5em;
+
+    @media #{$tablet} {
+      flex-basis: 50%;
+      margin: .5em 0;
+      text-align: center;
+    }
   }
 }
 
@@ -678,6 +689,10 @@ section {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 0.3em;
+
+    @media #{$tablet} {
+      font-size: 2em;
+    }
   }
 }
 
