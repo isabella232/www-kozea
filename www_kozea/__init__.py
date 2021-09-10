@@ -5,7 +5,7 @@ from sassutils.wsgi import SassMiddleware
 
 MENU_LIST = {
     "solutions": "Solutions",
-    "ressources": "Ressources",
+    # "ressources": "Ressources",
     "à-propos": "À propos",
     "contact": "Contact",
 }
