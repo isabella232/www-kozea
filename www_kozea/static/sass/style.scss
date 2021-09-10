@@ -564,6 +564,10 @@ section {
 
 .product-banner {
   display: flex;
+
+  @media #{$tablet} {
+    flex-wrap: wrap;
+  }
 }
 
 .product-banner--dark {
@@ -589,6 +593,10 @@ section {
 
 .product-banner--padded {
   padding: 0 5em;
+
+  @media #{$tablet} {
+    padding: 0 2em;
+  }
 }
 
 .product-banner--flipped {
@@ -607,8 +615,17 @@ section {
   justify-content: center;
   margin-right: 2em;
 
+  @media #{$tablet} {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
   & > * {
     margin: 2rem 0;
+
+    @media #{$tablet} {
+      margin: 1rem 0;
+    }
   }
 }
 
@@ -617,6 +634,10 @@ section {
   display: flex;
   flex-basis: 50%;
   flex-shrink: 0;
+
+  @media #{$tablet} {
+    flex-basis: 100%;
+  }
 }
 
 .product-banner__name {
