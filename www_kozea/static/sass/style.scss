@@ -830,7 +830,15 @@ section {
   justify-content: space-around;
   list-style-type: none;
 
+  @media #{$tablet} {
+    flex-wrap: wrap;
+  }
+
   @at-root #{&}__item {
     height: 75px;
+
+    @media #{$tablet} {
+      height: 50px;
+    }
   }
 }
