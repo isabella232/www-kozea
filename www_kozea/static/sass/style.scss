@@ -73,6 +73,7 @@ $outline-grey: #d7d7ec;
 $label-grey: #7f86a8;
 $primary-color: $dark-blue;
 $text-bright: #fff;
+$tablet: (max-width: 920px);
 
 // Universal Box Sizing with Inheritance
 html {
@@ -102,6 +103,10 @@ body {
 
   & > header {
     padding: 0 10em;
+
+    @media #{$tablet} {
+      padding: 0 2em;
+    }
 
     .logo {
       display: block;
@@ -346,6 +351,16 @@ section {
       bottom: 5em;
       position: absolute;
       width: 50%;
+
+      @media #{$tablet} {
+        position: initial;
+        width: 100%;
+      }
+    }
+
+    @media #{$tablet} {
+      height: initial;
+      padding-bottom: 2em;
     }
 }
 
@@ -353,14 +368,26 @@ section {
   @at-root #{&}__title {
     font-size: 4em;
     font-weight: bold;
+
+    @media #{$tablet} {
+      font-size: 3em;
+    }
   }
 
   @at-root #{&}__catchphrase {
     font-size: 1.2em;
+
+    @media #{$tablet} {
+      font-size: 1em;
+    }
   }
 
   p:not(:last-child) {
     margin-bottom: 3rem;
+
+    @media #{$tablet} {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -575,6 +602,10 @@ section {
 
 .product-banner__image {
   width: 100%;
+}
+
+.product-banner__image--portrait {
+  margin: 0 8em;
 }
 
 .key-figures {
