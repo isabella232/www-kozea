@@ -162,7 +162,6 @@ body {
 
   @media #{$tablet} {
     flex-wrap: wrap;
-    margin-bottom: 3em;
   }
 }
 
@@ -253,6 +252,10 @@ nav.social-media {
   padding: 5em 0;
   text-align: center;
 
+  @media #{$tablet} {
+    padding: 2em;
+  }
+
   .container {
     margin: auto;
     max-width: 30em;
@@ -286,6 +289,10 @@ nav.secondary {
   margin-left: auto;
   margin-right: auto;
   max-width: 40em;
+
+  @media #{$tablet} {
+    padding: 2em;
+  }
 }
 
 .wide-content {
@@ -384,6 +391,7 @@ section {
       width: 50%;
 
       @media #{$tablet} {
+        padding-top: 3em;
         position: initial;
         width: 100%;
       }
