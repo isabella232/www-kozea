@@ -525,6 +525,10 @@ section {
 
 .big-card {
   padding: 5em 5em;
+
+  @media #{$tablet} {
+    padding: 2em;
+  }
 }
 
 .big-cta-card {
@@ -594,16 +598,29 @@ section {
 .product-banner--head {
   padding: 5em;
 
+  @media #{$tablet} {
+    padding: 2em;
+  }
+
   .product-banner__catchphrase {
     font-size: 3em;
+    @media #{$tablet} {
+      font-size: 2em;
+    }
   }
 
   .product-banner__description {
     font-size: 1.5em;
+    @media #{$tablet} {
+      font-size: 1em;
+    }
   }
 
   .product-banner__name {
     font-size: 1.5em;
+    @media #{$tablet} {
+      font-size: 1em;
+    }
   }
 }
 
@@ -716,10 +733,18 @@ section {
   margin-bottom: 15em;
   position: relative;
 
+  @media #{$tablet} {
+    margin-bottom: 0;
+  }
+
   @at-root #{&}__illustration {
     background-position: center;
     background-size: cover;
     height: 600px;
+
+    @media #{$tablet} {
+      height: 200px;
+    }
   }
 
   @at-root #{&}__illustration--pharminfo {
@@ -758,6 +783,13 @@ section {
     position: absolute;
     transform: translate(3em, 50%);
     width: 25em;
+
+    @media #{$tablet} {
+      font-size: 1em;
+      position: initial;
+      transform: none;
+      width: auto;
+    }
   }
 
   @at-root #{&}__figure {
