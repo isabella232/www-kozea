@@ -111,6 +111,11 @@ body {
     .logo {
       display: block;
       height: 4em;
+
+      @media #{$tablet} {
+        height: 3em;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -145,6 +150,15 @@ body {
   }
   .center {
     margin: 0 2em;
+
+    @media #{$tablet} {
+      margin: 0;
+    }
+  }
+
+  @media #{$tablet} {
+    flex-wrap: wrap;
+    margin-bottom: 3em;
   }
 }
 
@@ -170,9 +184,18 @@ body {
 nav.primary {
   padding: 1em 0;
 
+  @media #{$tablet} {
+    padding: 0;
+  }
+
   ul {
     display: flex;
     justify-content: center;
+
+    @media #{$tablet} {
+      flex-wrap: wrap;
+      justify-content: left;
+    }
 
     li {
       a {
