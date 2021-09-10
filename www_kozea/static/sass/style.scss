@@ -122,6 +122,10 @@ body {
   & > footer {
     padding: 0 10em;
 
+    @media #{$tablet} {
+      padding: 0 2em;
+    }
+
     .lower {
       padding: 2em 0;
     }
@@ -230,6 +234,10 @@ nav.social-media {
   ul {
     display: flex;
     justify-content: flex-end;
+
+    @media #{$tablet} {
+      justify-content: flex-start;
+    }
   }
 
   img {
