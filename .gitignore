@@ -2,6 +2,7 @@ base.Makefile
 build
 config.custom.Makefile
 node_modules
+.python-version
 www_kozea/static/css
 www_kozea/static/tailwind.css
 out
