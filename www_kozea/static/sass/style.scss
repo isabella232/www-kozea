@@ -810,10 +810,18 @@ section {
 
   @at-root #{&}--story {
     margin-bottom: 20em;
+
+    @media #{$tablet} {
+      margin-bottom: 0;
+    }
     .fact__content {
       font-size: 1rem;
       line-height: 2;
       width: 35em;
+
+      @media #{$tablet} {
+        width: 100%;
+      }
     }
     .fact__header {
       font-size: 2rem;
@@ -837,6 +845,10 @@ section {
     margin-right: auto;
     margin-top: 1em;
     width: 35em;
+
+    @media #{$tablet} {
+      width: 100%;
+    }
   }
 }
 
