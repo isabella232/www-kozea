@@ -7,4 +7,5 @@ www_kozea/static/css
 www_kozea/static/tailwind.css
 out
 __pycache__
+.env
 .venv
