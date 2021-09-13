@@ -10,6 +10,8 @@ PYTHON_SRCDIR ?= www_kozea
 PYTHON_ONLY ?= 1
 VENV ?= $(PWD)/.env
 
+URL_PROD = https://www.kozea.fr
+
 # Disable API endpoint tests
 URL_PROD_API =
 URL_TEST_API =
