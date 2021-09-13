@@ -9,3 +9,7 @@ PYTHON ?= python3.8
 PYTHON_SRCDIR ?= www_kozea
 PYTHON_ONLY ?= 1
 VENV ?= $(PWD)/.env
+
+# Disable API endpoint tests
+URL_PROD_API =
+URL_TEST_API =
