@@ -2,7 +2,7 @@ include MakeCitron.Makefile
 
 .PHONY: build
 build:
-	python freeze.py
+	$(PYTHON) freeze.py
 
 .PHONY: clean
 clean:
