@@ -154,6 +154,28 @@
     </div>
   </section>
 
+  <section class="h-centered wide-content">
+    <p class="big-text">L'équipe</p>
+    <p>Nous plaçons l'humain au centre de nos priorités</p>
+  </section>
+
+  <section class="h-centered wide-content">
+    <dl class="grid-wrapper">
+      {% for person in data['people'] %}
+        <div class="team-card">
+          <img
+             class="team-card__picture"
+             src="{{ url_for('static', filename=person['picture']) }}"
+             alt="{{ person['name'] }}">
+          <div>
+            <dt class="team-card__name">{{ person['name'] }}</dt>
+            <dd class="team-card__job">{{ person['job'] }}</dd>
+          </div>
+        </div>
+      {% endfor %}
+    </dl>
+  </section>
+
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
       <h1 class="big-text">Vous souhaitez en savoir plus sur nous ou nos solutions&nbsp;?</h1>

@@ -334,6 +334,83 @@ def create_app():
                     "url": "https://www.femmesdesante.fr/",
                 },
             ],
+            "people": [
+                {
+                    "name": "Aïta",
+                    "job": "Gestionnaire tiers-payant",
+                    "picture": "images/team/aita.png",
+                },
+                {
+                    "name": "Anaïs",
+                    "job": "Assistante de direction",
+                    "picture": "images/team/anais.png",
+                },
+                {
+                    "name": "Annabelle",
+                    "job": "UX designer / graphiste",
+                    "picture": "images/team/annabelle.png",
+                },
+                {
+                    "name": "Aro",
+                    "job": "Développeur web",
+                    "picture": "images/team/aro.png",
+                },
+                {
+                    "name": "Camille",
+                    "job": "Gestionnaire tiers-payant",
+                    "picture": "images/team/camille.png",
+                },
+                {
+                    "name": "Céline",
+                    "job": "Gestionnaire tiers-payant",
+                    "picture": "images/team/celine.png",
+                },
+                {
+                    "name": "Dorothée",
+                    "job": "Manager tiers-payant",
+                    "picture": "images/team/dorothee.png",
+                },
+                {
+                    "name": "Laurène",
+                    "job": "Responsable communication",
+                    "picture": "images/team/laurene.png",
+                },
+                {
+                    "name": "Jessica",
+                    "job": "Gestionnaire tiers-payant",
+                    "picture": "images/team/jessica.png",
+                },
+                {
+                    "name": "Julien",
+                    "job": "Directeur technique",
+                    "picture": "images/team/julien.png",
+                },
+                {
+                    "name": "Marie",
+                    "job": "Chargée de projet digital",
+                    "picture": "images/team/marie.png",
+                },
+                {
+                    "name": "Nathalie",
+                    "job": "Chargée de la relation client",
+                    "picture": "images/team/nathalie.png",
+                },
+                {
+                    "name": "Olivia",
+                    "job": "Responsable commercial",
+                    "picture": "images/team/olivia.png",
+                },
+                {
+                    "name": "Priscillia",
+                    "job": "Chargée d'affaires et développement",
+                    "picture": "images/team/priscillia.png",
+                },
+                {
+                    "name": "Romain",
+                    "job": "Chargé d'affaires et développement",
+                    "picture": "images/team/romain.png",
+                },
+            ],
         },
     }
 
