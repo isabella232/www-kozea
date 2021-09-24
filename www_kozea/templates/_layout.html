@@ -32,7 +32,9 @@
     <header {% if page == 'home' %}class="hero"{% endif %}>
       <div class="columns3-middle-expanded">
         <div class="left">
-          <img class="logo" src="{{ url_for('static', filename='images/logo-kozea-white.svg') }}">
+          <a href="{{ url_for('home') }}">
+            <img class="logo" src="{{ url_for('static', filename='images/logo-kozea-white.svg') }}">
+          </a>
         </div>
         <nav class="primary center">
           <ul>
