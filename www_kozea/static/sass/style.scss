@@ -320,8 +320,8 @@ nav.secondary {
 }
 
 .big-text {
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 2.5em;
+  font-weight: 600;
 }
 
 .h-centered {
@@ -424,7 +424,7 @@ section {
 .hero-text {
   @at-root #{&}__title {
     font-size: 4em;
-    font-weight: bold;
+    font-weight: 600;
 
     @media #{$tablet} {
       font-size: 3em;
@@ -440,7 +440,7 @@ section {
   }
 
   p:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     @media #{$tablet} {
       margin-bottom: 1rem;
@@ -523,8 +523,8 @@ section {
   border-width: 1px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1em;
+  // justify-content: space-between;
+  padding: 1em 2em;
   text-align: left;
 
   @at-root #{&}__title {
@@ -557,7 +557,7 @@ section {
   }
 
   @at-root #{&}__icon {
-    width: 75px;
+    width: 50px;
   }
 
   @at-root #{&}--filled {
@@ -602,7 +602,7 @@ section {
   border-radius: 4px;
   color: $text-bright;
   display: inline-block;
-  font-weight: bold;
+  font-weight: 600;
   transition: background-color 150ms;
 
   &:hover {
