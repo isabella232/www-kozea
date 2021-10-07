@@ -98,7 +98,6 @@ body {
     background: $dark-blue;
     color: $text-bright;
     position: relative;
-
   }
 
   & > header {
@@ -109,12 +108,43 @@ body {
     }
 
     .logo {
+      background: url("/static/images/logo-kozea-white.svg") no-repeat center;
       display: block;
       height: 4em;
+      width: 150px;
 
       @media #{$tablet} {
         height: 3em;
         margin: 0 auto;
+      }
+    }
+
+    &:not(.hero) {
+      background: white;
+      border-bottom: 1px solid $outline-grey;
+      color: $dark-blue;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      .logo {
+        background: url("/static/images/logo-kozea.svg") no-repeat center;
+      }
+
+      nav.primary {
+        ul li {
+          &.active a {
+            color: $light-blue;
+          }
+
+          &:hover a {
+            color: $light-blue;
+          }
+        }
+      }
+
+      @media #{$tablet} {
+        position: initial;
       }
     }
   }
@@ -187,10 +217,6 @@ body {
 nav.primary {
   padding: 1em 0;
 
-  @media #{$tablet} {
-    padding: 0;
-  }
-
   ul {
     display: flex;
     justify-content: center;
@@ -208,10 +234,12 @@ nav.primary {
 
       &:hover a {
         text-decoration: underline;
+        transition: color 150ms;
       }
 
       &.active {
         font-weight: bold;
+
         a {
           text-decoration: underline;
           text-decoration-thickness: 0.1em;
