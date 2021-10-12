@@ -86,6 +86,7 @@ html {
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  font-weight: 300;
 }
 
 a {
@@ -521,7 +522,7 @@ section {
   font-size: 1.35em;
   font-weight: 600;
   letter-spacing: -.5px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .card__body {
@@ -581,6 +582,7 @@ section {
   @at-root #{&}__cta {
     color: $light-blue;
     font-weight: bold;
+    margin-top: auto;
     transition: color .35s;
 
     &:hover {
@@ -605,6 +607,46 @@ section {
   @at-root #{&}--filled {
     background: $light-grey;
     border-style: none;
+    transition: background 250ms;
+
+    .card2__cta a {
+      position: relative;
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &::after {
+        background: white;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+        transform-origin: left;
+        right: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background: $light-blue;
+      color: white;
+
+      .card2 {
+        &__title, &__cta {
+          color: white;
+        }
+
+        &__cta {
+          &::before {
+            background-image: url("/static/images/arrow-white.svg");
+          }
+        }
+      }
+    }
   }
 }
 
