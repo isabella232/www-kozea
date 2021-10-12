@@ -491,15 +491,8 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
-    padding: 1em;
-    p, div {
-      &:not(:last-child) {
-        margin-bottom: 1em;
-      }
-    }
+    padding: 1em 2em;
   }
-
 }
 
 .card__headline {
@@ -508,9 +501,10 @@ section {
 }
 
 .card__title {
-  color: $primary-color;
-  font-size: 1.2em;
+  font-size: 1.35em;
   font-weight: 600;
+  letter-spacing: -.5px;
+  margin: 0 auto;
 }
 
 .card__body {
@@ -520,21 +514,27 @@ section {
   list-style: none;
 
   li {
+    display: flex;
+    font-weight: 400;
+    line-height: 1.25em;
     margin-bottom: 1em;
 
     &::before {
       content: url("/static/images/check.svg");
       display: inline-block;
-      height: 1em;
-      margin-right: 1em;
-      vertical-align: middle;
-      width: 1em;
+      margin-right: .8em;
+      min-height: 15px;
+      min-width: 15px;
+      height: 15px;
+      width: 15px;
     }
   }
 }
 
 .card__cta {
   color: white;
+  margin-top: auto;
+
   a {
     font-weight: normal;
     padding: 1em;
