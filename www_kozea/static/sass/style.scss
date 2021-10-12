@@ -140,6 +140,10 @@ body {
           &:hover a {
             color: $light-blue;
           }
+
+          a::after {
+            background: $light-blue;
+          }
         }
       }
 
@@ -229,20 +233,33 @@ nav.primary {
     li {
       a {
         display: inline-block;
-        padding: 1em 1em;
-      }
+        margin: 1em;
+        position: relative;
 
-      &:hover a {
-        text-decoration: underline;
-        transition: color 150ms;
+        &::after {
+          background: white;
+          content: '';
+          display: block;
+          height: 2px;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+          transform-origin: left;
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
       }
 
       &.active {
         font-weight: bold;
 
-        a {
-          text-decoration: underline;
-          text-decoration-thickness: 0.1em;
+        a::after {
+          transform: scaleX(1);
         }
       }
     }
