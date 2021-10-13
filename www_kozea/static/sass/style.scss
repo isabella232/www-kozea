@@ -388,16 +388,23 @@ nav.secondary {
 }
 
 .rounded-corner {
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .stacking-block {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+
+  @media #{$tablet} {
+    margin: 2rem 0;
+  }
+
+  .big-text {
+    font-size: 2em;
+  }
 
   & > * {
-    margin: 0.5rem 0;
+    // margin: 0.5rem 0;
   }
 }
 
@@ -618,6 +625,7 @@ section {
 
       &::after {
         background: white;
+        bottom: 0;
         content: '';
         display: block;
         height: 2px;
@@ -661,7 +669,7 @@ section {
 .big-cta-card {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 5em 5em;
 
   @media #{$tablet} {
@@ -674,6 +682,14 @@ section {
   & > * {
     margin-left: 1em;
     margin-right: 1em;
+  }
+
+  .cta-button {
+    margin-left: auto;
+
+    @media #{$tablet} {
+      margin: 0 auto;
+    } 
   }
 }
 
