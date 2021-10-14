@@ -1184,12 +1184,17 @@ section {
   justify-content: space-around;
   list-style-type: none;
 
+  li {
+    align-items: center;
+    display: flex;
+  }
+
   @media #{$tablet} {
     flex-wrap: wrap;
   }
 
   @at-root #{&}__item {
-    height: 75px;
+    max-height: 3.5rem;
 
     @media #{$tablet} {
       height: 50px;
