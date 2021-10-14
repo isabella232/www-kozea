@@ -268,15 +268,38 @@ nav.primary {
 }
 
 nav.alternative {
+
+  &.center {
+    // background: pink;
+  }
+
   ul {
     display: flex;
+
     li {
+      padding: 1em;
+
       a {
         display: inline-block;
-        padding: 1em 1em;
+        position: relative;
 
-        &:hover {
-          text-decoration: underline;
+        &:hover::after {
+          transform: scaleX(1);
+        }
+
+        &::after {
+          background: white;
+          bottom: -10px;
+          content: '';
+          display: block;
+          height: 2px;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+          transform-origin: left;
+          right: 0;
+          position: absolute;
+          width: 100%;
         }
       }
     }
@@ -290,6 +313,17 @@ nav.social-media {
 
     @media #{$tablet} {
       justify-content: flex-start;
+    }
+
+    li {
+      transform: translateZ(0);
+      transition-duration: .1s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
     }
   }
 
