@@ -6,16 +6,18 @@ Pharminfo
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Pharminfo.fr</span>
-      <p class="product-banner__catchphrase">Le site internet de votre pharmacie pour rester connecté à vos patients</p>
-      <p class="product-banner__description">Simple d'utilisation, il assure à votre pharmacie une meilleure visibilité en ligne et des services adaptés pour vous et vos patients.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Réservez une démonstration</a>
+    <div class="product-banner--dark--container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Pharminfo.fr</span>
+        <p class="product-banner__catchphrase">Le site internet de votre pharmacie pour rester connecté à vos patients</p>
+        <p class="product-banner__description">Simple d'utilisation, il assure à votre pharmacie une meilleure visibilité en ligne et des services adaptés pour vous et vos patients.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Réservez une démonstration</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/pharminfo-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/pharminfo-header.png') }}">
+      </div>
     </div>
   </div>
 

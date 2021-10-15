@@ -6,16 +6,18 @@ Backoffice
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Backoffice</span>
-      <p class="product-banner__catchphrase">Votre tiers-payant géré de A à Z</p>
-      <p class="product-banner__description">Backoffice regroupe un ensemble de services essentiels à la gestion du tiers-payant pour les professionnels de santé.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
+    <div class="product-banner--dark--container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Backoffice</span>
+        <p class="product-banner__catchphrase">Votre tiers-payant géré de A à Z</p>
+        <p class="product-banner__description">Backoffice regroupe un ensemble de services essentiels à la gestion du tiers-payant pour les professionnels de santé.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/backoffice-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/backoffice-header.png') }}">
+      </div>
     </div>
   </div>
 

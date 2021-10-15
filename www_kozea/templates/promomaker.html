@@ -6,16 +6,19 @@ Promomaker
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Promomaker</span>
-      <p class="product-banner__catchphrase">Créez vos affiches promotionnelles automatiquement en quelques clics</p>
-      <p class="product-banner__description">Promomaker est un outil qui vous permet de créer des affiches promotionnelles automatiquement pour les pharmacies.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+    <div class="product-banner--dark--container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Promomaker</span>
+        <p class="product-banner__catchphrase">Créez vos affiches promotionnelles automatiquement en quelques clics</p>
+        <p class="product-banner__description">Promomaker est un outil qui vous permet de créer des affiches promotionnelles automatiquement pour les pharmacies.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/promomaker-header.png') }}">
+
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/promomaker-header.png') }}">
+      </div>
     </div>
   </div>
 

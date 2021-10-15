@@ -6,16 +6,18 @@ Kozea Media
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Kozea media</span>
-      <p class="product-banner__catchphrase">Optimisez votre communication et votre visibilité en ligne</p>
-      <p class="product-banner__description">Kozea media conseille et accompagne les acteurs de santé dans leur communication digitale.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+    <div class="product-banner--dark--container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Kozea media</span>
+        <p class="product-banner__catchphrase">Optimisez votre communication et votre visibilité en ligne</p>
+        <p class="product-banner__description">Kozea media conseille et accompagne les acteurs de santé dans leur communication digitale.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image product-banner__image--portrait" src="{{ url_for('static', filename='images/kozea-media-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image product-banner__image--portrait" src="{{ url_for('static', filename='images/kozea-media-header.png') }}">
+      </div>
     </div>
   </div>
 
