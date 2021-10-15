@@ -671,9 +671,6 @@ section {
       position: relative;
 
       &:hover {
-        // color: $medium-blue;
-        // color: red;
-
         &::before {
           transform: translateX(5px);
         }
@@ -850,109 +847,155 @@ section {
   @media #{$tablet} {
     flex-wrap: wrap;
   }
-}
 
-.product-banner--dark {
-  background: $dark-blue;
-  color: $text-bright;
-}
+  // Section's name
 
-.product-banner--head {
-  padding: 5em;
-
-  @media #{$tablet} {
-    padding: 2em;
+  &__name {
+    color: $dark-grey;
   }
 
-  .product-banner__catchphrase {
-    font-size: 3em;
+  // Section's title
+
+  &__catchphrase {
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+
+  // Common style on description text
+
+  &__descriptive {
+    align-items: flex-start;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3em 0 0;
+
+    .cta-button {
+      margin-top: 2rem;
+    }
+
     @media #{$tablet} {
-      font-size: 2em;
+      align-items: center;
+      flex-basis: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+
+    & > * {
+      @media #{$tablet} {
+        margin: .5rem 0;
+      }
+    }
+
+    &--solo {
+      align-items: center;
+      flex-basis: auto;
+      margin: 0 auto;
+      max-width: 70%;
+      text-align: center;
     }
   }
 
-  .product-banner__description {
-    font-size: 1.5em;
+  // Common style on illustration
+
+  &__illustrative {
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+    flex-shrink: 0;
+
     @media #{$tablet} {
-      font-size: 1em;
+      flex-basis: 100%;
     }
   }
 
-  .product-banner__name {
-    font-size: 1.5em;
+  &__image {
+    width: 100%;
+
+    &--portrait {
+      margin: 0 8em;
+    }
+  }
+
+  // Product banner blue background
+
+  &--dark {
+    background: $dark-blue;
+    color: $text-bright;
+
+    // Service name product banner hero section
+
+    .product-banner__name {
+      color: $text-bright;
+
+      @media #{$tablet} {
+        font-size: 1em;
+      }
+    }
+  }
+
+  // Service advantages list on service page
+
+  &--flipped {
+    flex-direction: row-reverse;
+
+    .product-banner__descriptive {
+      margin-left: 2em;
+      margin-right: 0;
+    }
+  }
+
+  // Download white paper
+
+  &--padded {
+    padding: 2em 5em;
+
     @media #{$tablet} {
-      font-size: 1em;
+      padding: 2em;
+    }
+  }
+
+  // Product banner hero section
+
+  &--head {
+    padding: 5em;
+
+    @media #{$tablet} {
+      padding: 2em;
+    }
+
+    .product-banner__catchphrase {
+      font-size: 3em;
+      margin: .5em 0;
+
+      @media #{$tablet} {
+        font-size: 2em;
+      }
+    }
+
+    // Service description product banner hero section
+
+    .product-banner__description {
+      font-size: 1.25em;
+
+      @media #{$tablet} {
+        font-size: 1em;
+      }
+    }
+
+    .product-banner--dark--container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+
+      @media #{$tablet} {
+        flex-wrap: wrap;
+      }
     }
   }
 }
 
-.product-banner--padded {
-  padding: 0 5em;
-
-  @media #{$tablet} {
-    padding: 0 2em;
-  }
-}
-
-.product-banner--flipped {
-  flex-direction: row-reverse;
-  .product-banner__descriptive {
-    margin-left: 2em;
-    margin-right: 0;
-  }
-}
-
-.product-banner__descriptive {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
-  justify-content: center;
-  margin-right: 2em;
-
-  @media #{$tablet} {
-    flex-basis: 100%;
-    margin-right: 0;
-  }
-
-  & > * {
-    margin: 2rem 0;
-
-    @media #{$tablet} {
-      margin: 1rem 0;
-    }
-  }
-}
-
-.product-banner__illustrative {
-  align-items: center;
-  display: flex;
-  flex-basis: 50%;
-  flex-shrink: 0;
-
-  @media #{$tablet} {
-    flex-basis: 100%;
-  }
-}
-
-.product-banner__name {
-}
-
-.product-banner__catchphrase {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.product-banner__description {
-}
-
-.product-banner__image {
-  width: 100%;
-}
-
-.product-banner__image--portrait {
-  margin: 0 8em;
-}
 
 .key-figures {
   display: flex;
