@@ -800,6 +800,10 @@ section {
 .big-cta-card__cta {
   flex-shrink: 0; // Never shrink to always keep button label on a single line
   margin-left: auto;
+
+  @media #{$tablet} {
+    margin: 0 auto;
+  }
 }
 
 .cta-button {
