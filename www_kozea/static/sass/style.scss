@@ -396,8 +396,9 @@ nav.secondary {
 }
 
 .large-p {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 3rem auto;
 }
 
 .big-text {
@@ -471,6 +472,10 @@ nav.secondary {
 
   .big-text {
     font-size: 2em;
+  }
+
+  h1 {
+    font-weight: 600;
   }
 }
 
@@ -647,9 +652,13 @@ section {
   border-width: 1px;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   padding: 1em 2em;
   text-align: left;
+  transition: background 250ms;
+
+  &:hover {
+    background: $light-grey;
+  }
 
   @at-root #{&}__title {
     color: $primary-color;
@@ -763,10 +772,10 @@ section {
 }
 
 .big-card {
-  padding: 5em 5em;
+  padding: 2em;
 
-  @media #{$tablet} {
-    padding: 2em;
+  .big-text {
+    font-size: 2em;
   }
 }
 
@@ -945,8 +954,13 @@ section {
     flex-direction: row-reverse;
 
     .product-banner__descriptive {
-      margin-left: 2em;
       margin-right: 0;
+      padding-left: 3em;
+
+      @media #{$tablet} {
+        padding: 0;
+        text-align: left;
+      }
     }
   }
 
@@ -1104,7 +1118,7 @@ section {
   @at-root #{&}__figure {
     display: block;
     font-size: 2em;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   @at-root #{&}__content--story {
@@ -1139,9 +1153,140 @@ section {
   }
 }
 
+  // Feature list description advantages
+
 .feature-list {
+  // background: red;
   line-height: 2;
-  list-style-position: inside;
+  // list-style-position: inside;
+  list-style: none;
+
+  li {
+    align-items: center;
+    display: flex;
+    margin: 2em 0;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-right: .5em;
+      // background: green;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-width: 35px;
+      min-height: 35px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  &__pharminfo {
+    &--disponibility::before {
+      background: url("/static/images/pharminfo-disponibility.svg");
+    }
+
+    &--turnover::before {
+      background: url("/static/images/pharminfo-turnover.svg");
+    }
+
+    &--clients::before {
+      background: url("/static/images/pharminfo-clients.svg");
+    }
+
+    &--listen::before {
+      background: url("/static/images/pharminfo-listen.svg");
+    }
+
+    &--rules::before {
+      background: url("/static/images/pharminfo-rules.svg");
+    }
+  }
+
+  &__kozea-media {
+    &--visibility::before {
+      background: url("/static/images/kozea-media-visibility.svg");
+    }
+
+    &--rules::before {
+      background: url("/static/images/kozea-media-rules.svg");
+    }
+
+    &--results::before {
+      background: url("/static/images/kozea-media-results.svg");
+    }
+
+    &--support::before {
+      background: url("/static/images/kozea-media-support.svg");
+    }
+
+    &--satisfaction::before {
+      background: url("/static/images/kozea-media-satisfaction.svg");
+    }
+  }
+
+  &__backoffice {
+
+    &--time::before {
+      background: url("/static/images/backoffice-time.svg");
+    }
+
+    &--money::before {
+      background: url("/static/images/backoffice-money.svg");
+    }
+
+    &--accelerate::before {
+      background: url("/static/images/backoffice-accelerate.svg");
+    }
+
+    &--simplification::before {
+      background: url("/static/images/backoffice-simplification.svg");
+    }
+
+    &--statistics::before {
+      background: url("/static/images/backoffice-statistics.svg");
+    }
+  }
+
+  &__promomaker {
+    &--simplicity::before {
+      background: url("/static/images/promomaker-simplicity.svg");
+    }
+
+    &--automation::before {
+      background: url("/static/images/promomaker-automation.svg");
+    }
+
+    &--tool::before {
+      background: url("/static/images/promomaker-tool.svg");
+    }
+
+    &--access::before {
+      background: url("/static/images/promomaker-access.svg");
+    }
+
+    &--security::before {
+      background: url("/static/images/promomaker-security.svg");
+    }
+  }
+
+  &__groupement {
+    &--offers::before {
+      background: url("/static/images/groupement-offers.svg");
+    }
+
+    &--actions::before {
+      background: url("/static/images/groupement-actions.svg");
+    }
+
+    &--reporting::before {
+      background: url("/static/images/groupement-reporting.svg");
+    }
+
+    &--contact::before {
+      background: url("/static/images/groupement-contact.svg");
+    }
+  }
 }
 
 .map {
