@@ -523,6 +523,28 @@ section {
     padding: 2em;
     width: 90%;
   }
+
+  @at-root #{&}--services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      @media screen and (min-width: $laptop) {
+        flex-basis: 45%;
+        max-width: 45%;
+        padding: 2em 3em;
+      }
+
+      &__title {
+        font-size: 2em;
+      }
+
+      .cta-button {
+        margin-top: 1em;
+      }
+    }
+  }
 }
 
 
@@ -603,7 +625,7 @@ section {
 
 .card__headline {
   color: $dark-grey;
-  font-size: 0.7em;
+  font-size: .9em;
 }
 
 .card__title {
