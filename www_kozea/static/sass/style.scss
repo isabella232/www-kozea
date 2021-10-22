@@ -73,7 +73,9 @@ $outline-grey: #d7d7ec;
 $label-grey: #7f86a8;
 $primary-color: $dark-blue;
 $text-bright: #fff;
-$tablet: (max-width: 920px);
+$tablet: 920px;
+$phone: 580px;
+$laptop: 1200px;
 
 // Universal Box Sizing with Inheritance
 html {
@@ -104,7 +106,7 @@ body {
   & > header {
     padding: 0 10em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 0 2em;
     }
 
@@ -114,7 +116,7 @@ body {
       height: 4em;
       width: 150px;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         height: 3em;
         margin: 0 auto;
       }
@@ -148,7 +150,7 @@ body {
         }
       }
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         position: initial;
       }
     }
@@ -157,7 +159,7 @@ body {
   & > footer {
     padding: 0 10em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 0 2em;
     }
 
@@ -190,12 +192,12 @@ body {
   .center {
     margin: 0 2em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin: 0;
     }
   }
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
   }
 }
@@ -226,7 +228,7 @@ nav.primary {
     display: flex;
     justify-content: center;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       flex-wrap: wrap;
       justify-content: left;
     }
@@ -311,7 +313,7 @@ nav.social-media {
     display: flex;
     justify-content: flex-end;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       justify-content: flex-start;
     }
 
@@ -340,7 +342,7 @@ nav.social-media {
   padding: 5em 0;
   text-align: center;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     padding: 2em;
   }
 
@@ -379,7 +381,7 @@ nav.secondary {
   margin-right: auto;
   max-width: 40em;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     padding: 2em;
   }
 }
@@ -466,7 +468,7 @@ nav.secondary {
   display: flex;
   flex-direction: column;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     margin: 2rem 0;
   }
 
@@ -537,14 +539,14 @@ section {
       position: absolute;
       width: 50%;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         padding-top: 3em;
         position: initial;
         width: 100%;
       }
     }
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: initial;
       padding-bottom: 2em;
     }
@@ -555,7 +557,7 @@ section {
     font-size: 4em;
     font-weight: 600;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 3em;
     }
   }
@@ -563,7 +565,7 @@ section {
   @at-root #{&}__catchphrase {
     font-size: 1.2em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 1em;
     }
   }
@@ -571,7 +573,7 @@ section {
   p:not(:last-child) {
     margin-bottom: 2rem;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 1rem;
     }
   }
@@ -785,7 +787,7 @@ section {
   justify-content: flex-start;
   padding: 5em 5em;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
     justify-content: center;
     padding: 2em;
@@ -800,7 +802,7 @@ section {
   .cta-button {
     margin-left: auto;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin: 0 auto;
     }
   }
@@ -810,7 +812,7 @@ section {
   flex-shrink: 0; // Never shrink to always keep button label on a single line
   margin-left: auto;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     margin: 0 auto;
   }
 }
@@ -857,7 +859,7 @@ section {
 .product-banner {
   display: flex;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $laptop) {
     flex-wrap: wrap;
   }
 
@@ -888,15 +890,15 @@ section {
       margin-top: 2rem;
     }
 
-    @media #{$tablet} {
+    @media screen and (max-width: $laptop) {
       align-items: center;
       flex-basis: 100%;
-      margin-right: 0;
+      padding-right: 0;
       text-align: center;
     }
 
     & > * {
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         margin: .5rem 0;
       }
     }
@@ -918,7 +920,7 @@ section {
     flex-basis: 50%;
     flex-shrink: 0;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $laptop) {
       flex-basis: 100%;
     }
   }
@@ -927,7 +929,7 @@ section {
     width: 100%;
 
     &--portrait {
-      margin: 0 8em;
+      margin: 0 10em;
     }
   }
 
@@ -942,7 +944,7 @@ section {
     .product-banner__name {
       color: $text-bright;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         font-size: 1em;
       }
     }
@@ -957,7 +959,7 @@ section {
       margin-right: 0;
       padding-left: 3em;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         padding: 0;
         text-align: left;
       }
@@ -969,7 +971,7 @@ section {
   &--padded {
     padding: 2em 5em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 2em;
     }
   }
@@ -979,7 +981,7 @@ section {
   &--head {
     padding: 5em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 2em;
     }
 
@@ -987,7 +989,7 @@ section {
       font-size: 3em;
       margin: .5em 0;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         font-size: 2em;
       }
     }
@@ -997,7 +999,7 @@ section {
     .product-banner__description {
       font-size: 1.25em;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         font-size: 1em;
       }
     }
@@ -1007,7 +1009,7 @@ section {
       max-width: 1400px;
       margin: 0 auto;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $laptop) {
         flex-wrap: wrap;
       }
     }
@@ -1022,7 +1024,7 @@ section {
   padding-bottom: 5em;
   padding-top: 5em;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
     padding: 2em 0;
   }
@@ -1031,7 +1033,7 @@ section {
     margin-left: 5em;
     margin-right: 5em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       flex-basis: 50%;
       margin: .5em 0;
       text-align: center;
@@ -1046,7 +1048,7 @@ section {
     font-weight: bold;
     margin-bottom: 0.3em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 2em;
     }
   }
@@ -1056,7 +1058,7 @@ section {
   margin-bottom: 15em;
   position: relative;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     margin-bottom: 0;
   }
 
@@ -1065,7 +1067,7 @@ section {
     background-size: cover;
     height: 600px;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: 200px;
     }
   }
@@ -1107,7 +1109,7 @@ section {
     transform: translate(3em, 50%);
     width: 25em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 1em;
       position: initial;
       transform: none;
@@ -1134,7 +1136,7 @@ section {
   @at-root #{&}--story {
     margin-bottom: 20em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 0;
     }
     .fact__content {
@@ -1142,7 +1144,7 @@ section {
       line-height: 2;
       width: 35em;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         width: 100%;
       }
     }
@@ -1170,7 +1172,6 @@ section {
       content: '';
       display: inline-block;
       margin-right: .5em;
-      // background: green;
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -1301,7 +1302,7 @@ section {
     margin-top: 1em;
     width: 35em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       width: 100%;
     }
   }
@@ -1382,14 +1383,14 @@ section {
     display: flex;
   }
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
   }
 
   @at-root #{&}__item {
     max-height: 3.5rem;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: 50px;
     }
   }
