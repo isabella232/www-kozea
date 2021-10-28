@@ -837,6 +837,7 @@ section {
         &__cta a {
           &::before {
             background-image: url("/static/images/arrow-white.svg");
+            background-repeat: no-repeat;
           }
         }
       }
@@ -908,6 +909,7 @@ section {
 
     &::before {
       background-image: url("/static/images/arrow-white.svg");
+      background-repeat: no-repeat;
       content: "";
       display: inline-block;
       height: 1em;
