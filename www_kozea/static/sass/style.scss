@@ -570,6 +570,8 @@ nav.secondary {
 }
 
 section {
+  margin: 3em 0;
+
   header {
     margin-bottom: 3em;
   }
@@ -578,9 +580,6 @@ section {
     line-height: 1.5;
     margin: 1rem 0;
   }
-
-  margin-bottom: 3em;
-  margin-top: 3em;
 }
 
 .grid-wrapper {
@@ -985,7 +984,11 @@ section {
     padding: 0 3em 0 0;
 
     .cta-button {
-      margin-top: 2rem;
+      margin-top: 1rem;
+
+      @media screen and (max-width: $laptop) {
+        margin-bottom: 1rem;
+      }
     }
 
     @media screen and (max-width: $laptop) {
@@ -1052,12 +1055,14 @@ section {
 
   &--flipped {
     flex-direction: row-reverse;
+    align-items: flex-start;
 
     .product-banner__descriptive {
       margin-right: 0;
       padding-left: 3em;
 
-      @media screen and (max-width: $tablet) {
+      @media screen and (max-width: $laptop) {
+        align-items: flex-start;
         padding: 0;
         text-align: left;
       }
@@ -1262,7 +1267,7 @@ section {
   li {
     align-items: center;
     display: flex;
-    margin: 2em 0;
+    margin: 1em 0;
 
     &:before {
       content: '';
