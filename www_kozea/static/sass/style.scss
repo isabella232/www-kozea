@@ -431,7 +431,7 @@ nav.secondary {
   max-width: 40em;
 
   @media screen and (max-width: $tablet) {
-    padding: 2em;
+    // padding: 2em;
   }
 }
 
@@ -1231,9 +1231,7 @@ section {
   // Feature list description advantages
 
 .feature-list {
-  // background: red;
   line-height: 2;
-  // list-style-position: inside;
   list-style: none;
 
   li {
