@@ -461,6 +461,31 @@ nav.secondary {
  text-align: center;
 }
 
+.video-container {
+  height: 0;
+  margin: 0 auto;
+  max-width: 1400px;
+  overflow: hidden;
+  padding-bottom: 33%;
+  position: relative;
+  width: 100%;
+
+  iframe {
+    border: 1px solid $outline-grey;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    // border: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $laptop) {
+    padding-bottom: 56.25%;
+  }
+}
+
+
 .big-link {
   color: $light-blue;
   font-size: 3em;
