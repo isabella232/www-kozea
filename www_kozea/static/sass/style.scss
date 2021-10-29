@@ -1141,18 +1141,23 @@ section {
   padding-bottom: 5em;
   padding-top: 5em;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: $laptop) {
+    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 2em 0;
+    padding: 2em;
   }
 
   @at-root #{&}__figure {
     margin-left: 5em;
     margin-right: 5em;
 
-    @media screen and (max-width: $tablet) {
-      flex-basis: 50%;
+    @media screen and (max-width: $laptop) {
+      flex-basis: 33%;
       margin: .5em 0;
+    }
+
+    @media screen and (max-width: $phone) {
+      flex-basis: 50%;
       text-align: center;
     }
   }
@@ -1164,10 +1169,6 @@ section {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 0.3em;
-
-    @media screen and (max-width: $tablet) {
-      font-size: 2em;
-    }
   }
 }
 
