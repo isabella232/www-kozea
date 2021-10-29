@@ -1030,7 +1030,13 @@ section {
     width: 100%;
 
     &--portrait {
-      margin: 0 10em;
+      padding: 0 10rem;
+
+      @media screen and (max-width: $laptop) {
+        margin: 0 auto;
+        padding: 0;
+        width: 50%;
+      }
     }
   }
 
@@ -1114,6 +1120,14 @@ section {
 
       @media screen and (max-width: $laptop) {
         flex-wrap: wrap;
+
+        .product-banner__descriptive {
+          order: 1;
+        }
+
+        .product-banner__illustrative {
+          order: 0;
+        }
       }
     }
   }
