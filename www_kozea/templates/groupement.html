@@ -5,6 +5,19 @@ Groupement
 {% endblock %}
 
 {% block content %}
+<div class="product-banner product-banner--dark product-banner--head">
+  <div class="product-banner__dark-container">
+    <div class="product-banner__descriptive product-banner__descriptive--solo">
+      <span class="product-banner__name">Offre groupement</span>
+      <p class="product-banner__catchphrase">Faire de notre partenariat un facteur de votre réussite</p>
+      <p class="product-banner__description">Proposez à vos adhérents un pack sur-mesure de solutions digitales et de services adaptés à vos besoins, et bénéficiez d'un accompagement personnalisé.</p>
+      <div class="cta-button">
+        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous</a>
+      </div>
+    </div>
+  </div>
+</div>
+
   <section class="wide-content">
     <div class="fact">
       <div class="fact__illustration fact__illustration--groupement">
@@ -32,7 +45,7 @@ Groupement
         {{ card['body'] }}
         </p>
         <p class="card2__cta">
-          <a href="{{ url_for(card['page']) }}">→ En savoir plus</a>
+          <a href="{{ url_for(card['page']) }}">En savoir plus</a>
         </p>
       </figure>
       {% endfor %}
@@ -44,10 +57,10 @@ Groupement
       <div class="product-banner__descriptive">
         <p class="product-banner__catchphrase">Pourquoi faire appel à Kozea group ?</p>
         <ul class="feature-list product-banner__description">
-          <li>Des offres sur mesure et des tarifs adaptés</li>
-          <li>Un plan d'actions personnalisé et évolutif</li>
-          <li>Un reporting régulier</li>
-          <li>Un contact dédié</li>
+          <li class="feature-list__groupement--offers">Des offres sur mesure et des tarifs adaptés</li>
+          <li class="feature-list__groupement--actions">Un plan d'actions personnalisé et évolutif</li>
+          <li class="feature-list__groupement--reporting">Un reporting régulier</li>
+          <li class="feature-list__groupement--contact">Un contact dédié</li>
         </ul>
       </div>
       <div class="product-banner__illustrative">

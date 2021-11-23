@@ -6,16 +6,19 @@ Promomaker
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Promomaker</span>
-      <p class="product-banner__catchphrase">Créez vos affiches promotionnelles automatiquement en quelques clics</p>
-      <p class="product-banner__description">Promomaker est un outil qui vous permet de créer des affiches promotionnelles automatiquement pour les pharmacies.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+    <div class="product-banner__dark-container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Promomaker</span>
+        <p class="product-banner__catchphrase">Créez vos affiches promotionnelles automatiquement en quelques clics</p>
+        <p class="product-banner__description">Promomaker est un outil qui vous permet de créer des affiches promotionnelles automatiquement pour les pharmacies.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/promomaker-header.png') }}">
+
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/promomaker-header.png') }}">
+      </div>
     </div>
   </div>
 
@@ -26,7 +29,7 @@ Promomaker
       <div class="fact__content">
         <span class="fact__figure">47%</span> des pharmaciens manquent de temps pour créer
         des PLV (Publicité sur le Lieu de Vente) de qualité, ou n'ont pas les compétences
-        requises. C'est votre cas ?
+        requises. C'est votre cas&nbsp;?
       </div>
     </div>
   </section>
@@ -47,11 +50,11 @@ Promomaker
       <div class="product-banner__descriptive">
         <p class="product-banner__catchphrase">Pourquoi utiliser le générateur de PLV Promomaker ?</p>
         <ul class="feature-list product-banner__description">
-          <li>Une interface claire et simple d'utilisation</li>
-          <li>L'automatisation des campagnes publicitaires</li>
-          <li>Un outil disponible sur le web</li>
-          <li>Un accès personnalisé pour les groupements ou les officines (adhérentes ou individuelles)</li>
-          <li>Des données chiffrées et sécurisées</li>
+          <li class="feature-list__promomaker--simplicity">Une interface claire et simple d'utilisation</li>
+          <li class="feature-list__promomaker--automation">L'automatisation des campagnes publicitaires</li>
+          <li class="feature-list__promomaker--tool">Un outil disponible sur le web</li>
+          <li class="feature-list__promomaker--access">Un accès personnalisé pour les groupements ou les officines (adhérentes ou individuelles)</li>
+          <li class="feature-list__promomaker--security">Des données chiffrées et sécurisées</li>
         </ul>
         <div class="cta-button">
           <a class="cta-button__inner" href="https://www.promomaker.fr/">Plus d'informations sur le site dédié</a>

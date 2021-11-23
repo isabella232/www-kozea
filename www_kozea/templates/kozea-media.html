@@ -6,16 +6,18 @@ Kozea Media
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Kozea media</span>
-      <p class="product-banner__catchphrase">Optimisez votre communication et votre visibilité en ligne</p>
-      <p class="product-banner__description">Kozea media conseille et accompagne les acteurs de santé dans leur communication digitale.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+    <div class="product-banner__dark-container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Kozea media</span>
+        <p class="product-banner__catchphrase">Optimisez votre communication et votre visibilité en ligne</p>
+        <p class="product-banner__description">Kozea media conseille et accompagne les acteurs de santé dans leur communication digitale.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Contactez-nous !</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image product-banner__image--portrait" src="{{ url_for('static', filename='images/kozea-media-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image product-banner__image--portrait" src="{{ url_for('static', filename='images/kozea-media-header.png') }}">
+      </div>
     </div>
   </div>
 
@@ -65,11 +67,11 @@ Kozea Media
       <div class="product-banner__descriptive">
         <p class="product-banner__catchphrase">Nous vous garantissons</p>
         <ul class="feature-list product-banner__description">
-          <li>Une plus grande visibilité sur le web</li>
-          <li>Le respect des chartes déontologiques et juridiques</li>
-          <li>Des résultats concrets</li>
-          <li>Un accompagnement personnalisé</li>
-          <li>Une totale satisfactions de nos services</li>
+          <li class="feature-list__kozea-media--visibility">Une plus grande visibilité sur le web</li>
+          <li class="feature-list__kozea-media--rules">Le respect des chartes déontologiques et juridiques</li>
+          <li class="feature-list__kozea-media--results">Des résultats concrets</li>
+          <li class="feature-list__kozea-media--support">Un accompagnement personnalisé</li>
+          <li class="feature-list__kozea-media--satisfaction">Une totale satisfactions de nos services</li>
         </ul>
         <div class="cta-button">
           <a class="cta-button__inner" href="https://media.kozea.fr/">Plus d'informations sur le site dédié</a>
@@ -83,7 +85,7 @@ Kozea Media
 
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="stacking-block">
-      <h1 class="big-text">Échangeons ensemble sur vos besoins et vos projets !</h1>
+      <h1 class="big-text">Échangeons ensemble sur vos besoins et vos projets&nbsp;!</h1>
     </div>
     <div class="big-cta-card__cta" >
       <div class="cta-button">
@@ -93,7 +95,7 @@ Kozea Media
   </section>
 
   <section>
-    <div class="grid-wrapper wide-content">
+    <div class="grid-wrapper grid-wrapper--services wide-content">
       <figure class="card">
         <figcaption>
           <p class="card__headline">Services associés</p>

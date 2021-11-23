@@ -6,16 +6,18 @@ Backoffice
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Backoffice</span>
-      <p class="product-banner__catchphrase">Votre tiers-payant géré de A à Z</p>
-      <p class="product-banner__description">Backoffice regroupe un ensemble de services essentiels à la gestion du tiers-payant pour les professionnels de santé.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
+    <div class="product-banner__dark-container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Backoffice</span>
+        <p class="product-banner__catchphrase">Votre tiers-payant géré de A à Z</p>
+        <p class="product-banner__description">Backoffice regroupe un ensemble de services essentiels à la gestion du tiers-payant pour les professionnels de santé.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Mon diagnostic</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/backoffice-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/backoffice-header.png') }}">
+      </div>
     </div>
   </div>
 
@@ -25,7 +27,7 @@ Backoffice
       </div>
       <div class="fact__content">
         <span class="fact__figure">96%</span> des pharmaciens souhaitent réduire le
-        temps passé à la gestion du tier-payant. Et vous ?
+        temps passé à la gestion du tiers-payant. Et vous ?
       </div>
     </div>
   </section>
@@ -51,10 +53,8 @@ Backoffice
     </div>
   </section>
 
-  <section class="h-centered">
+  <section class="h-centered video-container">
     <iframe
-           width="560"
-           height="315"
            src="https://www.youtube-nocookie.com/embed/Xhf10RkEvwY"
            title="YouTube video player"
            frameborder="0"
@@ -66,13 +66,13 @@ Backoffice
   <section class="wide-content">
     <div class="product-banner product-banner--flipped">
       <div class="product-banner__descriptive">
-        <p class="product-banner__catchphrase">Pourquoi faire appel à Backoffice ?</p>
+        <p class="product-banner__catchphrase">Pourquoi faire appel à Backoffice&nbsp;?</p>
         <ul class="feature-list product-banner__description">
-          <li>Gain de temps et optimisation au comptoir</li>
-          <li>Récupération rapide de la trésorerie (98% de taux de recouvrement)</li>
-          <li>Accélération des délais d'encaissement</li>
-          <li>Simplification du suivi des impayés</li>
-          <li>Suivi statistique pour aider à réduire le nombre de rejets</li>
+          <li class="feature-list__backoffice--time">Gain de temps et optimisation au comptoir</li>
+          <li class="feature-list__backoffice--money">Récupération rapide de la trésorerie (98% de taux de recouvrement)</li>
+          <li class="feature-list__backoffice--accelerate">Accélération des délais d'encaissement</li>
+          <li class="feature-list__backoffice--simplification">Simplification du suivi des impayés</li>
+          <li class="feature-list__backoffice--statistics">Suivi statistique pour aider à réduire le nombre de rejets</li>
         </ul>
         <div class="cta-button">
           <a class="cta-button__inner" href="https://lagestiondutierspayant.fr/">Plus d'informations sur le site dédié</a>
@@ -96,7 +96,7 @@ Backoffice
   </section>
 
   <section>
-    <div class="grid-wrapper wide-content">
+    <div class="grid-wrapper grid-wrapper--services wide-content">
       <figure class="card">
         <figcaption>
           <p class="card__headline">Services associés</p>

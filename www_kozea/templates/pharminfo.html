@@ -6,16 +6,18 @@ Pharminfo
 
 {% block content %}
   <div class="product-banner product-banner--dark product-banner--head">
-    <div class="product-banner__descriptive">
-      <span class="product-banner__name">Pharminfo.fr</span>
-      <p class="product-banner__catchphrase">Le site internet de votre pharmacie pour rester connecté à vos patients</p>
-      <p class="product-banner__description">Simple d'utilisation, il assure à votre pharmacie une meilleure visibilité en ligne et des services adaptés pour vous et vos patients.</p>
-      <div class="cta-button">
-        <a class="cta-button__inner" href="{{ url_for('contact') }}">Réservez une démonstration</a>
+    <div class="product-banner__dark-container">
+      <div class="product-banner__descriptive">
+        <span class="product-banner__name">Pharminfo.fr</span>
+        <p class="product-banner__catchphrase">Le site internet de votre pharmacie pour rester connecté à vos patients</p>
+        <p class="product-banner__description">Simple d'utilisation, il assure à votre pharmacie une meilleure visibilité en ligne et des services adaptés pour vous et vos patients.</p>
+        <div class="cta-button">
+          <a class="cta-button__inner" href="{{ url_for('contact') }}">Réservez une démonstration</a>
+        </div>
       </div>
-    </div>
-    <div class="product-banner__illustrative">
-      <img class="product-banner__image" src="{{ url_for('static', filename='images/pharminfo-header.png') }}">
+      <div class="product-banner__illustrative">
+        <img class="product-banner__image" src="{{ url_for('static', filename='images/pharminfo-header.png') }}">
+      </div>
     </div>
   </div>
 
@@ -50,7 +52,7 @@ Pharminfo
   </section>
 
   <section class="big-card big-text light-text gradient-filled h-centered rounded-corner wide-content">
-    Aujourd'hui, plus de 2500 pharmacies font confiance à Pharminfo.fr, pourquoi pas vous ?
+    Aujourd'hui, plus de 2500 pharmacies font confiance à Pharminfo.fr, pourquoi pas vous&nbsp;?
   </section>
 
   <section class="wide-content">
@@ -75,17 +77,15 @@ Pharminfo
 
   <section class="h-centered wide-content">
     <p class="large-p narrow-content">
-      Et une offre dédiée pour les groupements !
+      Et une offre dédiée pour les groupements&nbsp;!
     </p>
     <div class="cta-button">
       <a class="cta-button__inner" href="{{ url_for('groupement') }}">En savoir plus</a>
     </div>
   </section>
 
-  <section class="h-centered">
+  <section class="h-centered video-container">
     <iframe
-           width="560"
-           height="315"
            src="https://www.youtube-nocookie.com/embed/fSRU--88LY4"
            title="YouTube video player"
            frameborder="0"
@@ -99,11 +99,11 @@ Pharminfo
       <div class="product-banner__descriptive">
         <p class="product-banner__catchphrase">Le service Pharminfo c'est</p>
         <ul class="feature-list product-banner__description">
-          <li>Votre pharmacie disponible 24h/24 et 7j/7</li>
-          <li>Une nouvelle opportunité de développer votre chiffre d'affaires</li>
-          <li>Un moyen de fidéliser votre clientèle</li>
-          <li>Un service client à votre écoute</li>
-          <li>Le respect des règles juridiques et déontologiques</li>
+          <li class="feature-list__pharminfo--disponibility">Votre pharmacie disponible 24h/24 et 7j/7</li>
+          <li class="feature-list__pharminfo--turnover">Une nouvelle opportunité de développer votre chiffre d'affaires</li>
+          <li class="feature-list__pharminfo--clients">Un moyen de fidéliser votre clientèle</li>
+          <li class="feature-list__pharminfo--listen">Un service client à votre écoute</li>
+          <li class="feature-list__pharminfo--rules">Le respect des règles juridiques et déontologiques</li>
         </ul>
         <div class="cta-button">
           <a class="cta-button__inner" href="https://www.pharminfo.fr/">Plus d'informations sur le site dédié</a>
@@ -117,8 +117,8 @@ Pharminfo
 
   <section class="big-cta-card dark-filled light-text rounded-corner wide-content">
     <div class="big-text stacking-block">
-      <h1>Aujourd'hui, avoir un site internet est indispensable !</h1>
-      <p>Lancez-vous !</p>
+      <h1>Aujourd'hui, avoir un site internet est indispensable&nbsp;!</h1>
+      <p>Lancez-vous&nbsp;!</p>
     </div>
     <div class="big-cta-card__cta">
       <div class="cta-button">
@@ -128,11 +128,11 @@ Pharminfo
   </section>
 
   <section>
-    <div class="grid-wrapper wide-content">
+    <div class="grid-wrapper grid-wrapper--services wide-content">
       <figure class="card">
         <figcaption>
           <p class="card__headline">Services associés</p>
-          <p class="card__title">Vous manquez de temps ou de ressources pour gérer votre site internet ?</p>
+          <p class="card__title">Vous manquez de temps ou de ressources pour gérer votre site internet&nbsp;?</p>
           <div class="card__body">
             <p>
             Laissez l'équipe Pharminfo.fr vous aider !

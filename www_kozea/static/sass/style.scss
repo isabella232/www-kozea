@@ -73,7 +73,9 @@ $outline-grey: #d7d7ec;
 $label-grey: #7f86a8;
 $primary-color: $dark-blue;
 $text-bright: #fff;
-$tablet: (max-width: 920px);
+$tablet: 920px;
+$phone: 580px;
+$laptop: 1200px;
 
 // Universal Box Sizing with Inheritance
 html {
@@ -86,6 +88,7 @@ html {
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  font-weight: 300;
 }
 
 a {
@@ -98,23 +101,57 @@ body {
     background: $dark-blue;
     color: $text-bright;
     position: relative;
-
   }
 
   & > header {
     padding: 0 10em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 0 2em;
     }
 
     .logo {
+      background: url("/static/images/logo-kozea-white.svg") no-repeat center;
       display: block;
       height: 4em;
+      width: 150px;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         height: 3em;
         margin: 0 auto;
+      }
+    }
+
+    &:not(.hero) {
+      background: white;
+      border-bottom: 1px solid $outline-grey;
+      color: $dark-blue;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+
+      .logo {
+        background: url("/static/images/logo-kozea.svg") no-repeat center;
+      }
+
+      nav.primary {
+        ul li {
+          &.active a {
+            color: $light-blue;
+          }
+
+          &:hover a {
+            color: $light-blue;
+          }
+
+          a::after {
+            background: $light-blue;
+          }
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        position: initial;
       }
     }
   }
@@ -122,20 +159,77 @@ body {
   & > footer {
     padding: 0 10em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       padding: 0 2em;
     }
 
     .lower {
       padding: 2em 0;
+
+      @media screen and (max-width: $phone) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1em 0;
+
+        .left, .right {
+          flex: 1 100%;
+        }
+
+        .left {
+          order: 1;
+          text-align: center;
+        }
+
+        .right {
+          order: 0;
+
+          ul {
+            justify-content: center;
+          }
+        }
+      }
     }
+
     .upper {
       padding: 2em 0;
+
+      @media screen and (max-width: $laptop) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1em 0;
+
+        .left,
+        .center,
+        .right {
+          flex: 1 100%;
+        }
+
+        .left img {
+          margin: 0 auto;
+        }
+
+        .center ul {
+          justify-content: center;
+        }
+      }
+
+      @media screen and (max-width: $phone) {
+        .center ul {
+          flex-wrap: wrap;
+          text-align: center;
+
+          li {
+            flex: 1 100%;
+          }
+        }
+      }
     }
+
     .logo {
       display: block;
       height: 4em;
     }
+
     hr {
       border: none;
       background: white;
@@ -148,19 +242,21 @@ body {
 .columns3-middle-expanded {
   align-items: center;
   display: flex;
+
   .left, .right {
     flex-basis: 0px; // Make side elements' width equal whatever their content
     flex-grow: 1; // Make both side elements grow centering the middle one
   }
+
   .center {
     margin: 0 2em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin: 0;
     }
   }
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
   }
 }
@@ -168,16 +264,10 @@ body {
 .columns2-right-expanded {
   align-items: center;
   display: flex;
+
   .right {
     flex-grow: 1; // expand right column
-    ul {
-      justify-content: flex-end;
-    }
-  }
-}
 
-.lower {
-  .right {
     ul {
       justify-content: flex-end;
     }
@@ -187,15 +277,11 @@ body {
 nav.primary {
   padding: 1em 0;
 
-  @media #{$tablet} {
-    padding: 0;
-  }
-
   ul {
     display: flex;
     justify-content: center;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       flex-wrap: wrap;
       justify-content: left;
     }
@@ -203,18 +289,33 @@ nav.primary {
     li {
       a {
         display: inline-block;
-        padding: 1em 1em;
-      }
+        margin: 1em;
+        position: relative;
 
-      &:hover a {
-        text-decoration: underline;
+        &::after {
+          background: white;
+          content: '';
+          display: block;
+          height: 2px;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+          transform-origin: left;
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
       }
 
       &.active {
         font-weight: bold;
-        a {
-          text-decoration: underline;
-          text-decoration-thickness: 0.1em;
+
+        a::after {
+          transform: scaleX(1);
         }
       }
     }
@@ -222,15 +323,34 @@ nav.primary {
 }
 
 nav.alternative {
+
   ul {
     display: flex;
+
     li {
+      padding: 1em;
+
       a {
         display: inline-block;
-        padding: 1em 1em;
+        position: relative;
 
-        &:hover {
-          text-decoration: underline;
+        &:hover::after {
+          transform: scaleX(1);
+        }
+
+        &::after {
+          background: white;
+          bottom: -10px;
+          content: '';
+          display: block;
+          height: 2px;
+          left: 0;
+          transform: scaleX(0);
+          transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+          transform-origin: left;
+          right: 0;
+          position: absolute;
+          width: 100%;
         }
       }
     }
@@ -242,8 +362,19 @@ nav.social-media {
     display: flex;
     justify-content: flex-end;
 
-    @media #{$tablet} {
-      justify-content: flex-start;
+    @media screen and (max-width: $laptop) {
+      justify-content: center;
+    }
+
+    li {
+      transform: translateZ(0);
+      transition-duration: .1s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
     }
   }
 
@@ -260,7 +391,7 @@ nav.social-media {
   padding: 5em 0;
   text-align: center;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     padding: 2em;
   }
 
@@ -269,6 +400,7 @@ nav.social-media {
     max-width: 30em;
 
     h1 {
+      font-weight: 400;
       margin-bottom: 2em;
     }
 
@@ -297,10 +429,6 @@ nav.secondary {
   margin-left: auto;
   margin-right: auto;
   max-width: 40em;
-
-  @media #{$tablet} {
-    padding: 2em;
-  }
 }
 
 .wide-content {
@@ -315,46 +443,111 @@ nav.secondary {
 }
 
 .large-p {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 3rem auto;
 }
 
 .big-text {
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 2.5em;
+  font-weight: 600;
 }
 
 .h-centered {
  text-align: center;
 }
 
-.justified {
-  text-align: justify;
+.video-container {
+  height: 0;
+  margin: 0 auto;
+  max-width: 1400px;
+  overflow: hidden;
+  padding-bottom: 33%;
+  position: relative;
+  width: 100%;
+
+  iframe {
+    border: 1px solid $outline-grey;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    // border: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $laptop) {
+    padding-bottom: 56.25%;
+  }
 }
+
 
 .big-link {
   color: $light-blue;
   font-size: 3em;
   font-weight: bold;
-  text-decoration: underline;
-  text-underline-position: under;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background-image: url("/static/images/arrow-blue.svg");
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    width: 1em;
+    transform: translateX(0);
+    transition-duration: .1s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+  }
+
+  &::after {
+    background: $medium-blue;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+    transform-origin: left;
+    right: 0;
+    position: absolute;
+    width: 100%;
+  }
 
   &:hover {
     color: $medium-blue;
+
+    &::before {
+      transform: translateX(5px);
+    }
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
 
 .rounded-corner {
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .stacking-block {
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
 
-  & > * {
-    margin: 0.5rem 0;
+  @media screen and (max-width: $tablet) {
+    margin: 2rem 0;
+  }
+
+  .big-text {
+    font-size: 2em;
+  }
+
+  h1 {
+    font-weight: 600;
   }
 }
 
@@ -366,7 +559,15 @@ nav.secondary {
   background: $dark-blue;
 }
 
+.light-filled {
+  background: $light-grey;
+  margin-top: -3em;
+  padding: 2em 0;
+}
+
 section {
+  margin: 3em 0;
+
   header {
     margin-bottom: 3em;
   }
@@ -375,9 +576,6 @@ section {
     line-height: 1.5;
     margin: 1rem 0;
   }
-
-  margin-bottom: 3em;
-  margin-top: 3em;
 }
 
 .grid-wrapper {
@@ -388,9 +586,33 @@ section {
   row-gap: 1em;
 
   @at-root #{&}--testimonials {
-    background: $light-grey;
     border-radius: 3px;
+    margin: 0 auto 0;
+    max-width: 1400px;
     padding: 2em;
+    width: 90%;
+  }
+
+  @at-root #{&}--services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      @media screen and (min-width: $laptop) {
+        flex-basis: 45%;
+        max-width: 45%;
+        padding: 2em 3em;
+      }
+
+      &__title {
+        font-size: 2em;
+      }
+
+      .cta-button {
+        margin-top: 1em;
+      }
+    }
   }
 }
 
@@ -408,14 +630,15 @@ section {
       position: absolute;
       width: 50%;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         padding-top: 3em;
         position: initial;
+        text-align: center;
         width: 100%;
       }
     }
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: initial;
       padding-bottom: 2em;
     }
@@ -424,9 +647,9 @@ section {
 .hero-text {
   @at-root #{&}__title {
     font-size: 4em;
-    font-weight: bold;
+    font-weight: 600;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 3em;
     }
   }
@@ -434,15 +657,15 @@ section {
   @at-root #{&}__catchphrase {
     font-size: 1.2em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 1em;
     }
   }
 
   p:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 1rem;
     }
   }
@@ -466,26 +689,20 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
-    padding: 1em;
-    p, div {
-      &:not(:last-child) {
-        margin-bottom: 1em;
-      }
-    }
+    padding: 1em 2em;
   }
-
 }
 
 .card__headline {
   color: $dark-grey;
-  font-size: 0.7em;
+  font-size: .9em;
 }
 
 .card__title {
-  color: $primary-color;
-  font-size: 1.2em;
+  font-size: 1.35em;
   font-weight: 600;
+  letter-spacing: -.5px;
+  margin: 0;
 }
 
 .card__body {
@@ -495,24 +712,30 @@ section {
   list-style: none;
 
   li {
+    display: flex;
+    font-weight: 400;
+    line-height: 1.25em;
     margin-bottom: 1em;
 
     &::before {
       content: url("/static/images/check.svg");
       display: inline-block;
-      height: 1em;
-      margin-right: 1em;
-      vertical-align: middle;
-      width: 1em;
+      margin-right: .8em;
+      min-height: 15px;
+      min-width: 15px;
+      height: 15px;
+      width: 15px;
     }
   }
 }
 
 .card__cta {
   color: white;
+  margin-top: auto;
+
   a {
-    font-weight: normal;
-    padding: 1em;
+    font-size: .9em;
+    padding: 1.5em;
   }
 }
 
@@ -523,9 +746,13 @@ section {
   border-width: 1px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1em;
+  padding: 1em 2em;
   text-align: left;
+  transition: background 250ms;
+
+  &:hover {
+    background: $light-grey;
+  }
 
   @at-root #{&}__title {
     color: $primary-color;
@@ -538,49 +765,122 @@ section {
 
   @at-root #{&}__cta {
     color: $light-blue;
-    font-weight: bold;
+    font-weight: 600;
+    margin-top: auto;
     transition: color .35s;
 
-    &:hover {
-      color: $medium-blue;
-    }
-
-    &::before {
-      content: "";
+    a {
       display: inline-block;
-      background-image: url("/static/images/arrow-blue.svg");
-      height: 1em;
-      margin-right: 0.5em;
-      vertical-align: middle;
-      width: 1em;
+      position: relative;
+
+      &:hover {
+        &::before {
+          transform: translateX(5px);
+        }
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/static/images/arrow-blue.svg");
+        height: 1em;
+        margin-right: 0.5em;
+        vertical-align: middle;
+        width: 1em;
+        transform: translateX(0);
+        transition-duration: .1s;
+        transition-property: transform;
+        transition-timing-function: ease-out;
+      }
+
+      &::after {
+        background: $medium-blue;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+        transform-origin: left;
+        right: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 
   @at-root #{&}__icon {
-    width: 75px;
+    width: 50px;
   }
 
   @at-root #{&}--filled {
     background: $light-grey;
     border-style: none;
+    transition: background 250ms;
+
+    .card2__cta a {
+      position: relative;
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &::after {
+        background: white;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform .3s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1),-moz-transform .3s cubic-bezier(.4,0,.2,1);
+        transform-origin: left;
+        right: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background: $light-blue;
+      color: white;
+
+      .card2 {
+        &__title, &__cta {
+          color: white;
+        }
+
+        &__cta a {
+          &::before {
+            background-image: url("/static/images/arrow-white.svg");
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
   }
 }
 
 .big-card {
-  padding: 5em 5em;
+  padding: 2em;
 
-  @media #{$tablet} {
-    padding: 2em;
+  .big-text {
+    font-size: 2em;
   }
 }
 
 .big-cta-card {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 5em 5em;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
     justify-content: center;
     padding: 2em;
@@ -588,13 +888,26 @@ section {
   }
 
   & > * {
-    margin-left: 1em;
-    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .cta-button {
+    margin-left: auto;
+
+    @media screen and (max-width: $tablet) {
+      margin: 0 auto;
+    }
   }
 }
 
 .big-cta-card__cta {
   flex-shrink: 0; // Never shrink to always keep button label on a single line
+  margin-left: auto;
+
+  @media screen and (max-width: $tablet) {
+    margin: 0 auto;
+  }
 }
 
 .cta-button {
@@ -602,8 +915,9 @@ section {
   border-radius: 4px;
   color: $text-bright;
   display: inline-block;
-  font-weight: bold;
-  transition: background-color 150ms;
+  font-weight: 600;
+  transition-duration: .3s;
+  transition-property: color, background-color;
 
   &:hover {
     background-color: $medium-blue;
@@ -615,12 +929,23 @@ section {
     padding: 2em;
 
     &::before {
+      background-image: url("/static/images/arrow-white.svg");
+      background-repeat: no-repeat;
       content: "";
       display: inline-block;
-      background-image: url("/static/images/arrow-white.svg");
       height: 1em;
       margin-right: 0.5em;
+      transform: translateX(0);
+      transition-duration: .1s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
       width: 1em;
+    }
+
+    &:hover {
+      &::before {
+        transform: translateX(5px);
+      }
     }
   }
 }
@@ -628,112 +953,183 @@ section {
 .product-banner {
   display: flex;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $laptop) {
     flex-wrap: wrap;
   }
-}
 
-.product-banner--dark {
-  background: $dark-blue;
-  color: $text-bright;
-}
+  // Section's name
 
-.product-banner--head {
-  padding: 5em;
-
-  @media #{$tablet} {
-    padding: 2em;
+  &__name {
+    color: $dark-grey;
   }
 
-  .product-banner__catchphrase {
-    font-size: 3em;
-    @media #{$tablet} {
-      font-size: 2em;
+  // Section's title
+
+  &__catchphrase {
+    font-size: 2.5em;
+    font-weight: 600;
+  }
+
+  // Common style on description text
+
+  &__descriptive {
+    align-items: flex-start;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 3em 0 0;
+
+    .cta-button {
+      margin-top: 1rem;
+
+      @media screen and (max-width: $laptop) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    @media screen and (max-width: $laptop) {
+      align-items: center;
+      flex-basis: 100%;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    & > * {
+      @media screen and (max-width: $tablet) {
+        margin: .5rem 0;
+      }
+    }
+
+    &--solo {
+      align-items: center;
+      flex-basis: auto;
+      margin: 0 auto;
+      max-width: 70%;
+      text-align: center;
     }
   }
 
-  .product-banner__description {
-    font-size: 1.5em;
-    @media #{$tablet} {
-      font-size: 1em;
+  // Common style on illustration
+
+  &__illustrative {
+    align-items: center;
+    display: flex;
+    flex-basis: 50%;
+    flex-shrink: 0;
+
+    @media screen and (max-width: $laptop) {
+      flex-basis: 100%;
     }
   }
 
-  .product-banner__name {
-    font-size: 1.5em;
-    @media #{$tablet} {
-      font-size: 1em;
+  &__image {
+    width: 100%;
+
+    &--portrait {
+      padding: 0 10rem;
+
+      @media screen and (max-width: $laptop) {
+        margin: 0 auto;
+        padding: 0;
+        width: 50%;
+      }
+    }
+  }
+
+  // Product banner blue background
+
+  &--dark {
+    background: $dark-blue;
+    color: $text-bright;
+
+    // Service name product banner hero section
+
+    .product-banner__name {
+      color: $text-bright;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  // Service advantages list on service page
+
+  &--flipped {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    .product-banner__descriptive {
+      margin-right: 0;
+      padding-left: 3em;
+
+      @media screen and (max-width: $laptop) {
+        align-items: flex-start;
+        padding: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  // Download white paper
+
+  &--padded {
+    padding: 2em 5em;
+
+    @media screen and (max-width: $tablet) {
+      padding: 2em;
+    }
+  }
+
+  // Product banner hero section
+
+  &--head {
+    padding: 5em;
+
+    @media screen and (max-width: $tablet) {
+      padding: 2em;
+    }
+
+    .product-banner__catchphrase {
+      font-size: 3em;
+      margin: .5em 0;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 2em;
+      }
+    }
+
+    // Service description product banner hero section
+
+    .product-banner__description {
+      font-size: 1.25em;
+
+      @media screen and (max-width: $tablet) {
+        font-size: 1em;
+      }
+    }
+
+    .product-banner__dark-container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+
+      @media screen and (max-width: $laptop) {
+        flex-wrap: wrap;
+
+        .product-banner__descriptive {
+          order: 1;
+        }
+
+        .product-banner__illustrative {
+          order: 0;
+        }
+      }
     }
   }
 }
 
-.product-banner--padded {
-  padding: 0 5em;
-
-  @media #{$tablet} {
-    padding: 0 2em;
-  }
-}
-
-.product-banner--flipped {
-  flex-direction: row-reverse;
-  .product-banner__descriptive {
-    margin-left: 2em;
-    margin-right: 0;
-  }
-}
-
-.product-banner__descriptive {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
-  justify-content: center;
-  margin-right: 2em;
-
-  @media #{$tablet} {
-    flex-basis: 100%;
-    margin-right: 0;
-  }
-
-  & > * {
-    margin: 2rem 0;
-
-    @media #{$tablet} {
-      margin: 1rem 0;
-    }
-  }
-}
-
-.product-banner__illustrative {
-  align-items: center;
-  display: flex;
-  flex-basis: 50%;
-  flex-shrink: 0;
-
-  @media #{$tablet} {
-    flex-basis: 100%;
-  }
-}
-
-.product-banner__name {
-}
-
-.product-banner__catchphrase {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.product-banner__description {
-}
-
-.product-banner__image {
-  width: 100%;
-}
-
-.product-banner__image--portrait {
-  margin: 0 8em;
-}
 
 .key-figures {
   display: flex;
@@ -742,18 +1138,23 @@ section {
   padding-bottom: 5em;
   padding-top: 5em;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $laptop) {
+    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 2em 0;
+    padding: 2em;
   }
 
   @at-root #{&}__figure {
     margin-left: 5em;
     margin-right: 5em;
 
-    @media #{$tablet} {
-      flex-basis: 50%;
+    @media screen and (max-width: $laptop) {
+      flex-basis: 33%;
       margin: .5em 0;
+    }
+
+    @media screen and (max-width: $phone) {
+      flex-basis: 50%;
       text-align: center;
     }
   }
@@ -765,10 +1166,6 @@ section {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 0.3em;
-
-    @media #{$tablet} {
-      font-size: 2em;
-    }
   }
 }
 
@@ -776,7 +1173,7 @@ section {
   margin-bottom: 15em;
   position: relative;
 
-  @media #{$tablet} {
+  @media screen and (max-width: $tablet) {
     margin-bottom: 0;
   }
 
@@ -785,7 +1182,7 @@ section {
     background-size: cover;
     height: 600px;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: 200px;
     }
   }
@@ -827,7 +1224,7 @@ section {
     transform: translate(3em, 50%);
     width: 25em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       font-size: 1em;
       position: initial;
       transform: none;
@@ -838,7 +1235,7 @@ section {
   @at-root #{&}__figure {
     display: block;
     font-size: 2em;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   @at-root #{&}__content--story {
@@ -854,7 +1251,7 @@ section {
   @at-root #{&}--story {
     margin-bottom: 20em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       margin-bottom: 0;
     }
     .fact__content {
@@ -862,7 +1259,7 @@ section {
       line-height: 2;
       width: 35em;
 
-      @media #{$tablet} {
+      @media screen and (max-width: $tablet) {
         width: 100%;
       }
     }
@@ -873,14 +1270,143 @@ section {
   }
 }
 
+  // Feature list description advantages
+
 .feature-list {
   line-height: 2;
-  list-style-position: inside;
+  list-style: none;
+
+  li {
+    align-items: center;
+    display: flex;
+    margin: 1em 0;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-right: .5em;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-width: 35px;
+      min-height: 35px;
+      height: 35px;
+      width: 35px;
+    }
+  }
+
+  &__pharminfo {
+    &--disponibility::before {
+      background: url("/static/images/pharminfo-disponibility.svg");
+    }
+
+    &--turnover::before {
+      background: url("/static/images/pharminfo-turnover.svg");
+    }
+
+    &--clients::before {
+      background: url("/static/images/pharminfo-clients.svg");
+    }
+
+    &--listen::before {
+      background: url("/static/images/pharminfo-listen.svg");
+    }
+
+    &--rules::before {
+      background: url("/static/images/pharminfo-rules.svg");
+    }
+  }
+
+  &__kozea-media {
+    &--visibility::before {
+      background: url("/static/images/kozea-media-visibility.svg");
+    }
+
+    &--rules::before {
+      background: url("/static/images/kozea-media-rules.svg");
+    }
+
+    &--results::before {
+      background: url("/static/images/kozea-media-results.svg");
+    }
+
+    &--support::before {
+      background: url("/static/images/kozea-media-support.svg");
+    }
+
+    &--satisfaction::before {
+      background: url("/static/images/kozea-media-satisfaction.svg");
+    }
+  }
+
+  &__backoffice {
+
+    &--time::before {
+      background: url("/static/images/backoffice-time.svg");
+    }
+
+    &--money::before {
+      background: url("/static/images/backoffice-money.svg");
+    }
+
+    &--accelerate::before {
+      background: url("/static/images/backoffice-accelerate.svg");
+    }
+
+    &--simplification::before {
+      background: url("/static/images/backoffice-simplification.svg");
+    }
+
+    &--statistics::before {
+      background: url("/static/images/backoffice-statistics.svg");
+    }
+  }
+
+  &__promomaker {
+    &--simplicity::before {
+      background: url("/static/images/promomaker-simplicity.svg");
+    }
+
+    &--automation::before {
+      background: url("/static/images/promomaker-automation.svg");
+    }
+
+    &--tool::before {
+      background: url("/static/images/promomaker-tool.svg");
+    }
+
+    &--access::before {
+      background: url("/static/images/promomaker-access.svg");
+    }
+
+    &--security::before {
+      background: url("/static/images/promomaker-security.svg");
+    }
+  }
+
+  &__groupement {
+    &--offers::before {
+      background: url("/static/images/groupement-offers.svg");
+    }
+
+    &--actions::before {
+      background: url("/static/images/groupement-actions.svg");
+    }
+
+    &--reporting::before {
+      background: url("/static/images/groupement-reporting.svg");
+    }
+
+    &--contact::before {
+      background: url("/static/images/groupement-contact.svg");
+    }
+  }
 }
 
 .map {
   @at-root #{&}__map {
     height: 500px;
+    z-index: 9;
   }
 
   @at-root #{&}__address {
@@ -889,7 +1415,7 @@ section {
     margin-top: 1em;
     width: 35em;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       width: 100%;
     }
   }
@@ -912,8 +1438,22 @@ section {
 .testimony {
   background: $text-bright;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2em 3em;
+  position: relative;
   text-align: left;
-  padding: 2em;
+
+  &::before {
+    content: url("/static/images/quote.svg");
+    display: block;
+    left: 3em;
+    height: 3em;
+    position: absolute;
+    top: -1.5em;
+    width: 3em;
+  }
 
   @at-root #{&}__content {
     margin-bottom: 3em;
@@ -925,7 +1465,7 @@ section {
     font-size: .9em;
     height: 100px;
     line-height: 1.5em;
-    justify-content: space-around;
+    margin-top: auto;
   }
 
   @at-root #{&}__author-name {
@@ -937,8 +1477,10 @@ section {
   }
 
   @at-root #{&}__pp {
-    background: $light-grey;
+    background: $light-grey url("/static/images/testimony-avatar.svg") no-repeat center;
+    background-size: 50%;
     border-radius: 100%;
+    flex-shrink: 0;
     height: 100px;
     width: 100px;
   }
@@ -949,14 +1491,19 @@ section {
   justify-content: space-around;
   list-style-type: none;
 
-  @media #{$tablet} {
+  li {
+    align-items: center;
+    display: flex;
+  }
+
+  @media screen and (max-width: $tablet) {
     flex-wrap: wrap;
   }
 
   @at-root #{&}__item {
-    height: 75px;
+    max-height: 3.5rem;
 
-    @media #{$tablet} {
+    @media screen and (max-width: $tablet) {
       height: 50px;
     }
   }
