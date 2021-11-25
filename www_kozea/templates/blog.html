@@ -1,0 +1,61 @@
+{% extends '_layout.html' %}
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block content %}
+<div class="page-banner light-text">
+  <div class="container">
+    <h1>Blog</h1>
+  </div>
+</div>
+
+<section>
+  <ul id="navigation">
+    <h2>Category :</h2>
+    {% for tag in tag_list %}
+    <li><a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+<section>
+  {{ pagination.links }}
+  <div class="grid-wrapper wide-content">
+
+
+    {% for blog in blogs %}
+   
+    <figure class="card">
+      <figcaption>
+        {% if blog['image'] != None %}
+        <img src="{{ url_for('static', filename=blog['image']) }}">
+        {% endif %}
+        <p class="card__title">{{ blog['title'] }}</p>
+        <div class="card__body">
+          {% if blog['author'] != None %}
+          <p>
+            Author : {{ blog['author'] }}
+          </p>
+          {% endif %}
+          <p>
+            Catégorie :
+            {% for tag in blog['tags'] %}
+            {{ tag }},
+            {% endfor %}
+          </p>
+        </div>
+        <div class="card__cta">
+          <div class="cta-button">
+            <a class="cta-button__inner" href="{{ url_for('blog.display', url=blog['url'])}}">Lire</a>
+          </div>
+        </div>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  
+  </div>
+  {{ pagination.links }}
+</section>
+
+{% endblock %}

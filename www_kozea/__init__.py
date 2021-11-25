@@ -351,6 +351,10 @@ def create_app():
 
     app.add_template_global(datetime)
 
+    from . import blog
+
+    app.register_blueprint(blog.bp)
+
     return app
 
 
