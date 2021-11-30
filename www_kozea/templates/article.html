@@ -1,0 +1,73 @@
+{% extends '_layout.html' %}
+
+{% block title %}
+{{ article['title'] }}
+{% endblock %}
+
+{% block content %}
+<div class="page-banner light-text">
+  <div class="container">
+    <h1>{{ article['title'] }}</h1>
+  </div>
+</div>
+
+<dl>
+  {% if article['author'] != None %}
+  <dt>Auteur</dt>
+  <dd>{{ article['author'] }}</dd>
+  {% endif %}
+  <dt>Date</dt>
+  <dd>{{ article['date'] }}</dd>
+  <dt>Tags</dt>
+  <dd>
+    <ul>
+      {% for tag in article['tags'] %}
+      <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  </dd>
+</dl>
+
+<section>
+  <div class="justified narrow-content">
+    {{ article['html_content'] | safe }}
+  </div>
+</section>
+
+<section class="h-centered wide-content">
+  <div class="grid-wrapper">
+    {% for article in same_tag_articles %}
+    <figure class="card2 card2--filled">
+      {% if article['caption'] %}
+      <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+      {% endif %}
+      <p class="card2__title">
+        {{ article["title"] }}
+      </p>
+      <p class="card2__body">
+        {% if article['catchphrase'] != None %}
+      <p>
+        {{ article['catchphrase'] }}
+      </p>
+      {% endif %}
+      {% if article['author'] != None %}
+      <p>
+        Auteur : {{ article['author'] }}
+      </p>
+      {% endif %}
+      <p>
+        Tags :
+        {% for tag in article['tags'] %}
+        {{ tag }},
+        {% endfor %}
+      </p>
+      </p>
+      <p class="card2__cta">
+        <a href="{{ url_for('blog.article', url=article['url']) }}">Lire</a>
+      </p>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

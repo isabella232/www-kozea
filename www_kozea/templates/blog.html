@@ -13,47 +13,50 @@ Blog
 
 <section>
   <ul id="navigation">
-    <h2>Category :</h2>
+    <h2>Tags :</h2>
     {% for tag in tag_list %}
     <li><a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a></li>
     {% endfor %}
   </ul>
 </section>
 <section>
+  {{ pagination.info }}
   {{ pagination.links }}
   <div class="grid-wrapper wide-content">
-
-
-    {% for blog in blogs %}
-   
+    {% for article in articles %}
     <figure class="card">
       <figcaption>
-        {% if blog['image'] != None %}
-        <img src="{{ url_for('static', filename=blog['image']) }}">
+        {% if article['caption'] %}
+        <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
         {% endif %}
-        <p class="card__title">{{ blog['title'] }}</p>
+
+        <p class="card__title">{{ article['title'] }}</p>
         <div class="card__body">
-          {% if blog['author'] != None %}
+          {% if article['catchphrase'] != None %}
           <p>
-            Author : {{ blog['author'] }}
+            {{ article['catchphrase'] }}
+          </p>
+          {% endif %}
+          {% if article['author'] != None %}
+          <p>
+            Auteur : {{ article['author'] }}
           </p>
           {% endif %}
           <p>
-            Catégorie :
-            {% for tag in blog['tags'] %}
+            Tags :
+            {% for tag in article['tags'] %}
             {{ tag }},
             {% endfor %}
           </p>
         </div>
         <div class="card__cta">
           <div class="cta-button">
-            <a class="cta-button__inner" href="{{ url_for('blog.display', url=blog['url'])}}">Lire</a>
+            <a class="cta-button__inner" href="{{ url_for('blog.article', url=article['url'])}}">Lire</a>
           </div>
         </div>
       </figcaption>
     </figure>
     {% endfor %}
-  
   </div>
   {{ pagination.links }}
 </section>
