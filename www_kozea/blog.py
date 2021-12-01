@@ -17,30 +17,27 @@ from .error import (
 )
 
 ARTICLES_PER_PAGE = 5
+MAX_SIMILAR_ARTICLE = 3
 DIR_PATH = "./www_kozea/articles"
 
 bp = Blueprint("blog", __name__, static_url_path="", static_folder="articles")
 
 
 @bp.route("/<path:filename>")
-def download_file(filename):
+def download_file(filename):  # pragma: no cover
     return send_from_directory(DIR_PATH, filename, as_attachment=True)
 
 
 @bp.route("/blog/")
-@bp.route("/blog/tag/<tag>")
-def blog(tag=None):
-    articles = build_articles()
-    visible_articles = list(
-        filter(
-            lambda article: date.today() >= article["date"],
-            get_same_tag_articles(tag, articles),
-        )
+@bp.route("/blog/tag/<tag>/")
+def blog(tag=None):  # pragma: no cover
+    articles = build_articles(DIR_PATH)
+    visible_articles = filter_date_articles(
+        get_same_tag_articles(tag, articles)
     )
     sorted_visible_articles = sorted_articles(visible_articles)
     tag_list = articles_tags(articles)
     displayed_articles, pagination = paginate(sorted_visible_articles)
-
     return render_template(
         "blog.html",
         menu_list=MENU_LIST,
@@ -50,23 +47,18 @@ def blog(tag=None):
     )
 
 
-@bp.route("/blog/<url>")
-def article(url):
-    articles = build_articles()
+@bp.route("/blog/<url>/")
+def article(url):  # pragma: no cover
+    articles = build_articles(DIR_PATH)
     article_path = f"{DIR_PATH}/{url}/content.md"
     my_article = build_article(article_path)
-    if len(my_article["tags"]) != 0:
-        tag = my_article["tags"][0]
-    else:
-        tag = None
-    same_tag_articles = list(
-        filter(
-            lambda article: date.today() >= article["date"]
-            and article["title"] != my_article["title"],
-            get_same_tag_articles(tag, articles),
-        )
+    tag = get_main_tag(my_article["tags"])
+    same_tag_articles = filter_title_and_date_articles(
+        get_same_tag_articles(tag, articles), my_article["title"]
     )
-    sorted_same_tag_articles = sorted_articles(same_tag_articles)[:3]
+    sorted_same_tag_articles = sorted_articles(same_tag_articles)[
+        :MAX_SIMILAR_ARTICLE
+    ]
 
     return render_template(
         "article.html",
@@ -76,9 +68,9 @@ def article(url):
     )
 
 
-def build_articles():
+def build_articles(dir_path):
     """Take the paths to content.md files and return files information."""
-    article_paths = find_article_paths(DIR_PATH)
+    article_paths = find_article_paths(dir_path)
     return list(map(build_article, article_paths))
 
 
@@ -146,6 +138,35 @@ def sorted_articles(articles):
     )
 
 
+def filter_date_articles(articles):
+    """Return list of articles dated before the current date.
+
+    articles -- list of articles to filter
+    """
+    return list(
+        filter(
+            lambda article: date.today() >= article["date"],
+            articles,
+        )
+    )
+
+
+def filter_title_and_date_articles(articles, title):
+    """Return list of articles dated before the current date
+    and do not have the same title as the current article.
+
+    articles -- list of articles to filter
+    title -- the title of the current article
+    """
+    return list(
+        filter(
+            lambda article: date.today() >= article["date"]
+            and article["title"] != title,
+            articles,
+        )
+    )
+
+
 def get_same_tag_articles(tag, articles):
     """Return articles with the same tag.
 
@@ -192,7 +213,18 @@ def articles_tags(articles):
     return sorted(list(set(tag_list)))
 
 
-def paginate(articles):
+def get_main_tag(tags_list):
+    """Return main tag in tags list if existe.
+
+    tags_list -- list of tags
+    """
+    if len(tags_list) != 0:
+        return tags_list[0]
+    else:
+        return None
+
+
+def paginate(articles):  # pragma: no cover
     """Return articles to be displayed per page and pagination configuration.
 
     articles (list) -- list of articles to paginate
