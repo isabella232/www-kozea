@@ -7,7 +7,9 @@ caption: outil-backoffice.webp
 ---
 
  # L’outil Backoffice vous accompagne dans la gestion de votre tiers-payant !
-![](/%ARTICLE_URL%/outil-backoffice.webp)
+
+![]({{ 'outil-backoffice.webp' | image_url }})
+
 
 Les pharmaciens ont été parmi les premiers professionnels de santé qui se sont vus imposer la pratique du tiers-payant.
 
@@ -25,7 +27,7 @@ Grâce à ce logiciel, vous pourrez définir des alertes, utiliser des courriers
 
 * le nombre d’heures d’utilisation du logiciel.
 
-* le temps consacré à la gestion de votre tiers-payant. 
+* le temps consacré à la gestion de votre tiers-payant.
 
 
 L’accès à ces données statistiques permet notamment de savoir s’il est possible de continuer la gestion en interne, s’il est préférable de former les collaborateurs de l’officine ou bien s’il est nécessaire d’engager un prestataire externe.
@@ -34,4 +36,4 @@ Envie de découvrir une petite démo de notre outil ? Allez, c’est d’accord�
 
 Backoffice vous accompagne dans la gestion de votre tiers-payant. En plus de notre outil de gestion interne, nous proposons également des offres de formation, ainsi que la possibilité d’externaliser votre tiers-payant. Bénéficiez d’un suivi personnalisé et flexible par un gestionnaire Backoffice qualifié. Quel que soit le mode de délégation choisi (partielle ou totale), vous avez accès à un outil statistique pour suivre l’évolution de votre tiers-payant.
 
-Besoin de plus d’informations ? N ‘hésitez pas à contacter l’équipe par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97. 
+Besoin de plus d’informations ? N ‘hésitez pas à contacter l’équipe par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97.

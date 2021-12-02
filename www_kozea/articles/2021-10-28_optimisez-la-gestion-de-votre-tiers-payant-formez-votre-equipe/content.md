@@ -6,14 +6,14 @@ tags: Tiers-payant
 caption: optimisez-la-gestion-de-votre-tiers-payant.webp
 ---
 # Optimisez la gestion de votre tiers-payant : formez votre équipe !
- 
-![](/%ARTICLE_URL%/optimisez-la-gestion-de-votre-tiers-payant.webp)
+
+![]({{ 'optimisez-la-gestion-de-votre-tiers-payant.webp' | image_url }})
 
 Le saviez-vous ? La gestion du tiers-payant représente **80%** du chiffre d’affaires d’une officine.
 
 Cette tâche, très chronophage, complique le travail administratif des pharmaciens au quotidien. L’enquête menée par le syndicat USPO révèle que le coût annuel moyen de gestion du tiers-payant est compris entre 13 246€ et 28 601€ et que le temps moyen passé est supérieur à un mi-temps.
 
-Suite à notre récente étude sur la gestion du tiers-payant en pharmacie, nous avons remarqué que :  
+Suite à notre récente étude sur la gestion du tiers-payant en pharmacie, nous avons remarqué que :
 
 * 36% des pharmaciens considèrent la gestion du tiers-payant comme **complexe** et **chronophage**
 
@@ -23,7 +23,7 @@ Suite à notre récente étude sur la gestion du tiers-payant en pharmacie, nous
 
 Et vous, vous êtes dans la même situation ?
 
-La formation votre équipe officinale pourrait s’avérer être une alliée de taille pour vous aider à optimiser la gestion de votre tiers-payant ! 
+La formation votre équipe officinale pourrait s’avérer être une alliée de taille pour vous aider à optimiser la gestion de votre tiers-payant !
 
 # Pourquoi opter pour la formation de l’équipe officinale ?
 
@@ -69,7 +69,8 @@ Back Office Services (entreprise de Kozea group), propose un ensemble de service
 
 Il est pour l’instant un des seuls acteurs sur le marché du tiers-payant en pharmacie à avoir récemment obtenu la certification **Qualiopi** pour les actions de formation.
 
-![](/%ARTICLE_URL%/logoqualiopi-150dpi-avecmarianne.png)
+![]({{ 'logoqualiopi-150dpi-avecmarianne.png' | image_url }})
+
 
 Rendez-vous sur le site internet pour en savoir plus sur ces formations !
 
@@ -78,4 +79,4 @@ Backoffice propose aussi la délégation totale ou partielle des tâches liées 
 #_« C’est une très belle équipe, très professionnelle, très sympathique et très réactive. Bonne continuation. »_
 *M. ABISROR, pharmacien à Quincy Sous Senart*
 
-N’hésitez pas à contacter l’équipe de Backoffice par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97. 
+N’hésitez pas à contacter l’équipe de Backoffice par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97.

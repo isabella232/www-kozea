@@ -8,6 +8,7 @@ import frontmatter
 import markdown
 from flask import Blueprint, render_template, request, send_from_directory
 from flask_paginate import Pagination, get_page_parameter
+from jinja2 import Environment, pass_context
 
 from . import MENU_LIST
 from .error import (
@@ -21,6 +22,24 @@ MAX_SIMILAR_ARTICLE = 3
 DIR_PATH = "./www_kozea/articles"
 
 bp = Blueprint("blog", __name__, static_url_path="", static_folder="articles")
+
+
+def build_env():  # pragma: no cover
+    @pass_context
+    def image_url_filter(context, image_filename):
+        return f"/{context['directory']}/{image_filename}"
+
+    def article_url_filter(article_id):
+        return f"../{article_id}"
+
+    env = Environment()
+    env.filters["article_url"] = article_url_filter
+    env.filters["image_url"] = image_url_filter
+
+    return env
+
+
+env = build_env()
 
 
 @bp.route("/<path:filename>")
@@ -97,9 +116,9 @@ def build_article(article_path):
     parsed_file = parse_md_file(article_path)
     if len(parsed_file.metadata) == 0:
         raise (FrontmatterError(directory))
-    html_content = markdown.markdown(
-        parsed_file.content.replace("%ARTICLE_URL%", directory)
-    )
+
+    md_template = env.from_string(parsed_file.content)
+    html_content = markdown.markdown(md_template.render(directory=directory))
     tags = tags_to_list(parsed_file.get("tags"))
 
     date = parsed_file.get("date")

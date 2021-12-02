@@ -9,7 +9,7 @@ caption: 4-conseils-trafic-internet.webp
 
 # 4 conseils pour générer du trafic vers votre site internet !
 
-![Illustration conseils pour trafic internet](/%ARTICLE_URL%/4-conseils-trafic-internet.webp)
+![Illustration conseils pour trafic internet]({{ '4-conseils-trafic-internet.webp' | image_url }})
 
 Face au développement de l’e-santé et des services en ligne (Click & Collect, vente en ligne, prise de rendez-vous en ligne,…), de plus en plus de pharmacies se rendent compte des avantages d’un site internet !
 
@@ -43,7 +43,7 @@ En posséder un, c’est une bonne chose, mais encore faut-il connaître les bon
 
 4. **Différenciez-vous de la concurrence !**
 
-    Vous avez ce petit plus que les autres n’ont pas ? Faites-le savoir ! 
+    Vous avez ce petit plus que les autres n’ont pas ? Faites-le savoir !
 
     Si votre pharmacie offre des services, des marques, des spécialités,… que vos concurrents ne proposent pas à leur patientèle, mettez-le en avant sur votre site internet. Ne ratez pas l’occasion de montrer vos points forts !
 

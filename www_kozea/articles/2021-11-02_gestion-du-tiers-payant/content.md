@@ -8,11 +8,13 @@ caption: gestion-tiers-payant.webp
 
 # Gestion du tiers-payant : pourquoi déléguer ?
 
-![](/%ARTICLE_URL%/gestion-tiers-payant.webp)
+![]({{ 'gestion-tiers-payant.webp' | image_url }})
+
 
 Certains pharmaciens rencontrent des freins quand il s’agit de la gestion du tiers-payant, alors qu’il leur est possible de déléguer cette tâche en toute confiance afin de s’assurer qu’elle soit réalisée dans les temps et correctement.
 
-![](/%ARTICLE_URL%/diagramme-gestion-tiers-payant.png)
+![]({{ 'diagramme-gestion-tiers-payant.png' | image_url }})
+
 
 Le saviez-vous ? Une pharmacie compte en moyenne 5% de rejets. Plus vite la télétransmission est faite, plus vite le pharmacien sera réglé ! Le manque de temps ou la peur de perdre du temps, sans oublier la complexité des démarches sont souvent des freins retenus à la gestion du tiers-payant en interne pour les pharmaciens.
 
@@ -33,10 +35,11 @@ personnes responsables des erreurs, l’évolution du nombre de rejets, etc.). I
 
 L’idéal est de bénéficier d’un accompagnement individuel pour avoir droit à un point personnalisé et régulier avec des spécialistes du tiers- payant. Dans ce cas de figure le prestataire extérieur peut se connecter à distance sur un ordinateur de la pharmacie ou se déplacer en officine.
 
-![](/%ARTICLE_URL%/le-plus-de-backoffice.png)
+![]({{ 'le-plus-de-backoffice.png' | image_url }})
 
 
-Retrouvez plus d’informations sur comment optimiser la gestion du tiers-payant en pharmacie dans notre livre blanc, à télécharger gratuitement : 
+
+Retrouvez plus d’informations sur comment optimiser la gestion du tiers-payant en pharmacie dans notre livre blanc, à télécharger gratuitement :
 Comment redonner de la valeur au métier de pharmacien en optimisant la gestion de son tiers-payant ?
 
 * Limitez les rejets et les impayés
@@ -46,4 +49,4 @@ Comment redonner de la valeur au métier de pharmacien en optimisant la gestion 
 * Optimisez la gestion du tiers-payant
 
 
-Fort de son expérience passée dans le milieu de la santé, Kozea group a développé Backoffice, un ensemble de services dédiés à la gestion du tiers-payant (externalisation, formations et gestion en interne). N’hésitez pas à contacter l’équipe par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97. 
+Fort de son expérience passée dans le milieu de la santé, Kozea group a développé Backoffice, un ensemble de services dédiés à la gestion du tiers-payant (externalisation, formations et gestion en interne). N’hésitez pas à contacter l’équipe par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97.

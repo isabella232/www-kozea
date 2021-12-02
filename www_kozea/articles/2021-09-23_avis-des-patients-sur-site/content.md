@@ -5,7 +5,8 @@ date: 2021-09-23
 tags:  e-santé
 caption: avis-des-patients-sur-site.webp
 ---
-![](/%ARTICLE_URL%/avis-des-patients-sur-site.webp)
+
+![]({{ 'avis-des-patients-sur-site.webp' | image_url }})
 # [Infographie], L’avis des patients sur les sites internet de pharmacie
 
 À l’heure du tout digital, le site internet est devenu **indispensable** pour une pharmacie. Qu’il soit simplement vitrine avec les informations de la pharmacie ou e-commerce avec la vente de produits de santé, les patients ont désormais l’habitude de rechercher tout type d’information sur internet avant de se rendre en pharmacie, principalement pour gagner du temps.
@@ -23,4 +24,4 @@ Finalement, les pharmaciens n’ont pas l’air d’inciter leurs patients à ut
 Retrouvez les résultats de notre étude dans l’infographie ci-dessous 👇🏻
 
 
-![infographie](/%ARTICLE_URL%/infographie-kozea-group.png)
+![infographie]({{ 'infographie-kozea-group.png' | image_url }})
