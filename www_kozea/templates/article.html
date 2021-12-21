@@ -6,33 +6,22 @@
 
 {% block content %}
 <div class="page-banner light-text">
-  <div class="container">
-    <h1>{{ article['title'] }}</h1>
+  <div class="wide-content">
+    <h1 class="big-text">{{ article['title'] }}</h1>
   </div>
 </div>
 
-<dl>
-  {% if article['author'] != None %}
-  <dt>Auteur</dt>
-  <dd>{{ article['author'] }}</dd>
-  {% endif %}
-  <dt>Date</dt>
-  <dd>{{ article['date'] }}</dd>
-  <p>
-    Time : {{ article['time'] }} min
-  </p>
-  <dt>Tags</dt>
-  <dd>
-    <ul>
-      {% for tag in article['tags'] %}
-      <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-  </dd>
-</dl>
-
 <section>
-  <div class="justified narrow-content">
+  <div class="narrow-content">
+    <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+    {% for tag in article['tags'] %}
+    <p>{{ tag }}</p>
+    {% endfor %}
+    {% if article['date'] != None %}
+    <b>Date : {{ article['date'] }}</b>
+    {% endif %}
+    <b>Time : {{ article['time'] }} min</b>
+    <hr>
     {{ article['html_content'] | safe }}
   </div>
 </section>
@@ -82,14 +71,9 @@
         {{ article["title"] }}
       </p>
       <p class="card2__body">
-        {% if article['catchphrase'] != None %}
+        {% if article['date'] != None %}
       <p>
-        {{ article['catchphrase'] }}
-      </p>
-      {% endif %}
-      {% if article['author'] != None %}
-      <p>
-        Auteur : {{ article['author'] }}
+        Date : {{ article['date'] }}
       </p>
       {% endif %}
       <p>

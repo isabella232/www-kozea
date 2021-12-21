@@ -5,9 +5,6 @@ date: 2021-08-31
 tags: Communication digitale, e-santé
 caption: communication-digitale.webp
 ---
-# [Chiffre de la semaine] La communication digitale est privilégiée par les patients.
-
-![communication]({{ 'communication-digitale.webp' | image_url }})
 
 Selon notre étude intitulée « **La communication à l’officine** », réalisée en juin 2021 sur 2130 patients et 410 pharmaciens, **les patients affirment que la communication est essentielle en officine.**
 

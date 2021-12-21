@@ -6,11 +6,6 @@ tags: site internet, e-santé
 caption: 4-conseils-trafic-internet.webp
 ---
 
-
-# 4 conseils pour générer du trafic vers votre site internet !
-
-![Illustration conseils pour trafic internet]({{ '4-conseils-trafic-internet.webp' | image_url }})
-
 Face au développement de l’e-santé et des services en ligne (Click & Collect, vente en ligne, prise de rendez-vous en ligne,…), de plus en plus de pharmacies se rendent compte des avantages d’un site internet !
 
 En posséder un, c’est une bonne chose, mais encore faut-il connaître les bonnes astuces pour générer un trafic régulier ! C’est parti pour un petit topo !

@@ -6,10 +6,6 @@ tags: Tiers-payant
 caption: outil-backoffice.webp
 ---
 
- # L’outil Backoffice vous accompagne dans la gestion de votre tiers-payant !
-
-![]({{ 'outil-backoffice.webp' | image_url }})
-
 
 Les pharmaciens ont été parmi les premiers professionnels de santé qui se sont vus imposer la pratique du tiers-payant.
 

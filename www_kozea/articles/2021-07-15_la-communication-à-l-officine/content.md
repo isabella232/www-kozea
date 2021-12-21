@@ -5,9 +5,6 @@ date: 2021-07-15
 tags: Communication digitale
 caption: communication-à-officine.webp
 ---
-# [Infographie] La communication à l’officine
-
-![#communication #numérique #hcsmeufr]({{ 'communication-à-officine.webp' | image_url }})
 
 La communication pharmacien-patient est un élément essentiel pour maintenir cette relation de proximité. Elle passe par la communication à distance (surtout depuis la crise sanitaire) mais surtout par la communication à l’officine. Elle répond à deux objectifs principaux : **augmenter les ventes et renforcer le rôle de conseil du pharmacien.**
 

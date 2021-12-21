@@ -5,10 +5,6 @@ date: 2021-10-21
 tags: Communication digitale
 caption: patients-et-pharmaciens-sur-les-reseaux-sociaux.webp
 ---
-# [Infographie] Patients et pharmaciens sur les réseaux sociaux : quelles attentes ?
-
-![]({{ 'patients-et-pharmaciens-sur-les-reseaux-sociaux.webp' | image_url }})
-
 
 À l’heure du “tout digital”, la présence des pharmacies sur les réseaux sociaux s’avère être une belle opportunité de créer plus de visibilité, mais aussi de fidéliser les patients et donc d’engendrer plus de trafic et de ventes en pharmacie.
 

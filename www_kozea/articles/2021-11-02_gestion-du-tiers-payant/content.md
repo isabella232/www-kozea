@@ -6,11 +6,6 @@ tags: Tiers-payant
 caption: gestion-tiers-payant.webp
 ---
 
-# Gestion du tiers-payant : pourquoi déléguer ?
-
-![]({{ 'gestion-tiers-payant.webp' | image_url }})
-
-
 Certains pharmaciens rencontrent des freins quand il s’agit de la gestion du tiers-payant, alors qu’il leur est possible de déléguer cette tâche en toute confiance afin de s’assurer qu’elle soit réalisée dans les temps et correctement.
 
 ![]({{ 'diagramme-gestion-tiers-payant.png' | image_url }})

@@ -6,10 +6,6 @@ tags: e-santé, site internet
 caption: la-prise-de-rendez-vous-en-ligne-5-avantages-pour-les-pharmacies.webp
 ---
 
-# La prise de rendez-vous en ligne : 5 avantages pour les pharmacies !
-
-![]({{ 'la-prise-de-rendez-vous-en-ligne-5-avantages-pour-les-pharmacies.webp' | image_url }})
-
 
 Depuis plusieurs années, le secteur pharmaceutique est en permanente évolution. Très vite, il a dû s’adapter à la fois aux nouveaux modes de consommation des patients, mais également aux exigences du marché, de plus en plus concurrentiel.
 

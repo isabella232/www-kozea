@@ -5,9 +5,6 @@ date: 2021-10-28
 tags: Tiers-payant
 caption: optimisez-la-gestion-de-votre-tiers-payant.webp
 ---
-# Optimisez la gestion de votre tiers-payant : formez votre équipe !
-
-![]({{ 'optimisez-la-gestion-de-votre-tiers-payant.webp' | image_url }})
 
 Le saviez-vous ? La gestion du tiers-payant représente **80%** du chiffre d’affaires d’une officine.
 
