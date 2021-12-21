@@ -10,52 +10,56 @@ Blog
     <h1>Blog</h1>
   </div>
 </div>
-
 <section>
-  <ul id="navigation">
-    <h2>Tags :</h2>
-    {% for tag in tag_list %}
-    <li><a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
-<section>
-  {{ pagination.info }}
-  {{ pagination.links }}
   <div class="grid-wrapper wide-content">
-    {% for article in articles %}
-    <figure class="card">
-      <figcaption>
-        {% if article['caption'] %}
-        <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
-        {% endif %}
-
-        <p class="card__title">{{ article['title'] }}</p>
-        <div class="card__body">
-          {% if article['catchphrase'] != None %}
-          <p>
-            {{ article['catchphrase'] }}
-          </p>
-          {% endif %}
-          {% if article['author'] != None %}
-          <p>
-            Auteur : {{ article['author'] }}
-          </p>
-          {% endif %}
-          <p>
-            Tags :
-            {% for tag in article['tags'] %}
-            {{ tag }},
+    <div class="col-4">
+      <figure class="card" style="width: 18rem;">
+        <figcaption>
+          <p class="card__title">Filtrer les sujets</p>
+          <div class="card__body">
+            <p>
+              <a href="{{ url_for('blog.blog') }}">Tous</a>
+            </p>
+            {% for tag in tag_list %}
+            <p>
+              <a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a>
+            </p>
             {% endfor %}
-          </p>
-        </div>
-        <div class="card__cta">
-          <div class="cta-button">
-            <a class="cta-button__inner" href="{{ url_for('blog.article', url=article['url'])}}">Lire</a>
           </div>
-        </div>
-      </figcaption>
-    </figure>
+        </figcaption>
+      </figure>
+    </div>
+
+
+    {% for article in articles %}
+      <figure class="card">
+        <figcaption>
+          {% if article['caption'] %}
+          <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+          {% endif %}
+
+          <p class="card__title">{{ article['title'] }}</p>
+          <div class="card__body">
+
+            {% if article['date'] != None %}
+            <p>
+              Date : {{ article['date'] }}
+            </p>
+            {% endif %}
+            <p>
+              Tags :
+              {% for tag in article['tags'] %}
+              {{ tag }},
+              {% endfor %}
+            </p>
+          </div>
+          <div class="card__cta">
+            <div class="cta-button">
+              <a class="cta-button__inner" href="{{ url_for('blog.article', url=article['url'])}}">Lire</a>
+            </div>
+          </div>
+        </figcaption>
+      </figure>
     {% endfor %}
   </div>
   {{ pagination.links }}
