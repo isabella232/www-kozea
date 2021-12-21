@@ -7,8 +7,11 @@ from ..blog import (
     articles_tags,
     build_article,
     build_articles,
+    count_words_in_text,
+    estimate_reading_time,
     filter_date_articles,
     filter_title_and_date_articles,
+    filter_visible_text,
     find_article_paths,
     get_main_tag,
     get_same_tag_articles,
@@ -54,6 +57,7 @@ def test_build_article():
     ) == {
         "title": "Avis patients",
         "date": datetime.date(2021, 11, 22),
+        "time": 1,
         "tags": ["allergies", "santé"],
         "md_content": "# Avis patients\n\navis",
         "html_content": "<h1>Avis patients</h1>\n<p>avis</p>",
@@ -78,6 +82,7 @@ def test_build_articles():
         {
             "title": "Avis patients",
             "date": datetime.date(2021, 11, 22),
+            "time": 1,
             "tags": ["allergies", "santé"],
             "md_content": "# Avis patients\n\navis",
             "html_content": "<h1>Avis patients</h1>\n<p>avis</p>",
@@ -250,3 +255,26 @@ def test_filter_title_and_date_articles():
             f"{article_base_path}/2021-11-27_communication/content.md"
         ),
     ]
+
+
+def test_filter_visible_text():
+    assert filter_visible_text("<p> Test <p>") == "Test"
+    assert (
+        filter_visible_text("<h1> Filter visible text <h1> <p> Test <p>")
+        == "FiltervisibletextTest"
+    )
+    assert filter_visible_text("") == ""
+
+
+def test_count_words_in_text():
+    assert count_words_in_text("Test", 5) == 0.8
+    assert count_words_in_text("FiltervisibletextTest", 5) == 4.2
+    assert count_words_in_text("", 5) == 0
+
+
+def test_estimate_reading_time():
+    assert estimate_reading_time("<p> Test <p>") == 1
+    assert (
+        estimate_reading_time("<h1> Filter visible text <h1> <p> Test <p>") == 1
+    )
+    assert estimate_reading_time("") == 0

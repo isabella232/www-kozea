@@ -47,6 +47,9 @@ Blog
             </p>
             {% endif %}
             <p>
+              Time : {{ article['time'] }} min
+            </p>
+            <p>
               Tags :
               {% for tag in article['tags'] %}
               {{ tag }},

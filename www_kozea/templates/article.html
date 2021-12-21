@@ -18,6 +18,9 @@
   {% endif %}
   <dt>Date</dt>
   <dd>{{ article['date'] }}</dd>
+  <p>
+    Time : {{ article['time'] }} min
+  </p>
   <dt>Tags</dt>
   <dd>
     <ul>
@@ -55,6 +58,9 @@
         Auteur : {{ article['author'] }}
       </p>
       {% endif %}
+      <p>
+        Time : {{ article['time'] }} min
+      </p>
       <p>
         Tags :
         {% for tag in article['tags'] %}

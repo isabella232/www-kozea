@@ -1,6 +1,8 @@
 import datetime
 import io
+import math
 import os
+import re
 from datetime import date
 from functools import reduce
 
@@ -17,7 +19,9 @@ from .error import (
     TypeDateInArticleError,
 )
 
-ARTICLES_PER_PAGE = 5
+WPM = 200
+WORD_LENGTH = 5
+ARTICLES_PER_PAGE = 6
 MAX_SIMILAR_ARTICLE = 3
 DIR_PATH = "./www_kozea/articles"
 
@@ -119,8 +123,8 @@ def build_article(article_path):
 
     md_template = env.from_string(parsed_file.content)
     html_content = markdown.markdown(md_template.render(directory=directory))
+    reading_time = estimate_reading_time(html_content)
     tags = tags_to_list(parsed_file.get("tags"))
-
     date = parsed_file.get("date")
     if date is None:
         raise (NoDateInArticleError(directory))
@@ -131,6 +135,7 @@ def build_article(article_path):
         **parsed_file,
         "md_content": parsed_file.content,
         "html_content": html_content,
+        "time": reading_time,
         "tags": tags,
         "url": directory,
     }
@@ -259,3 +264,31 @@ def paginate(articles):  # pragma: no cover
         css_framework="semantic",
     )
     return displayed_articles, pagination
+
+
+def filter_visible_text(text):
+    """Return a string without HTML-tags.
+
+    text -- html content
+    """
+    clear_html_tags = re.compile("<.*?>")
+    text = re.sub(clear_html_tags, "", text)
+    return "".join(text.split())
+
+
+def count_words_in_text(text, word_length):
+    """Return the number of words in a given text.
+
+    text -- the text we want to calculates its words
+    """
+    return len(text) / word_length
+
+
+def estimate_reading_time(html_content):
+    """Return the estimated reading time.
+
+    html_content = HTML text
+    """
+    filtered_text = filter_visible_text(html_content)
+    total_words = count_words_in_text(filtered_text, WORD_LENGTH)
+    return math.ceil(total_words / WPM)
