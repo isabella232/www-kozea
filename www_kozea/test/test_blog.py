@@ -10,10 +10,12 @@ from ..blog import (
     count_words_in_text,
     estimate_reading_time,
     filter_date_articles,
-    filter_title_and_date_articles,
+    filter_title_articles,
     filter_visible_text,
     find_article_paths,
+    get_articles_titles,
     get_main_tag,
+    get_previous_and_next_articles,
     get_same_tag_articles,
     sorted_articles,
     tags_to_list,
@@ -207,21 +209,8 @@ def test_filter_date_articles():
     ]
 
 
-@freeze_time("2021-11-30")
-def test_filter_title_and_date_articles():
-    assert (
-        filter_title_and_date_articles(
-            [
-                build_article(
-                    f"{article_base_path}/2021-12-10_acariens/content.md"
-                )
-            ],
-            "Avis patients",
-        )
-        == []
-    )
-
-    assert filter_title_and_date_articles(
+def test_filter_title_articles():
+    assert filter_title_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -230,7 +219,7 @@ def test_filter_title_and_date_articles():
                 f"{article_base_path}/2021-11-27_communication/content.md"
             ),
         ],
-        "foo",
+        ["foo", "test"],
     ) == [
         build_article(
             f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -240,7 +229,7 @@ def test_filter_title_and_date_articles():
         ),
     ]
 
-    assert filter_title_and_date_articles(
+    assert filter_title_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -249,7 +238,7 @@ def test_filter_title_and_date_articles():
                 f"{article_base_path}/2021-11-27_communication/content.md"
             ),
         ],
-        "Avis patients",
+        ["Avis patients"],
     ) == [
         build_article(
             f"{article_base_path}/2021-11-27_communication/content.md"
@@ -278,3 +267,90 @@ def test_estimate_reading_time():
         estimate_reading_time("<h1> Filter visible text <h1> <p> Test <p>") == 1
     )
     assert estimate_reading_time("") == 0
+
+
+def test_get_previous_and_next_articles():
+    assert get_previous_and_next_articles(
+        build_article(f"{article_base_path}/2021-11-02_rendez-vous/content.md"),
+        [
+            build_article(
+                f"{article_base_path}/2021-11-22_avis-patients/content.md"
+            ),
+            build_article(
+                f"{article_base_path}/2021-11-02_rendez-vous/content.md"
+            ),
+            build_article(
+                f"{article_base_path}/2021-12-10_acariens/content.md"
+            ),
+            build_article(
+                f"{article_base_path}/2021-11-18_4-conseils/content.md"
+            ),
+        ],
+    ) == (
+        build_article(
+            f"{article_base_path}/2021-11-22_avis-patients/content.md"
+        ),
+        build_article(f"{article_base_path}/2021-12-10_acariens/content.md"),
+    )
+
+    assert (
+        get_previous_and_next_articles(
+            build_article(
+                f"{article_base_path}/2021-11-02_rendez-vous/content.md"
+            ),
+            [],
+        )
+        == (None, None)
+    )
+
+    assert get_previous_and_next_articles(
+        build_article(f"{article_base_path}/2021-11-02_rendez-vous/content.md"),
+        [
+            build_article(
+                f"{article_base_path}/2021-11-22_avis-patients/content.md"
+            ),
+            build_article(
+                f"{article_base_path}/2021-11-02_rendez-vous/content.md"
+            ),
+        ],
+    ) == (
+        build_article(
+            f"{article_base_path}/2021-11-22_avis-patients/content.md"
+        ),
+        None,
+    )
+
+    assert get_previous_and_next_articles(
+        build_article(f"{article_base_path}/2021-11-02_rendez-vous/content.md"),
+        [
+            build_article(
+                f"{article_base_path}/2021-11-02_rendez-vous/content.md"
+            ),
+            build_article(
+                f"{article_base_path}/2021-12-10_acariens/content.md"
+            ),
+        ],
+    ) == (
+        None,
+        build_article(f"{article_base_path}/2021-12-10_acariens/content.md"),
+    )
+
+
+def test_get_articles_titles():
+    assert (
+        get_articles_titles(
+            [
+                build_article(
+                    f"{article_base_path}/2021-11-02_rendez-vous/content.md"
+                ),
+                build_article(
+                    f"{article_base_path}/2021-12-10_acariens/content.md"
+                ),
+                None,
+            ],
+        )
+        == ["Prise de rendez-vous", "Les acariens"]
+    )
+
+    assert get_articles_titles([None]) == []
+    assert get_articles_titles([]) == []

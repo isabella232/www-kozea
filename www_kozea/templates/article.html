@@ -39,6 +39,40 @@
 
 <section class="h-centered wide-content">
   <div class="grid-wrapper">
+    {% if previous_article != None %}
+    <figure class="card2 card2--filled">
+      <p class="card2__body">
+
+      <p>
+        {{ previous_article['title'] }}
+      </p>
+
+      </p>
+      <p class="card2__cta">
+        <a href="{{ url_for('blog.article', url=previous_article['url']) }}">Article précédent</a>
+      </p>
+    </figure>
+    {% endif %}
+    {% if next_article != None %}
+    <figure class="card2 card2--filled">
+      <p class="card2__body">
+
+      <p>
+        {{ next_article['title'] }}
+      </p>
+
+      </p>
+      <p class="card2__cta">
+        <a href="{{ url_for('blog.article', url=next_article['url']) }}">Article suivant</a>
+      </p>
+    </figure>
+    {% endif %}
+
+  </div>
+</section>
+
+<section class="h-centered wide-content">
+  <div class="grid-wrapper">
     {% for article in same_tag_articles %}
     <figure class="card2 card2--filled">
       {% if article['caption'] %}

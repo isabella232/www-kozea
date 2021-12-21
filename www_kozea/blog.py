@@ -59,6 +59,7 @@ def blog(tag=None):  # pragma: no cover
         get_same_tag_articles(tag, articles)
     )
     sorted_visible_articles = sorted_articles(visible_articles)
+
     tag_list = articles_tags(articles)
     displayed_articles, pagination = paginate(sorted_visible_articles)
     return render_template(
@@ -72,12 +73,19 @@ def blog(tag=None):  # pragma: no cover
 
 @bp.route("/blog/<url>/")
 def article(url):  # pragma: no cover
+    excluded_article = []
     articles = build_articles(DIR_PATH)
+    sorted_visible_articles = sorted_articles(filter_date_articles(articles))
     article_path = f"{DIR_PATH}/{url}/content.md"
     my_article = build_article(article_path)
+    previous_article, next_article = get_previous_and_next_articles(
+        my_article, sorted_visible_articles
+    )
+    excluded_article.extend([my_article, previous_article, next_article])
     tag = get_main_tag(my_article["tags"])
-    same_tag_articles = filter_title_and_date_articles(
-        get_same_tag_articles(tag, articles), my_article["title"]
+    same_tag_articles = filter_title_articles(
+        get_same_tag_articles(tag, sorted_visible_articles),
+        get_articles_titles(excluded_article),
     )
     sorted_same_tag_articles = sorted_articles(same_tag_articles)[
         :MAX_SIMILAR_ARTICLE
@@ -87,6 +95,8 @@ def article(url):  # pragma: no cover
         "article.html",
         menu_list=MENU_LIST,
         article=my_article,
+        next_article=next_article,
+        previous_article=previous_article,
         same_tag_articles=sorted_same_tag_articles,
     )
 
@@ -175,17 +185,16 @@ def filter_date_articles(articles):
     )
 
 
-def filter_title_and_date_articles(articles, title):
-    """Return list of articles dated before the current date
-    and do not have the same title as the current article.
+def filter_title_articles(articles, titles):
+    """Return list of articles that do not have the same
+    title as the current, previous and next article.
 
     articles -- list of articles to filter
-    title -- the title of the current article
+    titles -- titles of current previous and next article
     """
     return list(
         filter(
-            lambda article: date.today() >= article["date"]
-            and article["title"] != title,
+            lambda article: article["title"] not in titles,
             articles,
         )
     )
@@ -201,6 +210,41 @@ def get_same_tag_articles(tag, articles):
         return articles
     else:
         return list(filter(lambda article: tag in article["tags"], articles))
+
+
+def get_articles_titles(articles):
+    """Return list of articles titles.
+
+    articles -- list of articles
+    """
+    titles = []
+    for article in articles:
+        if article is not None:
+            title = article["title"]
+            titles.append(title)
+    return titles
+
+
+def get_previous_and_next_articles(article, articles_list):
+    """Return previous and next articles.
+
+    index -- current article index
+    articles_list -- list of articles
+    """
+    if article in articles_list:
+        index = articles_list.index(article)
+        if index != 0:
+            previous_article = articles_list[index - 1]
+        else:
+            previous_article = None
+        if index != len(articles_list) - 1:
+            next_article = articles_list[index + 1]
+        else:
+            next_article = None
+    else:
+        previous_article = None
+        next_article = None
+    return previous_article, next_article
 
 
 def tags_to_list(tags):
