@@ -54,16 +54,24 @@ def test_get_main_tag():
 
 
 def test_build_article():
+    print(
+        build_article(
+            f"{article_base_path}/2021-11-22_avis-patients/content.md"
+        )
+    )
     assert build_article(
         f"{article_base_path}/2021-11-22_avis-patients/content.md"
     ) == {
         "title": "Avis patients",
         "date": datetime.date(2021, 11, 22),
-        "time": 1,
         "tags": ["allergies", "santé"],
         "md_content": "# Avis patients\n\navis",
-        "html_content": "<h1>Avis patients</h1>\n<p>avis</p>",
+        "html_content": '<h1 id="avis-patients">'
+        "Avis patients</h1>\n<p>avis</p>",
+        "time": 1,
         "url": "2021-11-22_avis-patients",
+        "toc": '<div class="toc">\n<ul>\n<li>'
+        '<a href="#avis-patients">Avis patients</a></li>\n</ul>\n</div>\n',
     }
     with pytest.raises(FrontmatterError):
         build_article(
@@ -84,11 +92,14 @@ def test_build_articles():
         {
             "title": "Avis patients",
             "date": datetime.date(2021, 11, 22),
-            "time": 1,
             "tags": ["allergies", "santé"],
             "md_content": "# Avis patients\n\navis",
-            "html_content": "<h1>Avis patients</h1>\n<p>avis</p>",
+            "html_content": '<h1 id="avis-patients">'
+            "Avis patients</h1>\n<p>avis</p>",
+            "time": 1,
             "url": "2021-11-22_avis-patients",
+            "toc": '<div class="toc">\n<ul>\n<li>'
+            '<a href="#avis-patients">Avis patients</a></li>\n</ul>\n</div>\n',
         }
     ]
 

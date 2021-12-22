@@ -60,7 +60,7 @@ Back Office Services (entreprise de Kozea group), propose un ensemble de service
 
 * Gestion des rejets / erreurs comptoir (7h)
 
-#_« Formation au top ! Répond à nos questions et même plus ! »_
+_« Formation au top ! Répond à nos questions et même plus ! »_
 
 *Iris, secrétaire de la pharmacie à Quincy Sous Senart*
 
@@ -73,7 +73,7 @@ Rendez-vous sur le site internet pour en savoir plus sur ces formations !
 
 Backoffice propose aussi la délégation totale ou partielle des tâches liées au tiers-payant à un gestionnaire expert, et un outil web développé en collaboration avec des pharmaciens, pour gérer en toute autonomie son tiers-payant.
 
-#_« C’est une très belle équipe, très professionnelle, très sympathique et très réactive. Bonne continuation. »_
+_« C’est une très belle équipe, très professionnelle, très sympathique et très réactive. Bonne continuation. »_
 *M. ABISROR, pharmacien à Quincy Sous Senart*
 
 N’hésitez pas à contacter l’équipe de Backoffice par mail à backoffice@lagestiondutierspayant.fr ou bien par téléphone au 04 27 11 83 97.

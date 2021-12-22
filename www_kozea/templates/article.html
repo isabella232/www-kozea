@@ -11,9 +11,22 @@
   </div>
 </div>
 
-<section>
+<div class="h-centered wide-content">
+  <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+</div>
+
+<section class="grid-wrapper grid-wrapper--services ">
+
   <div class="narrow-content">
-    <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+    {% if article['toc'] | safe | length > 35 %}
+    <h1>Sommaire</h1>
+    <div>
+      {{ article['toc'] | safe }}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="narrow-content">
     {% for tag in article['tags'] %}
     <p>{{ tag }}</p>
     {% endfor %}

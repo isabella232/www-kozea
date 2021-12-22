@@ -145,7 +145,8 @@ def build_article(article_path):
         raise (FrontmatterError(directory))
 
     md_template = env.from_string(parsed_file.content)
-    html_content = markdown.markdown(md_template.render(directory=directory))
+    md = markdown.Markdown(extensions=["toc"])
+    html_content = md.convert(md_template.render(directory=directory))
     reading_time = estimate_reading_time(html_content)
     tags = tags_to_list(parsed_file.get("tags"))
     date = parsed_file.get("date")
@@ -161,6 +162,7 @@ def build_article(article_path):
         "time": reading_time,
         "tags": tags,
         "url": directory,
+        "toc": md.toc,
     }
 
 
