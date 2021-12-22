@@ -5,11 +5,36 @@ Blog
 {% endblock %}
 
 {% block content %}
-<div class="page-banner light-text">
-  <div class="container">
-    <h1>Blog</h1>
+<div class="big-card gradient-filled ">
+  <div class="product-banner product-banner--dark product-banner--head product-banner--flipped wide-content">
+    <div class="product-banner__descriptive">
+      <div class="grid-wrapper grid-wrapper--services ">
+        {% for tag in pinned_article['tags'] %}
+        <figure class="card2 card2--filled">
+          <div>
+            <p class="card2__title">
+              {{ tag }}
+            </p>
+          </div>
+        </figure>
+        {% endfor %}
+      </div>
+      <p class="product-banner__catchphrase">{{pinned_article['title']}}</p>
+      <p class="product-banner__description">{{pinned_article['description']}}</p>
+      <hr>
+      <span class="product-banner__name">{{pinned_article['date']}}, {{pinned_article['time']}} min</span>
+      <div class="big-cta-card__cta">
+        <p><a class="big-link left" href="{{ url_for('blog.article', url=pinned_article['url'])}}"></a></p>
+      </div>
+    </div>
+
+    <div class="product-banner__illustrative">
+      <img class="product-banner__image"
+        src="{{ url_for('blog.download_file', filename= '/'.join([pinned_article['url'], pinned_article['caption']])) }}">
+    </div>
   </div>
 </div>
+
 <section>
   <div class="grid-wrapper wide-content">
     <div class="col-4">

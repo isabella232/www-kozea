@@ -4,6 +4,8 @@ title: 4 conseils pour générer du trafic vers votre site internet !
 date: 2021-11-25
 tags: site internet, e-santé
 caption: 4-conseils-trafic-internet.webp
+description: "Face au développement de l’e-santé et des services en ligne (Click & Collect, vente en ligne, prise de rendez-vous en ligne,…), de plus en plus de pharmacies se rendent compte des avantages d’un site internet !"
+
 ---
 
 Face au développement de l’e-santé et des services en ligne (Click & Collect, vente en ligne, prise de rendez-vous en ligne,…), de plus en plus de pharmacies se rendent compte des avantages d’un site internet !

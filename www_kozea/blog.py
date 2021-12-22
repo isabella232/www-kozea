@@ -8,7 +8,13 @@ from functools import reduce
 
 import frontmatter
 import markdown
-from flask import Blueprint, render_template, request, send_from_directory
+from flask import (
+    Blueprint,
+    current_app,
+    render_template,
+    request,
+    send_from_directory,
+)
 from flask_paginate import Pagination, get_page_parameter
 from jinja2 import Environment, pass_context
 
@@ -24,6 +30,7 @@ WORD_LENGTH = 5
 ARTICLES_PER_PAGE = 6
 MAX_SIMILAR_ARTICLE = 3
 DIR_PATH = "./www_kozea/articles"
+
 
 bp = Blueprint("blog", __name__, static_url_path="", static_folder="articles")
 
@@ -54,17 +61,23 @@ def download_file(filename):  # pragma: no cover
 @bp.route("/blog/")
 @bp.route("/blog/tag/<tag>/")
 def blog(tag=None):  # pragma: no cover
+    pinned_article_url = current_app.config.get("BLOG_PINNED_ARTICLE_URL")
+    pinned_article_path = f"{DIR_PATH}/{pinned_article_url}/content.md"
+    pinned_article = build_article(pinned_article_path)
     articles = build_articles(DIR_PATH)
-    visible_articles = filter_date_articles(
+    same_tag_articles = filter_date_articles(
         get_same_tag_articles(tag, articles)
     )
+    visible_articles = filter_title_articles(
+        same_tag_articles, get_articles_titles([pinned_article])
+    )
     sorted_visible_articles = sorted_articles(visible_articles)
-
     tag_list = articles_tags(articles)
     displayed_articles, pagination = paginate(sorted_visible_articles)
     return render_template(
         "blog.html",
         menu_list=MENU_LIST,
+        pinned_article=pinned_article,
         articles=displayed_articles,
         tag_list=tag_list,
         pagination=pagination,
