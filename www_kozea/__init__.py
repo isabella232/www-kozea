@@ -32,7 +32,7 @@ PAGE_LIST = [
 
 def create_app():
     app = Flask(__name__)
-
+    app.config.from_envvar("FLASK_CONFIG")
     app.wsgi_app = SassMiddleware(
         app.wsgi_app,
         {"www_kozea": ("static/sass", "static/css", "/static/css", False)},

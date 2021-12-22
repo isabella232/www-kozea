@@ -1,5 +1,6 @@
 PROJECT_NAME = www_kozea
 export FLASK_APP = $(PROJECT_NAME)
+export FLASK_CONFIG ?= $(PWD)/www_kozea/application.cfg
 export FLASK_ENV = development
 
 HOST ?= 0.0.0.0
