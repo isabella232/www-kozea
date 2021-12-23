@@ -16,7 +16,6 @@
 </div>
 
 <section class="grid-wrapper grid-wrapper--services ">
-
   <div class="narrow-content">
     {% if article['toc'] | safe | length > 35 %}
     <h1>Sommaire</h1>
@@ -37,27 +36,23 @@
 
   <div class="narrow-content">
     {% for tag in article['tags'] %}
-    <p>{{ tag }}</p>
+      <p>{{ tag }}</p>
     {% endfor %}
     {% if article['date'] != None %}
-    <b>Date : {{ article['date'] }}</b>
+      <b>{{ article['date'] }},</b>
     {% endif %}
-    <b>Time : {{ article['time'] }} min</b>
+      <b>{{ article['time'] }} min</b>
     <hr>
     {{ article['html_content'] | safe }}
   </div>
 </section>
 
-<section class="h-centered wide-content">
-  <div class="grid-wrapper">
+<section>
+  <div class="grid-wrapper wide-content">
     {% if previous_article != None %}
     <figure class="card2 card2--filled">
       <p class="card2__body">
-
-      <p>
         {{ previous_article['title'] }}
-      </p>
-
       </p>
       <p class="card2__cta">
         <a href="{{ url_for('blog.article', url=previous_article['url']) }}">Article précédent</a>
@@ -67,50 +62,45 @@
     {% if next_article != None %}
     <figure class="card2 card2--filled">
       <p class="card2__body">
-
-      <p>
         {{ next_article['title'] }}
-      </p>
-
       </p>
       <p class="card2__cta">
         <a href="{{ url_for('blog.article', url=next_article['url']) }}">Article suivant</a>
       </p>
     </figure>
     {% endif %}
-
   </div>
 </section>
 
-<section class="h-centered wide-content">
-  <div class="grid-wrapper">
+<section>
+  <div class="grid-wrapper wide-content">
     {% for article in same_tag_articles %}
-    <figure class="card2 card2--filled">
+    <figure class="card">
       {% if article['caption'] %}
       <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
       {% endif %}
-      <p class="card2__title">
-        {{ article["title"] }}
-      </p>
-      <p class="card2__body">
-        {% if article['date'] != None %}
-      <p>
-        Date : {{ article['date'] }}
-      </p>
-      {% endif %}
-      <p>
-        Time : {{ article['time'] }} min
-      </p>
-      <p>
-        Tags :
+      <div class="grid-wrapper grid-wrapper--services wide-content">
         {% for tag in article['tags'] %}
-        {{ tag }},
+        <figure class="card2 card2--filled ">
+          {{ tag }}
+        </figure>
         {% endfor %}
-      </p>
-      </p>
-      <p class="card2__cta">
-        <a href="{{ url_for('blog.article', url=article['url']) }}">Lire</a>
-      </p>
+      </div>
+      <figcaption>
+        <p class="card__title">{{ article['title'] }}</p>
+        <div class="card__body">
+          <hr>
+          <p>
+            {% if article['date'] != None %}
+            {{ article['date'] }} ,
+            {% endif %}
+            {{ article['time'] }} min
+          </p>
+        </div>
+        <div class="big-cta-card__cta">
+          <p><a class="big-link left" href="{{ url_for('blog.article', url=article['url'])}}"></a></p>
+        </div>
+      </figcaption>
     </figure>
     {% endfor %}
   </div>
