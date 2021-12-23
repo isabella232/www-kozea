@@ -24,6 +24,15 @@
       {{ article['toc'] | safe }}
     </div>
     {% endif %}
+    <hr>
+    <h1>Partager l'article</h1>
+    <p class="card2__cta">
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{article_full_url}}" target="_blank">Facebook</a>
+
+      <a href="https://twitter.com/intent/tweet?url={{article_full_url}}" target="_blank">Twitter</a>
+
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{article_full_url}}" target="_blank">Linkedin</a>
+    </p>
   </div>
 
   <div class="narrow-content">

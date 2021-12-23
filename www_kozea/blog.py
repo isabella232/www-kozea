@@ -111,6 +111,7 @@ def article(url):  # pragma: no cover
         next_article=next_article,
         previous_article=previous_article,
         same_tag_articles=sorted_same_tag_articles,
+        article_full_url=request.url,
     )
 
 
