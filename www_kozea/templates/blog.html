@@ -21,8 +21,13 @@ Blog
       </div>
       <p class="product-banner__catchphrase">{{pinned_article['title']}}</p>
       <p class="product-banner__description">{{pinned_article['description']}}</p>
-      <hr>
-      <span class="product-banner__name">{{pinned_article['date']}}, {{pinned_article['time']}} min</span>
+      <div>
+        <hr>
+        {% if pinned_article['date'] != None %}
+        {{ pinned_article['date'] }},
+        {% endif %}
+        {{pinned_article['time']}} min
+      </div>
       <div class="big-cta-card__cta">
         <p><a class="big-link left" href="{{ url_for('blog.article', url=pinned_article['url'])}}"></a></p>
       </div>
@@ -57,37 +62,34 @@ Blog
 
 
     {% for article in articles %}
-      <figure class="card">
-        <figcaption>
-          {% if article['caption'] %}
-          <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
-          {% endif %}
+    <figure class="card">
+      {% if article['caption'] %}
+      <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+      {% endif %}
 
-          <p class="card__title">{{ article['title'] }}</p>
-          <div class="card__body">
-
+      <div class="grid-wrapper grid-wrapper--services wide-content">
+        {% for tag in article['tags'] %}
+        <figure class="card2 card2--filled ">
+          {{ tag }}
+        </figure>
+        {% endfor %}
+      </div>
+      <figcaption>
+        <p class="card__title">{{ article['title'] }}</p>
+        <div class="card__body">
+          <hr>
+          <p>
             {% if article['date'] != None %}
-            <p>
-              Date : {{ article['date'] }}
-            </p>
+              {{ article['date'] }} ,
             {% endif %}
-            <p>
-              Time : {{ article['time'] }} min
-            </p>
-            <p>
-              Tags :
-              {% for tag in article['tags'] %}
-              {{ tag }},
-              {% endfor %}
-            </p>
-          </div>
-          <div class="card__cta">
-            <div class="cta-button">
-              <a class="cta-button__inner" href="{{ url_for('blog.article', url=article['url'])}}">Lire</a>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
+            {{ article['time'] }} min
+          </p>
+        </div>
+        <div class="big-cta-card__cta">
+          <p><a class="big-link left" href="{{ url_for('blog.article', url=article['url'])}}"></a></p>
+        </div>
+      </figcaption>
+    </figure>
     {% endfor %}
   </div>
   {{ pagination.links }}
