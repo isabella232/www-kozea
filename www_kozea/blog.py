@@ -60,9 +60,7 @@ def download_file(filename):  # pragma: no cover
 @bp.route("/blog/")
 @bp.route("/blog/tag/<tag>/")
 def blog(tag=None):  # pragma: no cover
-    pinned_article_url = current_app.config.get("BLOG_PINNED_ARTICLE_URL")
-    pinned_article_path = f"{bp.static_folder}/{pinned_article_url}/content.md"
-    pinned_article = build_article(pinned_article_path)
+    pinned_article = build_pinned_article()
     articles = build_articles(bp.static_folder)
     same_tag_articles = past_articles(get_articles_with_tag(tag, articles))
     visible_articles = different_title_articles(
@@ -162,6 +160,14 @@ def build_article(article_path):
         "url": directory,
         "toc": md.toc,
     }
+
+
+def build_pinned_article():  # pragma: no cover
+    """Retrieve the pinned article path from the configuration
+    and apply build_article function to it."""
+    pinned_article_url = current_app.config.get("BLOG_PINNED_ARTICLE_URL")
+    pinned_article_path = f"{bp.static_folder}/{pinned_article_url}/content.md"
+    return build_article(pinned_article_path)
 
 
 def parse_md_file(article_path):
