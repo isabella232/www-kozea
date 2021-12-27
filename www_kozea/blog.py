@@ -83,7 +83,6 @@ def blog(tag=None):  # pragma: no cover
 
 @bp.route("/blog/<url>/")
 def article(url):  # pragma: no cover
-    excluded_articles = []
     articles = build_articles(bp.static_folder)
     sorted_visible_articles = sort_articles(past_articles(articles))
     article_path = f"{bp.static_folder}/{url}/content.md"
@@ -91,7 +90,7 @@ def article(url):  # pragma: no cover
     previous_article, next_article = get_previous_and_next_articles(
         current_article, sorted_visible_articles
     )
-    excluded_articles.extend([current_article, previous_article, next_article])
+    excluded_articles = [current_article, previous_article, next_article]
     tag = get_main_tag(current_article["tags"])
     same_tag_articles = different_title_articles(
         get_articles_with_tag(tag, sorted_visible_articles),
