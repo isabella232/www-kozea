@@ -77,6 +77,7 @@ def blog(tag=None):  # pragma: no cover
         pinned_article=pinned_article,
         articles=displayed_articles,
         tag_list=tag_list,
+        page=request.url_rule.endpoint,
         pagination=pagination,
     )
 

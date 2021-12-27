@@ -8,6 +8,7 @@ MENU_LIST = {
     # "ressources": "Ressources",
     "à-propos": "À propos",
     "contact": "Contact",
+    "blog.blog": "Blog",
 }
 
 PAGE_LIST = [
