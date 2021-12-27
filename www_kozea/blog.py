@@ -29,7 +29,6 @@ WPM = 200
 WORD_LENGTH = 5
 ARTICLES_PER_PAGE = 6
 MAX_SIMILAR_ARTICLES = 3
-ARTICLES_PATH = "./www_kozea/articles"
 
 
 bp = Blueprint("blog", __name__, static_url_path="", static_folder="articles")
@@ -55,16 +54,16 @@ env = build_env()
 
 @bp.route("/<path:filename>")
 def download_file(filename):  # pragma: no cover
-    return send_from_directory(ARTICLES_PATH, filename, as_attachment=True)
+    return send_from_directory(bp.static_folder, filename, as_attachment=True)
 
 
 @bp.route("/blog/")
 @bp.route("/blog/tag/<tag>/")
 def blog(tag=None):  # pragma: no cover
     pinned_article_url = current_app.config.get("BLOG_PINNED_ARTICLE_URL")
-    pinned_article_path = f"{ARTICLES_PATH}/{pinned_article_url}/content.md"
+    pinned_article_path = f"{bp.static_folder}/{pinned_article_url}/content.md"
     pinned_article = build_article(pinned_article_path)
-    articles = build_articles(ARTICLES_PATH)
+    articles = build_articles(bp.static_folder)
     same_tag_articles = past_articles(get_articles_with_tag(tag, articles))
     visible_articles = different_title_articles(
         same_tag_articles, get_articles_titles([pinned_article])
@@ -85,9 +84,9 @@ def blog(tag=None):  # pragma: no cover
 @bp.route("/blog/<url>/")
 def article(url):  # pragma: no cover
     excluded_articles = []
-    articles = build_articles(ARTICLES_PATH)
+    articles = build_articles(bp.static_folder)
     sorted_visible_articles = sort_articles(past_articles(articles))
-    article_path = f"{ARTICLES_PATH}/{url}/content.md"
+    article_path = f"{bp.static_folder}/{url}/content.md"
     current_article = build_article(article_path)
     previous_article, next_article = get_previous_and_next_articles(
         current_article, sorted_visible_articles
