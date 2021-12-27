@@ -961,6 +961,10 @@ section {
 
   &__name {
     color: $dark-grey;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 1em;
+    }
   }
 
   // Section's title
@@ -1047,10 +1051,6 @@ section {
 
     .product-banner__name {
       color: $text-bright;
-
-      @media screen and (max-width: $tablet) {
-        font-size: 1em;
-      }
     }
   }
 
