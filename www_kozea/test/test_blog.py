@@ -8,16 +8,16 @@ from ..blog import (
     build_article,
     build_articles,
     count_words_in_text,
+    different_title_articles,
     estimate_reading_time,
-    filter_date_articles,
-    filter_title_articles,
-    filter_visible_text,
     find_article_paths,
     get_articles_titles,
+    get_articles_with_tag,
     get_main_tag,
     get_previous_and_next_articles,
-    get_same_tag_articles,
-    sorted_articles,
+    past_articles,
+    sort_articles,
+    strip_html_markup,
     tags_to_list,
 )
 from ..error import (
@@ -134,7 +134,7 @@ def test_find_article_paths():
 
 
 def test_get_same_tag_articles():
-    assert get_same_tag_articles(
+    assert get_articles_with_tag(
         "santé",
         [
             build_article(
@@ -154,7 +154,7 @@ def test_get_same_tag_articles():
         build_article(f"{article_base_path}/2021-12-10_acariens/content.md"),
     ]
 
-    assert get_same_tag_articles(
+    assert get_articles_with_tag(
         None,
         [
             build_article(
@@ -177,7 +177,7 @@ def test_get_same_tag_articles():
 
 
 def test_sorted_articles():
-    assert sorted_articles(
+    assert sort_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -197,7 +197,7 @@ def test_sorted_articles():
 @freeze_time("2021-11-30")
 def test_filter_date_articles():
     assert (
-        filter_date_articles(
+        past_articles(
             [
                 build_article(
                     f"{article_base_path}/2021-12-10_acariens/content.md"
@@ -207,7 +207,7 @@ def test_filter_date_articles():
         == []
     )
 
-    assert filter_date_articles(
+    assert past_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -221,7 +221,7 @@ def test_filter_date_articles():
 
 
 def test_filter_title_articles():
-    assert filter_title_articles(
+    assert different_title_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -240,7 +240,7 @@ def test_filter_title_articles():
         ),
     ]
 
-    assert filter_title_articles(
+    assert different_title_articles(
         [
             build_article(
                 f"{article_base_path}/2021-11-22_avis-patients/content.md"
@@ -258,12 +258,12 @@ def test_filter_title_articles():
 
 
 def test_filter_visible_text():
-    assert filter_visible_text("<p> Test <p>") == "Test"
+    assert strip_html_markup("<p> Test <p>") == "Test"
     assert (
-        filter_visible_text("<h1> Filter visible text <h1> <p> Test <p>")
+        strip_html_markup("<h1> Filter visible text <h1> <p> Test <p>")
         == "FiltervisibletextTest"
     )
-    assert filter_visible_text("") == ""
+    assert strip_html_markup("") == ""
 
 
 def test_count_words_in_text():

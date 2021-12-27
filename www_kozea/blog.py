@@ -28,8 +28,8 @@ from .error import (
 WPM = 200
 WORD_LENGTH = 5
 ARTICLES_PER_PAGE = 6
-MAX_SIMILAR_ARTICLE = 3
-DIR_PATH = "./www_kozea/articles"
+MAX_SIMILAR_ARTICLES = 3
+ARTICLES_PATH = "./www_kozea/articles"
 
 
 bp = Blueprint("blog", __name__, static_url_path="", static_folder="articles")
@@ -55,23 +55,21 @@ env = build_env()
 
 @bp.route("/<path:filename>")
 def download_file(filename):  # pragma: no cover
-    return send_from_directory(DIR_PATH, filename, as_attachment=True)
+    return send_from_directory(ARTICLES_PATH, filename, as_attachment=True)
 
 
 @bp.route("/blog/")
 @bp.route("/blog/tag/<tag>/")
 def blog(tag=None):  # pragma: no cover
     pinned_article_url = current_app.config.get("BLOG_PINNED_ARTICLE_URL")
-    pinned_article_path = f"{DIR_PATH}/{pinned_article_url}/content.md"
+    pinned_article_path = f"{ARTICLES_PATH}/{pinned_article_url}/content.md"
     pinned_article = build_article(pinned_article_path)
-    articles = build_articles(DIR_PATH)
-    same_tag_articles = filter_date_articles(
-        get_same_tag_articles(tag, articles)
-    )
-    visible_articles = filter_title_articles(
+    articles = build_articles(ARTICLES_PATH)
+    same_tag_articles = past_articles(get_articles_with_tag(tag, articles))
+    visible_articles = different_title_articles(
         same_tag_articles, get_articles_titles([pinned_article])
     )
-    sorted_visible_articles = sorted_articles(visible_articles)
+    sorted_visible_articles = sort_articles(visible_articles)
     tag_list = articles_tags(articles)
     displayed_articles, pagination = paginate(sorted_visible_articles)
     return render_template(
@@ -86,28 +84,28 @@ def blog(tag=None):  # pragma: no cover
 
 @bp.route("/blog/<url>/")
 def article(url):  # pragma: no cover
-    excluded_article = []
-    articles = build_articles(DIR_PATH)
-    sorted_visible_articles = sorted_articles(filter_date_articles(articles))
-    article_path = f"{DIR_PATH}/{url}/content.md"
-    my_article = build_article(article_path)
+    excluded_articles = []
+    articles = build_articles(ARTICLES_PATH)
+    sorted_visible_articles = sort_articles(past_articles(articles))
+    article_path = f"{ARTICLES_PATH}/{url}/content.md"
+    current_article = build_article(article_path)
     previous_article, next_article = get_previous_and_next_articles(
-        my_article, sorted_visible_articles
+        current_article, sorted_visible_articles
     )
-    excluded_article.extend([my_article, previous_article, next_article])
-    tag = get_main_tag(my_article["tags"])
-    same_tag_articles = filter_title_articles(
-        get_same_tag_articles(tag, sorted_visible_articles),
-        get_articles_titles(excluded_article),
+    excluded_articles.extend([current_article, previous_article, next_article])
+    tag = get_main_tag(current_article["tags"])
+    same_tag_articles = different_title_articles(
+        get_articles_with_tag(tag, sorted_visible_articles),
+        get_articles_titles(excluded_articles),
     )
-    sorted_same_tag_articles = sorted_articles(same_tag_articles)[
-        :MAX_SIMILAR_ARTICLE
+    sorted_same_tag_articles = sort_articles(same_tag_articles)[
+        :MAX_SIMILAR_ARTICLES
     ]
 
     return render_template(
         "article.html",
         menu_list=MENU_LIST,
-        article=my_article,
+        article=current_article,
         next_article=next_article,
         previous_article=previous_article,
         same_tag_articles=sorted_same_tag_articles,
@@ -176,7 +174,7 @@ def parse_md_file(article_path):
         return frontmatter.load(f)
 
 
-def sorted_articles(articles):
+def sort_articles(articles):
     """Return articles sorted by date.
 
     articles (list) -- articles to be sorted
@@ -188,7 +186,7 @@ def sorted_articles(articles):
     )
 
 
-def filter_date_articles(articles):
+def past_articles(articles):
     """Return list of articles dated before the current date.
 
     articles -- list of articles to filter
@@ -201,7 +199,7 @@ def filter_date_articles(articles):
     )
 
 
-def filter_title_articles(articles, titles):
+def different_title_articles(articles, titles):
     """Return list of articles that do not have the same
     title as the current, previous and next article.
 
@@ -216,7 +214,7 @@ def filter_title_articles(articles, titles):
     )
 
 
-def get_same_tag_articles(tag, articles):
+def get_articles_with_tag(tag, articles):
     """Return articles with the same tag.
 
     tag -- tag of articles we want to display
@@ -326,13 +324,13 @@ def paginate(articles):  # pragma: no cover
     return displayed_articles, pagination
 
 
-def filter_visible_text(text):
+def strip_html_markup(text):
     """Return a string without HTML-tags.
 
     text -- html content
     """
-    clear_html_tags = re.compile("<.*?>")
-    text = re.sub(clear_html_tags, "", text)
+    html_tags_re = re.compile("<.*?>")
+    text = re.sub(html_tags_re, "", text)
     return "".join(text.split())
 
 
@@ -349,6 +347,6 @@ def estimate_reading_time(html_content):
 
     html_content = HTML text
     """
-    filtered_text = filter_visible_text(html_content)
+    filtered_text = strip_html_markup(html_content)
     total_words = count_words_in_text(filtered_text, WORD_LENGTH)
     return math.ceil(total_words / WPM)
