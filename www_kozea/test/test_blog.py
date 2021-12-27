@@ -41,7 +41,7 @@ def test_tags_to_list():
         ["foo", "bar"]
     )  # Letter case unicity
     assert tags_to_list(",foo") == ["foo"]  # Leading comma
-    assert tags_to_list(",,,foo,  ,  , ,, ") == ["foo"]  # lot of comma
+    assert tags_to_list(",,,foo,  ,  , ,, ") == ["foo"]  # lot of commas
     assert tags_to_list("bar , foo, baz ") == sorted(
         ["foo", "bar", "baz"]
     )  # Trimming
