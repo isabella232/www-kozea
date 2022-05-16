@@ -65,6 +65,7 @@ $font-stack: Inter, sans-serif;
 $dark-blue: #000e51;
 $medium-blue: #0041C5;
 $light-blue: #006fff;
+$pale-blue: #ecf4ff;
 $gradient-start-blue: $light-blue;
 $gradient-stop-blue: #00adff;
 $dark-grey: #7f86a8;
@@ -689,6 +690,7 @@ section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: space-between;
     padding: 1em 2em;
   }
 }
@@ -950,6 +952,12 @@ section {
   }
 }
 
+// BEM mix to round blocks
+.rounded-block {
+  border-radius: 15px;
+  overflow: hidden; // Crop overflowing child images corners
+}
+
 .product-banner {
   display: flex;
 
@@ -1054,11 +1062,17 @@ section {
     }
   }
 
+  // Product banner white background
+
+  &--light {
+    background: white;
+    color: $dark-blue;
+  }
+
   // Service advantages list on service page
 
   &--flipped {
     flex-direction: row-reverse;
-    align-items: flex-start;
 
     .product-banner__descriptive {
       margin-right: 0;
@@ -1506,5 +1520,35 @@ section {
     @media screen and (max-width: $tablet) {
       height: 50px;
     }
+  }
+}
+
+.article-tag-list {
+
+}
+
+.article-tag {
+  background: $pale-blue;
+  border-radius: 3px;
+  color: $light-blue;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  list-style :none;
+  padding: 0.5em 1em;
+}
+
+.article-info {
+  width: 100%;
+
+  @at-root #{&}__main {
+    align-items: center;
+    color: $label-grey;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  hr {
+    border: 1px solid $light-grey;
   }
 }
