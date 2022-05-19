@@ -5,56 +5,86 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-banner light-text">
-  <div class="wide-content">
-    <h1 class="big-text">{{ article['title'] }}</h1>
-  </div>
-</div>
-
-<div class="h-centered wide-content">
-  <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
-</div>
-
-<section class="grid-wrapper grid-wrapper--services ">
-  <div class="narrow-content">
-    {% if article['toc'] | safe | length > 35 %}
-    <h1>Sommaire</h1>
-    <div>
-      {{ article['toc'] | safe }}
+<div class="article-header">
+  <div class="page-banner light-text ">
+    <div class="medium-content">
+      <h1 class="article-header__title">{{ article['title'] }}</h1>
+      <div class="article-header__image">
+        <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+      </div>
     </div>
-    {% endif %}
-    <hr>
-    <h1>Partager l'article</h1>
-    <p class="card2__cta">
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{article_full_url}}" target="_blank">Facebook</a>
+  </div>
+</div>
 
-      <a href="https://twitter.com/intent/tweet?url={{article_full_url}}" target="_blank">Twitter</a>
-
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{article_full_url}}" target="_blank">Linkedin</a>
-    </p>
+<section class="article-detail h-centred  medium-content">
+  <div class="article-detail__left-container">
+    {% if article['toc'] | safe | length > 35 %}
+    <div class="article-detail__left-container__toc-container">
+      <h1>Sommaire</h1>
+      <div>
+        {{ article['toc'] | safe }}
+      </div>
+      <hr>
+    </div>
+      {% endif %}
+    <div class="article-detail__left-container__share">
+      <h1>Partager l'article</h1>
+      <ul>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{article_full_url}}" target="_blank">
+          <li class="share-button share-button__facebook">
+            Facebook
+          </li>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{article_full_url}}" target="_blank">
+          <li class="share-button share-button__twitter">
+            Twitter
+          </li>
+        </a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{article_full_url}}" target="_blank">
+          <li class="share-button share-button__linkedin" >
+            Linkedin
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
   </div>
 
-  <div class="narrow-content">
-    {% for tag in article['tags'] %}
-      <p>{{ tag }}</p>
-    {% endfor %}
-    {% if article['date'] != None %}
-      <b>{{ article['date'] }},</b>
-    {% endif %}
-      <b>{{ article['time'] }} min</b>
-    <hr>
-    {{ article['html_content'] | safe }}
+  <div class="article-detail__content">
+    <ul class="article-tag-list">
+      {% for tag in article['tags'] %}
+      <li class="article-tag">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    <div class="article-info">
+      <div class="article-info__main">
+        <span>
+          <p>
+          {% if article['date'] != None %}
+            {{ article['date'] }}
+          {% endif %}
+            <img src="/static/images/time.svg">
+            {{ article['time'] }} min
+          </p>
+        </span>
+      </div>
+      <hr>
+    </div>
+    <div class="article-text">
+      {{ article['html_content'] | safe }}
+    </div>
   </div>
+
 </section>
 
-<section>
-  <div class="grid-wrapper wide-content">
+<section class="medium-content" >
+  <div class="grid-wrapper ">
     {% if previous_article != None %}
     <figure class="card2 card2--filled">
       <p class="card2__body">
         {{ previous_article['title'] }}
       </p>
-      <p class="card2__cta">
+      <p class="card2__cta card2__cta__to-left">
         <a href="{{ url_for('blog.article', url=previous_article['url']) }}">Article précédent</a>
       </p>
     </figure>
@@ -64,7 +94,7 @@
       <p class="card2__body">
         {{ next_article['title'] }}
       </p>
-      <p class="card2__cta">
+      <p class="card2__cta card2__cta__to-right">
         <a href="{{ url_for('blog.article', url=next_article['url']) }}">Article suivant</a>
       </p>
     </figure>
@@ -72,37 +102,48 @@
   </div>
 </section>
 
-<section>
-  <div class="grid-wrapper wide-content">
-    {% for article in same_tag_articles %}
-    <figure class="card">
-      {% if article['caption'] %}
-      <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
-      {% endif %}
-      <div class="grid-wrapper grid-wrapper--services wide-content">
-        {% for tag in article['tags'] %}
-        <figure class="card2 card2--filled ">
-          {{ tag }}
-        </figure>
-        {% endfor %}
-      </div>
-      <figcaption>
-        <p class="card__title">{{ article['title'] }}</p>
-        <div class="card__body">
-          <hr>
-          <p>
-            {% if article['date'] != None %}
-            {{ article['date'] }} ,
-            {% endif %}
-            {{ article['time'] }} min
-          </p>
-        </div>
-        <div class="big-cta-card__cta">
-          <p><a class="big-link left" href="{{ url_for('blog.article', url=article['url'])}}"></a></p>
-        </div>
-      </figcaption>
-    </figure>
-    {% endfor %}
+<section class="medium-content ">
+  {% if same_tag_articles %}
+  <h1 class="medium-text">Articles similaires</h1>
+  {% endif %}
+  <div class="article-list__list article-list__list__similar ">
+    <div class="grid-wrapper">
+      {% for article in same_tag_articles %}
+      <figure class="card">
+          <a href="{{ url_for('blog.article', url=article['url'])}}">
+          {% if article['caption'] %}
+          <div class="article-img">
+            <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+          </div>
+          {% endif %}
+          <figcaption>
+            <ul>
+              {% for tag in article['tags'] %}
+              <li class="article-tag">{{ tag }}</li>
+              {% endfor %}
+            </ul>
+
+            <p class="card__title">{{ article['title'] }}</p>
+            <div class="card__body">
+              <div class="article-info">
+                <hr>
+                <div class="article-info__main">
+                  <span>
+                    {% if article['date'] != None %}
+                    {{ article['date'] }}
+                    {% endif %}
+                    <img src="/static/images/time.svg">
+                    {{ article['time'] }} min
+                  </span>
+                  <p><a class="big-link left" href="{{ url_for('blog.article', url=article['url'])}}"></a></p>
+                </div>
+              </div>
+            </div>
+          </figcaption>
+        </a>
+      </figure>
+      {% endfor %}
+  </div>
   </div>
 </section>
 

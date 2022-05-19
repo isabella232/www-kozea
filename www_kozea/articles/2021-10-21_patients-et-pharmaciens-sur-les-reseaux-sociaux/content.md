@@ -2,7 +2,7 @@
 author: Laurène Jover
 title: "[Infographie] Patients et pharmaciens sur les réseaux sociaux : quelles attentes ?"
 date: 2021-10-21
-tags: Communication digitale
+tags: Communication digitale, e-santé, pharmacie
 caption: patients-et-pharmaciens-sur-les-reseaux-sociaux.webp
 ---
 

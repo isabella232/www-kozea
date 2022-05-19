@@ -5,93 +5,99 @@ Blog
 {% endblock %}
 
 {% block content %}
-<div class="big-card gradient-filled ">
-  <div class="product-banner product-banner--light product-banner--flipped rounded-block wide-content">
-    <div class="product-banner__descriptive">
-      <ul class="article-tag-list">
-        {% for tag in pinned_article['tags'] %}
-        <li class="article-tag">{{ tag }}</li>
-        {% endfor %}
-      </ul>
-      <p class="product-banner__catchphrase">{{pinned_article['title']}}</p>
-      <p class="product-banner__description">{{pinned_article['description']}}</p>
-      <div class="article-info">
-        <hr>
-        <div class="article-info__main">
-          <span>
-          {% if pinned_article['date'] != None %}
-          {{ pinned_article['date'].strftime("%d/%m/%Y") }},
-          {% endif %}
-          {{pinned_article['time']}} min
-          </span>
-          <p>
-            <a class="big-link left" href="{{ url_for('blog.article', url=pinned_article['url'])}}"></a>
-          </p>
+<div class="big-card gradient-filled pinned-article">
+  <section class="product-banner product-banner--light product-banner--flipped rounded-block wide-content">
+    <a href="{{ url_for('blog.article', url=pinned_article['url'])}}">
+      <div class="product-banner__descriptive">
+        <ul class="article-tag-list">
+          {% for tag in pinned_article['tags'] %}
+          <li class="article-tag">{{ tag }}</li>
+          {% endfor %}
+        </ul>
+        <p class="product-banner__catchphrase">{{pinned_article['title']}}</p>
+        <p class="product-banner__description">{{pinned_article['description']}}</p>
+        <div class="article-info">
+          <hr>
+          <div class="article-info__main">
+            <span>
+              {% if pinned_article['date'] != None %}
+              {{ pinned_article['date'].strftime("%d/%m/%Y") }}
+              {% endif %}
+              <img src="/static/images/time.svg">
+              {{pinned_article['time']}} min
+            </span>
+            <p>
+              <a class="big-link left" href="{{ url_for('blog.article', url=pinned_article['url'])}}"></a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
     <div class="product-banner__illustrative">
       <img class="product-banner__image"
         src="{{ url_for('blog.download_file', filename= '/'.join([pinned_article['url'], pinned_article['caption']])) }}">
     </div>
-  </div>
+  </section>
 </div>
 
-<section class="wide-content">
-  <div class="col-4">
-    <figure class="card" style="width: 18rem;">
+<section class="article-list h-centred wide-content">
+  <div class="article-list__filter">
+    <figure class="card" >
       <figcaption>
         <p class="card__title">Filtrer les sujets</p>
         <div class="card__body">
-          <p>
-            <a href="{{ url_for('blog.blog') }}">Tous</a>
-          </p>
+          <ul>
+            <li class="{% if page_tag == None %}active{% endif %}"><a href="{{ url_for('blog.blog') }}">Tous</a></li>
           {% for tag in tag_list %}
-          <p>
-            <a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a>
-          </p>
+            <li class="{% if page_tag == tag %}active{% endif %}"><a href="{{ url_for('blog.blog', tag = tag) }}">{{ tag }}</a></li>
           {% endfor %}
+          </ul>
         </div>
       </figcaption>
     </figure>
   </div>
 
-  <div class="grid-wrapper">
-    {% for article in articles %}
-    <figure class="card">
-      {% if article['caption'] %}
-      <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
-      {% endif %}
-
-      <ul>
-        {% for tag in pinned_article['tags'] %}
-        <li class="article-tag">{{ tag }}</li>
-        {% endfor %}
-      </ul>
-      <figcaption>
-        <p class="card__title">{{ article['title'] }}</p>
-        <div class="card__body">
-          <div class="article-info">
-            <hr>
-            <div class="article-info__main">
-              <span>
-              {% if article['date'] != None %}
-                {{ article['date'].strftime("%d/%m/%Y") }} ,
-              {% endif %}
-              {{ article['time'] }} min
-              </span>
-              <p>
-                <a class="big-link left" href="{{ url_for('blog.article', url=pinned_article['url'])}}"></a>
-              </p>
+  <div class="article-list__list">
+    <div class="grid-wrapper" >
+      {% for article in articles %}
+      <figure class="card">
+        <a href="{{ url_for('blog.article', url=article['url'])}}">
+          {% if article['caption'] %}
+          <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
+          {% endif %}
+          <figcaption>
+            <ul>
+              {% for tag in article['tags'] %}
+              <li class="article-tag">{{ tag }}</li>
+              {% endfor %}
+            </ul>
+            <p class="card__title">{{ article['title'] }}</p>
+            <div class="card__body">
+              <div class="article-info">
+                <hr>
+                <div class="article-info__main">
+                  <span>
+                    {% if article['date'] != None %}
+                      {{ article['date'].strftime("%d/%m/%Y") }}
+                    {% endif %}
+                    <img src="/static/images/time.svg">
+                    {{ article['time'] }} min
+                  </span>
+                  <p>
+                    <a class="big-link left" href="{{ url_for('blog.article', url=article['url'])}}"></a>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </figcaption>
-    </figure>
-    {% endfor %}
+          </figcaption>
+        </a>
+      </figure>
+      {% endfor %}
+    </div>
+    {{ pagination.links }}
   </div>
 </section>
-{{ pagination.links }}
+
 
 {% endblock %}
