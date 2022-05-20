@@ -276,7 +276,7 @@ def tags_to_list(tags):
     if tags is not None:
         first_tag_list = tags.split(",")
         for tag in first_tag_list:
-            tag_list.append(tag.strip().lower())
+            tag_list.append(tag.strip().lower().capitalize())
         tag_list = sorted(list(set(tag_list)))
         if "" in tag_list:
             tag_list.remove("")

@@ -42,20 +42,20 @@ def invalid_article(slug):
 def test_tags_to_list():
     assert tags_to_list("") == []
     assert tags_to_list(None) == []
-    assert tags_to_list("foo") == ["foo"]
-    assert tags_to_list("foo,bar") == sorted(["foo", "bar"])  # Sorted
+    assert tags_to_list("foo") == ["Foo"]
+    assert tags_to_list("foo,bar") == sorted(["Foo", "Bar"])  # Sorted
     assert tags_to_list(",") == []  # comma
-    assert tags_to_list("foo,") == ["foo"]  # Trailing comma
-    assert tags_to_list("foo,foo,bar") == sorted(["foo", "bar"])  # Unicity
+    assert tags_to_list("foo,") == ["Foo"]  # Trailing comma
+    assert tags_to_list("foo,foo,bar") == sorted(["Foo", "Bar"])  # Unicity
     assert tags_to_list("foo,FoO,bar") == sorted(
-        ["foo", "bar"]
+        ["Foo", "Bar"]
     )  # Letter case unicity
-    assert tags_to_list(",foo") == ["foo"]  # Leading comma
-    assert tags_to_list(",,,foo,  ,  , ,, ") == ["foo"]  # lot of commas
+    assert tags_to_list(",foo") == ["Foo"]  # Leading comma
+    assert tags_to_list(",,,foo,  ,  , ,, ") == ["Foo"]  # lot of commas
     assert tags_to_list("bar , foo, baz ") == sorted(
-        ["foo", "bar", "baz"]
+        ["Foo", "Bar", "Baz"]
     )  # Trimming
-    assert tags_to_list("foo bar") == ["foo bar"]
+    assert tags_to_list("foo bar") == ["Foo bar"]
 
 
 def test_get_main_tag():
@@ -67,7 +67,7 @@ def test_build_article():
     assert valid_article("2021-11-22_avis-patients") == {
         "title": "Avis patients",
         "date": datetime.date(2021, 11, 22),
-        "tags": ["allergies", "santé"],
+        "tags": ["Allergies", "Santé"],
         "md_content": "# Avis patients\n\navis",
         "html_content": '<h1 id="avis-patients">'
         "Avis patients</h1>\n<p>avis</p>",
@@ -89,7 +89,7 @@ def test_build_articles():
         {
             "title": "Avis patients",
             "date": datetime.date(2021, 11, 22),
-            "tags": ["allergies", "santé"],
+            "tags": ["Allergies", "Santé"],
             "md_content": "# Avis patients\n\navis",
             "html_content": '<h1 id="avis-patients">'
             "Avis patients</h1>\n<p>avis</p>",
@@ -101,7 +101,7 @@ def test_build_articles():
         {
             "title": "Communications",
             "date": datetime.date(2021, 11, 27),
-            "tags": ["allergies", "santé"],
+            "tags": ["Allergies", "Santé"],
             "md_content": "# Communications\n\nCommunications",
             "html_content": '<h1 id="communications">'
             "Communications</h1>\n<p>Communications</p>",
@@ -114,7 +114,7 @@ def test_build_articles():
         {
             "title": "Prise de rendez-vous",
             "date": datetime.date(2021, 11, 2),
-            "tags": ["pharmacie"],
+            "tags": ["Pharmacie"],
             "md_content": "# Prise de rendez-vous\n\nPrise de rendez-vous",
             "html_content": '<h1 id="prise-de-rendez-vous">'
             "Prise de rendez-vous</h1>\n<p>Prise de rendez-vous</p>",
@@ -140,7 +140,7 @@ def test_build_articles():
         {
             "title": "Les acariens",
             "date": datetime.date(2021, 12, 10),
-            "tags": ["allergies", "santé"],
+            "tags": ["Allergies", "Santé"],
             "md_content": "# Les acariens\n\nacariens",
             "html_content": '<h1 id="les-acariens">'
             "Les acariens</h1>\n<p>acariens</p>",
@@ -157,9 +157,9 @@ def test_build_articles():
 
 def test_articles_tags():
     assert articles_tags(build_articles(f"{valid_articles_base_path}")) == [
-        "allergies",
-        "pharmacie",
-        "santé",
+        "Allergies",
+        "Pharmacie",
+        "Santé",
     ]
 
 
@@ -179,7 +179,7 @@ def test_find_article_paths():
 
 def test_get_articles_with_tag():
     assert get_articles_with_tag(
-        "santé", build_articles(f"{valid_articles_base_path}")
+        "Santé", build_articles(f"{valid_articles_base_path}")
     ) == [
         valid_article("2021-11-22_avis-patients"),
         valid_article("2021-11-27_communication"),
