@@ -2,10 +2,9 @@
 author: Laurène Jover
 title: "La prise de rendez-vous en ligne : 5 avantages pour les pharmacies !"
 date: 2021-11-17
-tags: e-santé, site internet
+tags: E-santé, Site internet, Vente en ligne
 caption: la-prise-de-rendez-vous-en-ligne-5-avantages-pour-les-pharmacies.webp
 ---
-
 
 Depuis plusieurs années, le secteur pharmaceutique est en permanente évolution. Très vite, il a dû s’adapter à la fois aux nouveaux modes de consommation des patients, mais également aux exigences du marché, de plus en plus concurrentiel.
 
@@ -39,6 +38,6 @@ Vous l’aurez compris, à l’heure du tout numérique, les solutions connecté
 
 Alors, qu’attendez-vous ?
 
-Par l’intermédiaire de sa plateforme Pharminfo.fr, Kozea group propose des sites internet adaptés aux pharmaciens d’officine (du site vitrine à la vente en ligne en passant par le Click & Collect) avec des modules d’envoi d’ordonnance en ligne et de prise de rendez-vous en ligne.  Kozea group est à disposition des pharmaciens afin de les accompagner et de les conseiller au mieux dans la digitalisation de leur officine.
+_Par l’intermédiaire de sa plateforme [Pharminfo.fr](https://www.pharminfo.fr/), [Kozea group](https://kozea.fr/) propose des sites internet adaptés aux pharmaciens d’officine (du site vitrine à la vente en ligne en passant par le Click & Collect) avec des modules d’envoi d’ordonnance en ligne et de prise de rendez-vous en ligne. Kozea group est à disposition des pharmaciens afin de les accompagner et de les conseiller au mieux dans la digitalisation de leur officine._
 
-Pour plus d’informations ou pour être conseillé sur vos besoins digitaux, n’hésitez pas à nous contacter à l’adresse mail contact@pharminfo.fr ou par téléphone au 04 27 11 83 96 !
+Pour plus d’informations ou pour être conseillé sur vos besoins digitaux, n’hésitez pas à nous contacter à l’adresse mail [contact@pharminfo.fr](mailto:contact@pharminfo.fr) ou par téléphone au 04 27 11 83 96 !

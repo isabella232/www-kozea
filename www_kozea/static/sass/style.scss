@@ -1772,7 +1772,7 @@ section {
   }
 
   &__title{
-    font-size: 2.5em;
+    font-size: 2.4em;
     font-weight: 600;
     text-align: center;
 
@@ -1882,6 +1882,23 @@ section {
 .article-text{
   p{
     line-height: 1.75;
+  }
+
+  h2{
+    font-size: 1.3rem;
+  }
+
+  blockquote, q {
+    color: $dark-grey;
+    margin: 1.5rem;
+  }
+
+  li{
+    margin: 1rem;
+  }
+
+  a{
+    font-weight: bold;
   }
 
   img{
