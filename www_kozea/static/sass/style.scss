@@ -1914,6 +1914,15 @@ section {
 
   h2{
     font-size: 1.3rem;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: " ";
+      margin-top: -5em;
+      height: 5em;
+      visibility: hidden;
+    }
   }
 
   blockquote, q {
