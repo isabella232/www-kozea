@@ -8,7 +8,7 @@
 <div class="article-header">
   <div class="page-banner light-text ">
     <div class="medium-content">
-      <h1 class="article-header__title">{{ article['title'] }}</h1>
+      <h3 class="article-header__title">{{ article['title'] }}</h3>
       <div class="article-header__image">
         <img src="{{ url_for('blog.download_file', filename= '/'.join([article['url'], article['caption']])) }}">
       </div>
@@ -20,7 +20,7 @@
   <div class="article-detail__left-container">
     {% if article['toc'] | safe | length > 35 %}
     <div class="article-detail__left-container__toc-container">
-      <h1>Sommaire</h1>
+      <h3>Sommaire</h3>
       <div>
         {{ article['toc'] | safe }}
       </div>
@@ -28,7 +28,7 @@
     </div>
       {% endif %}
     <div class="article-detail__left-container__share">
-      <h1>Partager l'article</h1>
+      <h3>Partager l'article</h3>
       <ul>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{article_full_url}}" target="_blank">
           <li class="share-button share-button__facebook">
@@ -104,7 +104,7 @@
 
 <section class="medium-content ">
   {% if same_tag_articles %}
-  <h1 class="medium-text">Articles similaires</h1>
+  <h3 class="medium-text">Articles similaires</h3>
   {% endif %}
   <div class="article-list__list article-list__list__similar ">
     <div class="grid-wrapper">

@@ -1572,7 +1572,7 @@ section {
   color: $light-blue;
   display: inline-block;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   list-style :none;
   padding: 0.5em 1em;
   margin-top: 0.5rem;
@@ -1582,6 +1582,7 @@ section {
 
 .article-info {
   width: 100%;
+  font-size: 0.9rem;
 
   @at-root #{&}__main {
     align-items: center;
@@ -1616,8 +1617,17 @@ section {
     flex-direction: column;
   }
 
+  p{
+    line-height: 1.15;
+  }
+
   &__filter{
     flex:1;
+
+    .card{
+      position: sticky;
+      top: 6em;
+    }
 
     ul{
       max-height: 280px;
@@ -1668,12 +1678,29 @@ section {
       border-width: 0;
 
       figcaption{
-        padding: 1em 0em;
+        padding: 0em;
+
+        ul{
+          padding: 1em 0
+        }
+
+        .card__title {
+          padding-bottom: 1em
+        }
+
       }
     }
 
     .big-link {
       font-size: 1.5em;
+
+      &::before{
+        margin-right: 0;
+      }
+
+      &::after {
+        height: 2px;
+      }
     }
 
     .grid-wrapper{
@@ -1750,11 +1777,7 @@ section {
   margin-bottom: 20em;
 
   @media screen and (max-width: $tablet) {
-    margin-bottom: 9em;
-  }
-
-  @media screen and (max-width: $phone) {
-    margin-bottom: 2em;
+    margin-bottom: 0;
   }
 
   .medium-content{
@@ -1811,6 +1834,11 @@ section {
 
   &__left-container{
     flex: 1;
+    @media screen and (min-width: $tablet) {
+      position: sticky;
+      top: 6em;
+      height: 100%;
+    }
 
     &__toc-container{
       @media screen and (max-width: $tablet) {
@@ -2017,28 +2045,34 @@ section {
 }
 
 .pinned-article{
+  .product-banner__catchphrase{
+    line-height: 1.15;
+  }
 
   .big-link {
     font-size: 1.5em;
+    &::before{
+      margin-right: 0;
+    }
+
+    &::after {
+      height: 2px;
+    }
   }
 
   .product-banner--flipped{
     @media screen and (max-width: $laptop) {
       flex-direction: column-reverse;
-      gap: 8rem;
-    }
-
-    @media screen and (max-width: $tablet) {
-      gap: 1rem;
     }
   }
 
   .product-banner__descriptive {
+    padding: 3em;
     @media screen and (max-width: $laptop) {
-      padding: 0 3rem;
+      padding: 6rem 3rem 0;
     }
 
-    @media screen and (max-width: $phone) {
+    @media screen and (max-width: $tablet) {
       padding: 0 1.5rem;
     }
   }
