@@ -3,7 +3,7 @@ author: Laurène Jover
 title: "3 règles pour gérer les avis en ligne de vos patients !"
 date: 2022-03-09
 tags: Communication digitale
-caption: 3-regles-pour-gerer-les-avis-en-ligne-de-vos-patientswebp
+caption: 3-regles-pour-gerer-les-avis-en-ligne-de-vos-patients.webp
 ---
 
 Sur Google ou sur vos réseaux sociaux, vos patients ont aujourd’hui la possibilité de donner très facilement un avis ou un retour d’expérience sur votre pharmacie. Que ce soit au niveau des services mis en place, des produits proposés, de l’amabilité et du professionnalisme de leurs interlocuteurs,… Tout peut être un prétexte pour donner une opinion !
