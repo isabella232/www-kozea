@@ -15,7 +15,7 @@ from flask import (
     request,
     send_from_directory,
 )
-from flask_paginate import Pagination, get_page_parameter
+from flask_paginate import Pagination
 from jinja2 import Environment, pass_context
 
 from . import MENU_LIST
@@ -58,8 +58,10 @@ def download_file(filename):  # pragma: no cover
 
 
 @bp.route("/blog/")
+@bp.route("/blog/page/<int:page>/")
 @bp.route("/blog/tag/<tag>/")
-def blog(tag=None):  # pragma: no cover
+@bp.route("/blog/tag/<tag>/page/<int:page>/")
+def blog(tag=None, page=1):  # pragma: no cover
     pinned_article = build_pinned_article()
     articles = build_articles(bp.static_folder)
     same_tag_articles = past_articles(get_articles_with_tag(tag, articles))
@@ -68,7 +70,7 @@ def blog(tag=None):  # pragma: no cover
     )
     sorted_visible_articles = sort_articles(visible_articles)
     tag_list = articles_tags(articles)
-    displayed_articles, pagination = paginate(sorted_visible_articles)
+    displayed_articles, pagination = paginate(sorted_visible_articles, page)
     return render_template(
         "blog.html",
         menu_list=MENU_LIST,
@@ -312,12 +314,11 @@ def get_main_tag(tags_list):
         return None
 
 
-def paginate(articles):  # pragma: no cover
+def paginate(articles, page):  # pragma: no cover
     """Return articles to be displayed per page and pagination configuration.
 
     articles (list) -- list of articles to paginate
     """
-    page = request.args.get(get_page_parameter(), type=int, default=1)
     offset = (page - 1) * ARTICLES_PER_PAGE
     total = len(articles)
     displayed_articles = articles[offset : offset + ARTICLES_PER_PAGE]
