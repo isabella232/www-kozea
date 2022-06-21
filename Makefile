@@ -10,3 +10,7 @@ clean:
 
 lint-node:
 	$(LOG)
+
+.PHONY: serve-static
+serve-static: build
+	python -m http.server --directory $(PROJECT_NAME)/build/
