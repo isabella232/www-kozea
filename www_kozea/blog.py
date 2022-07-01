@@ -356,4 +356,5 @@ def estimate_reading_time(html_content):
     """
     filtered_text = strip_html_markup(html_content)
     total_words = count_words_in_text(filtered_text, WORD_LENGTH)
-    return math.ceil(total_words / WPM)
+    reading_time = math.ceil(total_words / WPM)
+    return reading_time if reading_time > 0 else 1
