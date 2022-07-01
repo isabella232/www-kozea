@@ -15,16 +15,12 @@ La page de votre pharmacie se présente de la manière suivante (voir image ci-d
 de la
 **gamme Xémose d’Uriage.**
 
-- Commencez par cliquer sur “
-  **Créer une publication**
-  ”
+- Commencez par cliquer sur “**Créer une publication**”
   **(1)**
 
 ![](/2021-08-26_conseil-du-mois-comment-creer-une-publication-facebook/1-1.png)
 
-- Cliquez sur “
-  **Créez une publication à partir de votre page**
-  ”
+- Cliquez sur “**Créez une publication à partir de votre page**”
   **(2)**
 
 ![](/2021-08-26_conseil-du-mois-comment-creer-une-publication-facebook/2.png)
@@ -41,8 +37,7 @@ Cette fenêtre apparaît : vous pouvez commencer par insérer un fichier (image,
 
 - Dans la zone entourée par un
   **rectangle**
-  **rouge**
-  , vous pouvez insérer du
+  **rouge**, vous pouvez insérer du
   **texte. (4)**
 
 ![](/2021-08-26_conseil-du-mois-comment-creer-une-publication-facebook/4.png)
@@ -54,30 +49,22 @@ Dans notre exemple, nous avons inclus la photo du produit que nous souhaitons me
 Là où il est écrit « Écrivez quelque chose à propos…”, vous pouvez rédiger le contenu qui accompagnera votre visuel. Gardez en tête que, sur Facebook, mieux vaut être concis dans votre rédaction, mais pas trop non plus ! L’important est de trouver le juste milieu entre trop en dire (et donc prendre le risque que vos abonnés ne prennent pas la peine de vous lire) et ne pas assez en dire (ce qui pourrait créer de la frustration).
 
 - Pour ajouter des
-  **émoticônes**
-  , cliquez sur le
+  **émoticônes**, cliquez sur le
   **smiley**
   situé dans le
   **carré rouge**
-  **(5)**
-  .
-- Cliquez ensuite sur “
-  **publier**
-  ”
-  **(6)**
-  .
+  **(5)**.
+- Cliquez ensuite sur “**publier**”
+  **(6)**.
 
 ![](/2021-08-26_conseil-du-mois-comment-creer-une-publication-facebook/5.png)
 
-Une fois mise en ligne sur votre page, votre publication se présentera sous la forme suivante (
-**7**
-) :
+Une fois mise en ligne sur votre page, votre publication se présentera sous la forme suivante **(7)** :
 
 ![](/2021-08-26_conseil-du-mois-comment-creer-une-publication-facebook/6.png)
 
 Voilà, vous avez désormais toutes les clés en main pour publier du contenu sur votre page Facebook !
 
-**_Kozea group_**
-_, par l’intermédiaire de son agence e-marketing_
-**_Kozea media_**
-_, offre la possibilité d’externaliser la gestion des pages Facebook à un coût maîtrisé pour les pharmaciens d’officine. Nous vous accompagnons dans votre communication digitale tout en respectant les contraintes définies par le secteur de la santé._
+**_Kozea group_**, _par l’intermédiaire de son agence e-marketing_
+_**Kozea media**_,
+_offre la possibilité d’externaliser la gestion des pages Facebook à un coût maîtrisé pour les pharmaciens d’officine. Nous vous accompagnons dans votre communication digitale tout en respectant les contraintes définies par le secteur de la santé._
